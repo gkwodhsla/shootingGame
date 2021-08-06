@@ -1,0 +1,44 @@
+[
+  {
+    "level_": 0,
+    "message_": "Start JSON generation. Platform version: 16 min SDK version: x86_64",
+    "file_": "D:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+    "tag_": "debug|x86_64",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 1116562546
+  },
+  {
+    "level_": 0,
+    "message_": "JSON \u0027D:\\comtus\\Development\\android\\shootingGame\\app\\build\\.cxx\\Debug\\72541t18\\x86_64\\android_gradle_build.json\u0027 was up-to-date",
+    "file_": "D:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+    "tag_": "debug|x86_64",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 931944582
+  },
+  {
+    "level_": 0,
+    "message_": "JSON generation completed without problems",
+    "file_": "D:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+    "tag_": "debug|x86_64",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -507957040
+  }
+]

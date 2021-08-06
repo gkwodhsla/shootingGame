@@ -1,0 +1,352 @@
+{
+  "buildFiles": [
+    "D:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+    "D:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+      "NDK_PROJECT_PATH\u003dnull",
+      "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+      "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+      "APP_ABI\u003dx86",
+      "NDK_ALL_ABIS\u003dx86",
+      "NDK_DEBUG\u003d0",
+      "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+      "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+      "APP_PLATFORM\u003dandroid-16",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+    "NDK_PROJECT_PATH\u003dnull",
+    "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+    "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+    "APP_ABI\u003dx86",
+    "NDK_ALL_ABIS\u003dx86",
+    "NDK_DEBUG\u003d0",
+    "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+    "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+    "APP_PLATFORM\u003dandroid-16",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "ogg-release-x86": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003dx86",
+        "NDK_ALL_ABIS\u003dx86",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/x86/libogg.a"
+      ],
+      "toolchain": "toolchain-x86",
+      "abi": "x86",
+      "artifactName": "ogg",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\x86\\libogg.a"
+    },
+    "SDL2_mixer-release-x86": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003dx86",
+        "NDK_ALL_ABIS\u003dx86",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/x86/libSDL2_mixer.so"
+      ],
+      "toolchain": "toolchain-x86",
+      "abi": "x86",
+      "artifactName": "SDL2_mixer",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\x86\\libSDL2_mixer.so"
+    },
+    "hidapi-release-x86": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003dx86",
+        "NDK_ALL_ABIS\u003dx86",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/x86/libhidapi.so"
+      ],
+      "toolchain": "toolchain-x86",
+      "abi": "x86",
+      "artifactName": "hidapi",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\x86\\libhidapi.so"
+    },
+    "FLAC-release-x86": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003dx86",
+        "NDK_ALL_ABIS\u003dx86",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/x86/libFLAC.a"
+      ],
+      "toolchain": "toolchain-x86",
+      "abi": "x86",
+      "artifactName": "FLAC",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\x86\\libFLAC.a"
+    },
+    "modplug-release-x86": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003dx86",
+        "NDK_ALL_ABIS\u003dx86",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/x86/libmodplug.a"
+      ],
+      "toolchain": "toolchain-x86",
+      "abi": "x86",
+      "artifactName": "modplug",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\x86\\libmodplug.a"
+    },
+    "png-release-x86": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003dx86",
+        "NDK_ALL_ABIS\u003dx86",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/x86/libpng.a"
+      ],
+      "toolchain": "toolchain-x86",
+      "abi": "x86",
+      "artifactName": "png",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\x86\\libpng.a"
+    },
+    "cpufeatures-release-x86": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003dx86",
+        "NDK_ALL_ABIS\u003dx86",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/x86/libcpufeatures.a"
+      ],
+      "toolchain": "toolchain-x86",
+      "abi": "x86",
+      "artifactName": "cpufeatures",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\x86\\libcpufeatures.a"
+    },
+    "vorbisidec-release-x86": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003dx86",
+        "NDK_ALL_ABIS\u003dx86",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/x86/libvorbisidec.a"
+      ],
+      "toolchain": "toolchain-x86",
+      "abi": "x86",
+      "artifactName": "vorbisidec",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\x86\\libvorbisidec.a"
+    },
+    "jpeg-release-x86": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003dx86",
+        "NDK_ALL_ABIS\u003dx86",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/x86/libjpeg.a"
+      ],
+      "toolchain": "toolchain-x86",
+      "abi": "x86",
+      "artifactName": "jpeg",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\x86\\libjpeg.a"
+    },
+    "SDL2-release-x86": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003dx86",
+        "NDK_ALL_ABIS\u003dx86",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/x86/libSDL2.so"
+      ],
+      "toolchain": "toolchain-x86",
+      "abi": "x86",
+      "artifactName": "SDL2",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\x86\\libSDL2.so"
+    },
+    "mpg123-release-x86": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003dx86",
+        "NDK_ALL_ABIS\u003dx86",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/x86/libmpg123.so"
+      ],
+      "toolchain": "toolchain-x86",
+      "abi": "x86",
+      "artifactName": "mpg123",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\x86\\libmpg123.so"
+    },
+    "SDL2_ttf-release-x86": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003dx86",
+        "NDK_ALL_ABIS\u003dx86",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/x86/libSDL2_ttf.so"
+      ],
+      "toolchain": "toolchain-x86",
+      "abi": "x86",
+      "artifactName": "SDL2_ttf",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\x86\\libSDL2_ttf.so"
+    },
+    "timidity-release-x86": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003dx86",
+        "NDK_ALL_ABIS\u003dx86",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/x86/libtimidity.a"
+      ],
+      "toolchain": "toolchain-x86",
+      "abi": "x86",
+      "artifactName": "timidity",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\x86\\libtimidity.a"
+    },
+    "SDL2_image-release-x86": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003dx86",
+        "NDK_ALL_ABIS\u003dx86",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/x86/libSDL2_image.so"
+      ],
+      "toolchain": "toolchain-x86",
+      "abi": "x86",
+      "artifactName": "SDL2_image",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\x86\\libSDL2_image.so"
+    },
+    "freetype-release-x86": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003dx86",
+        "NDK_ALL_ABIS\u003dx86",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/x86/libfreetype.a"
+      ],
+      "toolchain": "toolchain-x86",
+      "abi": "x86",
+      "artifactName": "freetype",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\x86\\libfreetype.a"
+    },
+    "main-release-x86": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003dx86",
+        "NDK_ALL_ABIS\u003dx86",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/x86/libmain.so"
+      ],
+      "toolchain": "toolchain-x86",
+      "abi": "x86",
+      "artifactName": "main",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\x86\\libmain.so"
+    }
+  },
+  "toolchains": {
+    "toolchain-x86": {
+      "cCompilerExecutable": "D:\\AndroidSDK\\ndk\\21.4.7075529\\build\\..\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "cppCompilerExecutable": "D:\\AndroidSDK\\ndk\\21.4.7075529\\build\\..\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe"
+    }
+  },
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

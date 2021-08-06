@@ -1,0 +1,353 @@
+{
+  "buildFiles": [
+    "D:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+    "D:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+      "NDK_PROJECT_PATH\u003dnull",
+      "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+      "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+      "APP_ABI\u003darmeabi-v7a",
+      "NDK_ALL_ABIS\u003darmeabi-v7a",
+      "NDK_DEBUG\u003d0",
+      "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+      "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+      "APP_PLATFORM\u003dandroid-16",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+    "NDK_PROJECT_PATH\u003dnull",
+    "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+    "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+    "APP_ABI\u003darmeabi-v7a",
+    "NDK_ALL_ABIS\u003darmeabi-v7a",
+    "NDK_DEBUG\u003d0",
+    "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+    "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+    "APP_PLATFORM\u003dandroid-16",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "main-release-armeabi-v7a": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003darmeabi-v7a",
+        "NDK_ALL_ABIS\u003darmeabi-v7a",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/armeabi-v7a/libmain.so"
+      ],
+      "toolchain": "toolchain-armeabi-v7a",
+      "abi": "armeabi-v7a",
+      "artifactName": "main",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\armeabi-v7a\\libmain.so"
+    },
+    "ogg-release-armeabi-v7a": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003darmeabi-v7a",
+        "NDK_ALL_ABIS\u003darmeabi-v7a",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/armeabi-v7a/libogg.a"
+      ],
+      "toolchain": "toolchain-armeabi-v7a",
+      "abi": "armeabi-v7a",
+      "artifactName": "ogg",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\armeabi-v7a\\libogg.a"
+    },
+    "timidity-release-armeabi-v7a": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003darmeabi-v7a",
+        "NDK_ALL_ABIS\u003darmeabi-v7a",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/armeabi-v7a/libtimidity.a"
+      ],
+      "toolchain": "toolchain-armeabi-v7a",
+      "abi": "armeabi-v7a",
+      "artifactName": "timidity",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\armeabi-v7a\\libtimidity.a"
+    },
+    "SDL2_mixer-release-armeabi-v7a": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003darmeabi-v7a",
+        "NDK_ALL_ABIS\u003darmeabi-v7a",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/armeabi-v7a/libSDL2_mixer.so"
+      ],
+      "toolchain": "toolchain-armeabi-v7a",
+      "abi": "armeabi-v7a",
+      "artifactName": "SDL2_mixer",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\armeabi-v7a\\libSDL2_mixer.so"
+    },
+    "freetype-release-armeabi-v7a": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003darmeabi-v7a",
+        "NDK_ALL_ABIS\u003darmeabi-v7a",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/armeabi-v7a/libfreetype.a"
+      ],
+      "toolchain": "toolchain-armeabi-v7a",
+      "abi": "armeabi-v7a",
+      "artifactName": "freetype",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\armeabi-v7a\\libfreetype.a"
+    },
+    "SDL2-release-armeabi-v7a": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003darmeabi-v7a",
+        "NDK_ALL_ABIS\u003darmeabi-v7a",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/armeabi-v7a/libSDL2.so"
+      ],
+      "toolchain": "toolchain-armeabi-v7a",
+      "abi": "armeabi-v7a",
+      "artifactName": "SDL2",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\armeabi-v7a\\libSDL2.so"
+    },
+    "hidapi-release-armeabi-v7a": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003darmeabi-v7a",
+        "NDK_ALL_ABIS\u003darmeabi-v7a",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/armeabi-v7a/libhidapi.so"
+      ],
+      "toolchain": "toolchain-armeabi-v7a",
+      "abi": "armeabi-v7a",
+      "artifactName": "hidapi",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\armeabi-v7a\\libhidapi.so"
+    },
+    "vorbisidec-release-armeabi-v7a": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003darmeabi-v7a",
+        "NDK_ALL_ABIS\u003darmeabi-v7a",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/armeabi-v7a/libvorbisidec.a"
+      ],
+      "toolchain": "toolchain-armeabi-v7a",
+      "abi": "armeabi-v7a",
+      "artifactName": "vorbisidec",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\armeabi-v7a\\libvorbisidec.a"
+    },
+    "SDL2_image-release-armeabi-v7a": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003darmeabi-v7a",
+        "NDK_ALL_ABIS\u003darmeabi-v7a",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/armeabi-v7a/libSDL2_image.so"
+      ],
+      "toolchain": "toolchain-armeabi-v7a",
+      "abi": "armeabi-v7a",
+      "artifactName": "SDL2_image",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\armeabi-v7a\\libSDL2_image.so"
+    },
+    "png-release-armeabi-v7a": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003darmeabi-v7a",
+        "NDK_ALL_ABIS\u003darmeabi-v7a",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/armeabi-v7a/libpng.a"
+      ],
+      "toolchain": "toolchain-armeabi-v7a",
+      "abi": "armeabi-v7a",
+      "artifactName": "png",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\armeabi-v7a\\libpng.a"
+    },
+    "cpufeatures-release-armeabi-v7a": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003darmeabi-v7a",
+        "NDK_ALL_ABIS\u003darmeabi-v7a",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/armeabi-v7a/libcpufeatures.a"
+      ],
+      "toolchain": "toolchain-armeabi-v7a",
+      "abi": "armeabi-v7a",
+      "artifactName": "cpufeatures",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\armeabi-v7a\\libcpufeatures.a"
+    },
+    "jpeg-release-armeabi-v7a": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003darmeabi-v7a",
+        "NDK_ALL_ABIS\u003darmeabi-v7a",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/armeabi-v7a/libjpeg.a"
+      ],
+      "toolchain": "toolchain-armeabi-v7a",
+      "abi": "armeabi-v7a",
+      "artifactName": "jpeg",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\armeabi-v7a\\libjpeg.a"
+    },
+    "FLAC-release-armeabi-v7a": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003darmeabi-v7a",
+        "NDK_ALL_ABIS\u003darmeabi-v7a",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/armeabi-v7a/libFLAC.a"
+      ],
+      "toolchain": "toolchain-armeabi-v7a",
+      "abi": "armeabi-v7a",
+      "artifactName": "FLAC",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\armeabi-v7a\\libFLAC.a"
+    },
+    "SDL2_ttf-release-armeabi-v7a": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003darmeabi-v7a",
+        "NDK_ALL_ABIS\u003darmeabi-v7a",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/armeabi-v7a/libSDL2_ttf.so"
+      ],
+      "toolchain": "toolchain-armeabi-v7a",
+      "abi": "armeabi-v7a",
+      "artifactName": "SDL2_ttf",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\armeabi-v7a\\libSDL2_ttf.so"
+    },
+    "modplug-release-armeabi-v7a": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003darmeabi-v7a",
+        "NDK_ALL_ABIS\u003darmeabi-v7a",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/armeabi-v7a/libmodplug.a"
+      ],
+      "toolchain": "toolchain-armeabi-v7a",
+      "abi": "armeabi-v7a",
+      "artifactName": "modplug",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\armeabi-v7a\\libmodplug.a"
+    },
+    "mpg123-release-armeabi-v7a": {
+      "buildCommandComponents": [
+        "D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd",
+        "NDK_PROJECT_PATH\u003dnull",
+        "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+        "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+        "APP_ABI\u003darmeabi-v7a",
+        "NDK_ALL_ABIS\u003darmeabi-v7a",
+        "NDK_DEBUG\u003d0",
+        "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+        "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+        "APP_PLATFORM\u003dandroid-16",
+        "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj/local/armeabi-v7a/libmpg123.so"
+      ],
+      "toolchain": "toolchain-armeabi-v7a",
+      "abi": "armeabi-v7a",
+      "artifactName": "mpg123",
+      "output": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\armeabi-v7a\\libmpg123.so"
+    }
+  },
+  "toolchains": {
+    "toolchain-armeabi-v7a": {
+      "cCompilerExecutable": "D:\\AndroidSDK\\ndk\\21.4.7075529\\build\\..\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "cppCompilerExecutable": "D:\\AndroidSDK\\ndk\\21.4.7075529\\build\\..\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe"
+    }
+  },
+  "cFileExtensions": [
+    "S",
+    "c"
+  ],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}
