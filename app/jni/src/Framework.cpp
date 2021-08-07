@@ -1,0 +1,113 @@
+//
+// Created by lenovo on 2021-08-07.
+//
+
+#include "Framework.h"
+#include <android/log.h>
+#include <SDL.h>
+#include <SDL_image.h>
+#include <SDL_ttf.h>
+#include <chrono>
+
+using namespace std;
+
+Framework::Framework()
+{
+    if(SDL_Init(SDL_INIT_VIDEO)<0)
+    {
+        __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
+                            "SDL could not initialize SDL Error: %s\n", SDL_GetError());
+    }
+    else
+    {
+        if( !SDL_SetHint( SDL_HINT_RENDER_SCALE_QUALITY, "1" ) )
+        {
+            __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
+                                "Warning: Linear texture filtering not enabled!");
+        }
+    }
+    SDL_DisplayMode displayMode;
+
+    screenRect = new SDL_Rect();
+    if( SDL_GetCurrentDisplayMode( 0, &displayMode ) == 0 )
+    {
+        screenRect->w = displayMode.w;
+        screenRect->h = displayMode.h;
+    }
+
+    //Create window
+    window = SDL_CreateWindow( "SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
+                                screenRect->w, screenRect->h, SDL_WINDOW_SHOWN );
+    if( window == NULL )
+    {
+        __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
+                            "Window could not be created! SDL Error: %s\n", SDL_GetError());
+    }
+    else
+    {
+        renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+        //추후 VSYNC를 위해 SDL_RENDERER_PRESENTVSYNC 옵션 추가 가능
+        if(renderer == NULL)
+        {
+            __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
+                                "Renderer could not be created! SDL Error: %s\n", SDL_GetError());
+        }
+        else
+        {
+            SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+
+            int imgFlags = IMG_INIT_PNG;
+
+            if( !( IMG_Init( imgFlags ) & imgFlags ) )
+            {
+                __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
+                                    "SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError());
+            }
+
+            if( TTF_Init() == -1 )
+            {
+                __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
+                                    "SDL_ttf could not initialize! SDL_ttf Error: %s\n", TTF_GetError());
+            }
+        }
+    }
+}
+
+Framework::~Framework()
+{
+    SDL_DestroyRenderer(renderer);
+    renderer = nullptr;
+    SDL_DestroyWindow(window);
+    window = nullptr;
+
+    TTF_Quit();
+    IMG_Quit();
+    SDL_Quit();
+}
+
+void Framework::handleEvent()
+{
+}
+
+void Framework::update(float deltaTime)
+{
+}
+
+void Framework::render()
+{
+}
+
+void Framework::startGame()
+{
+    float deltaTime = 0.0f;
+    while(1)
+    {
+        chrono::system_clock::time_point start = chrono::system_clock::now();
+        handleEvent();
+        update(deltaTime);
+        render();
+        chrono::duration<double> sec = chrono::system_clock::now() - start;
+        accTime += sec.count();
+        deltaTime = sec.count();
+    }
+}
