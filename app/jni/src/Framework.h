@@ -19,10 +19,15 @@ public:
     void update(float deltaTime);
     void render();
     void startGame();
+
+public:
+    SDL_Renderer* getRenderer(){return renderer;}
 private:
     SDL_Window* window = nullptr;
     SDL_Renderer* renderer = nullptr;
     SDL_Rect* screenRect;
     //Level* curLevel;
     float accTime = 0.0f;
+public:
+    static Framework* game;
 };

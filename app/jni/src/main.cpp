@@ -8,12 +8,16 @@ and may not be redistributed without written permission.*/
 #include <android/log.h>
 #include "Framework.h"
 
+Framework* Framework::game = nullptr;
+
 int main( int argc, char* args[] )
 {
 
-    Framework game;
+    Framework::game = new Framework();
+    SDL_Surface* temp;
+    Framework::game->startGame();
 
-    game.startGame();
+    delete Framework::game;
 
 	return 0;
 }
