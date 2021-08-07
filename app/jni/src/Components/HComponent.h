@@ -1,8 +1,7 @@
 #pragma once
 
 #include <string>
-
-//class HActor;
+#include "../Actors/HActor.h"
 
 class HComponent
 {
@@ -12,27 +11,27 @@ public:
 
 public:
     virtual void update(float deltaTime) = 0;
-    //HActor* getOwner()
-    //{
-        //return owner;
-    //}
+    HActor* getOwner()
+    {
+        return owner;
+    }
 
 public:
     void setComponentTickable(bool isTickable)
     {
         tickable = isTickable;
     }
-    bool getComponentTickable()
+    const bool getComponentTickable()
     {
         return tickable;
     }
-    std::string getComponentTag()
+    const std::string getComponentTag()
     {
         return componentTag;
     }
 
 protected:
-    //HActor* owner;
+    HActor* owner;
     std::string componentTag;
     bool tickable;
 };

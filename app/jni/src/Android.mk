@@ -12,7 +12,8 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/$(SDL_PATH)/include
 LOCAL_SRC_FILES := main.cpp \
 Framework.cpp\
 Components/HSceneComponent.cpp\
-Components/HPrimitveComponent.cpp
+Components/HPrimitveComponent.cpp\
+Actors/HActor.cpp
 
 
 LOCAL_SHARED_LIBRARIES := SDL2 \

@@ -13,11 +13,11 @@ public:
     void componentMoveTo(std::pair<int, int>& location);
     void update(float deltaTime) override;
 public:
-    std::pair<int, int> getComponentWorldLocation();
-    float getComponentWorldRotation();
-    std::pair<int, int> getComponentLocalLocation();
-    float getComponentLocalRotation();
-    HSceneComponent* getParentComponent();
+    const std::pair<int, int> getComponentWorldLocation();
+    const float getComponentWorldRotation();
+    const std::pair<int, int> getComponentLocalLocation();
+    const float getComponentLocalRotation();
+    const HSceneComponent* getParentComponent();
     void attachTo();
 
 protected:

@@ -16,7 +16,7 @@ public:
 
 public:
     void setVisibility(bool isVisible);
-    bool getVisibility();
+    const bool getVisibility();
 
 protected:
     bool visibility;

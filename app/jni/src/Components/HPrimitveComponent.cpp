@@ -29,7 +29,7 @@ void HPrimitveComponent::setVisibility(bool isVisible)
     visibility = isVisible;
 }
 
-bool HPrimitveComponent::getVisibility()
+const bool HPrimitveComponent::getVisibility()
 {
     return visibility;
 }

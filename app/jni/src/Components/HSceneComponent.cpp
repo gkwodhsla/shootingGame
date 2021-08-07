@@ -25,27 +25,27 @@ void HSceneComponent::update(float deltaTime)
 
 }
 
-std::pair<int, int> HSceneComponent::getComponentWorldLocation()
+const std::pair<int, int> HSceneComponent::getComponentWorldLocation()
 {
     return std::make_pair(-99999, -99999);
 }
 
-float HSceneComponent::getComponentWorldRotation()
+const float HSceneComponent::getComponentWorldRotation()
 {
     return 0;
 }
 
-std::pair<int, int> HSceneComponent::getComponentLocalLocation()
+const std::pair<int, int> HSceneComponent::getComponentLocalLocation()
 {
     return std::make_pair(-99999, -99999);
 }
 
-float HSceneComponent::getComponentLocalRotation()
+const float HSceneComponent::getComponentLocalRotation()
 {
     return 0;
 }
 
-HSceneComponent *HSceneComponent::getParentComponent()
+const HSceneComponent *HSceneComponent::getParentComponent()
 {
     return NULL;
 }
