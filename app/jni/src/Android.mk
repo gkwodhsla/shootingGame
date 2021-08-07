@@ -10,7 +10,10 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/$(SDL_PATH)/include
 
 # Add your application source files here...
 LOCAL_SRC_FILES := main.cpp \
-Framework.cpp
+Framework.cpp\
+Components/HSceneComponent.cpp\
+Components/HPrimitveComponent.cpp
+
 
 LOCAL_SHARED_LIBRARIES := SDL2 \
 SDL2_image \
