@@ -47,7 +47,8 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__bit_reference \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\climits \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\limits.h \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__split_buffer
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__split_buffer \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Framework.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Components\HSceneComponent.h:
 
@@ -144,3 +145,5 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cli
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\limits.h:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__split_buffer:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Framework.h:

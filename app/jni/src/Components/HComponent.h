@@ -33,5 +33,5 @@ public:
 protected:
     HActor* owner;
     std::string componentTag;
-    bool tickable;
+    bool tickable = true;
 };

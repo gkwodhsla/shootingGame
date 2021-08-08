@@ -7,17 +7,13 @@ and may not be redistributed without written permission.*/
 #include <SDL_ttf.h>
 #include <android/log.h>
 #include "Framework.h"
-
-Framework* Framework::game = nullptr;
+#include "Components/ImageComponent.h"
 
 int main( int argc, char* args[] )
 {
 
-    Framework::game = new Framework();
-    SDL_Surface* temp;
-    Framework::game->startGame();
+    Framework game;
 
-    delete Framework::game;
-
-	return 0;
+    game.startGame();
+    return 0;
 }

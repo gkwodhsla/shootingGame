@@ -6,7 +6,7 @@
 
 HPrimitiveComponent::HPrimitiveComponent()
 {
-
+    componentTag = "HPrimitiveComponent";
 }
 
 HPrimitiveComponent::~HPrimitiveComponent()
@@ -19,9 +19,12 @@ void HPrimitiveComponent::update(float deltaTime)
 
 }
 
-void HPrimitiveComponent::render(SDL_Renderer *renderer)
+void HPrimitiveComponent::render()
 {
-
+    for(auto&element:children)
+    {
+        element->render();
+    }
 }
 
 void HPrimitiveComponent::setVisibility(bool isVisible)

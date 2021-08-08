@@ -3,6 +3,7 @@
 #include <utility>
 
 class HSceneComponent;
+class SDL_Renderer;
 
 class HActor
 {
@@ -13,6 +14,8 @@ public:
 public:
     void moveTo(const std::pair<int, int>& loc);
     void rotateActor(float degree);
+    void render();
+    virtual void update();
 
 public:
     void setVisibility(bool isVisible);
@@ -25,7 +28,7 @@ public:
     void setActorTickable(bool isTickable);
     const bool getActorTickable();
 
-private:
+protected:
     HSceneComponent* rootComponent;
     std::pair<float, float> dirVec;
     bool visibility;

@@ -7,6 +7,7 @@
 class SDL_Window;
 class SDL_Renderer;
 class SDL_Rect;
+class BackgroundActor;
 
 class Framework
 {
@@ -20,14 +21,13 @@ public:
     void render();
     void startGame();
 
-public:
-    SDL_Renderer* getRenderer(){return renderer;}
 private:
     SDL_Window* window = nullptr;
-    SDL_Renderer* renderer = nullptr;
     SDL_Rect* screenRect;
     //Level* curLevel;
     float accTime = 0.0f;
 public:
-    static Framework* game;
+    static SDL_Renderer* renderer;
+    BackgroundActor* bg;
 };
+

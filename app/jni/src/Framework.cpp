@@ -8,8 +8,11 @@
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 #include <chrono>
+#include "Actors/BackgroundActor.h"
 
 using namespace std;
+
+SDL_Renderer* Framework::renderer = nullptr;
 
 Framework::Framework()
 {
@@ -71,6 +74,7 @@ Framework::Framework()
             }
         }
     }
+    bg = new BackgroundActor();
 }
 
 Framework::~Framework()
@@ -79,6 +83,8 @@ Framework::~Framework()
     renderer = nullptr;
     SDL_DestroyWindow(window);
     window = nullptr;
+
+    delete bg;
 
     TTF_Quit();
     IMG_Quit();
@@ -93,8 +99,13 @@ void Framework::update(float deltaTime)
 {
 }
 
+//BackgroundActor myBG;
 void Framework::render()
 {
+    SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+    SDL_RenderClear(renderer);
+    bg->render();
+    SDL_RenderPresent(renderer);
 }
 
 void Framework::startGame()

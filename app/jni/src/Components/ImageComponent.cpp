@@ -10,8 +10,10 @@
 
 ImageComponent::ImageComponent(std::string path, const std::pair<int, int>& loc)
 {
+    img = nullptr;
     loadImage(path);
     imgRect = new SDL_Rect();
+    clipRect = new SDL_Rect();
     int w = 0, h = 0;
     SDL_QueryTexture(img, NULL, NULL, &w, &h);
     imgRect->w = w;
@@ -30,6 +32,8 @@ ImageComponent::~ImageComponent()
     img = nullptr;
     delete imgRect;
     imgRect = nullptr;
+    delete clipRect;
+    clipRect = nullptr;
 }
 
 const std::pair<int, int> ImageComponent::getImageSize()
@@ -48,16 +52,43 @@ void ImageComponent::setImageColor(__uint8_t r, __uint8_t g, __uint8_t b)
     SDL_SetTextureColorMod(img, r, g, b);
 }
 
-void ImageComponent::render(SDL_Renderer *renderer)
+void ImageComponent::render()
 {
-    SDL_RenderCopyEx(renderer, img, NULL, imgRect,
-                     localRotation, NULL, SDL_FLIP_NONE);
+    if(!isEnableClipDraw)
+    {
+        SDL_RenderCopyEx(Framework::renderer, img, NULL, imgRect,
+                         localRotation, NULL, SDL_FLIP_NONE);
+    }
+    else
+    {
+        SDL_RenderCopyEx(Framework::renderer, img, clipRect, imgRect,
+                         localRotation, NULL, SDL_FLIP_NONE);
+    }
+    for(auto&element:children)
+    {
+        element->render();
+    }
 }
 
 void ImageComponent::update(float deltaTime)
 {
-    //HPrimitiveComponent::update(deltaTime);
+
 }
+
+void ImageComponent::setClipDraw(bool isClipDraw)
+{
+    isEnableClipDraw = isClipDraw;
+}
+
+void ImageComponent::setClipRect(int x, int y, int w, int h)
+{
+    clipRect->x = x;
+    clipRect->y = y;
+    clipRect->w = w;
+    clipRect->h = h;
+
+}
+
 
 void ImageComponent::loadImage(std::string path)
 {
@@ -69,7 +100,7 @@ void ImageComponent::loadImage(std::string path)
     }
     else
     {
-        img = SDL_CreateTextureFromSurface(Framework::game->getRenderer(), loadedSurface);
+        img = SDL_CreateTextureFromSurface(Framework::renderer, loadedSurface);
         if(!img)
         {
             __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
@@ -77,6 +108,8 @@ void ImageComponent::loadImage(std::string path)
         }
         SDL_FreeSurface(loadedSurface);
     }
+    __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
+                        "Image load success");
 }
 
 

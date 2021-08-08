@@ -3,21 +3,24 @@
 //
 
 #include "HSceneComponent.h"
+#include "../Framework.h"
 
-HSceneComponent::HSceneComponent() {
+HSceneComponent::HSceneComponent()
+{
+    componentTag = "HSceneComponent";
+}
+
+HSceneComponent::~HSceneComponent()
+{
 
 }
 
-HSceneComponent::~HSceneComponent() {
-
-}
-
-void HSceneComponent::componentRotation(float degree) {
-
-}
-
-void HSceneComponent::componentMoveTo(std::pair<int, int> &location) {
-
+void HSceneComponent::render()
+{
+    for(auto&element:children)
+    {
+        element->render();
+    }
 }
 
 void HSceneComponent::update(float deltaTime)
@@ -35,22 +38,34 @@ const float HSceneComponent::getComponentWorldRotation()
     return 0;
 }
 
+void HSceneComponent::setComponentLocalLocation(const std::pair<int, int>& loc)
+{
+    localLocation = loc;
+}
+
+void HSceneComponent::setComponentLocalRotation(const float degree)
+{
+    localRotation = degree;
+}
+
 const std::pair<int, int> HSceneComponent::getComponentLocalLocation()
 {
-    return std::make_pair(-99999, -99999);
+    return localLocation;
 }
 
 const float HSceneComponent::getComponentLocalRotation()
 {
-    return 0;
+    return localRotation;
 }
 
 const HSceneComponent *HSceneComponent::getParentComponent()
 {
-    return NULL;
+    return parent;
 }
 
-void HSceneComponent::attachTo()
+void HSceneComponent::attachTo(HSceneComponent* component)
 {
-
+    this->parent = component;
+    component->children.emplace_back(this);
 }
+

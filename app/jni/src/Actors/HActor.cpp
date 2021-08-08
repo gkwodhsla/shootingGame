@@ -64,3 +64,13 @@ const bool HActor::getActorTickable()
 {
     return 0;
 }
+
+void HActor::render()
+{
+    rootComponent->render();
+}
+
+void HActor::update()
+{
+
+}

@@ -12,7 +12,7 @@ public:
 
 public:
     virtual void update(float deltaTime) override;
-    virtual void render(SDL_Renderer*);
+    virtual void render() override;
 
 public:
     void setVisibility(bool isVisible);

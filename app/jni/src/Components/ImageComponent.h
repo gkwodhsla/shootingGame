@@ -19,14 +19,19 @@ public:
     const std::pair<int, int> getImageSize();
     void setAlpha(__uint8_t alpha);
     void setImageColor(__uint8_t r, __uint8_t g, __uint8_t b);
-    void render(SDL_Renderer* renderer) override;
+    void render() override;
     void update(float deltaTime) override;
 
+public:
+    void setClipDraw(bool isClipDraw);
+    void setClipRect(int x, int y, int w, int h);
 private:
     void loadImage(std::string path);
 
 private:
     SDL_Texture* img = nullptr;
     SDL_Rect* imgRect = nullptr;
+    SDL_Rect* clipRect = nullptr;
     __uint8_t alphaValue = 255;
+    bool isEnableClipDraw = false;
 };
