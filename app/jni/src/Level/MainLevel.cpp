@@ -1,10 +1,11 @@
 #include "MainLevel.h"
 
 #include "../Actors/HActor.h"
+#include "../Actors/BackgroundActor.h"
 
 MainLevel::MainLevel()
 {
-
+    enter();
 }
 
 MainLevel::~MainLevel()
@@ -35,6 +36,8 @@ void MainLevel::render()
 
 void MainLevel::enter()
 {
+    BackgroundActor* backgroundActor = new BackgroundActor();
+    addNewActorToLevel(backgroundActor);
 }
 
 void MainLevel::exit()

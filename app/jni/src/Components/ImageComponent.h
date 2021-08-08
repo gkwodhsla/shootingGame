@@ -7,12 +7,13 @@
 class SDL_Texture;
 class SDL_Rect;
 class SDL_Renderer;
+class HActor;
 
 class ImageComponent : public HPrimitiveComponent
 {
 public:
     ImageComponent() = default;
-    ImageComponent(std::string path, const std::pair<int, int>& loc);
+    ImageComponent(const std::string& path, const std::pair<int, int>& loc, HActor* owner);
     virtual ~ImageComponent();
 
 public:

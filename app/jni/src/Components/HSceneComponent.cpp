@@ -4,6 +4,7 @@
 
 #include "HSceneComponent.h"
 #include "../Framework.h"
+#include "../Actors/HActor.h"
 
 HSceneComponent::HSceneComponent()
 {
@@ -46,6 +47,11 @@ void HSceneComponent::setComponentLocalLocation(const std::pair<int, int>& loc)
 void HSceneComponent::setComponentLocalRotation(const float degree)
 {
     localRotation = degree;
+}
+
+void HSceneComponent::setOwner(HActor *owner)
+{
+    this->owner = owner;
 }
 
 const std::pair<int, int> HSceneComponent::getComponentLocalLocation()

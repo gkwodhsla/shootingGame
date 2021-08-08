@@ -16,7 +16,7 @@ public:
 
 public:
     void setVisibility(bool isVisible);
-    void setScale(std::pair<float, float>& scale);
+    void setScale(const std::pair<float, float>& scale);
     const std::pair<float, float> getScale();
     const bool getVisibility();
 

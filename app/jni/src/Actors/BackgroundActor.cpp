@@ -5,20 +5,27 @@
 #include "BackgroundActor.h"
 #include "../Components/HSceneComponent.h"
 #include "../Components/ImageComponent.h"
+#include <utility>
 
 BackgroundActor::BackgroundActor()
 {
     rootComponent = new HSceneComponent();
     rootComponent->setComponentLocalLocation(std::make_pair(0, 0));
     rootComponent->setComponentLocalRotation(0);
+    rootComponent->setOwner(this);
 
-    backgroundImage = new ImageComponent("image/background/1.png", std::make_pair(0, 0));
+    backgroundImage = new ImageComponent("image/background/4.png", std::make_pair(0, 0), this);
     backgroundImage->attachTo(rootComponent);
+    backgroundImage->setScale(std::make_pair(2.0f, 2.0f));
 }
 
 BackgroundActor::~BackgroundActor()
 {
+    delete rootComponent;
+    rootComponent = nullptr;
 
+    delete backgroundImage;
+    backgroundImage = nullptr;
 }
 
 void BackgroundActor::render()

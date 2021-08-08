@@ -7,8 +7,9 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <android/log.h>
+#include "../Actors/HActor.h"
 
-ImageComponent::ImageComponent(std::string path, const std::pair<int, int>& loc)
+ImageComponent::ImageComponent(const std::string& path, const std::pair<int, int>& loc, HActor* owner)
 {
     img = nullptr;
     loadImage(path);
@@ -22,9 +23,11 @@ ImageComponent::ImageComponent(std::string path, const std::pair<int, int>& loc)
     localLocation.second = loc.second;
     imgRect->x = localLocation.first;
     imgRect->y = localLocation.second;
+
     localRotation = 0.0f;
     SDL_SetTextureBlendMode(img, SDL_BLENDMODE_BLEND);
     SDL_SetTextureAlphaMod(img, alphaValue);
+    setOwner(owner);
 }
 ImageComponent::~ImageComponent()
 {
@@ -38,7 +41,7 @@ ImageComponent::~ImageComponent()
 
 const std::pair<int, int> ImageComponent::getImageSize()
 {
-    return scale;
+    return std::make_pair(imgRect->w, imgRect->h);
 }
 
 void ImageComponent::setAlpha(__uint8_t alpha)
@@ -54,14 +57,20 @@ void ImageComponent::setImageColor(__uint8_t r, __uint8_t g, __uint8_t b)
 
 void ImageComponent::render()
 {
+    SDL_Rect dstRect;
+    dstRect.x = imgRect->x;
+    dstRect.y = imgRect->y;
+    dstRect.w = imgRect->w * scale.first;
+    dstRect.h = imgRect->h * scale.second;
+
     if(!isEnableClipDraw)
     {
-        SDL_RenderCopyEx(Framework::renderer, img, NULL, imgRect,
+        SDL_RenderCopyEx(Framework::renderer, img, NULL, &dstRect,
                          localRotation, NULL, SDL_FLIP_NONE);
     }
     else
     {
-        SDL_RenderCopyEx(Framework::renderer, img, clipRect, imgRect,
+        SDL_RenderCopyEx(Framework::renderer, img, clipRect, &dstRect,
                          localRotation, NULL, SDL_FLIP_NONE);
     }
     for(auto&element:children)

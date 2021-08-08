@@ -37,7 +37,8 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\climits \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\limits.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__split_buffer \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\HActor.h
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\HActor.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\BackgroundActor.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\MainLevel.h:
 
@@ -114,3 +115,5 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\lim
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__split_buffer:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\HActor.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\BackgroundActor.h:

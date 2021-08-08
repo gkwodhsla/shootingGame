@@ -42,6 +42,7 @@ Framework::Framework()
     //Create window
     window = SDL_CreateWindow( "SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
                                 screenRect->w, screenRect->h, SDL_WINDOW_SHOWN );
+
     if( window == NULL )
     {
         __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
@@ -86,6 +87,8 @@ Framework::~Framework()
     SDL_DestroyWindow(window);
     window = nullptr;
 
+    delete screenRect;
+    screenRect = nullptr;
     delete curLevel;
     curLevel = nullptr;
 

@@ -2,6 +2,9 @@
 #include "HComponent.h"
 #include <utility>
 #include <vector>
+
+class HActor;
+
 class HSceneComponent :public HComponent
 {
 public:
@@ -18,10 +21,12 @@ public:
     const float getComponentWorldRotation();
     const std::pair<int, int> getComponentLocalLocation();
     const float getComponentLocalRotation();
+    const HSceneComponent* getParentComponent();
     void setComponentLocalLocation(const std::pair<int, int>& loc);
     void setComponentLocalRotation(const float degree);
+    void setOwner(HActor* owner);
 
-    const HSceneComponent* getParentComponent();
+public:
     void attachTo(HSceneComponent* component);
 
 protected:
