@@ -16,11 +16,11 @@ public:
 
 public:
     void setVisibility(bool isVisible);
-    void setScale(const std::pair<float, float>& scale);
-    const std::pair<float, float> getScale();
+    void setScale(const std::pair<int, int>& scale);
+    const std::pair<int, int> getScale();
     const bool getVisibility();
 
 protected:
     bool visibility;
-    std::pair<float, float> scale = std::make_pair(1.0f, 1.0f);
+    std::pair<int, int> scale = std::make_pair(1.0f, 1.0f);
 };

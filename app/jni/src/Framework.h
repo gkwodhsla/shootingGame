@@ -23,10 +23,12 @@ public:
 
 private:
     SDL_Window* window = nullptr;
-    SDL_Rect* screenRect;
     HLevelBase* curLevel;
     float accTime = 0.0f;
 public:
     static SDL_Renderer* renderer;
+    static SDL_Rect* screenRect;
+    static int rendererWidth;
+    static int rendererHeight;
 };
 

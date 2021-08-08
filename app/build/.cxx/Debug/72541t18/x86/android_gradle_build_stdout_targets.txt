@@ -3,8 +3,6 @@ make: Nothing to be done for 'SDL2_image'.
 make: Nothing to be done for 'SDL2_mixer'.
 make: Nothing to be done for 'SDL2_ttf'.
 make: Nothing to be done for 'hidapi'.
-[x86] Compile++      : main <= main.cpp
-[x86] Compile++      : main <= ImageComponent.cpp
 [x86] Compile++      : main <= BackgroundActor.cpp
 [x86] SharedLibrary  : libmain.so
 make: Nothing to be done for 'mpg123'.

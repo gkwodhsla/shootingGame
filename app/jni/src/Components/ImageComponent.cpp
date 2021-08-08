@@ -19,6 +19,8 @@ ImageComponent::ImageComponent(const std::string& path, const std::pair<int, int
     SDL_QueryTexture(img, NULL, NULL, &w, &h);
     imgRect->w = w;
     imgRect->h = h;
+    scale.first = w;
+    scale.second = h;
     localLocation.first = loc.first;
     localLocation.second = loc.second;
     imgRect->x = localLocation.first;
@@ -55,23 +57,28 @@ void ImageComponent::setImageColor(__uint8_t r, __uint8_t g, __uint8_t b)
     SDL_SetTextureColorMod(img, r, g, b);
 }
 
+void ImageComponent::setImageFlip(SDL_RendererFlip flipState)
+{
+    flip = flipState;
+}
+
 void ImageComponent::render()
 {
     SDL_Rect dstRect;
-    dstRect.x = imgRect->x;
-    dstRect.y = imgRect->y;
-    dstRect.w = imgRect->w * scale.first;
-    dstRect.h = imgRect->h * scale.second;
+    dstRect.x = localLocation.first;//imgRect->x;
+    dstRect.y = localLocation.second;//imgRect->y;
+    dstRect.w = scale.first;
+    dstRect.h = scale.second;
 
     if(!isEnableClipDraw)
     {
         SDL_RenderCopyEx(Framework::renderer, img, NULL, &dstRect,
-                         localRotation, NULL, SDL_FLIP_NONE);
+                         localRotation, NULL, flip);
     }
     else
     {
         SDL_RenderCopyEx(Framework::renderer, img, clipRect, &dstRect,
-                         localRotation, NULL, SDL_FLIP_NONE);
+                         localRotation, NULL, flip);
     }
     for(auto&element:children)
     {
@@ -89,6 +96,14 @@ void ImageComponent::changeImage(const std::string &path)
     SDL_DestroyTexture(img);
     img = nullptr;
     loadImage(path);
+    int w = 0, h = 0;
+    SDL_QueryTexture(img, NULL, NULL, &w, &h);
+    imgRect->w = w;
+    imgRect->h = h;
+    imgRect->x = localLocation.first;
+    imgRect->y = localLocation.second;
+    SDL_SetTextureBlendMode(img, SDL_BLENDMODE_BLEND);
+    SDL_SetTextureAlphaMod(img, alphaValue);
 }
 
 void ImageComponent::setClipDraw(bool isClipDraw)
@@ -102,7 +117,6 @@ void ImageComponent::setClipRect(int x, int y, int w, int h)
     clipRect->y = y;
     clipRect->w = w;
     clipRect->h = h;
-
 }
 
 

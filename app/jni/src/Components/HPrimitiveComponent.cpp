@@ -32,11 +32,11 @@ void HPrimitiveComponent::setVisibility(bool isVisible)
     visibility = isVisible;
 }
 
-void HPrimitiveComponent::setScale(const std::pair<float, float>& scale)
+void HPrimitiveComponent::setScale(const std::pair<int, int>& scale)
 {
     this->scale = scale;
 }
-const std::pair<float, float> HPrimitiveComponent::getScale()
+const std::pair<int, int> HPrimitiveComponent::getScale()
 {
     return scale;
 }

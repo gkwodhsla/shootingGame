@@ -42,5 +42,9 @@ void MainLevel::enter()
 
 void MainLevel::exit()
 {
-
+    for(auto&actor : actors)
+    {
+        delete actor;
+        actor = nullptr;
+    }
 }

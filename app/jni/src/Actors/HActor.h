@@ -14,7 +14,7 @@ public:
 public:
     void moveTo(const std::pair<int, int>& loc);
     void rotateActor(float degree);
-    void render();
+    virtual void render();
     virtual void update(float deltaTime);
 
 public:

@@ -14,6 +14,9 @@
 using namespace std;
 
 SDL_Renderer* Framework::renderer = nullptr;
+SDL_Rect* Framework::screenRect = nullptr;
+int Framework::rendererWidth = 0;
+int Framework::rendererHeight = 0;
 
 Framework::Framework()
 {
@@ -76,8 +79,15 @@ Framework::Framework()
             }
         }
     }
+    int getW;
+    int getH;
+    SDL_GetRendererOutputSize(Framework::renderer,
+                              &getW, &getH);
+    rendererWidth = getW;
+    rendererHeight = getH;
 
     curLevel = new MainLevel();
+
 }
 
 Framework::~Framework()
