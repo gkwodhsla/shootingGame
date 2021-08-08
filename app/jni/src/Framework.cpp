@@ -3,12 +3,13 @@
 //
 
 #include "Framework.h"
+#include "Level/HLevelBase.h"
+#include "Level/MainLevel.h"
 #include <android/log.h>
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 #include <chrono>
-#include "Actors/BackgroundActor.h"
 
 using namespace std;
 
@@ -74,7 +75,8 @@ Framework::Framework()
             }
         }
     }
-    bg = new BackgroundActor();
+
+    curLevel = new MainLevel();
 }
 
 Framework::~Framework()
@@ -84,7 +86,8 @@ Framework::~Framework()
     SDL_DestroyWindow(window);
     window = nullptr;
 
-    delete bg;
+    delete curLevel;
+    curLevel = nullptr;
 
     TTF_Quit();
     IMG_Quit();
@@ -93,10 +96,12 @@ Framework::~Framework()
 
 void Framework::handleEvent()
 {
+    curLevel->handleEvent();
 }
 
 void Framework::update(float deltaTime)
 {
+    curLevel->update(deltaTime);
 }
 
 //BackgroundActor myBG;
@@ -104,7 +109,7 @@ void Framework::render()
 {
     SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
     SDL_RenderClear(renderer);
-    bg->render();
+    curLevel->render();
     SDL_RenderPresent(renderer);
 }
 

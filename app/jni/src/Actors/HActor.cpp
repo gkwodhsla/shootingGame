@@ -70,7 +70,7 @@ void HActor::render()
     rootComponent->render();
 }
 
-void HActor::update()
+void HActor::update(float deltaTime)
 {
 
 }

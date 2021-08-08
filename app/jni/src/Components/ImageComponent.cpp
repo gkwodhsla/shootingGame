@@ -75,6 +75,13 @@ void ImageComponent::update(float deltaTime)
 
 }
 
+void ImageComponent::changeImage(const std::string &path)
+{
+    SDL_DestroyTexture(img);
+    img = nullptr;
+    loadImage(path);
+}
+
 void ImageComponent::setClipDraw(bool isClipDraw)
 {
     isEnableClipDraw = isClipDraw;
@@ -90,7 +97,7 @@ void ImageComponent::setClipRect(int x, int y, int w, int h)
 }
 
 
-void ImageComponent::loadImage(std::string path)
+void ImageComponent::loadImage(const std::string& path)
 {
     SDL_Surface* loadedSurface = IMG_Load(path.c_str());
     if(!loadedSurface)

@@ -15,7 +15,8 @@ Components/HSceneComponent.cpp\
 Components/HPrimitiveComponent.cpp\
 Components/ImageComponent.cpp\
 Actors/HActor.cpp\
-Actors/BackgroundActor.cpp
+Actors/BackgroundActor.cpp\
+Level/MainLevel.cpp
 
 
 LOCAL_SHARED_LIBRARIES := SDL2 \

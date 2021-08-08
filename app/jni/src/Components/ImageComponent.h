@@ -21,12 +21,13 @@ public:
     void setImageColor(__uint8_t r, __uint8_t g, __uint8_t b);
     void render() override;
     void update(float deltaTime) override;
+    void changeImage(const std::string& path);
 
 public:
     void setClipDraw(bool isClipDraw);
     void setClipRect(int x, int y, int w, int h);
 private:
-    void loadImage(std::string path);
+    void loadImage(const std::string& path);
 
 private:
     SDL_Texture* img = nullptr;

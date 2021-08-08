@@ -7,7 +7,7 @@
 class SDL_Window;
 class SDL_Renderer;
 class SDL_Rect;
-class BackgroundActor;
+class HLevelBase;
 
 class Framework
 {
@@ -24,10 +24,9 @@ public:
 private:
     SDL_Window* window = nullptr;
     SDL_Rect* screenRect;
-    //Level* curLevel;
+    HLevelBase* curLevel;
     float accTime = 0.0f;
 public:
     static SDL_Renderer* renderer;
-    BackgroundActor* bg;
 };
 

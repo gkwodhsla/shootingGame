@@ -12,8 +12,8 @@ BackgroundActor::BackgroundActor()
     rootComponent->setComponentLocalLocation(std::make_pair(0, 0));
     rootComponent->setComponentLocalRotation(0);
 
-    ImageComponent* newImgComp = new ImageComponent("image/background/1.png", std::make_pair(0, 0));
-    newImgComp->attachTo(rootComponent);
+    backgroundImage = new ImageComponent("image/background/1.png", std::make_pair(0, 0));
+    backgroundImage->attachTo(rootComponent);
 }
 
 BackgroundActor::~BackgroundActor()
@@ -29,4 +29,9 @@ void BackgroundActor::render()
 void BackgroundActor::update()
 {
 
+}
+
+void BackgroundActor::changeBackgroundImage(const std::string& path)
+{
+    backgroundImage->changeImage(path);
 }
