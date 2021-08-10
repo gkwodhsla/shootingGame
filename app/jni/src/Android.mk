@@ -11,11 +11,14 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/$(SDL_PATH)/include
 # Add your application source files here...
 LOCAL_SRC_FILES := main.cpp \
 Framework.cpp\
+HPlayerController.cpp\
 Components/HSceneComponent.cpp\
 Components/HPrimitiveComponent.cpp\
 Components/ImageComponent.cpp\
+Components/MovementComponent.cpp\
 Actors/HActor.cpp\
 Actors/BackgroundActor.cpp\
+Actors/HPawn.cpp\
 Level/MainLevel.cpp
 
 
