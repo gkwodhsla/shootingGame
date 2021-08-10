@@ -5,39 +5,29 @@
 #include "HActor.h"
 #include "../Components/HSceneComponent.h"
 
-HActor::HActor()
-{
-
-}
-
-HActor::~HActor()
-{
-
-}
-
 void HActor::moveTo(const std::pair<int, int> &loc)
 {
-
+    rootComponent->setComponentLocalLocation(loc);
 }
 
 void HActor::rotateActor(float degree)
 {
-
+    rootComponent->setComponentLocalRotation(degree);
 }
 
 void HActor::setVisibility(bool isVisible)
 {
-
+    visibility = isVisible;
 }
 
 const bool HActor::getVisibility()
 {
-    return 0;
+    return visibility;
 }
 
 void HActor::setRootComponent(HSceneComponent *component)
 {
-
+    rootComponent = component;
 }
 
 const std::pair<int, int> HActor::getActorDirectionalVector()
@@ -57,12 +47,12 @@ const float HActor::getActorWorldRotation()
 
 void HActor::setActorTickable(bool isTickable)
 {
-
+    tickable = isTickable;
 }
 
 const bool HActor::getActorTickable()
 {
-    return 0;
+    return tickable;
 }
 
 void HActor::render()

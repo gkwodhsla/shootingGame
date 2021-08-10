@@ -8,8 +8,8 @@ class SDL_Renderer;
 class HActor
 {
 public:
-    HActor();
-    virtual ~HActor();
+    HActor() = default;
+    virtual ~HActor() = default;
 
 public:
     void moveTo(const std::pair<int, int>& loc);

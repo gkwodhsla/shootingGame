@@ -56,7 +56,7 @@ void BackgroundActor::render()
     {
         auto yCoord =(float(Framework::rendererHeight)/float(cameraWidthAndHeight))*abs(bgImgSize.second - camera->y);
         backgroundImage->setComponentLocalLocation(std::make_pair(0, yCoord));
-        backgroundImage->setScale(std::make_pair(Framework::rendererWidth, Framework::rendererHeight - yCoord));
+        backgroundImage->setScale(std::make_pair(Framework::rendererWidth, Framework::rendererHeight - yCoord + 10));
         backgroundImage->setClipRect(camera->x, camera->y - bgImgSize.second, camera->w, camera->h);
 
 
