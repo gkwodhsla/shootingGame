@@ -12,8 +12,8 @@ public:
     virtual ~HSceneComponent();
 
 public:
-    //void componentRotation(float degree);
-    //void componentMoveTo(std::pair<int, int>& location);
+    void updateComponentWorldRotation();
+    void updateComponentWorldLocation();
     virtual void render();
     void update(float deltaTime) override;
 public:
@@ -33,5 +33,7 @@ protected:
     HSceneComponent* parent;
     std::vector<HSceneComponent*> children;
     std::pair<int, int> localLocation;
+    std::pair<int, int> worldLocation;
     float localRotation;
+    float worldRotation;
 };

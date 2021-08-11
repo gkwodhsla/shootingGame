@@ -3,6 +3,7 @@
 //
 
 #include <SDL.h>
+#include <android/log.h>
 #include "Airplane.h"
 #include "../Components/ImageComponent.h"
 #include "../Components/HSceneComponent.h"
@@ -43,11 +44,13 @@ void Airplane::handleEvent(SDL_Event &e)
     //e.tfinger.y
     if(e.type == SDL_FINGERDOWN)
     {
-
+        rootComponent->setComponentLocalLocation(std::make_pair(e.tfinger.x * Framework::rendererWidth,
+                                                                e.tfinger.y * Framework::rendererHeight));
     }
     else if(e.type == SDL_FINGERMOTION)
     {
-
+        rootComponent->setComponentLocalLocation(std::make_pair(e.tfinger.x * Framework::rendererWidth,
+                                                                e.tfinger.y * Framework::rendererHeight));
     }
     else if(e.type == SDL_FINGERUP)
     {

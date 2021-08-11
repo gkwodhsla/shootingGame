@@ -8,7 +8,6 @@
 MainLevel::MainLevel()
 {
     enter();
-    playerController = new HPlayerController();
 }
 
 MainLevel::~MainLevel()
@@ -43,6 +42,8 @@ void MainLevel::enter()
     addNewActorToLevel(backgroundActor);
     playerAirplane = new Airplane();
     addNewActorToLevel(playerAirplane);
+    playerController = new HPlayerController();
+    playerController->possess(playerAirplane);
 }
 
 void MainLevel::exit()
