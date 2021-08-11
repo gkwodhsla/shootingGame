@@ -17,12 +17,12 @@ public:
     virtual void render();
     void update(float deltaTime) override;
 public:
-    const std::pair<int, int> getComponentWorldLocation();
+    const std::pair<float, float> getComponentWorldLocation();
     const float getComponentWorldRotation();
-    const std::pair<int, int> getComponentLocalLocation();
+    const std::pair<float, float> getComponentLocalLocation();
     const float getComponentLocalRotation();
     const HSceneComponent* getParentComponent();
-    void setComponentLocalLocation(const std::pair<int, int>& loc);
+    void setComponentLocalLocation(const std::pair<float, float>& loc);
     void setComponentLocalRotation(const float degree);
     void setOwner(HActor* owner);
 
@@ -32,8 +32,8 @@ public:
 protected:
     HSceneComponent* parent;
     std::vector<HSceneComponent*> children;
-    std::pair<int, int> localLocation;
-    std::pair<int, int> worldLocation;
+    std::pair<float, float> localLocation;
+    std::pair<float, float> worldLocation;
     float localRotation;
     float worldRotation;
 };

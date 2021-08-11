@@ -65,8 +65,8 @@ void ImageComponent::setImageFlip(SDL_RendererFlip flipState)
 void ImageComponent::render()
 {
     SDL_Rect dstRect;
-    dstRect.x = worldLocation.first;//imgRect->x;
-    dstRect.y = worldLocation.second;//imgRect->y;
+    dstRect.x = int(worldLocation.first);//imgRect->x;
+    dstRect.y = int(worldLocation.second);//imgRect->y;
     dstRect.w = scale.first;
     dstRect.h = scale.second;
 

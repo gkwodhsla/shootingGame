@@ -55,7 +55,7 @@ void HSceneComponent::update(float deltaTime)
 
 }
 
-const std::pair<int, int> HSceneComponent::getComponentWorldLocation()
+const std::pair<float, float> HSceneComponent::getComponentWorldLocation()
 {
     return worldLocation;
 }
@@ -65,7 +65,7 @@ const float HSceneComponent::getComponentWorldRotation()
     return worldRotation;
 }
 
-void HSceneComponent::setComponentLocalLocation(const std::pair<int, int>& loc)
+void HSceneComponent::setComponentLocalLocation(const std::pair<float, float>& loc)
 {
     localLocation = loc;
     updateComponentWorldLocation();
@@ -82,7 +82,7 @@ void HSceneComponent::setOwner(HActor *owner)
     this->owner = owner;
 }
 
-const std::pair<int, int> HSceneComponent::getComponentLocalLocation()
+const std::pair<float, float> HSceneComponent::getComponentLocalLocation()
 {
     return localLocation;
 }

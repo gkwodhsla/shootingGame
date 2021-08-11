@@ -27,12 +27,16 @@ public:
     const float getActorWorldRotation();
     void setActorTickable(bool isTickable);
     const bool getActorTickable();
+    void setLifeTime(const float lifeTime);
+    void setIsSetLifeTime(const bool isSetLifeTime);
+    const bool getIsSetLifeTime();
 
 protected:
     HSceneComponent* rootComponent;
     std::pair<float, float> dirVec;
+    float lifeTime = 0.0f;
     bool visibility;
     bool tickable;
-    //추후 HActorComponent 구현 시 넣어야함
-    //HActor는 따로 관리해야함 (vector 사용 예정)
+    bool isSetLifeTime = false;
+    bool isPendingToKill = false;
 };

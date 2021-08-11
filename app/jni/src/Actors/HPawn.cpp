@@ -9,7 +9,8 @@ HPawn::HPawn()
 
 HPawn::~HPawn()
 {
-
+    delete movementComp;
+    movementComp = nullptr;
 }
 
 void HPawn::setCanRecvInputEvent(bool canInput)

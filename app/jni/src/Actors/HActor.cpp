@@ -62,5 +62,25 @@ void HActor::render()
 
 void HActor::update(float deltaTime)
 {
+    if(isSetLifeTime)
+    {
+        lifeTime -= deltaTime;
+        if(lifeTime <= 0.0f)
+        {
+            isPendingToKill = true;
+        }
+    }
+}
 
+void HActor::setLifeTime(const float lifeTime)
+{
+    this->lifeTime = lifeTime;
+}
+void HActor::setIsSetLifeTime(const bool isSetLifeTime)
+{
+    this->isSetLifeTime = isSetLifeTime;
+}
+const bool HActor::getIsSetLifeTime()
+{
+    return this->isSetLifeTime;
 }
