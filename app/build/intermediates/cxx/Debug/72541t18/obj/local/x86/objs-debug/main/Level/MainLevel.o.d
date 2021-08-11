@@ -93,6 +93,8 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_misc.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\HActor.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\BackgroundActor.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Airplane.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\HPawn.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\HPlayerController.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\MainLevel.h:
@@ -280,5 +282,9 @@ D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_misc.h
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\HActor.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\BackgroundActor.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Airplane.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\HPawn.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\HPlayerController.h:

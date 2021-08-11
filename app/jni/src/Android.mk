@@ -19,6 +19,7 @@ Components/MovementComponent.cpp\
 Actors/HActor.cpp\
 Actors/BackgroundActor.cpp\
 Actors/HPawn.cpp\
+Actors/Airplane.cpp\
 Level/MainLevel.cpp
 
 

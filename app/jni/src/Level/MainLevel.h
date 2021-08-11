@@ -2,6 +2,8 @@
 
 #include "HLevelBase.h"
 
+class Airplane;
+
 class MainLevel: public HLevelBase
 {
 public:
@@ -12,4 +14,7 @@ public:
     void render() override;
     void enter() override;
     void exit() override;
+
+private:
+    Airplane* playerAirplane = nullptr;
 };

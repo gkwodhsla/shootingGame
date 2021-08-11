@@ -2,6 +2,7 @@
 
 #include "../Actors/HActor.h"
 #include "../Actors/BackgroundActor.h"
+#include "../Actors/Airplane.h"
 #include "../HPlayerController.h"
 
 MainLevel::MainLevel()
@@ -40,6 +41,8 @@ void MainLevel::enter()
 {
     BackgroundActor* backgroundActor = new BackgroundActor();
     addNewActorToLevel(backgroundActor);
+    playerAirplane = new Airplane();
+    addNewActorToLevel(playerAirplane);
 }
 
 void MainLevel::exit()
