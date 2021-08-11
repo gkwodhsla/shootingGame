@@ -1,6 +1,7 @@
 #pragma once
 
 #include "HActor.h"
+#include <SDL.h>
 
 class MovementComponent;
 class HPlayerController;
@@ -14,7 +15,7 @@ public:
     HPlayerController* getController();
     virtual void render() override;
     virtual void update(float deltaTime) override;
-    virtual void handleEvent();
+    virtual void handleEvent(SDL_Event& e) = 0;
 private:
     MovementComponent* movementComp = nullptr;
     HPlayerController* controller = nullptr;

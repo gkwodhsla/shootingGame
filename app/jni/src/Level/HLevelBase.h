@@ -1,8 +1,10 @@
 #pragma once
 
 #include <vector>
+#include <SDL.h>
 
 class HActor;
+class HPlayerController;
 
 class HLevelBase
 {
@@ -11,7 +13,7 @@ public:
     virtual ~HLevelBase() = default;
 
 public:
-    virtual void handleEvent() = 0;
+    virtual void handleEvent(SDL_Event& e) = 0;
     virtual void update(float deltaTime) = 0;
     virtual void render() = 0;
     virtual void enter() = 0;
@@ -31,6 +33,7 @@ public:
 
 protected:
     std::vector<HActor*> actors;
+    HPlayerController* playerController = nullptr;
     //추후 이곳에 player controller가 들어가야 한다. (handle event를 위해서)
     //게임모드를 추가할 수도 있고, 아니면 게임모드의 요소를 그냥 멤버로 넣을 수도 있다. (고민좀)
 };

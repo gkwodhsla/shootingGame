@@ -109,7 +109,12 @@ Framework::~Framework()
 
 void Framework::handleEvent()
 {
-    curLevel->handleEvent();
+    SDL_Event e;
+    SDL_Point touchLocation;
+    while(SDL_PollEvent(&e) != 0) //이벤트 큐의 이벤트를 모조리 꺼낸다.
+    {
+        curLevel->handleEvent(e);
+    }
 }
 
 void Framework::update(float deltaTime)

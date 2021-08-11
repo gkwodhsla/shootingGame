@@ -2,10 +2,12 @@
 
 #include "../Actors/HActor.h"
 #include "../Actors/BackgroundActor.h"
+#include "../HPlayerController.h"
 
 MainLevel::MainLevel()
 {
     enter();
+    playerController = new HPlayerController();
 }
 
 MainLevel::~MainLevel()
@@ -13,9 +15,9 @@ MainLevel::~MainLevel()
 
 }
 
-void MainLevel::handleEvent()
+void MainLevel::handleEvent(SDL_Event& e)
 {
-
+    playerController->handleEvent(e);
 }
 
 void MainLevel::update(float deltaTime)

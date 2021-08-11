@@ -1,5 +1,6 @@
 #pragma once
 
+#include <SDL.h>
 class HPawn;
 
 enum class INPUT_MODE
@@ -15,9 +16,10 @@ public:
     virtual ~HPlayerController();
     void possess(HPawn* pawn);
     void changeInputMode(INPUT_MODE inputMode);
-    void handleEvent();
+    void handleEvent(SDL_Event& e);
     HPawn* getControlledPawn();
-private:
+
+protected:
     HPawn* controlledPawn = nullptr;
     INPUT_MODE curInputMode = INPUT_MODE::GAME_ONLY;
 };

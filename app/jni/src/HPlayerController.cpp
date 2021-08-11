@@ -25,9 +25,12 @@ void HPlayerController::changeInputMode(INPUT_MODE inputMode)
     curInputMode = inputMode;
 }
 
-void HPlayerController::handleEvent()
+void HPlayerController::handleEvent(SDL_Event& e)
 {
-
+    if(controlledPawn)
+    {
+        controlledPawn->handleEvent(e);
+    }
 }
 
 HPawn* HPlayerController::getControlledPawn()

@@ -31,8 +31,3 @@ void HPawn::update(float deltaTime)
 {
 
 }
-
-void HPawn::handleEvent()
-{
-
-}
