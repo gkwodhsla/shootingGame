@@ -3,6 +3,7 @@
 #include "../Actors/HActor.h"
 #include "../Actors/BackgroundActor.h"
 #include "../Actors/Airplane.h"
+#include "../Actors/Bullet.h"
 #include "../HPlayerController.h"
 
 MainLevel::MainLevel()
@@ -12,7 +13,7 @@ MainLevel::MainLevel()
 
 MainLevel::~MainLevel()
 {
-
+    exit();
 }
 
 void MainLevel::handleEvent(SDL_Event& e)

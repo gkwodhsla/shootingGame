@@ -15,7 +15,7 @@ class Bullet : public HActor
 {
 public:
     Bullet() = delete;
-    Bullet(const std::pair<int, int>& spawnPosition, BULLET_COLOR bulletColor,
+    Bullet(const std::pair<float, float>& spawnPosition, BULLET_COLOR bulletColor,
            const std::pair<float, float>& dirVec);
     virtual ~Bullet();
     virtual void render();

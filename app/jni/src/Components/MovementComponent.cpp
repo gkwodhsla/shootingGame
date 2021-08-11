@@ -25,10 +25,18 @@ void MovementComponent::setAcceleration(const std::pair<float, float> &accel)
 
 void MovementComponent::updatePosition(const float deltaTime)
 {
-    //const HSceneComponent* ownerRootComp = owner->getRootComponent();
-    //auto befPos = ownerRootComp->getComponentLocalLocation();
-    //auto actorDirVec = owner->getActorDirectionalVector();
+    HSceneComponent* ownerRootComp = owner->getRootComponent();
+    auto befPos = ownerRootComp->getComponentLocalLocation();
 
+    std::pair<float, float> newPos;
+
+    newPos.first = befPos.first + (initVelocity.first * deltaTime)+
+            (0.5f * acceleration.first * deltaTime * deltaTime);
+
+    newPos.second = befPos.second + (initVelocity.second * deltaTime)+
+                    (0.5f * acceleration.second * deltaTime * deltaTime);
+
+    ownerRootComp->setComponentLocalLocation(newPos);
     //거리 = 이전 거리 + 초기 속도 * 시간 + (0.5 * 가속도 * 시간^2)
 
 }

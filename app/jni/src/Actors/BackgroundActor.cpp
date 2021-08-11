@@ -49,7 +49,7 @@ BackgroundActor::~BackgroundActor()
 
 void BackgroundActor::render()
 {
-    rootComponent->render();
+    HActor::render();
 
     auto bgImgSize = backgroundImage->getImageSize();
     if(camera->y + cameraWidthAndHeight >= bgImgSize.second)

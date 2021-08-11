@@ -25,6 +25,12 @@ const bool HActor::getVisibility()
     return visibility;
 }
 
+HSceneComponent* HActor::getRootComponent()
+{
+    return rootComponent;
+}
+
+
 void HActor::setRootComponent(HSceneComponent *component)
 {
     rootComponent = component;
@@ -57,17 +63,23 @@ const bool HActor::getActorTickable()
 
 void HActor::render()
 {
-    rootComponent->render();
+    if(visibility)
+    {
+        rootComponent->render();
+    }
 }
 
 void HActor::update(float deltaTime)
 {
-    if(isSetLifeTime)
+    if(tickable)
     {
-        lifeTime -= deltaTime;
-        if(lifeTime <= 0.0f)
+        if (isSetLifeTime)
         {
-            isPendingToKill = true;
+            lifeTime -= deltaTime;
+            if (lifeTime <= 0.0f)
+            {
+                isPendingToKill = true;
+            }
         }
     }
 }

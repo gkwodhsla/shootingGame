@@ -3,7 +3,7 @@
 #include "../Components/ImageComponent.h"
 #include "../Components/MovementComponent.h"
 
-Bullet::Bullet(const std::pair<int, int> &spawnPosition, BULLET_COLOR bulletColor,
+Bullet::Bullet(const std::pair<float, float> &spawnPosition, BULLET_COLOR bulletColor,
                const std::pair<float, float>& dirVec)
 {
     rootComponent = new HSceneComponent();
@@ -27,8 +27,10 @@ Bullet::Bullet(const std::pair<int, int> &spawnPosition, BULLET_COLOR bulletColo
     bulletImg->attachTo(rootComponent);
 
     bulletMovement = new MovementComponent(this);
-
     this->dirVec = dirVec;
+
+    bulletMovement->setInitialVelocity(std::make_pair(dirVec.first * 900.0f, dirVec.second * 900.0f));
+    bulletMovement->setAcceleration(std::make_pair(dirVec.first * 1000.0f, dirVec.second * 1000.0f));
 }
 
 Bullet::~Bullet()
@@ -38,14 +40,21 @@ Bullet::~Bullet()
 
     delete bulletImg;
     bulletImg = nullptr;
+
+    delete bulletMovement;
+    bulletMovement = nullptr;
 }
 
 void Bullet::render()
 {
-
+    HActor::render();
 }
 
 void Bullet::update(float deltaTime)
 {
-
+    HActor::update(deltaTime);
+    if(tickable)
+    {
+        bulletMovement->update(deltaTime);
+    }
 }

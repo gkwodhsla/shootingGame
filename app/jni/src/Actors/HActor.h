@@ -20,7 +20,7 @@ public:
 public:
     void setVisibility(bool isVisible);
     const bool getVisibility();
-    const HSceneComponent* getRootComponent;
+    HSceneComponent* getRootComponent();
     void setRootComponent(HSceneComponent* component);
     const std::pair<int, int> getActorDirectionalVector();
     const std::pair<int, int> getActorWorldLocation();
@@ -35,8 +35,8 @@ protected:
     HSceneComponent* rootComponent;
     std::pair<float, float> dirVec;
     float lifeTime = 0.0f;
-    bool visibility;
-    bool tickable;
+    bool visibility = true;
+    bool tickable = true;
     bool isSetLifeTime = false;
     bool isPendingToKill = false;
 };
