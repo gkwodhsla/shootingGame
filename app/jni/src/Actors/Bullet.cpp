@@ -62,8 +62,8 @@ void Bullet::update(float deltaTime)
             visibility = false;
             lifeTime = 3.0f;
             isPendingToKill = false;
-            __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
-                                "bullet pending kill success");
+            //__android_log_print(ANDROID_LOG_INFO, "SDL_Error",
+              //                  "bullet pending kill success");
         }
     }
 }

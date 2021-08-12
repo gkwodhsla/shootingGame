@@ -8,6 +8,7 @@
 #include "Airplane.h"
 #include "../Components/ImageComponent.h"
 #include "../Components/HSceneComponent.h"
+#include "../Components/SpritesheetComponent.h"
 #include "../Framework.h"
 #include "../Level/MainLevel.h"
 #include "../Actors/Bullet.h"
@@ -21,6 +22,15 @@ Airplane::Airplane()
     rootComponent->setOwner(this);
     airplaneImg = new ImageComponent("image/player/1.png",std::make_pair(0, 0),this);
     airplaneImg->attachTo(rootComponent);
+
+    auto airPlaneImgSize = airplaneImg->getImageSize();
+    boosterSprite = new SpritesheetComponent("image/spritesheet/rocketFlame2.png",
+                                             std::make_pair(airPlaneImgSize.first/2 - 13, airPlaneImgSize.second - 30),
+                                             this, 2, 1, 2);
+    boosterSprite->attachTo(airplaneImg);
+    boosterSprite->setScale(std::make_pair(30,108));
+    boosterSprite->setLooping(true);
+    boosterSprite->setImageFlip(SDL_FLIP_VERTICAL);
 }
 
 Airplane::~Airplane()
@@ -30,6 +40,9 @@ Airplane::~Airplane()
 
     delete airplaneImg;
     airplaneImg = nullptr;
+
+    delete boosterSprite;
+    boosterSprite = nullptr;
 }
 
 void Airplane::render()
@@ -49,6 +62,8 @@ void Airplane::update(float deltaTime)
         spawnPlayerBullet(loc);
         curFireTime = fireRate;
     }
+    //컴포넌트에 update할 사항이 있다면 update 해준다.
+    rootComponent->update(deltaTime);
 }
 
 void Airplane::handleEvent(SDL_Event &e)
@@ -84,8 +99,8 @@ void Airplane::spawnPlayerBullet(const std::pair<float, float>& spawnPos)
             cont[i]->setVisibility(true);
             cont[i]->setActorTickable(true);
             cont[i]->getRootComponent()->setComponentLocalLocation(spawnPos);
-            __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
-                                "spawn using %d element", i);
+            //__android_log_print(ANDROID_LOG_INFO, "SDL_Error",
+               //                 "spawn using %d element", i);
             break;
         }
     }

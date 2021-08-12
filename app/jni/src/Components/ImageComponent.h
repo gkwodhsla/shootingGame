@@ -22,21 +22,24 @@ public:
     void setAlpha(__uint8_t alpha);
     void setImageColor(__uint8_t r, __uint8_t g, __uint8_t b);
     void setImageFlip(SDL_RendererFlip flipState);
-    void render() override;
-    void update(float deltaTime) override;
+    virtual void render() override;
+    virtual void update(float deltaTime) override;
     void changeImage(const std::string& path);
 
 public:
     void setClipDraw(bool isClipDraw);
     void setClipRect(int x, int y, int w, int h);
-private:
+
+protected:
     void loadImage(const std::string& path);
 
-private:
+protected:
     SDL_Texture* img = nullptr;
     SDL_Rect* imgRect = nullptr;
     SDL_Rect* clipRect = nullptr;
     SDL_RendererFlip flip = SDL_FLIP_NONE;
     __uint8_t alphaValue = 255;
+
+private:
     bool isEnableClipDraw = false;
 };

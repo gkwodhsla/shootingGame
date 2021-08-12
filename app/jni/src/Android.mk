@@ -16,6 +16,7 @@ Components/HSceneComponent.cpp\
 Components/HPrimitiveComponent.cpp\
 Components/ImageComponent.cpp\
 Components/MovementComponent.cpp\
+Components/SpritesheetComponent.cpp\
 Actors/HActor.cpp\
 Actors/BackgroundActor.cpp\
 Actors/Bullet.cpp\

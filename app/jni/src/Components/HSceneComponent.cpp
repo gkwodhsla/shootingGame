@@ -20,7 +20,11 @@ void HSceneComponent::updateComponentWorldRotation()
 {
     if(parent)
     {
-        worldRotation = parent->getComponentLocalRotation() + localRotation;
+        worldRotation = parent->getComponentWorldRotation() + localRotation;
+    }
+    else if(!parent)
+    {
+        worldRotation = localRotation;
     }
     for(auto&element:children)
     {
@@ -32,9 +36,13 @@ void HSceneComponent::updateComponentWorldLocation()
 {
     if(parent)
     {
-        auto parentLocalLocation = parent->getComponentLocalLocation();
+        auto parentLocalLocation = parent->getComponentWorldLocation();
         worldLocation = std::make_pair(parentLocalLocation.first + localLocation.first,
                                        parentLocalLocation.second + localLocation.second);
+    }
+    else if(!parent)
+    {
+        worldLocation = localLocation;
     }
     for(auto&element:children)
     {
@@ -52,7 +60,10 @@ void HSceneComponent::render()
 
 void HSceneComponent::update(float deltaTime)
 {
-
+    for(auto& child:children)
+    {
+        child->update(deltaTime);
+    }
 }
 
 const std::pair<float, float> HSceneComponent::getComponentWorldLocation()
@@ -100,12 +111,12 @@ const HSceneComponent *HSceneComponent::getParentComponent()
 void HSceneComponent::attachTo(HSceneComponent* component)
 {
     this->parent = component;
-    component->children.emplace_back(this);
+    component->children.push_back(this);
 
-    auto parentLocalLocation = component->getComponentLocalLocation();
+    auto parentLocalLocation = component->getComponentWorldLocation();
     worldLocation = std::make_pair(parentLocalLocation.first + localLocation.first,
                                    parentLocalLocation.second + localLocation.second);
 
-    worldRotation = component->getComponentLocalRotation() + localRotation;
+    worldRotation = component->getComponentWorldRotation() + localRotation;
 }
 

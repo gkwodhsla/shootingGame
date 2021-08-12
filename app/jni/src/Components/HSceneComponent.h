@@ -30,7 +30,7 @@ public:
     void attachTo(HSceneComponent* component);
 
 protected:
-    HSceneComponent* parent;
+    HSceneComponent* parent = nullptr;
     std::vector<HSceneComponent*> children;
     std::pair<float, float> localLocation;
     std::pair<float, float> worldLocation;

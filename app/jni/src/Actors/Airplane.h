@@ -3,6 +3,7 @@
 #include "HPawn.h"
 
 class ImageComponent;
+class SpritesheetComponent;
 
 class Airplane :public HPawn
 {
@@ -18,6 +19,7 @@ private:
 
 private:
     ImageComponent* airplaneImg;
+    SpritesheetComponent* boosterSprite;
     float fireRate = 0.5f;
     float curFireTime = 0.5f;
 };

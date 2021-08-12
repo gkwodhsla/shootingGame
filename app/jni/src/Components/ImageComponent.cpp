@@ -88,7 +88,10 @@ void ImageComponent::render()
 
 void ImageComponent::update(float deltaTime)
 {
-
+    for(auto& child: children)
+    {
+        child->update(deltaTime);
+    }
 }
 
 void ImageComponent::changeImage(const std::string &path)
@@ -138,8 +141,6 @@ void ImageComponent::loadImage(const std::string& path)
         }
         SDL_FreeSurface(loadedSurface);
     }
-    __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
-                        "Image load success");
 }
 
 
