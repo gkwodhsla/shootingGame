@@ -5,15 +5,13 @@
 #include "BackgroundActor.h"
 #include "../Components/HSceneComponent.h"
 #include "../Components/ImageComponent.h"
-#include "../Components/MovementComponent.h"
 #include "../Framework.h"
 #include <utility>
 #include <SDL.h>
 #include <cmath>
 #include <android/log.h>
 
-BackgroundActor::BackgroundActor()
-{
+BackgroundActor::BackgroundActor() {
     rootComponent = new HSceneComponent();
     rootComponent->setComponentLocalLocation(std::make_pair(0, 0));
     rootComponent->setComponentLocalRotation(0);
@@ -35,10 +33,9 @@ BackgroundActor::BackgroundActor()
     camera->w = cameraWidthAndHeight;
     camera->h = cameraWidthAndHeight;
 
-    bgMovement = new MovementComponent(this);
+    accYPos = bgImgSize.second - cameraWidthAndHeight;
+
     dirVec = std::make_pair(0, -1.0f);
-    bgMovement->setInitialVelocity(std::make_pair(0.0f, dirVec.second * 500.0f));
-    bgMovement->setAcceleration(std::make_pair(0.0f, dirVec.second * 500.0f));
 }
 
 BackgroundActor::~BackgroundActor()
@@ -51,9 +48,6 @@ BackgroundActor::~BackgroundActor()
 
     delete camera;
     camera = nullptr;
-
-    delete bgMovement;
-    bgMovement = nullptr;
 }
 
 void BackgroundActor::render()
@@ -75,12 +69,9 @@ void BackgroundActor::render()
 
 void BackgroundActor::update(float deltaTime)
 {
-    accYPos += 0.3f;
-    if(accYPos>=1.0f)
-    {
-        accYPos = 0.0f;
-        camera->y -= 1;
-    }
+    accYPos = accYPos + velocity * deltaTime + (0.5f*acceleration*deltaTime*deltaTime);
+    camera->y = int(accYPos);
+
     backgroundImage->setComponentLocalLocation(std::make_pair(0, 0));
     backgroundImage->setScale(std::make_pair(Framework::rendererWidth, Framework::rendererHeight));
     backgroundImage->setClipRect(camera->x, camera->y, cameraWidthAndHeight, cameraWidthAndHeight);
@@ -99,6 +90,7 @@ void BackgroundActor::update(float deltaTime)
     if(camera->y + cameraWidthAndHeight <= 0)
     {
         camera->y = bgImgSize.second - cameraWidthAndHeight;
+        accYPos = bgImgSize.second - cameraWidthAndHeight;
     }
 }
 
