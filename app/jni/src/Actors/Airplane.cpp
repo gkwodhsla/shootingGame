@@ -27,6 +27,7 @@ Airplane::Airplane()
     boosterSprite = new SpritesheetComponent("image/spritesheet/rocketFlame2.png",
                                              std::make_pair(airPlaneImgSize.first/2 - 13, airPlaneImgSize.second - 30),
                                              this, 2, 1, 2);
+    boosterSprite->setDrawCntPerSec(8);
     boosterSprite->attachTo(airplaneImg);
     boosterSprite->setScale(std::make_pair(30,108));
     boosterSprite->setLooping(true);

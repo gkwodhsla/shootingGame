@@ -62,7 +62,7 @@ void SpritesheetComponent::update(float deltaTime)
     }
     if(canIncFrame)
     {
-        ++curFrame;
+        curFrame +=  drawCntPerSec * deltaTime;
     }
 }
 
@@ -74,4 +74,9 @@ void SpritesheetComponent::setLooping(bool isLooping)
 const bool SpritesheetComponent::getLooping()
 {
     return isLooping;
+}
+
+void SpritesheetComponent::setDrawCntPerSec(int cnt)
+{
+    drawCntPerSec = cnt;
 }

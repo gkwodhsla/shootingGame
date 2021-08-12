@@ -15,11 +15,13 @@ public:
 public:
     void setLooping(bool isLooping);
     const bool getLooping();
+    void setDrawCntPerSec(int cnt);
 
 private:
     std::vector<SDL_Rect*> clipRects;
     bool isLooping = false;
     bool canIncFrame = true;
     float curFrame = 0;
+    int drawCntPerSec = 10;
 };
 
