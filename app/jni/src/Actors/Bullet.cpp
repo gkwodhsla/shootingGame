@@ -2,7 +2,7 @@
 #include "../Components/HSceneComponent.h"
 #include "../Components/ImageComponent.h"
 #include "../Components/MovementComponent.h"
-
+#include <android/log.h>
 Bullet::Bullet(const std::pair<float, float> &spawnPosition, BULLET_COLOR bulletColor,
                const std::pair<float, float>& dirVec)
 {
@@ -56,5 +56,14 @@ void Bullet::update(float deltaTime)
     if(tickable)
     {
         bulletMovement->update(deltaTime);
+        if(isPendingToKill)
+        {
+            tickable = false;
+            visibility = false;
+            lifeTime = 3.0f;
+            isPendingToKill = false;
+            __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
+                                "bullet pending kill success");
+        }
     }
 }

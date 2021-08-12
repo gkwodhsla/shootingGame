@@ -15,8 +15,9 @@ public:
     void render() override;
     void enter() override;
     void exit() override;
-
+    friend class Airplane;
 private:
     Airplane* playerAirplane = nullptr;
     std::vector<Bullet*> playerBullets;
+    const int playerBulletSize = 100;
 };

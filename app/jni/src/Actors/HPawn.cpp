@@ -30,5 +30,5 @@ void HPawn::render()
 
 void HPawn::update(float deltaTime)
 {
-
+    HActor::update(deltaTime);
 }

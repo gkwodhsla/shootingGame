@@ -15,9 +15,9 @@ using namespace std;
 
 SDL_Renderer* Framework::renderer = nullptr;
 SDL_Rect* Framework::screenRect = nullptr;
+HLevelBase* Framework::curLevel = nullptr;
 int Framework::rendererWidth = 0;
 int Framework::rendererHeight = 0;
-
 Framework::Framework()
 {
     if(SDL_Init(SDL_INIT_VIDEO)<0)
