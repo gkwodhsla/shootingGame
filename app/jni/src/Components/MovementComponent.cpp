@@ -38,5 +38,7 @@ void MovementComponent::updatePosition(const float deltaTime)
 
     ownerRootComp->setComponentLocalLocation(newPos);
     //거리 = 이전 거리 + 초기 속도 * 시간 + (0.5 * 가속도 * 시간^2)
+    //여기에다가 방향벡터를 갱신하는 수식을 작성한다.
+    //현재 위치 - 이전 위치 하고 정규화
 
 }

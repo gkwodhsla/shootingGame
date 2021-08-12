@@ -4,6 +4,7 @@
 
 class ImageComponent;
 class SDL_Rect;
+class MovementComponent;
 
 class BackgroundActor :public HActor
 {
@@ -17,8 +18,10 @@ public:
     void changeBackgroundImage(const std::string&);
 private:
     ImageComponent* backgroundImage;
+    MovementComponent* bgMovement;
     SDL_Rect* camera;
     const int cameraWidthAndHeight = 300;
     float accYPos = 0.0f;
     int yOffset = 0;
+
 };

@@ -3,6 +3,7 @@
 #include "HLevelBase.h"
 
 class Airplane;
+class Bullet;
 
 class MainLevel: public HLevelBase
 {
@@ -17,4 +18,5 @@ public:
 
 private:
     Airplane* playerAirplane = nullptr;
+    std::vector<Bullet*> playerBullets;
 };

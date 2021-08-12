@@ -5,6 +5,7 @@
 #include "BackgroundActor.h"
 #include "../Components/HSceneComponent.h"
 #include "../Components/ImageComponent.h"
+#include "../Components/MovementComponent.h"
 #include "../Framework.h"
 #include <utility>
 #include <SDL.h>
@@ -30,9 +31,14 @@ BackgroundActor::BackgroundActor()
                         "width:%d, height:%d", Framework::rendererWidth, Framework::rendererHeight);
     camera = new SDL_Rect();
     camera->x = 0;
-    camera->y = 0;
+    camera->y = bgImgSize.second - cameraWidthAndHeight;
     camera->w = cameraWidthAndHeight;
     camera->h = cameraWidthAndHeight;
+
+    bgMovement = new MovementComponent(this);
+    dirVec = std::make_pair(0, -1.0f);
+    bgMovement->setInitialVelocity(std::make_pair(0.0f, dirVec.second * 500.0f));
+    bgMovement->setAcceleration(std::make_pair(0.0f, dirVec.second * 500.0f));
 }
 
 BackgroundActor::~BackgroundActor()
@@ -45,6 +51,9 @@ BackgroundActor::~BackgroundActor()
 
     delete camera;
     camera = nullptr;
+
+    delete bgMovement;
+    bgMovement = nullptr;
 }
 
 void BackgroundActor::render()
@@ -52,14 +61,13 @@ void BackgroundActor::render()
     HActor::render();
 
     auto bgImgSize = backgroundImage->getImageSize();
-    if(camera->y + cameraWidthAndHeight >= bgImgSize.second)
+    if(camera->y <= 0)
     {
-        auto yCoord =(float(Framework::rendererHeight)/float(cameraWidthAndHeight))*abs(bgImgSize.second - camera->y);
-        backgroundImage->setComponentLocalLocation(std::make_pair(0, yCoord));
-        backgroundImage->setScale(std::make_pair(Framework::rendererWidth, Framework::rendererHeight - yCoord + 10));
-        backgroundImage->setClipRect(camera->x, camera->y - bgImgSize.second, camera->w, camera->h);
-
-
+        float ratio = float(Framework::rendererHeight) / float(cameraWidthAndHeight);
+        backgroundImage->setClipRect(camera->x, bgImgSize.second + camera->y,
+                                     cameraWidthAndHeight, abs(camera->y));
+        backgroundImage->setComponentLocalLocation(std::make_pair(0, 0));
+        backgroundImage->setScale(std::make_pair(Framework::rendererWidth, ratio * abs(camera->y)));
 
         backgroundImage->render();
     }
@@ -71,20 +79,26 @@ void BackgroundActor::update(float deltaTime)
     if(accYPos>=1.0f)
     {
         accYPos = 0.0f;
-        camera->y += 1;
+        camera->y -= 1;
     }
     backgroundImage->setComponentLocalLocation(std::make_pair(0, 0));
     backgroundImage->setScale(std::make_pair(Framework::rendererWidth, Framework::rendererHeight));
-    backgroundImage->setClipRect(camera->x, camera->y, camera->w, camera->h);
+    backgroundImage->setClipRect(camera->x, camera->y, cameraWidthAndHeight, cameraWidthAndHeight);
+
     auto bgImgSize = backgroundImage->getImageSize();
-    if(camera->y + cameraWidthAndHeight >= bgImgSize.second)
+    if(camera->y <= 0)
     {
-        backgroundImage->setScale(std::make_pair(Framework::rendererWidth,
-      (float(Framework::rendererHeight)/float(cameraWidthAndHeight))*abs(bgImgSize.second - camera->y)));
+        float ratio = float(Framework::rendererHeight) / float(cameraWidthAndHeight);
+        backgroundImage->setClipRect(camera->x, 0, cameraWidthAndHeight,
+                                     cameraWidthAndHeight + camera->y);
+        backgroundImage->setScale(std::make_pair(Framework::rendererWidth, 10 + Framework::rendererHeight -
+                                                                           (ratio * abs(camera->y))));
+        backgroundImage->setComponentLocalLocation(std::make_pair(0, abs(ratio * abs(camera->y))));
     }
-    if(camera->y >= bgImgSize.second)
+
+    if(camera->y + cameraWidthAndHeight <= 0)
     {
-        camera->y = 0;
+        camera->y = bgImgSize.second - cameraWidthAndHeight;
     }
 }
 

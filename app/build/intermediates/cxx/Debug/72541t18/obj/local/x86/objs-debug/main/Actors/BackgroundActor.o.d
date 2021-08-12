@@ -104,6 +104,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_version.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_locale.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_misc.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\MovementComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Framework.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cmath
 
@@ -314,6 +315,8 @@ D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_versio
 D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_locale.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_misc.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\MovementComponent.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Framework.h:
 
