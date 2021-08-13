@@ -3,8 +3,7 @@ make: Nothing to be done for 'SDL2_image'.
 make: Nothing to be done for 'SDL2_mixer'.
 make: Nothing to be done for 'SDL2_ttf'.
 make: Nothing to be done for 'hidapi'.
-[x86] Compile++      : main <= MovementComponent.cpp
-[x86] Compile++      : main <= Bullet.cpp
-[x86] Compile++      : main <= HPawn.cpp
+[x86] Compile++      : main <= ImageComponent.cpp
+[x86] Compile++      : main <= SpritesheetComponent.cpp
 [x86] SharedLibrary  : libmain.so
 make: Nothing to be done for 'mpg123'.

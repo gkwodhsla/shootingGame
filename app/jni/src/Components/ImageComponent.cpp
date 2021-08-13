@@ -41,7 +41,7 @@ ImageComponent::~ImageComponent()
     clipRect = nullptr;
 }
 
-const std::pair<int, int> ImageComponent::getImageSize()
+std::pair<int, int> ImageComponent::getImageSize()
 {
     return std::make_pair(imgRect->w, imgRect->h);
 }
@@ -64,6 +64,8 @@ void ImageComponent::setImageFlip(SDL_RendererFlip flipState)
 
 void ImageComponent::render()
 {
+    HPrimitiveComponent::render();
+
     SDL_Rect dstRect;
     dstRect.x = int(worldLocation.first);//imgRect->x;
     dstRect.y = int(worldLocation.second);//imgRect->y;
@@ -80,18 +82,12 @@ void ImageComponent::render()
         SDL_RenderCopyEx(Framework::renderer, img, clipRect, &dstRect,
                          localRotation, NULL, flip);
     }
-    for(auto&element:children)
-    {
-        element->render();
-    }
+
 }
 
 void ImageComponent::update(float deltaTime)
 {
-    for(auto& child: children)
-    {
-        child->update(deltaTime);
-    }
+    HPrimitiveComponent::update(deltaTime);
 }
 
 void ImageComponent::changeImage(const std::string &path)

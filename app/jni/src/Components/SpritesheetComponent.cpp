@@ -41,6 +41,7 @@ SpritesheetComponent::~SpritesheetComponent()
 
 void SpritesheetComponent::render()
 {
+    HPrimitiveComponent::render();
     SDL_Rect dstRect;
     dstRect.x = int(worldLocation.first);
     dstRect.y = int(worldLocation.second);
@@ -53,17 +54,26 @@ void SpritesheetComponent::render()
 
 void SpritesheetComponent::update(float deltaTime)
 {
+    HPrimitiveComponent::update(deltaTime);
     if(!isLooping)
     {
         if(curFrame > clipRects.size())
         {
             canIncFrame = false;
+            isPlayEnd = true;
         }
     }
     if(canIncFrame)
     {
         curFrame +=  drawCntPerSec * deltaTime;
     }
+}
+
+void SpritesheetComponent::goToFirstFrame()
+{
+    canIncFrame = true;
+    isPlayEnd = false;
+    curFrame = 0;
 }
 
 void SpritesheetComponent::setLooping(bool isLooping)

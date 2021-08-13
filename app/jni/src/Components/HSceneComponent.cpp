@@ -26,9 +26,9 @@ void HSceneComponent::updateComponentWorldRotation()
     {
         worldRotation = localRotation;
     }
-    for(auto&element:children)
+    for(auto& child:children)
     {
-        element->updateComponentWorldRotation();
+        child->updateComponentWorldRotation();
     }
 }
 
@@ -44,17 +44,17 @@ void HSceneComponent::updateComponentWorldLocation()
     {
         worldLocation = localLocation;
     }
-    for(auto&element:children)
+    for(auto& child:children)
     {
-        element->updateComponentWorldLocation();
+        child->updateComponentWorldLocation();
     }
 }
 
 void HSceneComponent::render()
 {
-    for(auto&element:children)
+    for(auto& child:children)
     {
-        element->render();
+        child->render();
     }
 }
 
@@ -66,12 +66,12 @@ void HSceneComponent::update(float deltaTime)
     }
 }
 
-const std::pair<float, float> HSceneComponent::getComponentWorldLocation()
+std::pair<float, float> HSceneComponent::getComponentWorldLocation()
 {
     return worldLocation;
 }
 
-const float HSceneComponent::getComponentWorldRotation()
+float HSceneComponent::getComponentWorldRotation()
 {
     return worldRotation;
 }
@@ -93,17 +93,17 @@ void HSceneComponent::setOwner(HActor *owner)
     this->owner = owner;
 }
 
-const std::pair<float, float> HSceneComponent::getComponentLocalLocation()
+std::pair<float, float> HSceneComponent::getComponentLocalLocation()
 {
     return localLocation;
 }
 
-const float HSceneComponent::getComponentLocalRotation()
+float HSceneComponent::getComponentLocalRotation()
 {
     return localRotation;
 }
 
-const HSceneComponent *HSceneComponent::getParentComponent()
+HSceneComponent *HSceneComponent::getParentComponent()
 {
     return parent;
 }
@@ -113,9 +113,9 @@ void HSceneComponent::attachTo(HSceneComponent* component)
     this->parent = component;
     component->children.push_back(this);
 
-    auto parentLocalLocation = component->getComponentWorldLocation();
-    worldLocation = std::make_pair(parentLocalLocation.first + localLocation.first,
-                                   parentLocalLocation.second + localLocation.second);
+    auto parentWorldLocation = component->getComponentWorldLocation();
+    worldLocation = std::make_pair(parentWorldLocation.first + localLocation.first,
+                                   parentWorldLocation.second + localLocation.second);
 
     worldRotation = component->getComponentWorldRotation() + localRotation;
 }

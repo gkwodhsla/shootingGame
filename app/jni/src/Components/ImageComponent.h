@@ -18,7 +18,7 @@ public:
     virtual ~ImageComponent();
 
 public:
-    const std::pair<int, int> getImageSize();
+    std::pair<int, int> getImageSize();
     void setAlpha(__uint8_t alpha);
     void setImageColor(__uint8_t r, __uint8_t g, __uint8_t b);
     void setImageFlip(SDL_RendererFlip flipState);

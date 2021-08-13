@@ -1,7 +1,3 @@
-//
-// Created by lenovo on 2021-08-07.
-//
-
 #include "HPrimitiveComponent.h"
 
 HPrimitiveComponent::HPrimitiveComponent()
@@ -16,15 +12,12 @@ HPrimitiveComponent::~HPrimitiveComponent()
 
 void HPrimitiveComponent::update(float deltaTime)
 {
-
+    HSceneComponent::update(deltaTime);
 }
 
 void HPrimitiveComponent::render()
 {
-    for(auto&element:children)
-    {
-        element->render();
-    }
+    HSceneComponent::render();
 }
 
 void HPrimitiveComponent::setVisibility(bool isVisible)
@@ -36,12 +29,12 @@ void HPrimitiveComponent::setScale(const std::pair<int, int>& scale)
 {
     this->scale = scale;
 }
-const std::pair<int, int> HPrimitiveComponent::getScale()
+std::pair<int, int> HPrimitiveComponent::getScale()
 {
     return scale;
 }
 
-const bool HPrimitiveComponent::getVisibility()
+bool HPrimitiveComponent::getVisibility()
 {
     return visibility;
 }
