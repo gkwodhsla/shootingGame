@@ -15,6 +15,10 @@ public:
     virtual void update(float deltaTime) override;
     virtual void handleEvent(SDL_Event& e) override;
 
+public:
+    CollisionBoxComponent* getCollisionBoxComp();
+    int getPlayerAttackPower();
+
 private:
     void spawnPlayerBullet(const std::pair<float, float>& spawnPos);
 
@@ -30,4 +34,5 @@ protected:
 
 private:
     SpritesheetComponent* boosterSprite = nullptr;
+    int attackPower = 10;
 };

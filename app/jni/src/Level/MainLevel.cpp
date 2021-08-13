@@ -6,7 +6,9 @@
 #include "../Actors/Bullet.h"
 #include "../Actors/EnemyAirplane.h"
 #include "../HPlayerController.h"
+#include "../Components/CollisionBoxComponent.h"
 #include <vector>
+#include <android/log.h>
 
 MainLevel::MainLevel()
 {
@@ -33,6 +35,7 @@ void MainLevel::update(float deltaTime)
             actor->update(deltaTime);
         }
     }
+    checkingCollision();
 }
 
 void MainLevel::render()
@@ -92,4 +95,24 @@ void MainLevel::exit()
 
     delete enemyTemp;
     enemyTemp = nullptr;
+}
+
+void MainLevel::checkingCollision()
+{
+    for(int i = 0; i < playerBulletSize; ++i)
+    {
+        if(playerBullets[i]->getVisibility())
+        {
+            bool isHit = playerBullets[i]->getCollisionComp()->checkCollision(*(enemyTemp->getCollisionBoxComp()));
+            if(isHit) //히트됐다면
+            {
+                playerBullets[i]->resetBulletToInitialState(); //총알을 버퍼에 돌려준다.
+                enemyTemp->getDamage(playerAirplane->getPlayerAttackPower());
+            }
+        }
+    }
+    //이곳에서 콜리전 검사를 수행한다.
+    //1. player bullet과 enemyPlanes
+    //2. enemyBullet과 player
+
 }

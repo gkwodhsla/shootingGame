@@ -102,6 +102,16 @@ void Airplane::handleEvent(SDL_Event &e)
     }
 }
 
+CollisionBoxComponent* Airplane::getCollisionBoxComp()
+{
+    return collisionBox;
+}
+
+int Airplane::getPlayerAttackPower()
+{
+    return attackPower;
+}
+
 void Airplane::turnOffBooster()
 {
     boosterSprite->setVisibility(false);

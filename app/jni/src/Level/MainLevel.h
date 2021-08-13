@@ -16,6 +16,7 @@ public:
     void render() override;
     void enter() override;
     void exit() override;
+    void checkingCollision();
     friend class Airplane;
 private:
     Airplane* playerAirplane = nullptr;

@@ -4,7 +4,7 @@
 #include "../Components/CollisionBoxComponent.h"
 #include "../Framework.h"
 #include <android/log.h>
-EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp):bulletColor(color), curHp(hp)
+EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp):bulletColor(color), curHp(hp), maxHP(hp)
 {
     if(shape == ENEMY_SHIP_SHAPE::SHIP1)
     {
@@ -40,7 +40,7 @@ EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp)
     auto shipImgSize = airplaneImg->getImageSize();
 
     hpBar->setComponentLocalLocation(std::make_pair((shipImgSize.first - hpBarRowSize) / 2, shipImgSize.second + 15));
-    hpBar->setScale(std::make_pair(hpBarRowSize, 10));
+    hpBar->setScale(std::make_pair(hpBarRowSize, hpBarColSize));
 
     turnOffBooster();
 
@@ -69,4 +69,11 @@ void EnemyAirplane::handleEvent(SDL_Event &e)
 {
     //적 비행기는 어떠한 이벤트도 받지 않는다.
     //하지만 확장성을 위해서 남겨는 둔다.
+}
+
+void EnemyAirplane::getDamage(int damage)
+{
+    curHp -= damage;
+    float barSize = float(hpBarRowSize) / float(maxHP);
+    hpBar->setScale(std::make_pair(barSize * float(curHp), hpBarColSize));
 }

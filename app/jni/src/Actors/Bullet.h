@@ -22,6 +22,11 @@ public:
     virtual ~Bullet();
     virtual void render();
     virtual void update(float deltaTime);
+    void resetBulletToInitialState();
+
+public:
+    CollisionBoxComponent* getCollisionComp();
+
 private:
     ImageComponent* bulletImg;
     MovementComponent* bulletMovement;

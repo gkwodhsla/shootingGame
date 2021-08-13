@@ -64,12 +64,22 @@ void Bullet::update(float deltaTime)
         bulletMovement->update(deltaTime);
         if(isPendingToKill) // 해당총알이 수명이 다해 파괴예정이면 해당 버퍼를 사용할 수 있게 해준다.
         {
-            tickable = false;
-            visibility = false;
-            lifeTime = 3.0f;
-            isPendingToKill = false;
+            resetBulletToInitialState();
             //__android_log_print(ANDROID_LOG_INFO, "SDL_Error",
               //                  "bullet pending kill success");
         }
     }
+}
+
+void Bullet::resetBulletToInitialState()
+{
+    tickable = false;
+    visibility = false;
+    lifeTime = 3.0f;
+    isPendingToKill = false;
+}
+
+CollisionBoxComponent* Bullet::getCollisionComp()
+{
+    return collisionBox;
 }
