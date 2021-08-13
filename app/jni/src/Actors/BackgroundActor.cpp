@@ -12,7 +12,7 @@
 #include <android/log.h>
 
 BackgroundActor::BackgroundActor() {
-    rootComponent = new HSceneComponent();
+
     rootComponent->setComponentLocalLocation(std::make_pair(0, 0));
     rootComponent->setComponentLocalRotation(0);
     rootComponent->setOwner(this);
@@ -39,8 +39,7 @@ BackgroundActor::BackgroundActor() {
 
 BackgroundActor::~BackgroundActor()
 {
-    delete rootComponent;
-    rootComponent = nullptr;
+
 
     delete backgroundImage;
     backgroundImage = nullptr;

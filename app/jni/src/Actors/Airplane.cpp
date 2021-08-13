@@ -15,7 +15,6 @@
 
 Airplane::Airplane()
 {
-    rootComponent = new HSceneComponent();
     rootComponent->setComponentLocalLocation(std::make_pair(Framework::rendererWidth / 2,
                                                             Framework::rendererHeight - 300));
     rootComponent->setComponentLocalRotation(0);
@@ -32,18 +31,22 @@ Airplane::Airplane()
     boosterSprite->setScale(std::make_pair(30,108));
     boosterSprite->setLooping(true);
     boosterSprite->setImageFlip(SDL_FLIP_VERTICAL);
+
+    //explosionSprite = new SpritesheetComponent()
+    //추후 추가 예정
 }
 
 Airplane::~Airplane()
 {
-    delete rootComponent;
-    rootComponent = nullptr;
-
     delete airplaneImg;
     airplaneImg = nullptr;
 
     delete boosterSprite;
     boosterSprite = nullptr;
+
+    //delete explosionSprite;
+    //explosionSprite = nullptr
+    //추후 추가 예정
 }
 
 void Airplane::render()

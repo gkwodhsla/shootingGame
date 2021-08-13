@@ -22,6 +22,7 @@ Actors/BackgroundActor.cpp\
 Actors/Bullet.cpp\
 Actors/HPawn.cpp\
 Actors/Airplane.cpp\
+Actors/EnemyAirplane.cpp\
 Level/MainLevel.cpp
 
 

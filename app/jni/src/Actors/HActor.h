@@ -8,7 +8,7 @@ class SDL_Renderer;
 class HActor
 {
 public:
-    HActor() = default;
+    HActor();
     virtual ~HActor() = 0;
 
 public:

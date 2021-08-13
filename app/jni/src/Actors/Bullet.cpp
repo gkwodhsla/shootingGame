@@ -6,7 +6,6 @@
 Bullet::Bullet(const std::pair<float, float> &spawnPosition, BULLET_COLOR bulletColor,
                const std::pair<float, float>& dirVec)
 {
-    rootComponent = new HSceneComponent();
     rootComponent->setComponentLocalLocation(spawnPosition);
     rootComponent->setComponentLocalRotation(0.0f);
     std::string path;
@@ -35,9 +34,6 @@ Bullet::Bullet(const std::pair<float, float> &spawnPosition, BULLET_COLOR bullet
 
 Bullet::~Bullet()
 {
-    delete rootComponent;
-    rootComponent = nullptr;
-
     delete bulletImg;
     bulletImg = nullptr;
 

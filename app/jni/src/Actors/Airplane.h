@@ -17,9 +17,12 @@ public:
 private:
     void spawnPlayerBullet(const std::pair<float, float>& spawnPos);
 
-private:
-    ImageComponent* airplaneImg;
-    SpritesheetComponent* boosterSprite;
+protected:
+    ImageComponent* airplaneImg = nullptr;
+    SpritesheetComponent* explosionSprite = nullptr;
     float fireRate = 0.5f;
     float curFireTime = 0.5f;
+
+private:
+    SpritesheetComponent* boosterSprite = nullptr;
 };

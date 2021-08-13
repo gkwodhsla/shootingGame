@@ -5,9 +5,15 @@
 #include "HActor.h"
 #include "../Components/HSceneComponent.h"
 
+HActor::HActor()
+{
+    rootComponent = new HSceneComponent();
+}
+
 HActor::~HActor()
 {
-
+    delete rootComponent;
+    rootComponent = nullptr;
 }
 
 void HActor::moveTo(const std::pair<int, int> &loc)
