@@ -1,0 +1,8 @@
+<dependencies>
+  <compile
+      roots="D:\comtus\Development\android\shootingGame@@:app::release">
+    <dependency
+        name="D:\comtus\Development\android\shootingGame@@:app::release"
+        simpleName=":"/>
+  </compile>
+</dependencies>

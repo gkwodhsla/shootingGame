@@ -1,0 +1,14 @@
+make: Nothing to be done for 'SDL2'.
+make: Nothing to be done for 'SDL2_image'.
+make: Nothing to be done for 'SDL2_mixer'.
+make: Nothing to be done for 'SDL2_ttf'.
+make: Nothing to be done for 'hidapi'.
+[armeabi-v7a] Compile++ thumb: main <= SpritesheetComponent.cpp
+[armeabi-v7a] Compile++ thumb: main <= HActor.cpp
+[armeabi-v7a] Compile++ thumb: main <= BackgroundActor.cpp
+[armeabi-v7a] Compile++ thumb: main <= Bullet.cpp
+[armeabi-v7a] Compile++ thumb: main <= HPawn.cpp
+[armeabi-v7a] Compile++ thumb: main <= Airplane.cpp
+[armeabi-v7a] Compile++ thumb: main <= MainLevel.cpp
+[armeabi-v7a] SharedLibrary  : libmain.so
+make: Nothing to be done for 'mpg123'.

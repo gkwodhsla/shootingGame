@@ -61,6 +61,12 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_version.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\begin_code.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\close_code.h \
+  D:\comtus\Development\android\shootingGame\app\jni\SDL_ttf\SDL_ttf.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Components\ImageComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Components\HPrimitiveComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Components\HSceneComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Components\HComponent.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\string \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\string_view \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__string \
@@ -95,7 +101,13 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cwchar \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cwctype \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cctype \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wctype.h
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wctype.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\HActor.h \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\vector \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__bit_reference \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\climits \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\limits.h \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__split_buffer
 
 D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL.h:
 
@@ -219,6 +231,18 @@ D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\begin_code
 
 D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\close_code.h:
 
+D:\comtus\Development\android\shootingGame\app\jni\SDL_ttf\SDL_ttf.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Components\ImageComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Components\HPrimitiveComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Components\HSceneComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Components\HComponent.h:
+
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\string:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\string_view:
@@ -288,3 +312,15 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cwc
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cctype:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wctype.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\HActor.h:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\vector:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__bit_reference:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\climits:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\limits.h:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__split_buffer:

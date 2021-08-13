@@ -11,7 +11,7 @@ public:
     virtual ~SpritesheetComponent();
     virtual void render() override;
     virtual void update(float deltaTime) override;
-    void goToFirstFrame()
+    void goToFirstFrame();
 public:
     void setLooping(bool isLooping);
     const bool getLooping();

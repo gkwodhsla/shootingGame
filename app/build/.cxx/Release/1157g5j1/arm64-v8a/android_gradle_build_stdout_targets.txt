@@ -1,0 +1,6 @@
+[arm64-v8a] Compile        : SDL2 <= SDL.c
+[arm64-v8a] Compile        : SDL2 <= SDL_log.c
+[arm64-v8a] Compile        : SDL2 <= SDL_dataqueue.c
+[arm64-v8a] Compile        : SDL2 <= SDL_assert.c
+[arm64-v8a] Compile        : SDL2 <= SDL_hints.c
+[arm64-v8a] Compile        : SDL2 <= SDL_error.c
