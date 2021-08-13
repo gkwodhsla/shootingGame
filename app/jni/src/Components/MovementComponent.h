@@ -20,7 +20,7 @@ private:
 
 private:
     std::pair<float, float> acceleration;
-    float speed;
+    float speed = 0.0f;
 };
 
 

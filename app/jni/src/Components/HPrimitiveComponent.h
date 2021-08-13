@@ -21,6 +21,6 @@ public:
     bool getVisibility();
 
 protected:
-    bool visibility;
+    bool visibility = true;
     std::pair<int, int> scale = std::make_pair(1.0f, 1.0f);
 };

@@ -1,8 +1,9 @@
 #include "EnemyAirplane.h"
 #include "../Components/ImageComponent.h"
 #include "../Components/HSceneComponent.h"
-
-EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape):bulletColor(color)
+#include "../Framework.h"
+#include <android/log.h>
+EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp):bulletColor(color), curHp(hp)
 {
     if(shape == ENEMY_SHIP_SHAPE::SHIP1)
     {
@@ -20,31 +21,49 @@ EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape):bulletC
     {
         airplaneImg->changeImage("image/enemy/ship4.png");
     }
+    else if(shape == ENEMY_SHIP_SHAPE::BOSS1)
+    {
+        airplaneImg->changeImage("image/enemy/boss1.png");
+    }
+    else if(shape == ENEMY_SHIP_SHAPE::BOSS2)
+    {
+        airplaneImg->changeImage("image/enemy/boss2.png");
+    }
 
     rootComponent->setOwner(this);
-    rootComponent->setComponentLocalLocation(std::make_pair(0, 0));
+    rootComponent->setComponentLocalLocation(std::make_pair(300, 300));
     rootComponent->setComponentLocalRotation(0);
 
+    hpBar = new ImageComponent("image/misc/hpBar.png",std::make_pair(0, 0), this);
+    hpBar->attachTo(airplaneImg);
+    auto shipImgSize = airplaneImg->getImageSize();
 
-    //hpBar = new ImageComponent()
+    hpBar->setComponentLocalLocation(std::make_pair((shipImgSize.first - hpBarRowSize) / 2, shipImgSize.second + 15));
+    hpBar->setScale(std::make_pair(hpBarRowSize, 10));
+
+    turnOffBooster();
+
+    //적 기체에선 우선 부스터를 쓰지 않을 거라 꺼준다.
 }
 
 EnemyAirplane::~EnemyAirplane()
 {
-
+    delete hpBar;
+    hpBar = nullptr;
 }
 
 void EnemyAirplane::render()
 {
-    Airplane::render();
+    HPawn::render();
 }
 
 void EnemyAirplane::update(float deltaTime)
 {
-    Airplane::update(deltaTime);
+    HPawn::update(deltaTime);
 }
 
 void EnemyAirplane::handleEvent(SDL_Event &e)
 {
-    Airplane::handleEvent(e);
+    //적 비행기는 어떠한 이벤트도 받지 않는다.
+    //하지만 확장성을 위해서 남겨는 둔다.
 }

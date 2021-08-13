@@ -25,7 +25,7 @@ BackgroundActor::BackgroundActor() {
     auto bgImgSize = backgroundImage->getImageSize();
     backgroundImage->setScale(std::make_pair(Framework::rendererWidth, Framework::rendererHeight));
     __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
-                        "width:%d, height:%d", Framework::rendererWidth, Framework::rendererHeight);
+                        "RendererWidth:%d, RendererHeight:%d", Framework::rendererWidth, Framework::rendererHeight);
     camera = new SDL_Rect();
     camera->x = 0;
     camera->y = bgImgSize.second - cameraWidthAndHeight;

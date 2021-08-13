@@ -34,6 +34,6 @@ protected:
     std::vector<HSceneComponent*> children;
     std::pair<float, float> localLocation;
     std::pair<float, float> worldLocation;
-    float localRotation;
-    float worldRotation;
+    float localRotation = 0.0f;
+    float worldRotation = 0.0f;
 };

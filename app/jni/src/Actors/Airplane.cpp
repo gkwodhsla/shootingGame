@@ -95,6 +95,11 @@ void Airplane::handleEvent(SDL_Event &e)
     }
 }
 
+void Airplane::turnOffBooster()
+{
+    boosterSprite->setVisibility(false);
+}
+
 void Airplane::spawnPlayerBullet(const std::pair<float, float>& spawnPos)
 {
     MainLevel* mainLevel = (MainLevel*)Framework::curLevel;

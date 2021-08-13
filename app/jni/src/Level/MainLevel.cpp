@@ -4,6 +4,7 @@
 #include "../Actors/BackgroundActor.h"
 #include "../Actors/Airplane.h"
 #include "../Actors/Bullet.h"
+#include "../Actors/EnemyAirplane.h"
 #include "../HPlayerController.h"
 #include <vector>
 
@@ -65,7 +66,8 @@ void MainLevel::enter()
         playerBullets[i]->setIsSetLifeTime(true);
         addNewActorToLevel(newBullet);
     }
-
+    enemyTemp = new EnemyAirplane(BULLET_COLOR::RED, ENEMY_SHIP_SHAPE::SHIP4, 100);
+    addNewActorToLevel(enemyTemp);
 }
 
 void MainLevel::exit()
@@ -77,4 +79,7 @@ void MainLevel::exit()
     }
     delete playerController;
     playerController = nullptr;
+
+    delete enemyTemp;
+    enemyTemp = nullptr;
 }

@@ -42,14 +42,19 @@ SpritesheetComponent::~SpritesheetComponent()
 void SpritesheetComponent::render()
 {
     HPrimitiveComponent::render();
-    SDL_Rect dstRect;
-    dstRect.x = int(worldLocation.first);
-    dstRect.y = int(worldLocation.second);
-    dstRect.w = scale.first;
-    dstRect.h = scale.second;
 
-    SDL_RenderCopyEx(Framework::renderer, img, clipRects[int(curFrame) % clipRects.size()], &dstRect,
-                     localRotation, NULL, flip);
+    if(visibility)
+    {
+        SDL_Rect dstRect;
+        dstRect.x = int(worldLocation.first);
+        dstRect.y = int(worldLocation.second);
+        dstRect.w = scale.first;
+        dstRect.h = scale.second;
+
+        SDL_RenderCopyEx(Framework::renderer, img, clipRects[int(curFrame) % clipRects.size()],
+                         &dstRect,
+                         localRotation, NULL, flip);
+    }
 }
 
 void SpritesheetComponent::update(float deltaTime)

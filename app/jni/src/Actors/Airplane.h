@@ -23,6 +23,9 @@ protected:
     float fireRate = 0.5f;
     float curFireTime = 0.5f;
 
+protected:
+    void turnOffBooster();
+
 private:
     SpritesheetComponent* boosterSprite = nullptr;
 };

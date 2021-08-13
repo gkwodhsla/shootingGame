@@ -3,6 +3,7 @@
 #include "HLevelBase.h"
 
 class Airplane;
+class EnemyAirplane;
 class Bullet;
 
 class MainLevel: public HLevelBase
@@ -18,6 +19,7 @@ public:
     friend class Airplane;
 private:
     Airplane* playerAirplane = nullptr;
+    EnemyAirplane* enemyTemp = nullptr;
     std::vector<Bullet*> playerBullets;
     const int playerBulletSize = 100;
 };

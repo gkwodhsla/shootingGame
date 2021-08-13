@@ -66,23 +66,22 @@ void ImageComponent::render()
 {
     HPrimitiveComponent::render();
 
-    SDL_Rect dstRect;
-    dstRect.x = int(worldLocation.first);//imgRect->x;
-    dstRect.y = int(worldLocation.second);//imgRect->y;
-    dstRect.w = scale.first;
-    dstRect.h = scale.second;
-
-    if(!isEnableClipDraw)
+    if(visibility)
     {
-        SDL_RenderCopyEx(Framework::renderer, img, NULL, &dstRect,
-                         localRotation, NULL, flip);
-    }
-    else
-    {
-        SDL_RenderCopyEx(Framework::renderer, img, clipRect, &dstRect,
-                         localRotation, NULL, flip);
-    }
+        SDL_Rect dstRect;
+        dstRect.x = int(worldLocation.first);//imgRect->x;
+        dstRect.y = int(worldLocation.second);//imgRect->y;
+        dstRect.w = scale.first;
+        dstRect.h = scale.second;
 
+        if (!isEnableClipDraw) {
+            SDL_RenderCopyEx(Framework::renderer, img, NULL, &dstRect,
+                             localRotation, NULL, flip);
+        } else {
+            SDL_RenderCopyEx(Framework::renderer, img, clipRect, &dstRect,
+                             localRotation, NULL, flip);
+        }
+    }
 }
 
 void ImageComponent::update(float deltaTime)
@@ -101,6 +100,8 @@ void ImageComponent::changeImage(const std::string &path)
     imgRect->h = h;
     imgRect->x = localLocation.first;
     imgRect->y = localLocation.second;
+    scale.first = w;
+    scale.second = h;
     SDL_SetTextureBlendMode(img, SDL_BLENDMODE_BLEND);
     SDL_SetTextureAlphaMod(img, alphaValue);
 }
