@@ -15,12 +15,17 @@ HPlayerController::~HPlayerController()
 
 }
 
-void HPlayerController::possess(HPawn* pawn)
+void HPlayerController::possess(const HPawn* pawn)
 {
     controlledPawn = pawn;
 }
 
-void HPlayerController::changeInputMode(INPUT_MODE inputMode)
+void HPlayerController::unpossess()
+{
+    controlledPawn = nullptr;
+}
+
+void HPlayerController::changeInputMode(const INPUT_MODE inputMode)
 {
     curInputMode = inputMode;
 }

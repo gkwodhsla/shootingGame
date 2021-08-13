@@ -22,7 +22,7 @@ public:
     virtual void exit() = 0;
     //해당 레벨을 떠날 때 (레벨이 바뀔 때) 호출한다.
     //동적할당 받은 객체들을 초기화 해준다.
-    void addNewActorToLevel(HActor* newActor)
+    void addNewActorToLevel(const HActor* newActor)
     {
         actors.emplace_back(newActor);
     }

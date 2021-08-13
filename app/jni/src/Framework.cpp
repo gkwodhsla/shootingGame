@@ -110,7 +110,7 @@ Framework::~Framework()
 void Framework::handleEvent()
 {
     SDL_Event e;
-    SDL_Point touchLocation;
+
     while(SDL_PollEvent(&e) != 0) //이벤트 큐의 이벤트를 모조리 꺼낸다.
     {
         curLevel->handleEvent(e);
@@ -122,7 +122,6 @@ void Framework::update(float deltaTime)
     curLevel->update(deltaTime);
 }
 
-//BackgroundActor myBG;
 void Framework::render()
 {
     SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);

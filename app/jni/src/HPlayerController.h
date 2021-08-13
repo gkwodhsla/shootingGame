@@ -14,8 +14,9 @@ class HPlayerController
 public:
     HPlayerController();
     virtual ~HPlayerController();
-    void possess(HPawn* pawn);
-    void changeInputMode(INPUT_MODE inputMode);
+    void possess(const HPawn* pawn);
+    void unpossess();
+    void changeInputMode(const INPUT_MODE inputMode);
     void handleEvent(SDL_Event& e);
     HPawn* getControlledPawn();
 

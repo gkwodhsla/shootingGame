@@ -75,4 +75,6 @@ void MainLevel::exit()
         delete actor;
         actor = nullptr;
     }
+    delete playerController;
+    playerController = nullptr;
 }
