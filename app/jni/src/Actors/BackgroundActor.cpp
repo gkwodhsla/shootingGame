@@ -23,7 +23,6 @@ BackgroundActor::BackgroundActor() {
     backgroundImage->setClipDraw(true);
     //init camera
     auto bgImgSize = backgroundImage->getImageSize();
-    auto windowSize = Framework::screenRect;
     backgroundImage->setScale(std::make_pair(Framework::rendererWidth, Framework::rendererHeight));
     __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
                         "width:%d, height:%d", Framework::rendererWidth, Framework::rendererHeight);
@@ -65,11 +64,13 @@ void BackgroundActor::render()
 
         backgroundImage->render();
     }
+    //infinite scrolling 구현을 위해 clipRect가 일정 범위를 넘어가면 백그라운드 그림을 한 장 더 그리게 한다.
 }
 
 void BackgroundActor::update(float deltaTime)
 {
-    accYPos = accYPos + velocity * deltaTime + (0.5f*acceleration*deltaTime*deltaTime);
+    HActor::update(deltaTime);
+    accYPos = accYPos + velocity * deltaTime + (0.5f * acceleration * deltaTime*deltaTime);
     camera->y = int(accYPos);
 
     backgroundImage->setComponentLocalLocation(std::make_pair(0, 0));

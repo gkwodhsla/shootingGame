@@ -12,15 +12,15 @@ public:
     MovementComponent(HActor* owner);
     virtual ~MovementComponent() = default;
     virtual void update(float deltaTime);
-    void setInitialVelocity(const std::pair<float, float>& vel);
+    void setSpeed(float speed);
     void setAcceleration(const std::pair<float, float>& accel);
 
 private:
     void updatePosition(const float deltaTime);
 
 private:
-    std::pair<float, float> initVelocity;
     std::pair<float, float> acceleration;
+    float speed;
 };
 
 

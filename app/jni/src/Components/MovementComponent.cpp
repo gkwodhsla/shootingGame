@@ -13,9 +13,9 @@ void MovementComponent::update(float deltaTime)
     updatePosition(deltaTime);
 }
 
-void MovementComponent::setInitialVelocity(const std::pair<float, float> &vel)
+void MovementComponent::setSpeed(float speed)
 {
-    initVelocity = vel;
+    this->speed = speed;
 }
 
 void MovementComponent::setAcceleration(const std::pair<float, float> &accel)
@@ -26,6 +26,10 @@ void MovementComponent::setAcceleration(const std::pair<float, float> &accel)
 void MovementComponent::updatePosition(const float deltaTime)
 {
     HSceneComponent* ownerRootComp = owner->getRootComponent();
+    auto dirVec = owner->getActorDirectionalVector();
+    auto initVelocity = std::make_pair(dirVec.first * speed, dirVec.second * speed);
+    //속력은 방향벡터 * 속도이다.
+
     auto befPos = ownerRootComp->getComponentLocalLocation();
 
     std::pair<float, float> newPos;

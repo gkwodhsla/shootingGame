@@ -22,6 +22,5 @@ private:
     float accYPos = 0.0f;
     const float acceleration = -300.0f;
     const float velocity = -200.0f;
-    int yOffset = 0;
 
 };

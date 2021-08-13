@@ -5,12 +5,17 @@
 #include "HActor.h"
 #include "../Components/HSceneComponent.h"
 
+HActor::~HActor()
+{
+
+}
+
 void HActor::moveTo(const std::pair<int, int> &loc)
 {
     rootComponent->setComponentLocalLocation(loc);
 }
 
-void HActor::rotateActor(float degree)
+void HActor::rotateActor(const float degree)
 {
     rootComponent->setComponentLocalRotation(degree);
 }
@@ -20,7 +25,7 @@ void HActor::setVisibility(bool isVisible)
     visibility = isVisible;
 }
 
-const bool HActor::getVisibility()
+bool HActor::getVisibility()
 {
     return visibility;
 }
@@ -36,27 +41,27 @@ void HActor::setRootComponent(HSceneComponent *component)
     rootComponent = component;
 }
 
-const std::pair<int, int> HActor::getActorDirectionalVector()
+std::pair<float, float> HActor::getActorDirectionalVector()
 {
     return dirVec;
 }
 
-const std::pair<int, int> HActor::getActorWorldLocation()
+std::pair<int, int> HActor::getActorWorldLocation()
 {
     return rootComponent->getComponentLocalLocation();
 }
 
-const float HActor::getActorWorldRotation()
+float HActor::getActorWorldRotation()
 {
     return rootComponent->getComponentLocalRotation();
 }
 
-void HActor::setActorTickable(bool isTickable)
+void HActor::setActorTickable(const bool isTickable)
 {
     tickable = isTickable;
 }
 
-const bool HActor::getActorTickable()
+bool HActor::getActorTickable()
 {
     return tickable;
 }
@@ -73,6 +78,7 @@ void HActor::update(float deltaTime)
 {
     if(tickable)
     {
+        rootComponent->update(deltaTime);
         if (isSetLifeTime)
         {
             lifeTime -= deltaTime;
@@ -92,7 +98,7 @@ void HActor::setIsSetLifeTime(const bool isSetLifeTime)
 {
     this->isSetLifeTime = isSetLifeTime;
 }
-const bool HActor::getIsSetLifeTime()
+bool HActor::getIsSetLifeTime()
 {
     return this->isSetLifeTime;
 }

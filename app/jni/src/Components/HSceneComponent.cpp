@@ -40,7 +40,7 @@ void HSceneComponent::updateComponentWorldLocation()
         worldLocation = std::make_pair(parentLocalLocation.first + localLocation.first,
                                        parentLocalLocation.second + localLocation.second);
     }
-    else if(!parent)
+    else if(!parent) //부모가 없다면 rootComponent이다. rootComponent는 월드와 로컬이 같다.
     {
         worldLocation = localLocation;
     }

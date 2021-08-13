@@ -16,7 +16,7 @@ public:
     virtual void render() override;
     virtual void update(float deltaTime) override;
     virtual void handleEvent(SDL_Event& e) = 0;
-private:
+protected:
     MovementComponent* movementComp = nullptr;
     HPlayerController* controller = nullptr;
     bool canReceiveInputFromPlayer = true;

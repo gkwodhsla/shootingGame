@@ -15,7 +15,7 @@ HPlayerController::~HPlayerController()
 
 }
 
-void HPlayerController::possess(const HPawn* pawn)
+void HPlayerController::possess(HPawn* pawn)
 {
     controlledPawn = pawn;
 }

@@ -29,7 +29,7 @@ Bullet::Bullet(const std::pair<float, float> &spawnPosition, BULLET_COLOR bullet
     bulletMovement = new MovementComponent(this);
     this->dirVec = dirVec;
 
-    bulletMovement->setInitialVelocity(std::make_pair(dirVec.first * 900.0f, dirVec.second * 900.0f));
+    bulletMovement->setSpeed(900.0f);
     bulletMovement->setAcceleration(std::make_pair(dirVec.first * 1000.0f, dirVec.second * 1000.0f));
 }
 
@@ -56,7 +56,7 @@ void Bullet::update(float deltaTime)
     if(tickable)
     {
         bulletMovement->update(deltaTime);
-        if(isPendingToKill)
+        if(isPendingToKill) // 해당총알이 수명이 다해 파괴예정이면 해당 버퍼를 사용할 수 있게 해준다.
         {
             tickable = false;
             visibility = false;
