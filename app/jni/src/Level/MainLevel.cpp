@@ -66,6 +66,16 @@ void MainLevel::enter()
         playerBullets[i]->setIsSetLifeTime(true);
         addNewActorToLevel(newBullet);
     }
+
+    enemyAirplanes.reserve(30);
+    /*for(int i = 0; i < enemySize;++i)
+    {
+        auto newEnemy = new EnemyAirplane(BULLET_COLOR::RED, ENEMY_SHIP_SHAPE::SHIP1, 100);
+        newEnemy->setVisibility(false);
+        newEnemy->setActorTickable(false);
+        enemyAirplanes.push_back(newEnemy);
+        addNewActorToLevel(newEnemy);
+    }*/
     enemyTemp = new EnemyAirplane(BULLET_COLOR::RED, ENEMY_SHIP_SHAPE::SHIP4, 100);
     addNewActorToLevel(enemyTemp);
 }

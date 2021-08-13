@@ -2,6 +2,7 @@
 #include "../Components/HSceneComponent.h"
 #include "../Components/ImageComponent.h"
 #include "../Components/MovementComponent.h"
+#include "../Components/CollisionBoxComponent.h"
 #include <android/log.h>
 Bullet::Bullet(const std::pair<float, float> &spawnPosition, BULLET_COLOR bulletColor,
                const std::pair<float, float>& dirVec)
@@ -30,6 +31,12 @@ Bullet::Bullet(const std::pair<float, float> &spawnPosition, BULLET_COLOR bullet
 
     bulletMovement->setSpeed(900.0f);
     bulletMovement->setAcceleration(std::make_pair(dirVec.first * 1000.0f, dirVec.second * 1000.0f));
+
+    auto imgSize = bulletImg->getScale();
+    collisionBox = new CollisionBoxComponent(0, 0, imgSize.first, imgSize.second, this);
+    collisionBox->setDrawDebugBox(true);
+
+    collisionBox->attachTo(rootComponent);
 }
 
 Bullet::~Bullet()
@@ -39,6 +46,9 @@ Bullet::~Bullet()
 
     delete bulletMovement;
     bulletMovement = nullptr;
+
+    delete collisionBox;
+    collisionBox = nullptr;
 }
 
 void Bullet::render()

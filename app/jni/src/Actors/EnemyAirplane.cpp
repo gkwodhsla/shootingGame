@@ -1,6 +1,7 @@
 #include "EnemyAirplane.h"
 #include "../Components/ImageComponent.h"
 #include "../Components/HSceneComponent.h"
+#include "../Components/CollisionBoxComponent.h"
 #include "../Framework.h"
 #include <android/log.h>
 EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp):bulletColor(color), curHp(hp)
@@ -43,6 +44,8 @@ EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp)
 
     turnOffBooster();
 
+    collisionBox->setWidthAndHeight(shipImgSize.first, shipImgSize.second);
+    collisionBox->setOwner(this);
     //적 기체에선 우선 부스터를 쓰지 않을 거라 꺼준다.
 }
 

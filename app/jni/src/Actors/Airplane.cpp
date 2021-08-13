@@ -9,6 +9,7 @@
 #include "../Components/ImageComponent.h"
 #include "../Components/HSceneComponent.h"
 #include "../Components/SpritesheetComponent.h"
+#include "../Components/CollisionBoxComponent.h"
 #include "../Framework.h"
 #include "../Level/MainLevel.h"
 #include "../Actors/Bullet.h"
@@ -32,6 +33,10 @@ Airplane::Airplane()
     boosterSprite->setLooping(true);
     boosterSprite->setImageFlip(SDL_FLIP_VERTICAL);
 
+    collisionBox = new CollisionBoxComponent(0, 0, airPlaneImgSize.first, airPlaneImgSize.second, this);
+    collisionBox->setDrawDebugBox(true);
+    collisionBox->attachTo(rootComponent);
+
     //explosionSprite = new SpritesheetComponent()
     //추후 추가 예정
 }
@@ -44,6 +49,8 @@ Airplane::~Airplane()
     delete boosterSprite;
     boosterSprite = nullptr;
 
+    delete collisionBox;
+    collisionBox = nullptr;
     //delete explosionSprite;
     //explosionSprite = nullptr
     //추후 추가 예정

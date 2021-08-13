@@ -2,7 +2,6 @@
 
 #include "HSceneComponent.h"
 
-class SDL_Renderer;
 
 class HPrimitiveComponent: public HSceneComponent
 {

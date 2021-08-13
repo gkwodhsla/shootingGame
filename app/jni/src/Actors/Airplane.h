@@ -4,6 +4,7 @@
 
 class ImageComponent;
 class SpritesheetComponent;
+class CollisionBoxComponent;
 
 class Airplane :public HPawn
 {
@@ -20,6 +21,7 @@ private:
 protected:
     ImageComponent* airplaneImg = nullptr;
     SpritesheetComponent* explosionSprite = nullptr;
+    CollisionBoxComponent* collisionBox = nullptr;
     float fireRate = 0.5f;
     float curFireTime = 0.5f;
 

@@ -3,6 +3,7 @@
 
 class ImageComponent;
 class MovementComponent;
+class CollisionBoxComponent;
 
 enum class BULLET_COLOR
 {
@@ -24,4 +25,5 @@ public:
 private:
     ImageComponent* bulletImg;
     MovementComponent* bulletMovement;
+    CollisionBoxComponent* collisionBox;
 };

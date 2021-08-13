@@ -106,6 +106,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wctype.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\..\Actors\HActor.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\SpritesheetComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\CollisionBoxComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Framework.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\MainLevel.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\HLevelBase.h \
@@ -322,6 +323,8 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wct
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\..\Actors\HActor.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\SpritesheetComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\CollisionBoxComponent.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Framework.h:
 

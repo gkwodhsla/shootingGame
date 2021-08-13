@@ -21,5 +21,7 @@ private:
     Airplane* playerAirplane = nullptr;
     EnemyAirplane* enemyTemp = nullptr;
     std::vector<Bullet*> playerBullets;
+    std::vector<EnemyAirplane*> enemyAirplanes;
     const int playerBulletSize = 100;
+    const int enemySize = 30;
 };
