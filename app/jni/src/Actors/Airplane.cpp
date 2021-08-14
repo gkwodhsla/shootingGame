@@ -32,6 +32,14 @@ Airplane::Airplane()
     boosterSprite->setScale(std::make_pair(30,108));
     boosterSprite->setLooping(true);
     boosterSprite->setImageFlip(SDL_FLIP_VERTICAL);
+    boosterSprite->play();
+
+    explosionSprite = new SpritesheetComponent("image/spritesheet/explosion.png",
+                                               std::make_pair(-80.0f, -45.0f), this, 24, 6, 4);
+    explosionSprite->attachTo(rootComponent);
+    explosionSprite->setScale(std::make_pair(350, 350));
+    explosionSprite->setLooping(false);
+    explosionSprite->setDrawCntPerSec(40);
 
     collisionBox = new CollisionBoxComponent(0, 0, airPlaneImgSize.first, airPlaneImgSize.second, this);
     collisionBox->setDrawDebugBox(true);
@@ -51,8 +59,9 @@ Airplane::~Airplane()
 
     delete collisionBox;
     collisionBox = nullptr;
-    //delete explosionSprite;
-    //explosionSprite = nullptr
+
+    delete explosionSprite;
+    explosionSprite = nullptr;
     //추후 추가 예정
 }
 

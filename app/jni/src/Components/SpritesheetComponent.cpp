@@ -28,6 +28,7 @@ SpritesheetComponent::SpritesheetComponent(const std::string &path, const std::p
 
         clipRects.push_back(newClipRect);
     }
+    visibility = false;
 }
 
 SpritesheetComponent::~SpritesheetComponent()
@@ -64,8 +65,7 @@ void SpritesheetComponent::update(float deltaTime)
     {
         if(curFrame > clipRects.size())
         {
-            canIncFrame = false;
-            isPlayEnd = true;
+            stop();
         }
     }
     if(canIncFrame)
@@ -74,11 +74,19 @@ void SpritesheetComponent::update(float deltaTime)
     }
 }
 
-void SpritesheetComponent::goToFirstFrame()
+void SpritesheetComponent::play()
 {
     canIncFrame = true;
+    visibility = true;
     isPlayEnd = false;
+}
+
+void SpritesheetComponent::stop()
+{
+    canIncFrame = false;
+    isPlayEnd = true;
     curFrame = 0;
+    visibility = false;
 }
 
 void SpritesheetComponent::setLooping(bool isLooping)
@@ -94,4 +102,9 @@ const bool SpritesheetComponent::getLooping()
 void SpritesheetComponent::setDrawCntPerSec(int cnt)
 {
     drawCntPerSec = cnt;
+}
+
+bool SpritesheetComponent::getIsPlayEnd()
+{
+    return isPlayEnd;
 }

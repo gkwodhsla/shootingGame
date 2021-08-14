@@ -2,6 +2,7 @@
 #include "../Components/ImageComponent.h"
 #include "../Components/HSceneComponent.h"
 #include "../Components/CollisionBoxComponent.h"
+#include "../Components/SpritesheetComponent.h"
 #include "../Framework.h"
 #include <android/log.h>
 EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp):bulletColor(color), curHp(hp), maxHP(hp)
@@ -47,6 +48,9 @@ EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp)
     collisionBox->setWidthAndHeight(shipImgSize.first, shipImgSize.second);
     collisionBox->setOwner(this);
     //적 기체에선 우선 부스터를 쓰지 않을 거라 꺼준다.
+
+    explosionSprite->setOwner(this);
+    explosionSprite->setComponentLocalLocation(std::make_pair(-55.0f, -45.0f));
 }
 
 EnemyAirplane::~EnemyAirplane()
@@ -63,6 +67,10 @@ void EnemyAirplane::render()
 void EnemyAirplane::update(float deltaTime)
 {
     HPawn::update(deltaTime);
+    if(curHp<=0 && explosionSprite->getIsPlayEnd())
+    {
+        resetEnemyAirplaneToInitialState();
+    }
 }
 
 void EnemyAirplane::handleEvent(SDL_Event &e)
@@ -76,4 +84,15 @@ void EnemyAirplane::getDamage(int damage)
     curHp -= damage;
     float barSize = float(hpBarRowSize) / float(maxHP);
     hpBar->setScale(std::make_pair(barSize * float(curHp), hpBarColSize));
+    if(curHp <= 0)
+    {
+        explosionSprite->play();
+        airplaneImg->setVisibility(false);
+    }
+}
+
+void EnemyAirplane::resetEnemyAirplaneToInitialState()
+{
+    tickable = false;
+    visibility = false;
 }

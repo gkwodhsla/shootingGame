@@ -22,6 +22,7 @@ public:
     virtual void update(float deltaTime) override;
     virtual void handleEvent(SDL_Event& e) override;
     void getDamage(int damage);
+    void resetEnemyAirplaneToInitialState();
 
 //private:
     //void spawnBullet(); 추후 추가 예정
