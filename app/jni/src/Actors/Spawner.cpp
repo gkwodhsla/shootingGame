@@ -2,6 +2,12 @@
 #include "../Framework.h"
 #include "../Level/MainLevel.h"
 #include "../Actors/EnemyAirplane.h"
+#include <random>
+
+std::random_device rd;
+std::default_random_engine dre(rd());
+std::uniform_int_distribution<int> uid(0,23);
+
 //{-100, 1200},
 //                                      {900, 1000},
 //                                      {Framework::rendererWidth/2,700},
@@ -58,6 +64,11 @@ Spawner::~Spawner()
 void Spawner::render()
 {
     HActor::render();
+
+    /*for(int i=0;i<pathMiddle.size();++i)
+    {
+        pathMiddle[i].drawDebugLine();
+    }*/
 }
 
 void Spawner::update(float deltaTime)
@@ -78,7 +89,7 @@ void Spawner::update(float deltaTime)
                 {
                     enemies[i]->setVisibility(true);
                     enemies[i]->setActorTickable(true);
-                    enemies[i]->setPath(&pathLeft[4]);
+                    enemies[i]->setPath(&pathLeft[uid(dre)]);
                     break;
                 }
             }

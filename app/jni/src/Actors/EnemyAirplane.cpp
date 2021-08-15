@@ -104,6 +104,11 @@ void EnemyAirplane::resetEnemyAirplaneToInitialState()
     visibility = false;
     t = 0.0f;
     this->path = nullptr;
+    curHp = maxHP;
+    airplaneImg->setVisibility(true);
+    rootComponent->setComponentLocalLocation(std::make_pair(-999.0f,-999.0f));
+    float barSize = float(hpBarRowSize) / float(maxHP);
+    hpBar->setScale(std::make_pair(barSize * float(curHp), hpBarColSize));
 }
 
 

@@ -43,8 +43,8 @@ void MainLevel::update(float deltaTime)
     coolTime -= deltaTime;
     if(coolTime <= 0)
     {
-        spawner->startSpawn(1);
-        coolTime = 3.0f;
+        spawner->startSpawn(3);
+        coolTime = 10.0f;
     }
 }
 
@@ -109,30 +109,26 @@ void MainLevel::exit()
     spawner = nullptr;
 }
 
+//문제가 있음 고쳐야함
 void MainLevel::checkingCollision()
 {
     for(int i = 0; i < playerBulletSize; ++i)
     {
         if(playerBullets[i]->getVisibility())
         {
-            for(int j = 0; j < enemyAirplanes.size();++j)
+            for(int j = 0; j < enemyAirplanes.size(); ++j)
             {
-                if(enemyAirplanes[i]->getVisibility())
+                if(enemyAirplanes[j]->getVisibility())
                 {
-                    bool isHit = playerBullets[i]->getCollisionComp()->checkCollision(*(enemyAirplanes[i]->getCollisionBoxComp()));
+                    bool isHit = playerBullets[i]->getCollisionComp()->checkCollision(*(enemyAirplanes[j]->getCollisionBoxComp()));
                     if(isHit)
                     {
-                        enemyAirplanes[i]->getDamage(playerAirplane->getPlayerAttackPower());
+                        enemyAirplanes[j]->getDamage(playerAirplane->getPlayerAttackPower());
                         playerBullets[i]->resetBulletToInitialState();
                         break;
                     }
                 }
             }
-            //if(isHit) //히트됐다면
-            //{
-            //    playerBullets[i]->resetBulletToInitialState(); //총알을 버퍼에 돌려준다.
-                //적에게 데미지를 입힌다.
-            //}
         }
     }
     //이곳에서 콜리전 검사를 수행한다.
