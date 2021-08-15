@@ -18,6 +18,7 @@ Components/ImageComponent.cpp\
 Components/MovementComponent.cpp\
 Components/SpritesheetComponent.cpp\
 Components/CollisionBoxComponent.cpp\
+Components/SplineComponent.cpp\
 Actors/HActor.cpp\
 Actors/BackgroundActor.cpp\
 Actors/Bullet.cpp\

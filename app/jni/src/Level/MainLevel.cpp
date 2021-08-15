@@ -7,6 +7,7 @@
 #include "../Actors/EnemyAirplane.h"
 #include "../HPlayerController.h"
 #include "../Components/CollisionBoxComponent.h"
+#include "../Components/SplineComponent.h"
 #include <vector>
 #include <android/log.h>
 
@@ -48,6 +49,8 @@ void MainLevel::render()
 
         }
     }
+    tempSpline->drawDebugLine();
+
 }
 
 void MainLevel::enter()
@@ -81,6 +84,10 @@ void MainLevel::enter()
     }*/
     enemyTemp = new EnemyAirplane(BULLET_COLOR::RED, ENEMY_SHIP_SHAPE::SHIP4, 100);
     addNewActorToLevel(enemyTemp);
+
+    tempSpline = new SplineComponent({{0,0},
+                                      {500, 250},
+                                      {0, 500},{500, 750},{0, 1000}}, 0.0f);
 }
 
 void MainLevel::exit()
@@ -95,6 +102,9 @@ void MainLevel::exit()
 
     delete enemyTemp;
     enemyTemp = nullptr;
+
+    delete tempSpline;
+    tempSpline = nullptr;
 }
 
 void MainLevel::checkingCollision()

@@ -5,6 +5,7 @@
 class Airplane;
 class EnemyAirplane;
 class Bullet;
+class SplineComponent;
 
 class MainLevel: public HLevelBase
 {
@@ -25,4 +26,5 @@ private:
     std::vector<EnemyAirplane*> enemyAirplanes;
     const int playerBulletSize = 100;
     const int enemySize = 30;
+    SplineComponent* tempSpline = nullptr;
 };
