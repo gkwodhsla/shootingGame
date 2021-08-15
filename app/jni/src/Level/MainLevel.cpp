@@ -8,6 +8,7 @@
 #include "../HPlayerController.h"
 #include "../Components/CollisionBoxComponent.h"
 #include "../Components/SplineComponent.h"
+#include "../Actors/Spawner.h"
 #include <vector>
 #include <android/log.h>
 
@@ -37,6 +38,14 @@ void MainLevel::update(float deltaTime)
         }
     }
     checkingCollision();
+
+    //일단 임의로 적을 스폰해보자!
+    coolTime -= deltaTime;
+    if(coolTime <= 0)
+    {
+        spawner->startSpawn(1);
+        coolTime = 3.0f;
+    }
 }
 
 void MainLevel::render()
@@ -49,8 +58,6 @@ void MainLevel::render()
 
         }
     }
-    tempSpline->drawDebugLine();
-
 }
 
 void MainLevel::enter()
@@ -73,21 +80,19 @@ void MainLevel::enter()
         addNewActorToLevel(newBullet);
     }
 
-    enemyAirplanes.reserve(30);
-    /*for(int i = 0; i < enemySize;++i)
+    int enemySize = Spawner::numOfDestX * Spawner::numOfDestY;
+    enemyAirplanes.reserve(enemySize);
+    for(int i = 0; i < enemySize;++i)
     {
         auto newEnemy = new EnemyAirplane(BULLET_COLOR::RED, ENEMY_SHIP_SHAPE::SHIP1, 100);
         newEnemy->setVisibility(false);
         newEnemy->setActorTickable(false);
         enemyAirplanes.push_back(newEnemy);
         addNewActorToLevel(newEnemy);
-    }*/
-    enemyTemp = new EnemyAirplane(BULLET_COLOR::RED, ENEMY_SHIP_SHAPE::SHIP4, 100);
-    addNewActorToLevel(enemyTemp);
+    }
 
-    tempSpline = new SplineComponent({{0,0},
-                                      {500, 250},
-                                      {0, 500},{500, 750},{0, 1000}}, 0.0f);
+    spawner = new Spawner();
+    addNewActorToLevel(spawner);
 }
 
 void MainLevel::exit()
@@ -100,11 +105,8 @@ void MainLevel::exit()
     delete playerController;
     playerController = nullptr;
 
-    delete enemyTemp;
-    enemyTemp = nullptr;
-
-    delete tempSpline;
-    tempSpline = nullptr;
+    delete spawner;
+    spawner = nullptr;
 }
 
 void MainLevel::checkingCollision()
@@ -113,12 +115,24 @@ void MainLevel::checkingCollision()
     {
         if(playerBullets[i]->getVisibility())
         {
-            bool isHit = playerBullets[i]->getCollisionComp()->checkCollision(*(enemyTemp->getCollisionBoxComp()));
-            if(isHit) //히트됐다면
+            for(int j = 0; j < enemyAirplanes.size();++j)
             {
-                playerBullets[i]->resetBulletToInitialState(); //총알을 버퍼에 돌려준다.
-                enemyTemp->getDamage(playerAirplane->getPlayerAttackPower());
+                if(enemyAirplanes[i]->getVisibility())
+                {
+                    bool isHit = playerBullets[i]->getCollisionComp()->checkCollision(*(enemyAirplanes[i]->getCollisionBoxComp()));
+                    if(isHit)
+                    {
+                        enemyAirplanes[i]->getDamage(playerAirplane->getPlayerAttackPower());
+                        playerBullets[i]->resetBulletToInitialState();
+                        break;
+                    }
+                }
             }
+            //if(isHit) //히트됐다면
+            //{
+            //    playerBullets[i]->resetBulletToInitialState(); //총알을 버퍼에 돌려준다.
+                //적에게 데미지를 입힌다.
+            //}
         }
     }
     //이곳에서 콜리전 검사를 수행한다.

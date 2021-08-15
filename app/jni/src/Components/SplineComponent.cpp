@@ -6,7 +6,7 @@
 #include <cmath>
 #include <android/log.h>
 
-SplineComponent::SplineComponent(const std::initializer_list<std::pair<int, int>> &points, float tension)
+SplineComponent::SplineComponent(const std::initializer_list<std::pair<int, int>> &points, float tension, HActor* owner)
 {
     controlPoints.reserve(points.size());
     for(auto& point : points)
@@ -23,6 +23,8 @@ SplineComponent::SplineComponent(const std::initializer_list<std::pair<int, int>
         velocities.push_back(calcVelocityOfNPoint(i));
     }
     velocities.push_back(std::make_pair(0.0f, 0.0f));
+
+    this->owner = owner;
 }
 
 SplineComponent::~SplineComponent()
@@ -32,7 +34,7 @@ SplineComponent::~SplineComponent()
 
 void SplineComponent::update(float deltaTime)
 {
-    t += incTPerSec * deltaTime;
+
 }
 
 void SplineComponent::drawDebugLine()
@@ -48,9 +50,18 @@ void SplineComponent::drawDebugLine()
     }
 }
 
-std::pair<int, int> SplineComponent::getCurrentLocation()
+std::pair<int, int> SplineComponent::getCurrentLocation(float t)
 {
-    return {0, 0};
+    curLocalCurveIndex = int(floor(t));
+    float localT = t - float(curLocalCurveIndex);
+    auto curPoint = calcPointOfLocalHermiteCurve(curLocalCurveIndex, localT);
+
+    return {curPoint.first, curPoint.second};
+}
+
+int SplineComponent::getControlPointSize()
+{
+    return controlPoints.size();
 }
 
 void SplineComponent::setIncTPerSec(float value)

@@ -110,7 +110,9 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cctype \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wctype.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\..\Actors\HActor.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\SplineComponent.h
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\SplineComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Spawner.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\..\Components\SplineComponent.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\MainLevel.h:
 
@@ -333,3 +335,7 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wct
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\..\Actors\HActor.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\SplineComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Spawner.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\..\Components\SplineComponent.h:

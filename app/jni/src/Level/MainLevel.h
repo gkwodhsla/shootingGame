@@ -5,7 +5,7 @@
 class Airplane;
 class EnemyAirplane;
 class Bullet;
-class SplineComponent;
+class Spawner;
 
 class MainLevel: public HLevelBase
 {
@@ -19,12 +19,12 @@ public:
     void exit() override;
     void checkingCollision();
     friend class Airplane;
+    friend class Spawner;
 private:
     Airplane* playerAirplane = nullptr;
-    EnemyAirplane* enemyTemp = nullptr;
+    Spawner* spawner = nullptr;
     std::vector<Bullet*> playerBullets;
     std::vector<EnemyAirplane*> enemyAirplanes;
     const int playerBulletSize = 100;
-    const int enemySize = 30;
-    SplineComponent* tempSpline = nullptr;
+    float coolTime = 3.0f;
 };

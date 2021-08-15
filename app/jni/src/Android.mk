@@ -25,6 +25,7 @@ Actors/Bullet.cpp\
 Actors/HPawn.cpp\
 Actors/Airplane.cpp\
 Actors/EnemyAirplane.cpp\
+Actors/Spawner.cpp\
 Level/MainLevel.cpp
 
 

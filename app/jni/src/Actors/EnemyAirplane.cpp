@@ -3,6 +3,7 @@
 #include "../Components/HSceneComponent.h"
 #include "../Components/CollisionBoxComponent.h"
 #include "../Components/SpritesheetComponent.h"
+#include "../Components/SplineComponent.h"
 #include "../Framework.h"
 #include <android/log.h>
 EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp):bulletColor(color), curHp(hp), maxHP(hp)
@@ -33,7 +34,7 @@ EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp)
     }
 
     rootComponent->setOwner(this);
-    rootComponent->setComponentLocalLocation(std::make_pair(300, 300));
+    rootComponent->setComponentLocalLocation(std::make_pair(-999, -999));
     rootComponent->setComponentLocalRotation(0);
 
     hpBar = new ImageComponent("image/misc/hpBar.png",std::make_pair(0, 0), this);
@@ -71,6 +72,12 @@ void EnemyAirplane::update(float deltaTime)
     {
         resetEnemyAirplaneToInitialState();
     }
+    if(tickable && t < float(path->getControlPointSize() - 1) - 0.1f)
+    {
+        t += 0.001f;
+        auto loc = path->getCurrentLocation(t);
+        rootComponent->setComponentLocalLocation(std::make_pair(float(loc.first), float(loc.second)));
+    }
 }
 
 void EnemyAirplane::handleEvent(SDL_Event &e)
@@ -95,4 +102,12 @@ void EnemyAirplane::resetEnemyAirplaneToInitialState()
 {
     tickable = false;
     visibility = false;
+    t = 0.0f;
+    this->path = nullptr;
+}
+
+
+void EnemyAirplane::setPath(SplineComponent* path)
+{
+    this->path = path;
 }
