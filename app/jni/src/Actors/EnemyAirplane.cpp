@@ -54,6 +54,7 @@ EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp)
     explosionSprite->setOwner(this);
     explosionSprite->setComponentLocalLocation(std::make_pair(-55.0f, -45.0f));
 
+    realDirVec = std::make_pair(0.0f, 1.0f);
 }
 
 EnemyAirplane::~EnemyAirplane()
@@ -68,6 +69,10 @@ void EnemyAirplane::render()
     auto loc = rootComponent->getComponentLocalLocation();
     SDL_RenderDrawLine(Framework::renderer,
                        loc.first + 100, loc.second + 100, loc.first + 100 + dirVec.first * 300.0f, 100+loc.second + dirVec.second * 300.0f);
+    SDL_SetRenderDrawColor(Framework::renderer, 0xFF, 0, 0, 0xFF);
+    SDL_RenderDrawLine(Framework::renderer,
+                       loc.first + 100, loc.second + 100, loc.first + 100 + realDirVec.first * 300.0f, 100+loc.second + realDirVec.second * 300.0f);
+
 }
 
 void EnemyAirplane::update(float deltaTime)
@@ -79,23 +84,52 @@ void EnemyAirplane::update(float deltaTime)
     }
     if(tickable && airplaneImg->getVisibility() && t < float(path->getControlPointSize() - 1) - 0.1f)
     {
-        befPos = rootComponent->getComponentLocalLocation();
         t += deltaTime * 0.4f;
         auto loc = path->getCurrentLocation(t);
         rootComponent->setComponentLocalLocation(std::make_pair(float(loc.first), float(loc.second)));
         //loc가 지금 위치, befPos가 이전 위치
 
+        ++cnt;
+        if(cnt%50==0)
         //여기서 이전 방향벡터와 새로운 방향향
-        float newDirVecX = float(loc.first - befPos.first);
-        float newDirVecY = float(loc.second - befPos.second);
-        auto befDirVec = std::make_pair(0.0f, 1.0f);
-        dirVec.first = newDirVecX;
-        dirVec.second = newDirVecY;
-        normalizeDirVec();
+        {
+            float newDirVecX = float(loc.first - befPos.first);
+            float newDirVecY = float(loc.second - befPos.second);
+            auto befDirVec = realDirVec;
+            dirVec.first = newDirVecX;
+            dirVec.second = newDirVecY;
+            normalizeDirVec();
 
 
+            float befDotCur = (befDirVec.first * dirVec.first) + (befDirVec.second * dirVec.second);
+            float befCrossCur =
+                    (befDirVec.first * dirVec.second) - (dirVec.first * befDirVec.second);
+
+            float curRot = rootComponent->getComponentLocalRotation();
+            float degree = acos(befDotCur) * 180.0f / 3.14f;
+            degree = fmin(degree, 360.0f - degree);
+            float rotDir = asin(befCrossCur);
+            if (!isnan(curRot) && !isnan(degree))
+            {
+                if (rotDir >= 0)
+                    degreeGap = +degree;//-degree;
+                else if (rotDir < 0.0f)
+                    degreeGap = -degree;
+            }
+
+
+            befPos = rootComponent->getComponentLocalLocation();
+        }
+    }
+
+    if(path && t > float(path->getControlPointSize() - 1) - 0.1f)
+    {
+        dirVec.first = 0.0f;
+        dirVec.second = 1.0f;
+        auto befDirVec = realDirVec;
         float befDotCur = (befDirVec.first * dirVec.first) + (befDirVec.second * dirVec.second);
-        float befCrossCur = (befDirVec.first*dirVec.second) - (dirVec.first*befDirVec.second);
+        float befCrossCur =
+                (befDirVec.first * dirVec.second) - (dirVec.first * befDirVec.second);
 
         float curRot = rootComponent->getComponentLocalRotation();
         float degree = acos(befDotCur) * 180.0f / 3.14f;
@@ -103,19 +137,34 @@ void EnemyAirplane::update(float deltaTime)
         float rotDir = asin(befCrossCur);
         if (!isnan(curRot) && !isnan(degree))
         {
-            float destRot = 0.0f;
-            if(rotDir>=0)
-                destRot = +degree;//-degree;
-            else if(rotDir<0.0f)
-                destRot = -degree;
-            rootComponent->setComponentLocalRotation(destRot);
-
+            if (rotDir >= 0)
+                degreeGap = +degree;//-degree;
+            else if (rotDir < 0.0f)
+                degreeGap = -degree;
         }
-
         __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
-                            "x: %f ", rootComponent->getComponentLocalRotation());
-
+                            "arrive");
     }
+
+
+    if(!(-1.0f<degreeGap&&degreeGap<1.0f))
+    {
+        float curRootRot = rootComponent->getComponentLocalRotation();
+        float interpValue = deltaTime * 100;
+        if(degreeGap>0)
+        {
+            degreeGap-=interpValue;
+            rotateDirVector(interpValue);
+            rootComponent->setComponentLocalRotation(curRootRot + interpValue);
+        }
+        else
+        {
+            degreeGap+=interpValue;
+            rotateDirVector(-interpValue);
+            rootComponent->setComponentLocalRotation(curRootRot - interpValue);
+        }
+    }
+
 }
 
 void EnemyAirplane::handleEvent(SDL_Event &e)
@@ -157,4 +206,17 @@ void EnemyAirplane::resetEnemyAirplaneToInitialState()
 void EnemyAirplane::setPath(SplineComponent* path)
 {
     this->path = path;
+}
+
+void EnemyAirplane::rotateDirVector(float degree)
+{
+    float radian = degree * (3.14f/180.0f);
+    float cosValue = cos(radian);
+    float sinValue = sin(radian);
+
+    float newX = (realDirVec.first * cosValue) - (realDirVec.second * sinValue);
+    float newY = (realDirVec.first * sinValue) + (realDirVec.second * cosValue);
+
+    realDirVec.first = newX;
+    realDirVec.second = newY;
 }

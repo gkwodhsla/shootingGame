@@ -89,15 +89,7 @@ void HActor::update(float deltaTime)
     if(tickable)
     {
         rootComponent->update(deltaTime);
-        float curRotation = rootComponent->getComponentLocalRotation();
-        float gap = curRotation - destRotation;
-        /*if(!(-0.1f <= fabs(gap)&&fabs(gap) <= 0.1f))
-        {
-             curRotation+=0.5f;
-             rotateDirVector(0.5f);
 
-             rootComponent->setComponentLocalRotation(curRotation);
-        }*/
         if (isSetLifeTime)
         {
             lifeTime -= deltaTime;
@@ -140,17 +132,3 @@ bool HActor::getIsSetLifeTime()
     return this->isSetLifeTime;
 }
 
-void HActor::rotateDirVector(float degree)
-{
-    float radian = degree * (3.14f/180.0f);
-    float cosValue = cos(radian);
-    float sinValue = sin(radian);
-
-    float newX = (dirVec.first * cosValue) - (dirVec.second * sinValue);
-    float newY = (dirVec.first * sinValue) + (dirVec.second * cosValue);
-
-    dirVec.first = newX;
-    dirVec.second = newY;
-
-
-}

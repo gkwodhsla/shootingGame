@@ -32,7 +32,6 @@ public:
     void setDestRotation(float dest);
     void normalizeDirVec();
     bool getIsSetLifeTime();
-    void rotateDirVector(float degree);
 
 protected:
     HSceneComponent* rootComponent;

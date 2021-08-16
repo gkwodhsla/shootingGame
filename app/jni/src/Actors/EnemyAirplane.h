@@ -41,6 +41,11 @@ private:
     const int hpBarRowSize = 100;
     const int hpBarColSize = 10;
     std::pair<int, int> befPos;
+    std::pair<float, float> realDirVec;
     int cnt = 0;
+    float degreeGap = 0.0f;
+
+private:
+    void rotateDirVector(float degree);
 };
 

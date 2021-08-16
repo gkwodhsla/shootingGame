@@ -69,10 +69,10 @@ void Spawner::render()
 {
     HActor::render();
 
-    for(int i=0;i<pathLeft.size();++i)
+    /*for(int i=0;i<pathLeft.size();++i)
     {
         pathLeft[i].drawDebugLine();
-    }
+    }*/
 }
 
 void Spawner::update(float deltaTime)

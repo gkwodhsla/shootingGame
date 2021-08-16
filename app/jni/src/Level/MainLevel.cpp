@@ -43,7 +43,7 @@ void MainLevel::update(float deltaTime)
     coolTime -= deltaTime;
     if(coolTime <= 0)
     {
-        spawner->startSpawn(1);
+        spawner->startSpawn(5);
         coolTime = 10.0f;
     }
 }
