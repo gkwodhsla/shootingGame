@@ -74,7 +74,7 @@ void EnemyAirplane::update(float deltaTime)
     }
     if(tickable && t < float(path->getControlPointSize() - 1) - 0.1f)
     {
-        t += 0.001f;
+        t += deltaTime * 0.2f;
         auto loc = path->getCurrentLocation(t);
         rootComponent->setComponentLocalLocation(std::make_pair(float(loc.first), float(loc.second)));
     }
@@ -100,15 +100,16 @@ void EnemyAirplane::getDamage(int damage)
 
 void EnemyAirplane::resetEnemyAirplaneToInitialState()
 {
-    tickable = false;
-    visibility = false;
     t = 0.0f;
+    this->path->setUsable(true);
     this->path = nullptr;
     curHp = maxHP;
+    float barSize = float(hpBarRowSize) / float(maxHP);
     airplaneImg->setVisibility(true);
     rootComponent->setComponentLocalLocation(std::make_pair(-999.0f,-999.0f));
-    float barSize = float(hpBarRowSize) / float(maxHP);
     hpBar->setScale(std::make_pair(barSize * float(curHp), hpBarColSize));
+    tickable = false;
+    visibility = false;
 }
 
 

@@ -21,6 +21,8 @@ BackgroundActor::BackgroundActor() {
     backgroundImage = new ImageComponent("image/background/2.png", std::make_pair(0, 0), this);
     backgroundImage->attachTo(rootComponent);
     backgroundImage->setClipDraw(true);
+
+    backgroundImageCopy = new ImageComponent("image/background/2.png", std::make_pair(0, 0), this);
     //init camera
     auto bgImgSize = backgroundImage->getImageSize();
     backgroundImage->setScale(std::make_pair(Framework::rendererWidth, Framework::rendererHeight));
@@ -44,14 +46,16 @@ BackgroundActor::~BackgroundActor()
     delete backgroundImage;
     backgroundImage = nullptr;
 
+    delete backgroundImageCopy;
+    backgroundImageCopy = nullptr;
     delete camera;
     camera = nullptr;
 }
 
 void BackgroundActor::render()
 {
+    backgroundImageCopy->render();
     HActor::render();
-
     auto bgImgSize = backgroundImage->getImageSize();
     if(camera->y <= 0)
     {

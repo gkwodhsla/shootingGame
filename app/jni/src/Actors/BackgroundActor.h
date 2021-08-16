@@ -16,8 +16,9 @@ public:
     void update(float deltaTime) override;
     void changeBackgroundImage(const std::string&);
 private:
-    ImageComponent* backgroundImage;
-    SDL_Rect* camera;
+    ImageComponent* backgroundImage = nullptr;
+    ImageComponent* backgroundImageCopy = nullptr;
+    SDL_Rect* camera = nullptr;
     const int cameraWidthAndHeight = 300;
     float accYPos = 0.0f;
     const float acceleration = -300.0f;

@@ -64,6 +64,16 @@ int SplineComponent::getControlPointSize()
     return controlPoints.size();
 }
 
+void SplineComponent::setUsable(bool usable)
+{
+    isUsable = usable;
+}
+
+bool SplineComponent::getUsable()
+{
+    return isUsable;
+}
+
 void SplineComponent::setIncTPerSec(float value)
 {
     incTPerSec = value;
