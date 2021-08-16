@@ -40,5 +40,7 @@ private:
     float t = 0.0f;
     const int hpBarRowSize = 100;
     const int hpBarColSize = 10;
+    std::pair<int, int> befPos;
+    int cnt = 0;
 };
 

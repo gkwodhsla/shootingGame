@@ -76,10 +76,10 @@ void ImageComponent::render()
 
         if (!isEnableClipDraw) {
             SDL_RenderCopyEx(Framework::renderer, img, NULL, &dstRect,
-                             localRotation, NULL, flip);
+                             worldRotation, NULL, flip);
         } else {
             SDL_RenderCopyEx(Framework::renderer, img, clipRect, &dstRect,
-                             localRotation, NULL, flip);
+                             worldRotation, NULL, flip);
         }
     }
 }

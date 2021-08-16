@@ -63,7 +63,7 @@ void SpritesheetComponent::update(float deltaTime)
     HPrimitiveComponent::update(deltaTime);
     if(!isLooping)
     {
-        if(curFrame > clipRects.size())
+        if(curFrame > clipRects.size() - 1)
         {
             stop();
         }

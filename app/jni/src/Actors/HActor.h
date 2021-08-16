@@ -29,7 +29,10 @@ public:
     bool getActorTickable();
     void setLifeTime(const float lifeTime);
     void setIsSetLifeTime(const bool isSetLifeTime);
+    void setDestRotation(float dest);
+    void normalizeDirVec();
     bool getIsSetLifeTime();
+    void rotateDirVector(float degree);
 
 protected:
     HSceneComponent* rootComponent;
@@ -39,4 +42,5 @@ protected:
     bool tickable = true;
     bool isSetLifeTime = false;
     bool isPendingToKill = false;
+    float destRotation = 0.0f;
 };

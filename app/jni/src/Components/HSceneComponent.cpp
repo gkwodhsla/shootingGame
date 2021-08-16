@@ -22,7 +22,7 @@ void HSceneComponent::updateComponentWorldRotation()
     {
         worldRotation = parent->getComponentWorldRotation() + localRotation;
     }
-    else if(!parent)
+    else if(!parent) //부모가 없다면 루트 컴포넌트이다.
     {
         worldRotation = localRotation;
     }

@@ -32,10 +32,11 @@ EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp)
     {
         airplaneImg->changeImage("image/enemy/boss2.png");
     }
-
+    dirVec = std::make_pair(0.0f, 1.0f);
     rootComponent->setOwner(this);
     rootComponent->setComponentLocalLocation(std::make_pair(-999, -999));
     rootComponent->setComponentLocalRotation(0);
+    befPos = std::make_pair(-999, -999);
 
     hpBar = new ImageComponent("image/misc/hpBar.png",std::make_pair(0, 0), this);
     hpBar->attachTo(airplaneImg);
@@ -52,6 +53,7 @@ EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp)
 
     explosionSprite->setOwner(this);
     explosionSprite->setComponentLocalLocation(std::make_pair(-55.0f, -45.0f));
+
 }
 
 EnemyAirplane::~EnemyAirplane()
@@ -63,6 +65,9 @@ EnemyAirplane::~EnemyAirplane()
 void EnemyAirplane::render()
 {
     HPawn::render();
+    auto loc = rootComponent->getComponentLocalLocation();
+    SDL_RenderDrawLine(Framework::renderer,
+                       loc.first + 100, loc.second + 100, loc.first + 100 + dirVec.first * 300.0f, 100+loc.second + dirVec.second * 300.0f);
 }
 
 void EnemyAirplane::update(float deltaTime)
@@ -72,11 +77,44 @@ void EnemyAirplane::update(float deltaTime)
     {
         resetEnemyAirplaneToInitialState();
     }
-    if(tickable && t < float(path->getControlPointSize() - 1) - 0.1f)
+    if(tickable && airplaneImg->getVisibility() && t < float(path->getControlPointSize() - 1) - 0.1f)
     {
-        t += deltaTime * 0.2f;
+        befPos = rootComponent->getComponentLocalLocation();
+        t += deltaTime * 0.4f;
         auto loc = path->getCurrentLocation(t);
         rootComponent->setComponentLocalLocation(std::make_pair(float(loc.first), float(loc.second)));
+        //loc가 지금 위치, befPos가 이전 위치
+
+        //여기서 이전 방향벡터와 새로운 방향향
+        float newDirVecX = float(loc.first - befPos.first);
+        float newDirVecY = float(loc.second - befPos.second);
+        auto befDirVec = std::make_pair(0.0f, 1.0f);
+        dirVec.first = newDirVecX;
+        dirVec.second = newDirVecY;
+        normalizeDirVec();
+
+
+        float befDotCur = (befDirVec.first * dirVec.first) + (befDirVec.second * dirVec.second);
+        float befCrossCur = (befDirVec.first*dirVec.second) - (dirVec.first*befDirVec.second);
+
+        float curRot = rootComponent->getComponentLocalRotation();
+        float degree = acos(befDotCur) * 180.0f / 3.14f;
+        degree = fmin(degree, 360.0f - degree);
+        float rotDir = asin(befCrossCur);
+        if (!isnan(curRot) && !isnan(degree))
+        {
+            float destRot = 0.0f;
+            if(rotDir>=0)
+                destRot = +degree;//-degree;
+            else if(rotDir<0.0f)
+                destRot = -degree;
+            rootComponent->setComponentLocalRotation(destRot);
+
+        }
+
+        __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
+                            "x: %f ", rootComponent->getComponentLocalRotation());
+
     }
 }
 
@@ -110,6 +148,9 @@ void EnemyAirplane::resetEnemyAirplaneToInitialState()
     hpBar->setScale(std::make_pair(barSize * float(curHp), hpBarColSize));
     tickable = false;
     visibility = false;
+    dirVec = std::make_pair(0.0f, 1.0f);
+    rootComponent->setComponentLocalRotation(0.0f);
+    befPos = std::make_pair(-999, -999);
 }
 
 
