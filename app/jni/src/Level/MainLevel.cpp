@@ -3,7 +3,6 @@
 #include "../Actors/HActor.h"
 #include "../Actors/BackgroundActor.h"
 #include "../Actors/Airplane.h"
-#include "../Actors/Bullet.h"
 #include "../Actors/EnemyAirplane.h"
 #include "../HPlayerController.h"
 #include "../Components/CollisionBoxComponent.h"
@@ -75,13 +74,27 @@ void MainLevel::enter()
     playerBullets.reserve(playerBulletSize);
     for(int i = 0; i < playerBulletSize; ++i)
     {
-        auto newBullet = new Bullet(std::make_pair(0.0f, 0.0f),
+        addBulletToBuffer(playerBullets, BULLET_COLOR::GREEN);
+        /*auto newBullet = new Bullet(std::make_pair(0.0f, 0.0f),
                                     BULLET_COLOR::GREEN, Vector2D(0.0f, -1.0f));
         playerBullets.push_back(newBullet);
         playerBullets[i]->setVisibility(false);
         playerBullets[i]->setActorTickable(false);
         playerBullets[i]->setIsSetLifeTime(true);
-        addNewActorToLevel(newBullet);
+        addNewActorToLevel(newBullet);*/
+    }
+
+    enemyRedBullets.reserve(enemyBulletSize);
+    enemyPurpleBullets.reserve(enemyBulletSize);
+    enemyBlueBullets.reserve(enemyBulletSize);
+    enemySkyBullets.reserve(enemyBulletSize);
+
+    for(int i = 0; i < enemyBulletSize; ++i)
+    {
+        addBulletToBuffer(enemyRedBullets, BULLET_COLOR::RED);
+        addBulletToBuffer(enemyBlueBullets, BULLET_COLOR::BLUE);
+        addBulletToBuffer(enemySkyBullets, BULLET_COLOR::SKY);
+        addBulletToBuffer(enemyPurpleBullets, BULLET_COLOR::PURPLE);
     }
 
     int enemySize = Spawner::numOfDestX * Spawner::numOfDestY;
@@ -90,23 +103,28 @@ void MainLevel::enter()
     {
         int shapeIndex = enemyShape(dre);
         ENEMY_SHIP_SHAPE whichShape = ENEMY_SHIP_SHAPE::SHIP1;
+        BULLET_COLOR enemyBulletColor = BULLET_COLOR::RED;
         if(shapeIndex == 0)
         {
             whichShape = ENEMY_SHIP_SHAPE::SHIP1;
+            enemyBulletColor = BULLET_COLOR::RED;
         }
         else if(shapeIndex == 1)
         {
             whichShape = ENEMY_SHIP_SHAPE::SHIP2;
+            enemyBulletColor = BULLET_COLOR::BLUE;
         }
         else if(shapeIndex == 2)
         {
             whichShape = ENEMY_SHIP_SHAPE::SHIP3;
+            enemyBulletColor = BULLET_COLOR::SKY;
         }
         else
         {
             whichShape = ENEMY_SHIP_SHAPE::SHIP4;
+            enemyBulletColor = BULLET_COLOR::PURPLE;
         }
-        auto newEnemy = new EnemyAirplane(BULLET_COLOR::RED, whichShape, 100);
+        auto newEnemy = new EnemyAirplane(enemyBulletColor, whichShape, 100);
         newEnemy->setVisibility(false);
         newEnemy->setActorTickable(false);
         enemyAirplanes.push_back(newEnemy);
@@ -157,4 +175,15 @@ void MainLevel::checkingCollision()
     //1. player bullet과 enemyPlanes
     //2. enemyBullet과 player
 
+}
+
+void MainLevel::addBulletToBuffer(std::vector<Bullet*>& cont, BULLET_COLOR color)
+{
+    auto newBullet = new Bullet(std::make_pair(0.0f, 0.0f),
+                                color, Vector2D(0.0f, -1.0f));
+    newBullet->setVisibility(false);
+    newBullet->setActorTickable(false);
+    newBullet->setIsSetLifeTime(true);
+    cont.push_back(newBullet);
+    addNewActorToLevel(newBullet);
 }

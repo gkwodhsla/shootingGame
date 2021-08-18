@@ -55,6 +55,12 @@ Vector2D HActor::getActorDirectionalVector()
     return dirVec;
 }
 
+void HActor::setActorDirectionalVector(const Vector2D& newDir)
+{
+    dirVec = newDir;
+}
+
+
 std::pair<int, int> HActor::getActorWorldLocation()
 {
     return rootComponent->getComponentLocalLocation();

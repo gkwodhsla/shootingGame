@@ -34,7 +34,7 @@ Spawner::Spawner()
     {
         for(int j = 0; j < numOfDestX; ++j)
         {
-            std::initializer_list<std::pair<int, int>> leftData = {{-100, 1200},
+            std::initializer_list<std::pair<int, int>> leftData = {{-400, 1200},
                                                               {900, 1000},
                                                               {Framework::rendererWidth/2,700},
                                                               {destX[j], destY[i]}};
@@ -45,7 +45,7 @@ Spawner::Spawner()
                                                                      {destX[j], destY[i]}};
             pathMiddle.emplace_back(middleData, 0.0f, this);
 
-            std::initializer_list<std::pair<int, int>> rightData = {{Framework::rendererWidth + 100, 1200},
+            std::initializer_list<std::pair<int, int>> rightData = {{Framework::rendererWidth + 400, 1200},
                                                                     {Framework::rendererWidth - 900, 1000},
                                                                     {Framework::rendererWidth/2,700},
                                                                     {destX[j], destY[i]}};
@@ -92,15 +92,15 @@ void Spawner::update(float deltaTime)
                     while(1) //적군이 어느정도 맵에 없어져야 스폰을 시도하기 때문에 무한루프에 빠질 염려는 없다.
                     {
                         spawnIndex = uid(dre);
-                        if(pathLeft[spawnIndex].getUsable())
+                        if(pathMiddle[spawnIndex].getUsable())
                         {
-                            pathLeft[spawnIndex].setUsable(false);
+                            pathMiddle[spawnIndex].setUsable(false);
                             break;
                         }
                     }
                     enemies[i]->setVisibility(true);
                     enemies[i]->setActorTickable(true);
-                    enemies[i]->setPath(&pathLeft[spawnIndex]);
+                    enemies[i]->setPath(&pathMiddle[spawnIndex]);
                     enemies[i]->setCanDamaged(true);
                     break;
                 }

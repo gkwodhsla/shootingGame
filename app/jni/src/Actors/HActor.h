@@ -24,6 +24,7 @@ public:
     HSceneComponent* getRootComponent();
     void setRootComponent(HSceneComponent* component);
     Vector2D getActorDirectionalVector();
+    void setActorDirectionalVector(const Vector2D& newDir);
     std::pair<int, int> getActorWorldLocation();
     float getActorWorldRotation();
     void setActorTickable(const bool isTickable);

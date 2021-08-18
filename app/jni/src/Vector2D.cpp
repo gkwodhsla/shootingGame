@@ -22,6 +22,12 @@ Vector2D::Vector2D(const Vector2D &rhs)
     y = rhs.y;
 }
 
+Vector2D::Vector2D(Vector2D&& rhs) noexcept
+{
+    x = rhs.x;
+    y = rhs.y;
+}
+
 void Vector2D::normalize()
 {
     float len = getLength();
@@ -61,6 +67,17 @@ void Vector2D::rotateVector(float degree)
 }
 
 Vector2D &Vector2D::operator=(const Vector2D &rhs)
+{
+    if(this == &rhs)
+    {
+        return *this;
+    }
+    x = rhs.x;
+    y = rhs.y;
+    return *this;
+}
+
+Vector2D& Vector2D::operator=(Vector2D&& rhs) noexcept
 {
     if(this == &rhs)
     {

@@ -10,7 +10,8 @@ enum class BULLET_COLOR
     GREEN,
     RED,
     PURPLE,
-    BLUE
+    BLUE,
+    SKY
 };
 
 class Bullet : public HActor

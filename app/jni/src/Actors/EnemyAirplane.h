@@ -14,6 +14,14 @@ enum class ENEMY_SHIP_SHAPE
     BOSS2
 };
 
+enum class ENEMY_BULLET_PATTERN
+{
+    BULLET_3,
+    BULLET_5,
+    BULLET_7,
+    TARGETED_3
+};
+
 class EnemyAirplane :public Airplane
 {
 public:
@@ -28,15 +36,23 @@ public:
 public:
     void getDamage(int damage);
     void setPath(SplineComponent* path);
-    void setCanDamaged (bool canDamaged);
-    bool getCanDamaged ();
-//private:
-    //void spawnBullet(); 추후 추가 예정
+    void setCanDamaged(bool canDamaged);
+    bool getCanDamaged();
+    void setBulletPattern(ENEMY_BULLET_PATTERN pattern);
+
+private:
+    void firePattern1();
+    void firePattern2();
+    void firePattern3();
+    void firePattern4();
+    void spawnBullet(float deltaTime);
+    static void initStaticData();
 
 private:
     ImageComponent* hpBar = nullptr;
     SplineComponent* path = nullptr;
-    BULLET_COLOR bulletColor;
+    BULLET_COLOR bulletColor = BULLET_COLOR::RED;
+    ENEMY_BULLET_PATTERN bulletPattern = ENEMY_BULLET_PATTERN::BULLET_7;
     int curHp = 0;
     int maxHP = 0;
     float t = 0.0f;
@@ -47,5 +63,12 @@ private:
     int cnt = 0;
     float degreeGap = 0.0f;
     bool canDamaged = false;
+    bool isArrived = false;
+    const int rotateRate = 150;
+    const float moveRate = 0.5f;
+    static Vector2D bullet3DirVec[3];
+    static Vector2D bullet5DirVec[5];
+    static Vector2D bullet7DirVec[7];
+    static bool isInitStaticData;
 };
 

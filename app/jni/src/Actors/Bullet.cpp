@@ -16,11 +16,19 @@ Bullet::Bullet(const std::pair<float, float> &spawnPosition, BULLET_COLOR bullet
     }
     else if(bulletColor == BULLET_COLOR::RED)
     {
-        path = "image/bullet/2.png";
+        path = "image/bullet/e2.png";
     }
     else if(bulletColor == BULLET_COLOR::PURPLE)
     {
-        path = "image/bullet/3.png";
+        path = "image/bullet/e1.png";
+    }
+    else if(bulletColor == BULLET_COLOR::BLUE)
+    {
+        path = "image/bullet/e3.png";
+    }
+    else if(bulletColor == BULLET_COLOR::SKY)
+    {
+        path = "image/bullet/e4.png";
     }
     bulletImg = new ImageComponent(path, std::make_pair(0, 0), this);
 

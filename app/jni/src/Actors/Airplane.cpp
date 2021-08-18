@@ -121,6 +121,11 @@ int Airplane::getPlayerAttackPower()
     return attackPower;
 }
 
+void Airplane::setFireRate(float rate)
+{
+    fireRate = rate;
+}
+
 void Airplane::turnOffBooster()
 {
     boosterSprite->setVisibility(false);
