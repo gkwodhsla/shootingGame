@@ -105,10 +105,6 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_version.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_locale.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_misc.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Actors\EnemyAirplane.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Airplane.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\HPawn.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Bullet.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\random \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cmath \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\numeric \
@@ -133,7 +129,11 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\locale \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cstdarg \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__bsd_locale_fallbacks.h \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bitset
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bitset \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Actors\EnemyAirplane.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Airplane.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\HPawn.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Bullet.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Spawner.h:
 
@@ -345,14 +345,6 @@ D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_locale
 
 D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_misc.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Actors\EnemyAirplane.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Airplane.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\HPawn.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Bullet.h:
-
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\random:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cmath:
@@ -402,3 +394,11 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cst
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__bsd_locale_fallbacks.h:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bitset:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Actors\EnemyAirplane.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Airplane.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\HPawn.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Bullet.h:

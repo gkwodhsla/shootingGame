@@ -12,6 +12,10 @@
 #include <vector>
 #include <android/log.h>
 
+std::random_device rd;
+std::default_random_engine dre(rd());
+std::uniform_int_distribution<int> enemyShape(0, 3);
+
 MainLevel::MainLevel()
 {
     actors.reserve(300);
@@ -84,7 +88,25 @@ void MainLevel::enter()
     enemyAirplanes.reserve(enemySize);
     for(int i = 0; i < enemySize;++i)
     {
-        auto newEnemy = new EnemyAirplane(BULLET_COLOR::RED, ENEMY_SHIP_SHAPE::SHIP1, 100);
+        int shapeIndex = enemyShape(dre);
+        ENEMY_SHIP_SHAPE whichShape = ENEMY_SHIP_SHAPE::SHIP1;
+        if(shapeIndex == 0)
+        {
+            whichShape = ENEMY_SHIP_SHAPE::SHIP1;
+        }
+        else if(shapeIndex == 1)
+        {
+            whichShape = ENEMY_SHIP_SHAPE::SHIP2;
+        }
+        else if(shapeIndex == 2)
+        {
+            whichShape = ENEMY_SHIP_SHAPE::SHIP3;
+        }
+        else
+        {
+            whichShape = ENEMY_SHIP_SHAPE::SHIP4;
+        }
+        auto newEnemy = new EnemyAirplane(BULLET_COLOR::RED, whichShape, 100);
         newEnemy->setVisibility(false);
         newEnemy->setActorTickable(false);
         enemyAirplanes.push_back(newEnemy);

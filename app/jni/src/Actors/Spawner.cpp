@@ -2,11 +2,8 @@
 #include "../Framework.h"
 #include "../Level/MainLevel.h"
 #include "../Actors/EnemyAirplane.h"
-#include <random>
 #include <android/log.h>
 
-std::random_device rd;
-std::default_random_engine dre(rd());
 std::uniform_int_distribution<int> uid(0,19);
 
 //{-100, 1200},

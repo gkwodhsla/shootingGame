@@ -54,7 +54,7 @@ EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp)
     //적 기체에선 우선 부스터를 쓰지 않을 거라 꺼준다.
 
     explosionSprite->setOwner(this);
-    explosionSprite->setComponentLocalLocation(std::make_pair(-55.0f, -45.0f));
+    explosionSprite->setComponentLocalLocation(std::make_pair(-75.0f, -65.0f));
 
     realDirVec = std::make_pair(0.0f, 1.0f);
 }

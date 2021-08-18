@@ -1,6 +1,7 @@
 #pragma once
 
 #include "HLevelBase.h"
+#include <random>
 
 class Airplane;
 class EnemyAirplane;
@@ -28,3 +29,6 @@ private:
     const int playerBulletSize = 100;
     float coolTime = 3.0f;
 };
+
+extern std::random_device rd;
+extern std::default_random_engine dre;
