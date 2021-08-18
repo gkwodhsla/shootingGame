@@ -18,7 +18,7 @@ HSceneComponent::~HSceneComponent()
 
 void HSceneComponent::updateComponentWorldRotation()
 {
-    if(parent)
+    if(parent && isUsingParentRotation)
     {
         worldRotation = parent->getComponentWorldRotation() + localRotation;
     }
@@ -34,7 +34,7 @@ void HSceneComponent::updateComponentWorldRotation()
 
 void HSceneComponent::updateComponentWorldLocation()
 {
-    if(parent)
+    if(parent && isUsingParentLocation)
     {
         auto parentLocalLocation = parent->getComponentWorldLocation();
         worldLocation = std::make_pair(parentLocalLocation.first + localLocation.first,
@@ -103,9 +103,28 @@ float HSceneComponent::getComponentLocalRotation()
     return localRotation;
 }
 
-HSceneComponent *HSceneComponent::getParentComponent()
+HSceneComponent* HSceneComponent::getParentComponent()
 {
     return parent;
+}
+
+void HSceneComponent::setAffectRotationFromParent(bool isAffect)
+{
+    isUsingParentRotation = isAffect;
+}
+bool HSceneComponent::getAffectRotationFromParent()
+{
+    return isUsingParentRotation;
+}
+
+void HSceneComponent::setAffectLocationFromParent(bool isAffect)
+{
+    isUsingParentLocation = isAffect;
+}
+
+bool HSceneComponent::getAffectLocationFromParent()
+{
+    return isUsingParentLocation;
 }
 
 void HSceneComponent::attachTo(HSceneComponent* component)

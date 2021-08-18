@@ -25,6 +25,10 @@ public:
     void setComponentLocalLocation(const std::pair<float, float>& loc);
     void setComponentLocalRotation(const float degree);
     void setOwner(HActor* owner);
+    void setAffectRotationFromParent (bool isAffect);
+    bool getAffectRotationFromParent ();
+    void setAffectLocationFromParent (bool isAffect);
+    bool getAffectLocationFromParent ();
 
 public:
     void attachTo(HSceneComponent* component);
@@ -36,4 +40,6 @@ protected:
     std::pair<float, float> worldLocation;
     float localRotation = 0.0f;
     float worldRotation = 0.0f;
+    bool isUsingParentLocation = true;
+    bool isUsingParentRotation = true;
 };

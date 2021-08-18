@@ -39,8 +39,10 @@ EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp)
     befPos = std::make_pair(-999, -999);
 
     hpBar = new ImageComponent("image/misc/hpBar.png",std::make_pair(0, 0), this);
+    hpBar->setAffectRotationFromParent(false);
     hpBar->attachTo(airplaneImg);
-    auto shipImgSize = airplaneImg->getImageSize();
+    airplaneImg->setScale(std::make_pair(160, 160));
+    auto shipImgSize = airplaneImg->getScale();
 
     hpBar->setComponentLocalLocation(std::make_pair((shipImgSize.first - hpBarRowSize) / 2, shipImgSize.second + 15));
     hpBar->setScale(std::make_pair(hpBarRowSize, hpBarColSize));
@@ -176,13 +178,15 @@ void EnemyAirplane::handleEvent(SDL_Event &e)
 void EnemyAirplane::getDamage(int damage)
 {
     curHp -= damage;
-    float barSize = float(hpBarRowSize) / float(maxHP);
-    hpBar->setScale(std::make_pair(barSize * float(curHp), hpBarColSize));
     if(curHp <= 0)
     {
+        curHp = 0;
         explosionSprite->play();
         airplaneImg->setVisibility(false);
+        canDamaged = false;
     }
+    float barSize = float(hpBarRowSize) / float(maxHP);
+    hpBar->setScale(std::make_pair(barSize * float(curHp), hpBarColSize));
 }
 
 void EnemyAirplane::resetEnemyAirplaneToInitialState()
@@ -200,6 +204,7 @@ void EnemyAirplane::resetEnemyAirplaneToInitialState()
     dirVec = std::make_pair(0.0f, 1.0f);
     rootComponent->setComponentLocalRotation(0.0f);
     befPos = std::make_pair(-999, -999);
+    canDamaged = false;
 }
 
 
@@ -207,6 +212,17 @@ void EnemyAirplane::setPath(SplineComponent* path)
 {
     this->path = path;
 }
+
+void EnemyAirplane::setCanDamaged(bool canDamaged)
+{
+    this->canDamaged = canDamaged;
+}
+
+bool EnemyAirplane::getCanDamaged()
+{
+    return canDamaged;
+}
+
 
 void EnemyAirplane::rotateDirVector(float degree)
 {

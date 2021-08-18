@@ -3,12 +3,23 @@ make: Nothing to be done for 'SDL2_image'.
 make: Nothing to be done for 'SDL2_mixer'.
 make: Nothing to be done for 'SDL2_ttf'.
 make: Nothing to be done for 'hidapi'.
+[armeabi-v7a] Compile++ thumb: main <= main.cpp
+[armeabi-v7a] Compile++ thumb: main <= Framework.cpp
+[armeabi-v7a] Compile++ thumb: main <= HPlayerController.cpp
+[armeabi-v7a] Compile++ thumb: main <= HSceneComponent.cpp
+[armeabi-v7a] Compile++ thumb: main <= HPrimitiveComponent.cpp
+[armeabi-v7a] Compile++ thumb: main <= ImageComponent.cpp
+[armeabi-v7a] Compile++ thumb: main <= MovementComponent.cpp
 [armeabi-v7a] Compile++ thumb: main <= SpritesheetComponent.cpp
+[armeabi-v7a] Compile++ thumb: main <= CollisionBoxComponent.cpp
+[armeabi-v7a] Compile++ thumb: main <= SplineComponent.cpp
 [armeabi-v7a] Compile++ thumb: main <= HActor.cpp
 [armeabi-v7a] Compile++ thumb: main <= BackgroundActor.cpp
 [armeabi-v7a] Compile++ thumb: main <= Bullet.cpp
 [armeabi-v7a] Compile++ thumb: main <= HPawn.cpp
 [armeabi-v7a] Compile++ thumb: main <= Airplane.cpp
+[armeabi-v7a] Compile++ thumb: main <= EnemyAirplane.cpp
+[armeabi-v7a] Compile++ thumb: main <= Spawner.cpp
 [armeabi-v7a] Compile++ thumb: main <= MainLevel.cpp
 [armeabi-v7a] SharedLibrary  : libmain.so
 make: Nothing to be done for 'mpg123'.

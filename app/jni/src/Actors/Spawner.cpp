@@ -104,6 +104,7 @@ void Spawner::update(float deltaTime)
                     enemies[i]->setVisibility(true);
                     enemies[i]->setActorTickable(true);
                     enemies[i]->setPath(&pathLeft[spawnIndex]);
+                    enemies[i]->setCanDamaged(true);
                     break;
                 }
             }

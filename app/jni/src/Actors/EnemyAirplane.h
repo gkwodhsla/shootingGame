@@ -28,6 +28,8 @@ public:
 public:
     void getDamage(int damage);
     void setPath(SplineComponent* path);
+    void setCanDamaged (bool canDamaged);
+    bool getCanDamaged ();
 //private:
     //void spawnBullet(); 추후 추가 예정
 
@@ -44,6 +46,7 @@ private:
     std::pair<float, float> realDirVec;
     int cnt = 0;
     float degreeGap = 0.0f;
+    bool canDamaged = false;
 
 private:
     void rotateDirVector(float degree);

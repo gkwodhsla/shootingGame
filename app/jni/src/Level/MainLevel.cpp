@@ -118,7 +118,7 @@ void MainLevel::checkingCollision()
         {
             for(int j = 0; j < enemyAirplanes.size(); ++j)
             {
-                if(enemyAirplanes[j]->getVisibility())
+                if(enemyAirplanes[j]->getCanDamaged())
                 {
                     bool isHit = playerBullets[i]->getCollisionComp()->checkCollision(*(enemyAirplanes[j]->getCollisionBoxComp()));
                     if(isHit)
