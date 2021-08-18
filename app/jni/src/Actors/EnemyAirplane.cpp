@@ -483,7 +483,82 @@ void EnemyAirplane::firePattern3()
 
 void EnemyAirplane::firePattern4()
 {
+    MainLevel* mainLevel = (MainLevel*)Framework::curLevel;
+    std::vector<Bullet*> cont;
 
+    auto worldLoc = rootComponent->getComponentLocalLocation();
+    auto size = airplaneImg->getScale();
+    std::pair<int, int> spawnPos{worldLoc.first + size.first / 2, worldLoc.second + size.second};
+
+    auto playerLoc = mainLevel->playerAirplane->getRootComponent()->getComponentLocalLocation();
+
+    auto newVectorX = playerLoc.first - worldLoc.first;
+    auto newVectorY = playerLoc.second - worldLoc.second;
+
+    Vector2D bulletDir = Vector2D(newVectorX, newVectorY);
+    bulletDir.normalize();
+
+    switch (bulletColor)
+    {
+        case BULLET_COLOR::RED:
+            cont = mainLevel->enemyRedBullets;
+            for(int i = 0; i < cont.size(); ++i)
+            {
+                if(!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
+                {
+                    cont[i]->setVisibility(true);
+                    cont[i]->setActorTickable(true);
+                    cont[i]->moveTo(spawnPos); //총알액터의 위치를 세팅해준다.
+                    cont[i]->setActorDirectionalVector(bulletDir);
+                    break;
+                }
+            }
+            break;
+        case BULLET_COLOR::BLUE:
+            cont = mainLevel->enemyBlueBullets;
+            for(int i = 0; i < cont.size(); ++i)
+            {
+                if(!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
+                {
+                    cont[i]->setVisibility(true);
+                    cont[i]->setActorTickable(true);
+                    cont[i]->moveTo(spawnPos); //총알액터의 위치를 세팅해준다.
+                    cont[i]->setActorDirectionalVector(bulletDir);
+                    break;
+                }
+            }
+            break;
+        case BULLET_COLOR::SKY:
+            cont = mainLevel->enemySkyBullets;
+            for(int i = 0; i < cont.size(); ++i)
+            {
+                if(!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
+                {
+                    cont[i]->setVisibility(true);
+                    cont[i]->setActorTickable(true);
+                    cont[i]->moveTo(spawnPos); //총알액터의 위치를 세팅해준다.
+                    cont[i]->setActorDirectionalVector(bulletDir);
+                    break;
+                }
+            }
+            break;
+        case BULLET_COLOR::PURPLE:
+            cont = mainLevel->enemyPurpleBullets;
+            for(int i = 0; i < cont.size(); ++i)
+            {
+                if(!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
+                {
+                    cont[i]->setVisibility(true);
+                    cont[i]->setActorTickable(true);
+                    cont[i]->moveTo(spawnPos); //총알액터의 위치를 세팅해준다.
+                    cont[i]->setActorDirectionalVector(bulletDir);
+                    break;
+                }
+            }
+            break;
+        case BULLET_COLOR::GREEN: //플레이어 총알이기에 아무것도 안한다!!!
+            break;
+    }
 }
 
 void EnemyAirplane::spawnBullet(float deltaTime)
@@ -503,7 +578,7 @@ void EnemyAirplane::spawnBullet(float deltaTime)
             case ENEMY_BULLET_PATTERN::BULLET_7:
                 firePattern3();
                 break;
-            case ENEMY_BULLET_PATTERN::TARGETED_3:
+            case ENEMY_BULLET_PATTERN::TARGETED:
                 firePattern4();
                 break;
         }

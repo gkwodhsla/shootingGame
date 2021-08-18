@@ -19,7 +19,7 @@ enum class ENEMY_BULLET_PATTERN
     BULLET_3,
     BULLET_5,
     BULLET_7,
-    TARGETED_3
+    TARGETED
 };
 
 class EnemyAirplane :public Airplane
@@ -52,7 +52,7 @@ private:
     ImageComponent* hpBar = nullptr;
     SplineComponent* path = nullptr;
     BULLET_COLOR bulletColor = BULLET_COLOR::RED;
-    ENEMY_BULLET_PATTERN bulletPattern = ENEMY_BULLET_PATTERN::BULLET_7;
+    ENEMY_BULLET_PATTERN bulletPattern = ENEMY_BULLET_PATTERN::TARGETED;
     int curHp = 0;
     int maxHP = 0;
     float t = 0.0f;
