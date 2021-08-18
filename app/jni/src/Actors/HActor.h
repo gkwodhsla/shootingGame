@@ -1,6 +1,7 @@
 #pragma once
 
 #include <utility>
+#include "../Vector2D.h"
 
 class HSceneComponent;
 class SDL_Renderer;
@@ -22,20 +23,18 @@ public:
     bool getVisibility();
     HSceneComponent* getRootComponent();
     void setRootComponent(HSceneComponent* component);
-    std::pair<float, float> getActorDirectionalVector();
+    Vector2D getActorDirectionalVector();
     std::pair<int, int> getActorWorldLocation();
     float getActorWorldRotation();
     void setActorTickable(const bool isTickable);
     bool getActorTickable();
     void setLifeTime(const float lifeTime);
     void setIsSetLifeTime(const bool isSetLifeTime);
-    void setDestRotation(float dest);
-    void normalizeDirVec();
     bool getIsSetLifeTime();
 
 protected:
     HSceneComponent* rootComponent;
-    std::pair<float, float> dirVec;
+    Vector2D dirVec;
     float lifeTime = 0.0f;
     bool visibility = true;
     bool tickable = true;

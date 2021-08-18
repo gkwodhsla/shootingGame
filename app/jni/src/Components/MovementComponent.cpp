@@ -27,7 +27,7 @@ void MovementComponent::updatePosition(const float deltaTime)
 {
     HSceneComponent* ownerRootComp = owner->getRootComponent();
     auto dirVec = owner->getActorDirectionalVector();
-    auto initVelocity = std::make_pair(dirVec.first * speed, dirVec.second * speed);
+    auto initVelocity = std::make_pair(dirVec.x * speed, dirVec.y * speed);
     //속력은 방향벡터 * 속도이다.
 
     auto befPos = ownerRootComp->getComponentLocalLocation();

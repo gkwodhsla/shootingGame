@@ -18,7 +18,7 @@ class Bullet : public HActor
 public:
     Bullet() = delete;
     Bullet(const std::pair<float, float>& spawnPosition, BULLET_COLOR bulletColor,
-           const std::pair<float, float>& dirVec);
+           const Vector2D& dirVec);
     virtual ~Bullet();
     virtual void render();
     virtual void update(float deltaTime);

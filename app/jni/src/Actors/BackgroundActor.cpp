@@ -36,7 +36,8 @@ BackgroundActor::BackgroundActor() {
 
     accYPos = bgImgSize.second - cameraWidthAndHeight;
 
-    dirVec = std::make_pair(0, -1.0f);
+    dirVec.x = 0;
+    dirVec.y = -1.0f;
 }
 
 BackgroundActor::~BackgroundActor()

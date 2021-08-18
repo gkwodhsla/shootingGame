@@ -47,7 +47,7 @@ void MainLevel::update(float deltaTime)
     coolTime -= deltaTime;
     if(coolTime <= 0)
     {
-        spawner->startSpawn(5);
+        spawner->startSpawn(1);
         coolTime = 10.0f;
     }
 }
@@ -76,7 +76,7 @@ void MainLevel::enter()
     for(int i = 0; i < playerBulletSize; ++i)
     {
         auto newBullet = new Bullet(std::make_pair(0.0f, 0.0f),
-                                    BULLET_COLOR::GREEN, std::make_pair(0.0f,-1.0f));
+                                    BULLET_COLOR::GREEN, Vector2D(0.0f, -1.0f));
         playerBullets.push_back(newBullet);
         playerBullets[i]->setVisibility(false);
         playerBullets[i]->setActorTickable(false);

@@ -50,7 +50,7 @@ void HActor::setRootComponent(HSceneComponent *component)
     rootComponent = component;
 }
 
-std::pair<float, float> HActor::getActorDirectionalVector()
+Vector2D HActor::getActorDirectionalVector()
 {
     return dirVec;
 }
@@ -109,22 +109,6 @@ void HActor::setLifeTime(const float lifeTime)
 void HActor::setIsSetLifeTime(const bool isSetLifeTime)
 {
     this->isSetLifeTime = isSetLifeTime;
-}
-
-void HActor::setDestRotation(float dest)
-{
-    destRotation = dest;
-}
-
-void HActor::normalizeDirVec()
-{
-    float magnitude = sqrtf(dirVec.first*dirVec.first + dirVec.second*dirVec.second);
-
-    if(magnitude!=0.0f)
-    {
-        dirVec.first /= magnitude;
-        dirVec.second /= magnitude;
-    }
 }
 
 bool HActor::getIsSetLifeTime()

@@ -5,7 +5,7 @@
 #include "../Components/CollisionBoxComponent.h"
 #include <android/log.h>
 Bullet::Bullet(const std::pair<float, float> &spawnPosition, BULLET_COLOR bulletColor,
-               const std::pair<float, float>& dirVec)
+               const Vector2D& dirVec)
 {
     rootComponent->setComponentLocalLocation(spawnPosition);
     rootComponent->setComponentLocalRotation(0.0f);
@@ -30,7 +30,7 @@ Bullet::Bullet(const std::pair<float, float> &spawnPosition, BULLET_COLOR bullet
     this->dirVec = dirVec;
 
     bulletMovement->setSpeed(900.0f);
-    bulletMovement->setAcceleration(std::make_pair(dirVec.first * 1000.0f, dirVec.second * 1000.0f));
+    bulletMovement->setAcceleration(std::make_pair(dirVec.x * 1000.0f, dirVec.y * 1000.0f));
 
     auto imgSize = bulletImg->getScale();
     collisionBox = new CollisionBoxComponent(0, 0, imgSize.first, imgSize.second, this);

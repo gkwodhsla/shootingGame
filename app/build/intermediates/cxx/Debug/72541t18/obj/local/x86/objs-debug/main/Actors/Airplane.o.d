@@ -92,6 +92,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Airplane.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\HPawn.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\HActor.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Vector2D.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\ImageComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HPrimitiveComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HSceneComponent.h \
@@ -320,6 +321,8 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Airplane.h:
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\HPawn.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\HActor.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Vector2D.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\ImageComponent.h:
 
