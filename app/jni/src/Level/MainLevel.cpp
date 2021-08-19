@@ -43,11 +43,16 @@ void MainLevel::update(float deltaTime)
     checkingCollision();
 
     //일단 임의로 적을 스폰해보자!
-    coolTime -= deltaTime;
+    /*coolTime -= deltaTime;
     if(coolTime <= 0)
     {
         spawner->startSpawn(1);
         coolTime = 10.0f;
+    }*/
+    if(!isBossSpawned)
+    {
+        spawner->spawnBoss(1);
+        isBossSpawned = true;
     }
 }
 
@@ -75,13 +80,6 @@ void MainLevel::enter()
     for(int i = 0; i < playerBulletSize; ++i)
     {
         addBulletToBuffer(playerBullets, BULLET_COLOR::GREEN);
-        /*auto newBullet = new Bullet(std::make_pair(0.0f, 0.0f),
-                                    BULLET_COLOR::GREEN, Vector2D(0.0f, -1.0f));
-        playerBullets.push_back(newBullet);
-        playerBullets[i]->setVisibility(false);
-        playerBullets[i]->setActorTickable(false);
-        playerBullets[i]->setIsSetLifeTime(true);
-        addNewActorToLevel(newBullet);*/
     }
 
     enemyRedBullets.reserve(enemyBulletSize);
@@ -131,6 +129,16 @@ void MainLevel::enter()
         addNewActorToLevel(newEnemy);
     }
 
+    boss1 = new EnemyAirplane(BULLET_COLOR::RED, ENEMY_SHIP_SHAPE::BOSS1, 100);
+    boss1->setVisibility(false);
+    boss1->setActorTickable(false);
+    addNewActorToLevel(boss1);
+
+    boss2 = new EnemyAirplane(BULLET_COLOR::PURPLE, ENEMY_SHIP_SHAPE::BOSS2, 100);
+    boss2->setVisibility(false);
+    boss2->setActorTickable(false);
+    addNewActorToLevel(boss2);
+
     spawner = new Spawner();
     addNewActorToLevel(spawner);
 }
@@ -144,9 +152,6 @@ void MainLevel::exit()
     }
     delete playerController;
     playerController = nullptr;
-
-    delete spawner;
-    spawner = nullptr;
 }
 
 //문제가 있음 고쳐야함
@@ -156,6 +161,26 @@ void MainLevel::checkingCollision()
     {
         if(playerBullets[i]->getVisibility())
         {
+            if(isBossSpawned && boss1->getCanDamaged())
+            {
+                bool isHit = playerBullets[i]->getCollisionComp()->checkCollision(*(boss1->getCollisionBoxComp()));
+                if(isHit)
+                {
+                    boss1->getDamage(playerAirplane->getPlayerAttackPower());
+                    playerBullets[i]->resetBulletToInitialState();
+                }
+            }
+
+            else if(isBossSpawned && boss2->getCanDamaged())
+            {
+                bool isHit = playerBullets[i]->getCollisionComp()->checkCollision(*(boss2->getCollisionBoxComp()));
+                if(isHit)
+                {
+                    boss2->getDamage(playerAirplane->getPlayerAttackPower());
+                    playerBullets[i]->resetBulletToInitialState();
+                }
+            }
+
             for(int j = 0; j < enemyAirplanes.size(); ++j)
             {
                 if(enemyAirplanes[j]->getCanDamaged())

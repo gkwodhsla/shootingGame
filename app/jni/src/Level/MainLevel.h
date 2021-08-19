@@ -36,9 +36,12 @@ private:
     std::vector<Bullet*> enemyBlueBullets;
     std::vector<Bullet*> enemySkyBullets;
     std::vector<EnemyAirplane*> enemyAirplanes;
+    EnemyAirplane* boss1 = nullptr;
+    EnemyAirplane* boss2 = nullptr;
     const int playerBulletSize = 100;
     const int enemyBulletSize = 100;
     float coolTime = 3.0f;
+    bool isBossSpawned = false;
 };
 
 extern std::random_device rd;

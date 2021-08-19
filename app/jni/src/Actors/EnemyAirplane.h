@@ -53,6 +53,7 @@ private:
     SplineComponent* path = nullptr;
     BULLET_COLOR bulletColor = BULLET_COLOR::RED;
     ENEMY_BULLET_PATTERN bulletPattern = ENEMY_BULLET_PATTERN::TARGETED;
+    ENEMY_SHIP_SHAPE shipShape = ENEMY_SHIP_SHAPE::BOSS1;
     int curHp = 0;
     int maxHP = 0;
     float t = 0.0f;

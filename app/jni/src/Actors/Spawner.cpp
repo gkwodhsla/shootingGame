@@ -53,8 +53,8 @@ Spawner::Spawner()
         }
     }
 
-    __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
-                        "s1: %d, s2: %d, s3: %d\n", pathLeft.size(), pathMiddle.size(), pathRight.size());
+    bossPath = new SplineComponent({{Framework::rendererWidth/2 - 250.0f, -1000},
+                                    {Framework::rendererWidth/2 - 250.0f, 100}}, 1.0f, this);
 }
 
 Spawner::~Spawner()
@@ -113,6 +113,26 @@ void Spawner::update(float deltaTime)
             }
         }
     }
+    else if(isBossTime) // 보스가 등장할 때!
+    {
+        EnemyAirplane* curBoss = nullptr;
+        if(bossIndex == 0)
+        {
+            MainLevel* mainLevel = (MainLevel*)Framework::curLevel;
+            curBoss = mainLevel->boss1;
+        }
+        else
+        {
+            MainLevel* mainLevel = (MainLevel*)Framework::curLevel;
+            curBoss = mainLevel->boss2;
+        }
+        curBoss->setVisibility(true);
+        curBoss->setActorTickable(true);
+        curBoss->setPath(bossPath);
+        curBoss->setCanDamaged(true);
+        isBossTime = false;
+
+    }
 }
 
 void Spawner::startSpawn(int enemyCnt)
@@ -120,6 +140,13 @@ void Spawner::startSpawn(int enemyCnt)
     isSpawning = true;
     spawnCoolTime = 0.0f;
     maxSpawnedCnt = enemyCnt;
+}
+
+void Spawner::spawnBoss(int whichBoss)
+{
+    isBossTime = true;
+    isSpawning = false;
+    bossIndex = whichBoss;
 }
 
 int Spawner::getPathNum()

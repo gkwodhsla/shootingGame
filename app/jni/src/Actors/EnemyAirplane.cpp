@@ -13,7 +13,7 @@ Vector2D EnemyAirplane::bullet5DirVec[5];
 Vector2D EnemyAirplane::bullet7DirVec[7];
 bool EnemyAirplane::isInitStaticData = false;
 
-EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp):bulletColor(color), curHp(hp), maxHP(hp)
+EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp):bulletColor(color), shipShape(shape), curHp(hp), maxHP(hp)
 {
     if(!isInitStaticData)
     {
@@ -55,6 +55,10 @@ EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp)
     hpBar->setAffectRotationFromParent(false);
     hpBar->attachTo(airplaneImg);
     airplaneImg->setScale(std::make_pair(160, 160));
+    if(shape == ENEMY_SHIP_SHAPE::BOSS1 || shape == ENEMY_SHIP_SHAPE::BOSS2)
+    {
+        airplaneImg->setScale(std::make_pair(500, 450));
+    }
     auto shipImgSize = airplaneImg->getScale();
 
     hpBar->setComponentLocalLocation(std::make_pair((shipImgSize.first - hpBarRowSize) / 2, shipImgSize.second + 15));
@@ -68,6 +72,11 @@ EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp)
 
     explosionSprite->setOwner(this);
     explosionSprite->setComponentLocalLocation(std::make_pair(-55.0f, -45.0f));
+    if(shape == ENEMY_SHIP_SHAPE::BOSS1 || shape == ENEMY_SHIP_SHAPE::BOSS2)
+    {
+        explosionSprite->setComponentLocalLocation(std::make_pair(-100.0f, -100.0f));
+        explosionSprite->setScale(std::make_pair(800,800));
+    }
 
 
     realDirVec.x = 0.0f;
