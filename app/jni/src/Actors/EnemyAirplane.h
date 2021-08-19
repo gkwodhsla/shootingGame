@@ -19,7 +19,8 @@ enum class ENEMY_BULLET_PATTERN
     BULLET_3,
     BULLET_5,
     BULLET_7,
-    TARGETED
+    TARGETED,
+    BOSS_CIRCLE
 };
 
 class EnemyAirplane :public Airplane
@@ -45,8 +46,10 @@ private:
     void firePattern2();
     void firePattern3();
     void firePattern4();
+    void firePattern5();
     void spawnBullet(float deltaTime);
     static void initStaticData();
+    static void initBossCirclePattern();
 
 private:
     ImageComponent* hpBar = nullptr;
@@ -70,6 +73,7 @@ private:
     static Vector2D bullet3DirVec[3];
     static Vector2D bullet5DirVec[5];
     static Vector2D bullet7DirVec[7];
+    static Vector2D bossCirclePattern[20];
     static bool isInitStaticData;
 };
 

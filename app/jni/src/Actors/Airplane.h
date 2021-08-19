@@ -27,7 +27,7 @@ protected:
     ImageComponent* airplaneImg = nullptr;
     SpritesheetComponent* explosionSprite = nullptr;
     CollisionBoxComponent* collisionBox = nullptr;
-    float fireRate = 0.5f;
+    float fireRate = 1.0f;
     float curFireTime = 0.5f;
 
 protected:

@@ -11,6 +11,7 @@
 Vector2D EnemyAirplane::bullet3DirVec[3];
 Vector2D EnemyAirplane::bullet5DirVec[5];
 Vector2D EnemyAirplane::bullet7DirVec[7];
+Vector2D EnemyAirplane::bossCirclePattern[20];
 bool EnemyAirplane::isInitStaticData = false;
 
 EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp):bulletColor(color), shipShape(shape), curHp(hp), maxHP(hp)
@@ -142,9 +143,6 @@ void EnemyAirplane::update(float deltaTime)
 
 
             befPos = rootComponent->getComponentLocalLocation();
-
-            __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
-                                "%f", befDotCur);
         }
     }
 
@@ -570,6 +568,47 @@ void EnemyAirplane::firePattern4()
     }
 }
 
+float tempRotate = 0.0f;
+void EnemyAirplane::firePattern5()
+{
+    auto worldLoc = rootComponent->getComponentLocalLocation();
+    auto size = airplaneImg->getScale();
+
+    std::pair<int, int> spawnPos{worldLoc.first + size.first / 2, worldLoc.second + size.second};
+
+    int bulletCnt = 18;
+    MainLevel* mainLevel = (MainLevel*)Framework::curLevel;
+    std::vector<Bullet*> cont;
+    switch (bulletColor)
+    {
+        case BULLET_COLOR::RED:
+            cont = mainLevel->enemyRedBullets;
+            for(int i = 0; i < cont.size(); ++i)
+            {
+                if(!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
+                {
+                    cont[i]->setVisibility(true);
+                    cont[i]->setActorTickable(true);
+                    cont[i]->moveTo(spawnPos); //총알액터의 위치를 세팅해준다.
+                    bossCirclePattern[bulletCnt].rotateVector(tempRotate);
+                    cont[i]->setActorDirectionalVector(bossCirclePattern[bulletCnt]);
+                    --bulletCnt;
+                    if(bulletCnt<0) break;
+                }
+            }
+            tempRotate+=15.0f;
+            break;
+        case BULLET_COLOR::BLUE:
+            break;
+        case BULLET_COLOR::SKY:
+            break;
+        case BULLET_COLOR::PURPLE:
+            break;
+        case BULLET_COLOR::GREEN: //플레이어 총알이기에 아무것도 안한다!!!
+            break;
+    }
+}
+
 void EnemyAirplane::spawnBullet(float deltaTime)
 {
     curFireTime -= deltaTime;
@@ -589,6 +628,9 @@ void EnemyAirplane::spawnBullet(float deltaTime)
                 break;
             case ENEMY_BULLET_PATTERN::TARGETED:
                 firePattern4();
+                break;
+            case ENEMY_BULLET_PATTERN::BOSS_CIRCLE:
+                firePattern5();
                 break;
         }
     }
@@ -621,5 +663,36 @@ void EnemyAirplane::initStaticData()
     {
         bullet7DirVec[i] = temp;
         temp.rotateVector(15.0f);
+    }
+    initBossCirclePattern();
+}
+
+void EnemyAirplane::initBossCirclePattern() //이곳에서 보스 총알의 방향벡터를 계산해둔다. (circle)
+{
+    float toRad = 3.14f / 180.0f;
+    float t = 0.0f; //클래스에서 쓰이는 t와 다르다. 로컬t임
+
+    Vector2D befDir{1.0f, 0.0f};
+    Vector2D curDir{0.0f, 0.0f};
+    int index = 0;
+    for(t = 0.05f; t <= 1.0f; t += 0.05f)
+    {
+        float curX = cos(t * 360.0f * toRad);
+        float curY = sin(t * 360.0f * toRad);
+        curDir = Vector2D{curX, curY};
+
+        Vector2D v1 = curDir - befDir;
+
+        bossCirclePattern[index++] = Vector2D(v1.y, -v1.x);
+        //Up vector를 (0, 0, -1.0f)라고 가정하고 v1과 외적한 결과이다.
+
+        befDir = curDir;
+
+    }
+
+    for(int i=0;i<20;++i)
+    {
+        __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
+                            "%d data: x: %f, y:%f", i, bossCirclePattern[i].x, bossCirclePattern[i].y);
     }
 }

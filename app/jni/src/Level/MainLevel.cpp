@@ -132,11 +132,13 @@ void MainLevel::enter()
     boss1 = new EnemyAirplane(BULLET_COLOR::RED, ENEMY_SHIP_SHAPE::BOSS1, 100);
     boss1->setVisibility(false);
     boss1->setActorTickable(false);
+    boss1->setBulletPattern(ENEMY_BULLET_PATTERN::BOSS_CIRCLE);
     addNewActorToLevel(boss1);
 
-    boss2 = new EnemyAirplane(BULLET_COLOR::PURPLE, ENEMY_SHIP_SHAPE::BOSS2, 100);
+    boss2 = new EnemyAirplane(BULLET_COLOR::RED, ENEMY_SHIP_SHAPE::BOSS2, 100);
     boss2->setVisibility(false);
     boss2->setActorTickable(false);
+    boss2->setBulletPattern(ENEMY_BULLET_PATTERN::BOSS_CIRCLE);
     addNewActorToLevel(boss2);
 
     spawner = new Spawner();
