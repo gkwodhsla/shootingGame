@@ -1,9 +1,5 @@
-//
-// Created by lenovo on 2021-08-07.
-//
-
 #pragma once
-
+#include "Components/TTFComponent.h"
 class SDL_Window;
 class SDL_Renderer;
 class SDL_Rect;
@@ -24,6 +20,7 @@ public:
 private:
     SDL_Window* window = nullptr;
     float accTime = 0.0f;
+    TTFComponent* fpsText;
 public:
     static SDL_Renderer* renderer;
     static SDL_Rect* screenRect;

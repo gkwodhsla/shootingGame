@@ -104,7 +104,11 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_version.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_locale.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_misc.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Framework.h
+  D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Framework.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Components\TTFComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\SDL_ttf\SDL_ttf.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\begin_code.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\close_code.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Components\SpritesheetComponent.h:
 
@@ -315,3 +319,11 @@ D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_locale
 D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_misc.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Framework.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Components\TTFComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\SDL_ttf\SDL_ttf.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\begin_code.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\close_code.h:

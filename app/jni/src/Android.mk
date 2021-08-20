@@ -16,6 +16,7 @@ Vector2D.cpp\
 Components/HSceneComponent.cpp\
 Components/HPrimitiveComponent.cpp\
 Components/ImageComponent.cpp\
+Components/TTFComponent.cpp\
 Components/MovementComponent.cpp\
 Components/SpritesheetComponent.cpp\
 Components/CollisionBoxComponent.cpp\

@@ -18,6 +18,7 @@ SDL_Rect* Framework::screenRect = nullptr;
 HLevelBase* Framework::curLevel = nullptr;
 int Framework::rendererWidth = 0;
 int Framework::rendererHeight = 0;
+
 Framework::Framework()
 {
     if(SDL_Init(SDL_INIT_VIDEO)<0)
@@ -53,7 +54,7 @@ Framework::Framework()
     }
     else
     {
-        renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+        renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED|SDL_RENDERER_PRESENTVSYNC);
         //추후 VSYNC를 위해 SDL_RENDERER_PRESENTVSYNC 옵션 추가 가능
         if(renderer == NULL)
         {
@@ -88,6 +89,7 @@ Framework::Framework()
 
     curLevel = new MainLevel();
 
+    fpsText = new TTFComponent(0,0,70,255,0,0,"font/EvilEmpire.ttf","Hello World!",nullptr);
 }
 
 Framework::~Framework()
@@ -102,6 +104,8 @@ Framework::~Framework()
     delete curLevel;
     curLevel = nullptr;
 
+    delete fpsText;
+    fpsText = nullptr;
     TTF_Quit();
     IMG_Quit();
     SDL_Quit();
@@ -127,6 +131,7 @@ void Framework::render()
     SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
     SDL_RenderClear(renderer);
     curLevel->render();
+    fpsText->render();
     SDL_RenderPresent(renderer);
 }
 
@@ -142,5 +147,8 @@ void Framework::startGame()
         chrono::duration<double> sec = chrono::system_clock::now() - start;
         accTime += sec.count();
         deltaTime = sec.count();
+        std::string fpsStr = "FPS: ";
+        fpsStr += std::to_string(int(1/deltaTime));
+        fpsText->changeText(fpsStr);
     }
 }
