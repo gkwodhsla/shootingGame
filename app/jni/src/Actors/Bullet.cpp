@@ -45,6 +45,8 @@ Bullet::Bullet(const std::pair<float, float> &spawnPosition, BULLET_COLOR bullet
     collisionBox->setDrawDebugBox(true);
 
     collisionBox->attachTo(rootComponent);
+
+    lifeTime = 3.0f;
 }
 
 Bullet::~Bullet()

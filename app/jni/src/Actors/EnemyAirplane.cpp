@@ -7,6 +7,9 @@
 #include "../Framework.h"
 #include "../Level/MainLevel.h"
 #include <android/log.h>
+#include <random>
+
+std::uniform_int_distribution<int> randomRotation(0, 360);
 
 Vector2D EnemyAirplane::bullet3DirVec[3];
 Vector2D EnemyAirplane::bullet5DirVec[5];
@@ -605,7 +608,7 @@ void EnemyAirplane::firePattern5()
                     if(bulletCnt<0) break;
                 }
             }
-            tempRotate+=15.0f;
+            tempRotate = randomRotation(dre);
             break;
         case BULLET_COLOR::BLUE:
             break;
@@ -646,7 +649,7 @@ void EnemyAirplane::firePattern6()
                     if(bulletCnt>49) break;
                 }
             }
-            tempRotate+=15.0f;
+            tempRotate = randomRotation(dre);
             break;
         case BULLET_COLOR::BLUE:
             break;
@@ -687,7 +690,7 @@ void EnemyAirplane::firePattern7()
                     if(bulletCnt>39) break;
                 }
             }
-            tempRotate+=5.0f;
+            tempRotate = randomRotation(dre);
             break;
         case BULLET_COLOR::BLUE:
             break;

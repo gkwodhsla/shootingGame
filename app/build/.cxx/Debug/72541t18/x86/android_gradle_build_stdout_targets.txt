@@ -3,16 +3,7 @@ make: Nothing to be done for 'SDL2_image'.
 make: Nothing to be done for 'SDL2_mixer'.
 make: Nothing to be done for 'SDL2_ttf'.
 make: Nothing to be done for 'hidapi'.
-[x86] Compile++      : main <= Framework.cpp
-[x86] Compile++      : main <= HSceneComponent.cpp
-[x86] Compile++      : main <= ImageComponent.cpp
-[x86] Compile++      : main <= TTFComponent.cpp
-[x86] Compile++      : main <= SpritesheetComponent.cpp
-[x86] Compile++      : main <= CollisionBoxComponent.cpp
-[x86] Compile++      : main <= SplineComponent.cpp
-[x86] Compile++      : main <= BackgroundActor.cpp
-[x86] Compile++      : main <= Airplane.cpp
 [x86] Compile++      : main <= EnemyAirplane.cpp
-[x86] Compile++      : main <= Spawner.cpp
+[x86] Compile++      : main <= MainLevel.cpp
 [x86] SharedLibrary  : libmain.so
 make: Nothing to be done for 'mpg123'.
