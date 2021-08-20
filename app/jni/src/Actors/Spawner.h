@@ -26,7 +26,7 @@ private:
     float spawnCoolTime = 0.0f;
     float maxSpawnCoolTime = 0.5f;
     int destX[4] = {100, 350, 600, 850};
-    int destY[5] = {30, 250, 500, 750, 1000};
+    int destY[4] = {30, 250, 500, 750};
     bool isSpawning = false;
     bool isBossTime = false;
     int maxSpawnedCnt = 0;

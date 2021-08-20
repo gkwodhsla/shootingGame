@@ -138,7 +138,8 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\..\Actors\HActor.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\SplineComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Spawner.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\..\Components\SplineComponent.h
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\..\Components\SplineComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\StageManager.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\MainLevel.h:
 
@@ -417,3 +418,5 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\Splin
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Spawner.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\..\Components\SplineComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\StageManager.h:

@@ -8,6 +8,7 @@
 #include "../Components/CollisionBoxComponent.h"
 #include "../Components/SplineComponent.h"
 #include "../Actors/Spawner.h"
+#include "../Actors/StageManager.h"
 #include <vector>
 #include <android/log.h>
 
@@ -41,7 +42,12 @@ void MainLevel::update(float deltaTime)
         }
     }
     checkingCollision();
-
+    coolTime-=deltaTime;
+    if(coolTime<0.0f)
+    {
+        stageManager->waveBegin();
+        coolTime = 999999.0f;
+    }
     //일단 임의로 적을 스폰해보자!
     /*coolTime -= deltaTime;
     if(coolTime <= 0)
@@ -49,11 +55,6 @@ void MainLevel::update(float deltaTime)
         spawner->startSpawn(1);
         coolTime = 10.0f;
     }*/
-    if(!isBossSpawned)
-    {
-        spawner->spawnBoss(1);
-        isBossSpawned = true;
-    }
 }
 
 void MainLevel::render()
@@ -72,6 +73,8 @@ void MainLevel::enter()
 {
     BackgroundActor* backgroundActor = new BackgroundActor();
     addNewActorToLevel(backgroundActor);
+    stageManager = new StageManager();
+    addNewActorToLevel(stageManager);
     playerAirplane = new Airplane();
     addNewActorToLevel(playerAirplane);
     playerController = new HPlayerController();
@@ -100,7 +103,7 @@ void MainLevel::enter()
         addBulletToBuffer(enemyPurpleBullets, BULLET_COLOR::PURPLE);
     }
 
-    int enemySize = Spawner::numOfDestX * Spawner::numOfDestY;
+    int enemySize = 16;//Spawner::numOfDestX * Spawner::numOfDestY;
     enemyAirplanes.reserve(enemySize);
     for(int i = 0; i < enemySize;++i)
     {
@@ -145,9 +148,6 @@ void MainLevel::enter()
     boss2->setActorTickable(false);
     boss2->setBulletPattern(ENEMY_BULLET_PATTERN::BOSS_STAR);
     addNewActorToLevel(boss2);
-
-    spawner = new Spawner();
-    addNewActorToLevel(spawner);
 }
 
 void MainLevel::exit()
@@ -168,7 +168,7 @@ void MainLevel::checkingCollision()
     {
         if(playerBullets[i]->getVisibility())
         {
-            if(isBossSpawned && boss1->getCanDamaged())
+            if(boss1->getCanDamaged())
             {
                 bool isHit = playerBullets[i]->getCollisionComp()->checkCollision(*(boss1->getCollisionBoxComp()));
                 if(isHit)
@@ -178,7 +178,7 @@ void MainLevel::checkingCollision()
                 }
             }
 
-            else if(isBossSpawned && boss2->getCanDamaged())
+            else if(boss2->getCanDamaged())
             {
                 bool isHit = playerBullets[i]->getCollisionComp()->checkCollision(*(boss2->getCollisionBoxComp()));
                 if(isHit)

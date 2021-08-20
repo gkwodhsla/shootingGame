@@ -37,7 +37,7 @@ Bullet::Bullet(const std::pair<float, float> &spawnPosition, BULLET_COLOR bullet
     bulletMovement = new MovementComponent(this);
     this->dirVec = dirVec;
 
-    bulletMovement->setSpeed(300.0f);
+    bulletMovement->setSpeed(900.0f);
     bulletMovement->setAcceleration(std::make_pair(dirVec.x * 1000.0f, dirVec.y * 1000.0f));
 
     auto imgSize = bulletImg->getScale();

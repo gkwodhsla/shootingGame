@@ -6,6 +6,7 @@
 #include "../Components/SplineComponent.h"
 #include "../Framework.h"
 #include "../Level/MainLevel.h"
+#include "StageManager.h"
 #include <android/log.h>
 #include <random>
 
@@ -221,6 +222,16 @@ void EnemyAirplane::getDamage(int damage)
         explosionSprite->play();
         airplaneImg->setVisibility(false);
         canDamaged = false;
+
+        MainLevel* mainLevel = (MainLevel*)Framework::curLevel;
+        if(shipShape == ENEMY_SHIP_SHAPE::BOSS1 || shipShape == ENEMY_SHIP_SHAPE::BOSS2)
+        {
+            mainLevel->stageManager->bossDie();
+        }
+        else
+        {
+            mainLevel->stageManager->enemyAirplaneDie();
+        }
     }
     float barSize = float(hpBarRowSize) / float(maxHP);
     hpBar->setScale(std::make_pair(barSize * float(curHp), hpBarColSize));

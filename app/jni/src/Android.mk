@@ -28,6 +28,7 @@ Actors/HPawn.cpp\
 Actors/Airplane.cpp\
 Actors/EnemyAirplane.cpp\
 Actors/Spawner.cpp\
+Actors/StageManager.cpp\
 Level/MainLevel.cpp
 
 

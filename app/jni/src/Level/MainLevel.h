@@ -7,7 +7,7 @@
 class Airplane;
 class EnemyAirplane;
 class Bullet;
-class Spawner;
+class StageManager;
 
 class MainLevel: public HLevelBase
 {
@@ -28,8 +28,8 @@ private:
     void addBulletToBuffer(std::vector<Bullet*>& cont, BULLET_COLOR color);
 
 private:
+    StageManager* stageManager = nullptr;
     Airplane* playerAirplane = nullptr;
-    Spawner* spawner = nullptr;
     std::vector<Bullet*> playerBullets;
     std::vector<Bullet*> enemyRedBullets;
     std::vector<Bullet*> enemyPurpleBullets;
@@ -41,7 +41,6 @@ private:
     const int playerBulletSize = 100;
     const int enemyBulletSize = 100;
     float coolTime = 3.0f;
-    bool isBossSpawned = false;
 };
 
 extern std::random_device rd;

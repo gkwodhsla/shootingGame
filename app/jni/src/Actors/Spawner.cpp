@@ -4,24 +4,10 @@
 #include "../Actors/EnemyAirplane.h"
 #include <android/log.h>
 
-std::uniform_int_distribution<int> uid(0,19);
-
-//{-100, 1200},
-//                                      {900, 1000},
-//                                      {Framework::rendererWidth/2,700},
-//왼쪽 path
-
-//{Framework::rendererWidth + 100, 1200},
-//{Framework::rendererWidth - 900, 1000},
-//{Framework::rendererWidth/2,700}
-//오른쪽 path
-
-//{Framework::rendererWidth/2, -100},
-//{Framework::rendererWidth/2, 500}
-//가운데 path
-
 const int Spawner::numOfDestX = 4;
-const int Spawner::numOfDestY = 5;
+const int Spawner::numOfDestY = 4;
+
+std::uniform_int_distribution<int> uid(0,Spawner::numOfDestY * Spawner::numOfDestX - 1);
 
 Spawner::Spawner()
 {

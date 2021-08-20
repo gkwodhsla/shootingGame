@@ -35,5 +35,5 @@ protected:
 
 private:
     SpritesheetComponent* boosterSprite = nullptr;
-    int attackPower = 10;
+    int attackPower = 50;
 };
