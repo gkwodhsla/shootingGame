@@ -88,6 +88,8 @@ void Spawner::update(float deltaTime)
                     enemies[i]->setActorTickable(true);
                     enemies[i]->setPath(&pathMiddle[spawnIndex]);
                     enemies[i]->setCanDamaged(true);
+                    enemies[i]->setMaxHP(maxHP);
+                    enemies[i]->setFireRate(fireRate);
                     break;
                 }
             }
@@ -116,23 +118,29 @@ void Spawner::update(float deltaTime)
         curBoss->setActorTickable(true);
         curBoss->setPath(bossPath);
         curBoss->setCanDamaged(true);
+        curBoss->setMaxHP(bossMaxHP);
+        curBoss->setFireRate(bossFireRate);
         isBossTime = false;
 
     }
 }
 
-void Spawner::startSpawn(int enemyCnt)
+void Spawner::startSpawn(int enemyCnt, int maxHP, float fireRate)
 {
     isSpawning = true;
     spawnCoolTime = 0.0f;
     maxSpawnedCnt = enemyCnt;
+    this->maxHP = maxHP;
+    this->fireRate = fireRate;
 }
 
-void Spawner::spawnBoss(int whichBoss)
+void Spawner::spawnBoss(int whichBoss, int maxHP, float fireRate)
 {
     isBossTime = true;
     isSpawning = false;
     bossIndex = whichBoss;
+    bossMaxHP = maxHP;
+    bossFireRate = fireRate;
 }
 
 int Spawner::getPathNum()

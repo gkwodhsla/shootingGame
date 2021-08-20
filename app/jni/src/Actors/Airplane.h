@@ -20,6 +20,7 @@ public:
     int getPlayerAttackPower();
     void setFireRate(float rate);
 
+
 private:
     void spawnPlayerBullet(const std::pair<float, float>& spawnPos);
 

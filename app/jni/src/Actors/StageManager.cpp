@@ -26,18 +26,17 @@ void StageManager::update(float deltaTime)
     {
         if(isEnemySpawning) //waveBegin으로 인해 isEnemySpawning이 true가 되면 스포너에게 적을 spawPerWave만큼 스폰하라고 알려준다.
         {
-            spawner->startSpawn(spawnPerWave);
+            spawner->startSpawn(spawnPerWave, enemyMaxHP, enemyFireRate);
             curEnemyAirplaneNum = spawnPerWave;
             isEnemySpawning = false;
-            __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
-                                "Spawn!");
+
         }
         else if(isBossTime && !isBossKilled)
         {
-            spawner->spawnBoss(0);
+            spawner->spawnBoss(0, bossMaxHP, bossFireRate);
             isBossTime = false;
         }
-        if(!isBossTime && curEnemyAirplaneNum<=0)
+        if(!isNormalWaveEnd && curEnemyAirplaneNum<=0)
         {
             ++curWave;
             if(curWave > maxWave)//현재 wave가 맥스 웨이브를 넘기면 보스 웨이브로 넘어간다.
@@ -64,6 +63,7 @@ void StageManager::waveBegin()
     isEnemySpawning = true;
     isWaveBegin = true;
     curWave = 1;
+    isNormalWaveEnd = false;
     //최초 웨이브는 1 wave 부터임!
 }
 
@@ -71,6 +71,7 @@ void StageManager::bossWaveBegin()
 {
     isBossTime = true;
     isBossKilled = false;
+    isNormalWaveEnd = true;
 }
 
 void StageManager::enemyAirplaneDie()

@@ -42,6 +42,7 @@ public:
     void setCanDamaged(bool canDamaged);
     bool getCanDamaged();
     void setBulletPattern(ENEMY_BULLET_PATTERN pattern);
+    void setMaxHP(int maxHP);
 
 private:
     void firePattern1();

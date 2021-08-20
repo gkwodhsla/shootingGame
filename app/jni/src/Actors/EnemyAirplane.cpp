@@ -280,6 +280,12 @@ void EnemyAirplane::setBulletPattern(ENEMY_BULLET_PATTERN pattern)
     bulletPattern = pattern;
 }
 
+void EnemyAirplane::setMaxHP(int maxHP)
+{
+    this->maxHP = maxHP;
+    this->curHp = maxHP;
+}
+
 void EnemyAirplane::firePattern1()
 {
     auto worldLoc = rootComponent->getComponentLocalLocation();

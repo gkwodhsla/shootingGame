@@ -140,7 +140,7 @@ void MainLevel::enter()
     boss1 = new EnemyAirplane(BULLET_COLOR::RED, ENEMY_SHIP_SHAPE::BOSS1, 100);
     boss1->setVisibility(false);
     boss1->setActorTickable(false);
-    boss1->setBulletPattern(ENEMY_BULLET_PATTERN::BOSS_CIRCLE);
+    boss1->setBulletPattern(ENEMY_BULLET_PATTERN::BOSS_STAR);
     addNewActorToLevel(boss1);
 
     boss2 = new EnemyAirplane(BULLET_COLOR::RED, ENEMY_SHIP_SHAPE::BOSS2, 100);

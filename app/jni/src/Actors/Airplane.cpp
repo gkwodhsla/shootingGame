@@ -126,6 +126,7 @@ void Airplane::setFireRate(float rate)
     fireRate = rate;
 }
 
+
 void Airplane::turnOffBooster()
 {
     boosterSprite->setVisibility(false);
