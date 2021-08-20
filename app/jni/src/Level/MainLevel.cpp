@@ -82,10 +82,15 @@ void MainLevel::enter()
         addBulletToBuffer(playerBullets, BULLET_COLOR::GREEN);
     }
 
-    enemyRedBullets.reserve(enemyBulletSize);
+    enemyRedBullets.reserve(enemyBulletSize + 100);
     enemyPurpleBullets.reserve(enemyBulletSize);
     enemyBlueBullets.reserve(enemyBulletSize);
     enemySkyBullets.reserve(enemyBulletSize);
+
+    for(int i = 0; i < enemyBulletSize + 100; ++i)
+    {
+        addBulletToBuffer(enemyRedBullets, BULLET_COLOR::RED);
+    }
 
     for(int i = 0; i < enemyBulletSize; ++i)
     {

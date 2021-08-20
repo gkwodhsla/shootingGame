@@ -11,7 +11,12 @@
 Vector2D EnemyAirplane::bullet3DirVec[3];
 Vector2D EnemyAirplane::bullet5DirVec[5];
 Vector2D EnemyAirplane::bullet7DirVec[7];
-Vector2D EnemyAirplane::bossCirclePattern[20];
+Vector2D EnemyAirplane::bossCirclePattern[30];
+Vector2D EnemyAirplane::bossStarPattern[51];
+Vector2D EnemyAirplane::bossStarPatternStartPos[51];
+Vector2D EnemyAirplane::bossFlowerPattern[40];
+Vector2D EnemyAirplane::bossFlowerPatternStartPos[40];
+
 bool EnemyAirplane::isInitStaticData = false;
 
 EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp):bulletColor(color), shipShape(shape), curHp(hp), maxHP(hp)
@@ -100,6 +105,10 @@ void EnemyAirplane::render()
     SDL_RenderDrawLine(Framework::renderer,
                        loc.first + 100, loc.second + 100, loc.first + 100 + realDirVec.x * 300.0f, 100+loc.second + realDirVec.y * 300.0f);
 
+    for(int i = 0; i < 50; ++i)
+    {
+        SDL_RenderDrawPoint(Framework::renderer, bossStarPatternStartPos[i].x + 500, bossStarPatternStartPos[i].y + 500);
+    }
 }
 
 void EnemyAirplane::update(float deltaTime)
@@ -576,7 +585,7 @@ void EnemyAirplane::firePattern5()
 
     std::pair<int, int> spawnPos{worldLoc.first + size.first / 2, worldLoc.second + size.second};
 
-    int bulletCnt = 18;
+    int bulletCnt = 29;
     MainLevel* mainLevel = (MainLevel*)Framework::curLevel;
     std::vector<Bullet*> cont;
     switch (bulletColor)
@@ -597,6 +606,88 @@ void EnemyAirplane::firePattern5()
                 }
             }
             tempRotate+=15.0f;
+            break;
+        case BULLET_COLOR::BLUE:
+            break;
+        case BULLET_COLOR::SKY:
+            break;
+        case BULLET_COLOR::PURPLE:
+            break;
+        case BULLET_COLOR::GREEN: //플레이어 총알이기에 아무것도 안한다!!!
+            break;
+    }
+}
+
+void EnemyAirplane::firePattern6()
+{
+    auto worldLoc = rootComponent->getComponentLocalLocation();
+    auto size = airplaneImg->getScale();
+
+    std::pair<int, int> spawnPos{worldLoc.first + size.first / 2, worldLoc.second + size.second};
+
+    int bulletCnt = 0;
+    MainLevel* mainLevel = (MainLevel*)Framework::curLevel;
+    std::vector<Bullet*> cont;
+    switch (bulletColor)
+    {
+        case BULLET_COLOR::RED:
+            cont = mainLevel->enemyRedBullets;
+            for(int i = 0; i < cont.size(); ++i)
+            {
+                if(!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
+                {
+                    cont[i]->setVisibility(true);
+                    cont[i]->setActorTickable(true);
+                    cont[i]->moveTo({bossStarPatternStartPos[bulletCnt].x + spawnPos.first,
+                                     bossStarPatternStartPos[bulletCnt].y + spawnPos.second}); //총알액터의 위치를 세팅해준다.
+                    bossStarPattern[bulletCnt].rotateVector(tempRotate);
+                    cont[i]->setActorDirectionalVector(bossStarPattern[bulletCnt]);
+                    ++bulletCnt;
+                    if(bulletCnt>49) break;
+                }
+            }
+            tempRotate+=15.0f;
+            break;
+        case BULLET_COLOR::BLUE:
+            break;
+        case BULLET_COLOR::SKY:
+            break;
+        case BULLET_COLOR::PURPLE:
+            break;
+        case BULLET_COLOR::GREEN: //플레이어 총알이기에 아무것도 안한다!!!
+            break;
+    }
+}
+
+void EnemyAirplane::firePattern7()
+{
+    auto worldLoc = rootComponent->getComponentLocalLocation();
+    auto size = airplaneImg->getScale();
+
+    std::pair<int, int> spawnPos{worldLoc.first + size.first / 2, worldLoc.second + size.second};
+
+    int bulletCnt = 0;
+    MainLevel* mainLevel = (MainLevel*)Framework::curLevel;
+    std::vector<Bullet*> cont;
+    switch (bulletColor)
+    {
+        case BULLET_COLOR::RED:
+            cont = mainLevel->enemyRedBullets;
+            for(int i = 0; i < cont.size(); ++i)
+            {
+                if(!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
+                {
+                    cont[i]->setVisibility(true);
+                    cont[i]->setActorTickable(true);
+                    cont[i]->moveTo({bossFlowerPatternStartPos[bulletCnt].x + spawnPos.first,
+                                     bossFlowerPatternStartPos[bulletCnt].y + spawnPos.second}); //총알액터의 위치를 세팅해준다.
+                    bossFlowerPattern[bulletCnt].rotateVector(tempRotate);
+                    cont[i]->setActorDirectionalVector(bossFlowerPattern[bulletCnt]);
+                    ++bulletCnt;
+                    if(bulletCnt>39) break;
+                }
+            }
+            tempRotate+=5.0f;
             break;
         case BULLET_COLOR::BLUE:
             break;
@@ -632,6 +723,12 @@ void EnemyAirplane::spawnBullet(float deltaTime)
             case ENEMY_BULLET_PATTERN::BOSS_CIRCLE:
                 firePattern5();
                 break;
+            case ENEMY_BULLET_PATTERN::BOSS_STAR:
+                firePattern6();
+                break;
+            case ENEMY_BULLET_PATTERN::BOSS_FLOWER:
+                firePattern7();
+                break;
         }
     }
 }
@@ -665,6 +762,8 @@ void EnemyAirplane::initStaticData()
         temp.rotateVector(15.0f);
     }
     initBossCirclePattern();
+    initBossStarPattern();
+    initBossHeartPattern();
 }
 
 void EnemyAirplane::initBossCirclePattern() //이곳에서 보스 총알의 방향벡터를 계산해둔다. (circle)
@@ -675,24 +774,77 @@ void EnemyAirplane::initBossCirclePattern() //이곳에서 보스 총알의 방�
     Vector2D befDir{1.0f, 0.0f};
     Vector2D curDir{0.0f, 0.0f};
     int index = 0;
-    for(t = 0.05f; t <= 1.0f; t += 0.05f)
+    for(t = 0.0333f; t <= 1.0f; t += 0.0333f)
     {
         float curX = cos(t * 360.0f * toRad);
         float curY = sin(t * 360.0f * toRad);
         curDir = Vector2D{curX, curY};
 
         Vector2D v1 = curDir - befDir;
-
+        v1.normalize();
         bossCirclePattern[index++] = Vector2D(v1.y, -v1.x);
         //Up vector를 (0, 0, -1.0f)라고 가정하고 v1과 외적한 결과이다.
 
         befDir = curDir;
 
     }
+}
 
-    for(int i=0;i<20;++i)
+void EnemyAirplane::initBossStarPattern()
+{
+    //{xy=−9sin(2t)−5sin(3t)=9cos(2t)−5cos(3t)t∈[0,2π]
+    float t = 0.0f;
+    int index = 0;
+    Vector2D befDir{-9 * sin(2 * t) - 5 * sin(3 * t), 9 * cos(2 * t) - 5 * cos(3 * t)};
+    bossStarPatternStartPos[index] = befDir;
+    //befDir.normalize();
+    Vector2D curDir{0.0f, 0.0f};
+
+    for(t = 0.1256f; t <= 3.14f * 2.0f; t += 0.1256f)
+    {
+        float curX = -9 * sin(2 * t) - 5 * sin(3 * t);
+        float curY = 9 * cos(2 * t) - 5 * cos(3 * t);
+        curDir = Vector2D{curX, curY};
+
+        Vector2D v1 = curDir - befDir;
+        //v1.normalize();
+        if(abs(v1.x)>=3.5f)
+            v1.x = 1.5f;
+        bossStarPattern[index++] = Vector2D(v1.y, -v1.x);
+
+        befDir = curDir;
+        bossStarPatternStartPos[index] = Vector2D{curX * 10.0f, curY * 10.0f};
+    }
+
+    for(int i = 0; i < 50; ++i)
     {
         __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
-                            "%d data: x: %f, y:%f", i, bossCirclePattern[i].x, bossCirclePattern[i].y);
+                            "%d번째 x: %f, y:%f", i, bossStarPattern[i].x, bossStarPattern[i].y);
+    }
+}
+
+void EnemyAirplane::initBossHeartPattern()
+{
+    float t = 0.0f;
+    int index = 0;
+    Vector2D befDir{20*cos(3*t)*cos(t), 20*cos(3*t)*sin(t)};
+    bossFlowerPatternStartPos[index] = befDir;
+    //befDir.normalize();
+    Vector2D curDir{0.0f, 0.0f};
+
+    for(t = 0.08f; t <= 3.2f; t += 0.08f)
+    {
+        float curX = 20*cos(3*t)*cos(t);
+        float curY = 20*cos(3*t)*sin(t);
+        curDir = Vector2D{curX, curY};
+
+        Vector2D v1 = curDir - befDir;
+        v1.normalize();
+        //if(abs(v1.x)>=3.5f)
+            //v1.x = 1.5f;
+        bossFlowerPattern[index++] = Vector2D(v1.y, -v1.x);
+
+        befDir = curDir;
+        bossFlowerPatternStartPos[index] = Vector2D{curX * 10.0f, curY * 10.0f};
     }
 }
