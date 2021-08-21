@@ -91,3 +91,8 @@ CollisionBoxComponent* Bullet::getCollisionComp()
 {
     return collisionBox;
 }
+
+void Bullet::changeBulletSpeed(float speed)
+{
+    bulletMovement->setSpeed(speed);
+}

@@ -22,8 +22,9 @@ Airplane::Airplane()
     rootComponent->setOwner(this);
     airplaneImg = new ImageComponent("image/player/1.png", std::make_pair(0, 0), this);
     airplaneImg->attachTo(rootComponent);
+    airplaneImg->setScale({100, 115});
 
-    auto airPlaneImgSize = airplaneImg->getImageSize();
+    auto airPlaneImgSize = airplaneImg->getScale();
     boosterSprite = new SpritesheetComponent("image/spritesheet/rocketFlame2.png",
                                              std::make_pair(airPlaneImgSize.first/2 - 13, airPlaneImgSize.second - 30),
                                              this, 2, 1, 2);

@@ -108,9 +108,9 @@ void StageManager::setStage(int stage)
     }
     enemyMaxHP = 50 + 10 * (stage / 5);
     bossMaxHP = 300 + stage * 10;
-    enemyFireRate = 1.5f - 0.01f * float(stage);
-    if(enemyFireRate <= 0.4f)
-        enemyFireRate = 0.4f;
+    enemyFireRate = 3.0f - 0.02f * stage;
+    if(enemyFireRate <= 0.5f)
+        enemyFireRate = 0.5f;
 
     bossFireRate = 3.0f - 0.04f * stage;
     if(bossFireRate <= 1.0f)

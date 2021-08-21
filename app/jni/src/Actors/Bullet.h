@@ -24,6 +24,7 @@ public:
     virtual void render();
     virtual void update(float deltaTime);
     void resetBulletToInitialState();
+    void changeBulletSpeed(float speed);
 
 public:
     CollisionBoxComponent* getCollisionComp();

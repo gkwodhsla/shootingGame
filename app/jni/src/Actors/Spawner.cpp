@@ -8,6 +8,8 @@ const int Spawner::numOfDestX = 4;
 const int Spawner::numOfDestY = 4;
 
 std::uniform_int_distribution<int> uid(0,Spawner::numOfDestY * Spawner::numOfDestX - 1);
+std::uniform_int_distribution<int> enemyPattern(0, 3);
+std::uniform_int_distribution<int> bossPattern(0, 2);
 
 Spawner::Spawner()
 {
@@ -90,6 +92,24 @@ void Spawner::update(float deltaTime)
                     enemies[i]->setCanDamaged(true);
                     enemies[i]->setMaxHP(maxHP);
                     enemies[i]->setFireRate(fireRate);
+
+                    int enemyPatternNum = enemyPattern(dre);
+                    if(enemyPatternNum == 0)
+                    {
+                        enemies[i]->setBulletPattern(ENEMY_BULLET_PATTERN::BULLET_3);
+                    }
+                    else if(enemyPatternNum == 1)
+                    {
+                        enemies[i]->setBulletPattern(ENEMY_BULLET_PATTERN::BULLET_5);
+                    }
+                    else if(enemyPatternNum == 2)
+                    {
+                        enemies[i]->setBulletPattern(ENEMY_BULLET_PATTERN::BULLET_7);
+                    }
+                    else
+                    {
+                        enemies[i]->setBulletPattern(ENEMY_BULLET_PATTERN::TARGETED);
+                    }
                     break;
                 }
             }
@@ -120,6 +140,20 @@ void Spawner::update(float deltaTime)
         curBoss->setCanDamaged(true);
         curBoss->setMaxHP(bossMaxHP);
         curBoss->setFireRate(bossFireRate);
+
+        int bossPatternNum = bossPattern(dre);
+        if(bossPatternNum == 0)
+        {
+            curBoss->setBulletPattern(ENEMY_BULLET_PATTERN::BOSS_CIRCLE);
+        }
+        else if(bossPatternNum == 1)
+        {
+            curBoss->setBulletPattern(ENEMY_BULLET_PATTERN::BOSS_STAR);
+        }
+        else
+        {
+            curBoss->setBulletPattern(ENEMY_BULLET_PATTERN::BOSS_FLOWER);
+        }
         isBossTime = false;
 
     }

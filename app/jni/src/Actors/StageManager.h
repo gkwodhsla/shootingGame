@@ -23,7 +23,7 @@ private:
     int spawnPerWave = 2;
     int enemyMaxHP = 50;
     int bossMaxHP = 300;
-    float enemyFireRate = 1.5f;
+    float enemyFireRate = 3.0f;
     float bossFireRate = 2.5f;
     int canUsingPatternNumber = 1;
     int curEnemyAirplaneNum = 0;

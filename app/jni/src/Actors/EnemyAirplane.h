@@ -77,6 +77,7 @@ private:
     bool isArrived = false;
     const int rotateRate = 150;
     const float moveRate = 0.5f;
+    static const float normalBulletSpeed;
     static Vector2D bullet3DirVec[3];
     static Vector2D bullet5DirVec[5];
     static Vector2D bullet7DirVec[7];
