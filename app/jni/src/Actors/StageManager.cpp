@@ -30,7 +30,6 @@ void StageManager::update(float deltaTime)
             spawner->startSpawn(spawnPerWave, enemyMaxHP, enemyFireRate);
             curEnemyAirplaneNum = spawnPerWave;
             isEnemySpawning = false;
-
         }
         else if(isBossTime && !isBossKilled)
         {
@@ -97,4 +96,23 @@ void StageManager::stageClear()
 void StageManager::setStage(int stage)
 {
     curStage = stage;
+    spawnPerWave = 2 + 2 * (stage / 10); //10스테이지 마다 웨이브에 2마리의 적이 추가된다.
+    if(spawnPerWave >= 16)
+    {
+        spawnPerWave = 16;
+    }
+    maxWave = 2 + stage / 10; //웨이브는 10웨이브마다 1씩 추가된다.
+    if(maxWave >= 7)
+    {
+        maxWave = 7;
+    }
+    enemyMaxHP = 50 + 10 * (stage / 5);
+    bossMaxHP = 300 + stage * 10;
+    enemyFireRate = 1.5f - 0.01f * float(stage);
+    if(enemyFireRate <= 0.4f)
+        enemyFireRate = 0.4f;
+
+    bossFireRate = 3.0f - 0.04f * stage;
+    if(bossFireRate <= 1.0f)
+        bossFireRate = 1.0f;
 }

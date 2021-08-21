@@ -31,7 +31,7 @@ private:
     TextWidget* stageText = nullptr;
     ImageWidget* bgImage = nullptr;
     int curStage = 1;
-    int maxStage = 1;
+    int maxStage = 100;
     int minStage = 1;
     bool isPlayButtonClicked = false;
 };
