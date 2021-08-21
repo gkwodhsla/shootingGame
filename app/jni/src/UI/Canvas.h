@@ -8,28 +8,25 @@ class ButtonWidget;
 class Canvas
 {
 public:
-    Canvas();
-    Canvas(int canvasW, int canvasH, int canvasWorldX, int canvasWorldY, int canvasScaleX, int canvasScaleY);
+    Canvas() = delete;
+    Canvas(int canvasW, int canvasH, int canvasWorldX, int canvasWorldY);
     virtual ~Canvas();
     void addToViewport();
     void removeFromViewport();
-    void canvasRender();
-    void render();
-    void handleEvent(SDL_Event& e);
+    virtual void canvasRender();
+    virtual void render();
+    virtual void handleEvent(SDL_Event& e) = 0;
 
-private:
-    void createEmptyWindow();
-
-private:
+protected:
     int w = 500;
     int h = 500;
     SDL_Texture* window = nullptr;
     int canvasWorldPosX = 0;
     int canvasWorldPosY = 0;
-    int canvasScaleX = 500;
-    int canvasScaleY = 500;
     bool visibility = false;
-    ButtonWidget* testButton;
+
+private:
+    void createEmptyWindow();
 };
 
 

@@ -31,3 +31,16 @@ void ButtonWidget::registerOnClickedEvent(std::function<void()> &func)
 {
     buttonDown = func;
 }
+
+void ButtonWidget::checkIsClicked(int inputX, int inputY)
+{
+    auto buttonPos = getLocalPosition();
+    auto buttonSize = buttonImg->getScale();
+    if(buttonPos.first <= inputX && inputX <= buttonPos.first + buttonSize.first)
+    {
+        if(buttonPos.second <= inputY && inputY <= buttonPos.second + buttonSize.second)
+        {
+            buttonDown();
+        }
+    }
+}

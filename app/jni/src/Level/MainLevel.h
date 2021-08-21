@@ -24,9 +24,11 @@ public:
     friend class Airplane;
     friend class Spawner;
     friend class EnemyAirplane;
+    friend class StageManager;
 
 private:
     void addBulletToBuffer(std::vector<Bullet*>& cont, BULLET_COLOR color);
+    void stageClear();
 
 private:
     StageManager* stageManager = nullptr;
@@ -42,7 +44,7 @@ private:
     const int playerBulletSize = 100;
     const int enemyBulletSize = 100;
     float coolTime = 3.0f;
-    Canvas* testCanvas;
+    Canvas* shopCanvas = nullptr;
 };
 
 extern std::random_device rd;

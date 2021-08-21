@@ -13,6 +13,8 @@ public:
     void bossWaveBegin();
     void enemyAirplaneDie();
     void bossDie();
+    void stageClear();
+    void setStage(int stage);
 
 private:
     int curStage = 0;

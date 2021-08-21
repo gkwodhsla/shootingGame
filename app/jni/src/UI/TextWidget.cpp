@@ -1,9 +1,9 @@
 #include "TextWidget.h"
 #include "../Components/TTFComponent.h"
 
-TextWidget::TextWidget()
+TextWidget::TextWidget(const std::string& content ,int fontSize, __uint8_t r, __uint8_t g, __uint8_t b)
 {
-    text = new TTFComponent(0, 0, 24, 255, 0, 0, "font/EvilEmpire.ttf", "test TTF!!!", nullptr);
+    text = new TTFComponent(0, 0, fontSize, r, g, b, "font/EvilEmpire.ttf", content, nullptr);
     auto scale = text->getScale();
     scaleX = scale.first;
     scaleY = scale.second;

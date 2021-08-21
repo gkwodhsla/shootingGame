@@ -73,14 +73,17 @@ void Airplane::render()
 void Airplane::update(float deltaTime)
 {
     HPawn::update(deltaTime);
-    curFireTime -= deltaTime;
-    if(curFireTime <= 0.0f)
+    if(tickable)
     {
-        auto imageSize = airplaneImg->getScale();
-        auto loc = rootComponent->getComponentLocalLocation();
-        loc.first += float(imageSize.first) / 2;
-        spawnPlayerBullet(loc);
-        curFireTime = fireRate;
+        curFireTime -= deltaTime;
+        if (curFireTime <= 0.0f)
+        {
+            auto imageSize = airplaneImg->getScale();
+            auto loc = rootComponent->getComponentLocalLocation();
+            loc.first += float(imageSize.first) / 2;
+            spawnPlayerBullet(loc);
+            curFireTime = fireRate;
+        }
     }
 }
 

@@ -9,7 +9,7 @@
 #include "../Components/SplineComponent.h"
 #include "../Actors/Spawner.h"
 #include "../Actors/StageManager.h"
-#include "../UI/Canvas.h"
+#include "../UI/ShopCanvas.h"
 #include "../Framework.h"
 #include <vector>
 #include <android/log.h>
@@ -22,15 +22,17 @@ MainLevel::MainLevel()
 {
     actors.reserve(300);
     enter();
-    testCanvas = new Canvas();
-    testCanvas->addToViewport();
+    shopCanvas = new ShopCanvas(Framework::rendererWidth, 1200, 0, 0);
+    shopCanvas->addToViewport();
+    playerAirplane->setVisibility(false);
+    playerAirplane->setActorTickable(false);
 }
 
 MainLevel::~MainLevel()
 {
     exit();
-    delete testCanvas;
-    testCanvas = nullptr;
+    delete shopCanvas;
+    shopCanvas = nullptr;
 }
 
 void MainLevel::handleEvent(SDL_Event& e)
@@ -59,19 +61,20 @@ void MainLevel::update(float deltaTime)
         }
     }
     checkingCollision();
-    coolTime-=deltaTime;
-    if(coolTime<0.0f)
+
+
+    ShopCanvas* curCanvas = (ShopCanvas*)(shopCanvas);
+
+    if(curCanvas->getIsPlayButtonClicked())
     {
+        playerAirplane->setVisibility(true);
+        playerAirplane->setActorTickable(true);
+        curCanvas->removeFromViewport();
+        curCanvas->setIsPlayButtonClicked(false);
+        playerController->changeInputMode(INPUT_MODE::GAME_ONLY);
+        stageManager->setStage(curCanvas->getCurStage());
         stageManager->waveBegin();
-        coolTime = 999999.0f;
     }
-    //일단 임의로 적을 스폰해보자!
-    /*coolTime -= deltaTime;
-    if(coolTime <= 0)
-    {
-        spawner->startSpawn(1);
-        coolTime = 10.0f;
-    }*/
 }
 
 void MainLevel::render()
@@ -236,4 +239,19 @@ void MainLevel::addBulletToBuffer(std::vector<Bullet*>& cont, BULLET_COLOR color
     newBullet->setIsSetLifeTime(true);
     cont.push_back(newBullet);
     addNewActorToLevel(newBullet);
+}
+
+void MainLevel::stageClear()
+{
+    playerController->changeInputMode(INPUT_MODE::UI_ONLY);
+    ShopCanvas* curCanvas = (ShopCanvas*)(shopCanvas);
+    if(curCanvas->getMaxStage() == curCanvas->getCurStage())
+    {
+        curCanvas->incMaxStage();
+    }
+    shopCanvas->addToViewport();
+    playerAirplane->setVisibility(false);
+    playerAirplane->setActorTickable(false);
+    playerAirplane->getRootComponent()->setComponentLocalLocation(std::make_pair(Framework::rendererWidth / 2,
+                                                                                 Framework::rendererHeight - 300));
 }

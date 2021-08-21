@@ -252,6 +252,8 @@ void EnemyAirplane::resetEnemyAirplaneToInitialState()
     //dirVec = std::make_pair(0.0f, 1.0f);
     dirVec.x = 0.0f;
     dirVec.y = 1.0f;
+    realDirVec.x = 0.0f;
+    realDirVec.y = 1.0f;
     rootComponent->setComponentLocalRotation(0.0f);
     befPos = std::make_pair(-999, -999);
     canDamaged = false;

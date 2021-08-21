@@ -14,6 +14,7 @@ public:
     virtual void render() override;
     void changeImage(const std::string& imgPath);
     void registerOnClickedEvent(std::function<void()>& func);
+    void checkIsClicked(int inputX, int inputY);
 public:
     std::function<void()> buttonDown = nullptr;
 private:

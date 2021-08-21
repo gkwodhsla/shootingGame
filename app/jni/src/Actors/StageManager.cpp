@@ -2,6 +2,7 @@
 #include "../Framework.h"
 #include "Spawner.h"
 #include <android/log.h>
+#include "../Level/MainLevel.h"
 
 StageManager::StageManager()
 {
@@ -50,9 +51,9 @@ void StageManager::update(float deltaTime)
         }
         if(isBossKilled)
         {
-            //스테이지 클리어 후 처리할 코드를 여기에 삽입한다.
-            __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
-                                "stage clear~~~");
+            MainLevel* mainLevel = (MainLevel*)Framework::curLevel;
+            mainLevel->stageClear();
+            stageClear();
         }
     }
     spawner->update(deltaTime);
@@ -82,4 +83,18 @@ void StageManager::enemyAirplaneDie()
 void StageManager::bossDie()
 {
     isBossKilled = true;
+}
+
+void StageManager::stageClear()
+{
+    isEnemySpawning = false;
+    isWaveBegin = false;
+    isBossTime = false;
+    isBossKilled = false;
+    isNormalWaveEnd = false;
+}
+
+void StageManager::setStage(int stage)
+{
+    curStage = stage;
 }
