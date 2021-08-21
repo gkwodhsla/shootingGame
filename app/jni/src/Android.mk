@@ -29,7 +29,10 @@ Actors/Airplane.cpp\
 Actors/EnemyAirplane.cpp\
 Actors/Spawner.cpp\
 Actors/StageManager.cpp\
-Level/MainLevel.cpp
+Level/MainLevel.cpp\
+UI/Canvas.cpp\
+UI/Widget.cpp\
+UI/TextWidget.cpp
 
 
 LOCAL_SHARED_LIBRARIES := SDL2 \

@@ -9,6 +9,7 @@
 #include "../Components/SplineComponent.h"
 #include "../Actors/Spawner.h"
 #include "../Actors/StageManager.h"
+#include "../UI/Canvas.h"
 #include <vector>
 #include <android/log.h>
 
@@ -20,11 +21,15 @@ MainLevel::MainLevel()
 {
     actors.reserve(300);
     enter();
+    Canvas* testCanvas = new Canvas();
+    testCanvas->addToViewport();
 }
 
 MainLevel::~MainLevel()
 {
     exit();
+    delete testCanvas;
+    testCanvas = nullptr;
 }
 
 void MainLevel::handleEvent(SDL_Event& e)

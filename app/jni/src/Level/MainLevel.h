@@ -8,6 +8,7 @@ class Airplane;
 class EnemyAirplane;
 class Bullet;
 class StageManager;
+class Canvas;
 
 class MainLevel: public HLevelBase
 {
@@ -41,6 +42,7 @@ private:
     const int playerBulletSize = 100;
     const int enemyBulletSize = 100;
     float coolTime = 3.0f;
+    Canvas* testCanvas;
 };
 
 extern std::random_device rd;

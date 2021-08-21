@@ -4,6 +4,7 @@ class SDL_Window;
 class SDL_Renderer;
 class SDL_Rect;
 class HLevelBase;
+class Canvas;
 
 class Framework
 {
@@ -27,5 +28,6 @@ public:
     static int rendererWidth;
     static int rendererHeight;
     static HLevelBase* curLevel;
+    static std::vector<Canvas*> worldUI;
 };
 

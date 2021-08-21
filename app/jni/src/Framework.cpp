@@ -10,6 +10,7 @@
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 #include <chrono>
+#include "UI/Canvas.h"
 
 using namespace std;
 
@@ -18,6 +19,7 @@ SDL_Rect* Framework::screenRect = nullptr;
 HLevelBase* Framework::curLevel = nullptr;
 int Framework::rendererWidth = 0;
 int Framework::rendererHeight = 0;
+std::vector<Canvas*> Framework::worldUI;
 
 Framework::Framework()
 {
@@ -130,8 +132,16 @@ void Framework::render()
 {
     SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
     SDL_RenderClear(renderer);
+    for(auto&canvas:worldUI)
+    {
+        canvas->canvasRender();
+    }
     curLevel->render();
     fpsText->render();
+    for(auto&canvas:worldUI)
+    {
+        canvas->render();
+    }
     SDL_RenderPresent(renderer);
 }
 
