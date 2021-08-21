@@ -17,6 +17,7 @@ public:
     void possess(HPawn* pawn);
     void unpossess();
     void changeInputMode(const INPUT_MODE inputMode);
+    INPUT_MODE getInputMode();
     void handleEvent(SDL_Event& e);
     HPawn* getControlledPawn();
 

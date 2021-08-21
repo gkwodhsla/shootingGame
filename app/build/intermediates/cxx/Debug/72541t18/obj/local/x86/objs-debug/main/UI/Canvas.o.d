@@ -109,7 +109,8 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\begin_code.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\close_code.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\TextWidget.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\Widget.h
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\Widget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\ButtonWidget.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\Canvas.h:
 
@@ -330,3 +331,5 @@ D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\close_code
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\TextWidget.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\Widget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\ButtonWidget.h:

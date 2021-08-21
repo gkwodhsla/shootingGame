@@ -32,7 +32,8 @@ Actors/StageManager.cpp\
 Level/MainLevel.cpp\
 UI/Canvas.cpp\
 UI/Widget.cpp\
-UI/TextWidget.cpp
+UI/TextWidget.cpp\
+UI/ButtonWidget.cpp
 
 
 LOCAL_SHARED_LIBRARIES := SDL2 \

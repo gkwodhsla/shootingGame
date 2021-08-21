@@ -10,6 +10,7 @@
 #include "../Actors/Spawner.h"
 #include "../Actors/StageManager.h"
 #include "../UI/Canvas.h"
+#include "../Framework.h"
 #include <vector>
 #include <android/log.h>
 
@@ -21,7 +22,7 @@ MainLevel::MainLevel()
 {
     actors.reserve(300);
     enter();
-    Canvas* testCanvas = new Canvas();
+    testCanvas = new Canvas();
     testCanvas->addToViewport();
 }
 
@@ -34,7 +35,18 @@ MainLevel::~MainLevel()
 
 void MainLevel::handleEvent(SDL_Event& e)
 {
-    playerController->handleEvent(e);
+    INPUT_MODE curInputMode = playerController->getInputMode();
+    if(curInputMode == INPUT_MODE::GAME_ONLY)
+    {
+        playerController->handleEvent(e);
+    }
+    else if (curInputMode == INPUT_MODE::UI_ONLY)
+    {
+        for(auto& canvas : Framework::worldUI)
+        {
+            canvas->handleEvent(e);
+        }
+    }
 }
 
 void MainLevel::update(float deltaTime)
@@ -85,6 +97,7 @@ void MainLevel::enter()
     playerController = new HPlayerController();
     playerController->possess(playerAirplane);
     playerBullets.reserve(playerBulletSize);
+    playerController->changeInputMode(INPUT_MODE::UI_ONLY);
     for(int i = 0; i < playerBulletSize; ++i)
     {
         addBulletToBuffer(playerBullets, BULLET_COLOR::GREEN);

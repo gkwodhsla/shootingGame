@@ -4,6 +4,9 @@
 TextWidget::TextWidget()
 {
     text = new TTFComponent(0, 0, 24, 255, 0, 0, "font/EvilEmpire.ttf", "test TTF!!!", nullptr);
+    auto scale = text->getScale();
+    scaleX = scale.first;
+    scaleY = scale.second;
 }
 
 TextWidget::~TextWidget()

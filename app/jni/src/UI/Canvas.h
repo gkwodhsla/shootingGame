@@ -3,6 +3,7 @@
 #include <SDL.h>
 
 class TextWidget;
+class ButtonWidget;
 
 class Canvas
 {
@@ -27,7 +28,8 @@ private:
     int canvasWorldPosY = 0;
     int canvasScaleX = 500;
     int canvasScaleY = 500;
-    TextWidget* test = nullptr;
+    bool visibility = false;
+    ButtonWidget* testButton;
 };
 
 

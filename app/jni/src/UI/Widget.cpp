@@ -33,6 +33,12 @@ void Widget::setLocalPosition(int x, int y)
     }
 }
 
+void Widget::setScale(int scaleX, int scaleY)
+{
+    this->scaleX = scaleX;
+    this->scaleY = scaleY;
+}
+
 std::pair<int, int> Widget::getLocalPosition()
 {
     return std::make_pair(localX, localY);
