@@ -1,7 +1,8 @@
 #include "ShopCanvas.h"
-#include "../Framework.h"
 #include "TextWidget.h"
 #include "ButtonWidget.h"
+#include "ImageWidget.h"
+#include "../Framework.h"
 #include <android/log.h>
 
 ShopCanvas::ShopCanvas(int canvasW, int canvasH, int canvasWorldX, int canvasWorldY) :
@@ -23,11 +24,15 @@ ShopCanvas::~ShopCanvas()
 
     delete stageText;
     stageText = nullptr;
+
+    delete bgImage;
+    bgImage = nullptr;
 }
 
 void ShopCanvas::canvasRender()
 {
     Canvas::canvasRender(); // 여기서 렌더타켓을 초기화 시켜준다.
+    bgImage->render();
     playButton->render();
     incButton->render();
     decButton->render();
@@ -123,4 +128,8 @@ void ShopCanvas::initWidgets()
 
     stageText = new TextWidget("Stage: 1", 100, 0, 0, 0);
     stageText->setLocalPosition(200, h - 250);
+
+    bgImage = new ImageWidget("image/misc/shopBG.png");
+    bgImage->setLocalPosition(0, 0);
+    bgImage->setScale(w, h);
 }

@@ -1,6 +1,10 @@
 #pragma once
 #include "Canvas.h"
 
+class TextWidget;
+class ButtonWidget;
+class ImageWidget;
+
 class ShopCanvas : public Canvas
 {
 public:
@@ -25,6 +29,7 @@ private:
     ButtonWidget* decButton = nullptr;
     ButtonWidget* incButton = nullptr;
     TextWidget* stageText = nullptr;
+    ImageWidget* bgImage = nullptr;
     int curStage = 1;
     int maxStage = 1;
     int minStage = 1;

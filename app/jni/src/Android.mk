@@ -34,7 +34,8 @@ UI/Canvas.cpp\
 UI/ShopCanvas.cpp\
 UI/Widget.cpp\
 UI/TextWidget.cpp\
-UI/ButtonWidget.cpp
+UI/ButtonWidget.cpp\
+UI/ImageWidget.cpp
 
 
 LOCAL_SHARED_LIBRARIES := SDL2 \

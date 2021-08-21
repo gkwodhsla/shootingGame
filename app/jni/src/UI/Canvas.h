@@ -2,9 +2,6 @@
 
 #include <SDL.h>
 
-class TextWidget;
-class ButtonWidget;
-
 class Canvas
 {
 public:
