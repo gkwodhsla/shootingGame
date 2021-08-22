@@ -31,18 +31,24 @@ ShopCanvas::~ShopCanvas()
 
 void ShopCanvas::canvasRender()
 {
-    Canvas::canvasRender(); // 여기서 렌더타켓을 초기화 시켜준다.
-    bgImage->render();
-    playButton->render();
-    incButton->render();
-    decButton->render();
-    stageText->render();
-    SDL_SetRenderTarget(Framework::renderer, nullptr);
+    if(visibility)
+    {
+        Canvas::canvasRender(); // 여기서 렌더타켓을 초기화 시켜준다.
+        bgImage->render();
+        playButton->render();
+        incButton->render();
+        decButton->render();
+        stageText->render();
+        SDL_SetRenderTarget(Framework::renderer, nullptr);
+    }
 }
 
 void ShopCanvas::render()
 {
-    Canvas::render();
+    if(visibility)
+    {
+        Canvas::render();
+    }
 }
 
 void ShopCanvas::handleEvent(SDL_Event &e)

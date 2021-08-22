@@ -17,7 +17,6 @@ public:
     void changeBackgroundImage(const std::string&);
 private:
     ImageComponent* backgroundImage = nullptr;
-    ImageComponent* backgroundImageCopy = nullptr;
     SDL_Rect* camera = nullptr;
     const int cameraWidthAndHeight = 300;
     float accYPos = 0.0f;

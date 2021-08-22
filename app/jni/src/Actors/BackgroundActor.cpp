@@ -22,7 +22,6 @@ BackgroundActor::BackgroundActor() {
     backgroundImage->attachTo(rootComponent);
     backgroundImage->setClipDraw(true);
 
-    backgroundImageCopy = new ImageComponent("image/background/2.png", std::make_pair(0, 0), this);
     //init camera
     auto bgImgSize = backgroundImage->getImageSize();
     backgroundImage->setScale(std::make_pair(Framework::rendererWidth, Framework::rendererHeight));
@@ -47,15 +46,12 @@ BackgroundActor::~BackgroundActor()
     delete backgroundImage;
     backgroundImage = nullptr;
 
-    delete backgroundImageCopy;
-    backgroundImageCopy = nullptr;
     delete camera;
     camera = nullptr;
 }
 
 void BackgroundActor::render()
 {
-    backgroundImageCopy->render();
     HActor::render();
     auto bgImgSize = backgroundImage->getImageSize();
     if(camera->y <= 0)
@@ -92,10 +88,14 @@ void BackgroundActor::update(float deltaTime)
         backgroundImage->setComponentLocalLocation(std::make_pair(0, abs(ratio * abs(camera->y))));
     }
 
-    if(camera->y + cameraWidthAndHeight <= 0)
+    if(camera->y + cameraWidthAndHeight <= 10)
     {
         camera->y = bgImgSize.second - cameraWidthAndHeight;
         accYPos = bgImgSize.second - cameraWidthAndHeight;
+
+        backgroundImage->setComponentLocalLocation(std::make_pair(0, 0));
+        backgroundImage->setScale(std::make_pair(Framework::rendererWidth, Framework::rendererHeight));
+        backgroundImage->setClipRect(camera->x, camera->y, cameraWidthAndHeight, cameraWidthAndHeight);
     }
 }
 

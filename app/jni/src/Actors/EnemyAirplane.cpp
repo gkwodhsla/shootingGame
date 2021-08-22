@@ -110,11 +110,6 @@ void EnemyAirplane::render()
     SDL_SetRenderDrawColor(Framework::renderer, 0xFF, 0, 0, 0xFF);
     SDL_RenderDrawLine(Framework::renderer,
                        loc.first + 100, loc.second + 100, loc.first + 100 + realDirVec.x * 300.0f, 100 + loc.second + realDirVec.y * 300.0f);
-
-    for (int i = 0; i < 50; ++i)
-    {
-        SDL_RenderDrawPoint(Framework::renderer, bossStarPatternStartPos[i].x + 500, bossStarPatternStartPos[i].y + 500);
-    }
 }
 
 void EnemyAirplane::update(float deltaTime)
