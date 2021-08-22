@@ -25,13 +25,30 @@ private:
     void initWidgets();
 
 private:
+    ImageWidget* bgImage = nullptr;
+    ImageWidget* shopTitleImage = nullptr;
+    ImageWidget* crystalImage = nullptr;
+    ImageWidget* moneyWindowImage = nullptr;
+    TextWidget* moneyText = nullptr;
+    ButtonWidget* attackUpgradeButton = nullptr;
+    ButtonWidget* bulletUpgradeButton = nullptr;
+    ButtonWidget* airplaneUpgradeButton = nullptr;
+    ButtonWidget* missileButton = nullptr;
+    ButtonWidget* shieldButton = nullptr;
+    ImageWidget* explanationWindow = nullptr;
+    TextWidget* explanationText1 = nullptr;
+    TextWidget* explanationText2 = nullptr;
+    TextWidget* explanationText3 = nullptr;
+    TextWidget* explanationText4 = nullptr;
+    ButtonWidget* buyButton = nullptr;
+    TextWidget* buyText = nullptr;
     ButtonWidget* playButton = nullptr;
     ButtonWidget* decButton = nullptr;
     ButtonWidget* incButton = nullptr;
     TextWidget* stageText = nullptr;
-    ImageWidget* bgImage = nullptr;
     int curStage = 1;
     int maxStage = 100;
     int minStage = 1;
+    int curCrystal = 1234;
     bool isPlayButtonClicked = false;
 };

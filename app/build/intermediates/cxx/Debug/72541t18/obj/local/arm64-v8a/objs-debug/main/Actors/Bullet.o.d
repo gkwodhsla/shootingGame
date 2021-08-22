@@ -16,6 +16,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__debug \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\iosfwd \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wchar.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Vector2D.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HSceneComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HComponent.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\string \
@@ -104,7 +105,8 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_version.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_locale.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_misc.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\MovementComponent.h
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\MovementComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\CollisionBoxComponent.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Bullet.h:
 
@@ -137,6 +139,8 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__d
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\iosfwd:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wchar.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Vector2D.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HSceneComponent.h:
 
@@ -315,3 +319,5 @@ D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_locale
 D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_misc.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\MovementComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\CollisionBoxComponent.h:

@@ -13,20 +13,7 @@ Canvas(canvasW, canvasH, canvasWorldX, canvasWorldY)
 
 ShopCanvas::~ShopCanvas()
 {
-    delete playButton;
-    playButton = nullptr;
 
-    delete incButton;
-    incButton = nullptr;
-
-    delete decButton;
-    decButton = nullptr;
-
-    delete stageText;
-    stageText = nullptr;
-
-    delete bgImage;
-    bgImage = nullptr;
 }
 
 void ShopCanvas::canvasRender()
@@ -34,12 +21,6 @@ void ShopCanvas::canvasRender()
     if(visibility)
     {
         Canvas::canvasRender(); // 여기서 렌더타켓을 초기화 시켜준다.
-        bgImage->render();
-        playButton->render();
-        incButton->render();
-        decButton->render();
-        stageText->render();
-        SDL_SetRenderTarget(Framework::renderer, nullptr);
     }
 }
 
@@ -53,21 +34,7 @@ void ShopCanvas::render()
 
 void ShopCanvas::handleEvent(SDL_Event &e)
 {
-    if (e.type == SDL_FINGERDOWN)
-    {
-        int x = int(e.tfinger.x * float(Framework::rendererWidth));
-        int y = int(e.tfinger.y * float(Framework::rendererHeight));
-        playButton->checkIsClicked(x, y);
-        incButton->checkIsClicked(x, y);
-        decButton->checkIsClicked(x, y);
-    }
-    else if (e.type == SDL_FINGERMOTION)
-    {
-    }
-    else if (e.type == SDL_FINGERUP)
-    {
-
-    }
+    Canvas::handleEvent(e);
     //위젯을 순회하며 발생한 이벤트가 있는지 검사하고 적절한 함수를 호출해준다.
 }
 
@@ -99,15 +66,103 @@ int ShopCanvas::getMaxStage()
 
 void ShopCanvas::initWidgets()
 {
-    playButton = new ButtonWidget("image/UIbutton/playButton.png");
-    playButton->buttonDown = [this]()mutable
+    bgImage = new ImageWidget("image/UIImage/window.png");
+    bgImage->setLocalPosition(0, 0);
+    bgImage->setScale(w, h);
+    addWidgetToBuffer(bgImage);
+
+    shopTitleImage = new ImageWidget("image/UIImage/Header.png");
+    shopTitleImage->setLocalPosition(w / 2 - 140, 40);
+    shopTitleImage->setScale(300, 120);
+    addWidgetToBuffer(shopTitleImage);
+
+    crystalImage = new ImageWidget("image/UIImage/crystal.png");
+    crystalImage->setLocalPosition(w - 340, 35);
+    crystalImage->setScale(90, 110);
+    addWidgetToBuffer(crystalImage);
+
+    moneyWindowImage = new ImageWidget("image/UIImage/box.png");
+    moneyWindowImage->setLocalPosition(w - 250, 40);
+    moneyWindowImage->setScale(200, 110);
+    addWidgetToBuffer(moneyWindowImage);
+
+    moneyText = new TextWidget(std::to_string(curCrystal), 60, 255, 255, 255);
+    moneyText->setLocalPosition(w - 200, 65);
+    addWidgetToBuffer(moneyText);
+
+    attackUpgradeButton = new ButtonWidget("image/UIImage/attackDownButton.png", "image/UIImage/attackUpButton.png");
+    attackUpgradeButton->setScale(180, 180);
+    attackUpgradeButton->setLocalPosition(80, 250);
+    addWidgetToBuffer(attackUpgradeButton);
+    addButtonToBuffer(attackUpgradeButton);
+    //곧 이벤트를 추가하자
+
+    bulletUpgradeButton = new ButtonWidget("image/UIImage/bulletDownButton.png", "image/UIImage/bulletUpButton.png");
+    bulletUpgradeButton->setScale(180, 180);
+    bulletUpgradeButton->setLocalPosition(450, 250);
+    addWidgetToBuffer(bulletUpgradeButton);
+    addButtonToBuffer(bulletUpgradeButton);
+
+    airplaneUpgradeButton = new ButtonWidget("image/UIImage/fighterDownButton.png", "image/UIImage/fighterUpButton.png");
+    airplaneUpgradeButton->setScale(180, 180);
+    airplaneUpgradeButton->setLocalPosition(w - 270, 250);
+    addWidgetToBuffer(airplaneUpgradeButton);
+    addButtonToBuffer(airplaneUpgradeButton);
+
+    missileButton = new ButtonWidget("image/UIImage/missileDownButton.png", "image/UIImage/missileUpButton.png");
+    missileButton->setScale(180, 180);
+    missileButton->setLocalPosition(80 + 180, 500);
+    addWidgetToBuffer(missileButton);
+    addButtonToBuffer(missileButton);
+
+    shieldButton = new ButtonWidget("image/UIImage/shieldDownButton.png", "image/UIImage/shieldUpButton.png");
+    shieldButton->setScale(180, 180);
+    shieldButton->setLocalPosition(450 + 180, 500);
+    addWidgetToBuffer(shieldButton);
+    addButtonToBuffer(shieldButton);
+
+    explanationWindow = new ImageWidget("image/UIImage/box.png");
+    explanationWindow->setScale(w - 100, 350);
+    explanationWindow->setLocalPosition(50, 750);
+    addWidgetToBuffer(explanationWindow);
+
+    explanationText1 = new TextWidget("explanation line first", 55, 255, 255, 255);
+    explanationText1->setLocalPosition(180, 800);
+    addWidgetToBuffer(explanationText1);
+
+    explanationText2 = new TextWidget("explanation line second", 55, 255, 255, 255);
+    explanationText2->setLocalPosition(180, 850);
+    addWidgetToBuffer(explanationText2);
+
+    explanationText3 = new TextWidget("explanation line third", 55, 255, 255, 255);
+    explanationText3->setLocalPosition(180, 900);
+    addWidgetToBuffer(explanationText3);
+
+    explanationText4 = new TextWidget("explanation line fourth", 55, 255, 255, 255);
+    explanationText4->setLocalPosition(180, 950);
+    addWidgetToBuffer(explanationText4);
+
+    buyButton = new ButtonWidget("image/UIImage/downButton.png", "image/UIImage/upButton.png");
+    buyButton->setScale(200, 150);
+    buyButton->setLocalPosition(w / 2 - 100, 1100);
+    addWidgetToBuffer(buyButton);
+    addButtonToBuffer(buyButton);
+
+    buyText = new TextWidget("BUY", 55, 255, 255, 255);
+    buyText->setLocalPosition(w / 2 - 40, 1150);
+    addWidgetToBuffer(buyText);
+
+    playButton = new ButtonWidget("image/UIImage/playDownButton.png", "image/UIImage/playUpButton.png");
+    playButton->buttonUpEvent = [this]()mutable
             {
                 isPlayButtonClicked = true;
             };
     playButton->setLocalPosition(w - 250, h - 300);
+    addWidgetToBuffer(playButton);
+    addButtonToBuffer(playButton);
 
-    incButton = new ButtonWidget("image/UIbutton/rightButton.png");
-    incButton->buttonDown = [this]()mutable
+    incButton = new ButtonWidget("image/UIImage/rightDownButton.png", "image/UIImage/rightUpButton.png");
+    incButton->buttonUpEvent = [this]()mutable
             {
                 if(curStage < maxStage)
                 {
@@ -117,10 +172,12 @@ void ShopCanvas::initWidgets()
                     stageText->changeText(temp);
                 }
             };
-    incButton->setLocalPosition(550, h - 300);
+    incButton->setLocalPosition(570, h - 300);
+    addWidgetToBuffer(incButton);
+    addButtonToBuffer(incButton);
 
-    decButton = new ButtonWidget("image/UIbutton/leftButton.png");
-    decButton->buttonDown = [this]()mutable
+    decButton = new ButtonWidget("image/UIImage/leftDownButton.png", "image/UIImage/leftUpButton.png");
+    decButton->buttonUpEvent = [this]()mutable
             {
                 if(curStage > minStage)
                 {
@@ -130,12 +187,12 @@ void ShopCanvas::initWidgets()
                     stageText->changeText(temp);
                 }
             };
-    decButton->setLocalPosition(0, h - 300);
+    decButton->setLocalPosition(50, h - 300);
+    addWidgetToBuffer(decButton);
+    addButtonToBuffer(decButton);
 
-    stageText = new TextWidget("Stage: 1", 100, 0, 0, 0);
-    stageText->setLocalPosition(200, h - 250);
+    stageText = new TextWidget("Stage: 1", 90, 255, 255, 255);
+    stageText->setLocalPosition(265, h - 250);
+    addWidgetToBuffer(stageText);
 
-    bgImage = new ImageWidget("image/misc/shopBG.png");
-    bgImage->setLocalPosition(0, 0);
-    bgImage->setScale(w, h);
 }

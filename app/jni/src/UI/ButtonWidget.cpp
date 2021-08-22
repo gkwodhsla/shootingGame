@@ -1,46 +1,76 @@
 #include "ButtonWidget.h"
 #include "../Components/ImageComponent.h"
 
-ButtonWidget::ButtonWidget(const std::string &imagePath)
+ButtonWidget::ButtonWidget(const std::string& downImgPath, const std::string& upImgPath)
 {
-    buttonImg = new ImageComponent(imagePath, {0, 0}, nullptr);
-    auto scale = buttonImg->getImageSize();
+    buttonUpImg = new ImageComponent(upImgPath, {0, 0}, nullptr);
+    buttonDownImg = new ImageComponent(downImgPath, {0, 0}, nullptr);
+
+    auto scale = buttonUpImg->getImageSize();
     setScale(scale.first, scale.second);
 }
 
 ButtonWidget::~ButtonWidget()
 {
-    delete buttonImg;
-    buttonImg = nullptr;
+    delete buttonUpImg;
+    buttonUpImg = nullptr;
+
+    delete buttonDownImg;
+    buttonDownImg = nullptr;
 }
 
 void ButtonWidget::render()
 {
     Widget::render();
-    buttonImg->setComponentLocalLocation(std::make_pair(float(canvasX), float(canvasY)));
-    buttonImg->setScale({scaleX, scaleY});
-    buttonImg->render();
+    if(isDown)
+    {
+        buttonDownImg->setComponentLocalLocation(std::make_pair(float(canvasX), float(canvasY)));
+        buttonDownImg->setScale({scaleX, scaleY});
+        buttonDownImg->render();
+    }
+    else
+    {
+        buttonUpImg->setComponentLocalLocation(std::make_pair(float(canvasX), float(canvasY)));
+        buttonUpImg->setScale({scaleX, scaleY});
+        buttonUpImg->render();
+    }
 }
 
-void ButtonWidget::changeImage(const std::string &imgPath)
+void ButtonWidget::registerbuttonDownEvent(std::function<void()> &func)
 {
-    buttonImg->changeImage(imgPath);
+    buttonDownEvent = func;
 }
 
-void ButtonWidget::registerOnClickedEvent(std::function<void()> &func)
+void ButtonWidget::registerbuttonUpEvent(std::function<void()>& func)
 {
-    buttonDown = func;
+    buttonUpEvent = func;
 }
 
 void ButtonWidget::checkIsClicked(int inputX, int inputY)
 {
     auto buttonPos = getLocalPosition();
-    auto buttonSize = buttonImg->getScale();
+    auto buttonSize = buttonDownImg->getScale();
     if(buttonPos.first <= inputX && inputX <= buttonPos.first + buttonSize.first)
     {
         if(buttonPos.second <= inputY && inputY <= buttonPos.second + buttonSize.second)
         {
-            buttonDown();
+            if(!isDown)
+            {
+                isDown = true;
+                if(buttonDownEvent)
+                    buttonDownEvent();
+            }
+            else
+            {
+                isDown = false;
+                if(buttonUpEvent)
+                    buttonUpEvent();
+            }
         }
     }
+}
+
+void ButtonWidget::setButtonUp()
+{
+    isDown = false;
 }

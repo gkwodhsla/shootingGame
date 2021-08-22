@@ -1,5 +1,7 @@
 #include "Canvas.h"
 #include "../Framework.h"
+#include "Widget.h"
+#include "ButtonWidget.h"
 
 Canvas::Canvas(int canvasW, int canvasH, int canvasWorldX, int canvasWorldY):
 w(canvasW), h(canvasH), canvasWorldPosX(canvasWorldX), canvasWorldPosY(canvasWorldY)
@@ -12,6 +14,12 @@ Canvas::~Canvas()
 {
     SDL_DestroyTexture(window);
     window = nullptr;
+
+    for(auto& widget : canvasWidgets)
+    {
+        delete widget;
+        widget = nullptr;
+    }
 }
 
 void Canvas::addToViewport()
@@ -24,6 +32,16 @@ void Canvas::removeFromViewport()
     visibility = false;
 }
 
+void Canvas::addWidgetToBuffer(Widget* newWidget)
+{
+    canvasWidgets.push_back(newWidget);
+}
+
+void Canvas::addButtonToBuffer(ButtonWidget* newWidget)
+{
+    canvasButtons.push_back(newWidget);
+}
+
 void Canvas::canvasRender()
 {
     if(visibility)
@@ -31,6 +49,11 @@ void Canvas::canvasRender()
         SDL_SetRenderTarget(Framework::renderer, window);
         SDL_SetRenderDrawColor(Framework::renderer, 0xff, 0xff, 0xff, 0xff);
         SDL_RenderClear(Framework::renderer);
+        for(auto& widget : canvasWidgets)
+        {
+            widget->render();
+        }
+        SDL_SetRenderTarget(Framework::renderer, nullptr);
     }
 }
 
@@ -52,7 +75,30 @@ void Canvas::render()
 
 void Canvas::handleEvent(SDL_Event &e)
 {
+    int x = int(e.tfinger.x * float(Framework::rendererWidth));
+    int y = int(e.tfinger.y * float(Framework::rendererHeight));
+    if (e.type == SDL_FINGERDOWN)
+    {
+        for(auto& button : canvasButtons)
+        {
+            button->checkIsClicked(x, y);
+        }
+    }
+    else if (e.type == SDL_FINGERMOTION)
+    {
 
+    }
+    else if (e.type == SDL_FINGERUP)
+    {
+        for(auto& button : canvasButtons)
+        {
+            button->checkIsClicked(x, y);
+        }
+        for(auto& button : canvasButtons)
+        {
+            button->setButtonUp();
+        }
+    }
 }
 
 void Canvas::createEmptyWindow()

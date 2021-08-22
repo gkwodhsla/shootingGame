@@ -22,7 +22,7 @@ MainLevel::MainLevel()
 {
     actors.reserve(300);
     enter();
-    shopCanvas = new ShopCanvas(Framework::rendererWidth, 1200, 0, 0);
+    shopCanvas = new ShopCanvas(Framework::rendererWidth, Framework::rendererHeight, 0, 0);
     shopCanvas->addToViewport();
     playerAirplane->setVisibility(false);
     playerAirplane->setActorTickable(false);

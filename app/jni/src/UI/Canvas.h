@@ -1,6 +1,10 @@
 #pragma once
 
 #include <SDL.h>
+#include <vector>
+
+class Widget;
+class ButtonWidget;
 
 class Canvas
 {
@@ -10,6 +14,8 @@ public:
     virtual ~Canvas();
     void addToViewport();
     void removeFromViewport();
+    void addWidgetToBuffer(Widget* newWidget);
+    void addButtonToBuffer(ButtonWidget* newWidget);
     virtual void canvasRender();
     virtual void render();
     virtual void handleEvent(SDL_Event& e) = 0;
@@ -21,6 +27,8 @@ protected:
     int canvasWorldPosX = 0;
     int canvasWorldPosY = 0;
     bool visibility = false;
+    std::vector<Widget*> canvasWidgets;
+    std::vector<ButtonWidget*> canvasButtons;
 
 private:
     void createEmptyWindow();

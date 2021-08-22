@@ -9,16 +9,20 @@ class ButtonWidget:public Widget
 {
 public:
     ButtonWidget() = delete;
-    ButtonWidget(const std::string& imagePath);
+    ButtonWidget(const std::string& downImgPath, const std::string& upImgPath);
     virtual ~ButtonWidget();
     virtual void render() override;
-    void changeImage(const std::string& imgPath);
-    void registerOnClickedEvent(std::function<void()>& func);
+    void registerbuttonDownEvent(std::function<void()>& func);
+    void registerbuttonUpEvent(std::function<void()>& func);
     void checkIsClicked(int inputX, int inputY);
+    void setButtonUp();
 public:
-    std::function<void()> buttonDown = nullptr;
+    std::function<void()> buttonDownEvent = nullptr;
+    std::function<void()> buttonUpEvent = nullptr;
 private:
-    ImageComponent* buttonImg = nullptr;
+    ImageComponent* buttonUpImg = nullptr;
+    ImageComponent* buttonDownImg = nullptr;
+    bool isDown = false;
 };
 
 
