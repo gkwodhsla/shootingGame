@@ -81,11 +81,11 @@ private:
     static Vector2D bullet3DirVec[3];
     static Vector2D bullet5DirVec[5];
     static Vector2D bullet7DirVec[7];
-    static Vector2D bossCirclePattern[30];
+    static Vector2D bossCirclePattern[31];
     static Vector2D bossStarPattern[51];
     static Vector2D bossStarPatternStartPos[51];
-    static Vector2D bossFlowerPattern[40];
-    static Vector2D bossFlowerPatternStartPos[40];
+    static Vector2D bossFlowerPattern[41];
+    static Vector2D bossFlowerPatternStartPos[41];
     static bool isInitStaticData;
 };
 

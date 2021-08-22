@@ -23,10 +23,7 @@
     "intermediatesFolder": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1",
     "isDebuggableEnabled": false,
     "validAbiList": [
-      "ARMEABI_V7A",
-      "ARM64_V8A",
-      "X86",
-      "X86_64"
+      "X86"
     ],
     "buildTargetSet": [],
     "implicitBuildTargetSet": [],
@@ -119,6 +116,7 @@
         "rootBuildGradleFolder": "D:\\comtus\\Development\\android\\shootingGame",
         "sdkFolder": "D:\\AndroidSDK",
         "isBuildOnlyTargetAbiEnabled": true,
+        "ideBuildTargetAbi": "x86",
         "isCmakeBuildCohabitationEnabled": false,
         "isPrefabEnabled": false
       },

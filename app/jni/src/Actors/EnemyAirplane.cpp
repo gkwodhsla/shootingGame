@@ -16,11 +16,11 @@ const float EnemyAirplane::normalBulletSpeed = 700.0f;
 Vector2D EnemyAirplane::bullet3DirVec[3];
 Vector2D EnemyAirplane::bullet5DirVec[5];
 Vector2D EnemyAirplane::bullet7DirVec[7];
-Vector2D EnemyAirplane::bossCirclePattern[30];
+Vector2D EnemyAirplane::bossCirclePattern[31];
 Vector2D EnemyAirplane::bossStarPattern[51];
 Vector2D EnemyAirplane::bossStarPatternStartPos[51];
-Vector2D EnemyAirplane::bossFlowerPattern[40];
-Vector2D EnemyAirplane::bossFlowerPatternStartPos[40];
+Vector2D EnemyAirplane::bossFlowerPattern[41];
+Vector2D EnemyAirplane::bossFlowerPatternStartPos[41];
 
 bool EnemyAirplane::isInitStaticData = false;
 

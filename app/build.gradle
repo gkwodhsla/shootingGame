@@ -34,6 +34,7 @@ android {
             storeFile file("myKey.jks");
             keyAlias "key0"
             keyPassword "12rhtmxm"
+            storePassword "12rhtmxm"
         }
     }
     buildTypes {
