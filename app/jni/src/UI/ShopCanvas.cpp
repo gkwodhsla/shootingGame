@@ -3,6 +3,9 @@
 #include "ButtonWidget.h"
 #include "ImageWidget.h"
 #include "../Framework.h"
+#include "../Level/MainLevel.h"
+#include "../HPlayerController.h"
+#include "../Actors/Airplane.h"
 #include <android/log.h>
 
 ShopCanvas::ShopCanvas(int canvasW, int canvasH, int canvasWorldX, int canvasWorldY) :
@@ -95,61 +98,128 @@ void ShopCanvas::initWidgets()
     attackUpgradeButton->setLocalPosition(80, 250);
     addWidgetToBuffer(attackUpgradeButton);
     addButtonToBuffer(attackUpgradeButton);
+    attackUpgradeButton->buttonUpEvent = [this]()mutable
+    {
+        this->explanationText1->changeText("Add Player Attack Power +10");
+        this->explanationText2->changeText(" ");
+        this->explanationText3->changeText(" ");
+        this->explanationText4->changeText("Cost: " + std::to_string(attackUpgradeFee));
+        whichItemButton = WHICH_ITEM_BUTTON::ATTACK;
+    };
+
     //곧 이벤트를 추가하자
+    attackPowerText = new TextWidget(std::to_string(curAttackPower) + "/" + std::to_string(maxAttackPower),
+                                     50, 255, 255, 255);
+    attackPowerText->setLocalPosition(150, 440);
+    addWidgetToBuffer(attackPowerText);
+
 
     bulletUpgradeButton = new ButtonWidget("image/UIImage/bulletDownButton.png", "image/UIImage/bulletUpButton.png");
     bulletUpgradeButton->setScale(180, 180);
     bulletUpgradeButton->setLocalPosition(450, 250);
     addWidgetToBuffer(bulletUpgradeButton);
     addButtonToBuffer(bulletUpgradeButton);
+    bulletUpgradeButton->buttonUpEvent = [this]()mutable
+    {
+        this->explanationText1->changeText("Add Player Bullet +1 when you finished");
+        this->explanationText2->changeText("your upgrade to maximum");
+        this->explanationText3->changeText(" ");
+        this->explanationText4->changeText("Cost: " + std::to_string(bulletUpgradeFee));
+        whichItemButton = WHICH_ITEM_BUTTON::BULLET;
+    };
+    //
+    bulletText = new TextWidget(std::to_string(curBullet) + "/" + std::to_string(maxBullet),
+                               50, 255, 255, 255);
+    bulletText->setLocalPosition(520, 440);
+    addWidgetToBuffer(bulletText);
 
     airplaneUpgradeButton = new ButtonWidget("image/UIImage/fighterDownButton.png", "image/UIImage/fighterUpButton.png");
     airplaneUpgradeButton->setScale(180, 180);
     airplaneUpgradeButton->setLocalPosition(w - 270, 250);
     addWidgetToBuffer(airplaneUpgradeButton);
     addButtonToBuffer(airplaneUpgradeButton);
+    airplaneUpgradeButton->buttonUpEvent = [this]()mutable
+    {
+        this->explanationText1->changeText("Upgrade fighter and unlock new upgrade");
+        this->explanationText2->changeText("before upgrading you must upgrade");
+        this->explanationText3->changeText("attack power and bullet to maximum");
+        this->explanationText4->changeText("Cost: " + std::to_string(airplaneUpgradeFee));
+        whichItemButton = WHICH_ITEM_BUTTON::AIRPLANE;
+    };
+    //
+
+    airplaneText = new TextWidget(std::to_string(curAirplane) + "/" + std::to_string(maxAirplane),
+                                  50, 255, 255, 255);
+    airplaneText->setLocalPosition(w - 200, 440);
+    addWidgetToBuffer(airplaneText);
 
     missileButton = new ButtonWidget("image/UIImage/missileDownButton.png", "image/UIImage/missileUpButton.png");
     missileButton->setScale(180, 180);
     missileButton->setLocalPosition(80 + 180, 500);
     addWidgetToBuffer(missileButton);
     addButtonToBuffer(missileButton);
+    missileButton->buttonUpEvent = [this]()mutable
+    {
+        this->explanationText1->changeText("Get this special missle");
+        this->explanationText2->changeText("your enemy will be fatally wounded when");
+        this->explanationText3->changeText("hit this santa's little present");
+        this->explanationText4->changeText("Cost: " + std::to_string(missileFee));
+        whichItemButton = WHICH_ITEM_BUTTON::MISSILE;
+    };
+    //
+    missileText = new TextWidget(std::to_string(curMissile) + "/" + std::to_string(maxMissile),
+                                     50, 255, 255, 255);
+    missileText->setLocalPosition(80 + 180 + 60, 690);
+    addWidgetToBuffer(missileText);
 
     shieldButton = new ButtonWidget("image/UIImage/shieldDownButton.png", "image/UIImage/shieldUpButton.png");
     shieldButton->setScale(180, 180);
     shieldButton->setLocalPosition(450 + 180, 500);
     addWidgetToBuffer(shieldButton);
     addButtonToBuffer(shieldButton);
+    shieldButton->buttonUpEvent = [this]()mutable
+    {
+        this->explanationText1->changeText("This shield prevents enemy attacks");
+        this->explanationText2->changeText("for three seconds");
+        this->explanationText3->changeText(" ");
+        this->explanationText4->changeText("Cost: " + std::to_string(shieldFee));
+        whichItemButton = WHICH_ITEM_BUTTON::SHIELD;
+    };
+    //
+    shieldText = new TextWidget(std::to_string(curShield) + "/" + std::to_string(maxShield),
+                                50, 255, 255, 255);
+    shieldText->setLocalPosition(450 + 180 + 60, 690);
+    addWidgetToBuffer(shieldText);
 
     explanationWindow = new ImageWidget("image/UIImage/box.png");
     explanationWindow->setScale(w - 100, 350);
-    explanationWindow->setLocalPosition(50, 750);
+    explanationWindow->setLocalPosition(50, 800);
     addWidgetToBuffer(explanationWindow);
 
-    explanationText1 = new TextWidget("explanation line first", 55, 255, 255, 255);
-    explanationText1->setLocalPosition(180, 800);
+    explanationText1 = new TextWidget(" ", 50, 255, 255, 255);
+    explanationText1->setLocalPosition(150, 850);
     addWidgetToBuffer(explanationText1);
 
-    explanationText2 = new TextWidget("explanation line second", 55, 255, 255, 255);
-    explanationText2->setLocalPosition(180, 850);
+    explanationText2 = new TextWidget(" ", 50, 255, 255, 255);
+    explanationText2->setLocalPosition(150, 900);
     addWidgetToBuffer(explanationText2);
 
-    explanationText3 = new TextWidget("explanation line third", 55, 255, 255, 255);
-    explanationText3->setLocalPosition(180, 900);
+    explanationText3 = new TextWidget(" ", 50, 255, 255, 255);
+    explanationText3->setLocalPosition(150, 950);
     addWidgetToBuffer(explanationText3);
 
-    explanationText4 = new TextWidget("explanation line fourth", 55, 255, 255, 255);
-    explanationText4->setLocalPosition(180, 950);
+    explanationText4 = new TextWidget(" ", 50, 255, 255, 255);
+    explanationText4->setLocalPosition(150, 1000);
     addWidgetToBuffer(explanationText4);
 
     buyButton = new ButtonWidget("image/UIImage/downButton.png", "image/UIImage/upButton.png");
     buyButton->setScale(200, 150);
-    buyButton->setLocalPosition(w / 2 - 100, 1100);
+    buyButton->setLocalPosition(w / 2 - 100, 1150);
     addWidgetToBuffer(buyButton);
     addButtonToBuffer(buyButton);
 
     buyText = new TextWidget("BUY", 55, 255, 255, 255);
-    buyText->setLocalPosition(w / 2 - 40, 1150);
+    buyText->setLocalPosition(w / 2 - 40, 1200);
     addWidgetToBuffer(buyText);
 
     playButton = new ButtonWidget("image/UIImage/playDownButton.png", "image/UIImage/playUpButton.png");
@@ -196,3 +266,17 @@ void ShopCanvas::initWidgets()
     addWidgetToBuffer(stageText);
 
 }
+
+/*if(curCrystal >= attackUpgradeFee)
+        {
+            MainLevel *mainLevel = (MainLevel *) (Framework::curLevel);
+            HPlayerController *PC = mainLevel->getPlayerController();
+            auto airplane = (Airplane *) (PC->getControlledPawn());
+            int curPlayerAttackPower = airplane->getPlayerAttackPower();
+            curPlayerAttackPower += 10;
+            airplane->setPlayerAttackPower(curPlayerAttackPower);
+            curCrystal -= attackUpgradeFee;
+            attackUpgradeFee += attackUpgradeGap;
+            attackUpgradeGap += 10;
+        }
+        */

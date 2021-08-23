@@ -5,6 +5,15 @@ class TextWidget;
 class ButtonWidget;
 class ImageWidget;
 
+enum class WHICH_ITEM_BUTTON
+{
+    ATTACK,
+    BULLET,
+    AIRPLANE,
+    MISSILE,
+    SHIELD
+};
+
 class ShopCanvas : public Canvas
 {
 public:
@@ -31,10 +40,15 @@ private:
     ImageWidget* moneyWindowImage = nullptr;
     TextWidget* moneyText = nullptr;
     ButtonWidget* attackUpgradeButton = nullptr;
+    TextWidget* attackPowerText = nullptr;
     ButtonWidget* bulletUpgradeButton = nullptr;
+    TextWidget* bulletText = nullptr;
     ButtonWidget* airplaneUpgradeButton = nullptr;
+    TextWidget* airplaneText = nullptr;
     ButtonWidget* missileButton = nullptr;
+    TextWidget* missileText = nullptr;
     ButtonWidget* shieldButton = nullptr;
+    TextWidget* shieldText = nullptr;
     ImageWidget* explanationWindow = nullptr;
     TextWidget* explanationText1 = nullptr;
     TextWidget* explanationText2 = nullptr;
@@ -50,5 +64,23 @@ private:
     int maxStage = 100;
     int minStage = 1;
     int curCrystal = 1234;
+    int curAttackPower = 1;
+    int curBullet = 1;
+    int curAirplane = 1;
+    int curMissile = 0;
+    int curShield = 0;
+    int attackUpgradeFee = 50;
+    int bulletUpgradeFee = 50;
+    int attackUpgradeGap = 50;
+    int bulletUpgradeGap = 50;
+    int airplaneUpgradeFee = 3000;
+    int missileFee = 1000;
+    int shieldFee = 1000;
+    WHICH_ITEM_BUTTON whichItemButton;
+    const int maxAttackPower = 7;
+    const int maxBullet = 7;
+    const int maxAirplane = 3;
+    const int maxMissile = 3;
+    const int maxShield = 3;
     bool isPlayButtonClicked = false;
 };

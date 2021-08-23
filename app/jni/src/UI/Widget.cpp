@@ -51,3 +51,13 @@ void Widget::render()
         child->render();
     }
 }
+
+bool Widget::getVisibility()
+{
+    return visibility;
+}
+
+void Widget::setVisibility(bool isVisible)
+{
+    visibility = isVisible;
+}

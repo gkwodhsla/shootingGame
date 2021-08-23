@@ -18,6 +18,14 @@ public:
 public:
     CollisionBoxComponent* getCollisionBoxComp();
     int getPlayerAttackPower();
+    void setPlayerAttackPower(int attackPower);
+    int getPlayerBulletCnt();
+    void setPlayerBulletCnt(int bulletCnt);
+    int getMissileCnt();
+    void setMissileCnt(int missileCnt);
+    int getShieldCnt();
+    void setShieldCnt(int shieldCnt);
+
     void setFireRate(float rate);
 
 
@@ -37,4 +45,7 @@ protected:
 private:
     SpritesheetComponent* boosterSprite = nullptr;
     int attackPower = 50;
+    int bulletCnt = 1;
+    int missileCnt = 0;
+    int shieldCnt = 0;
 };

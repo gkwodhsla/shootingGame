@@ -12,6 +12,8 @@ public:
     void setScale(int scaleX, int scaleY);
     std::pair<int, int> getLocalPosition();
     virtual void render();
+    bool getVisibility();
+    void setVisibility(bool isVisible);
 
 protected:
     Widget* parent = nullptr;
@@ -22,4 +24,5 @@ protected:
     int canvasY = 0;
     int scaleX = 0;
     int scaleY = 0;
+    bool visibility = true;
 };

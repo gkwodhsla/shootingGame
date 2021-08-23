@@ -130,6 +130,40 @@ void Airplane::setFireRate(float rate)
     fireRate = rate;
 }
 
+void Airplane::setPlayerAttackPower(int attackPower)
+{
+    this->attackPower = attackPower;
+}
+
+int Airplane::getPlayerBulletCnt()
+{
+    return bulletCnt;
+}
+
+void Airplane::setPlayerBulletCnt(int bulletCnt)
+{
+    this->bulletCnt = bulletCnt;
+}
+
+int Airplane::getMissileCnt()
+{
+    return missileCnt;
+}
+
+void Airplane::setMissileCnt(int missileCnt)
+{
+    this->missileCnt = missileCnt;
+}
+
+int Airplane::getShieldCnt()
+{
+    return shieldCnt;
+}
+
+void Airplane::setShieldCnt(int shieldCnt)
+{
+    this->shieldCnt = shieldCnt;
+}
 
 void Airplane::turnOffBooster()
 {
@@ -153,3 +187,4 @@ void Airplane::spawnPlayerBullet(const std::pair<float, float>& spawnPos)
         }
     }
 }
+

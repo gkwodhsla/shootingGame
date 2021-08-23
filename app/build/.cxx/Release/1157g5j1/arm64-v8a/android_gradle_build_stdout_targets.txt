@@ -3,5 +3,17 @@ make: Nothing to be done for 'SDL2_image'.
 make: Nothing to be done for 'SDL2_mixer'.
 make: Nothing to be done for 'SDL2_ttf'.
 make: Nothing to be done for 'hidapi'.
-make: Nothing to be done for 'main'.
+[arm64-v8a] Compile++      : main <= Framework.cpp
+[arm64-v8a] Compile++      : main <= Airplane.cpp
+[arm64-v8a] Compile++      : main <= EnemyAirplane.cpp
+[arm64-v8a] Compile++      : main <= Spawner.cpp
+[arm64-v8a] Compile++      : main <= StageManager.cpp
+[arm64-v8a] Compile++      : main <= MainLevel.cpp
+[arm64-v8a] Compile++      : main <= Canvas.cpp
+[arm64-v8a] Compile++      : main <= ShopCanvas.cpp
+[arm64-v8a] Compile++      : main <= Widget.cpp
+[arm64-v8a] Compile++      : main <= TextWidget.cpp
+[arm64-v8a] Compile++      : main <= ButtonWidget.cpp
+[arm64-v8a] Compile++      : main <= ImageWidget.cpp
+[arm64-v8a] SharedLibrary  : libmain.so
 make: Nothing to be done for 'mpg123'.

@@ -30,6 +30,10 @@ public:
     {
         return actors;
     }
+    HPlayerController* getPlayerController()
+    {
+        return playerController;
+    }
 
 protected:
     std::vector<HActor*> actors;

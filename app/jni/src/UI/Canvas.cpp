@@ -51,7 +51,10 @@ void Canvas::canvasRender()
         SDL_RenderClear(Framework::renderer);
         for(auto& widget : canvasWidgets)
         {
-            widget->render();
+            if(widget->getVisibility())
+            {
+                widget->render();
+            }
         }
         SDL_SetRenderTarget(Framework::renderer, nullptr);
     }
