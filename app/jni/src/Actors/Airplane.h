@@ -6,6 +6,13 @@ class ImageComponent;
 class SpritesheetComponent;
 class CollisionBoxComponent;
 
+enum class PLAYER_AIRPLANE_SHAPE
+{
+    SHAPE1,
+    SHAPE2,
+    SHAPE3
+};
+
 class Airplane :public HPawn
 {
 public:
@@ -25,9 +32,9 @@ public:
     void setMissileCnt(int missileCnt);
     int getShieldCnt();
     void setShieldCnt(int shieldCnt);
-
     void setFireRate(float rate);
-
+    PLAYER_AIRPLANE_SHAPE getPlayerAirplaneShape();
+    void setPlayerAirplaneShape(PLAYER_AIRPLANE_SHAPE shape);
 
 private:
     void spawnPlayerBullet(std::pair<float, float>& spawnPos);
@@ -48,4 +55,5 @@ private:
     int bulletCnt = 1;
     int missileCnt = 0;
     int shieldCnt = 0;
+    PLAYER_AIRPLANE_SHAPE shape = PLAYER_AIRPLANE_SHAPE::SHAPE1;
 };

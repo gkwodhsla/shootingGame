@@ -260,7 +260,8 @@ void ShopCanvas::initWidgets()
                 }
                 break;
             case WHICH_ITEM_BUTTON::AIRPLANE:
-                if(curCrystal >= airplaneUpgradeFee && curAirplane < maxAirplane)
+                if(curCrystal >= airplaneUpgradeFee && curAirplane < maxAirplane &&
+                curAttackPower == maxAttackPower && curBullet == maxBullet)
                 {
                     MainLevel *mainLevel = (MainLevel *) (Framework::curLevel);
                     HPlayerController *PC = mainLevel->getPlayerController();
@@ -271,8 +272,19 @@ void ShopCanvas::initWidgets()
                     ++curAirplane;
                     airplaneText->changeText(std::to_string(curAirplane) + "/" + std::to_string(maxAirplane));
                     explanationText4->changeText("Cost: " + std::to_string(airplaneUpgradeFee));
-                    //이곳에서 비행기 외형을 바꿔주는 작업과
-                    //업그레이드 횟수를 0으로 바꿔주는 일을 한다.
+                    PLAYER_AIRPLANE_SHAPE curShape = airplane->getPlayerAirplaneShape();
+                    if(curShape == PLAYER_AIRPLANE_SHAPE::SHAPE1)
+                    {
+                        airplane->setPlayerAirplaneShape(PLAYER_AIRPLANE_SHAPE::SHAPE2);
+                    }
+                    else if(curShape == PLAYER_AIRPLANE_SHAPE::SHAPE2)
+                    {
+                        airplane->setPlayerAirplaneShape(PLAYER_AIRPLANE_SHAPE::SHAPE3);
+                    }
+                    curAttackPower = 0;
+                    curBullet = 0;
+                    attackPowerText->changeText(std::to_string(curAttackPower) + "/" + std::to_string(maxAttackPower));
+                    bulletText->changeText(std::to_string(curBullet) + "/" + std::to_string(maxBullet));
                 }
                 break;
             case WHICH_ITEM_BUTTON::MISSILE:
