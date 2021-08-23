@@ -63,7 +63,7 @@ private:
     int curStage = 1;
     int maxStage = 100;
     int minStage = 1;
-    int curCrystal = 1234;
+    int curCrystal = 99999;
     int curAttackPower = 1;
     int curBullet = 1;
     int curAirplane = 1;

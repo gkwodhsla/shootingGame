@@ -217,6 +217,94 @@ void ShopCanvas::initWidgets()
     buyButton->setLocalPosition(w / 2 - 100, 1150);
     addWidgetToBuffer(buyButton);
     addButtonToBuffer(buyButton);
+    buyButton->buttonUpEvent = [this]()mutable
+    {
+        switch (whichItemButton)
+        {
+            case WHICH_ITEM_BUTTON::ATTACK:
+                if(curCrystal >= attackUpgradeFee && curAttackPower < maxAttackPower)
+                {
+                    MainLevel *mainLevel = (MainLevel *) (Framework::curLevel);
+                    HPlayerController *PC = mainLevel->getPlayerController();
+                    auto airplane = (Airplane *) (PC->getControlledPawn());
+                    int curPlayerAttackPower = airplane->getPlayerAttackPower();
+                    curPlayerAttackPower += 10;
+                    airplane->setPlayerAttackPower(curPlayerAttackPower);
+                    curCrystal -= attackUpgradeFee;
+                    moneyText->changeText(std::to_string(curCrystal));
+                    attackUpgradeFee += attackUpgradeGap;
+                    ++curAttackPower;
+                    attackPowerText->changeText(std::to_string(curAttackPower) + "/" + std::to_string(maxAttackPower));
+                    explanationText4->changeText("Cost: " + std::to_string(attackUpgradeFee));
+                    attackUpgradeGap += 10;
+                }
+                break;
+            case WHICH_ITEM_BUTTON::BULLET:
+                if(curCrystal >= bulletUpgradeFee && curBullet < maxBullet)
+                {
+                    MainLevel *mainLevel = (MainLevel *) (Framework::curLevel);
+                    HPlayerController *PC = mainLevel->getPlayerController();
+                    auto airplane = (Airplane *) (PC->getControlledPawn());
+                    curCrystal -= bulletUpgradeFee;
+                    moneyText->changeText(std::to_string(curCrystal));
+                    bulletUpgradeFee += bulletUpgradeGap;
+                    ++curBullet;
+                    bulletText->changeText(std::to_string(curBullet) + "/" + std::to_string(maxBullet));
+                    explanationText4->changeText("Cost: " + std::to_string(bulletUpgradeFee));
+                    bulletUpgradeGap += 10;
+                    if(curBullet == maxBullet)
+                    {
+                        int curBulletNum = airplane->getPlayerBulletCnt();
+                        airplane->setPlayerBulletCnt(curBulletNum + 1);
+                    }
+                }
+                break;
+            case WHICH_ITEM_BUTTON::AIRPLANE:
+                if(curCrystal >= airplaneUpgradeFee && curAirplane < maxAirplane)
+                {
+                    MainLevel *mainLevel = (MainLevel *) (Framework::curLevel);
+                    HPlayerController *PC = mainLevel->getPlayerController();
+                    auto airplane = (Airplane *) (PC->getControlledPawn());
+                    curCrystal -= airplaneUpgradeFee;
+                    moneyText->changeText(std::to_string(curCrystal));
+                    airplaneUpgradeFee += 5000;
+                    ++curAirplane;
+                    airplaneText->changeText(std::to_string(curAirplane) + "/" + std::to_string(maxAirplane));
+                    explanationText4->changeText("Cost: " + std::to_string(airplaneUpgradeFee));
+                    //이곳에서 비행기 외형을 바꿔주는 작업과
+                    //업그레이드 횟수를 0으로 바꿔주는 일을 한다.
+                }
+                break;
+            case WHICH_ITEM_BUTTON::MISSILE:
+                if(curCrystal >= missileFee && curMissile < maxMissile)
+                {
+                    MainLevel *mainLevel = (MainLevel *) (Framework::curLevel);
+                    HPlayerController *PC = mainLevel->getPlayerController();
+                    auto airplane = (Airplane *) (PC->getControlledPawn());
+                    curCrystal -= missileFee;
+                    moneyText->changeText(std::to_string(curCrystal));
+                    ++curMissile;
+                    missileText->changeText(std::to_string(curMissile) + "/" + std::to_string(maxMissile));
+                    int curMissileNum = airplane->getMissileCnt();
+                    airplane->setMissileCnt(curMissileNum + 1);
+                }
+                break;
+            case WHICH_ITEM_BUTTON::SHIELD:
+                if(curCrystal >= shieldFee && curShield < maxShield)
+                {
+                    MainLevel *mainLevel = (MainLevel *) (Framework::curLevel);
+                    HPlayerController *PC = mainLevel->getPlayerController();
+                    auto airplane = (Airplane *) (PC->getControlledPawn());
+                    curCrystal -= shieldFee;
+                    moneyText->changeText(std::to_string(curCrystal));
+                    ++curShield;
+                    shieldText->changeText(std::to_string(curShield) + "/" + std::to_string(maxShield));
+                    int curShieldNum = airplane->getShieldCnt();
+                    airplane->setShieldCnt(curShieldNum + 1);
+                }
+                break;
+        }
+    };
 
     buyText = new TextWidget("BUY", 55, 255, 255, 255);
     buyText->setLocalPosition(w / 2 - 40, 1200);
@@ -266,17 +354,3 @@ void ShopCanvas::initWidgets()
     addWidgetToBuffer(stageText);
 
 }
-
-/*if(curCrystal >= attackUpgradeFee)
-        {
-            MainLevel *mainLevel = (MainLevel *) (Framework::curLevel);
-            HPlayerController *PC = mainLevel->getPlayerController();
-            auto airplane = (Airplane *) (PC->getControlledPawn());
-            int curPlayerAttackPower = airplane->getPlayerAttackPower();
-            curPlayerAttackPower += 10;
-            airplane->setPlayerAttackPower(curPlayerAttackPower);
-            curCrystal -= attackUpgradeFee;
-            attackUpgradeFee += attackUpgradeGap;
-            attackUpgradeGap += 10;
-        }
-        */

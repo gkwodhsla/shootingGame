@@ -81,7 +81,7 @@ void Airplane::update(float deltaTime)
         {
             auto imageSize = airplaneImg->getScale();
             auto loc = rootComponent->getComponentLocalLocation();
-            loc.first += float(imageSize.first) / 2;
+            loc.first += float(imageSize.first) / 2 - float((bulletCnt - 1) * 20);
             spawnPlayerBullet(loc);
             curFireTime = fireRate;
         }
@@ -170,10 +170,11 @@ void Airplane::turnOffBooster()
     boosterSprite->setVisibility(false);
 }
 
-void Airplane::spawnPlayerBullet(const std::pair<float, float>& spawnPos)
+void Airplane::spawnPlayerBullet(std::pair<float, float>& spawnPos)
 {
     MainLevel* mainLevel = (MainLevel*)Framework::curLevel;
     auto cont = mainLevel->playerBullets;
+    int curSpawnBulletCnt = bulletCnt;
     for(int i = 0; i < mainLevel->playerBulletSize; ++i)
     {
         if(!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
@@ -181,9 +182,12 @@ void Airplane::spawnPlayerBullet(const std::pair<float, float>& spawnPos)
             cont[i]->setVisibility(true);
             cont[i]->setActorTickable(true);
             cont[i]->moveTo(spawnPos); //총알액터의 위치를 세팅해준다.
+            --curSpawnBulletCnt;
+            if(curSpawnBulletCnt == 0)
+                break;
+            spawnPos.first += 20.0f;
             //__android_log_print(ANDROID_LOG_INFO, "SDL_Error",
                //                 "spawn using %d element", i);
-            break;
         }
     }
 }

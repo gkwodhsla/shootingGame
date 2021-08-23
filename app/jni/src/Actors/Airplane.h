@@ -30,7 +30,7 @@ public:
 
 
 private:
-    void spawnPlayerBullet(const std::pair<float, float>& spawnPos);
+    void spawnPlayerBullet(std::pair<float, float>& spawnPos);
 
 protected:
     ImageComponent* airplaneImg = nullptr;
