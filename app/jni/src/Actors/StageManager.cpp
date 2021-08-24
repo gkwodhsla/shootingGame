@@ -3,6 +3,9 @@
 #include "Spawner.h"
 #include <android/log.h>
 #include "../Level/MainLevel.h"
+#include "../GlobalFunction.h"
+
+using namespace GlobalFunction;
 
 StageManager::StageManager()
 {
@@ -50,7 +53,7 @@ void StageManager::update(float deltaTime)
         }
         if(isBossKilled)
         {
-            MainLevel* mainLevel = (MainLevel*)Framework::curLevel;
+            MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
             mainLevel->stageClear();
             stageClear();
         }

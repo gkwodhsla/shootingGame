@@ -141,7 +141,8 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cstdarg \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__bsd_locale_fallbacks.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bitset \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Actors\Bullet.h
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Actors\Bullet.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\GlobalFunction.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL.h:
 
@@ -426,3 +427,5 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__b
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bitset:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Actors\Bullet.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\GlobalFunction.h:

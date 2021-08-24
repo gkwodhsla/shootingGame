@@ -13,6 +13,7 @@ LOCAL_SRC_FILES := main.cpp \
 Framework.cpp\
 HPlayerController.cpp\
 Vector2D.cpp\
+GlobalFunction.cpp\
 Components/HSceneComponent.cpp\
 Components/HPrimitiveComponent.cpp\
 Components/ImageComponent.cpp\

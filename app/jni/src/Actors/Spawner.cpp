@@ -3,6 +3,9 @@
 #include "../Level/MainLevel.h"
 #include "../Actors/EnemyAirplane.h"
 #include <android/log.h>
+#include "../GlobalFunction.h"
+
+using namespace GlobalFunction;
 
 const int Spawner::numOfDestX = 4;
 const int Spawner::numOfDestY = 4;
@@ -70,7 +73,7 @@ void Spawner::update(float deltaTime)
         {
             --maxSpawnedCnt;
 
-            MainLevel* mainLevel = (MainLevel*)Framework::curLevel;
+            MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
             auto enemies = mainLevel->enemyAirplanes;
             for(int i = 0; i < enemies.size(); ++i)
             {
@@ -126,12 +129,12 @@ void Spawner::update(float deltaTime)
         EnemyAirplane* curBoss = nullptr;
         if(bossIndex == 0)
         {
-            MainLevel* mainLevel = (MainLevel*)Framework::curLevel;
+            MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
             curBoss = mainLevel->boss1;
         }
         else
         {
-            MainLevel* mainLevel = (MainLevel*)Framework::curLevel;
+            MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
             curBoss = mainLevel->boss2;
         }
         curBoss->setVisibility(true);

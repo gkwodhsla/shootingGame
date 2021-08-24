@@ -6,7 +6,10 @@
 #include "../Level/MainLevel.h"
 #include "../HPlayerController.h"
 #include "../Actors/Airplane.h"
+#include "../GlobalFunction.h"
 #include <android/log.h>
+
+using namespace GlobalFunction;
 
 ShopCanvas::ShopCanvas(int canvasW, int canvasH, int canvasWorldX, int canvasWorldY) :
 Canvas(canvasW, canvasH, canvasWorldX, canvasWorldY)
@@ -224,9 +227,9 @@ void ShopCanvas::initWidgets()
             case WHICH_ITEM_BUTTON::ATTACK:
                 if(curCrystal >= attackUpgradeFee && curAttackPower < maxAttackPower)
                 {
-                    MainLevel *mainLevel = (MainLevel *) (Framework::curLevel);
-                    HPlayerController *PC = mainLevel->getPlayerController();
-                    auto airplane = (Airplane *) (PC->getControlledPawn());
+                    MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
+                    HPlayerController *PC = GetPlayerController();
+                    Airplane* airplane = Cast<Airplane>(GetPlayerPawn());
                     int curPlayerAttackPower = airplane->getPlayerAttackPower();
                     curPlayerAttackPower += 10;
                     airplane->setPlayerAttackPower(curPlayerAttackPower);
@@ -242,9 +245,9 @@ void ShopCanvas::initWidgets()
             case WHICH_ITEM_BUTTON::BULLET:
                 if(curCrystal >= bulletUpgradeFee && curBullet < maxBullet)
                 {
-                    MainLevel *mainLevel = (MainLevel *) (Framework::curLevel);
-                    HPlayerController *PC = mainLevel->getPlayerController();
-                    auto airplane = (Airplane *) (PC->getControlledPawn());
+                    MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
+                    HPlayerController *PC = GetPlayerController();
+                    Airplane* airplane = Cast<Airplane>(GetPlayerPawn());
                     curCrystal -= bulletUpgradeFee;
                     moneyText->changeText(std::to_string(curCrystal));
                     bulletUpgradeFee += bulletUpgradeGap;
@@ -263,9 +266,9 @@ void ShopCanvas::initWidgets()
                 if(curCrystal >= airplaneUpgradeFee && curAirplane < maxAirplane &&
                 curAttackPower == maxAttackPower && curBullet == maxBullet)
                 {
-                    MainLevel *mainLevel = (MainLevel *) (Framework::curLevel);
-                    HPlayerController *PC = mainLevel->getPlayerController();
-                    auto airplane = (Airplane *) (PC->getControlledPawn());
+                    MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
+                    HPlayerController *PC = GetPlayerController();
+                    Airplane* airplane = Cast<Airplane>(GetPlayerPawn());
                     curCrystal -= airplaneUpgradeFee;
                     moneyText->changeText(std::to_string(curCrystal));
                     airplaneUpgradeFee += 5000;
@@ -290,9 +293,9 @@ void ShopCanvas::initWidgets()
             case WHICH_ITEM_BUTTON::MISSILE:
                 if(curCrystal >= missileFee && curMissile < maxMissile)
                 {
-                    MainLevel *mainLevel = (MainLevel *) (Framework::curLevel);
-                    HPlayerController *PC = mainLevel->getPlayerController();
-                    auto airplane = (Airplane *) (PC->getControlledPawn());
+                    MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
+                    HPlayerController *PC = GetPlayerController();
+                    Airplane* airplane = Cast<Airplane>(GetPlayerPawn());
                     curCrystal -= missileFee;
                     moneyText->changeText(std::to_string(curCrystal));
                     ++curMissile;
@@ -304,9 +307,9 @@ void ShopCanvas::initWidgets()
             case WHICH_ITEM_BUTTON::SHIELD:
                 if(curCrystal >= shieldFee && curShield < maxShield)
                 {
-                    MainLevel *mainLevel = (MainLevel *) (Framework::curLevel);
-                    HPlayerController *PC = mainLevel->getPlayerController();
-                    auto airplane = (Airplane *) (PC->getControlledPawn());
+                    MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
+                    HPlayerController *PC = GetPlayerController();
+                    Airplane* airplane = Cast<Airplane>(GetPlayerPawn());
                     curCrystal -= shieldFee;
                     moneyText->changeText(std::to_string(curCrystal));
                     ++curShield;

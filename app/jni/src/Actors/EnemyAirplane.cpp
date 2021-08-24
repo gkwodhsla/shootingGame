@@ -6,9 +6,12 @@
 #include "../Components/SplineComponent.h"
 #include "../Framework.h"
 #include "../Level/MainLevel.h"
+#include "../GlobalFunction.h"
 #include "StageManager.h"
 #include <android/log.h>
 #include <random>
+
+using namespace GlobalFunction;
 
 std::uniform_int_distribution<int> randomRotation(0, 360);
 
@@ -220,7 +223,8 @@ void EnemyAirplane::getDamage(int damage)
         airplaneImg->setVisibility(false);
         canDamaged = false;
 
-        MainLevel* mainLevel = (MainLevel*)Framework::curLevel;
+        MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
+
         if (shipShape == ENEMY_SHIP_SHAPE::BOSS1 || shipShape == ENEMY_SHIP_SHAPE::BOSS2)
         {
             mainLevel->stageManager->bossDie();
@@ -293,7 +297,7 @@ void EnemyAirplane::firePattern1()
     std::pair<int, int> spawnPos{ worldLoc.first + size.first / 2, worldLoc.second + size.second };
 
     int bulletCnt = 2;
-    MainLevel* mainLevel = (MainLevel*)Framework::curLevel;
+    MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
     std::vector<Bullet*> cont;
     switch (bulletColor)
     {
@@ -374,7 +378,7 @@ void EnemyAirplane::firePattern2()
     std::pair<int, int> spawnPos{ worldLoc.first + size.first / 2, worldLoc.second + size.second };
 
     int bulletCnt = 4;
-    MainLevel* mainLevel = (MainLevel*)Framework::curLevel;
+    MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
     std::vector<Bullet*> cont;
     switch (bulletColor)
     {
@@ -455,7 +459,7 @@ void EnemyAirplane::firePattern3()
     std::pair<int, int> spawnPos{ worldLoc.first + size.first / 2, worldLoc.second + size.second };
 
     int bulletCnt = 6;
-    MainLevel* mainLevel = (MainLevel*)Framework::curLevel;
+    MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
     std::vector<Bullet*> cont;
     switch (bulletColor)
     {
@@ -530,7 +534,7 @@ void EnemyAirplane::firePattern3()
 
 void EnemyAirplane::firePattern4()
 {
-    MainLevel* mainLevel = (MainLevel*)Framework::curLevel;
+    MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
     std::vector<Bullet*> cont;
 
     auto worldLoc = rootComponent->getComponentLocalLocation();
@@ -621,7 +625,7 @@ void EnemyAirplane::firePattern5()
     std::pair<int, int> spawnPos{ worldLoc.first + size.first / 2, worldLoc.second + size.second };
 
     int bulletCnt = 29;
-    MainLevel* mainLevel = (MainLevel*)Framework::curLevel;
+    MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
     std::vector<Bullet*> cont;
     switch (bulletColor)
     {
@@ -662,7 +666,7 @@ void EnemyAirplane::firePattern6()
     std::pair<int, int> spawnPos{ worldLoc.first + size.first / 2, worldLoc.second + size.second };
 
     int bulletCnt = 0;
-    MainLevel* mainLevel = (MainLevel*)Framework::curLevel;
+    MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
     std::vector<Bullet*> cont;
     switch (bulletColor)
     {
@@ -704,7 +708,7 @@ void EnemyAirplane::firePattern7()
     std::pair<int, int> spawnPos{ worldLoc.first + size.first / 2, worldLoc.second + size.second };
 
     int bulletCnt = 0;
-    MainLevel* mainLevel = (MainLevel*)Framework::curLevel;
+    MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
     std::vector<Bullet*> cont;
     switch (bulletColor)
     {

@@ -13,6 +13,9 @@
 #include "../Framework.h"
 #include "../Level/MainLevel.h"
 #include "../Actors/Bullet.h"
+#include "../GlobalFunction.h"
+
+using namespace GlobalFunction;
 
 Airplane::Airplane()
 {
@@ -195,7 +198,7 @@ void Airplane::turnOffBooster()
 
 void Airplane::spawnPlayerBullet(std::pair<float, float>& spawnPos)
 {
-    MainLevel* mainLevel = (MainLevel*)Framework::curLevel;
+    MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
     auto cont = mainLevel->playerBullets;
     int curSpawnBulletCnt = bulletCnt;
     for(int i = 0; i < mainLevel->playerBulletSize; ++i)
