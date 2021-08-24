@@ -75,18 +75,18 @@ void MainLevel::render()
 
 void MainLevel::enter()
 {
-    BackgroundActor* backgroundActor = new BackgroundActor();
-    addNewActorToLevel(backgroundActor);
-    stageManager = new StageManager();
-    addNewActorToLevel(stageManager);
-    playerAirplane = new Airplane();
+    spawnActor<BackgroundActor>();
+    stageManager = spawnActor<StageManager>();
+    playerAirplane = spawnActor<Airplane>();
     playerAirplane->setVisibility(false);
     playerAirplane->setActorTickable(false);
-    addNewActorToLevel(playerAirplane);
+
     playerController = new HPlayerController();
     playerController->possess(playerAirplane);
-    playerBullets.reserve(playerBulletSize);
     playerController->changeInputMode(INPUT_MODE::UI_ONLY);
+
+
+    playerBullets.reserve(playerBulletSize);
     for(int i = 0; i < playerBulletSize; ++i)
     {
         addBulletToBuffer(playerBullets, BULLET_COLOR::GREEN);
@@ -137,24 +137,21 @@ void MainLevel::enter()
             whichShape = ENEMY_SHIP_SHAPE::SHIP4;
             enemyBulletColor = BULLET_COLOR::PURPLE;
         }
-        auto newEnemy = new EnemyAirplane(enemyBulletColor, whichShape, 100);
+        auto newEnemy = spawnActor<EnemyAirplane>(enemyBulletColor, whichShape, 100);
         newEnemy->setVisibility(false);
         newEnemy->setActorTickable(false);
         enemyAirplanes.push_back(newEnemy);
-        addNewActorToLevel(newEnemy);
     }
 
-    boss1 = new EnemyAirplane(BULLET_COLOR::RED, ENEMY_SHIP_SHAPE::BOSS1, 100);
+    boss1 = spawnActor<EnemyAirplane>(BULLET_COLOR::RED, ENEMY_SHIP_SHAPE::BOSS1, 100);
     boss1->setVisibility(false);
     boss1->setActorTickable(false);
     boss1->setBulletPattern(ENEMY_BULLET_PATTERN::BOSS_STAR);
-    addNewActorToLevel(boss1);
 
-    boss2 = new EnemyAirplane(BULLET_COLOR::RED, ENEMY_SHIP_SHAPE::BOSS2, 100);
+    boss2 = spawnActor<EnemyAirplane>(BULLET_COLOR::RED, ENEMY_SHIP_SHAPE::BOSS2, 100);
     boss2->setVisibility(false);
     boss2->setActorTickable(false);
     boss2->setBulletPattern(ENEMY_BULLET_PATTERN::BOSS_STAR);
-    addNewActorToLevel(boss2);
 
     shopCanvas = new ShopCanvas(Framework::rendererWidth, Framework::rendererHeight, 0, 0);
     shopCanvas->addToViewport();
@@ -167,13 +164,12 @@ void MainLevel::exit()
 
 void MainLevel::addBulletToBuffer(std::vector<Bullet*>& cont, BULLET_COLOR color)
 {
-    auto newBullet = new Bullet(std::make_pair(0.0f, 0.0f),
-                                color, Vector2D(0.0f, -1.0f));
+    auto newBullet = spawnActor<Bullet>(std::make_pair(0.0f, 0.0f),
+    color, Vector2D(0.0f, -1.0f));
     newBullet->setVisibility(false);
     newBullet->setActorTickable(false);
     newBullet->setIsSetLifeTime(true);
     cont.push_back(newBullet);
-    addNewActorToLevel(newBullet);
 }
 
 void MainLevel::stageClear()

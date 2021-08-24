@@ -54,7 +54,14 @@ public:
     //enter는 생성자 바디에서 모든 초기화 작업이 수행되고 자동으로 실행되게 코딩한다.
     virtual void exit() = 0;
     //해당 레벨을 떠날 때 (레벨이 바뀔 때) 호출한다.
-    //동적할당 받은 객체들을 초기화 해준다.
+    template<typename T, typename ...Types>
+    T* spawnActor(Types ...args)
+    {
+        T* newItem = new T(args...);
+        addNewActorToLevel(newItem);
+        return newItem;
+    }
+
     void addNewActorToLevel(HActor* newActor)
     {
         actors.emplace_back(newActor);
@@ -93,8 +100,8 @@ protected:
     std::vector<HActor*> actors;
     std::vector<CollisionBoxComponent*> collisionBoxes;
     HPlayerController* playerController = nullptr;
-    float maxCollisionCheckTime = 0.5f;
-    float curCollisionCheckTime = 0.5f;
+    float maxCollisionCheckTime = 0.1f;
+    float curCollisionCheckTime = 0.1f;
     //추후 이곳에 player controller가 들어가야 한다. (handle event를 위해서)
     //게임모드를 추가할 수도 있고, 아니면 게임모드의 요소를 그냥 멤버로 넣을 수도 있다. (고민좀)
 };
