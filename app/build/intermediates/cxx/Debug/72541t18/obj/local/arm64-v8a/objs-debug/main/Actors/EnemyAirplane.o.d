@@ -118,6 +118,9 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\close_code.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\MainLevel.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\HLevelBase.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\Actors\HActor.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\Components\CollisionBoxComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\HPlayerController.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\Actors\Bullet.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\random \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cmath \
@@ -144,6 +147,8 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cstdarg \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__bsd_locale_fallbacks.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bitset \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\GlobalFunction.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Actors\Bullet.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\StageManager.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\EnemyAirplane.h:
@@ -382,6 +387,12 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\MainLevel
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\HLevelBase.h:
 
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\Actors\HActor.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\Components\CollisionBoxComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\HPlayerController.h:
+
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\Actors\Bullet.h:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\random:
@@ -433,5 +444,9 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cst
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__bsd_locale_fallbacks.h:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bitset:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\GlobalFunction.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Actors\Bullet.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\StageManager.h:

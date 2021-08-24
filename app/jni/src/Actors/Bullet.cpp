@@ -3,7 +3,16 @@
 #include "../Components/ImageComponent.h"
 #include "../Components/MovementComponent.h"
 #include "../Components/CollisionBoxComponent.h"
+#include "../Framework.h"
+#include "../Level/HLevelBase.h"
+#include "../Level/MainLevel.h"
+#include "../GlobalFunction.h"
+#include "../Actors/EnemyAirplane.h"
+#include <functional>
 #include <android/log.h>
+
+using namespace GlobalFunction;
+
 Bullet::Bullet(const std::pair<float, float> &spawnPosition, BULLET_COLOR bulletColor,
                const Vector2D& dirVec)
 {
@@ -13,6 +22,7 @@ Bullet::Bullet(const std::pair<float, float> &spawnPosition, BULLET_COLOR bullet
     if(bulletColor == BULLET_COLOR::GREEN)
     {
         path = "image/bullet/1.png";
+        isPlayerBullet = true;
     }
     else if(bulletColor == BULLET_COLOR::RED)
     {
@@ -45,6 +55,20 @@ Bullet::Bullet(const std::pair<float, float> &spawnPosition, BULLET_COLOR bullet
     collisionBox->setDrawDebugBox(true);
 
     collisionBox->attachTo(rootComponent);
+
+    if(isPlayerBullet) //아군총알의 경우 적군과 충돌시 우선 버퍼에 반환해준다.
+    {
+        auto collisionResponse = [this](HActor* other) mutable
+        {
+            EnemyAirplane* enemy = Cast<EnemyAirplane>(other);
+
+            if(enemy && enemy->getCanDamaged())
+            {
+                this->resetBulletToInitialState();
+            }
+        };
+        collisionBox->registerCollisionResponse(collisionResponse);
+    }
 
     lifeTime = 3.0f;
 }
@@ -95,4 +119,9 @@ CollisionBoxComponent* Bullet::getCollisionComp()
 void Bullet::changeBulletSpeed(float speed)
 {
     bulletMovement->setSpeed(speed);
+}
+
+bool Bullet::getIsPlayerBullet()
+{
+    return isPlayerBullet;
 }

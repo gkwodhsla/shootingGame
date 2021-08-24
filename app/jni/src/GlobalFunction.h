@@ -16,7 +16,7 @@ namespace GlobalFunction
         }
         else
         {
-            return (To*) src;
+            return dynamic_cast<To*>(src);
         }
     }
     HLevelBase* GetLevel();

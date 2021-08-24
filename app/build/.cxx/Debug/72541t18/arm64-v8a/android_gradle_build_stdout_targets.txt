@@ -3,6 +3,10 @@ make: Nothing to be done for 'SDL2_image'.
 make: Nothing to be done for 'SDL2_mixer'.
 make: Nothing to be done for 'SDL2_ttf'.
 make: Nothing to be done for 'hidapi'.
+[arm64-v8a] Compile++      : main <= Framework.cpp
+[arm64-v8a] Compile++      : main <= GlobalFunction.cpp
+[arm64-v8a] Compile++      : main <= CollisionBoxComponent.cpp
+[arm64-v8a] Compile++      : main <= Bullet.cpp
 [arm64-v8a] Compile++      : main <= Airplane.cpp
 [arm64-v8a] Compile++      : main <= EnemyAirplane.cpp
 [arm64-v8a] Compile++      : main <= Spawner.cpp

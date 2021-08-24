@@ -115,6 +115,9 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\close_code.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Level\MainLevel.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Level\HLevelBase.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Level\..\Actors\HActor.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Level\..\Components\CollisionBoxComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Level\..\HPlayerController.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Level\..\Actors\Bullet.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\random \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cmath \
@@ -375,6 +378,12 @@ D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\close_code
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Level\MainLevel.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Level\HLevelBase.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Level\..\Actors\HActor.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Level\..\Components\CollisionBoxComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Level\..\HPlayerController.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Level\..\Actors\Bullet.h:
 

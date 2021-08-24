@@ -7,6 +7,7 @@
 #include "../Framework.h"
 #include "../Level/MainLevel.h"
 #include "../GlobalFunction.h"
+#include "../Actors/Bullet.h"
 #include "StageManager.h"
 #include <android/log.h>
 #include <random>
@@ -80,10 +81,27 @@ EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp)
     hpBar->setScale(std::make_pair(hpBarRowSize, hpBarColSize));
 
     turnOffBooster();
+    //적 기체에선 우선 부스터를 쓰지 않을 거라 꺼준다.
 
     collisionBox->setWidthAndHeight(shipImgSize.first, shipImgSize.second);
     collisionBox->setOwner(this);
-    //적 기체에선 우선 부스터를 쓰지 않을 거라 꺼준다.
+
+    auto collisionResponse = [this](HActor* other) mutable
+    {
+        Bullet* bullet = Cast<Bullet>(other);
+        if(bullet && bullet->getIsPlayerBullet()) //부딪힌 오브젝트가 총알이면
+        {
+            if(getCanDamaged())//데미지를 입을 수 있는 상태라면
+            {
+                Airplane* playerAirplane = Cast<Airplane>(GetPlayerPawn());
+                if(playerAirplane)
+                {
+                    this->getDamage(playerAirplane->getPlayerAttackPower());
+                }
+            }
+        }
+    };
+    collisionBox->registerCollisionResponse(collisionResponse);
 
     explosionSprite->setOwner(this);
     explosionSprite->setComponentLocalLocation(std::make_pair(-55.0f, -45.0f));

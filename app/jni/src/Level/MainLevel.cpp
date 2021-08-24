@@ -21,11 +21,7 @@ std::uniform_int_distribution<int> enemyShape(0, 3);
 MainLevel::MainLevel()
 {
     actors.reserve(300);
-    enter();
-    shopCanvas = new ShopCanvas(Framework::rendererWidth, Framework::rendererHeight, 0, 0);
-    shopCanvas->addToViewport();
-    playerAirplane->setVisibility(false);
-    playerAirplane->setActorTickable(false);
+    collisionBoxes.reserve(500);
 }
 
 MainLevel::~MainLevel()
@@ -53,14 +49,9 @@ void MainLevel::handleEvent(SDL_Event& e)
 
 void MainLevel::update(float deltaTime)
 {
-    for(auto&actor : actors)
-    {
-        if(actor)
-        {
-            actor->update(deltaTime);
-        }
-    }
-    checkingCollision();
+    HLevelBase::update(deltaTime);
+
+    //checkingCollision();
 
 
     ShopCanvas* curCanvas = (ShopCanvas*)(shopCanvas);
@@ -79,14 +70,7 @@ void MainLevel::update(float deltaTime)
 
 void MainLevel::render()
 {
-    for(auto&actor : actors)
-    {
-        if(actor)
-        {
-            actor->render();
-
-        }
-    }
+    HLevelBase::render();
 }
 
 void MainLevel::enter()
@@ -96,6 +80,8 @@ void MainLevel::enter()
     stageManager = new StageManager();
     addNewActorToLevel(stageManager);
     playerAirplane = new Airplane();
+    playerAirplane->setVisibility(false);
+    playerAirplane->setActorTickable(false);
     addNewActorToLevel(playerAirplane);
     playerController = new HPlayerController();
     playerController->possess(playerAirplane);
@@ -169,64 +155,13 @@ void MainLevel::enter()
     boss2->setActorTickable(false);
     boss2->setBulletPattern(ENEMY_BULLET_PATTERN::BOSS_STAR);
     addNewActorToLevel(boss2);
+
+    shopCanvas = new ShopCanvas(Framework::rendererWidth, Framework::rendererHeight, 0, 0);
+    shopCanvas->addToViewport();
 }
 
 void MainLevel::exit()
 {
-    for(auto&actor : actors)
-    {
-        delete actor;
-        actor = nullptr;
-    }
-    delete playerController;
-    playerController = nullptr;
-}
-
-//문제가 있음 고쳐야함
-void MainLevel::checkingCollision()
-{
-    for(int i = 0; i < playerBulletSize; ++i)
-    {
-        if(playerBullets[i]->getVisibility())
-        {
-            if(boss1->getCanDamaged())
-            {
-                bool isHit = playerBullets[i]->getCollisionComp()->checkCollision(*(boss1->getCollisionBoxComp()));
-                if(isHit)
-                {
-                    boss1->getDamage(playerAirplane->getPlayerAttackPower());
-                    playerBullets[i]->resetBulletToInitialState();
-                }
-            }
-
-            else if(boss2->getCanDamaged())
-            {
-                bool isHit = playerBullets[i]->getCollisionComp()->checkCollision(*(boss2->getCollisionBoxComp()));
-                if(isHit)
-                {
-                    boss2->getDamage(playerAirplane->getPlayerAttackPower());
-                    playerBullets[i]->resetBulletToInitialState();
-                }
-            }
-
-            for(int j = 0; j < enemyAirplanes.size(); ++j)
-            {
-                if(enemyAirplanes[j]->getCanDamaged())
-                {
-                    bool isHit = playerBullets[i]->getCollisionComp()->checkCollision(*(enemyAirplanes[j]->getCollisionBoxComp()));
-                    if(isHit)
-                    {
-                        enemyAirplanes[j]->getDamage(playerAirplane->getPlayerAttackPower());
-                        playerBullets[i]->resetBulletToInitialState();
-                        break;
-                    }
-                }
-            }
-        }
-    }
-    //이곳에서 콜리전 검사를 수행한다.
-    //1. player bullet과 enemyPlanes
-    //2. enemyBullet과 player
 
 }
 

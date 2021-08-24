@@ -25,6 +25,7 @@ public:
     virtual void update(float deltaTime);
     void resetBulletToInitialState();
     void changeBulletSpeed(float speed);
+    bool getIsPlayerBullet();
 
 public:
     CollisionBoxComponent* getCollisionComp();
@@ -33,4 +34,5 @@ private:
     ImageComponent* bulletImg;
     MovementComponent* bulletMovement;
     CollisionBoxComponent* collisionBox;
+    bool isPlayerBullet = false;
 };

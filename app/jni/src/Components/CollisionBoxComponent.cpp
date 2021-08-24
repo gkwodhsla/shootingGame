@@ -1,6 +1,12 @@
 #include "CollisionBoxComponent.h"
 #include "../Framework.h"
 #include <SDL.h>
+#include "../GlobalFunction.h"
+#include "../Level/HLevelBase.h"
+#include "../Level/MainLevel.h"
+#include <android/log.h>
+
+using namespace GlobalFunction;
 
 CollisionBoxComponent::CollisionBoxComponent(int x, int y, int w, int h, HActor *owner)
 {
@@ -9,7 +15,7 @@ CollisionBoxComponent::CollisionBoxComponent(int x, int y, int w, int h, HActor 
     this->w = w;
     this->h = h;
     this->setComponentLocalRotation(0.0f);
-
+    Framework::curLevel->addNewCollisionBoxToLevel(this);
 }
 
 CollisionBoxComponent::~CollisionBoxComponent()
@@ -35,6 +41,11 @@ void CollisionBoxComponent::render()
 void CollisionBoxComponent::update(float deltaTime)
 {
     HSceneComponent::update(deltaTime);
+    if(Framework::curLevel == nullptr)
+    {
+        __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
+                            "not valid");
+    }
 }
 
 void CollisionBoxComponent::setDrawDebugBox(bool canDraw)
@@ -59,7 +70,19 @@ bool CollisionBoxComponent::checkCollision(CollisionBoxComponent& otherRect)
     other.w = otherRect.w;
     other.h = otherRect.h;
 
-    return SDL_HasIntersection(&temp, &other);
+    if(SDL_HasIntersection(&temp, &other)) //만약 충돌했다면 충돌한 두 액터에 이벤트 호출하라고 알려준다.
+    {
+        if(collisionResponse)
+        {
+            collisionResponse(otherRect.getOwner());
+        }
+        if(otherRect.collisionResponse)
+        {
+            otherRect.collisionResponse(this->getOwner());
+        }
+    }
+
+    return false;
 }
 
 void CollisionBoxComponent::setWidthAndHeight(int w, int h)
@@ -68,3 +91,7 @@ void CollisionBoxComponent::setWidthAndHeight(int w, int h)
     this->h = h;
 }
 
+void CollisionBoxComponent::registerCollisionResponse(std::function<void(HActor*)> func)
+{
+    collisionResponse = func;
+}

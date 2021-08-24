@@ -90,6 +90,7 @@ Framework::Framework()
     rendererHeight = getH;
 
     curLevel = new MainLevel();
+    curLevel->enter();
 
     fpsText = new TTFComponent(0,0,70,255,0,0,"font/EvilEmpire.ttf","Hello World!",nullptr);
 }
@@ -151,9 +152,12 @@ void Framework::startGame()
     while(1)
     {
         chrono::system_clock::time_point start = chrono::system_clock::now();
-        handleEvent();
-        update(deltaTime);
-        render();
+        if(curLevel)
+        {
+            handleEvent();
+            update(deltaTime);
+            render();
+        }
         chrono::duration<double> sec = chrono::system_clock::now() - start;
         accTime += sec.count();
         deltaTime = sec.count();

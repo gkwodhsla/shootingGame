@@ -1,7 +1,3 @@
-//
-// Created by lenovo on 2021-08-07.
-//
-
 #include "HActor.h"
 #include "../Components/HSceneComponent.h"
 #include <cmath>
