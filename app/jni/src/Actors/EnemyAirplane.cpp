@@ -7,6 +7,7 @@
 #include "../Framework.h"
 #include "../Level/MainLevel.h"
 #include "../GlobalFunction.h"
+#include "../ActorObjectPool.h"
 #include "../Actors/Bullet.h"
 #include "StageManager.h"
 #include <android/log.h>
@@ -97,6 +98,7 @@ EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp)
                 if(playerAirplane)
                 {
                     this->getDamage(playerAirplane->getPlayerAttackPower());
+                    bullet->resetBulletToInitialState();
                 }
             }
         }
@@ -314,78 +316,13 @@ void EnemyAirplane::firePattern1()
 
     std::pair<int, int> spawnPos{ worldLoc.first + size.first / 2, worldLoc.second + size.second };
 
-    int bulletCnt = 2;
-    MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
-    std::vector<Bullet*> cont;
-    switch (bulletColor)
+    int bulletCnt = 3;
+
+    for(int i = 0; i < bulletCnt; ++i)
     {
-        case BULLET_COLOR::RED:
-            cont = mainLevel->enemyRedBullets;
-            for (int i = 0; i < cont.size(); ++i)
-            {
-                if (!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
-                {
-                    cont[i]->setVisibility(true);
-                    cont[i]->setActorTickable(true);
-                    cont[i]->moveTo(spawnPos); //총알액터의 위치를 세팅해준다.
-                    cont[i]->setActorDirectionalVector(bullet3DirVec[bulletCnt]);
-                    cont[i]->changeBulletSpeed(700.0f);
-                    --bulletCnt;
-                    if (bulletCnt < 0) break;
-                }
-            }
-            break;
-        case BULLET_COLOR::BLUE:
-            cont = mainLevel->enemyBlueBullets;
-            for (int i = 0; i < cont.size(); ++i)
-            {
-                if (!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
-                {
-                    cont[i]->setVisibility(true);
-                    cont[i]->setActorTickable(true);
-                    cont[i]->moveTo(spawnPos); //총알액터의 위치를 세팅해준다.
-                    cont[i]->setActorDirectionalVector(bullet3DirVec[bulletCnt]);
-                    cont[i]->changeBulletSpeed(normalBulletSpeed);
-                    --bulletCnt;
-                    if (bulletCnt < 0) break;
-                }
-            }
-            break;
-        case BULLET_COLOR::SKY:
-            cont = mainLevel->enemySkyBullets;
-            for (int i = 0; i < cont.size(); ++i)
-            {
-                if (!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
-                {
-                    cont[i]->setVisibility(true);
-                    cont[i]->setActorTickable(true);
-                    cont[i]->moveTo(spawnPos); //총알액터의 위치를 세팅해준다.
-                    cont[i]->setActorDirectionalVector(bullet3DirVec[bulletCnt]);
-                    cont[i]->changeBulletSpeed(normalBulletSpeed);
-                    --bulletCnt;
-                    if (bulletCnt < 0) break;
-                }
-            }
-            break;
-        case BULLET_COLOR::PURPLE:
-            cont = mainLevel->enemyPurpleBullets;
-            for (int i = 0; i < cont.size(); ++i)
-            {
-                if (!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
-                {
-                    cont[i]->setVisibility(true);
-                    cont[i]->setActorTickable(true);
-                    cont[i]->moveTo(spawnPos); //총알액터의 위치를 세팅해준다.
-                    cont[i]->setActorDirectionalVector(bullet3DirVec[bulletCnt]);
-                    cont[i]->changeBulletSpeed(normalBulletSpeed);
-                    --bulletCnt;
-                    if (bulletCnt < 0) break;
-                }
-            }
-            break;
-        case BULLET_COLOR::GREEN: //플레이어 총알이기에 아무것도 안한다!!!
-            break;
+        spawnBulletFromPool(spawnPos, normalBulletSpeed, bullet3DirVec[i]);
     }
+
 }
 
 void EnemyAirplane::firePattern2()
@@ -395,77 +332,10 @@ void EnemyAirplane::firePattern2()
 
     std::pair<int, int> spawnPos{ worldLoc.first + size.first / 2, worldLoc.second + size.second };
 
-    int bulletCnt = 4;
-    MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
-    std::vector<Bullet*> cont;
-    switch (bulletColor)
+    int bulletCnt = 5;
+    for(int i = 0; i < bulletCnt;++i)
     {
-        case BULLET_COLOR::RED:
-            cont = mainLevel->enemyRedBullets;
-            for (int i = 0; i < cont.size(); ++i)
-            {
-                if (!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
-                {
-                    cont[i]->setVisibility(true);
-                    cont[i]->setActorTickable(true);
-                    cont[i]->moveTo(spawnPos); //총알액터의 위치를 세팅해준다.
-                    cont[i]->setActorDirectionalVector(bullet5DirVec[bulletCnt]);
-                    cont[i]->changeBulletSpeed(normalBulletSpeed);
-                    --bulletCnt;
-                    if (bulletCnt < 0) break;
-                }
-            }
-            break;
-        case BULLET_COLOR::BLUE:
-            cont = mainLevel->enemyBlueBullets;
-            for (int i = 0; i < cont.size(); ++i)
-            {
-                if (!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
-                {
-                    cont[i]->setVisibility(true);
-                    cont[i]->setActorTickable(true);
-                    cont[i]->moveTo(spawnPos); //총알액터의 위치를 세팅해준다.
-                    cont[i]->setActorDirectionalVector(bullet5DirVec[bulletCnt]);
-                    cont[i]->changeBulletSpeed(normalBulletSpeed);
-                    --bulletCnt;
-                    if (bulletCnt < 0) break;
-                }
-            }
-            break;
-        case BULLET_COLOR::SKY:
-            cont = mainLevel->enemySkyBullets;
-            for (int i = 0; i < cont.size(); ++i)
-            {
-                if (!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
-                {
-                    cont[i]->setVisibility(true);
-                    cont[i]->setActorTickable(true);
-                    cont[i]->moveTo(spawnPos); //총알액터의 위치를 세팅해준다.
-                    cont[i]->setActorDirectionalVector(bullet5DirVec[bulletCnt]);
-                    cont[i]->changeBulletSpeed(normalBulletSpeed);
-                    --bulletCnt;
-                    if (bulletCnt < 0) break;
-                }
-            }
-            break;
-        case BULLET_COLOR::PURPLE:
-            cont = mainLevel->enemyPurpleBullets;
-            for (int i = 0; i < cont.size(); ++i)
-            {
-                if (!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
-                {
-                    cont[i]->setVisibility(true);
-                    cont[i]->setActorTickable(true);
-                    cont[i]->moveTo(spawnPos); //총알액터의 위치를 세팅해준다.
-                    cont[i]->setActorDirectionalVector(bullet5DirVec[bulletCnt]);
-                    cont[i]->changeBulletSpeed(normalBulletSpeed);
-                    --bulletCnt;
-                    if (bulletCnt < 0) break;
-                }
-            }
-            break;
-        case BULLET_COLOR::GREEN: //플레이어 총알이기에 아무것도 안한다!!!
-            break;
+        spawnBulletFromPool(spawnPos, normalBulletSpeed, bullet5DirVec[i]);
     }
 }
 
@@ -476,77 +346,10 @@ void EnemyAirplane::firePattern3()
 
     std::pair<int, int> spawnPos{ worldLoc.first + size.first / 2, worldLoc.second + size.second };
 
-    int bulletCnt = 6;
-    MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
-    std::vector<Bullet*> cont;
-    switch (bulletColor)
+    int bulletCnt = 7;
+    for(int i = 0; i < bulletCnt;++i)
     {
-        case BULLET_COLOR::RED:
-            cont = mainLevel->enemyRedBullets;
-            for (int i = 0; i < cont.size(); ++i)
-            {
-                if (!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
-                {
-                    cont[i]->setVisibility(true);
-                    cont[i]->setActorTickable(true);
-                    cont[i]->moveTo(spawnPos); //총알액터의 위치를 세팅해준다.
-                    cont[i]->setActorDirectionalVector(bullet7DirVec[bulletCnt]);
-                    cont[i]->changeBulletSpeed(normalBulletSpeed);
-                    --bulletCnt;
-                    if (bulletCnt < 0) break;
-                }
-            }
-            break;
-        case BULLET_COLOR::BLUE:
-            cont = mainLevel->enemyBlueBullets;
-            for (int i = 0; i < cont.size(); ++i)
-            {
-                if (!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
-                {
-                    cont[i]->setVisibility(true);
-                    cont[i]->setActorTickable(true);
-                    cont[i]->moveTo(spawnPos); //총알액터의 위치를 세팅해준다.
-                    cont[i]->setActorDirectionalVector(bullet7DirVec[bulletCnt]);
-                    cont[i]->changeBulletSpeed(normalBulletSpeed);
-                    --bulletCnt;
-                    if (bulletCnt < 0) break;
-                }
-            }
-            break;
-        case BULLET_COLOR::SKY:
-            cont = mainLevel->enemySkyBullets;
-            for (int i = 0; i < cont.size(); ++i)
-            {
-                if (!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
-                {
-                    cont[i]->setVisibility(true);
-                    cont[i]->setActorTickable(true);
-                    cont[i]->moveTo(spawnPos); //총알액터의 위치를 세팅해준다.
-                    cont[i]->setActorDirectionalVector(bullet7DirVec[bulletCnt]);
-                    cont[i]->changeBulletSpeed(normalBulletSpeed);
-                    --bulletCnt;
-                    if (bulletCnt < 0) break;
-                }
-            }
-            break;
-        case BULLET_COLOR::PURPLE:
-            cont = mainLevel->enemyPurpleBullets;
-            for (int i = 0; i < cont.size(); ++i)
-            {
-                if (!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
-                {
-                    cont[i]->setVisibility(true);
-                    cont[i]->setActorTickable(true);
-                    cont[i]->moveTo(spawnPos); //총알액터의 위치를 세팅해준다.
-                    cont[i]->setActorDirectionalVector(bullet7DirVec[bulletCnt]);
-                    cont[i]->changeBulletSpeed(normalBulletSpeed);
-                    --bulletCnt;
-                    if (bulletCnt < 0) break;
-                }
-            }
-            break;
-        case BULLET_COLOR::GREEN: //플레이어 총알이기에 아무것도 안한다!!!
-            break;
+        spawnBulletFromPool(spawnPos, normalBulletSpeed, bullet7DirVec[i]);
     }
 }
 
@@ -567,71 +370,8 @@ void EnemyAirplane::firePattern4()
     Vector2D bulletDir = Vector2D(newVectorX, newVectorY);
     bulletDir.normalize();
 
-    switch (bulletColor)
-    {
-        case BULLET_COLOR::RED:
-            cont = mainLevel->enemyRedBullets;
-            for (int i = 0; i < cont.size(); ++i)
-            {
-                if (!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
-                {
-                    cont[i]->setVisibility(true);
-                    cont[i]->setActorTickable(true);
-                    cont[i]->moveTo(spawnPos); //총알액터의 위치를 세팅해준다.
-                    cont[i]->setActorDirectionalVector(bulletDir);
-                    cont[i]->changeBulletSpeed(normalBulletSpeed);
-                    break;
-                }
-            }
-            break;
-        case BULLET_COLOR::BLUE:
-            cont = mainLevel->enemyBlueBullets;
-            for (int i = 0; i < cont.size(); ++i)
-            {
-                if (!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
-                {
-                    cont[i]->setVisibility(true);
-                    cont[i]->setActorTickable(true);
-                    cont[i]->moveTo(spawnPos); //총알액터의 위치를 세팅해준다.
-                    cont[i]->setActorDirectionalVector(bulletDir);
-                    cont[i]->changeBulletSpeed(normalBulletSpeed);
-                    break;
-                }
-            }
-            break;
-        case BULLET_COLOR::SKY:
-            cont = mainLevel->enemySkyBullets;
-            for (int i = 0; i < cont.size(); ++i)
-            {
-                if (!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
-                {
-                    cont[i]->setVisibility(true);
-                    cont[i]->setActorTickable(true);
-                    cont[i]->moveTo(spawnPos); //총알액터의 위치를 세팅해준다.
-                    cont[i]->setActorDirectionalVector(bulletDir);
-                    cont[i]->changeBulletSpeed(normalBulletSpeed);
-                    break;
-                }
-            }
-            break;
-        case BULLET_COLOR::PURPLE:
-            cont = mainLevel->enemyPurpleBullets;
-            for (int i = 0; i < cont.size(); ++i)
-            {
-                if (!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
-                {
-                    cont[i]->setVisibility(true);
-                    cont[i]->setActorTickable(true);
-                    cont[i]->moveTo(spawnPos); //총알액터의 위치를 세팅해준다.
-                    cont[i]->setActorDirectionalVector(bulletDir);
-                    cont[i]->changeBulletSpeed(normalBulletSpeed);
-                    break;
-                }
-            }
-            break;
-        case BULLET_COLOR::GREEN: //플레이어 총알이기에 아무것도 안한다!!!
-            break;
-    }
+    spawnBulletFromPool(spawnPos, normalBulletSpeed, bulletDir);
+
 }
 
 float tempRotate = 0.0f;
@@ -642,38 +382,14 @@ void EnemyAirplane::firePattern5()
 
     std::pair<int, int> spawnPos{ worldLoc.first + size.first / 2, worldLoc.second + size.second };
 
-    int bulletCnt = 29;
-    MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
-    std::vector<Bullet*> cont;
-    switch (bulletColor)
+    int bulletCnt = 30;
+
+    for(int i = 0; i < bulletCnt; ++i)
     {
-        case BULLET_COLOR::RED:
-            cont = mainLevel->enemyRedBullets;
-            for (int i = 0; i < cont.size(); ++i)
-            {
-                if (!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
-                {
-                    cont[i]->setVisibility(true);
-                    cont[i]->setActorTickable(true);
-                    cont[i]->moveTo(spawnPos); //총알액터의 위치를 세팅해준다.
-                    bossCirclePattern[bulletCnt].rotateVector(tempRotate);
-                    cont[i]->setActorDirectionalVector(bossCirclePattern[bulletCnt]);
-                    cont[i]->changeBulletSpeed(1200.0f);
-                    --bulletCnt;
-                    if (bulletCnt < 0) break;
-                }
-            }
-            tempRotate = randomRotation(dre);
-            break;
-        case BULLET_COLOR::BLUE:
-            break;
-        case BULLET_COLOR::SKY:
-            break;
-        case BULLET_COLOR::PURPLE:
-            break;
-        case BULLET_COLOR::GREEN: //플레이어 총알이기에 아무것도 안한다!!!
-            break;
+        spawnBulletFromPool(spawnPos, 1200.0f, bossCirclePattern[i]);
+        bossCirclePattern[i].rotateVector(tempRotate);
     }
+    tempRotate = randomRotation(dre);
 }
 
 void EnemyAirplane::firePattern6()
@@ -683,39 +399,14 @@ void EnemyAirplane::firePattern6()
 
     std::pair<int, int> spawnPos{ worldLoc.first + size.first / 2, worldLoc.second + size.second };
 
-    int bulletCnt = 0;
-    MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
-    std::vector<Bullet*> cont;
-    switch (bulletColor)
+    int bulletCnt = 49;
+    for(int i = 0; i < bulletCnt; ++i)
     {
-        case BULLET_COLOR::RED:
-            cont = mainLevel->enemyRedBullets;
-            for (int i = 0; i < cont.size(); ++i)
-            {
-                if (!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
-                {
-                    cont[i]->setVisibility(true);
-                    cont[i]->setActorTickable(true);
-                    cont[i]->moveTo({ bossStarPatternStartPos[bulletCnt].x + spawnPos.first,
-                                      bossStarPatternStartPos[bulletCnt].y + spawnPos.second }); //총알액터의 위치를 세팅해준다.
-                    bossStarPattern[bulletCnt].rotateVector(tempRotate);
-                    cont[i]->setActorDirectionalVector(bossStarPattern[bulletCnt]);
-                    cont[i]->changeBulletSpeed(500.0f);
-                    ++bulletCnt;
-                    if (bulletCnt > 49) break;
-                }
-            }
-            tempRotate = randomRotation(dre);
-            break;
-        case BULLET_COLOR::BLUE:
-            break;
-        case BULLET_COLOR::SKY:
-            break;
-        case BULLET_COLOR::PURPLE:
-            break;
-        case BULLET_COLOR::GREEN: //플레이어 총알이기에 아무것도 안한다!!!
-            break;
+        spawnBulletFromPool({bossStarPatternStartPos[i].x + spawnPos.first,bossStarPatternStartPos[i].y + spawnPos.second },
+                            500.0f, bossStarPattern[i]);
+        bossStarPattern[i].rotateVector(tempRotate);
     }
+    tempRotate = randomRotation(dre);
 }
 
 void EnemyAirplane::firePattern7()
@@ -725,39 +416,15 @@ void EnemyAirplane::firePattern7()
 
     std::pair<int, int> spawnPos{ worldLoc.first + size.first / 2, worldLoc.second + size.second };
 
-    int bulletCnt = 0;
-    MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
-    std::vector<Bullet*> cont;
-    switch (bulletColor)
+    int bulletCnt = 40;
+    for(int i = 0; i < bulletCnt; ++i)
     {
-        case BULLET_COLOR::RED:
-            cont = mainLevel->enemyRedBullets;
-            for (int i = 0; i < cont.size(); ++i)
-            {
-                if (!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
-                {
-                    cont[i]->setVisibility(true);
-                    cont[i]->setActorTickable(true);
-                    cont[i]->moveTo({ bossFlowerPatternStartPos[bulletCnt].x + spawnPos.first,
-                                      bossFlowerPatternStartPos[bulletCnt].y + spawnPos.second }); //총알액터의 위치를 세팅해준다.
-                    bossFlowerPattern[bulletCnt].rotateVector(tempRotate);
-                    cont[i]->setActorDirectionalVector(bossFlowerPattern[bulletCnt]);
-                    cont[i]->changeBulletSpeed(900.0f);
-                    ++bulletCnt;
-                    if (bulletCnt > 39) break;
-                }
-            }
-            tempRotate = randomRotation(dre);
-            break;
-        case BULLET_COLOR::BLUE:
-            break;
-        case BULLET_COLOR::SKY:
-            break;
-        case BULLET_COLOR::PURPLE:
-            break;
-        case BULLET_COLOR::GREEN: //플레이어 총알이기에 아무것도 안한다!!!
-            break;
+        spawnBulletFromPool({bossFlowerPatternStartPos[i].x + spawnPos.first,
+                             bossFlowerPatternStartPos[i].y + spawnPos.second}, 900.0f,
+                            bossFlowerPattern[i]);
+        bossFlowerPattern[i].rotateVector(tempRotate);
     }
+    tempRotate = randomRotation(dre);
 }
 
 void EnemyAirplane::spawnBullet(float deltaTime)
@@ -907,4 +574,16 @@ void EnemyAirplane::initBossHeartPattern()
         befDir = curDir;
         bossFlowerPatternStartPos[index] = Vector2D{ curX * 10.0f, curY * 10.0f };
     }
+}
+
+void EnemyAirplane::spawnBulletFromPool(const std::pair<float, float>&spawnPos, float speed, const Vector2D& dirVec)
+{
+    MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
+    ActorObjectPool<Bullet>* cont;
+    cont = mainLevel->bulletPool;
+    auto bullet = cont->acquireObject();
+    bullet->init(spawnPos, bulletColor);
+    bullet->setActorDirectionalVector(dirVec);
+    bullet->changeBulletSpeed(speed);
+
 }

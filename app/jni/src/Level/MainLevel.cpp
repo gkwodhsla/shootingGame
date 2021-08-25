@@ -11,6 +11,7 @@
 #include "../Actors/StageManager.h"
 #include "../UI/ShopCanvas.h"
 #include "../Framework.h"
+#include "../ActorObjectPool.h"
 #include <vector>
 #include <android/log.h>
 
@@ -85,31 +86,6 @@ void MainLevel::enter()
     playerController->possess(playerAirplane);
     playerController->changeInputMode(INPUT_MODE::UI_ONLY);
 
-
-    playerBullets.reserve(playerBulletSize);
-    for(int i = 0; i < playerBulletSize; ++i)
-    {
-        addBulletToBuffer(playerBullets, BULLET_COLOR::GREEN);
-    }
-
-    enemyRedBullets.reserve(enemyBulletSize + 300);
-    enemyPurpleBullets.reserve(enemyBulletSize);
-    enemyBlueBullets.reserve(enemyBulletSize);
-    enemySkyBullets.reserve(enemyBulletSize);
-
-    for(int i = 0; i < enemyBulletSize + 300; ++i)
-    {
-        addBulletToBuffer(enemyRedBullets, BULLET_COLOR::RED);
-    }
-
-    for(int i = 0; i < enemyBulletSize; ++i)
-    {
-        addBulletToBuffer(enemyRedBullets, BULLET_COLOR::RED);
-        addBulletToBuffer(enemyBlueBullets, BULLET_COLOR::BLUE);
-        addBulletToBuffer(enemySkyBullets, BULLET_COLOR::SKY);
-        addBulletToBuffer(enemyPurpleBullets, BULLET_COLOR::PURPLE);
-    }
-
     int enemySize = 16;//Spawner::numOfDestX * Spawner::numOfDestY;
     enemyAirplanes.reserve(enemySize);
     for(int i = 0; i < enemySize;++i)
@@ -155,21 +131,13 @@ void MainLevel::enter()
 
     shopCanvas = new ShopCanvas(Framework::rendererWidth, Framework::rendererHeight, 0, 0);
     shopCanvas->addToViewport();
+
+    bulletPool = new ActorObjectPool<Bullet>(500);
 }
 
 void MainLevel::exit()
 {
 
-}
-
-void MainLevel::addBulletToBuffer(std::vector<Bullet*>& cont, BULLET_COLOR color)
-{
-    auto newBullet = spawnActor<Bullet>(std::make_pair(0.0f, 0.0f),
-    color, Vector2D(0.0f, -1.0f));
-    newBullet->setVisibility(false);
-    newBullet->setActorTickable(false);
-    newBullet->setIsSetLifeTime(true);
-    cont.push_back(newBullet);
 }
 
 void MainLevel::stageClear()

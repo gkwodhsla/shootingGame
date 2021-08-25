@@ -14,6 +14,7 @@ class ImageComponent : public HPrimitiveComponent
 {
 public:
     ImageComponent() = default;
+    ImageComponent(HActor* owner);
     ImageComponent(const std::string& path, const std::pair<int, int>& loc, HActor* owner);
     virtual ~ImageComponent();
 

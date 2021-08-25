@@ -9,6 +9,19 @@
 #include <android/log.h>
 #include "../Actors/HActor.h"
 
+ImageComponent::ImageComponent(HActor* owner)
+{
+    img = nullptr;
+    imgRect = new SDL_Rect();
+    clipRect = new SDL_Rect();
+    localLocation.first = 0.0f;
+    localLocation.second = 0.0f;
+    imgRect->x = localLocation.first;
+    imgRect->y = localLocation.second;
+    localRotation = 0.0f;
+    this->owner = owner;
+}
+
 ImageComponent::ImageComponent(const std::string& path, const std::pair<int, int>& loc, HActor* owner)
 {
     img = nullptr;
@@ -91,8 +104,11 @@ void ImageComponent::update(float deltaTime)
 
 void ImageComponent::changeImage(const std::string &path)
 {
-    SDL_DestroyTexture(img);
-    img = nullptr;
+    if(img)
+    {
+        SDL_DestroyTexture(img);
+        img = nullptr;
+    }
     loadImage(path);
     int w = 0, h = 0;
     SDL_QueryTexture(img, NULL, NULL, &w, &h);

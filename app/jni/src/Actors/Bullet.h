@@ -17,7 +17,7 @@ enum class BULLET_COLOR
 class Bullet : public HActor
 {
 public:
-    Bullet() = delete;
+    Bullet();
     Bullet(const std::pair<float, float>& spawnPosition, BULLET_COLOR bulletColor,
            const Vector2D& dirVec);
     virtual ~Bullet();
@@ -26,6 +26,7 @@ public:
     void resetBulletToInitialState();
     void changeBulletSpeed(float speed);
     bool getIsPlayerBullet();
+    void init(const std::pair<float, float> &spawnPosition, BULLET_COLOR bulletColor);
 
 public:
     CollisionBoxComponent* getCollisionComp();

@@ -9,6 +9,8 @@ class EnemyAirplane;
 class Bullet;
 class StageManager;
 class Canvas;
+template<typename T>
+class ActorObjectPool;
 
 class MainLevel: public HLevelBase
 {
@@ -26,17 +28,14 @@ public:
     friend class StageManager;
 
 private:
-    void addBulletToBuffer(std::vector<Bullet*>& cont, BULLET_COLOR color);
     void stageClear();
+
+public:
+    ActorObjectPool<Bullet>* bulletPool;
 
 private:
     StageManager* stageManager = nullptr;
     Airplane* playerAirplane = nullptr;
-    std::vector<Bullet*> playerBullets;
-    std::vector<Bullet*> enemyRedBullets;
-    std::vector<Bullet*> enemyPurpleBullets;
-    std::vector<Bullet*> enemyBlueBullets;
-    std::vector<Bullet*> enemySkyBullets;
     std::vector<EnemyAirplane*> enemyAirplanes;
     EnemyAirplane* boss1 = nullptr;
     EnemyAirplane* boss2 = nullptr;

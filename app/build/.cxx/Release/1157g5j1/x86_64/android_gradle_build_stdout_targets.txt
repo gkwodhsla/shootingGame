@@ -142,7 +142,6 @@ Android NDK:   src/libmpg123/icy.h src/libmpg123/icy2utf8.h src/libmpg123/synth.
 [x86_64] Compile        : SDL2 <= SDL_test_imagePrimitives.c
 [x86_64] Compile        : SDL2 <= SDL_test_font.c
 [x86_64] Compile++      : hidapi <= hid.cpp
-[x86_64] Prebuilt       : libc++_shared.so <= <NDK>/sources/cxx-stl/llvm-libc++/libs/x86_64/
 [x86_64] SharedLibrary  : libhidapi.so
 [x86_64] Compile        : cpufeatures <= cpu-features.c
 [x86_64] StaticLibrary  : libcpufeatures.a
@@ -433,9 +432,12 @@ make: Nothing to be done for 'hidapi'.
 [x86_64] Compile++      : main <= main.cpp
 [x86_64] Compile++      : main <= Framework.cpp
 [x86_64] Compile++      : main <= HPlayerController.cpp
+[x86_64] Compile++      : main <= Vector2D.cpp
+[x86_64] Compile++      : main <= GlobalFunction.cpp
 [x86_64] Compile++      : main <= HSceneComponent.cpp
 [x86_64] Compile++      : main <= HPrimitiveComponent.cpp
 [x86_64] Compile++      : main <= ImageComponent.cpp
+[x86_64] Compile++      : main <= TTFComponent.cpp
 [x86_64] Compile++      : main <= MovementComponent.cpp
 [x86_64] Compile++      : main <= SpritesheetComponent.cpp
 [x86_64] Compile++      : main <= CollisionBoxComponent.cpp
@@ -447,6 +449,13 @@ make: Nothing to be done for 'hidapi'.
 [x86_64] Compile++      : main <= Airplane.cpp
 [x86_64] Compile++      : main <= EnemyAirplane.cpp
 [x86_64] Compile++      : main <= Spawner.cpp
+[x86_64] Compile++      : main <= StageManager.cpp
 [x86_64] Compile++      : main <= MainLevel.cpp
+[x86_64] Compile++      : main <= Canvas.cpp
+[x86_64] Compile++      : main <= ShopCanvas.cpp
+[x86_64] Compile++      : main <= Widget.cpp
+[x86_64] Compile++      : main <= TextWidget.cpp
+[x86_64] Compile++      : main <= ButtonWidget.cpp
+[x86_64] Compile++      : main <= ImageWidget.cpp
 [x86_64] SharedLibrary  : libmain.so
 make: Nothing to be done for 'mpg123'.

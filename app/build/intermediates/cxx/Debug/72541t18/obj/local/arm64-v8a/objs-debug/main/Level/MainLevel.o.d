@@ -147,7 +147,11 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\HPrimitiveComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\SDL_ttf\SDL_ttf.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\begin_code.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\close_code.h
+  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\close_code.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\ActorObjectPool.h \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\queue \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\deque \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\MainLevel.h:
 
@@ -444,3 +448,11 @@ D:\comtus\Development\android\shootingGame\app\jni\SDL_ttf\SDL_ttf.h:
 D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\begin_code.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\close_code.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\ActorObjectPool.h:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\queue:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\deque:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h:

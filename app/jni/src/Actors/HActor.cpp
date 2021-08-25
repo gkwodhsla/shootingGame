@@ -106,6 +106,7 @@ void HActor::update(float deltaTime)
 void HActor::setLifeTime(const float lifeTime)
 {
     this->lifeTime = lifeTime;
+    isSetLifeTime = true;
 }
 
 void HActor::setIsSetLifeTime(const bool isSetLifeTime)

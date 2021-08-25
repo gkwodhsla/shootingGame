@@ -10,6 +10,7 @@
 #include "../Components/HSceneComponent.h"
 #include "../Components/SpritesheetComponent.h"
 #include "../Components/CollisionBoxComponent.h"
+#include "../ActorObjectPool.h"
 #include "../Framework.h"
 #include "../Level/MainLevel.h"
 #include "../Actors/Bullet.h"
@@ -199,8 +200,18 @@ void Airplane::turnOffBooster()
 void Airplane::spawnPlayerBullet(std::pair<float, float>& spawnPos)
 {
     MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
-    auto cont = mainLevel->playerBullets;
-    int curSpawnBulletCnt = bulletCnt;
+    auto cont = mainLevel->bulletPool;
+
+    for(int i = bulletCnt; i > 0; --i)
+    {
+        auto bullet = cont->acquireObject();
+        bullet->init(spawnPos, BULLET_COLOR::GREEN);
+        bullet->setActorDirectionalVector({0.0f, -1.0f});
+        bullet->changeBulletSpeed(900.0f);
+        spawnPos.first += 20.0f;
+    }
+
+    /*int curSpawnBulletCnt = bulletCnt;
     for(int i = 0; i < mainLevel->playerBulletSize; ++i)
     {
         if(!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
@@ -215,6 +226,6 @@ void Airplane::spawnPlayerBullet(std::pair<float, float>& spawnPos)
             //__android_log_print(ANDROID_LOG_INFO, "SDL_Error",
                //                 "spawn using %d element", i);
         }
-    }
+    }*/
 }
 

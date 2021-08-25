@@ -53,6 +53,7 @@ private:
     void firePattern6();
     void firePattern7();
     void spawnBullet(float deltaTime);
+    void spawnBulletFromPool(const std::pair<float, float>&spawnPos, float speed, const Vector2D& dirVec);
     static void initStaticData();
     static void initBossCirclePattern();
     static void initBossStarPattern();

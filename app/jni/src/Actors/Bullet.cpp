@@ -8,10 +8,34 @@
 #include "../Level/MainLevel.h"
 #include "../GlobalFunction.h"
 #include "../Actors/EnemyAirplane.h"
+#include "../ActorObjectPool.h"
 #include <functional>
 #include <android/log.h>
 
 using namespace GlobalFunction;
+
+Bullet::Bullet()
+{
+    rootComponent->setComponentLocalLocation({0.0f, 0.0f});
+    rootComponent->setComponentLocalRotation(0.0f);
+
+    bulletImg = new ImageComponent(this);
+    bulletImg->attachTo(rootComponent);
+
+    bulletMovement = new MovementComponent(this);
+    bulletMovement->setSpeed(900.0f);
+    bulletMovement->setAcceleration(std::make_pair(dirVec.x * 1000.0f, dirVec.y * 1000.0f));
+
+    this->dirVec = Vector2D(0.0f, 0.0f);
+
+    auto imgSize = bulletImg->getScale();
+    collisionBox = new CollisionBoxComponent(0, 0, imgSize.first, imgSize.second, this);
+    collisionBox->setDrawDebugBox(true);
+
+    collisionBox->attachTo(rootComponent);
+
+    setLifeTime(3.0f);
+}
 
 Bullet::Bullet(const std::pair<float, float> &spawnPosition, BULLET_COLOR bulletColor,
                const Vector2D& dirVec)
@@ -56,21 +80,7 @@ Bullet::Bullet(const std::pair<float, float> &spawnPosition, BULLET_COLOR bullet
 
     collisionBox->attachTo(rootComponent);
 
-    if(isPlayerBullet) //아군총알의 경우 적군과 충돌시 우선 버퍼에 반환해준다.
-    {
-        auto collisionResponse = [this](HActor* other) mutable
-        {
-            EnemyAirplane* enemy = Cast<EnemyAirplane>(other);
-
-            if(enemy && enemy->getCanDamaged())
-            {
-                this->resetBulletToInitialState();
-            }
-        };
-        collisionBox->registerCollisionResponse(collisionResponse);
-    }
-
-    lifeTime = 3.0f;
+    setLifeTime(3.0f);
 }
 
 Bullet::~Bullet()
@@ -105,11 +115,14 @@ void Bullet::update(float deltaTime)
 
 void Bullet::resetBulletToInitialState()
 {
-    tickable = false;
-    visibility = false;
-    lifeTime = 3.0f;
+    //tickable = false;
+    //visibility = false;
+    auto mainLevel = Cast<MainLevel>(Framework::curLevel);
+    mainLevel->bulletPool->returnToPool(this);
+    setLifeTime(3.0f);
     isPendingToKill = false;
 }
+
 
 CollisionBoxComponent* Bullet::getCollisionComp()
 {
@@ -124,4 +137,39 @@ void Bullet::changeBulletSpeed(float speed)
 bool Bullet::getIsPlayerBullet()
 {
     return isPlayerBullet;
+}
+
+void Bullet::init(const std::pair<float, float> &spawnPosition, BULLET_COLOR bulletColor)
+{
+    rootComponent->setComponentLocalLocation(spawnPosition);
+
+    std::string path;
+    isPlayerBullet = false;
+    if(bulletColor == BULLET_COLOR::GREEN)
+    {
+        path = "image/bullet/1.png";
+        isPlayerBullet = true;
+    }
+    else if(bulletColor == BULLET_COLOR::RED)
+    {
+        path = "image/bullet/e2.png";
+    }
+    else if(bulletColor == BULLET_COLOR::PURPLE)
+    {
+        path = "image/bullet/e1.png";
+    }
+    else if(bulletColor == BULLET_COLOR::BLUE)
+    {
+        path = "image/bullet/e3.png";
+    }
+    else if(bulletColor == BULLET_COLOR::SKY)
+    {
+        path = "image/bullet/e4.png";
+    }
+
+    bulletImg->changeImage(path);
+
+    auto imgSize = bulletImg->getScale();
+
+    collisionBox->setWidthAndHeight(imgSize.first, imgSize.second);
 }

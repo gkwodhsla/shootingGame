@@ -76,7 +76,8 @@ public:
         {
             for(int j = i + 1; j < collisionBoxes.size(); ++j)
             {
-                if(collisionBoxes[i]->getOwner()->getVisibility())
+                if(collisionBoxes[i]->getOwner()->getVisibility() &&
+                collisionBoxes[j]->getOwner()->getVisibility())
                 {
                     collisionBoxes[i]->checkCollision(*collisionBoxes[j]);
                 }
@@ -100,8 +101,8 @@ protected:
     std::vector<HActor*> actors;
     std::vector<CollisionBoxComponent*> collisionBoxes;
     HPlayerController* playerController = nullptr;
-    float maxCollisionCheckTime = 0.1f;
-    float curCollisionCheckTime = 0.1f;
+    float maxCollisionCheckTime = 0.02f;
+    float curCollisionCheckTime = 0.02f;
     //추후 이곳에 player controller가 들어가야 한다. (handle event를 위해서)
     //게임모드를 추가할 수도 있고, 아니면 게임모드의 요소를 그냥 멤버로 넣을 수도 있다. (고민좀)
 };

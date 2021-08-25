@@ -566,16 +566,7 @@ D:/comtus/Development/android/shootingGame/app/jni/SDL_mixer/external/libmodplug
         register MODCHANNEL * const pChn = pChannel;\
         ^
 80 warnings generated.
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/Spawner.cpp:60:53: warning: format specifies type 'int' but the argument has type 'std::__ndk1::vector<SplineComponent, std::__ndk1::allocator<SplineComponent> >::size_type' (aka 'unsigned long') [-Wformat]
-                        "s1: %d, s2: %d, s3: %d\n", pathLeft.size(), pathMiddle.size(), pathRight.size());
-                             ~~                     ^~~~~~~~~~~~~~~
-                             %lu
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/Spawner.cpp:60:70: warning: format specifies type 'int' but the argument has type 'std::__ndk1::vector<SplineComponent, std::__ndk1::allocator<SplineComponent> >::size_type' (aka 'unsigned long') [-Wformat]
-                        "s1: %d, s2: %d, s3: %d\n", pathLeft.size(), pathMiddle.size(), pathRight.size());
-                                     ~~                              ^~~~~~~~~~~~~~~~~
-                                     %lu
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/Spawner.cpp:60:89: warning: format specifies type 'int' but the argument has type 'std::__ndk1::vector<SplineComponent, std::__ndk1::allocator<SplineComponent> >::size_type' (aka 'unsigned long') [-Wformat]
-                        "s1: %d, s2: %d, s3: %d\n", pathLeft.size(), pathMiddle.size(), pathRight.size());
-                                             ~~                                         ^~~~~~~~~~~~~~~~
-                                             %lu
-3 warnings generated.
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/Airplane.cpp:180:13: warning: enumeration value 'SHAPE1' not handled in switch [-Wswitch]
+    switch (this->shape)
+            ^
+1 warning generated.

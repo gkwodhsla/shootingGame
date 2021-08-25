@@ -99,48 +99,47 @@
 70-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:60:9-43
 71        android:label="@string/app_name"
 71-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:59:18-50
-72        android:testOnly="true"
-73        android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-73-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:62:9-67
-74
-75        <!--
-76        Example of setting SDL hints from AndroidManifest.xml:
-77        <meta-data android:name="SDL_ENV.SDL_ACCELEROMETER_AS_JOYSTICK" android:value="0"/>
-78        -->
-79
-80        <activity
-80-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:69:9-88:20
-81            android:name="org.libsdl.app.SDLActivity"
-81-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:69:19-45
-82            android:alwaysRetainTaskState="true"
-82-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:71:13-49
-83            android:configChanges="layoutDirection|locale|orientation|uiMode|screenLayout|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
-83-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:74:13-156
-84            android:label="ShooterHJO"
-84-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:70:13-39
-85            android:launchMode="singleInstance"
-85-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:73:13-48
-86            android:screenOrientation="portrait" >
-86-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:72:13-49
-87            <intent-filter>
-87-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:76:13-79:29
-88                <action android:name="android.intent.action.MAIN" />
-88-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:77:17-69
-88-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:77:25-66
-89
-90                <category android:name="android.intent.category.LAUNCHER" />
-90-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:78:17-77
-90-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:78:27-74
-91            </intent-filter>
-92            <!-- Drop file event -->
-93            <!--
-94            <intent-filter>
-95                <action android:name="android.intent.action.VIEW" />
-96                <category android:name="android.intent.category.DEFAULT" />
-97                <data android:mimeType="*/*" />
-98            </intent-filter>
-99            -->
-100        </activity>
-101    </application>
-102
-103</manifest>
+72        android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+72-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:62:9-67
+73
+74        <!--
+75        Example of setting SDL hints from AndroidManifest.xml:
+76        <meta-data android:name="SDL_ENV.SDL_ACCELEROMETER_AS_JOYSTICK" android:value="0"/>
+77        -->
+78
+79        <activity
+79-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:69:9-88:20
+80            android:name="org.libsdl.app.SDLActivity"
+80-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:69:19-45
+81            android:alwaysRetainTaskState="true"
+81-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:71:13-49
+82            android:configChanges="layoutDirection|locale|orientation|uiMode|screenLayout|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
+82-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:74:13-156
+83            android:label="ShooterHJO"
+83-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:70:13-39
+84            android:launchMode="singleInstance"
+84-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:73:13-48
+85            android:screenOrientation="portrait" >
+85-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:72:13-49
+86            <intent-filter>
+86-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:76:13-79:29
+87                <action android:name="android.intent.action.MAIN" />
+87-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:77:17-69
+87-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:77:25-66
+88
+89                <category android:name="android.intent.category.LAUNCHER" />
+89-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:78:17-77
+89-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml:78:27-74
+90            </intent-filter>
+91            <!-- Drop file event -->
+92            <!--
+93            <intent-filter>
+94                <action android:name="android.intent.action.VIEW" />
+95                <category android:name="android.intent.category.DEFAULT" />
+96                <data android:mimeType="*/*" />
+97            </intent-filter>
+98            -->
+99        </activity>
+100    </application>
+101
+102</manifest>
