@@ -5,6 +5,7 @@
 #include <SDL.h>
 #include <android/log.h>
 #include <vector>
+#include <cmath>
 #include "Airplane.h"
 #include "../Components/ImageComponent.h"
 #include "../Components/HSceneComponent.h"
@@ -50,8 +51,10 @@ Airplane::Airplane()
     collisionBox->setDrawDebugBox(true);
     collisionBox->attachTo(rootComponent);
 
-    //explosionSprite = new SpritesheetComponent()
-    //추후 추가 예정
+    shieldImage = new ImageComponent("image/misc/shield.png",{-50, -50},this);
+    //shieldImage->setAlpha(140);
+    shieldImage->setScale({200, 200});
+    shieldImage->attachTo(rootComponent);
 }
 
 Airplane::~Airplane()
@@ -89,6 +92,11 @@ void Airplane::update(float deltaTime)
             spawnPlayerBullet(loc);
             curFireTime = fireRate;
         }
+        shieldImage->setComponentLocalRotation(shieldRotation);
+        shieldRotation+=50.0f*deltaTime;
+        accTimeForFlickering += deltaTime;
+        auto mT = fmod(accTimeForFlickering, 2.0) - 1.0f;
+        shieldImage->setAlpha(int(fabs(mT)*255.0f));
     }
 }
 
@@ -196,6 +204,17 @@ void Airplane::turnOffBooster()
 {
     boosterSprite->setVisibility(false);
 }
+
+void Airplane::turnOnShield()
+{
+    shieldImage->setVisibility(true);
+}
+
+void Airplane::turnOffShield()
+{
+    shieldImage->setVisibility(false);
+}
+
 
 void Airplane::spawnPlayerBullet(std::pair<float, float>& spawnPos)
 {

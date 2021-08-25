@@ -116,6 +116,8 @@ EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp)
 
     realDirVec.x = 0.0f;
     realDirVec.y = 1.0f;
+
+    turnOffShield();
 }
 
 EnemyAirplane::~EnemyAirplane()

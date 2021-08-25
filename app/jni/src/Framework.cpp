@@ -5,6 +5,7 @@
 #include "Framework.h"
 #include "Level/HLevelBase.h"
 #include "Level/MainLevel.h"
+#include "Components/SpritesheetComponent.h"
 #include <android/log.h>
 #include <SDL.h>
 #include <SDL_image.h>
@@ -93,6 +94,11 @@ Framework::Framework()
     curLevel->enter();
 
     fpsText = new TTFComponent(0,0,70,255,0,0,"font/EvilEmpire.ttf","Hello World!",nullptr);
+    tempImg = new SpritesheetComponent("image/spritesheet/thunder.png",{0, 0},nullptr,16,16,1);
+    tempImg->setScale({500,1000});
+    tempImg->setDrawCntPerSec(15);
+    tempImg->setLooping(true);
+    tempImg->play();
 }
 
 Framework::~Framework()
@@ -127,6 +133,7 @@ void Framework::handleEvent()
 void Framework::update(float deltaTime)
 {
     curLevel->update(deltaTime);
+    tempImg->update(deltaTime);
 }
 
 void Framework::render()
@@ -139,6 +146,7 @@ void Framework::render()
     }
     curLevel->render();
     fpsText->render();
+    tempImg->render();
     for(auto&canvas:worldUI)
     {
         canvas->render();

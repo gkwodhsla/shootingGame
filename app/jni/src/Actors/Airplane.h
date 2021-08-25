@@ -48,12 +48,17 @@ protected:
 
 protected:
     void turnOffBooster();
+    void turnOnShield();
+    void turnOffShield();
 
 private:
     SpritesheetComponent* boosterSprite = nullptr;
+    ImageComponent* shieldImage = nullptr;
     int attackPower = 50;
     int bulletCnt = 1;
     int missileCnt = 0;
     int shieldCnt = 0;
     PLAYER_AIRPLANE_SHAPE shape = PLAYER_AIRPLANE_SHAPE::SHAPE1;
+    float shieldRotation = 0.0f;
+    float accTimeForFlickering = 0.0f;
 };
