@@ -36,18 +36,19 @@ void ButtonWidget::render()
     }
 }
 
-void ButtonWidget::registerbuttonDownEvent(std::function<void()> &func)
+void ButtonWidget::registerbuttonDownEvent(const std::function<void()> &func)
 {
     buttonDownEvent = func;
 }
 
-void ButtonWidget::registerbuttonUpEvent(std::function<void()>& func)
+void ButtonWidget::registerbuttonUpEvent(const std::function<void()>& func)
 {
     buttonUpEvent = func;
 }
 
-void ButtonWidget::checkIsClicked(int inputX, int inputY)
+bool ButtonWidget::checkIsClicked(int inputX, int inputY)
 {
+    bool isClicked = false;
     auto buttonPos = getLocalPosition();
     auto buttonSize = buttonDownImg->getScale();
     if(buttonPos.first <= inputX && inputX <= buttonPos.first + buttonSize.first)
@@ -66,8 +67,27 @@ void ButtonWidget::checkIsClicked(int inputX, int inputY)
                 if(buttonUpEvent)
                     buttonUpEvent();
             }
+            isClicked = true;
         }
     }
+
+    return isClicked;
+}
+
+bool ButtonWidget::checkIsHovering(int inputX, int inputY)
+{
+    bool isClicked = false;
+    auto buttonPos = getLocalPosition();
+    auto buttonSize = buttonDownImg->getScale();
+    if(buttonPos.first <= inputX && inputX <= buttonPos.first + buttonSize.first)
+    {
+        if(buttonPos.second <= inputY && inputY <= buttonPos.second + buttonSize.second)
+        {
+            isClicked = true;
+        }
+    }
+
+    return isClicked;
 }
 
 void ButtonWidget::setButtonUp()

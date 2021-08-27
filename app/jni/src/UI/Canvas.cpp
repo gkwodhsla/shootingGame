@@ -47,7 +47,7 @@ void Canvas::canvasRender()
     if(visibility)
     {
         SDL_SetRenderTarget(Framework::renderer, window);
-        SDL_SetRenderDrawColor(Framework::renderer, 0xff, 0xff, 0xff, 0xff);
+        SDL_SetRenderDrawColor(Framework::renderer, 0xff, 0xff, 0xff, 0);
         SDL_RenderClear(Framework::renderer);
         for(auto& widget : canvasWidgets)
         {
@@ -76,36 +76,71 @@ void Canvas::render()
     }
 }
 
-void Canvas::handleEvent(SDL_Event &e)
+bool Canvas::handleEvent(SDL_Event &e)
 {
-    int x = int(e.tfinger.x * float(Framework::rendererWidth));
-    int y = int(e.tfinger.y * float(Framework::rendererHeight));
-    if (e.type == SDL_FINGERDOWN)
+    bool isEventOccure = false;
+    if(visibility)
     {
-        for(auto& button : canvasButtons)
+        int x = int(e.tfinger.x * float(Framework::rendererWidth));
+        int y = int(e.tfinger.y * float(Framework::rendererHeight));
+        if (e.type == SDL_FINGERDOWN)
         {
-            button->checkIsClicked(x, y);
+            for(auto& button : canvasButtons)
+            {
+                if(!isEventOccure)
+                {
+                    isEventOccure = button->checkIsClicked(x, y);
+                }
+                else
+                {
+                    button->checkIsClicked(x, y);
+                }
+            }
+        }
+        else if (e.type == SDL_FINGERMOTION) //버튼의 hovering을 검사한다.
+        {
+            for(auto& button : canvasButtons)
+            {
+                if(!isEventOccure)
+                {
+                    isEventOccure = button->checkIsHovering(x, y);
+                }
+                else
+                {
+                    button->checkIsHovering(x, y);
+                }
+            }
+        }
+        else if (e.type == SDL_FINGERUP)
+        {
+            for(auto& button : canvasButtons)
+            {
+                if(!isEventOccure)
+                {
+                    isEventOccure = button->checkIsClicked(x, y);
+                }
+                else
+                {
+                    button->checkIsClicked(x, y);
+                }
+            }
+            for(auto& button : canvasButtons)
+            {
+                button->setButtonUp();
+            }
         }
     }
-    else if (e.type == SDL_FINGERMOTION)
-    {
+    return isEventOccure;
+}
 
-    }
-    else if (e.type == SDL_FINGERUP)
-    {
-        for(auto& button : canvasButtons)
-        {
-            button->checkIsClicked(x, y);
-        }
-        for(auto& button : canvasButtons)
-        {
-            button->setButtonUp();
-        }
-    }
+void Canvas::changeWindowAlphaValue(__uint8_t alpha)
+{
+    SDL_SetTextureAlphaMod(window, alpha);
 }
 
 void Canvas::createEmptyWindow()
 {
     window = SDL_CreateTexture(Framework::renderer, SDL_PIXELFORMAT_RGBA8888,SDL_TEXTUREACCESS_TARGET ,w, h);
     SDL_SetTextureBlendMode(window, SDL_BLENDMODE_BLEND);
+    SDL_SetTextureAlphaMod(window, 255);
 }

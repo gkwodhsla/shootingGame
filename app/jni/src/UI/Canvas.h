@@ -18,7 +18,8 @@ public:
     void addButtonToBuffer(ButtonWidget* newWidget);
     virtual void canvasRender();
     virtual void render();
-    virtual void handleEvent(SDL_Event& e) = 0;
+    virtual bool handleEvent(SDL_Event& e) = 0;
+    void changeWindowAlphaValue(__uint8_t alpha);
 
 protected:
     int w = 500;

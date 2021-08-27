@@ -6,7 +6,8 @@ class HPawn;
 enum class INPUT_MODE
 {
     UI_ONLY,
-    GAME_ONLY
+    GAME_ONLY,
+    BOTH
 };
 
 class HPlayerController

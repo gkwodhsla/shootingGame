@@ -12,9 +12,10 @@ public:
     ButtonWidget(const std::string& downImgPath, const std::string& upImgPath);
     virtual ~ButtonWidget();
     virtual void render() override;
-    void registerbuttonDownEvent(std::function<void()>& func);
-    void registerbuttonUpEvent(std::function<void()>& func);
-    void checkIsClicked(int inputX, int inputY);
+    void registerbuttonDownEvent(const std::function<void()>& func);
+    void registerbuttonUpEvent(const std::function<void()>& func);
+    bool checkIsClicked(int inputX, int inputY);
+    bool checkIsHovering(int inputX, int inputY);
     void setButtonUp();
 public:
     std::function<void()> buttonDownEvent = nullptr;

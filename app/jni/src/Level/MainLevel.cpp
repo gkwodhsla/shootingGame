@@ -10,10 +10,14 @@
 #include "../Actors/Spawner.h"
 #include "../Actors/StageManager.h"
 #include "../UI/ShopCanvas.h"
+#include "../UI/InGameCanvas.h"
 #include "../Framework.h"
 #include "../ActorObjectPool.h"
+#include "../GlobalFunction.h"
 #include <vector>
 #include <android/log.h>
+
+using namespace GlobalFunction;
 
 std::random_device rd;
 std::default_random_engine dre(rd());
@@ -46,6 +50,25 @@ void MainLevel::handleEvent(SDL_Event& e)
             canvas->handleEvent(e);
         }
     }
+    else if(curInputMode == INPUT_MODE::BOTH)
+    {
+        bool isUserInteractWithUI = false;
+        for(auto& canvas : Framework::worldUI)
+        {
+            if (!isUserInteractWithUI)
+            {
+                isUserInteractWithUI = canvas->handleEvent(e);
+            }
+            else
+            {
+                canvas->handleEvent(e);
+            }
+        }
+        if(!isUserInteractWithUI)
+        {
+            playerController->handleEvent(e);
+        }
+    }
 }
 
 void MainLevel::update(float deltaTime)
@@ -55,7 +78,8 @@ void MainLevel::update(float deltaTime)
     //checkingCollision();
 
 
-    ShopCanvas* curCanvas = (ShopCanvas*)(shopCanvas);
+    ShopCanvas* curCanvas = Cast<ShopCanvas>(shopCanvas);
+
 
     if(curCanvas->getIsPlayButtonClicked())
     {
@@ -63,9 +87,10 @@ void MainLevel::update(float deltaTime)
         playerAirplane->setActorTickable(true);
         curCanvas->removeFromViewport();
         curCanvas->setIsPlayButtonClicked(false);
-        playerController->changeInputMode(INPUT_MODE::GAME_ONLY);
+        playerController->changeInputMode(INPUT_MODE::BOTH);
         stageManager->setStage(curCanvas->getCurStage());
         stageManager->waveBegin();
+        inGameCanvas->addToViewport();
     }
 }
 
@@ -132,6 +157,9 @@ void MainLevel::enter()
     shopCanvas = new ShopCanvas(Framework::rendererWidth, Framework::rendererHeight, 0, 0);
     shopCanvas->addToViewport();
 
+    inGameCanvas = new InGameCanvas(Framework::rendererWidth, Framework::rendererHeight, 0, 0);
+    inGameCanvas->removeFromViewport();
+
     bulletPool = new ActorObjectPool<Bullet>(500);
 }
 
@@ -143,7 +171,7 @@ void MainLevel::exit()
 void MainLevel::stageClear()
 {
     playerController->changeInputMode(INPUT_MODE::UI_ONLY);
-    ShopCanvas* curCanvas = (ShopCanvas*)(shopCanvas);
+    ShopCanvas* curCanvas = Cast<ShopCanvas>(shopCanvas);
     if(curCanvas->getMaxStage() == curCanvas->getCurStage())
     {
         curCanvas->incMaxStage();
@@ -153,4 +181,5 @@ void MainLevel::stageClear()
     playerAirplane->setActorTickable(false);
     playerAirplane->getRootComponent()->setComponentLocalLocation(std::make_pair(Framework::rendererWidth / 2,
                                                                                  Framework::rendererHeight - 300));
+    inGameCanvas->removeFromViewport();
 }

@@ -33,6 +33,7 @@ Actors/StageManager.cpp\
 Level/MainLevel.cpp\
 UI/Canvas.cpp\
 UI/ShopCanvas.cpp\
+UI/InGameCanvas.cpp\
 UI/Widget.cpp\
 UI/TextWidget.cpp\
 UI/ButtonWidget.cpp\

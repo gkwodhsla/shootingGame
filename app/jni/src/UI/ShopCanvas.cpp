@@ -38,10 +38,9 @@ void ShopCanvas::render()
     }
 }
 
-void ShopCanvas::handleEvent(SDL_Event &e)
+bool ShopCanvas::handleEvent(SDL_Event &e)
 {
-    Canvas::handleEvent(e);
-    //위젯을 순회하며 발생한 이벤트가 있는지 검사하고 적절한 함수를 호출해준다.
+    return Canvas::handleEvent(e);
 }
 
 bool ShopCanvas::getIsPlayButtonClicked()

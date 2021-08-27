@@ -43,6 +43,7 @@ private:
     const int enemyBulletSize = 100;
     float coolTime = 3.0f;
     Canvas* shopCanvas = nullptr;
+    Canvas* inGameCanvas = nullptr;
 };
 
 extern std::random_device rd;

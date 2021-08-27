@@ -21,7 +21,7 @@ public:
     virtual ~ShopCanvas();
     virtual void canvasRender();
     virtual void render();
-    virtual void handleEvent(SDL_Event& e);
+    virtual bool handleEvent(SDL_Event& e);
 
 public:
     bool getIsPlayButtonClicked();
