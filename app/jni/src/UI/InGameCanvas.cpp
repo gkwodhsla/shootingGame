@@ -1,13 +1,18 @@
 #include "InGameCanvas.h"
 #include "ButtonWidget.h"
 #include "TextWidget.h"
+#include "../GlobalFunction.h"
+#include "../Actors/Airplane.h"
 #include <android/log.h>
 #include <string>
+
+using namespace GlobalFunction;
 
 InGameCanvas::InGameCanvas(int canvasW, int canvasH, int canvasWorldX, int canvasWorldY) :
 Canvas(canvasW, canvasH, canvasWorldX, canvasWorldY)
 {
     changeWindowAlphaValue(255);
+    player = Cast<Airplane>(GetPlayerPawn());
     initWidgets();
 }
 
@@ -37,12 +42,19 @@ bool InGameCanvas::handleEvent(SDL_Event &e)
     return Canvas::handleEvent(e);
 }
 
+void InGameCanvas::update(float deltaTime)
+{
+    Canvas::update(deltaTime);
+    thunderCountText->changeText(std::to_string(player->getMissileCnt()));
+    shieldCountText->changeText(std::to_string(player->getShieldCnt()));
+}
+
 void InGameCanvas::initWidgets()
 {
     thunderButton = new ButtonWidget("image/UIImage/thunderSkillButton.png", "image/UIImage/thunderSkillButton.png");
     thunderButton->setScale(150, 150);
-    thunderButton->setLocalPosition(50, h - 300);
-    auto thunderDownEvent = []() mutable
+    thunderButton->setLocalPosition(50, h - 200);
+    auto thunderDownEvent = [=]() mutable
     {
         __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
                             "thunder Button Down");
@@ -54,13 +66,24 @@ void InGameCanvas::initWidgets()
     shieldButton = new ButtonWidget("image/UIImage/shieldSkillButton.png", "image/UIImage/shieldSkillButton.png");
     shieldButton->setScale(150, 150);
     shieldButton->setLocalPosition(50, h - 500);
-    auto shieldDownEvent = []() mutable
+    auto shieldDownEvent = [=]() mutable
     {
-        __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
-                            "shield Button Down");
+        if(player)
+        {
+            player->enableShield();
+        }
     };
     shieldButton->registerbuttonDownEvent(shieldDownEvent);
     addWidgetToBuffer(shieldButton);
     addButtonToBuffer(shieldButton);
+
+
+    shieldCountText = new TextWidget(std::to_string(player->getShieldCnt()),40, 255, 255, 255);
+    shieldCountText->setLocalPosition(50 + 65, h - 350);
+    addWidgetToBuffer(shieldCountText);
+
+    thunderCountText = new TextWidget(std::to_string(player->getMissileCnt()), 40, 255, 255, 255);
+    thunderCountText->setLocalPosition(50 + 65, h - 50);
+    addWidgetToBuffer(thunderCountText);
 
 }

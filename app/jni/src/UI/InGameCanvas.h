@@ -3,6 +3,7 @@
 
 class TextWidget;
 class ButtonWidget;
+class Airplane;
 
 class InGameCanvas :public Canvas
 {
@@ -12,17 +13,20 @@ public:
     virtual void canvasRender() override;
     virtual void render() override;
     virtual bool handleEvent(SDL_Event& e) override;
+    virtual void update(float deltaTime) override;
     void initWidgets();
 
 private:
-    TextWidget* shieldCoolTimeText = nullptr;
-    TextWidget* thunderCoolTimeText = nullptr;
     ButtonWidget* thunderButton = nullptr;
     ButtonWidget* shieldButton = nullptr;
+    TextWidget* shieldCountText = nullptr;
+    TextWidget* thunderCountText = nullptr;
 
     float thunderCoolTime = 3.0f;
     float shieldCoolTime = 3.0f;
     const float maxThunderCoolTime = 3.0f;
     const float maxShieldCoolTime = 3.0f;
+
+    Airplane* player = nullptr;
 };
 

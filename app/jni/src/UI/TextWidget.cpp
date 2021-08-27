@@ -22,6 +22,14 @@ void TextWidget::render()
     text->render();
 }
 
+void TextWidget::update(float deltaTime)
+{
+    if(visibility)
+    {
+        //나중에 애니메이션 추가시!
+    }
+}
+
 void TextWidget::changeText(std::string content)
 {
     text->changeText(content);

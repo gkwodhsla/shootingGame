@@ -36,6 +36,14 @@ void ButtonWidget::render()
     }
 }
 
+void ButtonWidget::update(float deltaTime)
+{
+    if(visibility)
+    {
+        //나중에 UI애니메이션 추가되면 여기에서 해준다.
+    }
+}
+
 void ButtonWidget::registerbuttonDownEvent(const std::function<void()> &func)
 {
     buttonDownEvent = func;

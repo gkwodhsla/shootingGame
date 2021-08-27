@@ -12,6 +12,7 @@ public:
     void setScale(int scaleX, int scaleY);
     std::pair<int, int> getLocalPosition();
     virtual void render();
+    virtual void update(float deltaTime) = 0;
     bool getVisibility();
     void setVisibility(bool isVisible);
 

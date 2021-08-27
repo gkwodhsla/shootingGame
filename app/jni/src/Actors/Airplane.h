@@ -35,6 +35,7 @@ public:
     void setFireRate(float rate);
     PLAYER_AIRPLANE_SHAPE getPlayerAirplaneShape();
     void setPlayerAirplaneShape(PLAYER_AIRPLANE_SHAPE shape);
+    void enableShield();
 
 private:
     void spawnPlayerBullet(std::pair<float, float>& spawnPos);
@@ -52,6 +53,9 @@ protected:
     void turnOffShield();
 
 private:
+    void shieldAnimation(float deltaTime);
+
+private:
     SpritesheetComponent* boosterSprite = nullptr;
     ImageComponent* shieldImage = nullptr;
     int attackPower = 50;
@@ -61,4 +65,7 @@ private:
     PLAYER_AIRPLANE_SHAPE shape = PLAYER_AIRPLANE_SHAPE::SHAPE1;
     float shieldRotation = 0.0f;
     float accTimeForFlickering = 0.0f;
+    float curShieldDuration = 5.0f;
+    const float maxShieldDuration = 5.0f;
+    bool canDestroyable = true;
 };

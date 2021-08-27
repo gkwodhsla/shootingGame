@@ -133,6 +133,17 @@ bool Canvas::handleEvent(SDL_Event &e)
     return isEventOccure;
 }
 
+void Canvas::update(float deltaTime)
+{
+    if(visibility)
+    {
+        for(auto&widget:canvasWidgets)
+        {
+            widget->update(deltaTime);
+        }
+    }
+}
+
 void Canvas::changeWindowAlphaValue(__uint8_t alpha)
 {
     SDL_SetTextureAlphaMod(window, alpha);

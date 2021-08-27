@@ -24,3 +24,11 @@ void ImageWidget::render()
     img->setScale({scaleX, scaleY});
     img->render();
 }
+
+void ImageWidget::update(float deltaTime)
+{
+    if(visibility)
+    {
+        //나중에 애니메이션 추가시!
+    }
+}

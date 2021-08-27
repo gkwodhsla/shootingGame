@@ -132,6 +132,10 @@ void Framework::handleEvent()
 
 void Framework::update(float deltaTime)
 {
+    for(auto&canvas : worldUI)
+    {
+        canvas->update(deltaTime);
+    }
     curLevel->update(deltaTime);
     tempImg->update(deltaTime);
 }

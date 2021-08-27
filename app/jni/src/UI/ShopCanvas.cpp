@@ -43,6 +43,11 @@ bool ShopCanvas::handleEvent(SDL_Event &e)
     return Canvas::handleEvent(e);
 }
 
+void ShopCanvas::update(float deltaTime)
+{
+    Canvas::update(deltaTime);
+}
+
 bool ShopCanvas::getIsPlayButtonClicked()
 {
     return isPlayButtonClicked;

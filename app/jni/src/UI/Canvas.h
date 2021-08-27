@@ -19,6 +19,7 @@ public:
     virtual void canvasRender();
     virtual void render();
     virtual bool handleEvent(SDL_Event& e) = 0;
+    virtual void update(float deltaTime);
     void changeWindowAlphaValue(__uint8_t alpha);
 
 protected:

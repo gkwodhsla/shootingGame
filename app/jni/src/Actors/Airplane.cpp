@@ -55,6 +55,7 @@ Airplane::Airplane()
     //shieldImage->setAlpha(140);
     shieldImage->setScale({200, 200});
     shieldImage->attachTo(rootComponent);
+    turnOffShield();
 }
 
 Airplane::~Airplane()
@@ -92,11 +93,16 @@ void Airplane::update(float deltaTime)
             spawnPlayerBullet(loc);
             curFireTime = fireRate;
         }
-        shieldImage->setComponentLocalRotation(shieldRotation);
-        shieldRotation+=50.0f*deltaTime;
-        accTimeForFlickering += deltaTime;
-        auto mT = fmod(accTimeForFlickering, 2.0) - 1.0f;
-        shieldImage->setAlpha(int(fabs(mT)*255.0f));
+        if(!canDestroyable)
+        {
+            shieldAnimation(deltaTime);
+            curShieldDuration-=deltaTime;
+            if(curShieldDuration < 0.1f)
+            {
+                canDestroyable = true;
+                turnOffShield();
+            }
+        }
     }
 }
 
@@ -199,6 +205,17 @@ void Airplane::setPlayerAirplaneShape(PLAYER_AIRPLANE_SHAPE shape)
     }
 }
 
+void Airplane::enableShield()
+{
+    if(shieldCnt > 0)
+    {
+        turnOnShield();
+        curShieldDuration = maxShieldDuration;
+        canDestroyable = false;
+        --shieldCnt;
+    }
+}
+
 
 void Airplane::turnOffBooster()
 {
@@ -229,22 +246,14 @@ void Airplane::spawnPlayerBullet(std::pair<float, float>& spawnPos)
         bullet->changeBulletSpeed(900.0f);
         spawnPos.first += 20.0f;
     }
+}
 
-    /*int curSpawnBulletCnt = bulletCnt;
-    for(int i = 0; i < mainLevel->playerBulletSize; ++i)
-    {
-        if(!cont[i]->getVisibility()) //만약 총알의 visbility가 꺼져있다면 해당 버퍼는 사용가능!
-        {
-            cont[i]->setVisibility(true);
-            cont[i]->setActorTickable(true);
-            cont[i]->moveTo(spawnPos); //총알액터의 위치를 세팅해준다.
-            --curSpawnBulletCnt;
-            if(curSpawnBulletCnt == 0)
-                break;
-            spawnPos.first += 20.0f;
-            //__android_log_print(ANDROID_LOG_INFO, "SDL_Error",
-               //                 "spawn using %d element", i);
-        }
-    }*/
+void Airplane::shieldAnimation(float deltaTime)
+{
+    shieldImage->setComponentLocalRotation(shieldRotation);
+    shieldRotation+=50.0f*deltaTime;
+    accTimeForFlickering += deltaTime;
+    auto mT = fmod(accTimeForFlickering, 1.0) - 0.5f;
+    shieldImage->setAlpha(int(fabs(mT * 2.0f)*255.0f));
 }
 
