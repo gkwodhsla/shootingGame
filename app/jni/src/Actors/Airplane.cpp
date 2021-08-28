@@ -46,7 +46,8 @@ Airplane::Airplane()
     auto collisionResponse = [this](HActor* other) mutable
     {
         Bullet* bullet = Cast<Bullet>(other);
-        if(bullet && !bullet->getIsPlayerBullet()) //부딪힌 오브젝트가 총알이고 적군의 총알이면
+        MainLevel* mainLevel = Cast<MainLevel>(GetLevel());
+        if(bullet && !bullet->getIsPlayerBullet() && !mainLevel->isClear) //부딪힌 오브젝트가 총알이고 적군의 총알이면
         {
             if(canDestroyable && !isDie)//데미지를 입을 수 있는 상태라면
             {

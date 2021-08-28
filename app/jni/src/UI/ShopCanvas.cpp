@@ -73,6 +73,22 @@ int ShopCanvas::getMaxStage()
     return maxStage;
 }
 
+void ShopCanvas::updateShopState()
+{
+    missileText->changeText(std::to_string(curMissile) + "/" + std::to_string(maxMissile));
+    shieldText->changeText(std::to_string(curShield) + "/" + std::to_string(maxShield));
+}
+
+void ShopCanvas::setShieldCnt(int cnt)
+{
+    curShield = cnt;
+}
+
+void ShopCanvas::setMissileCnt(int cnt)
+{
+    curMissile = cnt;
+}
+
 
 void ShopCanvas::initWidgets()
 {

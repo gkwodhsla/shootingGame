@@ -194,7 +194,11 @@ void MainLevel::afterStageClear()
     {
         curCanvas->incMaxStage();
     }
-    shopCanvas->addToViewport();
+    curCanvas->setMissileCnt(playerAirplane->getMissileCnt());
+    curCanvas->setShieldCnt(playerAirplane->getShieldCnt());
+    curCanvas->updateShopState();
+    curCanvas->addToViewport();
+
     playerAirplane->setVisibility(false);
     playerAirplane->setActorTickable(false);
     playerAirplane->getRootComponent()->setComponentLocalLocation(std::make_pair(Framework::rendererWidth / 2,
@@ -219,4 +223,5 @@ void MainLevel::afterStageClear()
     isClear = false;
 
     coolTime = maxCoolTime;
+
 }

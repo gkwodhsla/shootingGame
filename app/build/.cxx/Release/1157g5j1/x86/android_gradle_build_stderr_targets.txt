@@ -1,4 +1,4 @@
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/Airplane.cpp:268:13: warning: enumeration value 'SHAPE1' not handled in switch [-Wswitch]
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/Airplane.cpp:269:13: warning: enumeration value 'SHAPE1' not handled in switch [-Wswitch]
     switch (this->shape)
             ^
 1 warning generated.

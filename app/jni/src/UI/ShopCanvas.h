@@ -30,6 +30,9 @@ public:
     void incMaxStage();
     int getCurStage();
     int getMaxStage();
+    void updateShopState();
+    void setShieldCnt(int cnt);
+    void setMissileCnt(int cnt);
 
 private:
     void initWidgets();
