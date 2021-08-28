@@ -33,10 +33,13 @@ public:
     int getShieldCnt();
     void setShieldCnt(int shieldCnt);
     void setFireRate(float rate);
+    void setIsDie(bool isDie);
+    bool getIsDie();
     PLAYER_AIRPLANE_SHAPE getPlayerAirplaneShape();
     void setPlayerAirplaneShape(PLAYER_AIRPLANE_SHAPE shape);
     void enableShield();
     void enableThunder();
+    void playerInitWhenStageBegin();
 
 private:
     void spawnPlayerBullet(std::pair<float, float>& spawnPos);
@@ -47,6 +50,7 @@ protected:
     CollisionBoxComponent* collisionBox = nullptr;
     float fireRate = 1.0f;
     float curFireTime = 0.5f;
+    bool isDie = false;
 
 protected:
     void turnOffBooster();

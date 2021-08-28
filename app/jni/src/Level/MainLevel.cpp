@@ -31,9 +31,6 @@ MainLevel::MainLevel()
 
 MainLevel::~MainLevel()
 {
-    exit();
-    delete shopCanvas;
-    shopCanvas = nullptr;
 }
 
 void MainLevel::handleEvent(SDL_Event& e)
@@ -75,22 +72,27 @@ void MainLevel::update(float deltaTime)
 {
     HLevelBase::update(deltaTime);
 
-    //checkingCollision();
-
-
     ShopCanvas* curCanvas = Cast<ShopCanvas>(shopCanvas);
 
 
     if(curCanvas->getIsPlayButtonClicked())
     {
-        playerAirplane->setVisibility(true);
-        playerAirplane->setActorTickable(true);
+        playerAirplane->playerInitWhenStageBegin();
         curCanvas->removeFromViewport();
         curCanvas->setIsPlayButtonClicked(false);
         playerController->changeInputMode(INPUT_MODE::BOTH);
         stageManager->setStage(curCanvas->getCurStage());
         stageManager->waveBegin();
         inGameCanvas->addToViewport();
+    }
+
+    if(isClear)
+    {
+        coolTime -= deltaTime;
+        if(coolTime<=0.0f)
+        {
+            afterStageClear();
+        }
     }
 }
 
@@ -181,9 +183,14 @@ void MainLevel::killAllEnemyAirplane()
 
 void MainLevel::stageClear()
 {
+    isClear = true;
+}
+
+void MainLevel::afterStageClear()
+{
     playerController->changeInputMode(INPUT_MODE::UI_ONLY);
     ShopCanvas* curCanvas = Cast<ShopCanvas>(shopCanvas);
-    if(curCanvas->getMaxStage() == curCanvas->getCurStage())
+    if(curCanvas->getMaxStage() == curCanvas->getCurStage() && !playerAirplane->getIsDie())
     {
         curCanvas->incMaxStage();
     }
@@ -192,5 +199,24 @@ void MainLevel::stageClear()
     playerAirplane->setActorTickable(false);
     playerAirplane->getRootComponent()->setComponentLocalLocation(std::make_pair(Framework::rendererWidth / 2,
                                                                                  Framework::rendererHeight - 300));
+    for(auto& enemy:enemyAirplanes)
+    {
+        if(enemy->getVisibility())
+        {
+            enemy->resetEnemyAirplaneToInitialState();
+        }
+    }
+    if(boss1->getVisibility())
+    {
+        boss1->resetEnemyAirplaneToInitialState();
+    }
+    if(boss2->getVisibility())
+    {
+        boss2->resetEnemyAirplaneToInitialState();
+    }
     inGameCanvas->removeFromViewport();
+
+    isClear = false;
+
+    coolTime = maxCoolTime;
 }

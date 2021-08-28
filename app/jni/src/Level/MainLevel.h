@@ -23,13 +23,14 @@ public:
     void enter() override;
     void exit() override;
     void killAllEnemyAirplane();
+    void stageClear();
     friend class Airplane;
     friend class Spawner;
     friend class EnemyAirplane;
     friend class StageManager;
 
 private:
-    void stageClear();
+    void afterStageClear();
 
 public:
     ActorObjectPool<Bullet>* bulletPool;
@@ -43,8 +44,10 @@ private:
     const int playerBulletSize = 100;
     const int enemyBulletSize = 100;
     float coolTime = 3.0f;
+    const float maxCoolTime = 3.0f;
     Canvas* shopCanvas = nullptr;
     Canvas* inGameCanvas = nullptr;
+    bool isClear = false;
 };
 
 extern std::random_device rd;

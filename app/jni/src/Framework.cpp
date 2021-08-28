@@ -110,6 +110,12 @@ Framework::~Framework()
 
     delete fpsText;
     fpsText = nullptr;
+
+    for(auto& canvas:worldUI)
+    {
+        delete canvas;
+        canvas = nullptr;
+    }
     TTF_Quit();
     IMG_Quit();
     SDL_Quit();

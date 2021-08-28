@@ -69,8 +69,8 @@ EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp)
     befPos = std::make_pair(-999, -999);
 
     hpBar = new ImageComponent("image/misc/hpBar.png", std::make_pair(0, 0), this);
-    hpBar->setAffectRotationFromParent(false);
     hpBar->attachTo(airplaneImg);
+    hpBar->setAffectRotationFromParent(false);
     airplaneImg->setScale(std::make_pair(160, 160));
     if (shape == ENEMY_SHIP_SHAPE::BOSS1 || shape == ENEMY_SHIP_SHAPE::BOSS2)
     {
@@ -140,7 +140,7 @@ void EnemyAirplane::render()
 void EnemyAirplane::update(float deltaTime)
 {
     HPawn::update(deltaTime);
-    if (curHp <= 0 && explosionSprite->getIsPlayEnd())
+    if (isDie && explosionSprite->getIsPlayEnd())
     {
         resetEnemyAirplaneToInitialState();
     }
@@ -255,6 +255,7 @@ void EnemyAirplane::getDamage(int damage)
         {
             mainLevel->stageManager->enemyAirplaneDie();
         }
+        isDie = true;
     }
     float barSize = float(hpBarRowSize) / float(maxHP);
     hpBar->setScale(std::make_pair(barSize * float(curHp), hpBarColSize));
@@ -282,6 +283,7 @@ void EnemyAirplane::resetEnemyAirplaneToInitialState()
     canDamaged = false;
     curFireTime = fireRate;
     isArrived = false;
+    isDie = false;
 }
 
 

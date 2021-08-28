@@ -43,9 +43,27 @@ Airplane::Airplane()
     explosionSprite->setLooping(false);
     explosionSprite->setDrawCntPerSec(40);
 
+    auto collisionResponse = [this](HActor* other) mutable
+    {
+        Bullet* bullet = Cast<Bullet>(other);
+        if(bullet && !bullet->getIsPlayerBullet()) //부딪힌 오브젝트가 총알이고 적군의 총알이면
+        {
+            if(canDestroyable && !isDie)//데미지를 입을 수 있는 상태라면
+            {
+                airplaneImg->setVisibility(false);
+                boosterSprite->setVisibility(false);
+                explosionSprite->play();
+                canDestroyable = false;
+                isDie = true;
+                MainLevel* mainLevel = Cast<MainLevel>(GetLevel());
+                mainLevel->stageClear();
+            }
+        }
+    };
     collisionBox = new CollisionBoxComponent(0, 0, airPlaneImgSize.first, airPlaneImgSize.second, this);
     collisionBox->setDrawDebugBox(true);
     collisionBox->attachTo(rootComponent);
+    collisionBox->registerCollisionResponse(collisionResponse);
 
     shieldImage = new ImageComponent("image/misc/shield.png",{-50, -50},this);
     //shieldImage->setAlpha(140);
@@ -193,6 +211,17 @@ void Airplane::setFireRate(float rate)
     fireRate = rate;
 }
 
+void Airplane::setIsDie(bool isDie)
+{
+    this->isDie = isDie;
+}
+
+bool Airplane::getIsDie()
+{
+    return isDie;
+}
+
+
 void Airplane::setPlayerAttackPower(int attackPower)
 {
     this->attackPower = attackPower;
@@ -252,7 +281,7 @@ void Airplane::setPlayerAirplaneShape(PLAYER_AIRPLANE_SHAPE shape)
 
 void Airplane::enableShield()
 {
-    if(shieldCnt > 0)
+    if(shieldCnt > 0 && !isDie)
     {
         turnOnShield();
         curShieldDuration = maxShieldDuration;
@@ -280,16 +309,19 @@ void Airplane::turnOffShield()
 
 void Airplane::spawnPlayerBullet(std::pair<float, float>& spawnPos)
 {
-    MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
-    auto cont = mainLevel->bulletPool;
-
-    for(int i = bulletCnt; i > 0; --i)
+    if(!isDie)
     {
-        auto bullet = cont->acquireObject();
-        bullet->init(spawnPos, BULLET_COLOR::GREEN);
-        bullet->setActorDirectionalVector({0.0f, -1.0f});
-        bullet->changeBulletSpeed(900.0f);
-        spawnPos.first += 20.0f;
+        MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
+        auto cont = mainLevel->bulletPool;
+
+        for(int i = bulletCnt; i > 0; --i)
+        {
+            auto bullet = cont->acquireObject();
+            bullet->init(spawnPos, BULLET_COLOR::GREEN);
+            bullet->setActorDirectionalVector({0.0f, -1.0f});
+            bullet->changeBulletSpeed(900.0f);
+            spawnPos.first += 20.0f;
+        }
     }
 }
 
@@ -304,7 +336,7 @@ void Airplane::shieldAnimation(float deltaTime)
 
 void Airplane::enableThunder()
 {
-    if(missileCnt > 0)
+    if(missileCnt > 0 && !isDie)
     {
         thunderAttack1->play();
         thunderAttack2->play();
@@ -312,4 +344,15 @@ void Airplane::enableThunder()
 
         --missileCnt;
     }
+}
+
+void Airplane::playerInitWhenStageBegin()
+{
+    airplaneImg->setVisibility(true);
+    boosterSprite->setVisibility(true);
+    isDie = false;
+    canDestroyable = true;
+    setVisibility(true);
+    setActorTickable(true);
+    explosionSprite->stop();
 }
