@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ImageComponent.h"
+#include <map>
 
 class SpritesheetComponent : public ImageComponent
 {
@@ -13,6 +14,7 @@ public:
     virtual void update(float deltaTime) override;
     void play();
     void stop();
+    void addEventAtNFrame(int n, const std::function<void()>& func);
 public:
     void setLooping(bool isLooping);
     const bool getLooping();
@@ -21,10 +23,12 @@ public:
 
 private:
     std::vector<SDL_Rect*> clipRects;
+    std::map<int, std::function<void()>> events;
     bool isLooping = false;
     bool canIncFrame = false;
     bool isPlayEnd = false;
     float curFrame = 0;
+    int befFrame = -1;
     int drawCntPerSec = 10;
 };
 

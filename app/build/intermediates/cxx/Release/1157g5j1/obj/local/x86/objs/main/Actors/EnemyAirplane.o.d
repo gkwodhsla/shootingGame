@@ -110,6 +110,10 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__split_buffer \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\CollisionBoxComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\SpritesheetComponent.h \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\map \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__tree \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__node_handle \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\optional \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\SplineComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Framework.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\TTFComponent.h \
@@ -375,6 +379,14 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__s
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\CollisionBoxComponent.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\SpritesheetComponent.h:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\map:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__tree:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__node_handle:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\optional:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\SplineComponent.h:
 

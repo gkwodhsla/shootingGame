@@ -142,6 +142,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\StageManager.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\ShopCanvas.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\Canvas.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\InGameCanvas.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Framework.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\TTFComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\HPrimitiveComponent.h \
@@ -151,7 +152,8 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\ActorObjectPool.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\queue \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\deque \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h
+  D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\GlobalFunction.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\MainLevel.h:
 
@@ -437,6 +439,8 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\ShopCanvas.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\Canvas.h:
 
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\InGameCanvas.h:
+
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Framework.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Components\TTFComponent.h:
@@ -456,3 +460,5 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\que
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\deque:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\GlobalFunction.h:

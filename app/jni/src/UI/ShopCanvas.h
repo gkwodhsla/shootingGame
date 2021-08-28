@@ -81,7 +81,7 @@ private:
     const int maxAttackPower = 7;
     const int maxBullet = 7;
     const int maxAirplane = 3;
-    const int maxMissile = 3;
+    const int maxMissile = 1;
     const int maxShield = 3;
     bool isPlayButtonClicked = false;
 };

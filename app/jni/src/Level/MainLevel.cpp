@@ -168,6 +168,17 @@ void MainLevel::exit()
 
 }
 
+void MainLevel::killAllEnemyAirplane()
+{
+    for(auto&enemy:enemyAirplanes)
+    {
+        if(enemy->getVisibility())
+        {
+            enemy->getDamage(99999);
+        }
+    }
+}
+
 void MainLevel::stageClear()
 {
     playerController->changeInputMode(INPUT_MODE::UI_ONLY);

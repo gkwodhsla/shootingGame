@@ -1,6 +1,7 @@
 #include "SpritesheetComponent.h"
 #include "../Framework.h"
 #include <vector>
+#include <functional>
 #include <SDL.h>
 #include <android/log.h>
 
@@ -61,16 +62,27 @@ void SpritesheetComponent::render()
 void SpritesheetComponent::update(float deltaTime)
 {
     HPrimitiveComponent::update(deltaTime);
-    if(!isLooping)
+    if(visibility)
     {
-        if(curFrame > clipRects.size() - 1)
+        if(!isLooping)
         {
-            stop();
+            if(curFrame > clipRects.size() - 1)
+            {
+                stop();
+            }
         }
-    }
-    if(canIncFrame)
-    {
-        curFrame +=  drawCntPerSec * deltaTime;
+        if(canIncFrame)
+        {
+            curFrame +=  drawCntPerSec * deltaTime;
+        }
+        if(int(curFrame) % clipRects.size() != befFrame)
+        {
+            if(events.find(int(curFrame) % clipRects.size()) != events.end()) //이벤트가 등록되어있는 경우만 호출해준다.
+            {
+                events[int(curFrame) % clipRects.size()]();
+            }
+        }
+        befFrame = int(curFrame) % clipRects.size();
     }
 }
 
@@ -86,7 +98,13 @@ void SpritesheetComponent::stop()
     canIncFrame = false;
     isPlayEnd = true;
     curFrame = 0;
+    befFrame = -1;
     visibility = false;
+}
+
+void SpritesheetComponent::addEventAtNFrame(int n, const std::function<void()>& func)
+{
+    events.insert({n, func});
 }
 
 void SpritesheetComponent::setLooping(bool isLooping)

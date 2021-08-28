@@ -167,9 +167,9 @@ void ShopCanvas::initWidgets()
     addButtonToBuffer(missileButton);
     missileButton->buttonUpEvent = [this]()mutable
     {
-        this->explanationText1->changeText("Get this special missle");
-        this->explanationText2->changeText("your enemy will be fatally wounded when");
-        this->explanationText3->changeText("hit this santa's little present");
+        this->explanationText1->changeText("Get this special skill");
+        this->explanationText2->changeText("your enemy will be fatally wounded");
+        this->explanationText3->changeText(" ");
         this->explanationText4->changeText("Cost: " + std::to_string(missileFee));
         whichItemButton = WHICH_ITEM_BUTTON::MISSILE;
     };

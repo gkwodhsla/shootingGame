@@ -36,6 +36,7 @@ public:
     PLAYER_AIRPLANE_SHAPE getPlayerAirplaneShape();
     void setPlayerAirplaneShape(PLAYER_AIRPLANE_SHAPE shape);
     void enableShield();
+    void enableThunder();
 
 private:
     void spawnPlayerBullet(std::pair<float, float>& spawnPos);
@@ -57,6 +58,9 @@ private:
 
 private:
     SpritesheetComponent* boosterSprite = nullptr;
+    SpritesheetComponent* thunderAttack1 = nullptr;
+    SpritesheetComponent* thunderAttack2 = nullptr;
+    SpritesheetComponent* thunderAttack3 = nullptr;
     ImageComponent* shieldImage = nullptr;
     int attackPower = 50;
     int bulletCnt = 1;
@@ -68,4 +72,5 @@ private:
     float curShieldDuration = 5.0f;
     const float maxShieldDuration = 5.0f;
     bool canDestroyable = true;
+    bool isThunderTime = false;
 };

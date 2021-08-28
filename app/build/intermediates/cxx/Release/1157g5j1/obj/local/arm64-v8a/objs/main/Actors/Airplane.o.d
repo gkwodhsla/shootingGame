@@ -89,6 +89,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\climits \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\limits.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__split_buffer \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cmath \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Airplane.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\HPawn.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\HActor.h \
@@ -107,6 +108,10 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wctype.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\..\Actors\HActor.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\SpritesheetComponent.h \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\map \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__tree \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__node_handle \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\optional \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\CollisionBoxComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\ActorObjectPool.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\queue \
@@ -124,7 +129,6 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\MainLevel.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Bullet.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\random \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cmath \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\numeric \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\istream \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\ostream \
@@ -329,6 +333,8 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\lim
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__split_buffer:
 
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cmath:
+
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Airplane.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\HPawn.h:
@@ -365,6 +371,14 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\..\A
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\SpritesheetComponent.h:
 
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\map:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__tree:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__node_handle:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\optional:
+
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\CollisionBoxComponent.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\ActorObjectPool.h:
@@ -398,8 +412,6 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\MainLevel
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Bullet.h:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\random:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cmath:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\numeric:
 

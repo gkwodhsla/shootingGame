@@ -1,7 +1,3 @@
-//
-// Created by lenovo on 2021-08-11.
-//
-
 #include <SDL.h>
 #include <android/log.h>
 #include <vector>
@@ -56,6 +52,43 @@ Airplane::Airplane()
     shieldImage->setScale({200, 200});
     shieldImage->attachTo(rootComponent);
     turnOffShield();
+
+    auto thunderEvent = []()
+    {
+        MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
+        if (mainLevel)
+        {
+            mainLevel->killAllEnemyAirplane();
+        }
+    };
+    thunderAttack1 = new SpritesheetComponent("image/spritesheet/thunder.png",{0, 0},
+                                             this,16,16,1);
+    thunderAttack1->attachTo(rootComponent, false);
+    thunderAttack1->setLooping(false);
+    thunderAttack1->setDrawCntPerSec(15);
+    thunderAttack1->setScale({700,Framework::rendererHeight});
+    thunderAttack1->setComponentLocalLocation({-250.0f,0.0f});
+    thunderAttack1->addEventAtNFrame(10, thunderEvent);
+
+    thunderAttack2 = new SpritesheetComponent("image/spritesheet/thunder.png",{0, 0},
+                                              this,16,16,1);
+    thunderAttack2->attachTo(rootComponent, false);
+    thunderAttack2->setLooping(false);
+    thunderAttack2->setDrawCntPerSec(15);
+    thunderAttack2->setScale({700,Framework::rendererHeight});
+    thunderAttack2->setComponentLocalLocation({Framework::rendererWidth/2 - 350,0.0f});
+    thunderAttack2->addEventAtNFrame(10, thunderEvent);
+
+    thunderAttack3 = new SpritesheetComponent("image/spritesheet/thunder.png",{0, 0},
+                                              this,16,16,1);
+    thunderAttack3->attachTo(rootComponent, false);
+    thunderAttack3->setLooping(false);
+    thunderAttack3->setDrawCntPerSec(15);
+    thunderAttack3->setScale({700,Framework::rendererHeight});
+    thunderAttack3->setComponentLocalLocation({Framework::rendererWidth - 500,0.0f});
+    thunderAttack3->addEventAtNFrame(10, thunderEvent);
+
+
 }
 
 Airplane::~Airplane()
@@ -71,7 +104,19 @@ Airplane::~Airplane()
 
     delete explosionSprite;
     explosionSprite = nullptr;
-    //추후 추가 예정
+
+    delete shieldImage;
+    shieldImage = nullptr;
+
+    delete thunderAttack1;
+    thunderAttack1 = nullptr;
+
+    delete thunderAttack2;
+    thunderAttack2 = nullptr;
+
+    delete thunderAttack3;
+    thunderAttack3 = nullptr;
+
 }
 
 void Airplane::render()
@@ -257,3 +302,14 @@ void Airplane::shieldAnimation(float deltaTime)
     shieldImage->setAlpha(int(fabs(mT * 2.0f)*255.0f));
 }
 
+void Airplane::enableThunder()
+{
+    if(missileCnt > 0)
+    {
+        thunderAttack1->play();
+        thunderAttack2->play();
+        thunderAttack3->play();
+
+        --missileCnt;
+    }
+}

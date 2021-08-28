@@ -56,8 +56,10 @@ void InGameCanvas::initWidgets()
     thunderButton->setLocalPosition(50, h - 200);
     auto thunderDownEvent = [=]() mutable
     {
-        __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
-                            "thunder Button Down");
+        if(player)
+        {
+            player->enableThunder();
+        }
     };
     thunderButton->registerbuttonDownEvent(thunderDownEvent);
     addWidgetToBuffer(thunderButton);

@@ -30,6 +30,5 @@ public:
     static int rendererHeight;
     static HLevelBase* curLevel;
     static std::vector<Canvas*> worldUI;
-    SpritesheetComponent* tempImg;
 };
 

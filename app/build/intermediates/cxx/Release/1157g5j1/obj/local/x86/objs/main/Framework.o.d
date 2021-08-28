@@ -140,6 +140,10 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bitset \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\SpritesheetComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\ImageComponent.h \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\map \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__tree \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__node_handle \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\optional \
   D:\comtus\Development\android\shootingGame\app\jni\SDL_image\SDL_image.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_version.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\Canvas.h
@@ -423,6 +427,14 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bit
 D:\comtus\Development\android\shootingGame\app\jni\src\Components\SpritesheetComponent.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Components\ImageComponent.h:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\map:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__tree:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__node_handle:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\optional:
 
 D:\comtus\Development\android\shootingGame\app\jni\SDL_image\SDL_image.h:
 

@@ -22,6 +22,7 @@ public:
     void render() override;
     void enter() override;
     void exit() override;
+    void killAllEnemyAirplane();
     friend class Airplane;
     friend class Spawner;
     friend class EnemyAirplane;

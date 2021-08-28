@@ -31,7 +31,7 @@ public:
     bool getAffectLocationFromParent ();
 
 public:
-    void attachTo(HSceneComponent* component);
+    void attachTo(HSceneComponent* component, bool isAffectFromParent = true);
 
 protected:
     HSceneComponent* parent = nullptr;
