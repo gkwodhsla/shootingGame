@@ -136,10 +136,11 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Airplane.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\HPawn.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\EnemyAirplane.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\SplineComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Crystal.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Spawner.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\..\Components\SplineComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\StageManager.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\SplineComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\ShopCanvas.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\Canvas.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\InGameCanvas.h \
@@ -427,13 +428,15 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\HPawn.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\EnemyAirplane.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\SplineComponent.h:
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Crystal.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Spawner.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\..\Components\SplineComponent.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\StageManager.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\SplineComponent.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\ShopCanvas.h:
 

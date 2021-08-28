@@ -4,11 +4,12 @@
 #include "../Actors/BackgroundActor.h"
 #include "../Actors/Airplane.h"
 #include "../Actors/EnemyAirplane.h"
+#include "../Actors/Crystal.h"
+#include "../Actors/Spawner.h"
+#include "../Actors/StageManager.h"
 #include "../HPlayerController.h"
 #include "../Components/CollisionBoxComponent.h"
 #include "../Components/SplineComponent.h"
-#include "../Actors/Spawner.h"
-#include "../Actors/StageManager.h"
 #include "../UI/ShopCanvas.h"
 #include "../UI/InGameCanvas.h"
 #include "../Framework.h"
@@ -31,6 +32,11 @@ MainLevel::MainLevel()
 
 MainLevel::~MainLevel()
 {
+    delete bulletPool;
+    bulletPool = nullptr;
+
+    delete crystalPool;
+    crystalPool = nullptr;
 }
 
 void MainLevel::handleEvent(SDL_Event& e)
@@ -163,6 +169,7 @@ void MainLevel::enter()
     inGameCanvas->removeFromViewport();
 
     bulletPool = new ActorObjectPool<Bullet>(500);
+    crystalPool = new ActorObjectPool<Crystal>(50);
 }
 
 void MainLevel::exit()

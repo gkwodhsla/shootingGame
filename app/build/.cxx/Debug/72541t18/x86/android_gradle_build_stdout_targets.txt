@@ -3,9 +3,8 @@ make: Nothing to be done for 'SDL2_image'.
 make: Nothing to be done for 'SDL2_mixer'.
 make: Nothing to be done for 'SDL2_ttf'.
 make: Nothing to be done for 'hidapi'.
-[x86] Compile++      : main <= Framework.cpp
-[x86] Compile++      : main <= SpritesheetComponent.cpp
-[x86] Compile++      : main <= Airplane.cpp
-[x86] Compile++      : main <= EnemyAirplane.cpp
+[x86] Compile++      : main <= Crystal.cpp
+[x86] Compile++      : main <= MainLevel.cpp
+[x86] Compile++      : main <= ShopCanvas.cpp
 [x86] SharedLibrary  : libmain.so
 make: Nothing to be done for 'mpg123'.

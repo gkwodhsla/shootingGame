@@ -9,6 +9,7 @@ class EnemyAirplane;
 class Bullet;
 class StageManager;
 class Canvas;
+class Crystal;
 template<typename T>
 class ActorObjectPool;
 
@@ -34,6 +35,9 @@ private:
 
 public:
     ActorObjectPool<Bullet>* bulletPool;
+    ActorObjectPool<Crystal>* crystalPool;
+    Canvas* shopCanvas = nullptr;
+    Canvas* inGameCanvas = nullptr;
 
 private:
     StageManager* stageManager = nullptr;
@@ -45,8 +49,6 @@ private:
     const int enemyBulletSize = 100;
     float coolTime = 3.0f;
     const float maxCoolTime = 3.0f;
-    Canvas* shopCanvas = nullptr;
-    Canvas* inGameCanvas = nullptr;
     bool isClear = false;
 };
 

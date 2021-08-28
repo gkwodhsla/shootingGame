@@ -77,6 +77,7 @@ void ShopCanvas::updateShopState()
 {
     missileText->changeText(std::to_string(curMissile) + "/" + std::to_string(maxMissile));
     shieldText->changeText(std::to_string(curShield) + "/" + std::to_string(maxShield));
+    moneyText->changeText(std::to_string(curCrystal));
 }
 
 void ShopCanvas::setShieldCnt(int cnt)
@@ -89,6 +90,10 @@ void ShopCanvas::setMissileCnt(int cnt)
     curMissile = cnt;
 }
 
+void ShopCanvas::addCrystal(int howMany)
+{
+    curCrystal += howMany;
+}
 
 void ShopCanvas::initWidgets()
 {

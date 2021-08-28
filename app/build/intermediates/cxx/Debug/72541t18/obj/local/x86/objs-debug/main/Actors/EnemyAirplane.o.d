@@ -75,6 +75,8 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_locale.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_misc.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Bullet.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\StageManager.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Crystal.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\ImageComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HPrimitiveComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HSceneComponent.h \
@@ -157,8 +159,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\deque \
   D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\HLevelBase.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Actors\Bullet.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\StageManager.h
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Actors\Bullet.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\EnemyAirplane.h:
 
@@ -309,6 +310,10 @@ D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_locale
 D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_misc.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Bullet.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\StageManager.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Crystal.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\ImageComponent.h:
 
@@ -475,5 +480,3 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h:
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\HLevelBase.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Actors\Bullet.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\StageManager.h:

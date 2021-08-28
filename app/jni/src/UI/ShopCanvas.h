@@ -33,6 +33,7 @@ public:
     void updateShopState();
     void setShieldCnt(int cnt);
     void setMissileCnt(int cnt);
+    void addCrystal(int howMany);
 
 private:
     void initWidgets();

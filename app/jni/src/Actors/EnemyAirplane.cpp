@@ -1,4 +1,6 @@
 #include "EnemyAirplane.h"
+#include "StageManager.h"
+#include "Crystal.h"
 #include "../Components/ImageComponent.h"
 #include "../Components/HSceneComponent.h"
 #include "../Components/CollisionBoxComponent.h"
@@ -9,7 +11,6 @@
 #include "../GlobalFunction.h"
 #include "../ActorObjectPool.h"
 #include "../Actors/Bullet.h"
-#include "StageManager.h"
 #include <android/log.h>
 #include <random>
 
@@ -256,6 +257,9 @@ void EnemyAirplane::getDamage(int damage)
             mainLevel->stageManager->enemyAirplaneDie();
         }
         isDie = true;
+
+        auto spawnedCrystal = mainLevel->crystalPool->acquireObject();
+        spawnedCrystal->getRootComponent()->setComponentLocalLocation(getActorWorldLocation());
     }
     float barSize = float(hpBarRowSize) / float(maxHP);
     hpBar->setScale(std::make_pair(barSize * float(curHp), hpBarColSize));

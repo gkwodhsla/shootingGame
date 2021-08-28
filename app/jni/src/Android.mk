@@ -30,6 +30,7 @@ Actors/Airplane.cpp\
 Actors/EnemyAirplane.cpp\
 Actors/Spawner.cpp\
 Actors/StageManager.cpp\
+Actors/Crystal.cpp\
 Level/MainLevel.cpp\
 UI/Canvas.cpp\
 UI/ShopCanvas.cpp\
