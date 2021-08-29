@@ -150,11 +150,14 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\SplineComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\ShopCanvas.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\InGameCanvas.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\CashShopCanvas.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\ActorObjectPool.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\queue \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\deque \
   D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\GlobalFunction.h
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\GlobalFunction.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\AirplaneController.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\MainLevel.h:
 
@@ -456,6 +459,8 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\ShopCanvas.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\InGameCanvas.h:
 
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\CashShopCanvas.h:
+
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\ActorObjectPool.h:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\queue:
@@ -465,3 +470,7 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\deq
 D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\GlobalFunction.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\AirplaneController.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h:

@@ -7,6 +7,7 @@
 #include "../Level/MainLevel.h"
 #include "../ActorObjectPool.h"
 #include "../UI/ShopCanvas.h"
+#include "../AirplaneController.h"
 #include <android/log.h>
 
 using namespace GlobalFunction;
@@ -25,10 +26,11 @@ Crystal::Crystal() {
         if(other == GetPlayerPawn())
         {
             auto mainLevel = Cast<MainLevel>(GetLevel());
+            auto PC = Cast<AirplaneController>(GetPlayerController());
             if(mainLevel)
             {
                 mainLevel->crystalPool->returnToPool(this);
-                auto canvas = Cast<ShopCanvas>(mainLevel->shopCanvas);
+                auto canvas = Cast<ShopCanvas>(PC->shopCanvas);
                 if(canvas)
                 {
                     canvas->addCrystal(1);
@@ -68,5 +70,13 @@ void Crystal::update(float deltaTime)
     if(tickable)
     {
         crystalMovement->update(deltaTime);
+        if(rootComponent->getComponentWorldLocation().second > 2500.0f)
+        {
+            auto mainLevel = Cast<MainLevel>(GetLevel());
+            if(mainLevel)
+            {
+                mainLevel->crystalPool->returnToPool(this);
+            }
+        }
     }
 }

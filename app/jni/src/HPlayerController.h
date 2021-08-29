@@ -13,7 +13,7 @@ enum class INPUT_MODE
 class HPlayerController
 {
 public:
-    HPlayerController();
+    HPlayerController(HPawn* controlledPawn);
     virtual ~HPlayerController();
     void possess(HPawn* pawn);
     void unpossess();

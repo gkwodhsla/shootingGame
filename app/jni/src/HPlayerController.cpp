@@ -1,11 +1,7 @@
-//
-// Created by lenovo on 2021-08-10.
-//
-
 #include "HPlayerController.h"
 #include "Actors/HPawn.h"
 
-HPlayerController::HPlayerController()
+HPlayerController::HPlayerController(HPawn* controlledPawn)
 {
 
 }

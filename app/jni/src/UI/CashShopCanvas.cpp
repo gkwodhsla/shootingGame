@@ -70,8 +70,8 @@ void CashShopCanvas::initWindowImageWidgets()
     moneyWindowImage->setScale(200, 110);
     addWidgetToBuffer(moneyWindowImage);
 
-    int smallWindowXSize = (w - 400) / 2;
-    int smallWindowYSize = (h - 1000) / 2;
+    int smallWindowXSize = 350;
+    int smallWindowYSize = 350;
     int curX = 100;
     int curY = -smallWindowYSize + 200;
     for(int i = 0; i < sellItemNum; ++i)
@@ -99,8 +99,8 @@ void CashShopCanvas::initWindowImageWidgets()
 
 void CashShopCanvas::initButtonWidgets()
 {
-    int smallWindowXSize = (w - 400) / 2;
-    int smallWindowYSize = (h - 1000) / 2;
+    int smallWindowXSize = 350;
+    int smallWindowYSize = 350;
     int curX = 100;
     int curY = -smallWindowYSize + 200;
     for(int i = 0; i < sellItemNum; ++i)
@@ -133,8 +133,8 @@ void CashShopCanvas::initTextWidgets()
     moneyText->setLocalPosition(w - 230, 65);
     addWidgetToBuffer(moneyText);
 
-    int smallWindowXSize = (w - 400) / 2;
-    int smallWindowYSize = (h - 1000) / 2;
+    int smallWindowXSize = 350;
+    int smallWindowYSize = 350;
     int curX = 100;
     int curY = -smallWindowYSize + 200;
     for(int i = 0; i < sellItemNum; ++i)

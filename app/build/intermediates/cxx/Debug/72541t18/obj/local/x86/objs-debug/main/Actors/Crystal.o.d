@@ -152,7 +152,9 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\deque \
   D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\HLevelBase.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\UI\ShopCanvas.h
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\UI\ShopCanvas.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\AirplaneController.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Crystal.h:
 
@@ -459,3 +461,7 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h:
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\HLevelBase.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\UI\ShopCanvas.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\AirplaneController.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h:

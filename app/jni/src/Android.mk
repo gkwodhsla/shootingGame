@@ -12,6 +12,7 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/$(SDL_PATH)/include
 LOCAL_SRC_FILES := main.cpp \
 Framework.cpp\
 HPlayerController.cpp\
+AirplaneController.cpp\
 Vector2D.cpp\
 GlobalFunction.cpp\
 Components/HSceneComponent.cpp\

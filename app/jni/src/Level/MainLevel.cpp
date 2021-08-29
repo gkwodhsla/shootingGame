@@ -15,6 +15,7 @@
 #include "../UI/CashShopCanvas.h"
 #include "../ActorObjectPool.h"
 #include "../GlobalFunction.h"
+#include "../AirplaneController.h"
 #include <vector>
 #include <android/log.h>
 
@@ -48,8 +49,9 @@ void MainLevel::update(float deltaTime)
 {
     HLevelBase::update(deltaTime);
 
-    ShopCanvas* curCanvas = Cast<ShopCanvas>(shopCanvas);
+    AirplaneController* PC = Cast<AirplaneController>(playerController);
 
+    ShopCanvas* curCanvas = Cast<ShopCanvas>(PC->shopCanvas);
 
     if(curCanvas->getIsPlayButtonClicked())
     {
@@ -59,7 +61,7 @@ void MainLevel::update(float deltaTime)
         playerController->changeInputMode(INPUT_MODE::BOTH);
         stageManager->setStage(curCanvas->getCurStage());
         stageManager->waveBegin();
-        inGameCanvas->addToViewport();
+        PC->inGameCanvas->addToViewport();
     }
 
     if(isClear)
@@ -85,9 +87,11 @@ void MainLevel::enter()
     playerAirplane->setVisibility(false);
     playerAirplane->setActorTickable(false);
 
-    playerController = new HPlayerController();
+    playerController = new AirplaneController(playerAirplane);
     playerController->possess(playerAirplane);
     playerController->changeInputMode(INPUT_MODE::UI_ONLY);
+    auto PC = Cast<AirplaneController>(playerController);
+    PC->createCanvases();
 
     int enemySize = 16;//Spawner::numOfDestX * Spawner::numOfDestY;
     enemyAirplanes.reserve(enemySize);
@@ -131,16 +135,6 @@ void MainLevel::enter()
     boss2->setVisibility(false);
     boss2->setActorTickable(false);
     boss2->setBulletPattern(ENEMY_BULLET_PATTERN::BOSS_STAR);
-
-    shopCanvas = new ShopCanvas(Framework::rendererWidth, Framework::rendererHeight, 0, 0);
-    shopCanvas->addToViewport();
-
-    inGameCanvas = new InGameCanvas(Framework::rendererWidth, Framework::rendererHeight, 0, 0);
-    inGameCanvas->removeFromViewport();
-
-    cashShopCanvas = new CashShopCanvas(Framework::rendererWidth, Framework::rendererHeight, 0, 0);
-    cashShopCanvas->addToViewport();
-
     bulletPool = new ActorObjectPool<Bullet>(500);
     crystalPool = new ActorObjectPool<Crystal>(50);
 }
@@ -169,7 +163,9 @@ void MainLevel::stageClear()
 void MainLevel::afterStageClear()
 {
     playerController->changeInputMode(INPUT_MODE::UI_ONLY);
-    ShopCanvas* curCanvas = Cast<ShopCanvas>(shopCanvas);
+    AirplaneController* PC = Cast<AirplaneController>(playerController);
+
+    ShopCanvas* curCanvas = Cast<ShopCanvas>(PC->shopCanvas);
     if(curCanvas->getMaxStage() == curCanvas->getCurStage() && !playerAirplane->getIsDie())
     {
         curCanvas->incMaxStage();
@@ -198,7 +194,7 @@ void MainLevel::afterStageClear()
     {
         boss2->resetEnemyAirplaneToInitialState();
     }
-    inGameCanvas->removeFromViewport();
+    PC->inGameCanvas->removeFromViewport();
 
     isClear = false;
 
