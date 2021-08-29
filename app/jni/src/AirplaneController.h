@@ -8,6 +8,8 @@ public:
     virtual ~AirplaneController();
     void createCanvases();
     void changeShop();
+    int getMoney();
+    void setMoney(int newMoney);
 
 public:
     Canvas* shopCanvas = nullptr;

@@ -52,6 +52,23 @@ void CashShopCanvas::update(float deltaTime)
     Canvas::update(deltaTime);
 }
 
+void CashShopCanvas::updateCrystalText()
+{
+    moneyText->changeText(std::to_string(curCrystal));
+}
+
+int CashShopCanvas::getCrystal()
+{
+    return curCrystal;
+}
+
+void CashShopCanvas::setCrystal(int crystal)
+{
+    curCrystal = crystal;
+    updateCrystalText();
+}
+
+
 void CashShopCanvas::initWindowImageWidgets()
 {
     bgImg = new ImageWidget("image/UIImage/window.png");

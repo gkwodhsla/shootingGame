@@ -149,6 +149,8 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\HPlayerController.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\Airplane.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\HPawn.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\AirplaneController.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\GlobalFunction.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\ShopCanvas.h:
@@ -448,5 +450,9 @@ D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\HPlayerController.h
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\Airplane.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\HPawn.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\AirplaneController.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\GlobalFunction.h:

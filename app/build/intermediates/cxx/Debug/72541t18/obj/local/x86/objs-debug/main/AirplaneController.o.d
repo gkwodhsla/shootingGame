@@ -112,7 +112,8 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\..\Vector2D.h \
   D:\comtus\Development\android\shootingGame\app\jni\SDL_ttf\SDL_ttf.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\begin_code.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\close_code.h
+  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\close_code.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\GlobalFunction.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\AirplaneController.h:
 
@@ -339,3 +340,5 @@ D:\comtus\Development\android\shootingGame\app\jni\SDL_ttf\SDL_ttf.h:
 D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\begin_code.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\close_code.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\GlobalFunction.h:

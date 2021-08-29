@@ -14,6 +14,9 @@ public:
     virtual void render();
     virtual bool handleEvent(SDL_Event& e);
     virtual void update(float deltaTime);
+    void updateCrystalText();
+    int getCrystal();
+    void setCrystal(int crystal);
 
 private:
     void initWindowImageWidgets();
@@ -35,4 +38,5 @@ private:
     static const int sellItemNum;
     static const std::array<std::string, 6> crystalNums;
     static const std::array<std::string, 6> prices;
+    int curCrystal = 0;
 };

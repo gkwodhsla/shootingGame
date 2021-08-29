@@ -34,6 +34,9 @@ public:
     void setShieldCnt(int cnt);
     void setMissileCnt(int cnt);
     void addCrystal(int howMany);
+    int getCrystal();
+    void setCrystal(int crystal);
+    void updateCrystalText();
 
 private:
     void initWidgets();

@@ -3,6 +3,9 @@
 #include "UI/InGameCanvas.h"
 #include "UI/CashShopCanvas.h"
 #include "Framework.h"
+#include "GlobalFunction.h"
+
+using namespace GlobalFunction;
 
 AirplaneController::AirplaneController(HPawn* controlledPawn):
 HPlayerController(controlledPawn)
@@ -31,11 +34,34 @@ void AirplaneController::changeShop()
         shopCanvas->removeFromViewport();
         cashShopCanvas->addToViewport();
         isShopCanvasShow = false;
+        auto curShopCanvas = Cast<ShopCanvas>(shopCanvas);
+        auto curCashCanvas = Cast<CashShopCanvas>(cashShopCanvas);
+        if(curShopCanvas && curCashCanvas)
+        {
+            curMoney = curShopCanvas->getCrystal();
+            curCashCanvas->setCrystal(curMoney);
+        }
     }
     else
     {
         shopCanvas->addToViewport();
         cashShopCanvas->removeFromViewport();
         isShopCanvasShow = true;
+        auto curShopCanvas = Cast<ShopCanvas>(shopCanvas);
+        auto curCashCanvas = Cast<CashShopCanvas>(cashShopCanvas);
+        if(curShopCanvas && curCashCanvas)
+        {
+            curMoney = curCashCanvas->getCrystal();
+            curShopCanvas->setCrystal(curMoney);
+        }
     }
+}
+
+int AirplaneController::getMoney()
+{
+    return curMoney;
+}
+void AirplaneController::setMoney(int newMoney)
+{
+    curMoney = newMoney;
 }

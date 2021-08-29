@@ -96,6 +96,24 @@ void ShopCanvas::addCrystal(int howMany)
     curCrystal += howMany;
 }
 
+int ShopCanvas::getCrystal()
+{
+    return curCrystal;
+}
+
+void ShopCanvas::setCrystal(int crystal)
+{
+    curCrystal = crystal;
+    moneyText->changeText(std::to_string(curCrystal));
+    updateCrystalText();
+}
+
+void ShopCanvas::updateCrystalText()
+{
+    moneyText->changeText(std::to_string(curCrystal));
+}
+
+
 void ShopCanvas::initWidgets()
 {
     bgImage = new ImageWidget("image/UIImage/window.png");
