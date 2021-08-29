@@ -5,6 +5,8 @@
 #include "../Actors/HActor.h"
 #include "../Components/CollisionBoxComponent.h"
 #include "../HPlayerController.h"
+#include "../UI/Canvas.h"
+#include "../Framework.h"
 
 class HLevelBase
 {
@@ -22,7 +24,44 @@ public:
     }
 
 public:
-    virtual void handleEvent(SDL_Event& e) = 0;
+    virtual void handleEvent(SDL_Event& e)
+    {
+        if(playerController)
+        {
+            INPUT_MODE curInputMode = playerController->getInputMode();
+            if(curInputMode == INPUT_MODE::GAME_ONLY)
+            {
+                playerController->handleEvent(e);
+            }
+            else if (curInputMode == INPUT_MODE::UI_ONLY)
+            {
+                for(auto& canvas : Framework::worldUI)
+                {
+                    canvas->handleEvent(e);
+                }
+            }
+            else if(curInputMode == INPUT_MODE::BOTH)
+            {
+                bool isUserInteractWithUI = false;
+                for(auto& canvas : Framework::worldUI)
+                //입력이 UI와 플레이어 둘 다에게 들어간다면 UI에게 들어갔을 땐 플레이어에게 안 들어가게!
+                {
+                    if (!isUserInteractWithUI)
+                    {
+                        isUserInteractWithUI = canvas->handleEvent(e);
+                    }
+                    else
+                    {
+                        canvas->handleEvent(e);
+                    }
+                }
+                if(!isUserInteractWithUI)
+                {
+                    playerController->handleEvent(e);
+                }
+            }
+        }
+    }
     virtual void update(float deltaTime)
     {
         for(auto&actor : actors)

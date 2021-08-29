@@ -12,7 +12,6 @@
 #include "../Components/SplineComponent.h"
 #include "../UI/ShopCanvas.h"
 #include "../UI/InGameCanvas.h"
-#include "../Framework.h"
 #include "../ActorObjectPool.h"
 #include "../GlobalFunction.h"
 #include <vector>
@@ -41,37 +40,7 @@ MainLevel::~MainLevel()
 
 void MainLevel::handleEvent(SDL_Event& e)
 {
-    INPUT_MODE curInputMode = playerController->getInputMode();
-    if(curInputMode == INPUT_MODE::GAME_ONLY)
-    {
-        playerController->handleEvent(e);
-    }
-    else if (curInputMode == INPUT_MODE::UI_ONLY)
-    {
-        for(auto& canvas : Framework::worldUI)
-        {
-            canvas->handleEvent(e);
-        }
-    }
-    else if(curInputMode == INPUT_MODE::BOTH)
-    {
-        bool isUserInteractWithUI = false;
-        for(auto& canvas : Framework::worldUI)
-        {
-            if (!isUserInteractWithUI)
-            {
-                isUserInteractWithUI = canvas->handleEvent(e);
-            }
-            else
-            {
-                canvas->handleEvent(e);
-            }
-        }
-        if(!isUserInteractWithUI)
-        {
-            playerController->handleEvent(e);
-        }
-    }
+    HLevelBase::handleEvent(e);
 }
 
 void MainLevel::update(float deltaTime)

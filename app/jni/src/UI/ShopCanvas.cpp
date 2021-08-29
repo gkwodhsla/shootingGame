@@ -361,30 +361,51 @@ void ShopCanvas::initWidgets()
 
     incButton = new ButtonWidget("image/UIImage/rightDownButton.png", "image/UIImage/rightUpButton.png");
     incButton->buttonUpEvent = [this]()mutable
-            {
-                if(curStage < maxStage)
-                {
-                    ++curStage;
-                    std::string temp = "Stage: ";
-                    temp += std::to_string(curStage);
-                    stageText->changeText(temp);
-                }
-            };
+    {
+        if(curStage < maxStage)
+        {
+            ++curStage;
+            std::string temp = "Stage: ";
+            temp += std::to_string(curStage);
+            stageText->changeText(temp);
+        }
+    };
+
+    incButton->buttonHoldEvent = [this]()mutable
+    {
+        if(curStage < maxStage)
+        {
+            ++curStage;
+            std::string temp = "Stage: ";
+            temp += std::to_string(curStage);
+            stageText->changeText(temp);
+        }
+    };
     incButton->setLocalPosition(570, h - 300);
     addWidgetToBuffer(incButton);
     addButtonToBuffer(incButton);
 
     decButton = new ButtonWidget("image/UIImage/leftDownButton.png", "image/UIImage/leftUpButton.png");
     decButton->buttonUpEvent = [this]()mutable
-            {
-                if(curStage > minStage)
-                {
-                    --curStage;
-                    std::string temp = "Stage: ";
-                    temp += std::to_string(curStage);
-                    stageText->changeText(temp);
-                }
-            };
+    {
+        if(curStage > minStage)
+        {
+            --curStage;
+            std::string temp = "Stage: ";
+            temp += std::to_string(curStage);
+            stageText->changeText(temp);
+        }
+    };
+    decButton->buttonHoldEvent = [this]()mutable
+    {
+        if(curStage > minStage)
+        {
+            --curStage;
+            std::string temp = "Stage: ";
+            temp += std::to_string(curStage);
+            stageText->changeText(temp);
+        }
+    };
     decButton->setLocalPosition(50, h - 300);
     addWidgetToBuffer(decButton);
     addButtonToBuffer(decButton);

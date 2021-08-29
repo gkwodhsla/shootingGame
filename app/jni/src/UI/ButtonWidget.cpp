@@ -40,6 +40,22 @@ void ButtonWidget::update(float deltaTime)
 {
     if(visibility)
     {
+        if(isDown)
+        {
+            downTime += deltaTime;
+            if(downTime > 0.5f)
+            {
+                if(buttonHoldEvent)
+                {
+                    holdCoolTime -= deltaTime;
+                    if(holdCoolTime <= 0.0f)
+                    {
+                        buttonHoldEvent();
+                        maxHoldCoolTime = holdCoolTime;
+                    }
+                }
+            }
+        }
         //나중에 UI애니메이션 추가되면 여기에서 해준다.
     }
 }
@@ -52,6 +68,11 @@ void ButtonWidget::registerbuttonDownEvent(const std::function<void()> &func)
 void ButtonWidget::registerbuttonUpEvent(const std::function<void()>& func)
 {
     buttonUpEvent = func;
+}
+
+void ButtonWidget::registerbuttonHoldEvent(const std::function<void()>& func)
+{
+    buttonHoldEvent = func;
 }
 
 bool ButtonWidget::checkIsClicked(int inputX, int inputY)
@@ -67,13 +88,18 @@ bool ButtonWidget::checkIsClicked(int inputX, int inputY)
             {
                 isDown = true;
                 if(buttonDownEvent)
+                {
                     buttonDownEvent();
+                }
             }
             else
             {
                 isDown = false;
                 if(buttonUpEvent)
+                {
                     buttonUpEvent();
+                    downTime = 0.0f;
+                }
             }
             isClicked = true;
         }
