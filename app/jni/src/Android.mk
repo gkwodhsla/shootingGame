@@ -34,6 +34,7 @@ Actors/Crystal.cpp\
 Level/MainLevel.cpp\
 UI/Canvas.cpp\
 UI/ShopCanvas.cpp\
+UI/CashShopCanvas.cpp\
 UI/InGameCanvas.cpp\
 UI/Widget.cpp\
 UI/TextWidget.cpp\

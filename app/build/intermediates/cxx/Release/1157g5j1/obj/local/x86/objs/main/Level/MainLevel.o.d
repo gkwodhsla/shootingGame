@@ -150,6 +150,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\SplineComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\ShopCanvas.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\InGameCanvas.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\CashShopCanvas.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\ActorObjectPool.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\queue \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\deque \
@@ -455,6 +456,8 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\Splin
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\ShopCanvas.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\InGameCanvas.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\CashShopCanvas.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\ActorObjectPool.h:
 

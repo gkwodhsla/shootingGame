@@ -12,6 +12,7 @@
 #include "../Components/SplineComponent.h"
 #include "../UI/ShopCanvas.h"
 #include "../UI/InGameCanvas.h"
+#include "../UI/CashShopCanvas.h"
 #include "../ActorObjectPool.h"
 #include "../GlobalFunction.h"
 #include <vector>
@@ -136,6 +137,9 @@ void MainLevel::enter()
 
     inGameCanvas = new InGameCanvas(Framework::rendererWidth, Framework::rendererHeight, 0, 0);
     inGameCanvas->removeFromViewport();
+
+    cashShopCanvas = new CashShopCanvas(Framework::rendererWidth, Framework::rendererHeight, 0, 0);
+    cashShopCanvas->addToViewport();
 
     bulletPool = new ActorObjectPool<Bullet>(500);
     crystalPool = new ActorObjectPool<Crystal>(50);

@@ -118,7 +118,7 @@ void ShopCanvas::initWidgets()
     addWidgetToBuffer(moneyWindowImage);
 
     moneyText = new TextWidget(std::to_string(curCrystal), 60, 255, 255, 255);
-    moneyText->setLocalPosition(w - 200, 65);
+    moneyText->setLocalPosition(w - 230, 65);
     addWidgetToBuffer(moneyText);
 
     attackUpgradeButton = new ButtonWidget("image/UIImage/attackDownButton.png", "image/UIImage/attackUpButton.png");
@@ -414,4 +414,9 @@ void ShopCanvas::initWidgets()
     stageText->setLocalPosition(265, h - 250);
     addWidgetToBuffer(stageText);
 
+    changeButton = new ButtonWidget("image/UIImage/changeDownButton.png","image/UIImage/changeUpButton.png");
+    changeButton->setScale(120, 120);
+    changeButton->setLocalPosition(100, 35);
+    addWidgetToBuffer(changeButton);
+    addButtonToBuffer(changeButton);
 }

@@ -65,6 +65,7 @@ private:
     ButtonWidget* decButton = nullptr;
     ButtonWidget* incButton = nullptr;
     TextWidget* stageText = nullptr;
+    ButtonWidget* changeButton = nullptr;
     int curStage = 1;
     int maxStage = 100;
     int minStage = 1;

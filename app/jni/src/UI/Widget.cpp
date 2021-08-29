@@ -39,6 +39,11 @@ void Widget::setScale(int scaleX, int scaleY)
     this->scaleY = scaleY;
 }
 
+std::pair<int, int> Widget::getScale()
+{
+    return std::make_pair(scaleX, scaleY);
+}
+
 std::pair<int, int> Widget::getLocalPosition()
 {
     return std::make_pair(localX, localY);

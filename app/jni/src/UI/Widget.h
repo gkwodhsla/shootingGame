@@ -10,6 +10,7 @@ public:
     void attachTo(Widget* parent);
     void setLocalPosition(int x, int y);
     void setScale(int scaleX, int scaleY);
+    std::pair<int, int> getScale();
     std::pair<int, int> getLocalPosition();
     virtual void render();
     virtual void update(float deltaTime) = 0;

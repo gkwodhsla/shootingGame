@@ -38,6 +38,7 @@ public:
     ActorObjectPool<Crystal>* crystalPool;
     Canvas* shopCanvas = nullptr;
     Canvas* inGameCanvas = nullptr;
+    Canvas* cashShopCanvas = nullptr;
 
 private:
     StageManager* stageManager = nullptr;
