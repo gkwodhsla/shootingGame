@@ -106,6 +106,13 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wctype.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\..\Actors\HActor.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\HPlayerController.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\Canvas.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Framework.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Components\TTFComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\HPrimitiveComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\SDL_ttf\SDL_ttf.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\begin_code.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\close_code.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Bullet.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\random \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cmath \
@@ -142,14 +149,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\StageManager.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\SplineComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\ShopCanvas.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\Canvas.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\InGameCanvas.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Framework.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Components\TTFComponent.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\HPrimitiveComponent.h \
-  D:\comtus\Development\android\shootingGame\app\jni\SDL_ttf\SDL_ttf.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\begin_code.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\close_code.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\ActorObjectPool.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\queue \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\deque \
@@ -368,6 +368,20 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\..\Ac
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\HPlayerController.h:
 
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\Canvas.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Framework.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Components\TTFComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\HPrimitiveComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\SDL_ttf\SDL_ttf.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\begin_code.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\close_code.h:
+
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Bullet.h:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\random:
@@ -440,21 +454,7 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\Splin
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\ShopCanvas.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\Canvas.h:
-
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\InGameCanvas.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Framework.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Components\TTFComponent.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\HPrimitiveComponent.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\SDL_ttf\SDL_ttf.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\begin_code.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\close_code.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\ActorObjectPool.h:
 

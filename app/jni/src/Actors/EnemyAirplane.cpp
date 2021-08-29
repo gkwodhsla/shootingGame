@@ -100,6 +100,7 @@ EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp)
                 {
                     this->getDamage(playerAirplane->getPlayerAttackPower());
                     bullet->resetBulletToInitialState();
+                    isHitAnimPlay = true;
                 }
             }
         }
@@ -153,7 +154,7 @@ void EnemyAirplane::update(float deltaTime)
         //loc가 지금 위치, befPos가 이전 위치
 
         ++cnt;
-        if (cnt % 200 == 0) // 자주 업데이트 하면 비행기가 흔들흔들거림
+        if (cnt % 10 == 0) // 자주 업데이트 하면 비행기가 흔들흔들거림
         {
             float newDirVecX = float(loc.first - befPos.first);
             float newDirVecY = float(loc.second - befPos.second);
@@ -228,6 +229,8 @@ void EnemyAirplane::update(float deltaTime)
     {
         spawnBullet(deltaTime);
     }
+
+    hitAnimation(deltaTime);
 }
 
 void EnemyAirplane::handleEvent(SDL_Event& e)
@@ -594,4 +597,21 @@ void EnemyAirplane::spawnBulletFromPool(const std::pair<float, float>&spawnPos, 
     bullet->setActorDirectionalVector(dirVec);
     bullet->changeBulletSpeed(speed);
 
+}
+
+void EnemyAirplane::hitAnimation(float deltaTime)
+{
+    if(isHitAnimPlay)
+    {
+        animAccTime+=deltaTime;
+        float animTime = fmod(animAccTime, 0.3f) - 0.15f;
+        float yValue = (20.0f / 3.0f) * animTime + 1;
+        airplaneImg->setImageColor(yValue * 255, yValue * 255, yValue * 255);
+        if(animAccTime >= 0.3f)
+        {
+            isHitAnimPlay = false;
+            airplaneImg->setImageColor(255, 255, 255);
+            animAccTime = 0.0f;
+        }
+    }
 }

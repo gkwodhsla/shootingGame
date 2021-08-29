@@ -54,6 +54,7 @@ private:
     void firePattern7();
     void spawnBullet(float deltaTime);
     void spawnBulletFromPool(const std::pair<float, float>&spawnPos, float speed, const Vector2D& dirVec);
+    void hitAnimation(float deltaTime);
     static void initStaticData();
     static void initBossCirclePattern();
     static void initBossStarPattern();
@@ -74,8 +75,10 @@ private:
     Vector2D realDirVec;
     int cnt = 0;
     float degreeGap = 0.0f;
+    float animAccTime = 0.0f;
     bool canDamaged = false;
     bool isArrived = false;
+    bool isHitAnimPlay = false;
     const int rotateRate = 150;
     const float moveRate = 0.5f;
     static const float normalBulletSpeed;

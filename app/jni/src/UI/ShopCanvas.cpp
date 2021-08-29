@@ -128,7 +128,7 @@ void ShopCanvas::initWidgets()
     addButtonToBuffer(attackUpgradeButton);
     attackUpgradeButton->buttonUpEvent = [this]()mutable
     {
-        this->explanationText1->changeText("Add Player Attack Power +10");
+        this->explanationText1->changeText("Add Player Attack Power +5");
         this->explanationText2->changeText(" ");
         this->explanationText3->changeText(" ");
         this->explanationText4->changeText("Cost: " + std::to_string(attackUpgradeFee));
@@ -256,7 +256,7 @@ void ShopCanvas::initWidgets()
                     HPlayerController *PC = GetPlayerController();
                     Airplane* airplane = Cast<Airplane>(GetPlayerPawn());
                     int curPlayerAttackPower = airplane->getPlayerAttackPower();
-                    curPlayerAttackPower += 10;
+                    curPlayerAttackPower += 5;
                     airplane->setPlayerAttackPower(curPlayerAttackPower);
                     curCrystal -= attackUpgradeFee;
                     moneyText->changeText(std::to_string(curCrystal));

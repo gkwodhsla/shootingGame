@@ -48,7 +48,7 @@ protected:
     ImageComponent* airplaneImg = nullptr;
     SpritesheetComponent* explosionSprite = nullptr;
     CollisionBoxComponent* collisionBox = nullptr;
-    float fireRate = 1.0f;
+    float fireRate = 0.5f;
     float curFireTime = 0.5f;
     bool isDie = false;
 
@@ -66,7 +66,7 @@ private:
     SpritesheetComponent* thunderAttack2 = nullptr;
     SpritesheetComponent* thunderAttack3 = nullptr;
     ImageComponent* shieldImage = nullptr;
-    int attackPower = 50;
+    int attackPower = 25;
     int bulletCnt = 1;
     int missileCnt = 0;
     int shieldCnt = 0;

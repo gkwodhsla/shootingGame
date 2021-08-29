@@ -320,7 +320,7 @@ void Airplane::spawnPlayerBullet(std::pair<float, float>& spawnPos)
             auto bullet = cont->acquireObject();
             bullet->init(spawnPos, BULLET_COLOR::GREEN);
             bullet->setActorDirectionalVector({0.0f, -1.0f});
-            bullet->changeBulletSpeed(900.0f);
+            bullet->changeBulletSpeed(1200.0f);
             spawnPos.first += 20.0f;
         }
     }
