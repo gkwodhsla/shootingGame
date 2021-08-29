@@ -23,3 +23,19 @@ void AirplaneController::createCanvases()
 
     shopCanvas->addToViewport();
 }
+
+void AirplaneController::changeShop()
+{
+    if(isShopCanvasShow)
+    {
+        shopCanvas->removeFromViewport();
+        cashShopCanvas->addToViewport();
+        isShopCanvasShow = false;
+    }
+    else
+    {
+        shopCanvas->addToViewport();
+        cashShopCanvas->removeFromViewport();
+        isShopCanvasShow = true;
+    }
+}

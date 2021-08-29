@@ -2,9 +2,13 @@
 #include "ImageWidget.h"
 #include "ButtonWidget.h"
 #include "TextWidget.h"
+#include "../AirplaneController.h"
+#include "../GlobalFunction.h"
 #include <string>
 #include <vector>
 #include <array>
+
+using namespace GlobalFunction;
 
 const int CashShopCanvas::sellItemNum = 6;
 const std::array<std::string, 6> CashShopCanvas::crystalNums = {"100", "525", "1080", "3300", "5600", "11500"};
@@ -123,6 +127,11 @@ void CashShopCanvas::initButtonWidgets()
     changeButton = new ButtonWidget("image/UIImage/changeDownButton.png","image/UIImage/changeUpButton.png");
     changeButton->setScale(120, 120);
     changeButton->setLocalPosition(100, 35);
+    changeButton->buttonUpEvent = []()
+    {
+        auto PC = Cast<AirplaneController>(GetPlayerController());
+        PC->changeShop();
+    };
     addWidgetToBuffer(changeButton);
     addButtonToBuffer(changeButton);
 }

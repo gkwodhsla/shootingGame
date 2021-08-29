@@ -6,6 +6,7 @@
 #include "../Level/MainLevel.h"
 #include "../HPlayerController.h"
 #include "../Actors/Airplane.h"
+#include "../AirplaneController.h"
 #include "../GlobalFunction.h"
 #include <android/log.h>
 
@@ -417,6 +418,11 @@ void ShopCanvas::initWidgets()
     changeButton = new ButtonWidget("image/UIImage/changeDownButton.png","image/UIImage/changeUpButton.png");
     changeButton->setScale(120, 120);
     changeButton->setLocalPosition(100, 35);
+    changeButton->buttonUpEvent = []()
+    {
+        auto PC = Cast<AirplaneController>(GetPlayerController());
+        PC->changeShop();
+    };
     addWidgetToBuffer(changeButton);
     addButtonToBuffer(changeButton);
 }
