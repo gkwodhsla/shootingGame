@@ -1,6 +1,7 @@
 #include "AirplaneController.h"
 #include "UI/ShopCanvas.h"
 #include "UI/InGameCanvas.h"
+#include "UI/YesNoCanvas.h"
 #include "UI/CashShopCanvas.h"
 #include "Framework.h"
 #include "GlobalFunction.h"
@@ -23,7 +24,7 @@ void AirplaneController::createCanvases()
     shopCanvas = new ShopCanvas(Framework::rendererWidth, Framework::rendererHeight, 0, 0);
     inGameCanvas = new InGameCanvas(Framework::rendererWidth, Framework::rendererHeight, 0, 0);
     cashShopCanvas = new CashShopCanvas(Framework::rendererWidth, Framework::rendererHeight, 0, 0);
-
+    yesNoCanvas = new YesNoCanvas(700, 600, (Framework::rendererWidth - 700) / 2, 300);
     shopCanvas->addToViewport();
 }
 
@@ -57,11 +58,23 @@ void AirplaneController::changeShop()
     }
 }
 
+void AirplaneController::showYesNoWindow()
+{
+    yesNoCanvas->addToViewport();
+}
+
 int AirplaneController::getMoney()
 {
     return curMoney;
 }
+
 void AirplaneController::setMoney(int newMoney)
 {
     curMoney = newMoney;
+}
+
+void AirplaneController::processingBuyProtocol()
+{
+    auto curCashCanvas = Cast<CashShopCanvas>(cashShopCanvas);
+    curCashCanvas->buyCrystal();
 }

@@ -111,6 +111,8 @@ void ShopCanvas::setCrystal(int crystal)
 void ShopCanvas::updateCrystalText()
 {
     moneyText->changeText(std::to_string(curCrystal));
+    auto moneyTextScale = moneyText->getScale();
+    moneyText->setLocalPosition(w - 250 + (200 - moneyTextScale.first) / 2, 40 + (110 - moneyTextScale.second) / 2);
 }
 
 
@@ -443,4 +445,6 @@ void ShopCanvas::initWidgets()
     };
     addWidgetToBuffer(changeButton);
     addButtonToBuffer(changeButton);
+
+    updateCrystalText();
 }

@@ -42,7 +42,7 @@ Crystal::Crystal() {
     collisionBox->setDrawDebugBox(true);
 
     crystalMovement = new MovementComponent(this);
-    crystalMovement->setSpeed(300.0f);
+    crystalMovement->setSpeed(500.0f);
 
     dirVec = Vector2D({0.0f, 1.0f});
 }

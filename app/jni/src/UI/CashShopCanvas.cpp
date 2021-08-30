@@ -55,6 +55,8 @@ void CashShopCanvas::update(float deltaTime)
 void CashShopCanvas::updateCrystalText()
 {
     moneyText->changeText(std::to_string(curCrystal));
+    auto moneyTextScale = moneyText->getScale();
+    moneyText->setLocalPosition(w - 250 + (200 - moneyTextScale.first) / 2, 40 + (110 - moneyTextScale.second) / 2);
 }
 
 int CashShopCanvas::getCrystal()
@@ -68,6 +70,16 @@ void CashShopCanvas::setCrystal(int crystal)
     updateCrystalText();
 }
 
+void CashShopCanvas::buyCrystal()
+{
+    curCrystal += std::stoi(crystalNums[static_cast<int>(whichSelected)]);
+    updateCrystalText();
+}
+
+WHICH_CASH_SELECTED CashShopCanvas::getWhichCashItemSelected()
+{
+    return whichSelected;
+}
 
 void CashShopCanvas::initWindowImageWidgets()
 {
@@ -138,6 +150,15 @@ void CashShopCanvas::initButtonWidgets()
         buyButtons.emplace_back(new ButtonWidget("image/UIImage/downButton.png","image/UIImage/upButton.png"));
         buyButtons[i]->setScale(180, 80);
         buyButtons[i]->setLocalPosition(curX + smallWindowXSize / 2 - 90, curY + smallWindowYSize / 2 + 70);
+        buyButtons[i]->buttonUpEvent = [=]()
+        {
+            auto PC = Cast<AirplaneController>(GetPlayerController());
+            if(PC)
+            {
+                whichSelected = static_cast<WHICH_CASH_SELECTED>(i);
+                PC->showYesNoWindow();
+            }
+        };
         addWidgetToBuffer(buyButtons[i]);
         addButtonToBuffer(buyButtons[i]);
     }

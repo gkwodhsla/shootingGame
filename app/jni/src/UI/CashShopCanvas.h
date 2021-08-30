@@ -5,6 +5,16 @@ class ImageWidget;
 class ButtonWidget;
 class TextWidget;
 
+enum class WHICH_CASH_SELECTED
+{
+    ITEM1 = 0,
+    ITEM2,
+    ITEM3,
+    ITEM4,
+    ITEM5,
+    ITEM6
+};
+
 class CashShopCanvas :public Canvas
 {
 public:
@@ -17,6 +27,8 @@ public:
     void updateCrystalText();
     int getCrystal();
     void setCrystal(int crystal);
+    void buyCrystal();
+    WHICH_CASH_SELECTED getWhichCashItemSelected();
 
 private:
     void initWindowImageWidgets();
@@ -39,4 +51,5 @@ private:
     static const std::array<std::string, 6> crystalNums;
     static const std::array<std::string, 6> prices;
     int curCrystal = 0;
+    WHICH_CASH_SELECTED whichSelected = WHICH_CASH_SELECTED::ITEM1;
 };

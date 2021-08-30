@@ -33,4 +33,7 @@ void TextWidget::update(float deltaTime)
 void TextWidget::changeText(std::string content)
 {
     text->changeText(content);
+    auto scale = text->getScale();
+    scaleX = scale.first;
+    scaleY = scale.second;
 }

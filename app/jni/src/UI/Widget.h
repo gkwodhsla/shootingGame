@@ -7,7 +7,6 @@ class Widget
 public:
     Widget();
     virtual ~Widget() = 0;
-    void attachTo(Widget* parent);
     void setLocalPosition(int x, int y);
     void setScale(int scaleX, int scaleY);
     std::pair<int, int> getScale();
@@ -18,8 +17,6 @@ public:
     void setVisibility(bool isVisible);
 
 protected:
-    Widget* parent = nullptr;
-    std::vector<Widget*> children;
     int localX = 0;
     int localY = 0;
     int canvasX = 0;

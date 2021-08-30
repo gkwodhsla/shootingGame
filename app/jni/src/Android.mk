@@ -36,6 +36,7 @@ Level/MainLevel.cpp\
 UI/Canvas.cpp\
 UI/ShopCanvas.cpp\
 UI/CashShopCanvas.cpp\
+UI/YesNoCanvas.cpp\
 UI/InGameCanvas.cpp\
 UI/Widget.cpp\
 UI/TextWidget.cpp\

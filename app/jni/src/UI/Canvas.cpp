@@ -81,8 +81,8 @@ bool Canvas::handleEvent(SDL_Event &e)
     bool isEventOccure = false;
     if(visibility)
     {
-        int x = int(e.tfinger.x * float(Framework::rendererWidth));
-        int y = int(e.tfinger.y * float(Framework::rendererHeight));
+        int x = int(e.tfinger.x * float(Framework::rendererWidth)) - canvasWorldPosX;
+        int y = int(e.tfinger.y * float(Framework::rendererHeight)) - canvasWorldPosY;
         if (e.type == SDL_FINGERDOWN)
         {
             for(auto& button : canvasButtons)
