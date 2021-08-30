@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "228712047558",
+    "project_id": "myandroidgame-ad8c6",
+    "storage_bucket": "myandroidgame-ad8c6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:228712047558:android:d05b2cfec94dcd577d88c7",
+        "android_client_info": {
+          "package_name": "org.libsdl.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "228712047558-f7lem2f4u33suoi05d53datovots059a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.libsdl.app",
+            "certificate_hash": "3aaaf98d1cc55ff9f0c3579d98ec3a1eadf09966"
+          }
+        },
+        {
+          "client_id": "228712047558-otm0rfkvb3j0jeeje37m4q0v1oeet9bm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBT8G1mre4RLx9WIWTO6k3miwq3z1mD_fs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "228712047558-otm0rfkvb3j0jeeje37m4q0v1oeet9bm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
