@@ -1,16 +1,52 @@
 <dependencies>
   <compile
-      roots="com.google.firebase:firebase-analytics:19.0.1@aar,com.google.android.gms:play-services-measurement:19.0.1@aar,com.google.android.gms:play-services-measurement-sdk:19.0.1@aar,com.google.android.gms:play-services-measurement-api:19.0.1@aar,com.google.android.gms:play-services-measurement-impl:19.0.1@aar,com.google.android.gms:play-services-ads-identifier:17.0.0@aar,com.google.android.gms:play-services-measurement-sdk-api:19.0.1@aar,com.google.android.gms:play-services-measurement-base:19.0.1@aar,com.google.android.gms:play-services-stats:17.0.0@aar,com.google.firebase:firebase-installations:17.0.0@aar,com.google.firebase:firebase-common:20.0.0@aar,com.google.firebase:firebase-installations-interop:17.0.0@aar,com.google.android.gms:play-services-tasks:17.0.0@aar,com.google.firebase:firebase-measurement-connector:19.0.0@aar,com.google.android.gms:play-services-basement:17.0.0@aar,androidx.fragment:fragment:1.0.0@aar,androidx.legacy:legacy-support-core-ui:1.0.0@aar,androidx.legacy:legacy-support-core-utils:1.0.0@aar,androidx.loader:loader:1.0.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.coordinatorlayout:coordinatorlayout:1.0.0@aar,androidx.drawerlayout:drawerlayout:1.0.0@aar,androidx.slidingpanelayout:slidingpanelayout:1.0.0@aar,androidx.customview:customview:1.0.0@aar,androidx.swiperefreshlayout:swiperefreshlayout:1.0.0@aar,androidx.asynclayoutinflater:asynclayoutinflater:1.0.0@aar,androidx.core:core:1.0.0@aar,androidx.versionedparcelable:versionedparcelable:1.0.0@aar,androidx.collection:collection:1.0.0@jar,com.google.firebase:firebase-components:17.0.0@aar,androidx.documentfile:documentfile:1.0.0@aar,androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar,androidx.print:print:1.0.0@aar,androidx.lifecycle:lifecycle-runtime:2.0.0@aar,androidx.lifecycle:lifecycle-viewmodel:2.0.0@aar,androidx.lifecycle:lifecycle-livedata:2.0.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.0.0@aar,androidx.lifecycle:lifecycle-common:2.0.0@jar,androidx.arch.core:core-runtime:2.0.0@aar,androidx.arch.core:core-common:2.0.0@jar,androidx.interpolator:interpolator:1.0.0@aar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.annotation:annotation:1.1.0@jar,com.google.firebase:firebase-annotations:16.0.0@jar">
+      roots="com.google.firebase:firebase-core:19.0.1@aar,com.google.firebase:firebase-ads:20.3.0@aar,com.google.firebase:firebase-analytics:19.0.1@aar,com.google.firebase:firebase-auth:21.0.1@aar,com.google.firebase:firebase-database:20.0.1@aar,com.google.android.gms:play-services-auth-api-phone:17.4.0@aar,com.google.android.gms:play-services-safetynet:17.0.0@aar,com.google.firebase:firebase-appcheck-interop:16.0.0-beta02@aar,com.google.firebase:firebase-database-collection:18.0.0@aar,com.google.android.gms:play-services-base:17.6.0@aar,com.google.android.gms:play-services-measurement:19.0.1@aar,com.google.android.gms:play-services-measurement-sdk:19.0.1@aar,com.google.android.gms:play-services-ads:20.3.0@aar,androidx.browser:browser:1.0.0@aar,com.google.android.gms:play-services-measurement-api:19.0.1@aar,com.google.firebase:firebase-auth-interop:20.0.0@aar,com.google.firebase:firebase-installations:17.0.0@aar,com.google.firebase:firebase-common:20.0.0@aar,com.google.firebase:firebase-installations-interop:17.0.0@aar,com.google.android.gms:play-services-tasks:17.2.1@aar,com.google.android.gms:play-services-measurement-impl:19.0.1@aar,com.google.android.gms:play-services-ads-lite:20.3.0@aar,com.google.android.ump:user-messaging-platform:1.0.0@aar,com.google.android.gms:play-services-ads-identifier:17.0.0@aar,com.google.android.gms:play-services-measurement-sdk-api:19.0.1@aar,com.google.android.gms:play-services-measurement-base:19.0.1@aar,com.google.android.gms:play-services-stats:17.0.0@aar,com.google.firebase:firebase-measurement-connector:19.0.0@aar,com.google.android.gms:play-services-ads-base:20.3.0@aar,com.google.android.gms:play-services-basement:17.6.0@aar,androidx.fragment:fragment:1.0.0@aar,androidx.legacy:legacy-support-core-ui:1.0.0@aar,androidx.legacy:legacy-support-core-utils:1.0.0@aar,androidx.loader:loader:1.0.0@aar,androidx.work:work-runtime:2.1.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.coordinatorlayout:coordinatorlayout:1.0.0@aar,androidx.drawerlayout:drawerlayout:1.0.0@aar,androidx.slidingpanelayout:slidingpanelayout:1.0.0@aar,androidx.customview:customview:1.0.0@aar,androidx.swiperefreshlayout:swiperefreshlayout:1.0.0@aar,androidx.asynclayoutinflater:asynclayoutinflater:1.0.0@aar,androidx.room:room-runtime:2.1.0@aar,androidx.core:core:1.2.0@aar,androidx.versionedparcelable:versionedparcelable:1.1.0@aar,androidx.collection:collection:1.0.0@jar,androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar,com.google.firebase:firebase-components:17.0.0@aar,androidx.interpolator:interpolator:1.0.0@aar,androidx.lifecycle:lifecycle-viewmodel:2.0.0@aar,androidx.lifecycle:lifecycle-service:2.0.0@aar,androidx.lifecycle:lifecycle-runtime:2.0.0@aar,androidx.documentfile:documentfile:1.0.0@aar,androidx.print:print:1.0.0@aar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.lifecycle:lifecycle-livedata:2.0.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.0.0@aar,androidx.lifecycle:lifecycle-common:2.0.0@jar,androidx.arch.core:core-runtime:2.0.1@aar,androidx.arch.core:core-common:2.0.1@jar,androidx.room:room-common:2.1.0@jar,androidx.sqlite:sqlite-framework:2.0.1@aar,androidx.sqlite:sqlite:2.0.1@aar,androidx.annotation:annotation:1.1.0@jar,com.google.firebase:firebase-annotations:16.0.0@jar,com.google.guava:listenablefuture:1.0@jar">
+    <dependency
+        name="com.google.firebase:firebase-core:19.0.1@aar"/>
+    <dependency
+        name="com.google.firebase:firebase-ads:20.3.0@aar"/>
     <dependency
         name="com.google.firebase:firebase-analytics:19.0.1@aar"/>
+    <dependency
+        name="com.google.firebase:firebase-auth:21.0.1@aar"/>
+    <dependency
+        name="com.google.firebase:firebase-database:20.0.1@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-auth-api-phone:17.4.0@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-safetynet:17.0.0@aar"/>
+    <dependency
+        name="com.google.firebase:firebase-appcheck-interop:16.0.0-beta02@aar"/>
+    <dependency
+        name="com.google.firebase:firebase-database-collection:18.0.0@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-base:17.6.0@aar"/>
     <dependency
         name="com.google.android.gms:play-services-measurement:19.0.1@aar"/>
     <dependency
         name="com.google.android.gms:play-services-measurement-sdk:19.0.1@aar"/>
     <dependency
+        name="com.google.android.gms:play-services-ads:20.3.0@aar"/>
+    <dependency
+        name="androidx.browser:browser:1.0.0@aar"/>
+    <dependency
         name="com.google.android.gms:play-services-measurement-api:19.0.1@aar"/>
     <dependency
+        name="com.google.firebase:firebase-auth-interop:20.0.0@aar"/>
+    <dependency
+        name="com.google.firebase:firebase-installations:17.0.0@aar"/>
+    <dependency
+        name="com.google.firebase:firebase-common:20.0.0@aar"/>
+    <dependency
+        name="com.google.firebase:firebase-installations-interop:17.0.0@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-tasks:17.2.1@aar"/>
+    <dependency
         name="com.google.android.gms:play-services-measurement-impl:19.0.1@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-ads-lite:20.3.0@aar"/>
+    <dependency
+        name="com.google.android.ump:user-messaging-platform:1.0.0@aar"/>
     <dependency
         name="com.google.android.gms:play-services-ads-identifier:17.0.0@aar"/>
     <dependency
@@ -20,17 +56,11 @@
     <dependency
         name="com.google.android.gms:play-services-stats:17.0.0@aar"/>
     <dependency
-        name="com.google.firebase:firebase-installations:17.0.0@aar"/>
-    <dependency
-        name="com.google.firebase:firebase-common:20.0.0@aar"/>
-    <dependency
-        name="com.google.firebase:firebase-installations-interop:17.0.0@aar"/>
-    <dependency
-        name="com.google.android.gms:play-services-tasks:17.0.0@aar"/>
-    <dependency
         name="com.google.firebase:firebase-measurement-connector:19.0.0@aar"/>
     <dependency
-        name="com.google.android.gms:play-services-basement:17.0.0@aar"/>
+        name="com.google.android.gms:play-services-ads-base:20.3.0@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-basement:17.6.0@aar"/>
     <dependency
         name="androidx.fragment:fragment:1.0.0@aar"/>
     <dependency
@@ -39,6 +69,8 @@
         name="androidx.legacy:legacy-support-core-utils:1.0.0@aar"/>
     <dependency
         name="androidx.loader:loader:1.0.0@aar"/>
+    <dependency
+        name="androidx.work:work-runtime:2.1.0@aar"/>
     <dependency
         name="androidx.viewpager:viewpager:1.0.0@aar"/>
     <dependency
@@ -54,23 +86,31 @@
     <dependency
         name="androidx.asynclayoutinflater:asynclayoutinflater:1.0.0@aar"/>
     <dependency
-        name="androidx.core:core:1.0.0@aar"/>
+        name="androidx.room:room-runtime:2.1.0@aar"/>
     <dependency
-        name="androidx.versionedparcelable:versionedparcelable:1.0.0@aar"/>
+        name="androidx.core:core:1.2.0@aar"/>
+    <dependency
+        name="androidx.versionedparcelable:versionedparcelable:1.1.0@aar"/>
     <dependency
         name="androidx.collection:collection:1.0.0@jar"/>
     <dependency
-        name="com.google.firebase:firebase-components:17.0.0@aar"/>
-    <dependency
-        name="androidx.documentfile:documentfile:1.0.0@aar"/>
-    <dependency
         name="androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar"/>
     <dependency
-        name="androidx.print:print:1.0.0@aar"/>
+        name="com.google.firebase:firebase-components:17.0.0@aar"/>
+    <dependency
+        name="androidx.interpolator:interpolator:1.0.0@aar"/>
+    <dependency
+        name="androidx.lifecycle:lifecycle-viewmodel:2.0.0@aar"/>
+    <dependency
+        name="androidx.lifecycle:lifecycle-service:2.0.0@aar"/>
     <dependency
         name="androidx.lifecycle:lifecycle-runtime:2.0.0@aar"/>
     <dependency
-        name="androidx.lifecycle:lifecycle-viewmodel:2.0.0@aar"/>
+        name="androidx.documentfile:documentfile:1.0.0@aar"/>
+    <dependency
+        name="androidx.print:print:1.0.0@aar"/>
+    <dependency
+        name="androidx.cursoradapter:cursoradapter:1.0.0@aar"/>
     <dependency
         name="androidx.lifecycle:lifecycle-livedata:2.0.0@aar"/>
     <dependency
@@ -78,24 +118,48 @@
     <dependency
         name="androidx.lifecycle:lifecycle-common:2.0.0@jar"/>
     <dependency
-        name="androidx.arch.core:core-runtime:2.0.0@aar"/>
+        name="androidx.arch.core:core-runtime:2.0.1@aar"/>
     <dependency
-        name="androidx.arch.core:core-common:2.0.0@jar"/>
+        name="androidx.arch.core:core-common:2.0.1@jar"/>
     <dependency
-        name="androidx.interpolator:interpolator:1.0.0@aar"/>
+        name="androidx.room:room-common:2.1.0@jar"/>
     <dependency
-        name="androidx.cursoradapter:cursoradapter:1.0.0@aar"/>
+        name="androidx.sqlite:sqlite-framework:2.0.1@aar"/>
+    <dependency
+        name="androidx.sqlite:sqlite:2.0.1@aar"/>
     <dependency
         name="androidx.annotation:annotation:1.1.0@jar"/>
     <dependency
         name="com.google.firebase:firebase-annotations:16.0.0@jar"/>
+    <dependency
+        name="com.google.guava:listenablefuture:1.0@jar"/>
   </compile>
   <package
-      roots="com.google.firebase:firebase-analytics:19.0.1@aar,com.google.android.gms:play-services-measurement-api:19.0.1@aar,com.google.firebase:firebase-installations:17.0.0@aar,com.google.firebase:firebase-common:20.0.0@aar,com.google.android.gms:play-services-measurement:19.0.1@aar,com.google.android.gms:play-services-measurement-sdk:19.0.1@aar,com.google.android.gms:play-services-measurement-impl:19.0.1@aar,com.google.android.gms:play-services-ads-identifier:17.0.0@aar,com.google.android.gms:play-services-measurement-sdk-api:19.0.1@aar,com.google.android.gms:play-services-measurement-base:19.0.1@aar,com.google.android.gms:play-services-stats:17.0.0@aar,com.google.firebase:firebase-installations-interop:17.0.0@aar,com.google.android.gms:play-services-tasks:17.0.0@aar,com.google.firebase:firebase-measurement-connector:19.0.0@aar,com.google.android.gms:play-services-basement:17.0.0@aar,androidx.fragment:fragment:1.0.0@aar,androidx.legacy:legacy-support-core-ui:1.0.0@aar,androidx.legacy:legacy-support-core-utils:1.0.0@aar,androidx.loader:loader:1.0.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.coordinatorlayout:coordinatorlayout:1.0.0@aar,androidx.drawerlayout:drawerlayout:1.0.0@aar,androidx.slidingpanelayout:slidingpanelayout:1.0.0@aar,androidx.customview:customview:1.0.0@aar,androidx.swiperefreshlayout:swiperefreshlayout:1.0.0@aar,androidx.asynclayoutinflater:asynclayoutinflater:1.0.0@aar,androidx.core:core:1.0.0@aar,androidx.versionedparcelable:versionedparcelable:1.0.0@aar,androidx.collection:collection:1.0.0@jar,com.google.firebase:firebase-components:17.0.0@aar,androidx.documentfile:documentfile:1.0.0@aar,androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar,androidx.print:print:1.0.0@aar,androidx.lifecycle:lifecycle-runtime:2.0.0@aar,androidx.lifecycle:lifecycle-viewmodel:2.0.0@aar,androidx.lifecycle:lifecycle-livedata:2.0.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.0.0@aar,androidx.lifecycle:lifecycle-common:2.0.0@jar,androidx.arch.core:core-runtime:2.0.0@aar,androidx.arch.core:core-common:2.0.0@jar,androidx.interpolator:interpolator:1.0.0@aar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.annotation:annotation:1.1.0@jar,com.google.firebase:firebase-annotations:16.0.0@jar">
+      roots="com.google.firebase:firebase-core:19.0.1@aar,com.google.firebase:firebase-ads:20.3.0@aar,com.google.firebase:firebase-analytics:19.0.1@aar,com.google.firebase:firebase-auth:21.0.1@aar,com.google.firebase:firebase-database:20.0.1@aar,com.google.android.gms:play-services-auth-api-phone:17.4.0@aar,com.google.android.gms:play-services-safetynet:17.0.0@aar,com.google.firebase:firebase-appcheck-interop:16.0.0-beta02@aar,com.google.firebase:firebase-database-collection:18.0.0@aar,com.google.android.gms:play-services-base:17.6.0@aar,com.google.android.gms:play-services-measurement-api:19.0.1@aar,com.google.firebase:firebase-auth-interop:20.0.0@aar,com.google.firebase:firebase-installations:17.0.0@aar,com.google.firebase:firebase-common:20.0.0@aar,com.google.android.gms:play-services-measurement:19.0.1@aar,com.google.android.gms:play-services-measurement-sdk:19.0.1@aar,com.google.android.gms:play-services-ads:20.3.0@aar,androidx.browser:browser:1.0.0@aar,com.google.firebase:firebase-installations-interop:17.0.0@aar,com.google.android.gms:play-services-tasks:17.2.1@aar,com.google.android.gms:play-services-measurement-impl:19.0.1@aar,com.google.android.gms:play-services-ads-lite:20.3.0@aar,com.google.android.ump:user-messaging-platform:1.0.0@aar,com.google.android.gms:play-services-ads-identifier:17.0.0@aar,com.google.android.gms:play-services-measurement-sdk-api:19.0.1@aar,com.google.android.gms:play-services-measurement-base:19.0.1@aar,com.google.android.gms:play-services-stats:17.0.0@aar,com.google.firebase:firebase-measurement-connector:19.0.0@aar,com.google.android.gms:play-services-ads-base:20.3.0@aar,com.google.android.gms:play-services-basement:17.6.0@aar,androidx.fragment:fragment:1.0.0@aar,androidx.legacy:legacy-support-core-ui:1.0.0@aar,androidx.legacy:legacy-support-core-utils:1.0.0@aar,androidx.loader:loader:1.0.0@aar,androidx.work:work-runtime:2.1.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.coordinatorlayout:coordinatorlayout:1.0.0@aar,androidx.drawerlayout:drawerlayout:1.0.0@aar,androidx.slidingpanelayout:slidingpanelayout:1.0.0@aar,androidx.customview:customview:1.0.0@aar,androidx.swiperefreshlayout:swiperefreshlayout:1.0.0@aar,androidx.asynclayoutinflater:asynclayoutinflater:1.0.0@aar,androidx.room:room-runtime:2.1.0@aar,androidx.core:core:1.2.0@aar,androidx.versionedparcelable:versionedparcelable:1.1.0@aar,androidx.collection:collection:1.0.0@jar,androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar,com.google.firebase:firebase-components:17.0.0@aar,androidx.interpolator:interpolator:1.0.0@aar,androidx.lifecycle:lifecycle-viewmodel:2.0.0@aar,androidx.lifecycle:lifecycle-service:2.0.0@aar,androidx.lifecycle:lifecycle-runtime:2.0.0@aar,androidx.documentfile:documentfile:1.0.0@aar,androidx.print:print:1.0.0@aar,androidx.cursoradapter:cursoradapter:1.0.0@aar,androidx.lifecycle:lifecycle-livedata:2.0.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.0.0@aar,androidx.lifecycle:lifecycle-common:2.0.0@jar,androidx.arch.core:core-runtime:2.0.1@aar,androidx.room:room-common:2.1.0@jar,androidx.sqlite:sqlite-framework:2.0.1@aar,androidx.sqlite:sqlite:2.0.1@aar,androidx.arch.core:core-common:2.0.1@jar,androidx.annotation:annotation:1.1.0@jar,com.google.firebase:firebase-annotations:16.0.0@jar,com.google.guava:listenablefuture:1.0@jar">
+    <dependency
+        name="com.google.firebase:firebase-core:19.0.1@aar"/>
+    <dependency
+        name="com.google.firebase:firebase-ads:20.3.0@aar"/>
     <dependency
         name="com.google.firebase:firebase-analytics:19.0.1@aar"/>
     <dependency
+        name="com.google.firebase:firebase-auth:21.0.1@aar"/>
+    <dependency
+        name="com.google.firebase:firebase-database:20.0.1@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-auth-api-phone:17.4.0@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-safetynet:17.0.0@aar"/>
+    <dependency
+        name="com.google.firebase:firebase-appcheck-interop:16.0.0-beta02@aar"/>
+    <dependency
+        name="com.google.firebase:firebase-database-collection:18.0.0@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-base:17.6.0@aar"/>
+    <dependency
         name="com.google.android.gms:play-services-measurement-api:19.0.1@aar"/>
+    <dependency
+        name="com.google.firebase:firebase-auth-interop:20.0.0@aar"/>
     <dependency
         name="com.google.firebase:firebase-installations:17.0.0@aar"/>
     <dependency
@@ -105,7 +169,19 @@
     <dependency
         name="com.google.android.gms:play-services-measurement-sdk:19.0.1@aar"/>
     <dependency
+        name="com.google.android.gms:play-services-ads:20.3.0@aar"/>
+    <dependency
+        name="androidx.browser:browser:1.0.0@aar"/>
+    <dependency
+        name="com.google.firebase:firebase-installations-interop:17.0.0@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-tasks:17.2.1@aar"/>
+    <dependency
         name="com.google.android.gms:play-services-measurement-impl:19.0.1@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-ads-lite:20.3.0@aar"/>
+    <dependency
+        name="com.google.android.ump:user-messaging-platform:1.0.0@aar"/>
     <dependency
         name="com.google.android.gms:play-services-ads-identifier:17.0.0@aar"/>
     <dependency
@@ -115,13 +191,11 @@
     <dependency
         name="com.google.android.gms:play-services-stats:17.0.0@aar"/>
     <dependency
-        name="com.google.firebase:firebase-installations-interop:17.0.0@aar"/>
-    <dependency
-        name="com.google.android.gms:play-services-tasks:17.0.0@aar"/>
-    <dependency
         name="com.google.firebase:firebase-measurement-connector:19.0.0@aar"/>
     <dependency
-        name="com.google.android.gms:play-services-basement:17.0.0@aar"/>
+        name="com.google.android.gms:play-services-ads-base:20.3.0@aar"/>
+    <dependency
+        name="com.google.android.gms:play-services-basement:17.6.0@aar"/>
     <dependency
         name="androidx.fragment:fragment:1.0.0@aar"/>
     <dependency
@@ -130,6 +204,8 @@
         name="androidx.legacy:legacy-support-core-utils:1.0.0@aar"/>
     <dependency
         name="androidx.loader:loader:1.0.0@aar"/>
+    <dependency
+        name="androidx.work:work-runtime:2.1.0@aar"/>
     <dependency
         name="androidx.viewpager:viewpager:1.0.0@aar"/>
     <dependency
@@ -145,23 +221,31 @@
     <dependency
         name="androidx.asynclayoutinflater:asynclayoutinflater:1.0.0@aar"/>
     <dependency
-        name="androidx.core:core:1.0.0@aar"/>
+        name="androidx.room:room-runtime:2.1.0@aar"/>
     <dependency
-        name="androidx.versionedparcelable:versionedparcelable:1.0.0@aar"/>
+        name="androidx.core:core:1.2.0@aar"/>
+    <dependency
+        name="androidx.versionedparcelable:versionedparcelable:1.1.0@aar"/>
     <dependency
         name="androidx.collection:collection:1.0.0@jar"/>
     <dependency
-        name="com.google.firebase:firebase-components:17.0.0@aar"/>
-    <dependency
-        name="androidx.documentfile:documentfile:1.0.0@aar"/>
-    <dependency
         name="androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar"/>
     <dependency
-        name="androidx.print:print:1.0.0@aar"/>
+        name="com.google.firebase:firebase-components:17.0.0@aar"/>
+    <dependency
+        name="androidx.interpolator:interpolator:1.0.0@aar"/>
+    <dependency
+        name="androidx.lifecycle:lifecycle-viewmodel:2.0.0@aar"/>
+    <dependency
+        name="androidx.lifecycle:lifecycle-service:2.0.0@aar"/>
     <dependency
         name="androidx.lifecycle:lifecycle-runtime:2.0.0@aar"/>
     <dependency
-        name="androidx.lifecycle:lifecycle-viewmodel:2.0.0@aar"/>
+        name="androidx.documentfile:documentfile:1.0.0@aar"/>
+    <dependency
+        name="androidx.print:print:1.0.0@aar"/>
+    <dependency
+        name="androidx.cursoradapter:cursoradapter:1.0.0@aar"/>
     <dependency
         name="androidx.lifecycle:lifecycle-livedata:2.0.0@aar"/>
     <dependency
@@ -169,16 +253,20 @@
     <dependency
         name="androidx.lifecycle:lifecycle-common:2.0.0@jar"/>
     <dependency
-        name="androidx.arch.core:core-runtime:2.0.0@aar"/>
+        name="androidx.arch.core:core-runtime:2.0.1@aar"/>
     <dependency
-        name="androidx.arch.core:core-common:2.0.0@jar"/>
+        name="androidx.room:room-common:2.1.0@jar"/>
     <dependency
-        name="androidx.interpolator:interpolator:1.0.0@aar"/>
+        name="androidx.sqlite:sqlite-framework:2.0.1@aar"/>
     <dependency
-        name="androidx.cursoradapter:cursoradapter:1.0.0@aar"/>
+        name="androidx.sqlite:sqlite:2.0.1@aar"/>
+    <dependency
+        name="androidx.arch.core:core-common:2.0.1@jar"/>
     <dependency
         name="androidx.annotation:annotation:1.1.0@jar"/>
     <dependency
         name="com.google.firebase:firebase-annotations:16.0.0@jar"/>
+    <dependency
+        name="com.google.guava:listenablefuture:1.0@jar"/>
   </package>
 </dependencies>

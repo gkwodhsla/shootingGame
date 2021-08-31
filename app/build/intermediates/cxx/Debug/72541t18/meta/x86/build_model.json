@@ -124,7 +124,7 @@
     },
     "prefabClassPathFileCollection": [],
     "prefabPackageDirectoryListFileCollection": [],
-    "stlType": "c++_shared",
+    "stlType": "c++_static",
     "optimizationTag": "Debug"
   },
   "buildSettings": {
@@ -143,6 +143,5 @@
     "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Debug\\72541t18/obj",
     "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Debug\\72541t18/lib",
     "APP_PLATFORM\u003dandroid-16"
-  ],
-  "stlLibraryFile": "D:\\AndroidSDK\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\i686-linux-android\\libc++_shared.so"
+  ]
 }

@@ -1,2 +1,0 @@
-D:\comtus\Development\android\shootingGame\app\jni\Android.mk
-D:\comtus\Development\android\shootingGame\app\jni\Application.mk

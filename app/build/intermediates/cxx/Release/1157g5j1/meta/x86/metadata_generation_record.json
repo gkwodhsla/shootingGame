@@ -11,11 +11,11 @@
       "fieldsDescending": {}
     },
     "memoizedSize": -1,
-    "memoizedHashCode": 658965342
+    "memoizedHashCode": -893232504
   },
   {
     "level_": 0,
-    "message_": "JSON \u0027D:\\comtus\\Development\\android\\shootingGame\\app\\build\\.cxx\\Release\\1157g5j1\\x86\\android_gradle_build.json\u0027 was up-to-date",
+    "message_": "rebuilding JSON D:\\comtus\\Development\\android\\shootingGame\\app\\build\\.cxx\\Release\\1157g5j1\\x86\\android_gradle_build.json due to:",
     "file_": "D:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
     "tag_": "release|x86",
     "diagnosticCode_": 0,
@@ -25,7 +25,147 @@
       "fieldsDescending": {}
     },
     "memoizedSize": -1,
-    "memoizedHashCode": 978539849
+    "memoizedHashCode": -670064612
+  },
+  {
+    "level_": 0,
+    "message_": "- expected json D:\\comtus\\Development\\android\\shootingGame\\app\\build\\.cxx\\Release\\1157g5j1\\x86\\android_gradle_build.json file is not present, will remove stale json folder",
+    "file_": "D:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+    "tag_": "release|x86",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 1243051440
+  },
+  {
+    "level_": 0,
+    "message_": "- missing previous command file D:\\comtus\\Development\\android\\shootingGame\\app\\build\\.cxx\\Release\\1157g5j1\\x86\\metadata_generation_command.txt, will remove stale json folder",
+    "file_": "D:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+    "tag_": "release|x86",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -501605266
+  },
+  {
+    "level_": 0,
+    "message_": "- command changed from previous, will remove stale json folder",
+    "file_": "D:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+    "tag_": "release|x86",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 1743859842
+  },
+  {
+    "level_": 0,
+    "message_": "created folder \u0027D:\\comtus\\Development\\android\\shootingGame\\app\\build\\.cxx\\Release\\1157g5j1\\x86\u0027",
+    "file_": "D:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+    "tag_": "release|x86",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -1434239648
+  },
+  {
+    "level_": 0,
+    "message_": "executing ndkBuild Executable : D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd\narguments : \nNDK_PROJECT_PATH\u003dnull\nAPP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk\nNDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk\nAPP_ABI\u003dx86\nNDK_ALL_ABIS\u003dx86\nNDK_DEBUG\u003d0\nNDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj\nNDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib\nAPP_PLATFORM\u003dandroid-16\nAPP_SHORT_COMMANDS\u003dfalse\nLOCAL_SHORT_COMMANDS\u003dfalse\n-B\n-n\njvmArgs : \n\n",
+    "file_": "D:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+    "tag_": "release|x86",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -1048103949
+  },
+  {
+    "level_": 0,
+    "message_": "Executable : D:\\AndroidSDK\\ndk\\21.4.7075529\\ndk-build.cmd\narguments : \nNDK_PROJECT_PATH\u003dnull\nAPP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk\nNDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk\nAPP_ABI\u003dx86\nNDK_ALL_ABIS\u003dx86\nNDK_DEBUG\u003d0\nNDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj\nNDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib\nAPP_PLATFORM\u003dandroid-16\nAPP_SHORT_COMMANDS\u003dfalse\nLOCAL_SHORT_COMMANDS\u003dfalse\n-B\n-n\njvmArgs : \n\n",
+    "file_": "D:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+    "tag_": "release|x86",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 264073280
+  },
+  {
+    "level_": 0,
+    "message_": "parse and convert ndk-build output to build configuration JSON",
+    "file_": "D:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+    "tag_": "release|x86",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 186376529
+  },
+  {
+    "level_": 0,
+    "message_": "found application make file D:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+    "file_": "D:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+    "tag_": "release|x86",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": -542116968
+  },
+  {
+    "level_": 0,
+    "message_": "done executing ndkBuild",
+    "file_": "D:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+    "tag_": "release|x86",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 2051223095
+  },
+  {
+    "level_": 0,
+    "message_": "write command file D:\\comtus\\Development\\android\\shootingGame\\app\\build\\.cxx\\Release\\1157g5j1\\x86\\metadata_generation_command.txt",
+    "file_": "D:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+    "tag_": "release|x86",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {},
+      "fieldsDescending": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 688874022
   },
   {
     "level_": 0,
@@ -39,6 +179,6 @@
       "fieldsDescending": {}
     },
     "memoizedSize": -1,
-    "memoizedHashCode": 626817225
+    "memoizedHashCode": -925380621
   }
 ]

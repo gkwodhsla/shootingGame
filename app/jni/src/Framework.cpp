@@ -12,6 +12,7 @@
 #include <SDL_ttf.h>
 #include <chrono>
 #include "UI/Canvas.h"
+#include <firebase/app.h>
 
 using namespace std;
 
