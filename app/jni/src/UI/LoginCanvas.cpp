@@ -53,13 +53,13 @@ void LoginCanvas::update(float deltaTime)
 
 void LoginCanvas::initEditBox()
 {
-    emailBox = new EditBoxWidget("image/UIImage/box.png","e-mail",40, 255, 255, 255);
+    emailBox = new EditBoxWidget("image/UIImage/box.png", "image/UIImage/caret.png", "e-mail",40, 255, 255, 255);
     emailBox->setScale(500, 100);
     emailBox->setLocalPosition((w - emailBox->getScale().first) / 2, 600);
     addWidgetToBuffer(emailBox);
     addEditBoxToBuffer(emailBox);
 
-    passwordBox = new EditBoxWidget("image/UIImage/box.png","password",40, 255, 255, 255);
+    passwordBox = new EditBoxWidget("image/UIImage/box.png", "image/UIImage/caret.png", "password",40, 255, 255, 255);
     passwordBox->setScale(500, 100);
     passwordBox->setLocalPosition((w - passwordBox->getScale().first) / 2, 900);
     addWidgetToBuffer(passwordBox);

@@ -1,9 +1,13 @@
 #include "EditBoxWidget.h"
 #include "../Components/TTFComponent.h"
 #include "../Components/ImageComponent.h"
+#include <android/log.h>
 
-EditBoxWidget::EditBoxWidget(const std::string &boxImagePath, const std::string &hintMessage,
-                             int fontSize, __uint8_t r, __uint8_t g, __uint8_t b):r(r), g(g), b(b)
+const int EditBoxWidget::caretYInterpValue = 50;
+const float EditBoxWidget::maxCoolTime = 0.3f;
+
+EditBoxWidget::EditBoxWidget(const std::string &boxImagePath, const std::string& caretImagePath, const std::string &hintMessage,
+                             int fontSize, __uint8_t r, __uint8_t g, __uint8_t b):fontSize(fontSize), r(r), g(g), b(b)
 {
     if(hintMessage == "")
     {
@@ -13,10 +17,15 @@ EditBoxWidget::EditBoxWidget(const std::string &boxImagePath, const std::string 
     {
         hintText = hintMessage;
     }
-    text = new TTFComponent(0, 0, fontSize, 200, 200, 200, "font/EvilEmpire.ttf", hintText, nullptr);
+    text = new TTFComponent(0, 0, fontSize, 200, 200, 200, "font/EvilEmpire.ttf", "abcdefghijklmnopqrstuvwxyz", nullptr);
+    characterSize = text->getScale().first / 26;
+    text->changeText(hintMessage);
     //힌트메시지는 연한 회색으로 출력한다.
 
     boxImg = new ImageComponent(boxImagePath, {0, 0}, nullptr);
+
+    caretImg = new ImageComponent(caretImagePath, {0, 0}, nullptr);
+    caretImg->setScale({5, caretYInterpValue});
 
 }
 
@@ -37,10 +46,32 @@ void EditBoxWidget::render()
     boxImg->render();
     text->setComponentLocalLocation({canvasX + 30, canvasY + (boxImg->getScale().second - text->getScale().second) / 2});
     text->render();
+    if(isFocused && isCaretShow)
+    {
+        caretImg->setComponentLocalLocation({canvasX + caretXPos + 30,
+                                             canvasY + (scaleY - caretYInterpValue) / 2});
+        caretImg->render();
+    }
 }
 
 void EditBoxWidget::update(float deltaTime)
 {
+    if(isFocused)
+    {
+        coolTime -= deltaTime;
+        if(coolTime <= 0.0f)
+        {
+            coolTime = maxCoolTime;
+            if(isCaretShow)
+            {
+                isCaretShow = false;
+            }
+            else
+            {
+                isCaretShow = true;
+            }
+        }
+    }
     //나중에 업데이트 할 항목이 있다면 추가한다.
 }
 
@@ -60,6 +91,16 @@ bool EditBoxWidget::checkIsClicked(int inputX, int inputY)
         {
             isClicked = true;
             isFocused = true;
+            caretIndex = (inputX - canvasX) / characterSize;
+            if(caretIndex <= 0)
+            {
+                caretIndex = 1;
+            }
+            if(caretIndex > content.size())
+            {
+                caretIndex = content.size();
+            }
+            calcCurCaretPos();
         }
     }
     return isClicked;
@@ -68,11 +109,16 @@ bool EditBoxWidget::checkIsClicked(int inputX, int inputY)
 void EditBoxWidget::setIsFocused(bool isFocused)
 {
     this->isFocused = isFocused;
+    if(isFocused)
+    {
+        isCaretShow = true;
+        coolTime = maxCoolTime;
+    }
 }
 
 std::string EditBoxWidget::getContent() const
 {
-    return content;
+    return content.substr(1, content.size() - 1);
 }
 
 bool EditBoxWidget::getIsFocused() const
@@ -99,20 +145,36 @@ void EditBoxWidget::swapText() //만약 포커스되면 힌트메시지를 지�
 
 void EditBoxWidget::addContent(const std::string& character)
 {
-    content += character;
+    content.insert(caretIndex, character);
+    ++caretIndex;
     text->changeText(content);
+    calcCurCaretPos();
 }
 
 void EditBoxWidget::eraseContent()
 {
-    if(content.size() > 0) // 지울 내용이 있으면 지운다.
+    if(content.size() > 0 && caretIndex > 1) // 지울 내용이 있으면 지운다.
     {
-        content.erase(content.size() - 1);
+        content.erase(caretIndex - 1, 1);
         if(content.size() == 0)
         {
             content = " ";
+            caretIndex = 1;
         }
         text->changeText(content);
+        --caretIndex;
+        calcCurCaretPos();
     }
 }
 
+void EditBoxWidget::calcCurCaretPos()
+{
+    std::string temp;
+    for(int i = 0; i < caretIndex; ++i)
+    {
+        temp += content[i];
+    }
+    text->changeText(temp);
+    caretXPos = text->getScale().first;
+    text->changeText(content);
+}
