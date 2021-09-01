@@ -21,7 +21,8 @@ HLevelBase* Framework::curLevel = nullptr;
 int Framework::rendererWidth = 0;
 int Framework::rendererHeight = 0;
 std::vector<Canvas*> Framework::worldUI;
-
+firebase::App* Framework::app = nullptr;
+firebase::auth::Auth* Framework::auth = nullptr;
 Framework::Framework()
 {
     if(SDL_Init(SDL_INIT_VIDEO)<0)
@@ -90,6 +91,8 @@ Framework::Framework()
     rendererWidth = getW;
     rendererHeight = getH;
 
+    initFirebase();
+
     curLevel = new MainLevel();
     curLevel->enter();
 
@@ -110,6 +113,9 @@ Framework::~Framework()
 
     delete fpsText;
     fpsText = nullptr;
+
+    delete app;
+    app = nullptr;
 
     for(auto& canvas:worldUI)
     {
@@ -175,5 +181,30 @@ void Framework::startGame()
         std::string fpsStr = "FPS: ";
         fpsStr += std::to_string(int(1/deltaTime));
         fpsText->changeText(fpsStr);
+    }
+}
+
+void Framework::initFirebase()
+{
+    JNIEnv* env = (JNIEnv*)SDL_AndroidGetJNIEnv();
+
+    jobject activity = (jobject)SDL_AndroidGetActivity();
+#if defined(__ANDROID__)
+    app = firebase::App::Create(firebase::AppOptions(), env, activity);
+#else
+    app = firebase::App::Create(firebase::AppOptions());
+#endif  // defined(__ANDROID__)
+    if(!app)
+    {
+        __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
+                            "Create android app failed...");
+    }
+
+    auth = firebase::auth::Auth::GetAuth(app);
+
+    if(!auth)
+    {
+        __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
+                            "Create android auth failed...");
     }
 }

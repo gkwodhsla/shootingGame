@@ -17,8 +17,6 @@ public:
     void setVisibility(bool isVisible);
 
 protected:
-    int localX = 0;
-    int localY = 0;
     int canvasX = 0;
     int canvasY = 0;
     int scaleX = 0;

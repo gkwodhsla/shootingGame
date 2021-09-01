@@ -7,9 +7,11 @@ INJECTED from D:\comtus\Development\android\shootingGame\app\src\main\AndroidMan
 MERGED from [com.google.firebase:firebase-core:19.0.1] C:\Users\lenovo\.gradle\caches\transforms-3\6fc0b4a1f6dadb938333956c833e90e6\transformed\firebase-core-19.0.1\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-analytics:19.0.1] C:\Users\lenovo\.gradle\caches\transforms-3\b24a0cfc1f0003cba4ed087bb250f56f\transformed\firebase-analytics-19.0.1\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\lenovo\.gradle\caches\transforms-3\d296f1a51e5d84877f2a62ee27786772\transformed\firebase-auth-21.0.1\AndroidManifest.xml:17:1-83:12
+MERGED from [com.google.android.gms:play-services-auth:19.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\af85d84059e4d2b0aec0c88fb00e103f\transformed\play-services-auth-19.2.0\AndroidManifest.xml:17:1-40:12
 MERGED from [com.google.firebase:firebase-database:20.0.1] C:\Users\lenovo\.gradle\caches\transforms-3\3eeee9c3cf7d13d0f88e53c94c01e170\transformed\firebase-database-20.0.1\AndroidManifest.xml:15:1-38:12
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] C:\Users\lenovo\.gradle\caches\transforms-3\81c1424adb97c6f69179d71873c24adf\transformed\play-services-auth-api-phone-17.4.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] C:\Users\lenovo\.gradle\caches\transforms-3\04140d686be754295431b2b015cb7a0f\transformed\play-services-safetynet-17.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] C:\Users\lenovo\.gradle\caches\transforms-3\5c8ffd5f4457c45bc32b02952c4d4626\transformed\play-services-auth-base-17.0.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta02] C:\Users\lenovo\.gradle\caches\transforms-3\449d833656b93423d352a54ca8d5e751\transformed\firebase-appcheck-interop-16.0.0-beta02\AndroidManifest.xml:15:1-26:12
 MERGED from [com.google.firebase:firebase-database-collection:18.0.0] C:\Users\lenovo\.gradle\caches\transforms-3\18ec7891d5f46ad824c55e1f894e1169\transformed\firebase-database-collection-18.0.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-base:17.6.0] C:\Users\lenovo\.gradle\caches\transforms-3\49ff505d1612ba3c5421f7d28c165237\transformed\play-services-base-17.6.0\AndroidManifest.xml:17:1-29:12
@@ -126,6 +128,8 @@ MERGED from [com.google.firebase:firebase-analytics:19.0.1] C:\Users\lenovo\.gra
 MERGED from [com.google.firebase:firebase-analytics:19.0.1] C:\Users\lenovo\.gradle\caches\transforms-3\b24a0cfc1f0003cba4ed087bb250f56f\transformed\firebase-analytics-19.0.1\AndroidManifest.xml:7:5-20
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\lenovo\.gradle\caches\transforms-3\d296f1a51e5d84877f2a62ee27786772\transformed\firebase-auth-21.0.1\AndroidManifest.xml:26:5-81:19
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\lenovo\.gradle\caches\transforms-3\d296f1a51e5d84877f2a62ee27786772\transformed\firebase-auth-21.0.1\AndroidManifest.xml:26:5-81:19
+MERGED from [com.google.android.gms:play-services-auth:19.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\af85d84059e4d2b0aec0c88fb00e103f\transformed\play-services-auth-19.2.0\AndroidManifest.xml:22:5-38:19
+MERGED from [com.google.android.gms:play-services-auth:19.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\af85d84059e4d2b0aec0c88fb00e103f\transformed\play-services-auth-19.2.0\AndroidManifest.xml:22:5-38:19
 MERGED from [com.google.firebase:firebase-database:20.0.1] C:\Users\lenovo\.gradle\caches\transforms-3\3eeee9c3cf7d13d0f88e53c94c01e170\transformed\firebase-database-20.0.1\AndroidManifest.xml:28:5-36:19
 MERGED from [com.google.firebase:firebase-database:20.0.1] C:\Users\lenovo\.gradle\caches\transforms-3\3eeee9c3cf7d13d0f88e53c94c01e170\transformed\firebase-database-20.0.1\AndroidManifest.xml:28:5-36:19
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] C:\Users\lenovo\.gradle\caches\transforms-3\04140d686be754295431b2b015cb7a0f\transformed\play-services-safetynet-17.0.0\AndroidManifest.xml:22:5-20
@@ -210,12 +214,16 @@ MERGED from [com.google.firebase:firebase-analytics:19.0.1] C:\Users\lenovo\.gra
 MERGED from [com.google.firebase:firebase-analytics:19.0.1] C:\Users\lenovo\.gradle\caches\transforms-3\b24a0cfc1f0003cba4ed087bb250f56f\transformed\firebase-analytics-19.0.1\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\lenovo\.gradle\caches\transforms-3\d296f1a51e5d84877f2a62ee27786772\transformed\firebase-auth-21.0.1\AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\lenovo\.gradle\caches\transforms-3\d296f1a51e5d84877f2a62ee27786772\transformed\firebase-auth-21.0.1\AndroidManifest.xml:21:5-44
+MERGED from [com.google.android.gms:play-services-auth:19.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\af85d84059e4d2b0aec0c88fb00e103f\transformed\play-services-auth-19.2.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:19.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\af85d84059e4d2b0aec0c88fb00e103f\transformed\play-services-auth-19.2.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-database:20.0.1] C:\Users\lenovo\.gradle\caches\transforms-3\3eeee9c3cf7d13d0f88e53c94c01e170\transformed\firebase-database-20.0.1\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-database:20.0.1] C:\Users\lenovo\.gradle\caches\transforms-3\3eeee9c3cf7d13d0f88e53c94c01e170\transformed\firebase-database-20.0.1\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] C:\Users\lenovo\.gradle\caches\transforms-3\81c1424adb97c6f69179d71873c24adf\transformed\play-services-auth-api-phone-17.4.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] C:\Users\lenovo\.gradle\caches\transforms-3\81c1424adb97c6f69179d71873c24adf\transformed\play-services-auth-api-phone-17.4.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] C:\Users\lenovo\.gradle\caches\transforms-3\04140d686be754295431b2b015cb7a0f\transformed\play-services-safetynet-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] C:\Users\lenovo\.gradle\caches\transforms-3\04140d686be754295431b2b015cb7a0f\transformed\play-services-safetynet-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] C:\Users\lenovo\.gradle\caches\transforms-3\5c8ffd5f4457c45bc32b02952c4d4626\transformed\play-services-auth-base-17.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] C:\Users\lenovo\.gradle\caches\transforms-3\5c8ffd5f4457c45bc32b02952c4d4626\transformed\play-services-auth-base-17.0.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta02] C:\Users\lenovo\.gradle\caches\transforms-3\449d833656b93423d352a54ca8d5e751\transformed\firebase-appcheck-interop-16.0.0-beta02\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-appcheck-interop:16.0.0-beta02] C:\Users\lenovo\.gradle\caches\transforms-3\449d833656b93423d352a54ca8d5e751\transformed\firebase-appcheck-interop-16.0.0-beta02\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-database-collection:18.0.0] C:\Users\lenovo\.gradle\caches\transforms-3\18ec7891d5f46ad824c55e1f894e1169\transformed\firebase-database-collection-18.0.0\AndroidManifest.xml:5:5-7:41
@@ -430,6 +438,26 @@ ADDED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\lenovo\.gradle\ca
 		ADDED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\lenovo\.gradle\caches\transforms-3\d296f1a51e5d84877f2a62ee27786772\transformed\firebase-auth-21.0.1\AndroidManifest.xml:79:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-auth:21.0.1] C:\Users\lenovo\.gradle\caches\transforms-3\d296f1a51e5d84877f2a62ee27786772\transformed\firebase-auth-21.0.1\AndroidManifest.xml:78:17-109
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:19.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\af85d84059e4d2b0aec0c88fb00e103f\transformed\play-services-auth-19.2.0\AndroidManifest.xml:23:9-27:75
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:19.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\af85d84059e4d2b0aec0c88fb00e103f\transformed\play-services-auth-19.2.0\AndroidManifest.xml:25:13-46
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:19.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\af85d84059e4d2b0aec0c88fb00e103f\transformed\play-services-auth-19.2.0\AndroidManifest.xml:26:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:19.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\af85d84059e4d2b0aec0c88fb00e103f\transformed\play-services-auth-19.2.0\AndroidManifest.xml:27:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:19.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\af85d84059e4d2b0aec0c88fb00e103f\transformed\play-services-auth-19.2.0\AndroidManifest.xml:24:13-93
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:19.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\af85d84059e4d2b0aec0c88fb00e103f\transformed\play-services-auth-19.2.0\AndroidManifest.xml:33:9-37:51
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:19.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\af85d84059e4d2b0aec0c88fb00e103f\transformed\play-services-auth-19.2.0\AndroidManifest.xml:35:13-36
+	android:visibleToInstantApps
+		ADDED from [com.google.android.gms:play-services-auth:19.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\af85d84059e4d2b0aec0c88fb00e103f\transformed\play-services-auth-19.2.0\AndroidManifest.xml:37:13-48
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:19.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\af85d84059e4d2b0aec0c88fb00e103f\transformed\play-services-auth-19.2.0\AndroidManifest.xml:36:13-107
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:19.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\af85d84059e4d2b0aec0c88fb00e103f\transformed\play-services-auth-19.2.0\AndroidManifest.xml:34:13-89
 meta-data#com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar
 ADDED from [com.google.firebase:firebase-database:20.0.1] C:\Users\lenovo\.gradle\caches\transforms-3\3eeee9c3cf7d13d0f88e53c94c01e170\transformed\firebase-database-20.0.1\AndroidManifest.xml:32:13-34:85
 	android:value

@@ -15,6 +15,7 @@ public:
     virtual void render() override;
     virtual void update(float deltaTime) override;
     void changeText(std::string text);
+    void changeColor( __uint8_t r, __uint8_t g, __uint8_t b);
 
 private:
     TTF_Font* curFont = nullptr;

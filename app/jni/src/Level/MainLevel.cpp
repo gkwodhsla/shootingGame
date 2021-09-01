@@ -18,7 +18,8 @@
 #include "../AirplaneController.h"
 #include <vector>
 #include <android/log.h>
-#include "firebase/auth.h"
+
+
 using namespace GlobalFunction;
 
 std::random_device rd;
@@ -72,6 +73,23 @@ void MainLevel::update(float deltaTime)
             afterStageClear();
         }
     }
+
+    firebase::Future<firebase::auth::User*> result = Framework::auth->SignInWithEmailAndPasswordLastResult();
+
+    /*if(result.status() == firebase::kFutureStatusComplete)
+    {
+        if(result.error() == firebase::auth::kAuthErrorNone)
+        {
+            firebase::auth::User* user = *result.result();
+            __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
+                                "Login Success Welcome :%s", user->display_name().c_str());
+        }
+        else
+        {
+            __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
+                                "Login Failed...");
+        }
+    }*/
 }
 
 void MainLevel::render()
@@ -137,6 +155,8 @@ void MainLevel::enter()
     boss2->setBulletPattern(ENEMY_BULLET_PATTERN::BOSS_STAR);
     bulletPool = new ActorObjectPool<Bullet>(500);
     crystalPool = new ActorObjectPool<Crystal>(50);
+
+    Framework::auth->SignInWithEmailAndPassword("gkwodhsla@naver.com", "12rhtmxm");
 }
 
 void MainLevel::exit()

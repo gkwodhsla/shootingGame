@@ -55,6 +55,13 @@ void TTFComponent::changeText(std::string text)
     loadText(text, r, g, b);
 }
 
+void TTFComponent::changeColor( __uint8_t r, __uint8_t g, __uint8_t b)
+{
+    this->r = r;
+    this->g = g;
+    this->b = b;
+}
+
 void TTFComponent::loadText(std::string text, __uint8_t r, __uint8_t g, __uint8_t b)
 {
     if (texture != nullptr)

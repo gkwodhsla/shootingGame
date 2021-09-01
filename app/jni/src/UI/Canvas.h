@@ -5,6 +5,7 @@
 
 class Widget;
 class ButtonWidget;
+class EditBoxWidget;
 
 class Canvas
 {
@@ -16,6 +17,7 @@ public:
     void removeFromViewport();
     void addWidgetToBuffer(Widget* newWidget);
     void addButtonToBuffer(ButtonWidget* newWidget);
+    void addEditBoxToBuffer(EditBoxWidget* newWidget);
     virtual void canvasRender();
     virtual void render();
     virtual bool handleEvent(SDL_Event& e) = 0;
@@ -31,6 +33,7 @@ protected:
     bool visibility = false;
     std::vector<Widget*> canvasWidgets;
     std::vector<ButtonWidget*> canvasButtons;
+    std::vector<EditBoxWidget*> editBoxes;
 
 private:
     void createEmptyWindow();

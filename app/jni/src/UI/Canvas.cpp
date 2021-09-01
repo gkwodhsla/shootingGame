@@ -2,6 +2,9 @@
 #include "../Framework.h"
 #include "Widget.h"
 #include "ButtonWidget.h"
+#include "EditBoxWidget.h"
+#include <SDL.h>
+#include <android/log.h>
 
 Canvas::Canvas(int canvasW, int canvasH, int canvasWorldX, int canvasWorldY):
 w(canvasW), h(canvasH), canvasWorldPosX(canvasWorldX), canvasWorldPosY(canvasWorldY)
@@ -40,6 +43,11 @@ void Canvas::addWidgetToBuffer(Widget* newWidget)
 void Canvas::addButtonToBuffer(ButtonWidget* newWidget)
 {
     canvasButtons.push_back(newWidget);
+}
+
+void Canvas::addEditBoxToBuffer(EditBoxWidget* newWidget)
+{
+    editBoxes.push_back(newWidget);
 }
 
 void Canvas::canvasRender()
@@ -96,6 +104,32 @@ bool Canvas::handleEvent(SDL_Event &e)
                     button->checkIsClicked(x, y);
                 }
             }
+            int clickedIndex = -1;
+            bool isClicked = false;
+            for(auto& box : editBoxes)
+            {
+                if(box->checkIsClicked(x, y))
+                {
+                    box->setIsFocused(true);
+                    box->swapText();
+                    isClicked = true;
+                }
+                else
+                {
+                    box->setIsFocused(false);
+                    box->swapText();
+                }
+            }
+
+            if(isClicked)
+            {
+                SDL_StartTextInput();
+            }
+            else
+            {
+                SDL_StopTextInput();
+            }
+
         }
         else if (e.type == SDL_FINGERMOTION) //버튼의 hovering을 검사한다.
         {
@@ -127,6 +161,26 @@ bool Canvas::handleEvent(SDL_Event &e)
             for(auto& button : canvasButtons)
             {
                 button->setButtonUp();
+            }
+        }
+        else if(e.type == SDL_TEXTINPUT)
+        {
+            __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
+                                "TextInput event occure");
+        }
+        else if(e.type == SDL_TEXTEDITING)
+        {
+            __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
+                                "TextEditing event occure");
+        }
+        else if(e.type == SDL_KEYDOWN)
+        {
+            switch(e.key.keysym.sym)
+            {
+                case SDLK_BACKSPACE:
+                    __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
+                                        "erase Event");
+                    break;
             }
         }
     }

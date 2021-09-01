@@ -81,10 +81,12 @@ UI/ShopCanvas.cpp\
 UI/CashShopCanvas.cpp\
 UI/YesNoCanvas.cpp\
 UI/InGameCanvas.cpp\
+UI/LoginCanvas.cpp\
 UI/Widget.cpp\
 UI/TextWidget.cpp\
 UI/ButtonWidget.cpp\
-UI/ImageWidget.cpp
+UI/ImageWidget.cpp\
+UI/EditBoxWidget.cpp
 
 LOCAL_SHARED_LIBRARIES := SDL2 \
 SDL2_image \

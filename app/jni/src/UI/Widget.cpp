@@ -12,10 +12,8 @@ Widget::~Widget()
 
 void Widget::setLocalPosition(int x, int y)
 {
-    localX = x;
-    localY = y;
-    canvasX = localX;
-    canvasY = localY;
+    canvasX = x;
+    canvasY = y;
 }
 
 void Widget::setScale(int scaleX, int scaleY)
@@ -31,7 +29,7 @@ std::pair<int, int> Widget::getScale()
 
 std::pair<int, int> Widget::getLocalPosition()
 {
-    return std::make_pair(localX, localY);
+    return std::make_pair(canvasX, canvasY);
 }
 
 void Widget::render()

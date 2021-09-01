@@ -1,5 +1,10 @@
 #pragma once
 #include "Components/TTFComponent.h"
+#include "firebase/app.h"
+#include "firebase/auth.h"
+#include "firebase/auth/credential.h"
+#include "firebase/util.h"
+
 class SDL_Window;
 class SDL_Renderer;
 class SDL_Rect;
@@ -20,9 +25,13 @@ public:
     void startGame();
 
 private:
+    static void initFirebase();
+
+private:
     SDL_Window* window = nullptr;
     float accTime = 0.0f;
     TTFComponent* fpsText;
+
 public:
     static SDL_Renderer* renderer;
     static SDL_Rect* screenRect;
@@ -30,5 +39,7 @@ public:
     static int rendererHeight;
     static HLevelBase* curLevel;
     static std::vector<Canvas*> worldUI;
+    static firebase::App* app;
+    static firebase::auth::Auth* auth;
 };
 
