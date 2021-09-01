@@ -75,6 +75,11 @@ std::string EditBoxWidget::getContent() const
     return content;
 }
 
+bool EditBoxWidget::getIsFocused() const
+{
+    return isFocused;
+}
+
 void EditBoxWidget::swapText() //만약 포커스되면 힌트메시지를 지워버리고, 포커스상태가 아니고 실제 콘텐츠가 비어있다면 힌트 메시지를 다시 보여준다.
 {
     if(isFocused)
@@ -94,10 +99,20 @@ void EditBoxWidget::swapText() //만약 포커스되면 힌트메시지를 지�
 
 void EditBoxWidget::addContent(const std::string& character)
 {
-
+    content += character;
+    text->changeText(content);
 }
 
 void EditBoxWidget::eraseContent()
 {
-
+    if(content.size() > 0) // 지울 내용이 있으면 지운다.
+    {
+        content.erase(content.size() - 1);
+        if(content.size() == 0)
+        {
+            content = " ";
+        }
+        text->changeText(content);
+    }
 }
+

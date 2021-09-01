@@ -22,6 +22,7 @@ public:
 public:
     void setIsFocused(bool isFocused);
     std::string getContent() const;
+    bool getIsFocused() const;
 
 private:
     TTFComponent* text = nullptr;

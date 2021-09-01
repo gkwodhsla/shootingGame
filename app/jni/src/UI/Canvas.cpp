@@ -104,7 +104,6 @@ bool Canvas::handleEvent(SDL_Event &e)
                     button->checkIsClicked(x, y);
                 }
             }
-            int clickedIndex = -1;
             bool isClicked = false;
             for(auto& box : editBoxes)
             {
@@ -165,21 +164,30 @@ bool Canvas::handleEvent(SDL_Event &e)
         }
         else if(e.type == SDL_TEXTINPUT)
         {
-            __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
-                                "TextInput event occure");
+            for(auto&box: editBoxes)
+            {
+                if(box->getIsFocused())
+                {
+                    box->addContent(e.text.text);
+                }
+            }
         }
         else if(e.type == SDL_TEXTEDITING)
         {
-            __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
-                                "TextEditing event occure");
+
         }
         else if(e.type == SDL_KEYDOWN)
         {
             switch(e.key.keysym.sym)
             {
                 case SDLK_BACKSPACE:
-                    __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
-                                        "erase Event");
+                    for(auto&box: editBoxes)
+                    {
+                        if(box->getIsFocused())
+                        {
+                            box->eraseContent();
+                        }
+                    }
                     break;
             }
         }
