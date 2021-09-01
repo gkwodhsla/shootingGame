@@ -10,9 +10,9 @@
 10    android:versionName="1.0" >
 11
 12    <uses-sdk
-13        android:minSdkVersion="16"
+13        android:minSdkVersion="20"
 13-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml
-14        android:targetSdkVersion="29" />
+14        android:targetSdkVersion="30" />
 14-->D:\comtus\Development\android\shootingGame\app\src\main\AndroidManifest.xml
 15
 16    <!-- OpenGL ES 2.0 -->

@@ -18,7 +18,7 @@
 #include "../AirplaneController.h"
 #include <vector>
 #include <android/log.h>
-
+#include "firebase/auth.h"
 using namespace GlobalFunction;
 
 std::random_device rd;
