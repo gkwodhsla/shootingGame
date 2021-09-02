@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Canvas.h"
+#include "../Framework.h"
 
 class ButtonWidget;
 class TextWidget;
@@ -28,6 +29,17 @@ private:
     EditBoxWidget* passwordBox = nullptr;
     ButtonWidget* signInButton = nullptr;
     ButtonWidget* loginButton = nullptr;
+    ButtonWidget* resetButton = nullptr;
     TextWidget* signInText = nullptr;
+    TextWidget* resetText = nullptr;
     TextWidget* loginText = nullptr;
+    TextWidget* signInResultText = nullptr;
+    bool isCheckingSignIn = false;
+    bool isCheckingSignUp = false;
+    bool isCheckingEmailSend = false;
+    bool isShowSignInText = false;
+    float msgShowTime = 2.0f;
+    const float maxMsgShowTime = 2.0f;
+    firebase::Future<firebase::auth::User*> result;
+    firebase::Future<void> result2;
 };

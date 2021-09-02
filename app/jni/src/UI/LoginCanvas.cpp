@@ -5,6 +5,7 @@
 #include "EditBoxWidget.h"
 #include "TitleController.h"
 #include "../GlobalFunction.h"
+
 #include <string>
 
 LoginCanvas::LoginCanvas(int canvasW, int canvasH, int canvasWorldX, int canvasWorldY) :
@@ -52,6 +53,79 @@ bool LoginCanvas::handleEvent(SDL_Event &e)
 void LoginCanvas::update(float deltaTime)
 {
     Canvas::update(deltaTime);
+    if(isCheckingSignIn)
+    {
+        if (result.status() == firebase::kFutureStatusComplete)
+        {
+            if (result.error() == firebase::auth::kAuthErrorNone)
+            {
+                firebase::auth::User* user = *result.result();
+                signInResultText->changeText("Sign in success");
+            }
+            else
+            {
+                signInResultText->changeText(result.error_message());
+            }
+            isShowSignInText = true;
+            msgShowTime = maxMsgShowTime;
+            signInResultText->setVisibility(true);
+            signInResultText->setLocalPosition((w - signInResultText->getScale().first) / 2,800);
+            isCheckingSignIn = false;
+        }
+    }
+    else if(isCheckingSignUp)
+    {
+        if (result.status() == firebase::kFutureStatusComplete)
+        {
+            if (result.error() == firebase::auth::kAuthErrorNone)
+            {
+                firebase::auth::User* user = *result.result();
+                signInResultText->changeText("Log In Success");
+                auto PC = GlobalFunction::Cast<TitleController>(GlobalFunction::GetPlayerController());
+                if(PC)
+                {
+                    PC->goToMainLevel();
+                }
+            }
+            else
+            {
+                signInResultText->changeText(result.error_message());
+            }
+            isShowSignInText = true;
+            msgShowTime = maxMsgShowTime;
+            signInResultText->setVisibility(true);
+            signInResultText->setLocalPosition((w - signInResultText->getScale().first) / 2,800);
+            isCheckingSignUp = false;
+        }
+    }
+    else if(isCheckingEmailSend)
+    {
+        if (result2.status() == firebase::kFutureStatusComplete)
+        {
+            if (result2.error() == firebase::auth::kAuthErrorNone)
+            {
+                signInResultText->changeText("Email send success");
+            }
+            else
+            {
+                signInResultText->changeText(result2.error_message());
+            }
+            isShowSignInText = true;
+            msgShowTime = maxMsgShowTime;
+            signInResultText->setVisibility(true);
+            signInResultText->setLocalPosition((w - signInResultText->getScale().first) / 2,800);
+            isCheckingEmailSend = false;
+        }
+    }
+    if(isShowSignInText)
+    {
+        msgShowTime -= deltaTime;
+        if(msgShowTime <= 0.0f)
+        {
+            isShowSignInText = false;
+            signInResultText->setVisibility(false);
+        }
+    }
 }
 
 void LoginCanvas::initEditBox()
@@ -74,19 +148,39 @@ void LoginCanvas::initButton() {
     signInButton = new ButtonWidget("image/UIImage/downButton.png", "image/UIImage/upButton.png");
     signInButton->setScale(500, 100);
     signInButton->setLocalPosition((w - signInButton->getScale().first) / 2, 1200);
+    signInButton->buttonUpEvent = [this]() mutable
+    {
+        std::string emailStr = emailBox->getContent();
+        std::string passwordStr = passwordBox->getContent();
+        Framework::auth->CreateUserWithEmailAndPassword(emailStr.c_str(), passwordStr.c_str());
+        isCheckingSignIn = true;
+        result = Framework::auth->CreateUserWithEmailAndPasswordLastResult();
+    };
     addWidgetToBuffer(signInButton);
     addButtonToBuffer(signInButton);
 
+    resetButton = new ButtonWidget("image/UIImage/downButton.png", "image/UIImage/upButton.png");
+    resetButton->setScale(500, 100);
+    resetButton->setLocalPosition((w - signInButton->getScale().first) / 2, 1400);
+    resetButton->buttonUpEvent = [this]() mutable
+    {
+        Framework::auth->SendPasswordResetEmail(this->emailBox->getContent().c_str());
+        result2 = Framework::auth->SendPasswordResetEmailLastResult();
+        isCheckingEmailSend = true;
+    };
+    addWidgetToBuffer(resetButton);
+    addButtonToBuffer(resetButton);
+
     loginButton = new ButtonWidget("image/UIImage/downButton.png", "image/UIImage/upButton.png");
     loginButton->setScale(500, 100);
-    loginButton->setLocalPosition((w - signInButton->getScale().first) / 2, 1500);
-    loginButton->buttonUpEvent = []()
+    loginButton->setLocalPosition((w - signInButton->getScale().first) / 2, 1600);
+    loginButton->buttonUpEvent = [this]() mutable
     {
-        auto PC = GlobalFunction::Cast<TitleController>(GlobalFunction::GetPlayerController());
-        if(PC)
-        {
-            PC->goToMainLevel();
-        }
+        std::string emailStr = emailBox->getContent();
+        std::string passwordStr = passwordBox->getContent();
+        Framework::auth->SignInWithEmailAndPassword(emailStr.c_str(), passwordStr.c_str());
+        result = Framework::auth->SignInWithEmailAndPasswordLastResult();
+        isCheckingSignUp = true;
     };
     addWidgetToBuffer(loginButton);
     addButtonToBuffer(loginButton);
@@ -106,4 +200,17 @@ void LoginCanvas::initButton() {
     loginText->setLocalPosition(loginButtonLoc.first + (loginButtonSize.first - loginTextSize.first) / 2,
                                 loginButtonLoc.second + (loginButtonSize.second - loginTextSize.second) / 2);
     addWidgetToBuffer(loginText);
+
+    auto resetButtonLoc = resetButton->getLocalPosition();
+    auto resetButtonSize = resetButton->getScale();
+    resetText = new TextWidget("Send Password Reset Email", 40, 255, 255, 255);
+    auto resetTextSize = resetText->getScale();
+    resetText->setLocalPosition(resetButtonLoc.first + (resetButtonSize.first - resetTextSize.first) / 2,
+                                resetButtonLoc.second + (resetButtonSize.second - resetTextSize.second) / 2);
+    addWidgetToBuffer(resetText);
+
+    signInResultText = new TextWidget("Sign in success", 40, 255, 255, 255);
+    signInResultText->setLocalPosition((w - signInResultText->getScale().first) / 2,h - 300);
+    signInResultText->setVisibility(false);
+    addWidgetToBuffer(signInResultText);
 }

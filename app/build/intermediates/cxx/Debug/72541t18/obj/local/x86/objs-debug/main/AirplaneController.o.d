@@ -97,7 +97,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\YesNoCanvas.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\CashShopCanvas.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\LoginCanvas.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Framework.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\TTFComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\HPrimitiveComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\HSceneComponent.h \
@@ -130,6 +130,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth\credential.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth\types.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\util.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\GlobalFunction.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\AirplaneController.h:
@@ -326,7 +327,7 @@ D:\comtus\Development\android\shootingGame\app\jni\src\UI\CashShopCanvas.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\LoginCanvas.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h:
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Framework.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Components\TTFComponent.h:
 
@@ -391,5 +392,7 @@ D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_
 D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth\types.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\util.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\GlobalFunction.h:
