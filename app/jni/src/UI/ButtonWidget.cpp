@@ -79,10 +79,9 @@ bool ButtonWidget::checkIsClicked(int inputX, int inputY)
 {
     bool isClicked = false;
     auto buttonPos = getLocalPosition();
-    auto buttonSize = buttonDownImg->getScale();
-    if(buttonPos.first <= inputX && inputX <= buttonPos.first + buttonSize.first)
+    if(buttonPos.first <= inputX && inputX <= buttonPos.first + scaleX)
     {
-        if(buttonPos.second <= inputY && inputY <= buttonPos.second + buttonSize.second)
+        if(buttonPos.second <= inputY && inputY <= buttonPos.second + scaleY)
         {
             if(!isDown)
             {

@@ -111,7 +111,7 @@ public:
     }
     void checkingCollision()
     {
-        for(int i = 0; i < collisionBoxes.size() - 1; ++i)
+        for(int i = 0; i < int(collisionBoxes.size()) - 1; ++i)
         {
             for(int j = i + 1; j < collisionBoxes.size(); ++j)
             {

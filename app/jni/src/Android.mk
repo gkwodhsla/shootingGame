@@ -56,6 +56,7 @@ LOCAL_SRC_FILES := main.cpp \
 Framework.cpp\
 HPlayerController.cpp\
 AirplaneController.cpp\
+TitleController.cpp\
 Vector2D.cpp\
 GlobalFunction.cpp\
 Components/HSceneComponent.cpp\
@@ -76,6 +77,7 @@ Actors/Spawner.cpp\
 Actors/StageManager.cpp\
 Actors/Crystal.cpp\
 Level/MainLevel.cpp\
+Level/TitleLevel.cpp\
 UI/Canvas.cpp\
 UI/ShopCanvas.cpp\
 UI/CashShopCanvas.cpp\

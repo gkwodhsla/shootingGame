@@ -1,10 +1,7 @@
-//
-// Created by lenovo on 2021-08-07.
-//
-
 #include "Framework.h"
 #include "Level/HLevelBase.h"
 #include "Level/MainLevel.h"
+#include "Level/TitleLevel.h"
 #include "Components/SpritesheetComponent.h"
 #include <android/log.h>
 #include <SDL.h>
@@ -93,7 +90,8 @@ Framework::Framework()
 
     initFirebase();
 
-    curLevel = new MainLevel();
+    //curLevel = new MainLevel();
+    curLevel = new TitleLevel();
     curLevel->enter();
 
     fpsText = new TTFComponent(0,0,70,255,0,0,"font/EvilEmpire.ttf","Hello World!",nullptr);
@@ -181,6 +179,27 @@ void Framework::startGame()
         std::string fpsStr = "FPS: ";
         fpsStr += std::to_string(int(1/deltaTime));
         fpsText->changeText(fpsStr);
+    }
+}
+
+void Framework::changeLevel(HLevelBase* newLevel)
+{
+    curLevel->exit();
+    delete curLevel;
+    curLevel = nullptr;
+    curLevel = newLevel;
+    newLevel->enter();
+}
+
+void Framework::eraseCanvas(Canvas* canvas)
+{
+    for(int i = 0;i < worldUI.size(); ++i)
+    {
+        if(worldUI[i] == canvas)
+        {
+            worldUI.erase((worldUI.begin() + i));
+            break;
+        }
     }
 }
 

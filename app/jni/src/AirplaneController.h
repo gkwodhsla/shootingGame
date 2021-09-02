@@ -19,7 +19,6 @@ public:
     Canvas* inGameCanvas = nullptr;
     Canvas* cashShopCanvas = nullptr;
     Canvas* yesNoCanvas = nullptr;
-    Canvas* testTitle = nullptr;
     bool isShopCanvasShow = true;
     int curMoney = 0;
 };

@@ -23,6 +23,8 @@ public:
     void update(float deltaTime);
     void render();
     void startGame();
+    static void changeLevel(HLevelBase* newLevel);
+    static void eraseCanvas(Canvas* canvas);
 
 private:
     static void initFirebase();

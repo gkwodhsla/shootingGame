@@ -19,10 +19,15 @@ public:
 
 private:
     void initEditBox();
+    void initButton();
 
 private:
     ImageWidget* backgroundImg = nullptr;
     TextWidget* gameNameText = nullptr;
     EditBoxWidget* emailBox = nullptr;
     EditBoxWidget* passwordBox = nullptr;
+    ButtonWidget* signInButton = nullptr;
+    ButtonWidget* loginButton = nullptr;
+    TextWidget* signInText = nullptr;
+    TextWidget* loginText = nullptr;
 };

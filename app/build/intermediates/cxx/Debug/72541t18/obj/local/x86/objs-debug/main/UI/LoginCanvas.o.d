@@ -103,7 +103,10 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cwchar \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cwctype \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cctype \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wctype.h
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wctype.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\TitleController.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\GlobalFunction.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\LoginCanvas.h:
 
@@ -312,3 +315,9 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cwc
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cctype:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wctype.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\TitleController.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\GlobalFunction.h:
