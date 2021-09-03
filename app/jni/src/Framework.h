@@ -11,6 +11,7 @@ class SDL_Rect;
 class HLevelBase;
 class Canvas;
 class SpritesheetComponent;
+class DBManager;
 
 class Framework
 {
@@ -43,5 +44,7 @@ public:
     static std::vector<Canvas*> worldUI;
     static firebase::App* app;
     static firebase::auth::Auth* auth;
+    static std::string UID;
+    static DBManager* dbManager;
 };
 

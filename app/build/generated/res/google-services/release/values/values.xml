@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="default_web_client_id" translatable="false">228712047558-otm0rfkvb3j0jeeje37m4q0v1oeet9bm.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://myandroidgame-ad8c6-default-rtdb.asia-southeast1.firebasedatabase.app</string>
     <string name="gcm_defaultSenderId" translatable="false">228712047558</string>
     <string name="google_api_key" translatable="false">AIzaSyBT8G1mre4RLx9WIWTO6k3miwq3z1mD_fs</string>
     <string name="google_app_id" translatable="false">1:228712047558:android:d05b2cfec94dcd577d88c7</string>

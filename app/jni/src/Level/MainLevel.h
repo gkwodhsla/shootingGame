@@ -32,7 +32,7 @@ public:
 
 private:
     void afterStageClear();
-
+    void writeGameDataToDB();
 public:
     ActorObjectPool<Bullet>* bulletPool;
     ActorObjectPool<Crystal>* crystalPool;

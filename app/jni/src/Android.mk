@@ -59,6 +59,7 @@ AirplaneController.cpp\
 TitleController.cpp\
 Vector2D.cpp\
 GlobalFunction.cpp\
+DBManager.cpp\
 Components/HSceneComponent.cpp\
 Components/HPrimitiveComponent.cpp\
 Components/ImageComponent.cpp\

@@ -1,1 +1,0 @@
-D:/comtus/Development/android/shootingGame/app/jni/src/Android.mk:105: c++

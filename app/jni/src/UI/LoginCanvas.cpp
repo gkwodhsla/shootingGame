@@ -5,6 +5,7 @@
 #include "EditBoxWidget.h"
 #include "TitleController.h"
 #include "../GlobalFunction.h"
+#include "../DBManager.h"
 
 #include <string>
 
@@ -57,10 +58,12 @@ void LoginCanvas::update(float deltaTime)
     {
         if (result.status() == firebase::kFutureStatusComplete)
         {
-            if (result.error() == firebase::auth::kAuthErrorNone)
+            if (result.error() == firebase::auth::kAuthErrorNone) // 새로운 유저가 생성되면 유저가 생성됐다고 알려주고 DB에 하나 만들어준다.
             {
                 firebase::auth::User* user = *result.result();
+                Framework::UID = user->uid();
                 signInResultText->changeText("Sign in success");
+                Framework::dbManager->createDBForNewUser();
             }
             else
             {
@@ -84,6 +87,7 @@ void LoginCanvas::update(float deltaTime)
                 auto PC = GlobalFunction::Cast<TitleController>(GlobalFunction::GetPlayerController());
                 if(PC)
                 {
+                    Framework::UID = user->uid();
                     PC->goToMainLevel();
                 }
             }

@@ -16,6 +16,7 @@
 #include "../ActorObjectPool.h"
 #include "../GlobalFunction.h"
 #include "../AirplaneController.h"
+#include "../DBManager.h"
 #include <vector>
 #include <android/log.h>
 
@@ -156,7 +157,7 @@ void MainLevel::enter()
     bulletPool = new ActorObjectPool<Bullet>(500);
     crystalPool = new ActorObjectPool<Crystal>(50);
 
-    Framework::auth->SignInWithEmailAndPassword("gkwodhsla@naver.com", "12rhtmxm");
+
 }
 
 void MainLevel::exit()
@@ -220,4 +221,24 @@ void MainLevel::afterStageClear()
 
     coolTime = maxCoolTime;
 
+    writeGameDataToDB();
+}
+
+void MainLevel::writeGameDataToDB()
+{
+    auto PC = Cast<AirplaneController>(GetPlayerController());
+    auto shopCanvas = Cast<ShopCanvas>(PC->shopCanvas);
+
+    DBData writeData;
+
+    writeData.attackUpgrade = shopCanvas->getAttackUpgrade();
+    writeData.bulletUpgrade = shopCanvas->getBulletUpgrade();
+    writeData.curAirplaneUpgrade = shopCanvas->getAirplaneUpgrade();
+    writeData.thunderNum = playerAirplane->getMissileCnt();
+    writeData.shieldNum = playerAirplane->getShieldCnt();
+    writeData.money = shopCanvas->getCrystal();
+    writeData.maxStage = shopCanvas->getMaxStage();
+    writeData.curAttack = playerAirplane->getPlayerAttackPower();
+    writeData.curBullet = playerAirplane->getPlayerBulletCnt();
+    Framework::dbManager->writeToDB(writeData);
 }

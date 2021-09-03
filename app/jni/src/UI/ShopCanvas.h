@@ -37,6 +37,12 @@ public:
     int getCrystal();
     void setCrystal(int crystal);
     void updateCrystalText();
+    int getAttackUpgrade();
+    void setAttackUpgrade(int attackUpgrade);
+    int getBulletUpgrade();
+    void setBulletUpgrade(int bulletUpgrade);
+    int getAirplaneUpgrade();
+    void setAirplaneUpgrade(int airplaneUpgrade);
 
 private:
     void initWidgets();

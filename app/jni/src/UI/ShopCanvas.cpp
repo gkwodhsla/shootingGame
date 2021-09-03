@@ -108,6 +108,36 @@ void ShopCanvas::setCrystal(int crystal)
     updateCrystalText();
 }
 
+int ShopCanvas::getAttackUpgrade()
+{
+    return curAttackPower;
+}
+
+void ShopCanvas::setAttackUpgrade(int attackUpgrade)
+{
+    curAttackPower = attackUpgrade;
+}
+
+int ShopCanvas::getBulletUpgrade()
+{
+    return curBullet;
+}
+
+void ShopCanvas::setBulletUpgrade(int bulletUpgrade)
+{
+    curBullet = bulletUpgrade;
+}
+
+int ShopCanvas::getAirplaneUpgrade()
+{
+    return curAirplane;
+}
+
+void ShopCanvas::setAirplaneUpgrade(int airplaneUpgrade)
+{
+    curAirplane = airplaneUpgrade;
+}
+
 void ShopCanvas::updateCrystalText()
 {
     moneyText->changeText(std::to_string(curCrystal));

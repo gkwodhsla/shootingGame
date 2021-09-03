@@ -1,4 +1,5 @@
 #include "Framework.h"
+#include "DBManager.h"
 #include "Level/HLevelBase.h"
 #include "Level/MainLevel.h"
 #include "Level/TitleLevel.h"
@@ -20,6 +21,9 @@ int Framework::rendererHeight = 0;
 std::vector<Canvas*> Framework::worldUI;
 firebase::App* Framework::app = nullptr;
 firebase::auth::Auth* Framework::auth = nullptr;
+std::string Framework::UID = "";
+DBManager* Framework::dbManager = nullptr;
+
 Framework::Framework()
 {
     if(SDL_Init(SDL_INIT_VIDEO)<0)
@@ -95,6 +99,8 @@ Framework::Framework()
     curLevel->enter();
 
     fpsText = new TTFComponent(0,0,70,255,0,0,"font/EvilEmpire.ttf","Hello World!",nullptr);
+
+    dbManager = new DBManager();
 }
 
 Framework::~Framework()
@@ -114,6 +120,9 @@ Framework::~Framework()
 
     delete app;
     app = nullptr;
+
+    delete dbManager;
+    dbManager = nullptr;
 
     for(auto& canvas:worldUI)
     {
