@@ -268,6 +268,10 @@ void Airplane::setPlayerAirplaneShape(PLAYER_AIRPLANE_SHAPE shape)
     this->shape = shape;
     switch (this->shape)
     {
+        case PLAYER_AIRPLANE_SHAPE::SHAPE1:
+            airplaneImg->changeImage("image/player/1.png");
+            airplaneImg->setScale({100, 115});
+            break;
         case PLAYER_AIRPLANE_SHAPE::SHAPE2:
             airplaneImg->changeImage("image/player/2.png");
             airplaneImg->setScale({100, 115});

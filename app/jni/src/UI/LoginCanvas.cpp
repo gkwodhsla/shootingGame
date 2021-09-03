@@ -6,8 +6,8 @@
 #include "TitleController.h"
 #include "../GlobalFunction.h"
 #include "../DBManager.h"
-
 #include <string>
+#include <android/log.h>
 
 LoginCanvas::LoginCanvas(int canvasW, int canvasH, int canvasWorldX, int canvasWorldY) :
 Canvas(canvasW, canvasH, canvasWorldX, canvasWorldY)
@@ -84,12 +84,14 @@ void LoginCanvas::update(float deltaTime)
             {
                 firebase::auth::User* user = *result.result();
                 signInResultText->changeText("Log In Success");
-                auto PC = GlobalFunction::Cast<TitleController>(GlobalFunction::GetPlayerController());
+                Framework::UID = user->uid();
+                readDBResult = Framework::dbManager->getDBRef().Child("users").Child(Framework::UID).GetValue();
+                isCheckingReadDataFromDB = true;
+                /*auto PC = GlobalFunction::Cast<TitleController>(GlobalFunction::GetPlayerController());
                 if(PC)
                 {
-                    Framework::UID = user->uid();
                     PC->goToMainLevel();
-                }
+                }*/
             }
             else
             {
@@ -119,6 +121,31 @@ void LoginCanvas::update(float deltaTime)
             signInResultText->setVisibility(true);
             signInResultText->setLocalPosition((w - signInResultText->getScale().first) / 2,800);
             isCheckingEmailSend = false;
+        }
+    }
+    else if(isCheckingReadDataFromDB)
+    {
+        if (readDBResult.status() != firebase::kFutureStatusPending)
+        {
+            if (readDBResult.status() != firebase::kFutureStatusComplete)
+            {
+                //LogMessage("ERROR: GetValue() returned an invalid result.");
+                // Handle the error...
+            }
+            else if (readDBResult.error() != firebase::database::kErrorNone)
+            {
+
+            }
+            else
+            {
+                auto PC = GlobalFunction::Cast<TitleController>(GlobalFunction::GetPlayerController());
+                if(PC)
+                {
+                    Framework::dbManager->readFromDB(readDBResult.result());
+                    PC->goToMainLevel();
+                    isCheckingReadDataFromDB = false;
+                }
+            }
         }
     }
     if(isShowSignInText)

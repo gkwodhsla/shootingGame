@@ -23,8 +23,13 @@ public:
     DBManager();
     virtual ~DBManager();
     void writeToDB(const DBData& data);
-    DBData readFromDB();
+    void readFromDB(const firebase::database::DataSnapshot* snapshot);
     void createDBForNewUser();
+
+public:
+    firebase::database::DatabaseReference getDBRef();
+    DBData getDataReadFromDB();
+
 private:
     const std::string attackUpgradeKey = "attackUpgrade";
     const std::string bulletUpgradeKey = "bulletUpgrade";
@@ -35,6 +40,7 @@ private:
     const std::string maxStageKey = "maxStage";
     const std::string curAttackKey = "curAttack";
     const std::string curBulletKey = "curBullet";
-    static firebase::database::Database *database;
-    static firebase::database::DatabaseReference dbRef;
+    DBData readData;
+    firebase::database::Database* database = nullptr;
+    firebase::database::DatabaseReference dbRef;
 };

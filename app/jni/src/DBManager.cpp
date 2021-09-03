@@ -2,9 +2,7 @@
 #include "Framework.h"
 #include "GlobalFunction.h"
 #include <android/log.h>
-
-firebase::database::Database* DBManager::database = nullptr;
-firebase::database::DatabaseReference DBManager::dbRef;
+#include <firebase/variant.h>
 
 DBManager::DBManager()
 {
@@ -41,9 +39,17 @@ void DBManager::writeToDB(const DBData& data)
     dbRef.Child("users").Child(Framework::UID).Child(curBulletKey).SetValue(data.curBullet);
 }
 
-DBData DBManager::readFromDB()
+void DBManager::readFromDB(const firebase::database::DataSnapshot* snapshot)
 {
-
+    readData.attackUpgrade = snapshot->Child(attackUpgradeKey).value().AsInt64().int64_value();
+    readData.bulletUpgrade = snapshot->Child(bulletUpgradeKey).value().AsInt64().int64_value();
+    readData.curAirplaneUpgrade = snapshot->Child(curAirplaneUpgradeKey).value().AsInt64().int64_value();
+    readData.shieldNum = snapshot->Child(shieldNumKey).value().AsInt64().int64_value();
+    readData.thunderNum = snapshot->Child(thunderNumKey).value().AsInt64().int64_value();
+    readData.money = snapshot->Child(moneyKey).value().AsInt64().int64_value();
+    readData.maxStage = snapshot->Child(maxStageKey).value().AsInt64().int64_value();
+    readData.curAttack = snapshot->Child(curAttackKey).value().AsInt64().int64_value();
+    readData.curBullet = snapshot->Child(curBulletKey).value().AsInt64().int64_value();
 }
 
 void DBManager::createDBForNewUser()
@@ -57,4 +63,14 @@ void DBManager::createDBForNewUser()
     dbRef.Child("users").Child(Framework::UID).Child(maxStageKey).SetValue(1);
     dbRef.Child("users").Child(Framework::UID).Child(curAttackKey).SetValue(25);
     dbRef.Child("users").Child(Framework::UID).Child(curBulletKey).SetValue(1);
+}
+
+firebase::database::DatabaseReference DBManager::getDBRef()
+{
+    return dbRef;
+}
+
+DBData DBManager::getDataReadFromDB()
+{
+    return readData;
 }

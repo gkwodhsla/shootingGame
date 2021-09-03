@@ -1,0 +1,149 @@
+{
+  "abi": "ARMEABI_V7A",
+  "info": {
+    "abi": "ARMEABI_V7A",
+    "bitness": 32,
+    "deprecated": false,
+    "default": true
+  },
+  "cxxBuildFolder": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\.cxx\\Release\\1157g5j1\\armeabi-v7a",
+  "soFolder": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local\\armeabi-v7a",
+  "soRepublishFolder": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\ndkBuild\\release\\obj\\local\\armeabi-v7a",
+  "abiPlatformVersion": 19,
+  "variant": {
+    "buildSystemArgumentList": [
+      "APP_PLATFORM\u003dandroid-16"
+    ],
+    "cFlagsList": [],
+    "cppFlagsList": [],
+    "variantName": "release",
+    "soFolder": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1\\obj\\local",
+    "soRepublishFolder": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\ndkBuild\\release\\obj\\local",
+    "cxxBuildFolder": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\.cxx\\Release\\1157g5j1",
+    "intermediatesFolder": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1",
+    "isDebuggableEnabled": false,
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": [],
+    "implicitBuildTargetSet": [],
+    "cmakeSettingsConfiguration": "android-gradle-plugin-predetermined-name",
+    "module": {
+      "cxxFolder": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\.cxx",
+      "intermediatesBaseFolder": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates",
+      "intermediatesFolder": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx",
+      "gradleModulePathName": ":app",
+      "moduleRootFolder": "D:\\comtus\\Development\\android\\shootingGame\\app",
+      "moduleBuildFile": "D:\\comtus\\Development\\android\\shootingGame\\app\\build.gradle",
+      "makeFile": "D:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+      "buildSystem": "NDK_BUILD",
+      "ndkFolder": "D:\\AndroidSDK\\ndk\\21.4.7075529",
+      "ndkVersion": "21.4.7075529",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultStl": "SYSTEM",
+      "ndkMetaPlatforms": {
+        "min": 16,
+        "max": 30,
+        "aliases": {
+          "20": 19,
+          "25": 24,
+          "J": 16,
+          "J-MR1": 17,
+          "J-MR2": 18,
+          "K": 19,
+          "L": 21,
+          "L-MR1": 22,
+          "M": 23,
+          "N": 24,
+          "N-MR1": 24,
+          "O": 26,
+          "O-MR1": 27,
+          "P": 28,
+          "Q": 29,
+          "R": 30
+        }
+      },
+      "ndkMetaAbiList": [
+        {
+          "abi": "ARMEABI_V7A",
+          "bitness": 32,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "ARM64_V8A",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "X86",
+          "bitness": 32,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "X86_64",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        }
+      ],
+      "cmakeToolchainFile": "D:\\AndroidSDK\\ndk\\21.4.7075529\\build\\cmake\\android.toolchain.cmake",
+      "stlSharedObjectMap": {
+        "LIBCXX_SHARED": {
+          "ARMEABI_V7A": "D:\\AndroidSDK\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\arm-linux-androideabi\\libc++_shared.so",
+          "ARM64_V8A": "D:\\AndroidSDK\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\aarch64-linux-android\\libc++_shared.so",
+          "X86": "D:\\AndroidSDK\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\i686-linux-android\\libc++_shared.so",
+          "X86_64": "D:\\AndroidSDK\\ndk\\21.4.7075529\\toolchains\\llvm\\prebuilt\\windows-x86_64\\sysroot\\usr\\lib\\x86_64-linux-android\\libc++_shared.so"
+        },
+        "LIBCXX_STATIC": {},
+        "NONE": {},
+        "SYSTEM": {}
+      },
+      "project": {
+        "rootBuildGradleFolder": "D:\\comtus\\Development\\android\\shootingGame",
+        "sdkFolder": "D:\\AndroidSDK",
+        "isBuildOnlyTargetAbiEnabled": true,
+        "isCmakeBuildCohabitationEnabled": false,
+        "isPrefabEnabled": false
+      },
+      "nativeBuildOutputLevel": "QUIET"
+    },
+    "prefabClassPathFileCollection": [],
+    "prefabPackageDirectoryListFileCollection": [],
+    "stlType": "c++_static",
+    "optimizationTag": "Release"
+  },
+  "buildSettings": {
+    "environmentVariables": []
+  },
+  "prefabFolder": "D:\\comtus\\Development\\android\\shootingGame\\app\\build\\.cxx\\Release\\1157g5j1\\prefab\\armeabi-v7a",
+  "isActiveAbi": true,
+  "fullConfigurationHash": "1157g5j1x5k462b6nv5b5b5umy215r4e1s2e724a5t2o551r3d4c715i5i42",
+  "configurationArguments": [
+    "NDK_PROJECT_PATH\u003dnull",
+    "APP_BUILD_SCRIPT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Android.mk",
+    "NDK_APPLICATION_MK\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\jni\\Application.mk",
+    "APP_ABI\u003darmeabi-v7a",
+    "NDK_ALL_ABIS\u003darmeabi-v7a",
+    "NDK_DEBUG\u003d0",
+    "NDK_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/obj",
+    "NDK_LIBS_OUT\u003dD:\\comtus\\Development\\android\\shootingGame\\app\\build\\intermediates\\cxx\\Release\\1157g5j1/lib",
+    "APP_PLATFORM\u003dandroid-16"
+  ]
+}

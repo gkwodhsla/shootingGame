@@ -33,6 +33,7 @@ public:
 private:
     void afterStageClear();
     void writeGameDataToDB();
+    void initDataUsingDataReadFromDB();
 public:
     ActorObjectPool<Bullet>* bulletPool;
     ActorObjectPool<Crystal>* crystalPool;

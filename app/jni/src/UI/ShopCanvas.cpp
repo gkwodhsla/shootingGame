@@ -74,8 +74,16 @@ int ShopCanvas::getMaxStage()
     return maxStage;
 }
 
+void ShopCanvas::setMaxStage(int stage)
+{
+    maxStage = stage;
+}
+
 void ShopCanvas::updateShopState()
 {
+    attackPowerText->changeText(std::to_string(curAttackPower) + "/" + std::to_string(maxAttackPower));
+    bulletText->changeText(std::to_string(curBullet) + "/" + std::to_string(maxBullet));
+    airplaneText->changeText(std::to_string(curAirplane) + "/" + std::to_string(maxAirplane));
     missileText->changeText(std::to_string(curMissile) + "/" + std::to_string(maxMissile));
     shieldText->changeText(std::to_string(curShield) + "/" + std::to_string(maxShield));
     moneyText->changeText(std::to_string(curCrystal));
@@ -84,11 +92,13 @@ void ShopCanvas::updateShopState()
 void ShopCanvas::setShieldCnt(int cnt)
 {
     curShield = cnt;
+    updateShopState();
 }
 
 void ShopCanvas::setMissileCnt(int cnt)
 {
     curMissile = cnt;
+    updateShopState();
 }
 
 void ShopCanvas::addCrystal(int howMany)
@@ -116,6 +126,7 @@ int ShopCanvas::getAttackUpgrade()
 void ShopCanvas::setAttackUpgrade(int attackUpgrade)
 {
     curAttackPower = attackUpgrade;
+    updateShopState();
 }
 
 int ShopCanvas::getBulletUpgrade()
@@ -126,6 +137,7 @@ int ShopCanvas::getBulletUpgrade()
 void ShopCanvas::setBulletUpgrade(int bulletUpgrade)
 {
     curBullet = bulletUpgrade;
+    updateShopState();
 }
 
 int ShopCanvas::getAirplaneUpgrade()
@@ -136,6 +148,7 @@ int ShopCanvas::getAirplaneUpgrade()
 void ShopCanvas::setAirplaneUpgrade(int airplaneUpgrade)
 {
     curAirplane = airplaneUpgrade;
+    updateShopState();
 }
 
 void ShopCanvas::updateCrystalText()

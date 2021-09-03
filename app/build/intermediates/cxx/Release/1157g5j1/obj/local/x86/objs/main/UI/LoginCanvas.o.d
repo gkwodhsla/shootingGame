@@ -124,15 +124,6 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth\credential.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth\types.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\util.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\ImageWidget.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\Widget.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\ButtonWidget.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\TextWidget.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\EditBoxWidget.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\TitleController.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\GlobalFunction.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\DBManager.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\database.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\database\common.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\database\data_snapshot.h \
@@ -142,7 +133,16 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\database\listener.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\database\transaction.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\database\mutable_data.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\log.h
+  D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\log.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\ImageWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\Widget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\ButtonWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\TextWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\EditBoxWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\TitleController.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\GlobalFunction.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\DBManager.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\LoginCanvas.h:
 
@@ -392,24 +392,6 @@ D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_
 
 D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\util.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\ImageWidget.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\Widget.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\ButtonWidget.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\TextWidget.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\EditBoxWidget.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\TitleController.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\GlobalFunction.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\DBManager.h:
-
 D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\database.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\database\common.h:
@@ -429,3 +411,21 @@ D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_
 D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\database\mutable_data.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\log.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\ImageWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\Widget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\ButtonWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\TextWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\EditBoxWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\TitleController.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\GlobalFunction.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\DBManager.h:

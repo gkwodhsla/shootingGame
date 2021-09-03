@@ -2,6 +2,9 @@
 
 #include "Canvas.h"
 #include "../Framework.h"
+#include "firebase/app.h"
+#include "firebase/util.h"
+#include "firebase/database.h"
 
 class ButtonWidget;
 class TextWidget;
@@ -37,9 +40,11 @@ private:
     bool isCheckingSignIn = false;
     bool isCheckingSignUp = false;
     bool isCheckingEmailSend = false;
+    bool isCheckingReadDataFromDB = false;
     bool isShowSignInText = false;
     float msgShowTime = 2.0f;
     const float maxMsgShowTime = 2.0f;
     firebase::Future<firebase::auth::User*> result;
     firebase::Future<void> result2;
+    firebase::Future<firebase::database::DataSnapshot> readDBResult;
 };

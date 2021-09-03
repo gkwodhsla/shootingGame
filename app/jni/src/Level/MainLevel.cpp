@@ -157,7 +157,7 @@ void MainLevel::enter()
     bulletPool = new ActorObjectPool<Bullet>(500);
     crystalPool = new ActorObjectPool<Crystal>(50);
 
-
+    initDataUsingDataReadFromDB();
 }
 
 void MainLevel::exit()
@@ -241,4 +241,38 @@ void MainLevel::writeGameDataToDB()
     writeData.curAttack = playerAirplane->getPlayerAttackPower();
     writeData.curBullet = playerAirplane->getPlayerBulletCnt();
     Framework::dbManager->writeToDB(writeData);
+}
+
+void MainLevel::initDataUsingDataReadFromDB()
+{
+    auto PC = Cast<AirplaneController>(GetPlayerController());
+    auto shopCanvas = Cast<ShopCanvas>(PC->shopCanvas);
+
+    auto data = Framework::dbManager->getDataReadFromDB();
+
+    shopCanvas->setAttackUpgrade(data.attackUpgrade);
+    shopCanvas->setBulletUpgrade(data.bulletUpgrade);
+    shopCanvas->setAirplaneUpgrade(data.curAirplaneUpgrade);
+    shopCanvas->setMissileCnt(data.thunderNum);
+    shopCanvas->setShieldCnt(data.shieldNum);
+    shopCanvas->setCrystal(data.money);
+    shopCanvas->setMaxStage(data.maxStage);
+    playerAirplane->setPlayerAttackPower(data.curAttack);
+    playerAirplane->setPlayerBulletCnt(data.curBullet);
+    playerAirplane->setMissileCnt(data.thunderNum);
+    playerAirplane->setShieldCnt(data.shieldNum);
+
+    if(data.curAirplaneUpgrade == 1)
+    {
+        playerAirplane->setPlayerAirplaneShape(PLAYER_AIRPLANE_SHAPE::SHAPE1);
+    }
+    else if(data.curAirplaneUpgrade == 2)
+    {
+        playerAirplane->setPlayerAirplaneShape(PLAYER_AIRPLANE_SHAPE::SHAPE2);
+    }
+    else
+    {
+        playerAirplane->setPlayerAirplaneShape(PLAYER_AIRPLANE_SHAPE::SHAPE3);
+    }
+    shopCanvas->updateShopState();
 }
