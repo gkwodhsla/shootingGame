@@ -85,7 +85,7 @@ Framework::Framework()
                                     "SDL_ttf could not initialize! SDL_ttf Error: %s\n", TTF_GetError());
             }
 
-            if(Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0)
+            if(Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 1024) < 0)
             {
                 __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
                                     "SDL_mixer could not initialize! SDL_ttf Error: %s\n", Mix_GetError());

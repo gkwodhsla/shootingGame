@@ -4,12 +4,14 @@
 #include <functional>
 
 class ImageComponent;
+class AudioComponent;
 
 class ButtonWidget:public Widget
 {
 public:
     ButtonWidget() = delete;
-    ButtonWidget(const std::string& downImgPath, const std::string& upImgPath);
+    ButtonWidget(const std::string& downImgPath, const std::string& upImgPath,
+                 const std::string& downSoundPath, const std::string& upSoundPath);
     virtual ~ButtonWidget();
     virtual void render() override;
     virtual void update(float deltaTime) override;
@@ -26,6 +28,8 @@ public:
 private:
     ImageComponent* buttonUpImg = nullptr;
     ImageComponent* buttonDownImg = nullptr;
+    AudioComponent* downSound = nullptr;
+    AudioComponent* upSound = nullptr;
     bool isDown = false;
     float downTime = 0.0f;
     float holdCoolTime = 0.1f;

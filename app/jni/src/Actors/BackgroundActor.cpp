@@ -20,6 +20,8 @@ BackgroundActor::BackgroundActor()
     backgroundImage->setClipDraw(true);
 
     battleMusic = new AmbientMusicComponent("sound/battleAmbient.mp3", 160, this);
+    shopMusic = new AmbientMusicComponent("sound/shopAmbient.mp3", 160, this);
+    //shopMusic->play();
 
     auto bgImgSize = backgroundImage->getImageSize();
     backgroundImage->setScale(std::make_pair(Framework::rendererWidth, Framework::rendererHeight));
@@ -39,13 +41,17 @@ BackgroundActor::BackgroundActor()
 
 BackgroundActor::~BackgroundActor()
 {
-
-
     delete backgroundImage;
     backgroundImage = nullptr;
 
     delete camera;
     camera = nullptr;
+
+    delete shopMusic;
+    shopMusic = nullptr;
+
+    delete battleMusic;
+    battleMusic = nullptr;
 }
 
 void BackgroundActor::render()
@@ -104,10 +110,12 @@ void BackgroundActor::changeBackgroundImage(const std::string& path)
 
 void BackgroundActor::playBattleMusic()
 {
+    shopMusic->stop();
     battleMusic->play();
 }
 
 void BackgroundActor::stopBattleMusic()
 {
     battleMusic->stop();
+    shopMusic->play();
 }

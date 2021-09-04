@@ -147,7 +147,8 @@ void CashShopCanvas::initButtonWidgets()
         {
             curX = w - 100 - smallWindowYSize;
         }
-        buyButtons.emplace_back(new ButtonWidget("image/UIImage/downButton.png","image/UIImage/upButton.png"));
+        buyButtons.emplace_back(new ButtonWidget("image/UIImage/downButton.png","image/UIImage/upButton.png",
+                                                 "", "sound/click.wav"));
         buyButtons[i]->setScale(180, 80);
         buyButtons[i]->setLocalPosition(curX + smallWindowXSize / 2 - 90, curY + smallWindowYSize / 2 + 70);
         buyButtons[i]->buttonUpEvent = [=]()
@@ -162,7 +163,8 @@ void CashShopCanvas::initButtonWidgets()
         addWidgetToBuffer(buyButtons[i]);
         addButtonToBuffer(buyButtons[i]);
     }
-    changeButton = new ButtonWidget("image/UIImage/changeDownButton.png","image/UIImage/changeUpButton.png");
+    changeButton = new ButtonWidget("image/UIImage/changeDownButton.png","image/UIImage/changeUpButton.png",
+                                    "", "sound/click.wav");
     changeButton->setScale(120, 120);
     changeButton->setLocalPosition(100, 35);
     changeButton->buttonUpEvent = []()

@@ -30,7 +30,6 @@ void TitleLevel::render()
 
 void TitleLevel::enter()
 {
-    spawnActor<BackgroundActor>();
     playerController = new TitleController(nullptr);
 }
 

@@ -159,6 +159,8 @@ void MainLevel::enter()
     crystalPool = new ActorObjectPool<Crystal>(50);
 
     initDataUsingDataReadFromDB();
+
+    bgActor->stopBattleMusic();
 }
 
 void MainLevel::exit()

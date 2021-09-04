@@ -51,7 +51,7 @@ void InGameCanvas::update(float deltaTime)
 
 void InGameCanvas::initWidgets()
 {
-    thunderButton = new ButtonWidget("image/UIImage/thunderSkillButton.png", "image/UIImage/thunderSkillButton.png");
+    thunderButton = new ButtonWidget("image/UIImage/thunderSkillButton.png", "image/UIImage/thunderSkillButton.png", "", "");
     thunderButton->setScale(150, 150);
     thunderButton->setLocalPosition(50, h - 200);
     auto thunderDownEvent = [=]() mutable
@@ -65,7 +65,7 @@ void InGameCanvas::initWidgets()
     addWidgetToBuffer(thunderButton);
     addButtonToBuffer(thunderButton);
 
-    shieldButton = new ButtonWidget("image/UIImage/shieldSkillButton.png", "image/UIImage/shieldSkillButton.png");
+    shieldButton = new ButtonWidget("image/UIImage/shieldSkillButton.png", "image/UIImage/shieldSkillButton.png", "", "");
     shieldButton->setScale(150, 150);
     shieldButton->setLocalPosition(50, h - 500);
     auto shieldDownEvent = [=]() mutable

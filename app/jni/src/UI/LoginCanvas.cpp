@@ -176,7 +176,8 @@ void LoginCanvas::initEditBox()
 }
 
 void LoginCanvas::initButton() {
-    signInButton = new ButtonWidget("image/UIImage/downButton.png", "image/UIImage/upButton.png");
+    signInButton = new ButtonWidget("image/UIImage/downButton.png", "image/UIImage/upButton.png",
+                                    "", "sound/click.wav");
     signInButton->setScale(500, 100);
     signInButton->setLocalPosition((w - signInButton->getScale().first) / 2, 1200);
     signInButton->buttonUpEvent = [this]() mutable
@@ -190,7 +191,8 @@ void LoginCanvas::initButton() {
     addWidgetToBuffer(signInButton);
     addButtonToBuffer(signInButton);
 
-    resetButton = new ButtonWidget("image/UIImage/downButton.png", "image/UIImage/upButton.png");
+    resetButton = new ButtonWidget("image/UIImage/downButton.png", "image/UIImage/upButton.png",
+                                   "", "sound/click.wav");
     resetButton->setScale(500, 100);
     resetButton->setLocalPosition((w - signInButton->getScale().first) / 2, 1400);
     resetButton->buttonUpEvent = [this]() mutable
@@ -202,7 +204,8 @@ void LoginCanvas::initButton() {
     addWidgetToBuffer(resetButton);
     addButtonToBuffer(resetButton);
 
-    loginButton = new ButtonWidget("image/UIImage/downButton.png", "image/UIImage/upButton.png");
+    loginButton = new ButtonWidget("image/UIImage/downButton.png", "image/UIImage/upButton.png",
+                                   "", "sound/click.wav");
     loginButton->setScale(500, 100);
     loginButton->setLocalPosition((w - signInButton->getScale().first) / 2, 1600);
     loginButton->buttonUpEvent = [this]() mutable

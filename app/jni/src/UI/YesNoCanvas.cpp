@@ -26,7 +26,8 @@ void YesNoCanvas::initCanvas()
     window->setLocalPosition(0, 0);
     addWidgetToBuffer(window);
 
-    yesButton = new ButtonWidget("image/UIImage/downButton.png","image/UIImage/upButton.png");
+    yesButton = new ButtonWidget("image/UIImage/downButton.png","image/UIImage/upButton.png",
+                                 "", "sound/purchase.wav");
     yesButton->setScale(150, 100);
     yesButton->setLocalPosition(100, h - 200);
     yesButton->buttonUpEvent = [this]()
@@ -38,7 +39,8 @@ void YesNoCanvas::initCanvas()
     addWidgetToBuffer(yesButton);
     addButtonToBuffer(yesButton);
 
-    noButton = new ButtonWidget("image/UIImage/downButton.png","image/UIImage/upButton.png");
+    noButton = new ButtonWidget("image/UIImage/downButton.png","image/UIImage/upButton.png",
+                                "", "sound/click.wav");
     noButton->setScale(150, 100);
     noButton->setLocalPosition(w - 150 - 100, h - 200);
     noButton->buttonUpEvent = [this]()

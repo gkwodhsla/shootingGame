@@ -185,7 +185,8 @@ void ShopCanvas::initWidgets()
     moneyText->setLocalPosition(w - 230, 65);
     addWidgetToBuffer(moneyText);
 
-    attackUpgradeButton = new ButtonWidget("image/UIImage/attackDownButton.png", "image/UIImage/attackUpButton.png");
+    attackUpgradeButton = new ButtonWidget("image/UIImage/attackDownButton.png", "image/UIImage/attackUpButton.png",
+                                           "", "sound/click.wav");
     attackUpgradeButton->setScale(180, 180);
     attackUpgradeButton->setLocalPosition(80, 250);
     addWidgetToBuffer(attackUpgradeButton);
@@ -206,7 +207,8 @@ void ShopCanvas::initWidgets()
     addWidgetToBuffer(attackPowerText);
 
 
-    bulletUpgradeButton = new ButtonWidget("image/UIImage/bulletDownButton.png", "image/UIImage/bulletUpButton.png");
+    bulletUpgradeButton = new ButtonWidget("image/UIImage/bulletDownButton.png", "image/UIImage/bulletUpButton.png",
+                                           "", "sound/click.wav");
     bulletUpgradeButton->setScale(180, 180);
     bulletUpgradeButton->setLocalPosition(450, 250);
     addWidgetToBuffer(bulletUpgradeButton);
@@ -225,7 +227,8 @@ void ShopCanvas::initWidgets()
     bulletText->setLocalPosition(520, 440);
     addWidgetToBuffer(bulletText);
 
-    airplaneUpgradeButton = new ButtonWidget("image/UIImage/fighterDownButton.png", "image/UIImage/fighterUpButton.png");
+    airplaneUpgradeButton = new ButtonWidget("image/UIImage/fighterDownButton.png", "image/UIImage/fighterUpButton.png",
+                                             "", "sound/click.wav");
     airplaneUpgradeButton->setScale(180, 180);
     airplaneUpgradeButton->setLocalPosition(w - 270, 250);
     addWidgetToBuffer(airplaneUpgradeButton);
@@ -245,7 +248,8 @@ void ShopCanvas::initWidgets()
     airplaneText->setLocalPosition(w - 200, 440);
     addWidgetToBuffer(airplaneText);
 
-    missileButton = new ButtonWidget("image/UIImage/missileDownButton.png", "image/UIImage/missileUpButton.png");
+    missileButton = new ButtonWidget("image/UIImage/missileDownButton.png", "image/UIImage/missileUpButton.png",
+                                     "", "sound/click.wav");
     missileButton->setScale(180, 180);
     missileButton->setLocalPosition(80 + 180, 500);
     addWidgetToBuffer(missileButton);
@@ -264,7 +268,8 @@ void ShopCanvas::initWidgets()
     missileText->setLocalPosition(80 + 180 + 60, 690);
     addWidgetToBuffer(missileText);
 
-    shieldButton = new ButtonWidget("image/UIImage/shieldDownButton.png", "image/UIImage/shieldUpButton.png");
+    shieldButton = new ButtonWidget("image/UIImage/shieldDownButton.png", "image/UIImage/shieldUpButton.png",
+                                    "", "sound/click.wav");
     shieldButton->setScale(180, 180);
     shieldButton->setLocalPosition(450 + 180, 500);
     addWidgetToBuffer(shieldButton);
@@ -304,7 +309,8 @@ void ShopCanvas::initWidgets()
     explanationText4->setLocalPosition(150, 1000);
     addWidgetToBuffer(explanationText4);
 
-    buyButton = new ButtonWidget("image/UIImage/downButton.png", "image/UIImage/upButton.png");
+    buyButton = new ButtonWidget("image/UIImage/downButton.png", "image/UIImage/upButton.png",
+                                 "", "sound/purchase.wav");
     buyButton->setScale(200, 150);
     buyButton->setLocalPosition(w / 2 - 100, 1150);
     addWidgetToBuffer(buyButton);
@@ -414,7 +420,8 @@ void ShopCanvas::initWidgets()
     buyText->setLocalPosition(w / 2 - 40, 1200);
     addWidgetToBuffer(buyText);
 
-    playButton = new ButtonWidget("image/UIImage/playDownButton.png", "image/UIImage/playUpButton.png");
+    playButton = new ButtonWidget("image/UIImage/playDownButton.png", "image/UIImage/playUpButton.png",
+                                  "", "sound/click.wav");
     playButton->buttonUpEvent = [this]()mutable
             {
                 isPlayButtonClicked = true;
@@ -423,7 +430,8 @@ void ShopCanvas::initWidgets()
     addWidgetToBuffer(playButton);
     addButtonToBuffer(playButton);
 
-    incButton = new ButtonWidget("image/UIImage/rightDownButton.png", "image/UIImage/rightUpButton.png");
+    incButton = new ButtonWidget("image/UIImage/rightDownButton.png", "image/UIImage/rightUpButton.png",
+                                 "", "sound/click.wav");
     incButton->buttonUpEvent = [this]()mutable
     {
         if(curStage < maxStage)
@@ -449,7 +457,8 @@ void ShopCanvas::initWidgets()
     addWidgetToBuffer(incButton);
     addButtonToBuffer(incButton);
 
-    decButton = new ButtonWidget("image/UIImage/leftDownButton.png", "image/UIImage/leftUpButton.png");
+    decButton = new ButtonWidget("image/UIImage/leftDownButton.png", "image/UIImage/leftUpButton.png",
+                                 "", "sound/click.wav");
     decButton->buttonUpEvent = [this]()mutable
     {
         if(curStage > minStage)
@@ -478,7 +487,8 @@ void ShopCanvas::initWidgets()
     stageText->setLocalPosition(265, h - 250);
     addWidgetToBuffer(stageText);
 
-    changeButton = new ButtonWidget("image/UIImage/changeDownButton.png","image/UIImage/changeUpButton.png");
+    changeButton = new ButtonWidget("image/UIImage/changeDownButton.png","image/UIImage/changeUpButton.png",
+                                    "", "sound/click.wav");
     changeButton->setScale(120, 120);
     changeButton->setLocalPosition(100, 35);
     changeButton->buttonUpEvent = []()

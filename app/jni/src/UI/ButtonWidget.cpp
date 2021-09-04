@@ -1,11 +1,20 @@
 #include "ButtonWidget.h"
 #include "../Components/ImageComponent.h"
+#include "../Components/AudioComponent.h"
 
-ButtonWidget::ButtonWidget(const std::string& downImgPath, const std::string& upImgPath)
+ButtonWidget::ButtonWidget(const std::string& downImgPath, const std::string& upImgPath,
+                           const std::string& downSoundPath = "", const std::string& upSoundPath = "")
 {
     buttonUpImg = new ImageComponent(upImgPath, {0, 0}, nullptr);
     buttonDownImg = new ImageComponent(downImgPath, {0, 0}, nullptr);
-
+    if(downSoundPath != "")
+    {
+        downSound = new AudioComponent(downSoundPath, 128, nullptr);
+    }
+    if(upSoundPath != "")
+    {
+        upSound = new AudioComponent(upSoundPath, 128, nullptr);
+    }
     auto scale = buttonUpImg->getImageSize();
     setScale(scale.first, scale.second);
 }
@@ -88,6 +97,10 @@ bool ButtonWidget::checkIsClicked(int inputX, int inputY)
                 isDown = true;
                 if(buttonDownEvent)
                 {
+                    if(downSound)
+                    {
+                        downSound->play();
+                    }
                     buttonDownEvent();
                 }
             }
@@ -96,6 +109,10 @@ bool ButtonWidget::checkIsClicked(int inputX, int inputY)
                 isDown = false;
                 if(buttonUpEvent)
                 {
+                    if(upSound)
+                    {
+                        upSound->play();
+                    }
                     buttonUpEvent();
                     downTime = 0.0f;
                 }

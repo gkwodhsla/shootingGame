@@ -173,7 +173,8 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\deque \
   D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\HLevelBase.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Actors\Bullet.h
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Actors\Bullet.h \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\thread
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\EnemyAirplane.h:
 
@@ -522,3 +523,5 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h:
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\HLevelBase.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Actors\Bullet.h:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\thread:

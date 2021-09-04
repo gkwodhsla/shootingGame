@@ -21,6 +21,7 @@ public:
 private:
     ImageComponent* backgroundImage = nullptr;
     AmbientMusicComponent* battleMusic = nullptr;
+    AmbientMusicComponent* shopMusic = nullptr;
     SDL_Rect* camera = nullptr;
     const int cameraWidthAndHeight = 300;
     float accYPos = 0.0f;
