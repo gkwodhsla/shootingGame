@@ -6,6 +6,7 @@
 #include "../Components/CollisionBoxComponent.h"
 #include "../Components/SpritesheetComponent.h"
 #include "../Components/SplineComponent.h"
+#include "../Components/AudioComponent.h"
 #include "../Framework.h"
 #include "../Level/MainLevel.h"
 #include "../GlobalFunction.h"
@@ -244,6 +245,7 @@ void EnemyAirplane::getDamage(int damage)
     curHp -= damage;
     if (curHp <= 0)
     {
+        explosionAudio->play();
         curHp = 0;
         explosionSprite->play();
         airplaneImg->setVisibility(false);

@@ -4,6 +4,7 @@
 
 class ImageComponent;
 class SDL_Rect;
+class AmbientMusicComponent;
 
 class BackgroundActor :public HActor
 {
@@ -15,8 +16,11 @@ public:
     void render() override;
     void update(float deltaTime) override;
     void changeBackgroundImage(const std::string&);
+    void playBattleMusic();
+    void stopBattleMusic();
 private:
     ImageComponent* backgroundImage = nullptr;
+    AmbientMusicComponent* battleMusic = nullptr;
     SDL_Rect* camera = nullptr;
     const int cameraWidthAndHeight = 300;
     float accYPos = 0.0f;

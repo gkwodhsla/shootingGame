@@ -1,28 +1,26 @@
-//
-// Created by lenovo on 2021-08-07.
-//
-
 #include "BackgroundActor.h"
 #include "../Components/HSceneComponent.h"
 #include "../Components/ImageComponent.h"
+#include "../Components/AmbientMusicComponent.h"
 #include "../Framework.h"
 #include <utility>
 #include <SDL.h>
 #include <cmath>
 #include <android/log.h>
 
-BackgroundActor::BackgroundActor() {
+BackgroundActor::BackgroundActor()
+{
 
     rootComponent->setComponentLocalLocation(std::make_pair(0, 0));
     rootComponent->setComponentLocalRotation(0);
     rootComponent->setOwner(this);
 
-    //init imageComponent;
     backgroundImage = new ImageComponent("image/background/2.png", std::make_pair(0, 0), this);
     backgroundImage->attachTo(rootComponent);
     backgroundImage->setClipDraw(true);
 
-    //init camera
+    battleMusic = new AmbientMusicComponent("sound/battleAmbient.mp3", 160, this);
+
     auto bgImgSize = backgroundImage->getImageSize();
     backgroundImage->setScale(std::make_pair(Framework::rendererWidth, Framework::rendererHeight));
     __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
@@ -102,4 +100,14 @@ void BackgroundActor::update(float deltaTime)
 void BackgroundActor::changeBackgroundImage(const std::string& path)
 {
     backgroundImage->changeImage(path);
+}
+
+void BackgroundActor::playBattleMusic()
+{
+    battleMusic->play();
+}
+
+void BackgroundActor::stopBattleMusic()
+{
+    battleMusic->stop();
 }

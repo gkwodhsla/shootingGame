@@ -113,6 +113,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__node_handle \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\optional \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\CollisionBoxComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\AudioComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\ActorObjectPool.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\queue \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\deque \
@@ -393,6 +394,8 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__n
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\optional:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\CollisionBoxComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\AudioComponent.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\ActorObjectPool.h:
 

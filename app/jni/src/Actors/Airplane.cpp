@@ -7,6 +7,7 @@
 #include "../Components/HSceneComponent.h"
 #include "../Components/SpritesheetComponent.h"
 #include "../Components/CollisionBoxComponent.h"
+#include "../Components/AudioComponent.h"
 #include "../ActorObjectPool.h"
 #include "../Framework.h"
 #include "../Level/MainLevel.h"
@@ -54,6 +55,7 @@ Airplane::Airplane()
                 airplaneImg->setVisibility(false);
                 boosterSprite->setVisibility(false);
                 explosionSprite->play();
+                explosionAudio->play();
                 canDestroyable = false;
                 isDie = true;
                 MainLevel* mainLevel = Cast<MainLevel>(GetLevel());
@@ -107,7 +109,7 @@ Airplane::Airplane()
     thunderAttack3->setComponentLocalLocation({Framework::rendererWidth - 500,0.0f});
     thunderAttack3->addEventAtNFrame(10, thunderEvent);
 
-
+    explosionAudio = new AudioComponent("sound/explosion.wav", 180, this);
 }
 
 Airplane::~Airplane()

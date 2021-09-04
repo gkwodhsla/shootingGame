@@ -57,6 +57,7 @@ void MainLevel::update(float deltaTime)
 
     if(curCanvas->getIsPlayButtonClicked())
     {
+        bgActor->playBattleMusic();
         playerAirplane->playerInitWhenStageBegin();
         curCanvas->removeFromViewport();
         curCanvas->setIsPlayButtonClicked(false);
@@ -100,7 +101,7 @@ void MainLevel::render()
 
 void MainLevel::enter()
 {
-    spawnActor<BackgroundActor>();
+    bgActor = spawnActor<BackgroundActor>();
     stageManager = spawnActor<StageManager>();
     playerAirplane = spawnActor<Airplane>();
     playerAirplane->setVisibility(false);
@@ -183,6 +184,8 @@ void MainLevel::stageClear()
 
 void MainLevel::afterStageClear()
 {
+    bgActor->stopBattleMusic();
+
     playerController->changeInputMode(INPUT_MODE::UI_ONLY);
     AirplaneController* PC = Cast<AirplaneController>(playerController);
 

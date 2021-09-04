@@ -10,6 +10,7 @@ class Bullet;
 class StageManager;
 class Canvas;
 class Crystal;
+class BackgroundActor;
 template<typename T>
 class ActorObjectPool;
 
@@ -39,6 +40,7 @@ public:
     ActorObjectPool<Crystal>* crystalPool;
 
 private:
+    BackgroundActor* bgActor = nullptr;
     StageManager* stageManager = nullptr;
     Airplane* playerAirplane = nullptr;
     std::vector<EnemyAirplane*> enemyAirplanes;

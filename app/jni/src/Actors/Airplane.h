@@ -5,6 +5,7 @@
 class ImageComponent;
 class SpritesheetComponent;
 class CollisionBoxComponent;
+class AudioComponent;
 
 enum class PLAYER_AIRPLANE_SHAPE
 {
@@ -51,6 +52,7 @@ protected:
     float fireRate = 0.5f;
     float curFireTime = 0.5f;
     bool isDie = false;
+    AudioComponent* explosionAudio = nullptr;
 
 protected:
     void turnOffBooster();

@@ -68,6 +68,8 @@ Components/MovementComponent.cpp\
 Components/SpritesheetComponent.cpp\
 Components/CollisionBoxComponent.cpp\
 Components/SplineComponent.cpp\
+Components/AudioComponent.cpp\
+Components/AmbientMusicComponent.cpp\
 Actors/HActor.cpp\
 Actors/BackgroundActor.cpp\
 Actors/Bullet.cpp\

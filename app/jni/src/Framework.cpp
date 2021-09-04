@@ -8,6 +8,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_ttf.h>
+#include <SDL_mixer.h>
 #include <chrono>
 #include "UI/Canvas.h"
 
@@ -26,7 +27,7 @@ DBManager* Framework::dbManager = nullptr;
 
 Framework::Framework()
 {
-    if(SDL_Init(SDL_INIT_VIDEO)<0)
+    if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO)<0)
     {
         __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
                             "SDL could not initialize SDL Error: %s\n", SDL_GetError());
@@ -83,6 +84,12 @@ Framework::Framework()
                 __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
                                     "SDL_ttf could not initialize! SDL_ttf Error: %s\n", TTF_GetError());
             }
+
+            if(Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0)
+            {
+                __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
+                                    "SDL_mixer could not initialize! SDL_ttf Error: %s\n", Mix_GetError());
+            }
         }
     }
     int getW;
@@ -131,6 +138,7 @@ Framework::~Framework()
     }
     TTF_Quit();
     IMG_Quit();
+    Mix_Quit();
     SDL_Quit();
 }
 
