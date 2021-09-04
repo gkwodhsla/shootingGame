@@ -36,6 +36,7 @@ Crystal::Crystal() {
                     canvas->addCrystal(1);
                 }
             }
+            Cast<Airplane>(other)->playCoinSound();
         }
     };
     collisionBox->registerCollisionResponse(collisionFunc);

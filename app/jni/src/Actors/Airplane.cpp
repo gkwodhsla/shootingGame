@@ -110,6 +110,8 @@ Airplane::Airplane()
     thunderAttack3->addEventAtNFrame(10, thunderEvent);
 
     explosionAudio = new AudioComponent("sound/explosion.wav", 180, this);
+    coinAudio = new AudioComponent("sound/coin.wav", 30, this);
+    shieldAudio = new AudioComponent("sound/shield.wav", 180, this);
 }
 
 Airplane::~Airplane()
@@ -305,6 +307,7 @@ void Airplane::turnOffBooster()
 
 void Airplane::turnOnShield()
 {
+    shieldAudio->play();
     shieldImage->setVisibility(true);
 }
 
@@ -362,4 +365,9 @@ void Airplane::playerInitWhenStageBegin()
     setVisibility(true);
     setActorTickable(true);
     explosionSprite->stop();
+}
+
+void Airplane::playCoinSound()
+{
+    coinAudio->play();
 }

@@ -41,6 +41,7 @@ public:
     void enableShield();
     void enableThunder();
     void playerInitWhenStageBegin();
+    void playCoinSound();
 
 private:
     void spawnPlayerBullet(std::pair<float, float>& spawnPos);
@@ -63,6 +64,8 @@ private:
     void shieldAnimation(float deltaTime);
 
 private:
+    AudioComponent* coinAudio = nullptr;
+    AudioComponent* shieldAudio = nullptr;
     SpritesheetComponent* boosterSprite = nullptr;
     SpritesheetComponent* thunderAttack1 = nullptr;
     SpritesheetComponent* thunderAttack2 = nullptr;
