@@ -219,3 +219,12 @@ void Canvas::createEmptyWindow()
     SDL_SetTextureBlendMode(window, SDL_BLENDMODE_BLEND);
     SDL_SetTextureAlphaMod(window, 255);
 }
+
+float Canvas::getCanvasXRatio() const
+{
+    return canvasXRatio;
+}
+float Canvas::getCanvasYRatio() const
+{
+    return canvasYRatio;
+}

@@ -9,7 +9,7 @@ class EditBoxWidget: public Widget
 {
 public:
     EditBoxWidget(const std::string& boxImagePath, const std::string& caretImagePath, const std::string& hintMessage,
-                  int fontSize, __uint8_t r, __uint8_t g, __uint8_t b);
+                  int fontSize, __uint8_t r, __uint8_t g, __uint8_t b, Canvas* owner);
     virtual ~EditBoxWidget();
     void render() override;
     void update(float deltaTime) override;

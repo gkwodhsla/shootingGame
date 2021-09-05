@@ -1,9 +1,0 @@
-In file included from D:/comtus/Development/android/shootingGame/app/jni/src/UI/LoginCanvas.cpp:1:
-In file included from D:/comtus/Development/android/shootingGame/app/jni/src/UI/LoginCanvas.h:3:
-D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.h:39:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
-        if constexpr(std::is_base_of<ButtonWidget, T>::value)
-           ^
-D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.h:43:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
-        else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
-                ^
-2 warnings generated.

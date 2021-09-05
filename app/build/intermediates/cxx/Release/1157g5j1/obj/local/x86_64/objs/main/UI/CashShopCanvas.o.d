@@ -91,13 +91,6 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\climits \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\limits.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__split_buffer \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\ImageWidget.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\Widget.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\ButtonWidget.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\TextWidget.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\AirplaneController.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\GlobalFunction.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\string \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\string_view \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__string \
@@ -106,6 +99,14 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cwctype \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cctype \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wctype.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\Widget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\TextWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\ImageWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\ButtonWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\EditBoxWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\AirplaneController.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\GlobalFunction.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\array
 
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\CashShopCanvas.h:
@@ -290,20 +291,6 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\lim
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__split_buffer:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\ImageWidget.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\Widget.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\ButtonWidget.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\TextWidget.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\AirplaneController.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\GlobalFunction.h:
-
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\string:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\string_view:
@@ -319,5 +306,21 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cwc
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cctype:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wctype.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\Widget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\TextWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\ImageWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\ButtonWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\EditBoxWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\AirplaneController.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\GlobalFunction.h:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\array:

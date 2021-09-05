@@ -8,11 +8,11 @@
 LoginCanvas::LoginCanvas(int canvasW, int canvasH, int canvasWorldX, int canvasWorldY) :
 Canvas(canvasW, canvasH, canvasWorldX, canvasWorldY)
 {
-    backgroundImg = makeWidget<ImageWidget>("image/background/login.png");
-    backgroundImg->setScale(RTWidth, RTHeight);
+    backgroundImg = makeWidget<ImageWidget>("image/background/login.png", this);
+    backgroundImg->setScale(RTWidth, RTHeight, true);
     backgroundImg->setLocalPosition(0, 0);
 
-    gameNameText = makeWidget<TextWidget>("Shooting Game", 120, 255, 255, 255);
+    gameNameText = makeWidget<TextWidget>("Shooting Game", 120, 255, 255, 255, this);
     gameNameText->setLocalPosition((RTWidth - gameNameText->getScale().first) / 2, 300);
 
     initEditBox();
@@ -155,20 +155,20 @@ void LoginCanvas::update(float deltaTime)
 
 void LoginCanvas::initEditBox()
 {
-    emailBox = makeWidget<EditBoxWidget>("image/UIImage/box.png", "image/UIImage/caret.png", "e-mail",40, 255, 255, 255);
-    emailBox->setScale(500 * canvasXRatio, 100 * canvasYRatio);
+    emailBox = makeWidget<EditBoxWidget>("image/UIImage/box.png", "image/UIImage/caret.png", "e-mail",40, 255, 255, 255, this);
+    emailBox->setScale(500, 100);
     emailBox->setLocalPosition((RTWidth - emailBox->getScale().first) / 2, 600);
 
-    passwordBox = makeWidget<EditBoxWidget>("image/UIImage/box.png", "image/UIImage/caret.png", "password",40, 255, 255, 255);
-    passwordBox->setScale(500 * canvasXRatio, 100 * canvasYRatio);
+    passwordBox = makeWidget<EditBoxWidget>("image/UIImage/box.png", "image/UIImage/caret.png", "password",40, 255, 255, 255, this);
+    passwordBox->setScale(500, 100);
     passwordBox->setLocalPosition((RTWidth - passwordBox->getScale().first) / 2, 900);
 }
 
 void LoginCanvas::initButton()
 {
     signInButton = makeWidget<ButtonWidget>("image/UIImage/downButton.png", "image/UIImage/upButton.png",
-                                    "", "sound/click.wav");
-    signInButton->setScale(500 * canvasXRatio, 100 * canvasYRatio);
+                                    "", "sound/click.wav", this);
+    signInButton->setScale(500, 100);
     signInButton->setLocalPosition((RTWidth - signInButton->getScale().first) / 2, 1100);
     signInButton->buttonUpEvent = [this]() mutable
     {
@@ -180,8 +180,8 @@ void LoginCanvas::initButton()
     };
 
     resetButton = makeWidget<ButtonWidget>("image/UIImage/downButton.png", "image/UIImage/upButton.png",
-                                   "", "sound/click.wav");
-    resetButton->setScale(500 * canvasXRatio, 100 * canvasYRatio);
+                                   "", "sound/click.wav", this);
+    resetButton->setScale(500, 100);
     resetButton->setLocalPosition((RTWidth - signInButton->getScale().first) / 2, 1300);
     resetButton->buttonUpEvent = [this]() mutable
     {
@@ -191,8 +191,8 @@ void LoginCanvas::initButton()
     };
 
     loginButton = makeWidget<ButtonWidget>("image/UIImage/downButton.png", "image/UIImage/upButton.png",
-                                   "", "sound/click.wav");
-    loginButton->setScale(500 * canvasXRatio, 100 * canvasYRatio);
+                                   "", "sound/click.wav", this);
+    loginButton->setScale(500, 100);
     loginButton->setLocalPosition((RTWidth - signInButton->getScale().first) / 2, 1500);
     loginButton->buttonUpEvent = [this]() mutable
     {
@@ -205,31 +205,31 @@ void LoginCanvas::initButton()
 
     auto signButtonLoc = signInButton->getLocalPosition();
     auto signButtonSize = signInButton->getScale();
-    signInText = makeWidget<TextWidget>("Sign in", 50, 255, 255, 255);
-    signInText->setScale(signInText->getScale().first * canvasXRatio, signInText->getScale().second * canvasYRatio);
+    signInText = makeWidget<TextWidget>("Sign in", 50, 255, 255, 255, this);
+    signInText->setScale(signInText->getScale().first, signInText->getScale().second);
     auto signTextSize = signInText->getScale();
     signInText->setLocalPosition(signButtonLoc.first + (signButtonSize.first - signTextSize.first) / 2,
                                  signButtonLoc.second + (signButtonSize.second - signTextSize.second) / 2);
 
     auto loginButtonLoc = loginButton->getLocalPosition();
     auto loginButtonSize = loginButton->getScale();
-    loginText = makeWidget<TextWidget>("Sign up", 50, 255, 255, 255);
-    loginText->setScale(loginText->getScale().first * canvasXRatio, loginText->getScale().second * canvasYRatio);
+    loginText = makeWidget<TextWidget>("Sign up", 50, 255, 255, 255, this);
+    loginText->setScale(loginText->getScale().first, loginText->getScale().second);
     auto loginTextSize = loginText->getScale();
     loginText->setLocalPosition(loginButtonLoc.first + (loginButtonSize.first - loginTextSize.first) / 2,
                                 loginButtonLoc.second + (loginButtonSize.second - loginTextSize.second) / 2);
 
     auto resetButtonLoc = resetButton->getLocalPosition();
     auto resetButtonSize = resetButton->getScale();
-    resetText = makeWidget<TextWidget>("Send Password Reset Email", 40, 255, 255, 255);
-    resetText->setScale(resetText->getScale().first * canvasXRatio, resetText->getScale().second * canvasYRatio);
+    resetText = makeWidget<TextWidget>("Send Password Reset Email", 40, 255, 255, 255, this);
+    resetText->setScale(resetText->getScale().first, resetText->getScale().second);
     auto resetTextSize = resetText->getScale();
     resetText->setLocalPosition(resetButtonLoc.first + (resetButtonSize.first - resetTextSize.first) / 2,
                                 resetButtonLoc.second + (resetButtonSize.second - resetTextSize.second) / 2);
 
-    signInResultText = makeWidget<TextWidget>("Sign in success", 40, 255, 255, 255);
+    signInResultText = makeWidget<TextWidget>("Sign in success", 40, 255, 255, 255, this);
     signInResultText->setLocalPosition((RTWidth - signInResultText->getScale().first) / 2,h - 300);
-    signInResultText->setScale(signInResultText->getScale().first * canvasXRatio,
-                               signInResultText->getScale().second * canvasYRatio);
     signInResultText->setVisibility(false);
+    signInResultText->setScale(signInResultText->getScale().first,
+                               signInResultText->getScale().second);
 }

@@ -1,8 +1,8 @@
 #include "Widget.h"
-
-Widget::Widget()
+#include "Canvas.h"
+Widget::Widget(Canvas* owner)
 {
-
+    this->owner = owner;
 }
 
 Widget::~Widget()
@@ -16,10 +16,18 @@ void Widget::setLocalPosition(int x, int y)
     canvasY = y;
 }
 
-void Widget::setScale(int scaleX, int scaleY)
+void Widget::setScale(int scaleX, int scaleY, bool isDrawRenderTargetSize)
 {
-    this->scaleX = scaleX;
-    this->scaleY = scaleY;
+    if(!isDrawRenderTargetSize)
+    {
+        this->scaleX = scaleX * owner->getCanvasXRatio();
+        this->scaleY = scaleY * owner->getCanvasYRatio();
+    }
+    else
+    {
+        this->scaleX = scaleX;
+        this->scaleY = scaleY;
+    }
 }
 
 std::pair<int, int> Widget::getScale()
@@ -45,4 +53,9 @@ bool Widget::getVisibility()
 void Widget::setVisibility(bool isVisible)
 {
     visibility = isVisible;
+}
+
+Canvas* Widget::getOwner()
+{
+    return owner;
 }

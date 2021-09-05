@@ -3,5 +3,6 @@ make: Nothing to be done for 'SDL2_image'.
 make: Nothing to be done for 'SDL2_mixer'.
 make: Nothing to be done for 'SDL2_ttf'.
 make: Nothing to be done for 'hidapi'.
-make: Nothing to be done for 'main'.
+[x86] Compile++      : main <= InGameCanvas.cpp
+[x86] SharedLibrary  : libmain.so
 make: Nothing to be done for 'mpg123'.

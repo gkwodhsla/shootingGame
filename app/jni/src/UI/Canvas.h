@@ -27,6 +27,8 @@ public:
     virtual bool handleEvent(SDL_Event& e) = 0;
     virtual void update(float deltaTime);
     void changeWindowAlphaValue(__uint8_t alpha);
+    float getCanvasXRatio()const;
+    float getCanvasYRatio()const;
 
 protected:
     template<typename T, typename ...Types>

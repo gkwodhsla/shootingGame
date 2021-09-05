@@ -1,7 +1,7 @@
 #include "ImageWidget.h"
 #include "../Components/ImageComponent.h"
 
-ImageWidget::ImageWidget(const std::string &imagePath)
+ImageWidget::ImageWidget(const std::string &imagePath, Canvas* owner):Widget(owner)
 {
     img = new ImageComponent(imagePath, {0, 0}, nullptr);
 }

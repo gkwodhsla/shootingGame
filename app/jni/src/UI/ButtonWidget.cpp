@@ -3,7 +3,7 @@
 #include "../Components/AudioComponent.h"
 
 ButtonWidget::ButtonWidget(const std::string& downImgPath, const std::string& upImgPath,
-                           const std::string& downSoundPath = "", const std::string& upSoundPath = "")
+                           const std::string& downSoundPath, const std::string& upSoundPath, Canvas* owner):Widget(owner)
 {
     buttonUpImg = new ImageComponent(upImgPath, {0, 0}, nullptr);
     buttonDownImg = new ImageComponent(downImgPath, {0, 0}, nullptr);

@@ -18,13 +18,13 @@ YesNoCanvas::~YesNoCanvas()
 
 void YesNoCanvas::initCanvas()
 {
-    window = makeWidget<ImageWidget>("image/UIImage/smallWindow.png");
-    window->setScale(RTWidth, RTHeight);
+    window = makeWidget<ImageWidget>("image/UIImage/smallWindow.png", this);
+    window->setScale(RTWidth, RTHeight, true);
     window->setLocalPosition(0, 0);
 
     yesButton = makeWidget<ButtonWidget>("image/UIImage/downButton.png","image/UIImage/upButton.png",
-                                 "", "sound/purchase.wav");
-    yesButton->setScale(150 * canvasXRatio, 100 * canvasYRatio);
+                                 "", "sound/purchase.wav", this);
+    yesButton->setScale(150, 100);
     yesButton->setLocalPosition(100, RTHeight - yesButton->getScale().second - 100);
     yesButton->buttonUpEvent = [this]()
     {
@@ -34,26 +34,22 @@ void YesNoCanvas::initCanvas()
     };
 
     noButton = makeWidget<ButtonWidget>("image/UIImage/downButton.png","image/UIImage/upButton.png",
-                                "", "sound/click.wav");
-    noButton->setScale(150 * canvasXRatio, 100 * canvasYRatio);
+                                "", "sound/click.wav", this);
+    noButton->setScale(150, 100);
     noButton->setLocalPosition(RTWidth - noButton->getScale().first - 100, RTHeight - noButton->getScale().second - 100);
     noButton->buttonUpEvent = [this]()
     {
         removeFromViewport();
     };
 
-    askText = makeWidget<TextWidget>("Are you sure?", 100, 255, 255, 255);
-    askText->setScale(askText->getScale().first*canvasXRatio,
-                      askText->getScale().second*canvasYRatio);
+    askText = makeWidget<TextWidget>("Are you sure?", 70, 255, 255, 255, this);
     askText->setLocalPosition((RTWidth - askText->getScale().first) / 2, 50);
 
-    yesText = makeWidget<TextWidget>("Yes", 60, 255, 255, 255);
-    yesText->setScale(yesText->getScale().first * canvasXRatio, yesText->getScale().second * canvasYRatio);
+    yesText = makeWidget<TextWidget>("Yes", 50, 255, 255, 255, this);
     int textYPos = (RTHeight - noButton->getScale().second - 100) + (yesButton->getScale().second - yesText->getScale().second) / 2;
     yesText->setLocalPosition(100 + (yesButton->getScale().first - yesText->getScale().first) / 2 , textYPos);
 
-    noText = makeWidget<TextWidget>("N o", 60, 255, 255, 255);
-    noText->setScale(noText->getScale().first * canvasXRatio, noText->getScale().second * canvasYRatio);
+    noText = makeWidget<TextWidget>("N o", 50, 255, 255, 255, this);
     noText->setLocalPosition(RTWidth - noButton->getScale().first - 100 + (noButton->getScale().first - noText->getScale().first) / 2, textYPos);
 }
 

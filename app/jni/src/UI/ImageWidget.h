@@ -8,7 +8,7 @@ class ImageWidget: public Widget
 {
 public:
     ImageWidget() = delete;
-    ImageWidget(const std::string& imagePath);
+    ImageWidget(const std::string& imagePath, Canvas* owner);
     virtual ~ImageWidget();
     void changeImage(const std::string& imagePath);
     virtual void render() override;

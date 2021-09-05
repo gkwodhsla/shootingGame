@@ -7,7 +7,8 @@ const int EditBoxWidget::caretYInterpValue = 50;
 const float EditBoxWidget::maxCoolTime = 0.3f;
 
 EditBoxWidget::EditBoxWidget(const std::string &boxImagePath, const std::string& caretImagePath, const std::string &hintMessage,
-                             int fontSize, __uint8_t r, __uint8_t g, __uint8_t b):fontSize(fontSize), r(r), g(g), b(b)
+                             int fontSize, __uint8_t r, __uint8_t g, __uint8_t b, Canvas* owner):
+                             Widget(owner), fontSize(fontSize), r(r), g(g), b(b)
 {
     if(hintMessage == "")
     {

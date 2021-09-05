@@ -87,8 +87,6 @@ private:
     int curShield = 0;
     int attackUpgradeFee = 50;
     int bulletUpgradeFee = 50;
-    int attackUpgradeGap = 50;
-    int bulletUpgradeGap = 50;
     int airplaneUpgradeFee = 3000;
     int missileFee = 1000;
     int shieldFee = 1000;

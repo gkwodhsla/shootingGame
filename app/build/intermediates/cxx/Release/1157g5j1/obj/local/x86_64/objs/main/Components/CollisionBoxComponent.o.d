@@ -129,6 +129,11 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\Components\CollisionBoxComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\HPlayerController.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\Canvas.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\Widget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\TextWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\ImageWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\ButtonWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\EditBoxWidget.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\Framework.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\MainLevel.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\Actors\Bullet.h \
@@ -415,6 +420,16 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\Co
 D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\HPlayerController.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\Canvas.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\Widget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\TextWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\ImageWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\ButtonWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\EditBoxWidget.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\Framework.h:
 

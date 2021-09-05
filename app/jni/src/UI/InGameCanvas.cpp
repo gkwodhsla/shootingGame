@@ -51,9 +51,9 @@ void InGameCanvas::update(float deltaTime)
 
 void InGameCanvas::initWidgets()
 {
-    thunderButton = new ButtonWidget("image/UIImage/thunderSkillButton.png", "image/UIImage/thunderSkillButton.png", "", "");
+    thunderButton = new ButtonWidget("image/UIImage/thunderSkillButton.png", "image/UIImage/thunderSkillButton.png", "", "", this);
     thunderButton->setScale(150, 150);
-    thunderButton->setLocalPosition(50, h - 200);
+    thunderButton->setLocalPosition(50, RTHeight - 200);
     auto thunderDownEvent = [=]() mutable
     {
         if(player)
@@ -65,9 +65,9 @@ void InGameCanvas::initWidgets()
     addWidgetToBuffer(thunderButton);
     addButtonToBuffer(thunderButton);
 
-    shieldButton = new ButtonWidget("image/UIImage/shieldSkillButton.png", "image/UIImage/shieldSkillButton.png", "", "");
+    shieldButton = new ButtonWidget("image/UIImage/shieldSkillButton.png", "image/UIImage/shieldSkillButton.png", "", "", this);
     shieldButton->setScale(150, 150);
-    shieldButton->setLocalPosition(50, h - 500);
+    shieldButton->setLocalPosition(50, RTHeight - 500);
     auto shieldDownEvent = [=]() mutable
     {
         if(player)
@@ -80,12 +80,12 @@ void InGameCanvas::initWidgets()
     addButtonToBuffer(shieldButton);
 
 
-    shieldCountText = new TextWidget(std::to_string(player->getShieldCnt()),40, 255, 255, 255);
-    shieldCountText->setLocalPosition(50 + 65, h - 350);
+    shieldCountText = new TextWidget(std::to_string(player->getShieldCnt()),40, 255, 255, 255, this);
+    shieldCountText->setLocalPosition(50 + 65, RTHeight - 350);
     addWidgetToBuffer(shieldCountText);
 
-    thunderCountText = new TextWidget(std::to_string(player->getMissileCnt()), 40, 255, 255, 255);
-    thunderCountText->setLocalPosition(50 + 65, h - 50);
+    thunderCountText = new TextWidget(std::to_string(player->getMissileCnt()), 40, 255, 255, 255, this);
+    thunderCountText->setLocalPosition(50 + 65, RTHeight - 50);
     addWidgetToBuffer(thunderCountText);
 
 }

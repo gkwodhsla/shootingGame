@@ -1,12 +1,12 @@
 #include "TextWidget.h"
 #include "../Components/TTFComponent.h"
 
-TextWidget::TextWidget(const std::string& content ,int fontSize, __uint8_t r, __uint8_t g, __uint8_t b)
+TextWidget::TextWidget(const std::string& content ,int fontSize, __uint8_t r, __uint8_t g, __uint8_t b, Canvas* owner):
+Widget(owner)
 {
     text = new TTFComponent(0, 0, fontSize, r, g, b, "font/EvilEmpire.ttf", content, nullptr);
     auto scale = text->getScale();
-    scaleX = scale.first;
-    scaleY = scale.second;
+    setScale(scale.first, scale.second);
 }
 
 TextWidget::~TextWidget()
