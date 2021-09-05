@@ -25,7 +25,8 @@ void AirplaneController::createCanvases()
     shopCanvas = new ShopCanvas(Framework::rendererWidth, Framework::rendererHeight, 0, 0);
     inGameCanvas = new InGameCanvas(Framework::rendererWidth, Framework::rendererHeight, 0, 0);
     cashShopCanvas = new CashShopCanvas(Framework::rendererWidth, Framework::rendererHeight, 0, 0);
-    yesNoCanvas = new YesNoCanvas(700, 600, (Framework::rendererWidth - 700) / 2, 300);
+    yesNoCanvas = new YesNoCanvas(Framework::rendererWidth / 2, Framework::rendererHeight / 3,
+                                  (Framework::rendererWidth - Framework::rendererWidth / 2) / 2, 200);
     shopCanvas->addToViewport();
 }
 

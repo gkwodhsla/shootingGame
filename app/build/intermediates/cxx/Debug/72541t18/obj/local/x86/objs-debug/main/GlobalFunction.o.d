@@ -128,6 +128,11 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\CollisionBoxComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\HPlayerController.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\Canvas.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\Widget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\TextWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\ImageWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\ButtonWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\EditBoxWidget.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Framework.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\HPawn.h
@@ -387,6 +392,16 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\Colli
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\HPlayerController.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\Canvas.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\Widget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\TextWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\ImageWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\ButtonWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\EditBoxWidget.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Framework.h:
 

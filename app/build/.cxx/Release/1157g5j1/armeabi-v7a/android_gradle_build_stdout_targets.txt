@@ -3,6 +3,25 @@ make: Nothing to be done for 'SDL2_image'.
 make: Nothing to be done for 'SDL2_mixer'.
 make: Nothing to be done for 'SDL2_ttf'.
 make: Nothing to be done for 'hidapi'.
+[armeabi-v7a] Compile++ thumb: main <= Framework.cpp
+[armeabi-v7a] Compile++ thumb: main <= AirplaneController.cpp
+[armeabi-v7a] Compile++ thumb: main <= TitleController.cpp
+[armeabi-v7a] Compile++ thumb: main <= GlobalFunction.cpp
+[armeabi-v7a] Compile++ thumb: main <= CollisionBoxComponent.cpp
+[armeabi-v7a] Compile++ thumb: main <= Bullet.cpp
+[armeabi-v7a] Compile++ thumb: main <= Airplane.cpp
+[armeabi-v7a] Compile++ thumb: main <= EnemyAirplane.cpp
+[armeabi-v7a] Compile++ thumb: main <= Spawner.cpp
+[armeabi-v7a] Compile++ thumb: main <= StageManager.cpp
+[armeabi-v7a] Compile++ thumb: main <= Crystal.cpp
+[armeabi-v7a] Compile++ thumb: main <= MainLevel.cpp
+[armeabi-v7a] Compile++ thumb: main <= TitleLevel.cpp
+[armeabi-v7a] Compile++ thumb: main <= Canvas.cpp
+[armeabi-v7a] Compile++ thumb: main <= ShopCanvas.cpp
+[armeabi-v7a] Compile++ thumb: main <= CashShopCanvas.cpp
+[armeabi-v7a] Compile++ thumb: main <= YesNoCanvas.cpp
 [armeabi-v7a] Compile++ thumb: main <= InGameCanvas.cpp
+[armeabi-v7a] Compile++ thumb: main <= LoginCanvas.cpp
+[armeabi-v7a] Compile++ thumb: main <= Widget.cpp
 [armeabi-v7a] SharedLibrary  : libmain.so
 make: Nothing to be done for 'mpg123'.

@@ -29,6 +29,7 @@ public:
     void changeWindowAlphaValue(__uint8_t alpha);
     float getCanvasXRatio()const;
     float getCanvasYRatio()const;
+    float getCanvasInterpValue()const;
 
 protected:
     template<typename T, typename ...Types>
@@ -53,9 +54,10 @@ protected:
     int w = 500;
     int h = 500;
     const int RTWidth = 1080;
-    const int RTHeight = 1704;
+    const int RTHeight = 1920;
     float canvasXRatio = 0.0f;
     float canvasYRatio = 0.0f;
+    float canvasInterpolate = 0.0f;
     SDL_Texture* window = nullptr;
     int canvasWorldPosX = 0;
     int canvasWorldPosY = 0;

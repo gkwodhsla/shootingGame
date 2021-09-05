@@ -1,5 +1,6 @@
 #include "Widget.h"
 #include "Canvas.h"
+#include "../Framework.h"
 Widget::Widget(Canvas* owner)
 {
     this->owner = owner;
@@ -18,17 +19,10 @@ void Widget::setLocalPosition(int x, int y)
 
 void Widget::setScale(int scaleX, int scaleY, bool isDrawRenderTargetSize)
 {
-    if(!isDrawRenderTargetSize)
-    {
-        this->scaleX = scaleX * owner->getCanvasXRatio();
-        this->scaleY = scaleY * owner->getCanvasYRatio();
-    }
-    else
-    {
-        this->scaleX = scaleX;
-        this->scaleY = scaleY;
-    }
+    this->scaleX = scaleX;
+    this->scaleY = scaleY;
 }
+
 
 std::pair<int, int> Widget::getScale()
 {

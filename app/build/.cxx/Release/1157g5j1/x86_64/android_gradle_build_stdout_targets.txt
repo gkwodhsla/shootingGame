@@ -5,6 +5,25 @@ make: Nothing to be done for 'SDL2_image'.
 make: Nothing to be done for 'SDL2_mixer'.
 make: Nothing to be done for 'SDL2_ttf'.
 make: Nothing to be done for 'hidapi'.
+[x86_64] Compile++      : main <= Framework.cpp
+[x86_64] Compile++      : main <= AirplaneController.cpp
+[x86_64] Compile++      : main <= TitleController.cpp
+[x86_64] Compile++      : main <= GlobalFunction.cpp
+[x86_64] Compile++      : main <= CollisionBoxComponent.cpp
+[x86_64] Compile++      : main <= Bullet.cpp
+[x86_64] Compile++      : main <= Airplane.cpp
+[x86_64] Compile++      : main <= EnemyAirplane.cpp
+[x86_64] Compile++      : main <= Spawner.cpp
+[x86_64] Compile++      : main <= StageManager.cpp
+[x86_64] Compile++      : main <= Crystal.cpp
+[x86_64] Compile++      : main <= MainLevel.cpp
+[x86_64] Compile++      : main <= TitleLevel.cpp
+[x86_64] Compile++      : main <= Canvas.cpp
+[x86_64] Compile++      : main <= ShopCanvas.cpp
+[x86_64] Compile++      : main <= CashShopCanvas.cpp
+[x86_64] Compile++      : main <= YesNoCanvas.cpp
 [x86_64] Compile++      : main <= InGameCanvas.cpp
+[x86_64] Compile++      : main <= LoginCanvas.cpp
+[x86_64] Compile++      : main <= Widget.cpp
 [x86_64] SharedLibrary  : libmain.so
 make: Nothing to be done for 'mpg123'.

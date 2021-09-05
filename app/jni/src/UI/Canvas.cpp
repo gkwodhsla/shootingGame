@@ -10,6 +10,8 @@ w(canvasW), h(canvasH), canvasWorldPosX(canvasWorldX), canvasWorldPosY(canvasWor
     Framework::worldUI.push_back(this);
     canvasXRatio = float(RTWidth) / float(canvasW);
     canvasYRatio = float(RTHeight) / float(canvasH);
+    canvasInterpolate = (float(RTWidth)/float(RTHeight))*(float(canvasH)/float(canvasW));
+
 }
 
 Canvas::~Canvas()
@@ -224,7 +226,13 @@ float Canvas::getCanvasXRatio() const
 {
     return canvasXRatio;
 }
+
 float Canvas::getCanvasYRatio() const
 {
     return canvasYRatio;
+}
+
+float Canvas::getCanvasInterpValue()const
+{
+    return canvasInterpolate;
 }

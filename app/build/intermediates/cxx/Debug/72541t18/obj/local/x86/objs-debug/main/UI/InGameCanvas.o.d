@@ -91,14 +91,6 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\climits \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\limits.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__split_buffer \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\ButtonWidget.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\Widget.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\TextWidget.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\GlobalFunction.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\Airplane.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\HPawn.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\HActor.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\..\Vector2D.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\string \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\string_view \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__string \
@@ -106,7 +98,17 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cwchar \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cwctype \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cctype \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wctype.h
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wctype.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\Widget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\TextWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\ImageWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\ButtonWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\EditBoxWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\GlobalFunction.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\Airplane.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\HPawn.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\HActor.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\..\Vector2D.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\InGameCanvas.h:
 
@@ -290,22 +292,6 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\lim
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__split_buffer:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\ButtonWidget.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\Widget.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\TextWidget.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\GlobalFunction.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\Airplane.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\HPawn.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\HActor.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\..\Vector2D.h:
-
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\string:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\string_view:
@@ -321,3 +307,23 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cwc
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cctype:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wctype.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\Widget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\TextWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\ImageWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\ButtonWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\EditBoxWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\GlobalFunction.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\Airplane.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\HPawn.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\HActor.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\..\Vector2D.h:

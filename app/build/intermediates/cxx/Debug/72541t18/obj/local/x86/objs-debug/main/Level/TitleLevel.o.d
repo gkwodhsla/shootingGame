@@ -107,6 +107,11 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\..\Actors\HActor.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\HPlayerController.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\Canvas.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\Widget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\TextWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\ImageWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\ButtonWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\EditBoxWidget.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Framework.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\TTFComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\HPrimitiveComponent.h \
@@ -345,6 +350,16 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\..\Ac
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\HPlayerController.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\Canvas.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\Widget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\TextWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\ImageWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\ButtonWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\EditBoxWidget.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Framework.h:
 

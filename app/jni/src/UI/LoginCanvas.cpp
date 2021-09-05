@@ -66,7 +66,7 @@ void LoginCanvas::update(float deltaTime)
             isShowSignInText = true;
             msgShowTime = maxMsgShowTime;
             signInResultText->setVisibility(true);
-            signInResultText->setLocalPosition((w - signInResultText->getScale().first) / 2,800);
+            signInResultText->setLocalPosition((RTWidth - signInResultText->getScale().first) / 2,RTHeight - 300);
             isCheckingSignIn = false;
         }
     }
@@ -94,7 +94,7 @@ void LoginCanvas::update(float deltaTime)
             isShowSignInText = true;
             msgShowTime = maxMsgShowTime;
             signInResultText->setVisibility(true);
-            signInResultText->setLocalPosition((w - signInResultText->getScale().first) / 2,800);
+            signInResultText->setLocalPosition((RTWidth - signInResultText->getScale().first) / 2,RTHeight - 300);
             isCheckingSignUp = false;
         }
     }
@@ -113,7 +113,7 @@ void LoginCanvas::update(float deltaTime)
             isShowSignInText = true;
             msgShowTime = maxMsgShowTime;
             signInResultText->setVisibility(true);
-            signInResultText->setLocalPosition((w - signInResultText->getScale().first) / 2,800);
+            signInResultText->setLocalPosition((RTWidth - signInResultText->getScale().first) / 2,RTHeight - 300);
             isCheckingEmailSend = false;
         }
     }
@@ -205,7 +205,7 @@ void LoginCanvas::initButton()
 
     auto signButtonLoc = signInButton->getLocalPosition();
     auto signButtonSize = signInButton->getScale();
-    signInText = makeWidget<TextWidget>("Sign in", 50, 255, 255, 255, this);
+    signInText = makeWidget<TextWidget>("Sign up", 50, 255, 255, 255, this);
     signInText->setScale(signInText->getScale().first, signInText->getScale().second);
     auto signTextSize = signInText->getScale();
     signInText->setLocalPosition(signButtonLoc.first + (signButtonSize.first - signTextSize.first) / 2,
@@ -213,7 +213,7 @@ void LoginCanvas::initButton()
 
     auto loginButtonLoc = loginButton->getLocalPosition();
     auto loginButtonSize = loginButton->getScale();
-    loginText = makeWidget<TextWidget>("Sign up", 50, 255, 255, 255, this);
+    loginText = makeWidget<TextWidget>("Sign in", 50, 255, 255, 255, this);
     loginText->setScale(loginText->getScale().first, loginText->getScale().second);
     auto loginTextSize = loginText->getScale();
     loginText->setLocalPosition(loginButtonLoc.first + (loginButtonSize.first - loginTextSize.first) / 2,
@@ -228,7 +228,7 @@ void LoginCanvas::initButton()
                                 resetButtonLoc.second + (resetButtonSize.second - resetTextSize.second) / 2);
 
     signInResultText = makeWidget<TextWidget>("Sign in success", 40, 255, 255, 255, this);
-    signInResultText->setLocalPosition((RTWidth - signInResultText->getScale().first) / 2,h - 300);
+    signInResultText->setLocalPosition((RTWidth - signInResultText->getScale().first) / 2,RTHeight - 300);
     signInResultText->setVisibility(false);
     signInResultText->setScale(signInResultText->getScale().first,
                                signInResultText->getScale().second);

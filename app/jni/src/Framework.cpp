@@ -51,7 +51,7 @@ Framework::Framework()
 
     //Create window
     window = SDL_CreateWindow( "Airplane Game", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-                                screenRect->w, screenRect->h, SDL_WINDOW_SHOWN );
+                                screenRect->w, screenRect->h, SDL_WINDOW_SHOWN);
 
     if( window == NULL )
     {

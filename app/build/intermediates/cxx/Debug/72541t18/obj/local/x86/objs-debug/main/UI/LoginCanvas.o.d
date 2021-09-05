@@ -91,11 +91,6 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\climits \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\limits.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__split_buffer \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Framework.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Components\TTFComponent.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Components\HPrimitiveComponent.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Components\HSceneComponent.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Components\HComponent.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\string \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\string_view \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__string \
@@ -104,6 +99,16 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cwctype \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cctype \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wctype.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\Widget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\TextWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\ImageWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\ButtonWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\EditBoxWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Framework.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Components\TTFComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Components\HPrimitiveComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Components\HSceneComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Components\HComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\HActor.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\..\Vector2D.h \
   D:\comtus\Development\android\shootingGame\app\jni\SDL_ttf\SDL_ttf.h \
@@ -134,11 +139,6 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\database\transaction.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\database\mutable_data.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\log.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\ImageWidget.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\Widget.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\ButtonWidget.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\TextWidget.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\EditBoxWidget.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\TitleController.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\GlobalFunction.h \
@@ -326,16 +326,6 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\lim
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__split_buffer:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Framework.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Components\TTFComponent.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Components\HPrimitiveComponent.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Components\HSceneComponent.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Components\HComponent.h:
-
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\string:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\string_view:
@@ -351,6 +341,26 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cwc
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cctype:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wctype.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\Widget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\TextWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\ImageWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\ButtonWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\EditBoxWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Framework.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Components\TTFComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Components\HPrimitiveComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Components\HSceneComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Components\HComponent.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\HActor.h:
 
@@ -411,16 +421,6 @@ D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_
 D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\database\mutable_data.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\log.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\ImageWidget.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\Widget.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\ButtonWidget.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\TextWidget.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\EditBoxWidget.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\TitleController.h:
 
