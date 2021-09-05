@@ -56,7 +56,8 @@ void CashShopCanvas::updateCrystalText()
 {
     moneyText->changeText(std::to_string(curCrystal));
     auto moneyTextScale = moneyText->getScale();
-    moneyText->setLocalPosition(w - 250 + (200 - moneyTextScale.first) / 2, 40 + (110 - moneyTextScale.second) / 2);
+    moneyText->setLocalPosition(RTWidth - 250 + (200 - moneyTextScale.first) / 2,
+                                40 + (moneyWindowImage->getScale().second - moneyTextScale.second) / 2);
 }
 
 int CashShopCanvas::getCrystal()
@@ -83,25 +84,21 @@ WHICH_CASH_SELECTED CashShopCanvas::getWhichCashItemSelected()
 
 void CashShopCanvas::initWindowImageWidgets()
 {
-    bgImg = new ImageWidget("image/UIImage/window.png");
+    bgImg = makeWidget<ImageWidget>("image/UIImage/window.png");
     bgImg->setLocalPosition(0, 0);
-    bgImg->setScale(w, h);
-    addWidgetToBuffer(bgImg);
+    bgImg->setScale(RTWidth, RTHeight);
 
-    shopTitleImage = new ImageWidget("image/UIImage/Header.png");
-    shopTitleImage->setLocalPosition(w / 2 - 140, 40);
-    shopTitleImage->setScale(300, 120);
-    addWidgetToBuffer(shopTitleImage);
+    shopTitleImage = makeWidget<ImageWidget>("image/UIImage/Header.png");
+    shopTitleImage->setLocalPosition(RTWidth / 2 - 150, 40);
+    shopTitleImage->setScale(300 * canvasXRatio, 120 * canvasYRatio);
 
-    crystalImage = new ImageWidget("image/UIImage/crystal.png");
-    crystalImage->setLocalPosition(w - 340, 35);
-    crystalImage->setScale(90, 110);
-    addWidgetToBuffer(crystalImage);
+    crystalImage = makeWidget<ImageWidget>("image/UIImage/crystal.png");
+    crystalImage->setLocalPosition(RTWidth - 340, 35);
+    crystalImage->setScale(90 * canvasXRatio, 110 * canvasYRatio);
 
-    moneyWindowImage = new ImageWidget("image/UIImage/box.png");
-    moneyWindowImage->setLocalPosition(w - 250, 40);
-    moneyWindowImage->setScale(200, 110);
-    addWidgetToBuffer(moneyWindowImage);
+    moneyWindowImage = makeWidget<ImageWidget>("image/UIImage/box.png");
+    moneyWindowImage->setLocalPosition(RTWidth - 250, 40);
+    moneyWindowImage->setScale(200 * canvasXRatio, 110 * canvasYRatio);
 
     int smallWindowXSize = 350;
     int smallWindowYSize = 350;
@@ -116,17 +113,15 @@ void CashShopCanvas::initWindowImageWidgets()
         }
         else
         {
-            curX = w - 100 - smallWindowYSize;
+            curX = RTWidth - 100 - smallWindowYSize;
         }
-        smallWindows.emplace_back(new ImageWidget("image/UIImage/smallWindow.png"));
-        smallWindows[i]->setScale(smallWindowXSize, smallWindowYSize);
+        smallWindows.emplace_back(makeWidget<ImageWidget>("image/UIImage/smallWindow.png"));
+        smallWindows[i]->setScale(smallWindowXSize * canvasXRatio, smallWindowYSize * canvasYRatio);
         smallWindows[i]->setLocalPosition(curX, curY);
-        addWidgetToBuffer(smallWindows[i]);
 
-        crystals.emplace_back(new ImageWidget("image/UIImage/crystal" + std::to_string(i+1) + ".png"));
-        crystals[i]->setScale(150, 150);
-        crystals[i]->setLocalPosition(curX + smallWindowXSize / 2 - 75, curY + smallWindowYSize / 2 - 100);
-        addWidgetToBuffer(crystals[i]);
+        crystals.emplace_back(makeWidget<ImageWidget>("image/UIImage/crystal" + std::to_string(i+1) + ".png"));
+        crystals[i]->setScale(150 * canvasXRatio, 150 * canvasYRatio);
+        crystals[i]->setLocalPosition(curX + (smallWindowXSize / 2 - 75), curY + smallWindowYSize / 2 - 100);
     }
 }
 
@@ -145,12 +140,13 @@ void CashShopCanvas::initButtonWidgets()
         }
         else
         {
-            curX = w - 100 - smallWindowYSize;
+            curX = RTWidth - 100 - smallWindowYSize;
         }
-        buyButtons.emplace_back(new ButtonWidget("image/UIImage/downButton.png","image/UIImage/upButton.png",
+        buyButtons.emplace_back(makeWidget<ButtonWidget>("image/UIImage/downButton.png","image/UIImage/upButton.png",
                                                  "", "sound/click.wav"));
-        buyButtons[i]->setScale(180, 80);
-        buyButtons[i]->setLocalPosition(curX + smallWindowXSize / 2 - 90, curY + smallWindowYSize / 2 + 70);
+        buyButtons[i]->setScale(180 * canvasXRatio, 80 * canvasYRatio);
+        buyButtons[i]->setLocalPosition(curX + smallWindowXSize / 2 - 90,
+                                        crystals[i]->getLocalPosition().second + crystals[i]->getScale().second);
         buyButtons[i]->buttonUpEvent = [=]()
         {
             auto PC = Cast<AirplaneController>(GetPlayerController());
@@ -160,27 +156,22 @@ void CashShopCanvas::initButtonWidgets()
                 PC->showYesNoWindow();
             }
         };
-        addWidgetToBuffer(buyButtons[i]);
-        addButtonToBuffer(buyButtons[i]);
     }
-    changeButton = new ButtonWidget("image/UIImage/changeDownButton.png","image/UIImage/changeUpButton.png",
+    changeButton = makeWidget<ButtonWidget>("image/UIImage/changeDownButton.png","image/UIImage/changeUpButton.png",
                                     "", "sound/click.wav");
-    changeButton->setScale(120, 120);
+    changeButton->setScale(120 * canvasXRatio, 120 * canvasYRatio);
     changeButton->setLocalPosition(100, 35);
     changeButton->buttonUpEvent = []()
     {
         auto PC = Cast<AirplaneController>(GetPlayerController());
         PC->changeShop();
     };
-    addWidgetToBuffer(changeButton);
-    addButtonToBuffer(changeButton);
 }
 
 void CashShopCanvas::initTextWidgets()
 {
-    moneyText = new TextWidget("123456", 60, 255, 255, 255);
+    moneyText = makeWidget<TextWidget>("123456", 60, 255, 255, 255);
     moneyText->setLocalPosition(w - 230, 65);
-    addWidgetToBuffer(moneyText);
 
     int smallWindowXSize = 350;
     int smallWindowYSize = 350;
@@ -195,17 +186,17 @@ void CashShopCanvas::initTextWidgets()
         }
         else
         {
-            curX = w - 100 - smallWindowYSize;
+            curX = RTWidth - 100 - smallWindowYSize;
         }
-        crystalNumTexts.emplace_back(new TextWidget(crystalNums[i], 50, 255, 255, 255));
+        crystalNumTexts.emplace_back(makeWidget<TextWidget>(crystalNums[i], 50, 255, 255, 255));
         crystalNumTexts[i]->setLocalPosition(curX + 20, curY + 10);
-        addWidgetToBuffer(crystalNumTexts[i]);
 
-        priceTexts.emplace_back(new TextWidget(prices[i], 45, 255, 255, 255));
+        priceTexts.emplace_back(makeWidget<TextWidget>(prices[i], 45, 255, 255, 255));
         auto textScale = priceTexts[i]->getScale();
         auto buttonScale = buyButtons[i]->getScale();
         auto textXPos = buttonScale.first - textScale.first;
-        priceTexts[i]->setLocalPosition(curX + smallWindowXSize / 2 - 90 + textXPos / 2, curY + smallWindowYSize / 2 + 88);
-        addWidgetToBuffer(priceTexts[i]);
+        auto textYPos = crystals[i]->getLocalPosition().second + crystals[i]->getScale().second +
+                (buttonScale.second - textScale.second) / 2;
+        priceTexts[i]->setLocalPosition(curX + smallWindowXSize / 2 - 90 + textXPos / 2, textYPos);
     }
 }

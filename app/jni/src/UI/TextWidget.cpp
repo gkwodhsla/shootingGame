@@ -19,6 +19,7 @@ void TextWidget::render()
 {
     Widget::render();
     text->setComponentLocalLocation(std::make_pair(float(canvasX), float(canvasY)));
+    text->setScale({scaleX, scaleY});
     text->render();
 }
 

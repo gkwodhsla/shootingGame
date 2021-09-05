@@ -2,10 +2,14 @@
 
 #include <SDL.h>
 #include <vector>
-
-class Widget;
-class ButtonWidget;
-class EditBoxWidget;
+#include <string>
+#include <type_traits>
+#include <android/log.h>
+#include "Widget.h"
+#include "TextWidget.h"
+#include "ImageWidget.h"
+#include "ButtonWidget.h"
+#include "EditBoxWidget.h"
 
 class Canvas
 {
@@ -25,8 +29,31 @@ public:
     void changeWindowAlphaValue(__uint8_t alpha);
 
 protected:
+    template<typename T, typename ...Types>
+    T* makeWidget(Types ...args)
+    {
+        T* newItem = new T(args...);
+
+        addWidgetToBuffer(newItem);
+
+        if constexpr(std::is_base_of<ButtonWidget, T>::value)
+        {
+            addButtonToBuffer(newItem);
+        }
+        else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
+        {
+            addEditBoxToBuffer(newItem);
+        }
+        return newItem;
+    }
+
+protected:
     int w = 500;
     int h = 500;
+    const int RTWidth = 1080;
+    const int RTHeight = 1704;
+    float canvasXRatio = 0.0f;
+    float canvasYRatio = 0.0f;
     SDL_Texture* window = nullptr;
     int canvasWorldPosX = 0;
     int canvasWorldPosY = 0;

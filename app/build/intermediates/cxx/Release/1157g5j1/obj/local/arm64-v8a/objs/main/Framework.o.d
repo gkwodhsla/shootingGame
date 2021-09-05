@@ -138,6 +138,11 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Components\CollisionBoxComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\HPlayerController.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\Canvas.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\Widget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\TextWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\ImageWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\ButtonWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\EditBoxWidget.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Framework.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\MainLevel.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Bullet.h \
@@ -171,6 +176,11 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\ImageComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\SDL_image\SDL_image.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_version.h \
+  D:\comtus\Development\android\shootingGame\app\jni\SDL_mixer\SDL_mixer.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_stdinc.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_rwops.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_audio.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_endian.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\Canvas.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h:
@@ -449,6 +459,16 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\HPlayerControlle
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\Canvas.h:
 
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\Widget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\TextWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\ImageWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\ButtonWidget.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\EditBoxWidget.h:
+
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Framework.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\MainLevel.h:
@@ -514,5 +534,15 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Components\ImageComponent
 D:\comtus\Development\android\shootingGame\app\jni\SDL_image\SDL_image.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_version.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\SDL_mixer\SDL_mixer.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_stdinc.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_rwops.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_audio.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_endian.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\Canvas.h:

@@ -155,42 +155,39 @@ void ShopCanvas::updateCrystalText()
 {
     moneyText->changeText(std::to_string(curCrystal));
     auto moneyTextScale = moneyText->getScale();
-    moneyText->setLocalPosition(w - 250 + (200 - moneyTextScale.first) / 2, 40 + (110 - moneyTextScale.second) / 2);
+    moneyText->setLocalPosition(RTWidth - 250 + (200 - moneyTextScale.first) / 2,
+                                40 + (moneyWindowImage->getScale().second - moneyTextScale.second) / 2);
 }
 
 
 void ShopCanvas::initWidgets()
 {
-    bgImage = new ImageWidget("image/UIImage/window.png");
+    bgImage = makeWidget<ImageWidget>("image/UIImage/window.png");
     bgImage->setLocalPosition(0, 0);
-    bgImage->setScale(w, h);
-    addWidgetToBuffer(bgImage);
+    bgImage->setScale(RTWidth, RTHeight);
 
-    shopTitleImage = new ImageWidget("image/UIImage/Header.png");
-    shopTitleImage->setLocalPosition(w / 2 - 140, 40);
-    shopTitleImage->setScale(300, 120);
-    addWidgetToBuffer(shopTitleImage);
+    shopTitleImage = makeWidget<ImageWidget>("image/UIImage/Header.png");
+    shopTitleImage->setLocalPosition(RTWidth / 2 - 150, 40);
+    shopTitleImage->setScale(300 * canvasXRatio, 120 * canvasYRatio);
 
-    crystalImage = new ImageWidget("image/UIImage/crystal.png");
-    crystalImage->setLocalPosition(w - 340, 35);
-    crystalImage->setScale(90, 110);
-    addWidgetToBuffer(crystalImage);
+    crystalImage = makeWidget<ImageWidget>("image/UIImage/crystal.png");
+    crystalImage->setLocalPosition(RTWidth - 340, 35);
+    crystalImage->setScale(90 * canvasXRatio, 110 * canvasYRatio);
 
-    moneyWindowImage = new ImageWidget("image/UIImage/box.png");
-    moneyWindowImage->setLocalPosition(w - 250, 40);
-    moneyWindowImage->setScale(200, 110);
-    addWidgetToBuffer(moneyWindowImage);
+    moneyWindowImage = makeWidget<ImageWidget>("image/UIImage/box.png");
+    moneyWindowImage->setLocalPosition(RTWidth - 250, 40);
+    moneyWindowImage->setScale(200 * canvasXRatio, 110 * canvasYRatio);
 
-    moneyText = new TextWidget(std::to_string(curCrystal), 60, 255, 255, 255);
-    moneyText->setLocalPosition(w - 230, 65);
-    addWidgetToBuffer(moneyText);
+    moneyText = makeWidget<TextWidget>(std::to_string(curCrystal), 60, 255, 255, 255);
+    auto moneyTextScale = moneyText->getScale();
+    moneyText->setLocalPosition(RTWidth - 250 + (200 - moneyTextScale.first) / 2,
+                                40 + (moneyWindowImage->getScale().second - moneyTextScale.second) / 2);
+    moneyText->setLocalPosition(RTWidth - 250 + (200 - moneyTextScale.first) / 2, 40 + (110 - moneyTextScale.second) / 2);
 
-    attackUpgradeButton = new ButtonWidget("image/UIImage/attackDownButton.png", "image/UIImage/attackUpButton.png",
+    attackUpgradeButton = makeWidget<ButtonWidget>("image/UIImage/attackDownButton.png", "image/UIImage/attackUpButton.png",
                                            "", "sound/click.wav");
-    attackUpgradeButton->setScale(180, 180);
+    attackUpgradeButton->setScale(180 * canvasXRatio, 180 * canvasYRatio);
     attackUpgradeButton->setLocalPosition(80, 250);
-    addWidgetToBuffer(attackUpgradeButton);
-    addButtonToBuffer(attackUpgradeButton);
     attackUpgradeButton->buttonUpEvent = [this]()mutable
     {
         this->explanationText1->changeText("Add Player Attack Power +5");
@@ -200,19 +197,19 @@ void ShopCanvas::initWidgets()
         whichItemButton = WHICH_ITEM_BUTTON::ATTACK;
     };
 
-    //곧 이벤트를 추가하자
-    attackPowerText = new TextWidget(std::to_string(curAttackPower) + "/" + std::to_string(maxAttackPower),
+    attackPowerText = makeWidget<TextWidget>(std::to_string(curAttackPower) + "/" + std::to_string(maxAttackPower),
                                      50, 255, 255, 255);
-    attackPowerText->setLocalPosition(150, 440);
-    addWidgetToBuffer(attackPowerText);
+    attackPowerText->setScale(attackPowerText->getScale().first * canvasXRatio,
+                              attackPowerText->getScale().second * canvasYRatio);
+    attackPowerText->setLocalPosition(attackUpgradeButton->getLocalPosition().first +
+                                              (attackUpgradeButton->getScale().first - attackPowerText->getScale().first) / 2,
+                                      attackUpgradeButton->getLocalPosition().second+attackUpgradeButton->getScale().second);
 
 
-    bulletUpgradeButton = new ButtonWidget("image/UIImage/bulletDownButton.png", "image/UIImage/bulletUpButton.png",
+    bulletUpgradeButton = makeWidget<ButtonWidget>("image/UIImage/bulletDownButton.png", "image/UIImage/bulletUpButton.png",
                                            "", "sound/click.wav");
-    bulletUpgradeButton->setScale(180, 180);
+    bulletUpgradeButton->setScale(180 * canvasXRatio, 180 * canvasYRatio);
     bulletUpgradeButton->setLocalPosition(450, 250);
-    addWidgetToBuffer(bulletUpgradeButton);
-    addButtonToBuffer(bulletUpgradeButton);
     bulletUpgradeButton->buttonUpEvent = [this]()mutable
     {
         this->explanationText1->changeText("Add Player Bullet +1 when you finished");
@@ -221,18 +218,19 @@ void ShopCanvas::initWidgets()
         this->explanationText4->changeText("Cost: " + std::to_string(bulletUpgradeFee));
         whichItemButton = WHICH_ITEM_BUTTON::BULLET;
     };
-    //
-    bulletText = new TextWidget(std::to_string(curBullet) + "/" + std::to_string(maxBullet),
-                               50, 255, 255, 255);
-    bulletText->setLocalPosition(520, 440);
-    addWidgetToBuffer(bulletText);
 
-    airplaneUpgradeButton = new ButtonWidget("image/UIImage/fighterDownButton.png", "image/UIImage/fighterUpButton.png",
+    bulletText = makeWidget<TextWidget>(std::to_string(curBullet) + "/" + std::to_string(maxBullet),
+                               50, 255, 255, 255);
+    bulletText->setScale(bulletText->getScale().first * canvasXRatio,
+                         bulletText->getScale().second * canvasYRatio);
+    bulletText->setLocalPosition(bulletUpgradeButton->getLocalPosition().first +
+                                      (bulletUpgradeButton->getScale().first - bulletText->getScale().first) / 2,
+                                 bulletUpgradeButton->getLocalPosition().second+bulletUpgradeButton->getScale().second);
+
+    airplaneUpgradeButton = makeWidget<ButtonWidget>("image/UIImage/fighterDownButton.png", "image/UIImage/fighterUpButton.png",
                                              "", "sound/click.wav");
-    airplaneUpgradeButton->setScale(180, 180);
-    airplaneUpgradeButton->setLocalPosition(w - 270, 250);
-    addWidgetToBuffer(airplaneUpgradeButton);
-    addButtonToBuffer(airplaneUpgradeButton);
+    airplaneUpgradeButton->setScale(180 * canvasXRatio, 180 * canvasYRatio);
+    airplaneUpgradeButton->setLocalPosition(RTWidth - 270, 250);
     airplaneUpgradeButton->buttonUpEvent = [this]()mutable
     {
         this->explanationText1->changeText("Upgrade fighter and unlock new upgrade");
@@ -243,17 +241,18 @@ void ShopCanvas::initWidgets()
     };
     //
 
-    airplaneText = new TextWidget(std::to_string(curAirplane) + "/" + std::to_string(maxAirplane),
+    airplaneText = makeWidget<TextWidget>(std::to_string(curAirplane) + "/" + std::to_string(maxAirplane),
                                   50, 255, 255, 255);
-    airplaneText->setLocalPosition(w - 200, 440);
-    addWidgetToBuffer(airplaneText);
+    airplaneText->setScale(airplaneText->getScale().first * canvasXRatio,
+                           airplaneText->getScale().second * canvasYRatio);
+    airplaneText->setLocalPosition(airplaneUpgradeButton->getLocalPosition().first +
+                                 (airplaneUpgradeButton->getScale().first - airplaneText->getScale().first) / 2,
+                                   airplaneUpgradeButton->getLocalPosition().second+airplaneUpgradeButton->getScale().second);
 
-    missileButton = new ButtonWidget("image/UIImage/missileDownButton.png", "image/UIImage/missileUpButton.png",
+    missileButton = makeWidget<ButtonWidget>("image/UIImage/missileDownButton.png", "image/UIImage/missileUpButton.png",
                                      "", "sound/click.wav");
-    missileButton->setScale(180, 180);
+    missileButton->setScale(180 * canvasXRatio, 180 * canvasYRatio);
     missileButton->setLocalPosition(80 + 180, 500);
-    addWidgetToBuffer(missileButton);
-    addButtonToBuffer(missileButton);
     missileButton->buttonUpEvent = [this]()mutable
     {
         this->explanationText1->changeText("Get this special skill");
@@ -262,18 +261,19 @@ void ShopCanvas::initWidgets()
         this->explanationText4->changeText("Cost: " + std::to_string(missileFee));
         whichItemButton = WHICH_ITEM_BUTTON::MISSILE;
     };
-    //
-    missileText = new TextWidget(std::to_string(curMissile) + "/" + std::to_string(maxMissile),
-                                     50, 255, 255, 255);
-    missileText->setLocalPosition(80 + 180 + 60, 690);
-    addWidgetToBuffer(missileText);
 
-    shieldButton = new ButtonWidget("image/UIImage/shieldDownButton.png", "image/UIImage/shieldUpButton.png",
+    missileText = makeWidget<TextWidget>(std::to_string(curMissile) + "/" + std::to_string(maxMissile),
+                                     50, 255, 255, 255);
+    missileText->setScale(missileText->getScale().first * canvasXRatio,
+                          missileText->getScale().second * canvasYRatio);
+    missileText->setLocalPosition(missileButton->getLocalPosition().first +
+                                   (missileButton->getScale().first - missileText->getScale().first) / 2,
+                                  missileButton->getLocalPosition().second+missileButton->getScale().second);
+
+    shieldButton = makeWidget<ButtonWidget>("image/UIImage/shieldDownButton.png", "image/UIImage/shieldUpButton.png",
                                     "", "sound/click.wav");
-    shieldButton->setScale(180, 180);
+    shieldButton->setScale(180 * canvasXRatio, 180 * canvasYRatio);
     shieldButton->setLocalPosition(450 + 180, 500);
-    addWidgetToBuffer(shieldButton);
-    addButtonToBuffer(shieldButton);
     shieldButton->buttonUpEvent = [this]()mutable
     {
         this->explanationText1->changeText("This shield prevents enemy attacks");
@@ -283,38 +283,35 @@ void ShopCanvas::initWidgets()
         whichItemButton = WHICH_ITEM_BUTTON::SHIELD;
     };
     //
-    shieldText = new TextWidget(std::to_string(curShield) + "/" + std::to_string(maxShield),
+    shieldText = makeWidget<TextWidget>(std::to_string(curShield) + "/" + std::to_string(maxShield),
                                 50, 255, 255, 255);
-    shieldText->setLocalPosition(450 + 180 + 60, 690);
-    addWidgetToBuffer(shieldText);
+    shieldText->setScale(shieldText->getScale().first * canvasXRatio,
+                         shieldText->getScale().second * canvasYRatio);
+    shieldText->setLocalPosition(shieldButton->getLocalPosition().first +
+                                  (shieldButton->getScale().first - shieldText->getScale().first) / 2,
+                                 shieldButton->getLocalPosition().second+shieldButton->getScale().second);
 
-    explanationWindow = new ImageWidget("image/UIImage/box.png");
-    explanationWindow->setScale(w - 100, 350);
+    explanationWindow = makeWidget<ImageWidget>("image/UIImage/box.png");
+    explanationWindow->setScale((RTWidth - 100) * canvasXRatio, 450 * canvasYRatio);
     explanationWindow->setLocalPosition(50, 800);
-    addWidgetToBuffer(explanationWindow);
 
-    explanationText1 = new TextWidget(" ", 50, 255, 255, 255);
+    explanationText1 = makeWidget<TextWidget>(" ", 50, 255, 255, 255);
     explanationText1->setLocalPosition(150, 850);
-    addWidgetToBuffer(explanationText1);
 
-    explanationText2 = new TextWidget(" ", 50, 255, 255, 255);
+    explanationText2 = makeWidget<TextWidget>(" ", 50, 255, 255, 255);
     explanationText2->setLocalPosition(150, 900);
-    addWidgetToBuffer(explanationText2);
 
-    explanationText3 = new TextWidget(" ", 50, 255, 255, 255);
+    explanationText3 = makeWidget<TextWidget>(" ", 50, 255, 255, 255);
     explanationText3->setLocalPosition(150, 950);
-    addWidgetToBuffer(explanationText3);
 
-    explanationText4 = new TextWidget(" ", 50, 255, 255, 255);
+    explanationText4 = makeWidget<TextWidget>(" ", 50, 255, 255, 255);
     explanationText4->setLocalPosition(150, 1000);
-    addWidgetToBuffer(explanationText4);
 
-    buyButton = new ButtonWidget("image/UIImage/downButton.png", "image/UIImage/upButton.png",
+    buyButton = makeWidget<ButtonWidget>("image/UIImage/downButton.png", "image/UIImage/upButton.png",
                                  "", "sound/purchase.wav");
-    buyButton->setScale(200, 150);
-    buyButton->setLocalPosition(w / 2 - 100, 1150);
-    addWidgetToBuffer(buyButton);
-    addButtonToBuffer(buyButton);
+    buyButton->setScale(200 * canvasXRatio, 150 * canvasYRatio);
+    buyButton->setLocalPosition(RTWidth / 2 - 100,
+                                explanationWindow->getLocalPosition().second+explanationWindow->getScale().second);
     buyButton->buttonUpEvent = [this]()mutable
     {
         switch (whichItemButton)
@@ -416,21 +413,23 @@ void ShopCanvas::initWidgets()
         }
     };
 
-    buyText = new TextWidget("BUY", 55, 255, 255, 255);
-    buyText->setLocalPosition(w / 2 - 40, 1200);
-    addWidgetToBuffer(buyText);
+    buyText = makeWidget<TextWidget>("BUY", 55, 255, 255, 255);
+    buyText->setScale(buyText->getScale().first * canvasXRatio,
+                      buyText->getScale().second * canvasYRatio);
+    buyText->setLocalPosition(buyButton->getLocalPosition().first +
+                                 (buyButton->getScale().first - shieldText->getScale().first) / 2,
+                                 buyButton->getLocalPosition().second +
+                                         (buyButton->getScale().second - buyText->getScale().second)/2);
 
-    playButton = new ButtonWidget("image/UIImage/playDownButton.png", "image/UIImage/playUpButton.png",
+    playButton = makeWidget<ButtonWidget>("image/UIImage/playDownButton.png", "image/UIImage/playUpButton.png",
                                   "", "sound/click.wav");
     playButton->buttonUpEvent = [this]()mutable
             {
                 isPlayButtonClicked = true;
             };
-    playButton->setLocalPosition(w - 250, h - 300);
-    addWidgetToBuffer(playButton);
-    addButtonToBuffer(playButton);
+    playButton->setLocalPosition(RTWidth - 250, RTHeight - 300);
 
-    incButton = new ButtonWidget("image/UIImage/rightDownButton.png", "image/UIImage/rightUpButton.png",
+    incButton = makeWidget<ButtonWidget>("image/UIImage/rightDownButton.png", "image/UIImage/rightUpButton.png",
                                  "", "sound/click.wav");
     incButton->buttonUpEvent = [this]()mutable
     {
@@ -453,11 +452,9 @@ void ShopCanvas::initWidgets()
             stageText->changeText(temp);
         }
     };
-    incButton->setLocalPosition(570, h - 300);
-    addWidgetToBuffer(incButton);
-    addButtonToBuffer(incButton);
+    incButton->setLocalPosition(570, RTHeight - 300);
 
-    decButton = new ButtonWidget("image/UIImage/leftDownButton.png", "image/UIImage/leftUpButton.png",
+    decButton = makeWidget<ButtonWidget>("image/UIImage/leftDownButton.png", "image/UIImage/leftUpButton.png",
                                  "", "sound/click.wav");
     decButton->buttonUpEvent = [this]()mutable
     {
@@ -479,25 +476,20 @@ void ShopCanvas::initWidgets()
             stageText->changeText(temp);
         }
     };
-    decButton->setLocalPosition(50, h - 300);
-    addWidgetToBuffer(decButton);
-    addButtonToBuffer(decButton);
+    decButton->setLocalPosition(50, RTHeight - 300);
 
-    stageText = new TextWidget("Stage: 1", 90, 255, 255, 255);
-    stageText->setLocalPosition(265, h - 250);
-    addWidgetToBuffer(stageText);
+    stageText = makeWidget<TextWidget>("Stage: 1", 90, 255, 255, 255);
+    stageText->setLocalPosition(265, RTHeight - 250);
 
-    changeButton = new ButtonWidget("image/UIImage/changeDownButton.png","image/UIImage/changeUpButton.png",
+    changeButton = makeWidget<ButtonWidget>("image/UIImage/changeDownButton.png","image/UIImage/changeUpButton.png",
                                     "", "sound/click.wav");
-    changeButton->setScale(120, 120);
+    changeButton->setScale(120 * canvasXRatio, 120 * canvasYRatio);
     changeButton->setLocalPosition(100, 35);
     changeButton->buttonUpEvent = []()
     {
         auto PC = Cast<AirplaneController>(GetPlayerController());
         PC->changeShop();
     };
-    addWidgetToBuffer(changeButton);
-    addButtonToBuffer(changeButton);
 
     updateCrystalText();
 }

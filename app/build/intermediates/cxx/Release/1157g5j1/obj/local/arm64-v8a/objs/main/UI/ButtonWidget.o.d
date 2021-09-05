@@ -104,7 +104,8 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_timer.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_version.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_locale.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_misc.h
+  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_misc.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Components\AudioComponent.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\ButtonWidget.h:
 
@@ -315,3 +316,5 @@ D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_versio
 D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_locale.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_misc.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Components\AudioComponent.h:

@@ -1,8 +1,4 @@
 #include "LoginCanvas.h"
-#include "ImageWidget.h"
-#include "ButtonWidget.h"
-#include "TextWidget.h"
-#include "EditBoxWidget.h"
 #include "TitleController.h"
 #include "../GlobalFunction.h"
 #include "../DBManager.h"
@@ -12,14 +8,12 @@
 LoginCanvas::LoginCanvas(int canvasW, int canvasH, int canvasWorldX, int canvasWorldY) :
 Canvas(canvasW, canvasH, canvasWorldX, canvasWorldY)
 {
-    backgroundImg = new ImageWidget("image/background/login.png");
-    backgroundImg->setScale(canvasW, canvasH);
+    backgroundImg = makeWidget<ImageWidget>("image/background/login.png");
+    backgroundImg->setScale(RTWidth, RTHeight);
     backgroundImg->setLocalPosition(0, 0);
-    addWidgetToBuffer(backgroundImg);
 
-    gameNameText = new TextWidget("Shooting Game", 120, 255, 255, 255);
-    gameNameText->setLocalPosition((canvasW - gameNameText->getScale().first) / 2, 300);
-    addWidgetToBuffer(gameNameText);
+    gameNameText = makeWidget<TextWidget>("Shooting Game", 120, 255, 255, 255);
+    gameNameText->setLocalPosition((RTWidth - gameNameText->getScale().first) / 2, 300);
 
     initEditBox();
     initButton();
@@ -161,25 +155,21 @@ void LoginCanvas::update(float deltaTime)
 
 void LoginCanvas::initEditBox()
 {
-    emailBox = new EditBoxWidget("image/UIImage/box.png", "image/UIImage/caret.png", "e-mail",40, 255, 255, 255);
-    emailBox->setScale(500, 100);
-    emailBox->setLocalPosition((w - emailBox->getScale().first) / 2, 600);
-    addWidgetToBuffer(emailBox);
-    addEditBoxToBuffer(emailBox);
+    emailBox = makeWidget<EditBoxWidget>("image/UIImage/box.png", "image/UIImage/caret.png", "e-mail",40, 255, 255, 255);
+    emailBox->setScale(500 * canvasXRatio, 100 * canvasYRatio);
+    emailBox->setLocalPosition((RTWidth - emailBox->getScale().first) / 2, 600);
 
-    passwordBox = new EditBoxWidget("image/UIImage/box.png", "image/UIImage/caret.png", "password",40, 255, 255, 255);
-    passwordBox->setScale(500, 100);
-    passwordBox->setLocalPosition((w - passwordBox->getScale().first) / 2, 900);
-    addWidgetToBuffer(passwordBox);
-    addEditBoxToBuffer(passwordBox);
-
+    passwordBox = makeWidget<EditBoxWidget>("image/UIImage/box.png", "image/UIImage/caret.png", "password",40, 255, 255, 255);
+    passwordBox->setScale(500 * canvasXRatio, 100 * canvasYRatio);
+    passwordBox->setLocalPosition((RTWidth - passwordBox->getScale().first) / 2, 900);
 }
 
-void LoginCanvas::initButton() {
-    signInButton = new ButtonWidget("image/UIImage/downButton.png", "image/UIImage/upButton.png",
+void LoginCanvas::initButton()
+{
+    signInButton = makeWidget<ButtonWidget>("image/UIImage/downButton.png", "image/UIImage/upButton.png",
                                     "", "sound/click.wav");
-    signInButton->setScale(500, 100);
-    signInButton->setLocalPosition((w - signInButton->getScale().first) / 2, 1200);
+    signInButton->setScale(500 * canvasXRatio, 100 * canvasYRatio);
+    signInButton->setLocalPosition((RTWidth - signInButton->getScale().first) / 2, 1100);
     signInButton->buttonUpEvent = [this]() mutable
     {
         std::string emailStr = emailBox->getContent();
@@ -188,26 +178,22 @@ void LoginCanvas::initButton() {
         isCheckingSignIn = true;
         result = Framework::auth->CreateUserWithEmailAndPasswordLastResult();
     };
-    addWidgetToBuffer(signInButton);
-    addButtonToBuffer(signInButton);
 
-    resetButton = new ButtonWidget("image/UIImage/downButton.png", "image/UIImage/upButton.png",
+    resetButton = makeWidget<ButtonWidget>("image/UIImage/downButton.png", "image/UIImage/upButton.png",
                                    "", "sound/click.wav");
-    resetButton->setScale(500, 100);
-    resetButton->setLocalPosition((w - signInButton->getScale().first) / 2, 1400);
+    resetButton->setScale(500 * canvasXRatio, 100 * canvasYRatio);
+    resetButton->setLocalPosition((RTWidth - signInButton->getScale().first) / 2, 1300);
     resetButton->buttonUpEvent = [this]() mutable
     {
         Framework::auth->SendPasswordResetEmail(this->emailBox->getContent().c_str());
         result2 = Framework::auth->SendPasswordResetEmailLastResult();
         isCheckingEmailSend = true;
     };
-    addWidgetToBuffer(resetButton);
-    addButtonToBuffer(resetButton);
 
-    loginButton = new ButtonWidget("image/UIImage/downButton.png", "image/UIImage/upButton.png",
+    loginButton = makeWidget<ButtonWidget>("image/UIImage/downButton.png", "image/UIImage/upButton.png",
                                    "", "sound/click.wav");
-    loginButton->setScale(500, 100);
-    loginButton->setLocalPosition((w - signInButton->getScale().first) / 2, 1600);
+    loginButton->setScale(500 * canvasXRatio, 100 * canvasYRatio);
+    loginButton->setLocalPosition((RTWidth - signInButton->getScale().first) / 2, 1500);
     loginButton->buttonUpEvent = [this]() mutable
     {
         std::string emailStr = emailBox->getContent();
@@ -216,35 +202,34 @@ void LoginCanvas::initButton() {
         result = Framework::auth->SignInWithEmailAndPasswordLastResult();
         isCheckingSignUp = true;
     };
-    addWidgetToBuffer(loginButton);
-    addButtonToBuffer(loginButton);
 
     auto signButtonLoc = signInButton->getLocalPosition();
     auto signButtonSize = signInButton->getScale();
-    signInText = new TextWidget("Sign in", 50, 255, 255, 255);
+    signInText = makeWidget<TextWidget>("Sign in", 50, 255, 255, 255);
+    signInText->setScale(signInText->getScale().first * canvasXRatio, signInText->getScale().second * canvasYRatio);
     auto signTextSize = signInText->getScale();
     signInText->setLocalPosition(signButtonLoc.first + (signButtonSize.first - signTextSize.first) / 2,
                                  signButtonLoc.second + (signButtonSize.second - signTextSize.second) / 2);
-    addWidgetToBuffer(signInText);
 
     auto loginButtonLoc = loginButton->getLocalPosition();
     auto loginButtonSize = loginButton->getScale();
-    loginText = new TextWidget("Sign up", 50, 255, 255, 255);
+    loginText = makeWidget<TextWidget>("Sign up", 50, 255, 255, 255);
+    loginText->setScale(loginText->getScale().first * canvasXRatio, loginText->getScale().second * canvasYRatio);
     auto loginTextSize = loginText->getScale();
     loginText->setLocalPosition(loginButtonLoc.first + (loginButtonSize.first - loginTextSize.first) / 2,
                                 loginButtonLoc.second + (loginButtonSize.second - loginTextSize.second) / 2);
-    addWidgetToBuffer(loginText);
 
     auto resetButtonLoc = resetButton->getLocalPosition();
     auto resetButtonSize = resetButton->getScale();
-    resetText = new TextWidget("Send Password Reset Email", 40, 255, 255, 255);
+    resetText = makeWidget<TextWidget>("Send Password Reset Email", 40, 255, 255, 255);
+    resetText->setScale(resetText->getScale().first * canvasXRatio, resetText->getScale().second * canvasYRatio);
     auto resetTextSize = resetText->getScale();
     resetText->setLocalPosition(resetButtonLoc.first + (resetButtonSize.first - resetTextSize.first) / 2,
                                 resetButtonLoc.second + (resetButtonSize.second - resetTextSize.second) / 2);
-    addWidgetToBuffer(resetText);
 
-    signInResultText = new TextWidget("Sign in success", 40, 255, 255, 255);
-    signInResultText->setLocalPosition((w - signInResultText->getScale().first) / 2,h - 300);
+    signInResultText = makeWidget<TextWidget>("Sign in success", 40, 255, 255, 255);
+    signInResultText->setLocalPosition((RTWidth - signInResultText->getScale().first) / 2,h - 300);
+    signInResultText->setScale(signInResultText->getScale().first * canvasXRatio,
+                               signInResultText->getScale().second * canvasYRatio);
     signInResultText->setVisibility(false);
-    addWidgetToBuffer(signInResultText);
 }

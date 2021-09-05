@@ -1,16 +1,15 @@
 #include "Canvas.h"
 #include "../Framework.h"
-#include "Widget.h"
-#include "ButtonWidget.h"
-#include "EditBoxWidget.h"
 #include <SDL.h>
-#include <android/log.h>
+
 
 Canvas::Canvas(int canvasW, int canvasH, int canvasWorldX, int canvasWorldY):
 w(canvasW), h(canvasH), canvasWorldPosX(canvasWorldX), canvasWorldPosY(canvasWorldY)
 {
     createEmptyWindow();
     Framework::worldUI.push_back(this);
+    canvasXRatio = float(RTWidth) / float(canvasW);
+    canvasYRatio = float(RTHeight) / float(canvasH);
 }
 
 Canvas::~Canvas()
@@ -90,7 +89,9 @@ bool Canvas::handleEvent(SDL_Event &e)
     if(visibility)
     {
         int x = int(e.tfinger.x * float(Framework::rendererWidth)) - canvasWorldPosX;
+        x = int(float(x) * canvasXRatio);
         int y = int(e.tfinger.y * float(Framework::rendererHeight)) - canvasWorldPosY;
+        y = int(float(y) * canvasYRatio);
         if (e.type == SDL_FINGERDOWN)
         {
             for(auto& button : canvasButtons)
@@ -199,7 +200,7 @@ void Canvas::update(float deltaTime)
 {
     if(visibility)
     {
-        for(auto&widget:canvasWidgets)
+        for(auto& widget : canvasWidgets)
         {
             widget->update(deltaTime);
         }
@@ -213,7 +214,8 @@ void Canvas::changeWindowAlphaValue(__uint8_t alpha)
 
 void Canvas::createEmptyWindow()
 {
-    window = SDL_CreateTexture(Framework::renderer, SDL_PIXELFORMAT_RGBA8888,SDL_TEXTUREACCESS_TARGET ,w, h);
+    //렌더타겟의 크기는 1080x1704로 고정. 폰의 렌더러의 크기에 따라 조정되게끔 해준다.
+    window = SDL_CreateTexture(Framework::renderer, SDL_PIXELFORMAT_RGBA8888,SDL_TEXTUREACCESS_TARGET ,RTWidth, RTHeight);
     SDL_SetTextureBlendMode(window, SDL_BLENDMODE_BLEND);
     SDL_SetTextureAlphaMod(window, 255);
 }
