@@ -8,7 +8,7 @@
 using namespace GlobalFunction;
 
 const int Spawner::numOfDestX = 4;
-const int Spawner::numOfDestY = 4;
+const int Spawner::numOfDestY = 3;
 
 std::uniform_int_distribution<int> uid(0,Spawner::numOfDestY * Spawner::numOfDestX - 1);
 std::uniform_int_distribution<int> enemyPattern(0, 3);
@@ -17,35 +17,21 @@ std::uniform_int_distribution<int> bossPattern(0, 2);
 Spawner::Spawner()
 {
     int totalDest = numOfDestY * numOfDestX;
-    pathLeft.reserve(totalDest);
     pathMiddle.reserve(totalDest);
-    pathRight.reserve(totalDest);
 
     for(int i = 0; i < numOfDestY; ++i)
     {
         for(int j = 0; j < numOfDestX; ++j)
         {
-            std::initializer_list<std::pair<int, int>> leftData = {{-400, 1200},
-                                                              {900, 1000},
-                                                              {Framework::rendererWidth/2,700},
-                                                              {destX[j], destY[i]}};
-            pathLeft.emplace_back(leftData, 0.0f, this);
-
-            std::initializer_list<std::pair<int, int>> middleData = {{Framework::rendererWidth/2, -100},
-                                                                     {Framework::rendererWidth/2, 500},
+            std::initializer_list<std::pair<int, int>> middleData = {{Framework::RTWidth/2, -100},
+                                                                     {Framework::RTWidth/2, 500},
                                                                      {destX[j], destY[i]}};
             pathMiddle.emplace_back(middleData, 0.0f, this);
-
-            std::initializer_list<std::pair<int, int>> rightData = {{Framework::rendererWidth + 400, 1200},
-                                                                    {Framework::rendererWidth - 900, 1000},
-                                                                    {Framework::rendererWidth/2,700},
-                                                                    {destX[j], destY[i]}};
-            pathRight.emplace_back(rightData, 0.0f, this);
         }
     }
 
-    bossPath = new SplineComponent({{Framework::rendererWidth/2 - 250.0f, -1000},
-                                    {Framework::rendererWidth/2 - 250.0f, 100}}, 1.0f, this);
+    bossPath = new SplineComponent({{Framework::RTWidth/2 - 250.0f, -1000},
+                                    {Framework::RTWidth/2 - 250.0f, 100}}, 1.0f, this);
 }
 
 Spawner::~Spawner()

@@ -1,6 +1,5 @@
 #include "TitleLevel.h"
 #include "../TitleController.h"
-#include "../Actors/BackgroundActor.h"
 
 TitleLevel::TitleLevel()
 {

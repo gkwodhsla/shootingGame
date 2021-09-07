@@ -20,8 +20,7 @@ public:
     static const int numOfDestY;
 private:
     std::vector<SplineComponent> pathMiddle;
-    std::vector<SplineComponent> pathLeft;
-    std::vector<SplineComponent> pathRight;
+
     SplineComponent* bossPath = nullptr;
     float spawnCoolTime = 0.0f;
     float maxSpawnCoolTime = 0.5f;

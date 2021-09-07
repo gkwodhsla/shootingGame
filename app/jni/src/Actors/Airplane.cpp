@@ -18,8 +18,8 @@ using namespace GlobalFunction;
 
 Airplane::Airplane()
 {
-    rootComponent->setComponentLocalLocation(std::make_pair(Framework::rendererWidth / 2,
-                                                            Framework::rendererHeight - 300));
+    rootComponent->setComponentLocalLocation(std::make_pair(Framework::RTWidth / 2,
+                                                            Framework::RTHeight - 300));
     rootComponent->setComponentLocalRotation(0);
     rootComponent->setOwner(this);
     airplaneImg = new ImageComponent("image/player/1.png", std::make_pair(0, 0), this);
@@ -87,8 +87,8 @@ Airplane::Airplane()
     thunderAttack1->attachTo(rootComponent, false);
     thunderAttack1->setLooping(false);
     thunderAttack1->setDrawCntPerSec(15);
-    thunderAttack1->setScale({700,Framework::rendererHeight});
-    thunderAttack1->setComponentLocalLocation({-250.0f,0.0f});
+    thunderAttack1->setScale({700,Framework::RTHeight});
+    thunderAttack1->setComponentLocalLocation({-150.0f,0.0f});
     thunderAttack1->addEventAtNFrame(10, thunderEvent);
 
     thunderAttack2 = new SpritesheetComponent("image/spritesheet/thunder.png",{0, 0},
@@ -96,8 +96,8 @@ Airplane::Airplane()
     thunderAttack2->attachTo(rootComponent, false);
     thunderAttack2->setLooping(false);
     thunderAttack2->setDrawCntPerSec(15);
-    thunderAttack2->setScale({700,Framework::rendererHeight});
-    thunderAttack2->setComponentLocalLocation({Framework::rendererWidth/2 - 350,0.0f});
+    thunderAttack2->setScale({700,Framework::RTHeight});
+    thunderAttack2->setComponentLocalLocation({Framework::RTWidth/2 - 300.0f,0.0f});
     thunderAttack2->addEventAtNFrame(10, thunderEvent);
 
     thunderAttack3 = new SpritesheetComponent("image/spritesheet/thunder.png",{0, 0},
@@ -105,8 +105,8 @@ Airplane::Airplane()
     thunderAttack3->attachTo(rootComponent, false);
     thunderAttack3->setLooping(false);
     thunderAttack3->setDrawCntPerSec(15);
-    thunderAttack3->setScale({700,Framework::rendererHeight});
-    thunderAttack3->setComponentLocalLocation({Framework::rendererWidth - 500,0.0f});
+    thunderAttack3->setScale({700,Framework::RTHeight});
+    thunderAttack3->setComponentLocalLocation({Framework::RTWidth - 450,0.0f});
     thunderAttack3->addEventAtNFrame(10, thunderEvent);
 
     explosionAudio = new AudioComponent("sound/explosion.wav", 180, this);
@@ -180,19 +180,39 @@ void Airplane::handleEvent(SDL_Event &e)
     {
         auto imageSize = airplaneImg->getScale();
 
+        float xRatio = float(Framework::RTWidth) / float(Framework::rendererWidth);
+        float yRatio = float(Framework::RTHeight) / float(Framework::rendererHeight);
+
         if (e.type == SDL_FINGERDOWN)
         {
-            rootComponent->setComponentLocalLocation
-                    (std::make_pair(
-                            e.tfinger.x * Framework::rendererWidth - float(imageSize.first) / 2,
-                            e.tfinger.y * Framework::rendererHeight - float(imageSize.second) / 2));
+            int curX = xRatio * (e.tfinger.x * Framework::rendererWidth);
+            int curY = yRatio * (e.tfinger.y * Framework::rendererHeight);
+
+            befTouchX = curX;
+            befTouchY = curY;
         }
         else if (e.type == SDL_FINGERMOTION)
         {
-            rootComponent->setComponentLocalLocation
-                    (std::make_pair(
-                            e.tfinger.x * Framework::rendererWidth - float(imageSize.first) / 2,
-                            e.tfinger.y * Framework::rendererHeight - float(imageSize.second) / 2));
+            int curX = xRatio * (e.tfinger.x * Framework::rendererWidth);
+            int curY = yRatio * (e.tfinger.y * Framework::rendererHeight);
+
+            int xMovementGap = curX - befTouchX;
+            int yMovementGap = curY - befTouchY;
+            auto curPos = rootComponent->getComponentLocalLocation();
+
+            rootComponent->setComponentLocalLocation({curPos.first + xMovementGap, curPos.second+yMovementGap});
+            curPos = rootComponent->getComponentLocalLocation();
+            if(curPos.first<=0)
+                curPos.first=0;
+            if(curPos.first>=Framework::RTWidth - imageSize.first)
+                curPos.first=Framework::RTWidth - imageSize.first;
+            if(curPos.second>=Framework::RTHeight - imageSize.second)
+                curPos.second = Framework::RTHeight - imageSize.second;
+            if(curPos.second<=0)
+                curPos.second = 0;
+            rootComponent->setComponentLocalLocation(curPos);
+            befTouchX = curX;
+            befTouchY = curY;
         }
         else if (e.type == SDL_FINGERUP)
         {

@@ -35,6 +35,14 @@ Bullet::Bullet()
     collisionBox->attachTo(rootComponent);
 
     setLifeTime(3.0f);
+
+    auto customDestroyAction = [this]() mutable
+    {
+        auto mainLevel = Cast<MainLevel>(Framework::curLevel);
+        mainLevel->bulletPool->returnToPool(this);
+        setLifeTime(3.0f);
+    };
+    registerFuncWhenActorLifeTimeZero(customDestroyAction);
 }
 
 Bullet::Bullet(const std::pair<float, float> &spawnPosition, BULLET_COLOR bulletColor,
@@ -81,6 +89,14 @@ Bullet::Bullet(const std::pair<float, float> &spawnPosition, BULLET_COLOR bullet
     collisionBox->attachTo(rootComponent);
 
     setLifeTime(3.0f);
+
+    auto customDestroyAction = [this]() mutable
+    {
+        auto mainLevel = Cast<MainLevel>(Framework::curLevel);
+        mainLevel->bulletPool->returnToPool(this);
+        setLifeTime(3.0f);
+    };
+    registerFuncWhenActorLifeTimeZero(customDestroyAction);
 }
 
 Bullet::~Bullet()
@@ -106,23 +122,15 @@ void Bullet::update(float deltaTime)
     if(tickable)
     {
         bulletMovement->update(deltaTime);
-        if(isPendingToKill) // 해당총알이 수명이 다해 파괴예정이면 해당 버퍼를 사용할 수 있게 해준다.
-        {
-            resetBulletToInitialState();
-        }
     }
 }
 
 void Bullet::resetBulletToInitialState()
 {
-    //tickable = false;
-    //visibility = false;
     auto mainLevel = Cast<MainLevel>(Framework::curLevel);
     mainLevel->bulletPool->returnToPool(this);
     setLifeTime(3.0f);
-    isPendingToKill = false;
 }
-
 
 CollisionBoxComponent* Bullet::getCollisionComp()
 {

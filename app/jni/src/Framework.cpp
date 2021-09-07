@@ -19,6 +19,8 @@ SDL_Rect* Framework::screenRect = nullptr;
 HLevelBase* Framework::curLevel = nullptr;
 int Framework::rendererWidth = 0;
 int Framework::rendererHeight = 0;
+int Framework::RTWidth = 1080;
+int Framework::RTHeight = 1920;
 std::vector<Canvas*> Framework::worldUI;
 firebase::App* Framework::app = nullptr;
 firebase::auth::Auth* Framework::auth = nullptr;
@@ -69,6 +71,8 @@ Framework::Framework()
         }
         else
         {
+            createRenderTarget();
+
             SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 
             int imgFlags = IMG_INIT_PNG;
@@ -131,6 +135,8 @@ Framework::~Framework()
     delete dbManager;
     dbManager = nullptr;
 
+    SDL_DestroyTexture(renderTarget);
+    renderTarget = nullptr;
     for(auto& canvas:worldUI)
     {
         delete canvas;
@@ -169,7 +175,16 @@ void Framework::render()
     {
         canvas->canvasRender();
     }
+    SDL_SetRenderTarget(Framework::renderer, renderTarget);
+    SDL_SetRenderDrawColor(Framework::renderer, 0xff, 0xff, 0xff, 0);
+    SDL_RenderClear(Framework::renderer);
     curLevel->render();
+    SDL_SetRenderTarget(Framework::renderer, nullptr);
+    //렌더러가 렌더타겟에다가 그리게 해주고 다시 윈도우에 그리게 바꿔준다.
+
+    SDL_RenderCopyEx(Framework::renderer, renderTarget, NULL, NULL,
+                     0.0f, NULL, SDL_FLIP_NONE);
+
     fpsText->render();
     for(auto&canvas:worldUI)
     {
@@ -197,6 +212,15 @@ void Framework::startGame()
         fpsStr += std::to_string(int(1/deltaTime));
         fpsText->changeText(fpsStr);
     }
+}
+
+void Framework::changeRenderTargetSize(int width, int height)
+{
+    SDL_DestroyTexture(renderTarget);
+    renderTarget = nullptr;
+    RTWidth = width;
+    RTHeight = height;
+    createRenderTarget();
 }
 
 void Framework::changeLevel(HLevelBase* newLevel)
@@ -243,4 +267,11 @@ void Framework::initFirebase()
         __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
                             "Create android auth failed...");
     }
+}
+
+void Framework::createRenderTarget()
+{
+    //렌더타겟의 크기는 1080x1704로 고정. 폰의 렌더러의 크기에 따라 조정되게끔 해준다.
+    renderTarget = SDL_CreateTexture(Framework::renderer, SDL_PIXELFORMAT_RGBA8888,SDL_TEXTUREACCESS_TARGET
+                                     , Framework::RTWidth, Framework::RTHeight);
 }

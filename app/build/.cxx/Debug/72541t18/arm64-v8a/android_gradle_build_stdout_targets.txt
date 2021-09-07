@@ -3,7 +3,6 @@ make: Nothing to be done for 'SDL2_image'.
 make: Nothing to be done for 'SDL2_mixer'.
 make: Nothing to be done for 'SDL2_ttf'.
 make: Nothing to be done for 'hidapi'.
-[arm64-v8a] Compile++      : main <= AirplaneController.cpp
-[arm64-v8a] Compile++      : main <= YesNoCanvas.cpp
+[arm64-v8a] Compile++      : main <= Airplane.cpp
 [arm64-v8a] SharedLibrary  : libmain.so
 make: Nothing to be done for 'mpg123'.

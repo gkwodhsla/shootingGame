@@ -100,9 +100,9 @@ void StageManager::setStage(int stage)
 {
     curStage = stage;
     spawnPerWave = 2 + 2 * (stage / 10); //10스테이지 마다 웨이브에 2마리의 적이 추가된다.
-    if(spawnPerWave >= 16)
+    if(spawnPerWave >= 12)
     {
-        spawnPerWave = 16;
+        spawnPerWave = 12;
     }
     maxWave = 2 + stage / 10; //웨이브는 10웨이브마다 1씩 추가된다.
     if(maxWave >= 7)

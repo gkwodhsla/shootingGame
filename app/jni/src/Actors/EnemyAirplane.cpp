@@ -147,7 +147,7 @@ void EnemyAirplane::update(float deltaTime)
     {
         resetEnemyAirplaneToInitialState();
     }
-    if (tickable && airplaneImg->getVisibility() && t < float(path->getControlPointSize() - 1) - 0.1f)
+    if (path && tickable && airplaneImg->getVisibility() && t < float(path->getControlPointSize() - 1) - 0.1f)
     {
         t += deltaTime * moveRate;
         auto loc = path->getCurrentLocation(t);

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <utility>
+#include <functional>
 #include "../Vector2D.h"
 
 class HSceneComponent;
@@ -31,6 +32,7 @@ public:
     bool getActorTickable();
     void setLifeTime(const float lifeTime);
     void setIsSetLifeTime(const bool isSetLifeTime);
+    void registerFuncWhenActorLifeTimeZero(std::function<void()> func);
     bool getIsSetLifeTime();
 
 protected:
@@ -40,6 +42,8 @@ protected:
     bool visibility = true;
     bool tickable = true;
     bool isSetLifeTime = false;
-    bool isPendingToKill = false;
     float destRotation = 0.0f;
+
+protected:
+    std::function<void()> destroyAction;
 };

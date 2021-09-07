@@ -1,12 +1,20 @@
 #include "HActor.h"
 #include "../Components/HSceneComponent.h"
+#include "../Level/HLevelBase.h"
+#include "GlobalFunction.h"
 #include <cmath>
 #include <android/log.h>
 #include <SDL.h>
 
+using namespace GlobalFunction;
+
 HActor::HActor()
 {
     rootComponent = new HSceneComponent();
+    destroyAction = [this]()
+    {
+        GetLevel()->destroyActor(this);
+    };
 }
 
 HActor::~HActor()
@@ -97,7 +105,7 @@ void HActor::update(float deltaTime)
             lifeTime -= deltaTime;
             if (lifeTime <= 0.0f)
             {
-                isPendingToKill = true;
+                destroyAction();
             }
         }
     }
@@ -112,6 +120,11 @@ void HActor::setLifeTime(const float lifeTime)
 void HActor::setIsSetLifeTime(const bool isSetLifeTime)
 {
     this->isSetLifeTime = isSetLifeTime;
+}
+
+void HActor::registerFuncWhenActorLifeTimeZero(std::function<void()> func)
+{
+    destroyAction = func;
 }
 
 bool HActor::getIsSetLifeTime()

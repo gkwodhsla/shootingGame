@@ -5,11 +5,20 @@ make: Nothing to be done for 'SDL2_image'.
 make: Nothing to be done for 'SDL2_mixer'.
 make: Nothing to be done for 'SDL2_ttf'.
 make: Nothing to be done for 'hidapi'.
+[x86_64] Compile++      : main <= main.cpp
 [x86_64] Compile++      : main <= Framework.cpp
 [x86_64] Compile++      : main <= AirplaneController.cpp
 [x86_64] Compile++      : main <= TitleController.cpp
 [x86_64] Compile++      : main <= GlobalFunction.cpp
+[x86_64] Compile++      : main <= DBManager.cpp
+[x86_64] Compile++      : main <= HSceneComponent.cpp
+[x86_64] Compile++      : main <= HPrimitiveComponent.cpp
+[x86_64] Compile++      : main <= ImageComponent.cpp
+[x86_64] Compile++      : main <= TTFComponent.cpp
+[x86_64] Compile++      : main <= SpritesheetComponent.cpp
 [x86_64] Compile++      : main <= CollisionBoxComponent.cpp
+[x86_64] Compile++      : main <= SplineComponent.cpp
+[x86_64] Compile++      : main <= BackgroundActor.cpp
 [x86_64] Compile++      : main <= Bullet.cpp
 [x86_64] Compile++      : main <= Airplane.cpp
 [x86_64] Compile++      : main <= EnemyAirplane.cpp
@@ -25,5 +34,9 @@ make: Nothing to be done for 'hidapi'.
 [x86_64] Compile++      : main <= InGameCanvas.cpp
 [x86_64] Compile++      : main <= LoginCanvas.cpp
 [x86_64] Compile++      : main <= Widget.cpp
+[x86_64] Compile++      : main <= TextWidget.cpp
+[x86_64] Compile++      : main <= ButtonWidget.cpp
+[x86_64] Compile++      : main <= ImageWidget.cpp
+[x86_64] Compile++      : main <= EditBoxWidget.cpp
 [x86_64] SharedLibrary  : libmain.so
 make: Nothing to be done for 'mpg123'.

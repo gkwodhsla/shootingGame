@@ -20,6 +20,7 @@ CollisionBoxComponent::CollisionBoxComponent(int x, int y, int w, int h, HActor 
 
 CollisionBoxComponent::~CollisionBoxComponent()
 {
+    GetLevel()->destroyBox(this);
 }
 
 void CollisionBoxComponent::render()

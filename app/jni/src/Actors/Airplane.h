@@ -75,6 +75,8 @@ private:
     int bulletCnt = 1;
     int missileCnt = 0;
     int shieldCnt = 0;
+    int befTouchX = 0;
+    int befTouchY = 0;
     PLAYER_AIRPLANE_SHAPE shape = PLAYER_AIRPLANE_SHAPE::SHAPE1;
     float shieldRotation = 0.0f;
     float accTimeForFlickering = 0.0f;

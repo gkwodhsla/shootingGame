@@ -113,7 +113,7 @@ void MainLevel::enter()
     auto PC = Cast<AirplaneController>(playerController);
     PC->createCanvases();
 
-    int enemySize = 16;//Spawner::numOfDestX * Spawner::numOfDestY;
+    int enemySize = Spawner::numOfDestX * Spawner::numOfDestY;
     enemyAirplanes.reserve(enemySize);
     for(int i = 0; i < enemySize;++i)
     {

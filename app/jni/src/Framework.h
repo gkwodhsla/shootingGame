@@ -24,14 +24,17 @@ public:
     void update(float deltaTime);
     void render();
     void startGame();
+    void changeRenderTargetSize(int width, int height);
     static void changeLevel(HLevelBase* newLevel);
     static void eraseCanvas(Canvas* canvas);
 
 private:
+    void createRenderTarget();
     static void initFirebase();
 
 private:
     SDL_Window* window = nullptr;
+    SDL_Texture* renderTarget = nullptr;
     float accTime = 0.0f;
     TTFComponent* fpsText;
 
@@ -40,6 +43,8 @@ public:
     static SDL_Rect* screenRect;
     static int rendererWidth;
     static int rendererHeight;
+    static int RTWidth;
+    static int RTHeight;
     static HLevelBase* curLevel;
     static std::vector<Canvas*> worldUI;
     static firebase::App* app;
