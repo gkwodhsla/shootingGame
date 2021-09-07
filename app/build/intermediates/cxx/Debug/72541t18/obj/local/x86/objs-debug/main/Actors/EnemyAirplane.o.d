@@ -1,7 +1,7 @@
 D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\72541t18/obj/local/x86/objs-debug/main/Actors/EnemyAirplane.o: \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\EnemyAirplane.cpp \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\EnemyAirplane.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Airplane.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AirplaneParent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\HPawn.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\HActor.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\utility \
@@ -118,6 +118,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\optional \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\SplineComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\AudioComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Airplane.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Framework.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\TTFComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\SDL_ttf\SDL_ttf.h \
@@ -182,7 +183,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\EnemyAirplane.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Airplane.h:
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AirplaneParent.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\HPawn.h:
 
@@ -415,6 +416,8 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\opt
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\SplineComponent.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\AudioComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Airplane.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Framework.h:
 

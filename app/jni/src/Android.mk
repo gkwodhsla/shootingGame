@@ -74,6 +74,7 @@ Actors/HActor.cpp\
 Actors/BackgroundActor.cpp\
 Actors/Bullet.cpp\
 Actors/HPawn.cpp\
+Actors/AirplaneParent.cpp\
 Actors/Airplane.cpp\
 Actors/EnemyAirplane.cpp\
 Actors/Spawner.cpp\

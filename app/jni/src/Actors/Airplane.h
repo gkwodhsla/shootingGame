@@ -1,6 +1,6 @@
 #pragma once
 
-#include "HPawn.h"
+#include "AirplaneParent.h"
 
 class ImageComponent;
 class SpritesheetComponent;
@@ -14,7 +14,7 @@ enum class PLAYER_AIRPLANE_SHAPE
     SHAPE3
 };
 
-class Airplane :public HPawn
+class Airplane :public AirplaneParent
 {
 public:
     Airplane();
@@ -33,30 +33,20 @@ public:
     void setMissileCnt(int missileCnt);
     int getShieldCnt();
     void setShieldCnt(int shieldCnt);
-    void setFireRate(float rate);
-    void setIsDie(bool isDie);
-    bool getIsDie();
     PLAYER_AIRPLANE_SHAPE getPlayerAirplaneShape();
     void setPlayerAirplaneShape(PLAYER_AIRPLANE_SHAPE shape);
     void enableShield();
     void enableThunder();
     void playerInitWhenStageBegin();
     void playCoinSound();
+    void setIsDie(bool isDie);
+    bool getIsDie();
+    void setFireRate(float rate);
 
 private:
     void spawnPlayerBullet(std::pair<float, float>& spawnPos);
 
 protected:
-    ImageComponent* airplaneImg = nullptr;
-    SpritesheetComponent* explosionSprite = nullptr;
-    CollisionBoxComponent* collisionBox = nullptr;
-    float fireRate = 0.5f;
-    float curFireTime = 0.5f;
-    bool isDie = false;
-    AudioComponent* explosionAudio = nullptr;
-
-protected:
-    void turnOffBooster();
     void turnOnShield();
     void turnOffShield();
 

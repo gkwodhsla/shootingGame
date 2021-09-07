@@ -91,6 +91,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__split_buffer \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cmath \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Airplane.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AirplaneParent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\HPawn.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\HActor.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Vector2D.h \
@@ -355,6 +356,8 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__s
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cmath:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Airplane.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AirplaneParent.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\HPawn.h:
 

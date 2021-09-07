@@ -106,6 +106,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\EditBoxWidget.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\GlobalFunction.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\Airplane.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\AirplaneParent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\HPawn.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\HActor.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\..\Vector2D.h
@@ -321,6 +322,8 @@ D:\comtus\Development\android\shootingGame\app\jni\src\UI\EditBoxWidget.h:
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\GlobalFunction.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\Airplane.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\AirplaneParent.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\HPawn.h:
 

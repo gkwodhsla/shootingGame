@@ -134,11 +134,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth\types.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\util.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\TitleController.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\EnemyAirplane.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Airplane.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\HPawn.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Bullet.h
+  D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\TitleLevel.h:
 
@@ -409,11 +405,3 @@ D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\TitleController.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\EnemyAirplane.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Airplane.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\HPawn.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Bullet.h:

@@ -22,6 +22,7 @@ Airplane::Airplane()
                                                             Framework::RTHeight - 300));
     rootComponent->setComponentLocalRotation(0);
     rootComponent->setOwner(this);
+
     airplaneImg = new ImageComponent("image/player/1.png", std::make_pair(0, 0), this);
     airplaneImg->attachTo(rootComponent);
     airplaneImg->setScale({100, 115});
@@ -37,46 +38,14 @@ Airplane::Airplane()
     boosterSprite->setImageFlip(SDL_FLIP_VERTICAL);
     boosterSprite->play();
 
-    explosionSprite = new SpritesheetComponent("image/spritesheet/explosion.png",
-                                               std::make_pair(-80.0f, -45.0f), this, 24, 6, 4);
-    explosionSprite->attachTo(rootComponent);
-    explosionSprite->setScale(std::make_pair(350, 350));
-    explosionSprite->setLooping(false);
-    explosionSprite->setDrawCntPerSec(40);
-
-    auto collisionResponse = [this](HActor* other) mutable
-    {
-        Bullet* bullet = Cast<Bullet>(other);
-        MainLevel* mainLevel = Cast<MainLevel>(GetLevel());
-        if(bullet && !bullet->getIsPlayerBullet() && !mainLevel->isClear) //부딪힌 오브젝트가 총알이고 적군의 총알이면
-        {
-            if(canDestroyable && !isDie)//데미지를 입을 수 있는 상태라면
-            {
-                airplaneImg->setVisibility(false);
-                boosterSprite->setVisibility(false);
-                explosionSprite->play();
-                explosionAudio->play();
-                canDestroyable = false;
-                isDie = true;
-                MainLevel* mainLevel = Cast<MainLevel>(GetLevel());
-                mainLevel->stageClear();
-            }
-        }
-    };
-    collisionBox = new CollisionBoxComponent(0, 0, airPlaneImgSize.first, airPlaneImgSize.second, this);
-    collisionBox->setDrawDebugBox(true);
-    collisionBox->attachTo(rootComponent);
-    collisionBox->registerCollisionResponse(collisionResponse);
-
     shieldImage = new ImageComponent("image/misc/shield.png",{-50, -50},this);
-    //shieldImage->setAlpha(140);
     shieldImage->setScale({200, 200});
     shieldImage->attachTo(rootComponent);
     turnOffShield();
 
     auto thunderEvent = []()
     {
-        MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
+        auto* mainLevel = Cast<MainLevel>(Framework::curLevel);
         if (mainLevel)
         {
             mainLevel->killAllEnemyAirplane();
@@ -109,27 +78,42 @@ Airplane::Airplane()
     thunderAttack3->setComponentLocalLocation({Framework::RTWidth - 450,0.0f});
     thunderAttack3->addEventAtNFrame(10, thunderEvent);
 
-    explosionAudio = new AudioComponent("sound/explosion.wav", 180, this);
     coinAudio = new AudioComponent("sound/coin.wav", 30, this);
     shieldAudio = new AudioComponent("sound/shield.wav", 180, this);
+
+    auto collisionResponse = [this](HActor* other) mutable
+    {
+        Bullet* bullet = Cast<Bullet>(other);
+        MainLevel* mainLevel = Cast<MainLevel>(GetLevel());
+        if(bullet && !bullet->getIsPlayerBullet() && !mainLevel->isClear) //부딪힌 오브젝트가 총알이고 적군의 총알이면
+        {
+            if(canDestroyable && !isDie)//데미지를 입을 수 있는 상태라면
+            {
+                airplaneImg->setVisibility(false);
+                boosterSprite->setVisibility(false);
+                explosionSprite->play();
+                explosionAudio->play();
+                canDestroyable = false;
+                isDie = true;
+                MainLevel* mainLevel = Cast<MainLevel>(GetLevel());
+                mainLevel->stageClear();
+            }
+        }
+    };
+    collisionBox->registerCollisionResponse(collisionResponse);
+    collisionBox->setWidthAndHeight(airPlaneImgSize.first, airPlaneImgSize.first);
 }
 
 Airplane::~Airplane()
 {
-    delete airplaneImg;
-    airplaneImg = nullptr;
+    delete coinAudio;
+    coinAudio = nullptr;
+
+    delete shieldAudio;
+    shieldAudio = nullptr;
 
     delete boosterSprite;
     boosterSprite = nullptr;
-
-    delete collisionBox;
-    collisionBox = nullptr;
-
-    delete explosionSprite;
-    explosionSprite = nullptr;
-
-    delete shieldImage;
-    shieldImage = nullptr;
 
     delete thunderAttack1;
     thunderAttack1 = nullptr;
@@ -140,16 +124,18 @@ Airplane::~Airplane()
     delete thunderAttack3;
     thunderAttack3 = nullptr;
 
+    delete shieldImage;
+    shieldImage = nullptr;
 }
 
 void Airplane::render()
 {
-    HPawn::render();
+    AirplaneParent::render();
 }
 
 void Airplane::update(float deltaTime)
 {
-    HPawn::update(deltaTime);
+    AirplaneParent::update(deltaTime);
     if(tickable)
     {
         curFireTime -= deltaTime;
@@ -231,22 +217,6 @@ int Airplane::getPlayerAttackPower()
     return attackPower;
 }
 
-void Airplane::setFireRate(float rate)
-{
-    fireRate = rate;
-}
-
-void Airplane::setIsDie(bool isDie)
-{
-    this->isDie = isDie;
-}
-
-bool Airplane::getIsDie()
-{
-    return isDie;
-}
-
-
 void Airplane::setPlayerAttackPower(int attackPower)
 {
     this->attackPower = attackPower;
@@ -319,12 +289,6 @@ void Airplane::enableShield()
     }
 }
 
-
-void Airplane::turnOffBooster()
-{
-    boosterSprite->setVisibility(false);
-}
-
 void Airplane::turnOnShield()
 {
     shieldAudio->play();
@@ -390,4 +354,19 @@ void Airplane::playerInitWhenStageBegin()
 void Airplane::playCoinSound()
 {
     coinAudio->play();
+}
+
+void Airplane::setIsDie(bool isDie)
+{
+    AirplaneParent::setIsDie(isDie);
+}
+
+bool Airplane::getIsDie()
+{
+    return AirplaneParent::getIsDie();
+}
+
+void Airplane::setFireRate(float rate)
+{
+    AirplaneParent::setFireRate(rate);
 }

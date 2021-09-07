@@ -167,7 +167,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bitset \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\GlobalFunction.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Actors\EnemyAirplane.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Airplane.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AirplaneParent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\HPawn.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\ActorObjectPool.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\queue \
@@ -509,7 +509,7 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\GlobalFunction.
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Actors\EnemyAirplane.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Airplane.h:
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AirplaneParent.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\HPawn.h:
 

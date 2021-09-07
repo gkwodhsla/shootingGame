@@ -134,8 +134,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth\types.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\util.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\TitleController.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\BackgroundActor.h
+  D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\TitleLevel.h:
 
@@ -406,5 +405,3 @@ D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\TitleController.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\BackgroundActor.h:

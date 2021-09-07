@@ -7,6 +7,7 @@
 #include "../Components/SpritesheetComponent.h"
 #include "../Components/SplineComponent.h"
 #include "../Components/AudioComponent.h"
+#include "Airplane.h"
 #include "../Framework.h"
 #include "../Level/MainLevel.h"
 #include "../GlobalFunction.h"
@@ -38,34 +39,38 @@ EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp)
     {
         initStaticData();
     }
-    if (shape == ENEMY_SHIP_SHAPE::SHIP1)
+
+    switch (shape)
     {
-        airplaneImg->changeImage("image/enemy/ship1.png");
+        case ENEMY_SHIP_SHAPE::SHIP1:
+            airplaneImg = new ImageComponent("image/enemy/ship1.png", std::make_pair(0, 0), this);
+            break;
+        case ENEMY_SHIP_SHAPE::SHIP2:
+            airplaneImg = new ImageComponent("image/enemy/ship2.png", std::make_pair(0, 0), this);
+            break;
+        case ENEMY_SHIP_SHAPE::SHIP3:
+            airplaneImg = new ImageComponent("image/enemy/ship3.png", std::make_pair(0, 0), this);
+            break;
+        case ENEMY_SHIP_SHAPE::SHIP4:
+            airplaneImg = new ImageComponent("image/enemy/ship4.png", std::make_pair(0, 0), this);
+            break;
+        case ENEMY_SHIP_SHAPE::BOSS1:
+            airplaneImg = new ImageComponent("image/enemy/boss1.png", std::make_pair(0, 0), this);
+            break;
+        case ENEMY_SHIP_SHAPE::BOSS2:
+            airplaneImg = new ImageComponent("image/enemy/boss2.png", std::make_pair(0, 0), this);
+            break;
     }
-    else if (shape == ENEMY_SHIP_SHAPE::SHIP2)
+    airplaneImg->attachTo(rootComponent);
+    airplaneImg->setScale(std::make_pair(160, 160));
+    if (shape == ENEMY_SHIP_SHAPE::BOSS1 || shape == ENEMY_SHIP_SHAPE::BOSS2)
     {
-        airplaneImg->changeImage("image/enemy/ship2.png");
-    }
-    else if (shape == ENEMY_SHIP_SHAPE::SHIP3)
-    {
-        airplaneImg->changeImage("image/enemy/ship3.png");
-    }
-    else if (shape == ENEMY_SHIP_SHAPE::SHIP4)
-    {
-        airplaneImg->changeImage("image/enemy/ship4.png");
-    }
-    else if (shape == ENEMY_SHIP_SHAPE::BOSS1)
-    {
-        airplaneImg->changeImage("image/enemy/boss1.png");
-    }
-    else if (shape == ENEMY_SHIP_SHAPE::BOSS2)
-    {
-        airplaneImg->changeImage("image/enemy/boss2.png");
+        airplaneImg->setScale(std::make_pair(500, 450));
     }
 
     dirVec.x = 0.0f;
     dirVec.y = 1.0f;
-    rootComponent->setOwner(this);
+
     rootComponent->setComponentLocalLocation(std::make_pair(-999, -999));
     rootComponent->setComponentLocalRotation(0);
     befPos = std::make_pair(-999, -999);
@@ -73,22 +78,12 @@ EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp)
     hpBar = new ImageComponent("image/misc/hpBar.png", std::make_pair(0, 0), this);
     hpBar->attachTo(airplaneImg);
     hpBar->setAffectRotationFromParent(false);
-    airplaneImg->setScale(std::make_pair(160, 160));
-    if (shape == ENEMY_SHIP_SHAPE::BOSS1 || shape == ENEMY_SHIP_SHAPE::BOSS2)
-    {
-        airplaneImg->setScale(std::make_pair(500, 450));
-    }
-    auto shipImgSize = airplaneImg->getScale();
 
+    auto shipImgSize = airplaneImg->getScale();
     hpBar->setComponentLocalLocation(std::make_pair((shipImgSize.first - hpBarRowSize) / 2, shipImgSize.second + 15));
     hpBar->setScale(std::make_pair(hpBarRowSize, hpBarColSize));
 
-    turnOffBooster();
-    //적 기체에선 우선 부스터를 쓰지 않을 거라 꺼준다.
-
     collisionBox->setWidthAndHeight(shipImgSize.first, shipImgSize.second);
-    collisionBox->setOwner(this);
-
     auto collisionResponse = [this](HActor* other) mutable
     {
         Bullet* bullet = Cast<Bullet>(other);
@@ -108,7 +103,6 @@ EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp)
     };
     collisionBox->registerCollisionResponse(collisionResponse);
 
-    explosionSprite->setOwner(this);
     explosionSprite->setComponentLocalLocation(std::make_pair(-55.0f, -45.0f));
     if (shape == ENEMY_SHIP_SHAPE::BOSS1 || shape == ENEMY_SHIP_SHAPE::BOSS2)
     {
@@ -119,8 +113,6 @@ EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp)
 
     realDirVec.x = 0.0f;
     realDirVec.y = 1.0f;
-
-    turnOffShield();
 }
 
 EnemyAirplane::~EnemyAirplane()
@@ -131,7 +123,7 @@ EnemyAirplane::~EnemyAirplane()
 
 void EnemyAirplane::render()
 {
-    HPawn::render();
+    AirplaneParent::render();
     auto loc = rootComponent->getComponentLocalLocation();
     SDL_RenderDrawLine(Framework::renderer,
                        loc.first + 100, loc.second + 100, loc.first + 100 + dirVec.x * 300.0f, 100 + loc.second + dirVec.y * 300.0f);
@@ -142,7 +134,7 @@ void EnemyAirplane::render()
 
 void EnemyAirplane::update(float deltaTime)
 {
-    HPawn::update(deltaTime);
+    AirplaneParent::update(deltaTime);
     if (isDie && explosionSprite->getIsPlayEnd())
     {
         resetEnemyAirplaneToInitialState();
@@ -224,8 +216,6 @@ void EnemyAirplane::update(float deltaTime)
             rootComponent->setComponentLocalRotation(curRootRot - interpValue);
         }
     }
-
-
     if (isArrived)
     {
         spawnBullet(deltaTime);
@@ -237,7 +227,6 @@ void EnemyAirplane::update(float deltaTime)
 void EnemyAirplane::handleEvent(SDL_Event& e)
 {
     //적 비행기는 어떠한 이벤트도 받지 않는다.
-    //하지만 확장성을 위해서 남겨는 둔다.
 }
 
 void EnemyAirplane::getDamage(int damage)
@@ -320,6 +309,21 @@ void EnemyAirplane::setMaxHP(int maxHP)
 {
     this->maxHP = maxHP;
     this->curHp = maxHP;
+}
+
+void EnemyAirplane::setIsDie(bool isDie)
+{
+    AirplaneParent::setIsDie(isDie);
+}
+
+bool EnemyAirplane::getIsDie()
+{
+    return AirplaneParent::getIsDie();
+}
+
+void EnemyAirplane::setFireRate(float rate)
+{
+    AirplaneParent::setFireRate(rate);
 }
 
 void EnemyAirplane::firePattern1()

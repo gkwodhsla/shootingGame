@@ -189,9 +189,10 @@ void MainLevel::afterStageClear()
     bgActor->stopBattleMusic();
 
     playerController->changeInputMode(INPUT_MODE::UI_ONLY);
-    AirplaneController* PC = Cast<AirplaneController>(playerController);
+    auto* PC = Cast<AirplaneController>(playerController);
 
-    ShopCanvas* curCanvas = Cast<ShopCanvas>(PC->shopCanvas);
+    auto* curCanvas = Cast<ShopCanvas>(PC->shopCanvas);
+
     if(curCanvas->getMaxStage() == curCanvas->getCurStage() && !playerAirplane->getIsDie())
     {
         curCanvas->incMaxStage();

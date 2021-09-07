@@ -1,5 +1,5 @@
 #pragma once
-#include "Airplane.h"
+#include "AirplaneParent.h"
 #include "Bullet.h"
 
 class SplineComponent;
@@ -25,7 +25,7 @@ enum class ENEMY_BULLET_PATTERN
     BOSS_FLOWER
 };
 
-class EnemyAirplane :public Airplane
+class EnemyAirplane :public AirplaneParent
 {
 public:
     EnemyAirplane() = delete;
@@ -43,6 +43,9 @@ public:
     bool getCanDamaged();
     void setBulletPattern(ENEMY_BULLET_PATTERN pattern);
     void setMaxHP(int maxHP);
+    void setIsDie(bool isDie);
+    bool getIsDie();
+    void setFireRate(float rate);
 
 private:
     void firePattern1();

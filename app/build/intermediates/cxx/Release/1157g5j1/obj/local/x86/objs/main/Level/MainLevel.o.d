@@ -161,6 +161,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bitset \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\BackgroundActor.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Airplane.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\AirplaneParent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\HPawn.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\EnemyAirplane.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Crystal.h \
@@ -511,6 +512,8 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bit
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\BackgroundActor.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Airplane.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\AirplaneParent.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\HPawn.h:
 

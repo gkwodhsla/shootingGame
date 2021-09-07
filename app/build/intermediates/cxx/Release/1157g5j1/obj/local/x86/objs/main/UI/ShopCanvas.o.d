@@ -164,6 +164,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bitset \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\HPlayerController.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\Airplane.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\AirplaneParent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\HPawn.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\AirplaneController.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h \
@@ -496,6 +497,8 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bit
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\HPlayerController.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Actors\Airplane.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\AirplaneParent.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\HPawn.h:
 
