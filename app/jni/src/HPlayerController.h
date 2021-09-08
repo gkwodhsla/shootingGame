@@ -1,6 +1,8 @@
 #pragma once
 
 #include <SDL.h>
+#include "HObject.h"
+
 class HPawn;
 
 enum class INPUT_MODE
@@ -10,7 +12,7 @@ enum class INPUT_MODE
     BOTH
 };
 
-class HPlayerController
+class HPlayerController: public HObject
 {
 public:
     HPlayerController(HPawn* controlledPawn);

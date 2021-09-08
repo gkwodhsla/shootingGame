@@ -60,6 +60,7 @@ TitleController.cpp\
 Vector2D.cpp\
 GlobalFunction.cpp\
 DBManager.cpp\
+HObject.cpp\
 Components/HSceneComponent.cpp\
 Components/HPrimitiveComponent.cpp\
 Components/ImageComponent.cpp\

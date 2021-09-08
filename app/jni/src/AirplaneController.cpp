@@ -12,7 +12,7 @@ using namespace GlobalFunction;
 AirplaneController::AirplaneController(HPawn* controlledPawn):
 HPlayerController(controlledPawn)
 {
-
+    setID(GlobalFunction::GetClassTypeUniqueID<AirplaneController>());
 }
 
 AirplaneController::~AirplaneController()
@@ -22,10 +22,10 @@ AirplaneController::~AirplaneController()
 
 void AirplaneController::createCanvases()
 {
-    shopCanvas = new ShopCanvas(Framework::rendererWidth, Framework::rendererHeight, 0, 0);
-    inGameCanvas = new InGameCanvas(Framework::rendererWidth, Framework::rendererHeight, 0, 0);
-    cashShopCanvas = new CashShopCanvas(Framework::rendererWidth, Framework::rendererHeight, 0, 0);
-    yesNoCanvas = new YesNoCanvas(Framework::rendererWidth / 2, Framework::rendererHeight / 3,
+    shopCanvas = Canvas::makeCanvas<ShopCanvas>(Framework::rendererWidth, Framework::rendererHeight, 0, 0);
+    inGameCanvas = Canvas::makeCanvas<InGameCanvas>(Framework::rendererWidth, Framework::rendererHeight, 0, 0);
+    cashShopCanvas = Canvas::makeCanvas<CashShopCanvas>(Framework::rendererWidth, Framework::rendererHeight, 0, 0);
+    yesNoCanvas = Canvas::makeCanvas<YesNoCanvas>(Framework::rendererWidth / 2, Framework::rendererHeight / 3,
                                   (Framework::rendererWidth - Framework::rendererWidth / 2) / 2, 200);
     shopCanvas->addToViewport();
 }

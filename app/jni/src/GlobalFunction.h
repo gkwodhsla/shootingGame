@@ -1,5 +1,7 @@
 #pragma once
 #include <type_traits>
+#include <typeinfo>
+#include <android/log.h>
 
 class HLevelBase;
 class HPlayerController;
@@ -7,16 +9,28 @@ class HPawn;
 
 namespace GlobalFunction
 {
+    template<typename T>
+    void* GetClassTypeUniqueID()
+    {
+        static int a = 0;
+        return &a;
+    }
     template<typename To, typename From>
     To* Cast(From* src) //안전한 다운캐스팅을 지원하는 함수이다.
     {
-        if(!std::is_base_of<From, To>::value) //만약 From이 To의 부모 클래스가 아니면 캐스팅은 실패!
+        if(GetClassTypeUniqueID<To>() == src->getID())
         {
-            return nullptr;
+            return (To*)src;
         }
         else
         {
-            return dynamic_cast<To*>(src);
+            if(src->getID() == nullptr)
+            {
+                __android_log_print(ANDROID_LOG_INFO, "Cast_Error",
+                                    "Warning: Input Class %s has no unique ID Please Set Unique ID"
+                                    " using setID(GlobalFunction::<ClassType>GetClassTypeUniqueID())", typeid(From).name());
+            }
+            return nullptr;
         }
     }
     HLevelBase* GetLevel();

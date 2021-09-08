@@ -103,6 +103,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\ImageWidget.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\ButtonWidget.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\EditBoxWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\HObject.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Framework.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\TTFComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\HPrimitiveComponent.h \
@@ -110,6 +111,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\HComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\HActor.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\..\Vector2D.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\..\HObject.h \
   D:\comtus\Development\android\shootingGame\app\jni\SDL_ttf\SDL_ttf.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\begin_code.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\close_code.h \
@@ -127,7 +129,8 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\variant.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth\credential.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth\types.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\util.h
+  D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\util.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\GlobalFunction.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\Canvas.h:
 
@@ -335,6 +338,8 @@ D:\comtus\Development\android\shootingGame\app\jni\src\UI\ButtonWidget.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\EditBoxWidget.h:
 
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\HObject.h:
+
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Framework.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Components\TTFComponent.h:
@@ -348,6 +353,8 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Components\HComponent.h:
 D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\HActor.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\..\Vector2D.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\..\HObject.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\SDL_ttf\SDL_ttf.h:
 
@@ -384,3 +391,5 @@ D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_
 D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth\types.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\util.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\GlobalFunction.h:

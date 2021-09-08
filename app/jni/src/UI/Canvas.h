@@ -10,8 +10,11 @@
 #include "ImageWidget.h"
 #include "ButtonWidget.h"
 #include "EditBoxWidget.h"
+#include "../HObject.h"
+#include "../Framework.h"
+#include "../GlobalFunction.h"
 
-class Canvas
+class Canvas: public HObject
 {
 public:
     Canvas() = delete;
@@ -30,6 +33,14 @@ public:
     float getCanvasXRatio()const;
     float getCanvasYRatio()const;
     float getCanvasInterpValue()const;
+    template<typename T, typename ...Types>
+    static T* makeCanvas(Types ...args)
+    {
+        T* newItem = new T(args...);
+        newItem->setID(GlobalFunction::GetClassTypeUniqueID<T>());
+        Framework::worldUI.push_back(newItem);
+        return newItem;
+    }
 
 protected:
     template<typename T, typename ...Types>

@@ -3,11 +3,12 @@
 #include <utility>
 #include <functional>
 #include "../Vector2D.h"
+#include "../HObject.h"
 
 class HSceneComponent;
 class SDL_Renderer;
 
-class HActor
+class HActor: public HObject
 {
 public:
     HActor();

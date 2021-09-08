@@ -3,7 +3,7 @@
 
 TitleLevel::TitleLevel()
 {
-
+    setID(GlobalFunction::GetClassTypeUniqueID<TitleLevel>());
 }
 
 TitleLevel::~TitleLevel()

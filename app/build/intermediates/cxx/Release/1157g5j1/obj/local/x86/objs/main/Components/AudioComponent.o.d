@@ -44,6 +44,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wctype.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\HActor.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\..\Vector2D.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\..\HObject.h \
   D:\comtus\Development\android\shootingGame\app\jni\SDL_mixer\SDL_mixer.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_stdinc.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_config.h \
@@ -155,6 +156,8 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wct
 D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\HActor.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\..\Vector2D.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\..\HObject.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\SDL_mixer\SDL_mixer.h:
 

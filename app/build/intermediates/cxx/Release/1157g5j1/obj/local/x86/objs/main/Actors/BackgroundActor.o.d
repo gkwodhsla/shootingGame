@@ -31,6 +31,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cassert \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\atomic \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Vector2D.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\HObject.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HSceneComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HComponent.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\string \
@@ -195,6 +196,8 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cas
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\atomic:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Vector2D.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\HObject.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HSceneComponent.h:
 

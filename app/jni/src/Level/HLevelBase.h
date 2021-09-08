@@ -8,8 +8,10 @@
 #include "../HPlayerController.h"
 #include "../UI/Canvas.h"
 #include "../Framework.h"
+#include "../GlobalFunction.h"
+#include "../HObject.h"
 
-class HLevelBase
+class HLevelBase: public HObject
 {
 public:
     HLevelBase() = default;
@@ -112,6 +114,7 @@ public:
     {
         T* newItem = new T(args...);
         addNewActorToLevel(newItem);
+        newItem->setID(GlobalFunction::GetClassTypeUniqueID<T>());
         return newItem;
     }
     //액터를 생성하고 액터 배열에 집어넣어 업데이트와 렌더링이 수행되게 해준다.

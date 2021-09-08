@@ -31,6 +31,7 @@ MainLevel::MainLevel()
 {
     actors.reserve(300);
     collisionBoxes.reserve(500);
+    setID(GlobalFunction::GetClassTypeUniqueID<MainLevel>());
 }
 
 MainLevel::~MainLevel()
