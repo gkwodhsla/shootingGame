@@ -316,6 +316,7 @@ void ShopCanvas::initWidgets()
                                 explanationWindow->getLocalPosition().second+explanationWindow->getScale().second);
     buyButton->buttonUpEvent = [this]()mutable
     {
+        bool buySuccess = false;
         switch (whichItemButton)
         {
             case WHICH_ITEM_BUTTON::ATTACK:
@@ -333,6 +334,7 @@ void ShopCanvas::initWidgets()
                     ++curAttackPower;
                     attackPowerText->changeText(std::to_string(curAttackPower) + "/" + std::to_string(maxAttackPower));
                     explanationText4->changeText("Cost: " + std::to_string(attackUpgradeFee));
+                    buySuccess = true;
                 }
                 break;
             case WHICH_ITEM_BUTTON::BULLET:
@@ -352,6 +354,7 @@ void ShopCanvas::initWidgets()
                         int curBulletNum = airplane->getPlayerBulletCnt();
                         airplane->setPlayerBulletCnt(curBulletNum + 1);
                     }
+                    buySuccess = true;
                 }
                 break;
             case WHICH_ITEM_BUTTON::AIRPLANE:
@@ -380,6 +383,7 @@ void ShopCanvas::initWidgets()
                     curBullet = 0;
                     attackPowerText->changeText(std::to_string(curAttackPower) + "/" + std::to_string(maxAttackPower));
                     bulletText->changeText(std::to_string(curBullet) + "/" + std::to_string(maxBullet));
+                    buySuccess = true;
                 }
                 break;
             case WHICH_ITEM_BUTTON::MISSILE:
@@ -394,6 +398,7 @@ void ShopCanvas::initWidgets()
                     missileText->changeText(std::to_string(curMissile) + "/" + std::to_string(maxMissile));
                     int curMissileNum = airplane->getMissileCnt();
                     airplane->setMissileCnt(curMissileNum + 1);
+                    buySuccess = true;
                 }
                 break;
             case WHICH_ITEM_BUTTON::SHIELD:
@@ -408,8 +413,22 @@ void ShopCanvas::initWidgets()
                     shieldText->changeText(std::to_string(curShield) + "/" + std::to_string(maxShield));
                     int curShieldNum = airplane->getShieldCnt();
                     airplane->setShieldCnt(curShieldNum + 1);
+                    buySuccess = true;
                 }
                 break;
+        }
+        auto mainLevel = Cast<MainLevel>(GetLevel());
+        if(mainLevel)
+        {
+            mainLevel->writeGameDataToDB();
+        }
+        if(buySuccess)
+        {
+            buyButton->setButtonVolume(128);
+        }
+        else
+        {
+            buyButton->setButtonVolume(0);
         }
     };
 

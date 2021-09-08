@@ -33,6 +33,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cassert \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\atomic \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Vector2D.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\HObject.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_main.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_stdinc.h \
@@ -88,44 +89,50 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_locale.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_misc.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Bullet.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\StageManager.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Crystal.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\ImageComponent.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HPrimitiveComponent.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HSceneComponent.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\AttackStrategy.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\MainLevel.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\HLevelBase.h \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\vector \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__bit_reference \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bit \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\algorithm \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\climits \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\limits.h \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__split_buffer \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Actors\HActor.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Components\CollisionBoxComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Components\HSceneComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Components\HComponent.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\string \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\string_view \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__string \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\algorithm \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bit \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cstdio \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cwchar \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cwctype \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cctype \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wctype.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\..\Actors\HActor.h \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\vector \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__bit_reference \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\climits \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\limits.h \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__split_buffer \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\CollisionBoxComponent.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\SpritesheetComponent.h \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\map \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__tree \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__node_handle \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\optional \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\SplineComponent.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\AudioComponent.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Airplane.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Framework.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Components\..\Actors\HActor.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\HPlayerController.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\HObject.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\Canvas.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\Widget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\TextWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\ImageWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\ButtonWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\EditBoxWidget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\..\HObject.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\..\Framework.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\TTFComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Components\HPrimitiveComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\SDL_ttf\SDL_ttf.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\begin_code.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\close_code.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\app.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\internal\platform.h \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\map \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__tree \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__node_handle \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\optional \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\future.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\internal\common.h \
@@ -135,19 +142,11 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth\credential.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth\types.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\util.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\MainLevel.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\HLevelBase.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\Actors\HActor.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\Components\CollisionBoxComponent.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\HPlayerController.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\UI\Canvas.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\UI\Widget.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\UI\TextWidget.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\UI\ImageWidget.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\UI\ButtonWidget.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\UI\EditBoxWidget.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\Framework.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\Actors\Bullet.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\..\GlobalFunction.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Framework.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\GlobalFunction.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\HObject.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Actors\Bullet.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\random \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cmath \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\numeric \
@@ -173,12 +172,35 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cstdarg \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__bsd_locale_fallbacks.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bitset \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\GlobalFunction.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\ActorObjectPool.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Actors\Bullet.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\GlobalFunction.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Vector2D.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\ActorObjectPool.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\queue \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\deque \
   D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\HLevelBase.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\StageManager.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Crystal.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\CircleStrategy.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\Fire3Strategy.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\Fire5Strategy.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\Fire7Strategy.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\FlowerStrategy.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\StarStrategy.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\TargetingStrategy.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\ImageComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HSceneComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\CollisionBoxComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\SpritesheetComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Components\ImageComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\SplineComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\AudioComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Airplane.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Framework.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\MainLevel.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\GlobalFunction.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\ActorObjectPool.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Actors\Bullet.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\EnemyAirplane.h:
@@ -246,6 +268,8 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cas
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\atomic:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Vector2D.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\HObject.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL.h:
 
@@ -357,27 +381,39 @@ D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_misc.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Bullet.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\StageManager.h:
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\AttackStrategy.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Crystal.h:
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\MainLevel.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\ImageComponent.h:
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\HLevelBase.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HPrimitiveComponent.h:
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\vector:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HSceneComponent.h:
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__bit_reference:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HComponent.h:
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bit:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\algorithm:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\climits:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\limits.h:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__split_buffer:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Actors\HActor.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Components\CollisionBoxComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Components\HSceneComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Components\HComponent.h:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\string:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\string_view:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__string:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\algorithm:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bit:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cstdio:
 
@@ -389,39 +425,31 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cct
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wctype.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\..\Actors\HActor.h:
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Components\..\Actors\HActor.h:
 
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\vector:
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\HPlayerController.h:
 
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__bit_reference:
+D:\comtus\Development\android\shootingGame\app\jni\src\HObject.h:
 
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\climits:
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\Canvas.h:
 
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\limits.h:
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\Widget.h:
 
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__split_buffer:
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\TextWidget.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\CollisionBoxComponent.h:
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\ImageWidget.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\SpritesheetComponent.h:
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\ButtonWidget.h:
 
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\map:
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\EditBoxWidget.h:
 
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__tree:
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\..\HObject.h:
 
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__node_handle:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\optional:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\SplineComponent.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\AudioComponent.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Airplane.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Framework.h:
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\..\Framework.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Components\TTFComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Components\HPrimitiveComponent.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\SDL_ttf\SDL_ttf.h:
 
@@ -432,6 +460,14 @@ D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\close_code
 D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\app.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\internal\platform.h:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\map:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__tree:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__node_handle:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\optional:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth.h:
 
@@ -451,31 +487,15 @@ D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_
 
 D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\util.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\MainLevel.h:
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\..\GlobalFunction.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\HLevelBase.h:
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Framework.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\Actors\HActor.h:
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\GlobalFunction.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\Components\CollisionBoxComponent.h:
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\HObject.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\HPlayerController.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\UI\Canvas.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\UI\Widget.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\UI\TextWidget.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\UI\ImageWidget.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\UI\ButtonWidget.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\UI\EditBoxWidget.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\Framework.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\..\Actors\Bullet.h:
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Actors\Bullet.h:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\random:
 
@@ -527,9 +547,13 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__b
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bitset:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\GlobalFunction.h:
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Actors\Bullet.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\ActorObjectPool.h:
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\GlobalFunction.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Vector2D.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\ActorObjectPool.h:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\queue:
 
@@ -538,5 +562,47 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\deq
 D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\HLevelBase.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\StageManager.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Crystal.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\CircleStrategy.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\Fire3Strategy.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\Fire5Strategy.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\Fire7Strategy.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\FlowerStrategy.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\StarStrategy.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\TargetingStrategy.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\ImageComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HSceneComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\CollisionBoxComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\SpritesheetComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Components\ImageComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\SplineComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\AudioComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Airplane.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Framework.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\MainLevel.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\GlobalFunction.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\ActorObjectPool.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Actors\Bullet.h:

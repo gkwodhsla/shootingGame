@@ -21,6 +21,7 @@ public:
     bool checkIsClicked(int inputX, int inputY);
     bool checkIsHovering(int inputX, int inputY);
     void setButtonUp();
+    void setButtonVolume(__uint8_t volume);
 public:
     std::function<void()> buttonDownEvent = nullptr;
     std::function<void()> buttonUpEvent = nullptr;
@@ -34,6 +35,7 @@ private:
     float downTime = 0.0f;
     float holdCoolTime = 0.1f;
     float maxHoldCoolTime = 0.1f;
+    __uint8_t buttonVolume = 128;
 };
 
 

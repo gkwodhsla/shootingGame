@@ -1,6 +1,7 @@
 #include "YesNoCanvas.h"
 #include "../GlobalFunction.h"
 #include "../AirplaneController.h"
+#include "../Level/MainLevel.h"
 #include <string>
 
 using namespace GlobalFunction;
@@ -30,6 +31,11 @@ void YesNoCanvas::initCanvas()
     {
         auto PC = Cast<AirplaneController>(GetPlayerController());
         PC->processingBuyProtocol();
+        auto mainLevel = Cast<MainLevel>(GetLevel());
+        if(mainLevel)
+        {
+            mainLevel->writeGameDataToDB();
+        }
         removeFromViewport();
     };
 

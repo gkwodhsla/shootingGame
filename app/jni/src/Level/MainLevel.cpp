@@ -76,23 +76,6 @@ void MainLevel::update(float deltaTime)
             afterStageClear();
         }
     }
-
-    firebase::Future<firebase::auth::User*> result = Framework::auth->SignInWithEmailAndPasswordLastResult();
-
-    /*if(result.status() == firebase::kFutureStatusComplete)
-    {
-        if(result.error() == firebase::auth::kAuthErrorNone)
-        {
-            firebase::auth::User* user = *result.result();
-            __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
-                                "Login Success Welcome :%s", user->display_name().c_str());
-        }
-        else
-        {
-            __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
-                                "Login Failed...");
-        }
-    }*/
 }
 
 void MainLevel::render()

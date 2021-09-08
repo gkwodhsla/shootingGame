@@ -9,11 +9,11 @@ ButtonWidget::ButtonWidget(const std::string& downImgPath, const std::string& up
     buttonDownImg = new ImageComponent(downImgPath, {0, 0}, nullptr);
     if(downSoundPath != "")
     {
-        downSound = new AudioComponent(downSoundPath, 128, nullptr);
+        downSound = new AudioComponent(downSoundPath, buttonVolume, nullptr);
     }
     if(upSoundPath != "")
     {
-        upSound = new AudioComponent(upSoundPath, 128, nullptr);
+        upSound = new AudioComponent(upSoundPath, buttonVolume, nullptr);
     }
     auto scale = buttonUpImg->getImageSize();
     setScale(scale.first, scale.second);
@@ -26,6 +26,18 @@ ButtonWidget::~ButtonWidget()
 
     delete buttonDownImg;
     buttonDownImg = nullptr;
+
+    if(downSound)
+    {
+        delete downSound;
+        downSound = nullptr;
+    }
+
+    if(upSound)
+    {
+        delete upSound;
+        upSound = nullptr;
+    }
 }
 
 void ButtonWidget::render()
@@ -97,11 +109,11 @@ bool ButtonWidget::checkIsClicked(int inputX, int inputY)
                 isDown = true;
                 if(buttonDownEvent)
                 {
+                    buttonDownEvent();
                     if(downSound)
                     {
                         downSound->play();
                     }
-                    buttonDownEvent();
                 }
             }
             else
@@ -109,12 +121,12 @@ bool ButtonWidget::checkIsClicked(int inputX, int inputY)
                 isDown = false;
                 if(buttonUpEvent)
                 {
+                    buttonUpEvent();
+                    downTime = 0.0f;
                     if(upSound)
                     {
                         upSound->play();
                     }
-                    buttonUpEvent();
-                    downTime = 0.0f;
                 }
             }
             isClicked = true;
@@ -143,4 +155,17 @@ bool ButtonWidget::checkIsHovering(int inputX, int inputY)
 void ButtonWidget::setButtonUp()
 {
     isDown = false;
+}
+
+void ButtonWidget::setButtonVolume(__uint8_t volume)
+{
+    buttonVolume = volume;
+    if(downSound)
+    {
+        downSound->changeVolume(buttonVolume);
+    }
+    if(upSound)
+    {
+        upSound->changeVolume(buttonVolume);
+    }
 }

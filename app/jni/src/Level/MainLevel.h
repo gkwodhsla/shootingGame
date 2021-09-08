@@ -26,6 +26,8 @@ public:
     void exit() override;
     void killAllEnemyAirplane();
     void stageClear();
+    void writeGameDataToDB();
+
     friend class Airplane;
     friend class Spawner;
     friend class EnemyAirplane;
@@ -33,7 +35,6 @@ public:
 
 private:
     void afterStageClear();
-    void writeGameDataToDB();
     void initDataUsingDataReadFromDB();
 public:
     ActorObjectPool<Bullet>* bulletPool;

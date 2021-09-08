@@ -77,6 +77,12 @@ void AirplaneController::setMoney(int newMoney)
 
 void AirplaneController::processingBuyProtocol()
 {
+    auto curShopCanvas = Cast<ShopCanvas>(shopCanvas);
     auto curCashCanvas = Cast<CashShopCanvas>(cashShopCanvas);
     curCashCanvas->buyCrystal();
+    if(curShopCanvas && curCashCanvas)
+    {
+        curMoney = curCashCanvas->getCrystal();
+        curShopCanvas->setCrystal(curMoney);
+    }
 }
