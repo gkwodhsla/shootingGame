@@ -171,6 +171,15 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\AirplaneParent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\HPawn.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\EnemyAirplane.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\AttackStrategy\AttackStrategy.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\AttackStrategy\..\..\Level\MainLevel.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\AttackStrategy\..\..\Actors\Bullet.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\AttackStrategy\..\..\GlobalFunction.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\AttackStrategy\..\..\Vector2D.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\AttackStrategy\..\..\ActorObjectPool.h \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\queue \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\deque \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Crystal.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Spawner.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\..\Components\SplineComponent.h \
@@ -180,9 +189,6 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\InGameCanvas.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\CashShopCanvas.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\ActorObjectPool.h \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\queue \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\deque \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\AirplaneController.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\DBManager.h \
@@ -539,6 +545,24 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\HPawn.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\EnemyAirplane.h:
 
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\AttackStrategy\AttackStrategy.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\AttackStrategy\..\..\Level\MainLevel.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\AttackStrategy\..\..\Actors\Bullet.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\AttackStrategy\..\..\GlobalFunction.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\AttackStrategy\..\..\Vector2D.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\AttackStrategy\..\..\ActorObjectPool.h:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\queue:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\deque:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h:
+
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Crystal.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Spawner.h:
@@ -556,12 +580,6 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\InGameCanvas.
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\CashShopCanvas.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\ActorObjectPool.h:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\queue:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\deque:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\AirplaneController.h:
 

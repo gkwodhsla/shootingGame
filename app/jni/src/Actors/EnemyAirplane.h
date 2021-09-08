@@ -1,6 +1,7 @@
 #pragma once
 #include "AirplaneParent.h"
 #include "Bullet.h"
+#include "AttackStrategy/AttackStrategy.h"
 
 class SplineComponent;
 
@@ -48,20 +49,9 @@ public:
     void setFireRate(float rate);
 
 private:
-    void firePattern1();
-    void firePattern2();
-    void firePattern3();
-    void firePattern4();
-    void firePattern5();
-    void firePattern6();
-    void firePattern7();
     void spawnBullet(float deltaTime);
-    void spawnBulletFromPool(const std::pair<float, float>&spawnPos, float speed, const Vector2D& dirVec);
     void hitAnimation(float deltaTime);
     static void initStaticData();
-    static void initBossCirclePattern();
-    static void initBossStarPattern();
-    static void initBossHeartPattern();
 
 private:
     ImageComponent* hpBar = nullptr;
@@ -84,15 +74,17 @@ private:
     bool isHitAnimPlay = false;
     const int rotateRate = 150;
     const float moveRate = 0.5f;
+    AttackStrategy* curAttackStrategy = nullptr;
+
+    static AttackStrategy* circlePattern;
+    static AttackStrategy* fire3Pattern;
+    static AttackStrategy* fire5Pattern;
+    static AttackStrategy* fire7Pattern;
+    static AttackStrategy* flowerPattern;
+    static AttackStrategy* starPattern;
+    static AttackStrategy* targetingPattern;
+
     static const float normalBulletSpeed;
-    static Vector2D bullet3DirVec[3];
-    static Vector2D bullet5DirVec[5];
-    static Vector2D bullet7DirVec[7];
-    static Vector2D bossCirclePattern[31];
-    static Vector2D bossStarPattern[51];
-    static Vector2D bossStarPatternStartPos[51];
-    static Vector2D bossFlowerPattern[41];
-    static Vector2D bossFlowerPatternStartPos[41];
     static bool isInitStaticData;
 };
 

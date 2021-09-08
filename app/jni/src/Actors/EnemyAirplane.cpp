@@ -1,6 +1,13 @@
 #include "EnemyAirplane.h"
 #include "StageManager.h"
 #include "Crystal.h"
+#include "AttackStrategy/CircleStrategy.h"
+#include "AttackStrategy/Fire3Strategy.h"
+#include "AttackStrategy/Fire5Strategy.h"
+#include "AttackStrategy/Fire7Strategy.h"
+#include "AttackStrategy/FlowerStrategy.h"
+#include "AttackStrategy/StarStrategy.h"
+#include "AttackStrategy/TargetingStrategy.h"
 #include "../Components/ImageComponent.h"
 #include "../Components/HSceneComponent.h"
 #include "../Components/CollisionBoxComponent.h"
@@ -21,16 +28,15 @@ using namespace GlobalFunction;
 std::uniform_int_distribution<int> randomRotation(0, 360);
 
 const float EnemyAirplane::normalBulletSpeed = 700.0f;
-Vector2D EnemyAirplane::bullet3DirVec[3];
-Vector2D EnemyAirplane::bullet5DirVec[5];
-Vector2D EnemyAirplane::bullet7DirVec[7];
-Vector2D EnemyAirplane::bossCirclePattern[31];
-Vector2D EnemyAirplane::bossStarPattern[51];
-Vector2D EnemyAirplane::bossStarPatternStartPos[51];
-Vector2D EnemyAirplane::bossFlowerPattern[41];
-Vector2D EnemyAirplane::bossFlowerPatternStartPos[41];
-
 bool EnemyAirplane::isInitStaticData = false;
+
+AttackStrategy* EnemyAirplane::circlePattern = nullptr;
+AttackStrategy* EnemyAirplane::fire3Pattern = nullptr;
+AttackStrategy* EnemyAirplane::fire5Pattern = nullptr;
+AttackStrategy* EnemyAirplane::fire7Pattern = nullptr;
+AttackStrategy* EnemyAirplane::flowerPattern = nullptr;
+AttackStrategy* EnemyAirplane::starPattern = nullptr;
+AttackStrategy* EnemyAirplane::targetingPattern = nullptr;
 
 
 EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp) :bulletColor(color), shipShape(shape), curHp(hp), maxHP(hp)
@@ -119,6 +125,42 @@ EnemyAirplane::~EnemyAirplane()
 {
     delete hpBar;
     hpBar = nullptr;
+
+    if(circlePattern)
+    {
+        delete circlePattern;
+        circlePattern = nullptr;
+    }
+    if(fire3Pattern)
+    {
+        delete fire3Pattern;
+        fire3Pattern = nullptr;
+    }
+    if(fire5Pattern)
+    {
+        delete fire5Pattern;
+        fire5Pattern = nullptr;
+    }
+    if(fire7Pattern)
+    {
+        delete fire7Pattern;
+        fire7Pattern = nullptr;
+    }
+    if(flowerPattern)
+    {
+        delete flowerPattern;
+        flowerPattern = nullptr;
+    }
+    if(starPattern)
+    {
+        delete starPattern;
+        starPattern = nullptr;
+    }
+    if(targetingPattern)
+    {
+        delete targetingPattern;
+        targetingPattern = nullptr;
+    }
 }
 
 void EnemyAirplane::render()
@@ -302,6 +344,31 @@ bool EnemyAirplane::getCanDamaged()
 
 void EnemyAirplane::setBulletPattern(ENEMY_BULLET_PATTERN pattern)
 {
+    switch (pattern)
+    {
+        case ENEMY_BULLET_PATTERN::BULLET_3:
+            curAttackStrategy = EnemyAirplane::fire3Pattern;
+            break;
+        case ENEMY_BULLET_PATTERN::BULLET_5:
+            curAttackStrategy = EnemyAirplane::fire5Pattern;
+            break;
+        case ENEMY_BULLET_PATTERN::BULLET_7:
+            curAttackStrategy = EnemyAirplane::fire7Pattern;
+            break;
+        case ENEMY_BULLET_PATTERN::TARGETED:
+            curAttackStrategy = EnemyAirplane::targetingPattern;
+            break;
+        case ENEMY_BULLET_PATTERN::BOSS_CIRCLE:
+            curAttackStrategy = EnemyAirplane::circlePattern;
+            break;
+        case ENEMY_BULLET_PATTERN::BOSS_STAR:
+            curAttackStrategy = EnemyAirplane::starPattern;
+            break;
+        case ENEMY_BULLET_PATTERN::BOSS_FLOWER:
+            curAttackStrategy = EnemyAirplane::flowerPattern;
+            break;
+
+    }
     bulletPattern = pattern;
 }
 
@@ -326,154 +393,17 @@ void EnemyAirplane::setFireRate(float rate)
     AirplaneParent::setFireRate(rate);
 }
 
-void EnemyAirplane::firePattern1()
-{
-    auto worldLoc = rootComponent->getComponentLocalLocation();
-    auto size = airplaneImg->getScale();
-
-    std::pair<int, int> spawnPos{ worldLoc.first + size.first / 2, worldLoc.second + size.second };
-
-    int bulletCnt = 3;
-
-    for(int i = 0; i < bulletCnt; ++i)
-    {
-        spawnBulletFromPool(spawnPos, normalBulletSpeed, bullet3DirVec[i]);
-    }
-
-}
-
-void EnemyAirplane::firePattern2()
-{
-    auto worldLoc = rootComponent->getComponentLocalLocation();
-    auto size = airplaneImg->getScale();
-
-    std::pair<int, int> spawnPos{ worldLoc.first + size.first / 2, worldLoc.second + size.second };
-
-    int bulletCnt = 5;
-    for(int i = 0; i < bulletCnt;++i)
-    {
-        spawnBulletFromPool(spawnPos, normalBulletSpeed, bullet5DirVec[i]);
-    }
-}
-
-void EnemyAirplane::firePattern3()
-{
-    auto worldLoc = rootComponent->getComponentLocalLocation();
-    auto size = airplaneImg->getScale();
-
-    std::pair<int, int> spawnPos{ worldLoc.first + size.first / 2, worldLoc.second + size.second };
-
-    int bulletCnt = 7;
-    for(int i = 0; i < bulletCnt;++i)
-    {
-        spawnBulletFromPool(spawnPos, normalBulletSpeed, bullet7DirVec[i]);
-    }
-}
-
-void EnemyAirplane::firePattern4()
-{
-    MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
-    std::vector<Bullet*> cont;
-
-    auto worldLoc = rootComponent->getComponentLocalLocation();
-    auto size = airplaneImg->getScale();
-    std::pair<int, int> spawnPos{ worldLoc.first + size.first / 2, worldLoc.second + size.second };
-
-    auto playerLoc = mainLevel->playerAirplane->getRootComponent()->getComponentLocalLocation();
-
-    auto newVectorX = playerLoc.first - worldLoc.first;
-    auto newVectorY = playerLoc.second - worldLoc.second;
-
-    Vector2D bulletDir = Vector2D(newVectorX, newVectorY);
-    bulletDir.normalize();
-
-    spawnBulletFromPool(spawnPos, normalBulletSpeed, bulletDir);
-
-}
-
-float tempRotate = 0.0f;
-void EnemyAirplane::firePattern5()
-{
-    auto worldLoc = rootComponent->getComponentLocalLocation();
-    auto size = airplaneImg->getScale();
-
-    std::pair<int, int> spawnPos{ worldLoc.first + size.first / 2, worldLoc.second + size.second };
-
-    int bulletCnt = 30;
-
-    for(int i = 0; i < bulletCnt; ++i)
-    {
-        spawnBulletFromPool(spawnPos, 1200.0f, bossCirclePattern[i]);
-        bossCirclePattern[i].rotateVector(tempRotate);
-    }
-    tempRotate = randomRotation(dre);
-}
-
-void EnemyAirplane::firePattern6()
-{
-    auto worldLoc = rootComponent->getComponentLocalLocation();
-    auto size = airplaneImg->getScale();
-
-    std::pair<int, int> spawnPos{ worldLoc.first + size.first / 2, worldLoc.second + size.second };
-
-    int bulletCnt = 49;
-    for(int i = 0; i < bulletCnt; ++i)
-    {
-        spawnBulletFromPool({bossStarPatternStartPos[i].x + spawnPos.first,bossStarPatternStartPos[i].y + spawnPos.second },
-                            500.0f, bossStarPattern[i]);
-        bossStarPattern[i].rotateVector(tempRotate);
-    }
-    tempRotate = randomRotation(dre);
-}
-
-void EnemyAirplane::firePattern7()
-{
-    auto worldLoc = rootComponent->getComponentLocalLocation();
-    auto size = airplaneImg->getScale();
-
-    std::pair<int, int> spawnPos{ worldLoc.first + size.first / 2, worldLoc.second + size.second };
-
-    int bulletCnt = 40;
-    for(int i = 0; i < bulletCnt; ++i)
-    {
-        spawnBulletFromPool({bossFlowerPatternStartPos[i].x + spawnPos.first,
-                             bossFlowerPatternStartPos[i].y + spawnPos.second}, 900.0f,
-                            bossFlowerPattern[i]);
-        bossFlowerPattern[i].rotateVector(tempRotate);
-    }
-    tempRotate = randomRotation(dre);
-}
-
 void EnemyAirplane::spawnBullet(float deltaTime)
 {
     curFireTime -= deltaTime;
     if (curFireTime <= 0.0f)
     {
         curFireTime = fireRate;
-        switch (bulletPattern)
-        {
-            case ENEMY_BULLET_PATTERN::BULLET_3:
-                firePattern1();
-                break;
-            case ENEMY_BULLET_PATTERN::BULLET_5:
-                firePattern2();
-                break;
-            case ENEMY_BULLET_PATTERN::BULLET_7:
-                firePattern3();
-                break;
-            case ENEMY_BULLET_PATTERN::TARGETED:
-                firePattern4();
-                break;
-            case ENEMY_BULLET_PATTERN::BOSS_CIRCLE:
-                firePattern5();
-                break;
-            case ENEMY_BULLET_PATTERN::BOSS_STAR:
-                firePattern6();
-                break;
-            case ENEMY_BULLET_PATTERN::BOSS_FLOWER:
-                firePattern7();
-                break;
-        }
+        auto worldLoc = rootComponent->getComponentLocalLocation();
+        auto size = airplaneImg->getScale();
+
+        std::pair<int, int> spawnPos{ worldLoc.first + size.first / 2, worldLoc.second + size.second };
+        curAttackStrategy->attackAction(spawnPos, normalBulletSpeed, bulletColor);
     }
 }
 
@@ -481,128 +411,13 @@ void EnemyAirplane::initStaticData()
 {
     EnemyAirplane::isInitStaticData = true;
 
-    Vector2D temp = Vector2D(0.0f, 1.0f);
-    temp.rotateVector(-15.0f);
-
-    for (int i = 0; i < 3; ++i)
-    {
-        bullet3DirVec[i] = temp;
-        temp.rotateVector(15.0f);
-    }
-
-    temp = Vector2D(0.0f, 1.0f);
-    temp.rotateVector(-30.0f);
-    for (int i = 0; i < 5; ++i)
-    {
-        bullet5DirVec[i] = temp;
-        temp.rotateVector(15.0f);
-    }
-
-    temp = Vector2D(0.0f, 1.0f);
-    temp.rotateVector(-45.0f);
-    for (int i = 0; i < 7; ++i)
-    {
-        bullet7DirVec[i] = temp;
-        temp.rotateVector(15.0f);
-    }
-    initBossCirclePattern();
-    initBossStarPattern();
-    initBossHeartPattern();
-}
-
-void EnemyAirplane::initBossCirclePattern() //이곳에서 보스 총알의 방향벡터를 계산해둔다. (circle)
-{
-    float toRad = 3.14f / 180.0f;
-    float t = 0.0f; //클래스에서 쓰이는 t와 다르다. 로컬t임
-
-    Vector2D befDir{ 1.0f, 0.0f };
-    Vector2D curDir{ 0.0f, 0.0f };
-    int index = 0;
-    for (t = 0.0333f; t <= 1.0f; t += 0.0333f)
-    {
-        float curX = cos(t * 360.0f * toRad);
-        float curY = sin(t * 360.0f * toRad);
-        curDir = Vector2D{ curX, curY };
-
-        Vector2D v1 = curDir - befDir;
-        v1.normalize();
-        bossCirclePattern[index++] = Vector2D(v1.y, -v1.x);
-        //Up vector를 (0, 0, -1.0f)라고 가정하고 v1과 외적한 결과이다.
-
-        befDir = curDir;
-
-    }
-}
-
-void EnemyAirplane::initBossStarPattern()
-{
-    //{xy=−9sin(2t)−5sin(3t)=9cos(2t)−5cos(3t)t∈[0,2π]
-    float t = 0.0f;
-    int index = 0;
-    Vector2D befDir{ -9 * sin(2 * t) - 5 * sin(3 * t), 9 * cos(2 * t) - 5 * cos(3 * t) };
-    bossStarPatternStartPos[index] = befDir;
-    //befDir.normalize();
-    Vector2D curDir{ 0.0f, 0.0f };
-
-    for (t = 0.1256f; t <= 3.14f * 2.0f; t += 0.1256f)
-    {
-        float curX = -9 * sin(2 * t) - 5 * sin(3 * t);
-        float curY = 9 * cos(2 * t) - 5 * cos(3 * t);
-        curDir = Vector2D{ curX, curY };
-
-        Vector2D v1 = curDir - befDir;
-        //v1.normalize();
-        if (abs(v1.x) >= 3.5f)
-            v1.x = 1.5f;
-        bossStarPattern[index++] = Vector2D(v1.y, -v1.x);
-
-        befDir = curDir;
-        bossStarPatternStartPos[index] = Vector2D{ curX * 10.0f, curY * 10.0f };
-    }
-
-    for (int i = 0; i < 50; ++i)
-    {
-        __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
-                            "%d번째 x: %f, y:%f", i, bossStarPattern[i].x, bossStarPattern[i].y);
-    }
-}
-
-void EnemyAirplane::initBossHeartPattern()
-{
-    float t = 0.0f;
-    int index = 0;
-    Vector2D befDir{ 20 * cos(3 * t) * cos(t), 20 * cos(3 * t) * sin(t) };
-    bossFlowerPatternStartPos[index] = befDir;
-    //befDir.normalize();
-    Vector2D curDir{ 0.0f, 0.0f };
-
-    for (t = 0.08f; t <= 3.2f; t += 0.08f)
-    {
-        float curX = 20 * cos(3 * t) * cos(t);
-        float curY = 20 * cos(3 * t) * sin(t);
-        curDir = Vector2D{ curX, curY };
-
-        Vector2D v1 = curDir - befDir;
-        v1.normalize();
-        //if(abs(v1.x)>=3.5f)
-        //v1.x = 1.5f;
-        bossFlowerPattern[index++] = Vector2D(v1.y, -v1.x);
-
-        befDir = curDir;
-        bossFlowerPatternStartPos[index] = Vector2D{ curX * 10.0f, curY * 10.0f };
-    }
-}
-
-void EnemyAirplane::spawnBulletFromPool(const std::pair<float, float>&spawnPos, float speed, const Vector2D& dirVec)
-{
-    MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
-    ActorObjectPool<Bullet>* cont;
-    cont = mainLevel->bulletPool;
-    auto bullet = cont->acquireObject();
-    bullet->init(spawnPos, bulletColor);
-    bullet->setActorDirectionalVector(dirVec);
-    bullet->changeBulletSpeed(speed);
-
+    circlePattern = new CircleStrategy();
+    fire3Pattern = new Fire3Strategy();
+    fire5Pattern = new Fire5Strategy();
+    fire7Pattern = new Fire7Strategy();
+    flowerPattern = new FlowerStrategy();
+    starPattern = new StarStrategy();
+    targetingPattern = new TargetingStrategy();
 }
 
 void EnemyAirplane::hitAnimation(float deltaTime)

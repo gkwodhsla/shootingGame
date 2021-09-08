@@ -71,6 +71,13 @@ Components/CollisionBoxComponent.cpp\
 Components/SplineComponent.cpp\
 Components/AudioComponent.cpp\
 Components/AmbientMusicComponent.cpp\
+Actors/AttackStrategy/CircleStrategy.cpp\
+Actors/AttackStrategy/Fire3Strategy.cpp\
+Actors/AttackStrategy/Fire5Strategy.cpp\
+Actors/AttackStrategy/Fire7Strategy.cpp\
+Actors/AttackStrategy/FlowerStrategy.cpp\
+Actors/AttackStrategy/StarStrategy.cpp\
+Actors/AttackStrategy/TargetingStrategy.cpp\
 Actors/HActor.cpp\
 Actors/BackgroundActor.cpp\
 Actors/Bullet.cpp\

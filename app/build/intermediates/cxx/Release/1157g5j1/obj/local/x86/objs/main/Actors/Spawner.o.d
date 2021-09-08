@@ -174,6 +174,16 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AirplaneParent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\HPawn.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Bullet.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\AttackStrategy.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\MainLevel.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Actors\Bullet.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\GlobalFunction.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Vector2D.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\ActorObjectPool.h \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\queue \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\deque \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Level\HLevelBase.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\GlobalFunction.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Spawner.h:
@@ -523,5 +533,25 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AirplaneParent.h:
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\HPawn.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\Bullet.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\AttackStrategy.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\MainLevel.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Actors\Bullet.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\GlobalFunction.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Vector2D.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\ActorObjectPool.h:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\queue:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\deque:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Level\HLevelBase.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\GlobalFunction.h:
