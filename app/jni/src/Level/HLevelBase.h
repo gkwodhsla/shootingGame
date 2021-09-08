@@ -44,36 +44,24 @@ public:
         if(playerController)
         {
             INPUT_MODE curInputMode = playerController->getInputMode();
-            if(curInputMode == INPUT_MODE::GAME_ONLY)
+            switch(curInputMode)
             {
-                playerController->handleEvent(e);
-            }
-            else if (curInputMode == INPUT_MODE::UI_ONLY)
-            {
-                for(auto& canvas : Framework::worldUI)
-                {
-                    canvas->handleEvent(e);
-                }
-            }
-            else if(curInputMode == INPUT_MODE::BOTH)
-            {
-                bool isUserInteractWithUI = false;
-                for(auto& canvas : Framework::worldUI)
-                //입력이 UI와 플레이어 둘 다에게 들어간다면 UI에게 들어갔을 땐 플레이어에게 안 들어가게!
-                {
-                    if (!isUserInteractWithUI)
-                    {
-                        isUserInteractWithUI = canvas->handleEvent(e);
-                    }
-                    else
+                case INPUT_MODE::GAME_ONLY:
+                    playerController->handleEvent(e);
+                    break;
+                case INPUT_MODE::UI_ONLY:
+                    for(auto& canvas : Framework::worldUI)
                     {
                         canvas->handleEvent(e);
                     }
-                }
-                if(!isUserInteractWithUI)
-                {
+                    break;
+                case INPUT_MODE::BOTH:
+                    for(auto& canvas : Framework::worldUI)
+                    {
+                        canvas->handleEvent(e);
+                    }
                     playerController->handleEvent(e);
-                }
+                    break;
             }
         }
     }
