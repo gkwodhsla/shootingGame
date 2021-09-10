@@ -1,14 +1,15 @@
 #pragma once
 #include "HComponent.h"
 #include <SDL_mixer.h>
-//class Mix_Music;
 
 class AmbientMusicComponent : public HComponent
 {
 public:
     AmbientMusicComponent(const std::string& musicPath, __uint8_t volume, HActor* owner);
+    AmbientMusicComponent(const AmbientMusicComponent&) = delete;
+    AmbientMusicComponent& operator=(const AmbientMusicComponent&) = delete;
     virtual ~AmbientMusicComponent();
-    virtual void update(float deltaTime) override;
+    virtual void update(const float deltaTime) override;
     void changeVolume(__uint8_t volume);
     void changeMusic(const std::string& musicPath);
     void play();

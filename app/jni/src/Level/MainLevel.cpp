@@ -48,7 +48,7 @@ void MainLevel::handleEvent(const SDL_Event& e)
     HLevelBase::handleEvent(e);
 }
 
-void MainLevel::update(float deltaTime)
+void MainLevel::update(const float deltaTime)
 {
     HLevelBase::update(deltaTime);
 

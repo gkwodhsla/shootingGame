@@ -8,7 +8,7 @@ MovementComponent::MovementComponent(HActor* owner)
     componentTag = "MovementComponent";
 }
 
-void MovementComponent::update(float deltaTime)
+void MovementComponent::update(const float deltaTime)
 {
     updatePosition(deltaTime);
 }

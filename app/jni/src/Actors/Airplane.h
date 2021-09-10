@@ -22,7 +22,7 @@ public:
     Airplane& operator=(const Airplane&) = delete;
     virtual ~Airplane();
     virtual void render() override;
-    virtual void update(float deltaTime) override;
+    virtual void update(const float deltaTime) override;
     virtual void handleEvent(const SDL_Event& e) override;
 
 public:

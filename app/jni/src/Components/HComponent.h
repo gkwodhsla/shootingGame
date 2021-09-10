@@ -7,10 +7,12 @@ class HComponent
 {
 public:
     HComponent() = default;
+    HComponent(const HComponent&) = delete;
+    HComponent& operator=(const HComponent&) = delete;
     virtual ~HComponent() = default;
 
 public:
-    virtual void update(float deltaTime) = 0;
+    virtual void update(const float deltaTime) = 0;
     HActor* getOwner()
     {
         return owner;

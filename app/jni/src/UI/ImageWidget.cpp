@@ -25,7 +25,7 @@ void ImageWidget::render()
     img->render();
 }
 
-void ImageWidget::update(float deltaTime)
+void ImageWidget::update(const float deltaTime)
 {
     if(visibility)
     {

@@ -23,7 +23,7 @@ void StageManager::render()
     HActor::render();
 }
 
-void StageManager::update(float deltaTime)
+void StageManager::update(const float deltaTime)
 {
     HActor::update(deltaTime);
     if(isWaveBegin)
@@ -67,7 +67,7 @@ void StageManager::waveBegin()
     isWaveBegin = true;
     curWave = 1;
     isNormalWaveEnd = false;
-    //최초 웨이브는 1 wave 부터임!
+    //최초 웨이브는 1 wave 부터임
 }
 
 void StageManager::bossWaveBegin()
@@ -104,18 +104,18 @@ void StageManager::setStage(int stage)
     {
         spawnPerWave = 12;
     }
-    maxWave = 2 + stage / 10; //웨이브는 10웨이브마다 1씩 추가된다.
-    if(maxWave >= 7)
+    maxWave = 2 + stage / 10; //웨이브는 10스테이지마다 1씩 추가된다.
+    if(maxWave >= 6)
     {
-        maxWave = 7;
+        maxWave = 6;
     }
     enemyMaxHP = 50 + 20 * (stage / 5);
-    bossMaxHP = 300 + stage * 15;
+    bossMaxHP = 300 + stage * 50;
     enemyFireRate = 3.0f - 0.02f * stage;
     if(enemyFireRate <= 0.5f)
         enemyFireRate = 0.5f;
 
-    bossFireRate = 3.0f - 0.04f * stage;
+    bossFireRate = 3.0f - 0.03f * stage;
     if(bossFireRate <= 1.0f)
         bossFireRate = 1.0f;
 }

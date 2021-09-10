@@ -12,7 +12,7 @@ public:
     virtual ~ImageWidget();
     void changeImage(const std::string& imagePath);
     virtual void render() override;
-    virtual void update(float deltaTime) override;
+    virtual void update(const float deltaTime) override;
 private:
     ImageComponent* img = nullptr;
 };

@@ -6,9 +6,11 @@ class Spawner :public HActor
 {
 public:
     Spawner();
+    Spawner(const Spawner&) = delete;
+    Spawner& operator=(const Spawner&) = delete;
     virtual ~Spawner();
     void render() override;
-    void update(float deltaTime) override;
+    void update(const float deltaTime) override;
     void startSpawn(int enemyCnt, int maxHP, float fireRate); //레벨에서 특정 시점마다 이 함수를 호출해 적 비행기를 스폰하게 해준다.
     void spawnBoss(int whichBoss, int maxHP, float fireRate);
 

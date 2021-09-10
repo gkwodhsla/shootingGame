@@ -8,8 +8,10 @@ class AudioComponent : public HComponent
 {
 public:
     AudioComponent(const std::string& audioPath, __uint8_t volume, HActor* owner);
+    AudioComponent(const AudioComponent&) = delete;
+    AudioComponent& operator=(const AudioComponent&) = delete;
     virtual ~AudioComponent();
-    virtual void update(float deltaTime) override;
+    virtual void update(const float deltaTime) override;
     void changeVolume(__uint8_t volume);
     void changeAudio(const std::string& audioPath);
     void play();

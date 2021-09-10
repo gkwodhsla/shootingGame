@@ -15,7 +15,7 @@ AmbientMusicComponent::~AmbientMusicComponent()
     music = nullptr;
 }
 
-void AmbientMusicComponent::update(float deltaTime)
+void AmbientMusicComponent::update(const float deltaTime)
 {
 
 }

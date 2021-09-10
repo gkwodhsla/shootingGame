@@ -67,7 +67,7 @@ public:
             }
         }
     }
-    virtual void update(float deltaTime)
+    virtual void update(const float deltaTime)
     {
         clearGarbageFromBuffer(deltaTime);
 

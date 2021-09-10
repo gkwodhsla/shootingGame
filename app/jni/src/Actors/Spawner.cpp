@@ -36,7 +36,8 @@ Spawner::Spawner()
 
 Spawner::~Spawner()
 {
-
+    delete bossPath;
+    bossPath = nullptr;
 }
 
 void Spawner::render()
@@ -49,7 +50,7 @@ void Spawner::render()
     }*/
 }
 
-void Spawner::update(float deltaTime)
+void Spawner::update(const float deltaTime)
 {
     HActor::update(deltaTime);
     if(isSpawning)
@@ -65,7 +66,7 @@ void Spawner::update(float deltaTime)
             {
                 if(!enemies[i]->getVisibility())
                 {
-                    int spawnIndex = uid(dre);
+                    int spawnIndex = 0;
                     while(1) //적군이 어느정도 맵에 없어져야 스폰을 시도하기 때문에 무한루프에 빠질 염려는 없다.
                     {
                         spawnIndex = uid(dre);
@@ -115,12 +116,12 @@ void Spawner::update(float deltaTime)
         EnemyAirplane* curBoss = nullptr;
         if(bossIndex == 0)
         {
-            MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
+            auto *mainLevel = Cast<MainLevel>(Framework::curLevel);
             curBoss = mainLevel->boss1;
         }
         else
         {
-            MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
+            auto *mainLevel = Cast<MainLevel>(Framework::curLevel);
             curBoss = mainLevel->boss2;
         }
         curBoss->setVisibility(true);

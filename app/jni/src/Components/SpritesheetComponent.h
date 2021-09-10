@@ -7,11 +7,13 @@ class SpritesheetComponent : public ImageComponent
 {
 public:
     SpritesheetComponent() = default;
+    SpritesheetComponent(const SpritesheetComponent&) = delete;
+    SpritesheetComponent& operator=(const SpritesheetComponent&) = delete;
     SpritesheetComponent(const std::string& path, const std::pair<int, int>& loc, HActor* owner, int imgCnt,
                          int rowCnt, int colCnt);
     virtual ~SpritesheetComponent();
     virtual void render() override;
-    virtual void update(float deltaTime) override;
+    virtual void update(const float deltaTime) override;
     void play();
     void stop();
     void addEventAtNFrame(int n, const std::function<void()>& func);

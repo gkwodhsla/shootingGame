@@ -198,7 +198,7 @@ bool Canvas::handleEvent(const SDL_Event &e)
     return isEventOccure;
 }
 
-void Canvas::update(float deltaTime)
+void Canvas::update(const float deltaTime)
 {
     if(visibility)
     {

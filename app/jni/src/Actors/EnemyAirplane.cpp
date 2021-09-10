@@ -174,7 +174,7 @@ void EnemyAirplane::render()
                        loc.first + 100, loc.second + 100, loc.first + 100 + realDirVec.x * 300.0f, 100 + loc.second + realDirVec.y * 300.0f);
 }
 
-void EnemyAirplane::update(float deltaTime)
+void EnemyAirplane::update(const float deltaTime)
 {
     AirplaneParent::update(deltaTime);
     if (isDie && explosionSprite->getIsPlayEnd())

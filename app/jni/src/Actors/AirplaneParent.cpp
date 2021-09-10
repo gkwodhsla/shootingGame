@@ -40,7 +40,7 @@ void AirplaneParent::render()
     HPawn::render();
 }
 
-void AirplaneParent::update(float deltaTime)
+void AirplaneParent::update(const float deltaTime)
 {
     HPawn::update(deltaTime);
 }

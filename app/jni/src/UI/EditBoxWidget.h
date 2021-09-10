@@ -12,7 +12,7 @@ public:
                   int fontSize, __uint8_t r, __uint8_t g, __uint8_t b, Canvas* owner);
     virtual ~EditBoxWidget();
     void render() override;
-    void update(float deltaTime) override;
+    void update(const float deltaTime) override;
     void changeText(const std::string& content);
     bool checkIsClicked(int inputX, int inputY);
     void swapText();

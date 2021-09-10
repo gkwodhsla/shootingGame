@@ -23,7 +23,7 @@ public:
     virtual void canvasRender();
     virtual void render();
     virtual bool handleEvent(const SDL_Event& e);
-    virtual void update(float deltaTime);
+    virtual void update(const float deltaTime);
     void updateCrystalText();
     int getCrystal();
     void setCrystal(int crystal);

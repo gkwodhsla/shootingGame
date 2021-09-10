@@ -28,7 +28,7 @@ public:
     virtual void canvasRender();
     virtual void render();
     virtual bool handleEvent(const SDL_Event& e) = 0;
-    virtual void update(float deltaTime);
+    virtual void update(const float deltaTime);
     void changeWindowAlphaValue(__uint8_t alpha);
     float getCanvasXRatio()const;
     float getCanvasYRatio()const;

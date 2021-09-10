@@ -14,6 +14,8 @@ class ImageComponent : public HPrimitiveComponent
 {
 public:
     ImageComponent() = default;
+    ImageComponent(const ImageComponent&) = delete;
+    ImageComponent& operator=(const ImageComponent&) = delete;
     ImageComponent(HActor* owner);
     ImageComponent(const std::string& path, const std::pair<int, int>& loc, HActor* owner);
     virtual ~ImageComponent();
@@ -24,7 +26,7 @@ public:
     void setImageColor(__uint8_t r, __uint8_t g, __uint8_t b);
     void setImageFlip(SDL_RendererFlip flipState);
     virtual void render() override;
-    virtual void update(float deltaTime) override;
+    virtual void update(const float deltaTime) override;
     void changeImage(const std::string& path);
 
 public:

@@ -20,9 +20,11 @@ public:
     Bullet();
     Bullet(const std::pair<float, float>& spawnPosition, BULLET_COLOR bulletColor,
            const Vector2D& dirVec);
+    Bullet(const Bullet&) = delete;
+    Bullet& operator=(const Bullet&) = delete;
     virtual ~Bullet();
     virtual void render();
-    virtual void update(float deltaTime);
+    virtual void update(const float deltaTime);
     void resetBulletToInitialState();
     void changeBulletSpeed(float speed);
     bool getIsPlayerBullet();

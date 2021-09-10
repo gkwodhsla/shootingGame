@@ -57,7 +57,7 @@ void ButtonWidget::render()
     }
 }
 
-void ButtonWidget::update(float deltaTime)
+void ButtonWidget::update(const float deltaTime)
 {
     if(visibility)
     {

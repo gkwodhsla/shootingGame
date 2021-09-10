@@ -16,7 +16,7 @@ public:
     void setCanRecvInputEvent(bool canInput);
     HPlayerController* getController();
     virtual void render() override;
-    virtual void update(float deltaTime) override;
+    virtual void update(const float deltaTime) override;
     virtual void handleEvent(const SDL_Event& e) = 0;
 protected:
     MovementComponent* movementComp = nullptr;

@@ -10,11 +10,13 @@ class BackgroundActor :public HActor
 {
 public:
     BackgroundActor();
+    BackgroundActor(const BackgroundActor&) = delete;
+    BackgroundActor& operator=(const BackgroundActor&) = delete;
     virtual ~BackgroundActor();
 
 public:
     void render() override;
-    void update(float deltaTime) override;
+    void update(const float deltaTime) override;
     void changeBackgroundImage(const std::string&);
     void playBattleMusic();
     void stopBattleMusic();

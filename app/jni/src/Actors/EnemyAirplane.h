@@ -35,7 +35,7 @@ public:
     EnemyAirplane(const BULLET_COLOR color, const ENEMY_SHIP_SHAPE shape, int hp);
     virtual ~EnemyAirplane();
     virtual void render() override;
-    virtual void update(float deltaTime) override;
+    virtual void update(const float deltaTime) override;
     virtual void handleEvent(const SDL_Event& e) override;
     void resetEnemyAirplaneToInitialState();
 

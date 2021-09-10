@@ -14,7 +14,7 @@ public:
                  const std::string& downSoundPath, const std::string& upSoundPath, Canvas* owner);
     virtual ~ButtonWidget();
     virtual void render() override;
-    virtual void update(float deltaTime) override;
+    virtual void update(const float deltaTime) override;
     void registerbuttonDownEvent(const std::function<void()>& func);
     void registerbuttonUpEvent(const std::function<void()>& func);
     void registerbuttonHoldEvent(const std::function<void()>& func);

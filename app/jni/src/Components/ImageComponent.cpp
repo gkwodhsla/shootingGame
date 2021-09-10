@@ -97,7 +97,7 @@ void ImageComponent::render()
     }
 }
 
-void ImageComponent::update(float deltaTime)
+void ImageComponent::update(const float deltaTime)
 {
     HPrimitiveComponent::update(deltaTime);
 }

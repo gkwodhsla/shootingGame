@@ -20,7 +20,7 @@ public:
     void moveTo(const std::pair<int, int>& loc);
     void rotateActor(const float degree);
     virtual void render();
-    virtual void update(float deltaTime);
+    virtual void update(const float deltaTime);
 
 public:
     void setVisibility(const bool isVisible);

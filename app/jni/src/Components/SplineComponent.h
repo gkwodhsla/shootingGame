@@ -8,9 +8,10 @@ class SplineComponent :public HComponent
 {
 public:
     SplineComponent() = delete;
+    SplineComponent(const SplineComponent& other);
     SplineComponent(const std::initializer_list<std::pair<int, int>>& points, float tension, HActor* owner);
     virtual ~SplineComponent();
-    virtual void update(float deltaTime) override;
+    virtual void update(const float deltaTime) override;
     void drawDebugLine();
     std::pair<int, int> getCurrentLocation(float t);
 

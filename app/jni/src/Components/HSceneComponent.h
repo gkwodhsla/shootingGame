@@ -9,13 +9,15 @@ class HSceneComponent :public HComponent
 {
 public:
     HSceneComponent();
+    HSceneComponent(const HSceneComponent&) = delete;
+    HSceneComponent& operator=(const HSceneComponent&) = delete;
     virtual ~HSceneComponent();
 
 public:
     void updateComponentWorldRotation();
     void updateComponentWorldLocation();
     virtual void render();
-    void update(float deltaTime) override;
+    void update(const float deltaTime) override;
 public:
     std::pair<float, float> getComponentWorldLocation();
     float getComponentWorldRotation();

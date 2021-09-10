@@ -80,7 +80,7 @@ bool YesNoCanvas::handleEvent(const SDL_Event& e)
     return Canvas::handleEvent(e);
 }
 
-void YesNoCanvas::update(float deltaTime)
+void YesNoCanvas::update(const float deltaTime)
 {
     if(visibility)
     {

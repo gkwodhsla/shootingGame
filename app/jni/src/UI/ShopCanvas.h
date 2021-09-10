@@ -22,7 +22,7 @@ public:
     virtual void canvasRender();
     virtual void render();
     virtual bool handleEvent(const SDL_Event& e);
-    virtual void update(float deltaTime);
+    virtual void update(const float deltaTime);
 
 public:
     bool getIsPlayButtonClicked();

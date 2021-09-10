@@ -133,7 +133,7 @@ void Airplane::render()
     AirplaneParent::render();
 }
 
-void Airplane::update(float deltaTime)
+void Airplane::update(const float deltaTime)
 {
     AirplaneParent::update(deltaTime);
     if(tickable)

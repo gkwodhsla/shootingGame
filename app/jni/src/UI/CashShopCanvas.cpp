@@ -47,7 +47,7 @@ bool CashShopCanvas::handleEvent(const SDL_Event &e)
     return Canvas::handleEvent(e);
 }
 
-void CashShopCanvas::update(float deltaTime)
+void CashShopCanvas::update(const float deltaTime)
 {
     Canvas::update(deltaTime);
 }

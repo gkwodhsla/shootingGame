@@ -45,7 +45,7 @@ void TTFComponent::render()
     }
 }
 
-void TTFComponent::update(float deltaTime)
+void TTFComponent::update(const float deltaTime)
 {
     HPrimitiveComponent::update(deltaTime);
 }

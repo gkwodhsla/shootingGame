@@ -59,7 +59,7 @@ void SpritesheetComponent::render()
     }
 }
 
-void SpritesheetComponent::update(float deltaTime)
+void SpritesheetComponent::update(const float deltaTime)
 {
     HPrimitiveComponent::update(deltaTime);
     if(visibility)

@@ -7,10 +7,12 @@ class HPrimitiveComponent: public HSceneComponent
 {
 public:
     HPrimitiveComponent();
+    HPrimitiveComponent(const HPrimitiveComponent&) = delete;
+    HPrimitiveComponent& operator=(const HPrimitiveComponent&) = delete;
     virtual ~HPrimitiveComponent();
 
 public:
-    virtual void update(float deltaTime) override;
+    virtual void update(const float deltaTime) override;
     virtual void render() override;
 
 public:

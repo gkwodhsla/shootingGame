@@ -39,7 +39,7 @@ void CollisionBoxComponent::render()
     }
 }
 
-void CollisionBoxComponent::update(float deltaTime)
+void CollisionBoxComponent::update(const float deltaTime)
 {
     HSceneComponent::update(deltaTime);
     if(Framework::curLevel == nullptr)

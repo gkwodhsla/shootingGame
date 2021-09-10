@@ -6,6 +6,23 @@
 #include <cmath>
 #include <android/log.h>
 
+SplineComponent::SplineComponent(const SplineComponent& other)
+{
+    this->owner = other.owner;
+    tension = other.tension;
+    incTPerSec = other.incTPerSec;
+    curLocalCurveIndex = other.curLocalCurveIndex;
+
+    for(int i = 0; i < other.controlPoints.size(); ++i)
+    {
+        controlPoints.emplace_back(other.controlPoints[i]);
+    }
+    for(int i = 0; i < other.velocities.size(); ++i)
+    {
+        velocities.emplace_back(other.velocities[i]);
+    }
+}
+
 SplineComponent::SplineComponent(const std::initializer_list<std::pair<int, int>> &points, float tension, HActor* owner)
 {
     controlPoints.reserve(points.size());
@@ -32,7 +49,7 @@ SplineComponent::~SplineComponent()
 
 }
 
-void SplineComponent::update(float deltaTime)
+void SplineComponent::update(const float deltaTime)
 {
 
 }

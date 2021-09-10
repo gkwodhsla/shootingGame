@@ -14,7 +14,7 @@ public:
     std::pair<int, int> getScale();
     std::pair<int, int> getLocalPosition();
     virtual void render();
-    virtual void update(float deltaTime) = 0;
+    virtual void update(const float deltaTime) = 0;
     bool getVisibility();
     void setVisibility(bool isVisible);
     Canvas* getOwner();

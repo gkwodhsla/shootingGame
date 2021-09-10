@@ -42,7 +42,7 @@ bool InGameCanvas::handleEvent(const SDL_Event &e)
     return Canvas::handleEvent(e);
 }
 
-void InGameCanvas::update(float deltaTime)
+void InGameCanvas::update(const float deltaTime)
 {
     Canvas::update(deltaTime);
     thunderCountText->changeText(std::to_string(player->getThunderCnt()));

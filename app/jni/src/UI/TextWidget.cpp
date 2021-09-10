@@ -23,7 +23,7 @@ void TextWidget::render()
     text->render();
 }
 
-void TextWidget::update(float deltaTime)
+void TextWidget::update(const float deltaTime)
 {
     if(visibility)
     {

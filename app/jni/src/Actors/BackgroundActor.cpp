@@ -10,7 +10,6 @@
 
 BackgroundActor::BackgroundActor()
 {
-
     rootComponent->setComponentLocalLocation(std::make_pair(0, 0));
     rootComponent->setComponentLocalRotation(0);
     rootComponent->setOwner(this);
@@ -19,9 +18,8 @@ BackgroundActor::BackgroundActor()
     backgroundImage->attachTo(rootComponent);
     backgroundImage->setClipDraw(true);
 
-    battleMusic = new AmbientMusicComponent("sound/battleAmbient.mp3", 160, this);
-    shopMusic = new AmbientMusicComponent("sound/shopAmbient.mp3", 160, this);
-    //shopMusic->play();
+    battleMusic = new AmbientMusicComponent("sound/battleAmbient.mp3", 255, this);
+    shopMusic = new AmbientMusicComponent("sound/shopAmbient.mp3", 255, this);
 
     auto bgImgSize = backgroundImage->getImageSize();
     backgroundImage->setScale(std::make_pair(Framework::RTWidth, Framework::RTHeight));
@@ -71,7 +69,7 @@ void BackgroundActor::render()
     //infinite scrolling 구현을 위해 clipRect가 일정 범위를 넘어가면 백그라운드 그림을 한 장 더 그리게 한다.
 }
 
-void BackgroundActor::update(float deltaTime)
+void BackgroundActor::update(const float deltaTime)
 {
     HActor::update(deltaTime);
     accYPos = accYPos + velocity * deltaTime + (0.5f * acceleration * deltaTime*deltaTime);

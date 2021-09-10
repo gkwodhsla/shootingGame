@@ -9,9 +9,11 @@ class Crystal :public HActor
 {
 public:
     Crystal();
+    Crystal(const Crystal&) = delete;
+    Crystal& operator=(const Crystal&) = delete;
     virtual ~Crystal() override;
     virtual void render() override;
-    virtual void update(float deltaTime) override;
+    virtual void update(const float deltaTime) override;
 
 private:
     ImageComponent* crystalImg = nullptr;

@@ -94,7 +94,7 @@ void HActor::render()
 
 }
 
-void HActor::update(float deltaTime)
+void HActor::update(const float deltaTime)
 {
     if(tickable)
     {

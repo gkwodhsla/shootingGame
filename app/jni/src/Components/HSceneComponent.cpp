@@ -1,7 +1,3 @@
-//
-// Created by lenovo on 2021-08-07.
-//
-
 #include "HSceneComponent.h"
 #include "../Framework.h"
 #include "../Actors/HActor.h"
@@ -58,7 +54,7 @@ void HSceneComponent::render()
     }
 }
 
-void HSceneComponent::update(float deltaTime)
+void HSceneComponent::update(const float deltaTime)
 {
     for(auto& child:children)
     {

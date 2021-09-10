@@ -55,7 +55,7 @@ void EditBoxWidget::render()
     }
 }
 
-void EditBoxWidget::update(float deltaTime)
+void EditBoxWidget::update(const float deltaTime)
 {
     if(isFocused)
     {

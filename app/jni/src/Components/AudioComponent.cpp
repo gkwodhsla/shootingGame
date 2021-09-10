@@ -15,7 +15,7 @@ AudioComponent::~AudioComponent()
     audio = nullptr;
 }
 
-void AudioComponent::update(float deltaTime)
+void AudioComponent::update(const float deltaTime)
 {
 
 }

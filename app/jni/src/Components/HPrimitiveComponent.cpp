@@ -10,7 +10,7 @@ HPrimitiveComponent::~HPrimitiveComponent()
 
 }
 
-void HPrimitiveComponent::update(float deltaTime)
+void HPrimitiveComponent::update(const float deltaTime)
 {
     HSceneComponent::update(deltaTime);
 }

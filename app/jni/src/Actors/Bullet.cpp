@@ -116,7 +116,7 @@ void Bullet::render()
     HActor::render();
 }
 
-void Bullet::update(float deltaTime)
+void Bullet::update(const float deltaTime)
 {
     HActor::update(deltaTime);
     if(tickable)

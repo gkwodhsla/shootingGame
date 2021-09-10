@@ -27,7 +27,8 @@ Crystal::Crystal() {
         {
             auto mainLevel = Cast<MainLevel>(GetLevel());
             auto PC = Cast<AirplaneController>(GetPlayerController());
-            if(mainLevel)
+            auto playerAirplane = Cast<Airplane>(other);
+            if(mainLevel && !playerAirplane->getIsDie())
             {
                 mainLevel->crystalPool->returnToPool(this);
                 auto canvas = Cast<ShopCanvas>(PC->shopCanvas);
@@ -35,8 +36,8 @@ Crystal::Crystal() {
                 {
                     canvas->addCrystal(1);
                 }
+                playerAirplane->playCoinSound();
             }
-            Cast<Airplane>(other)->playCoinSound();
         }
     };
     collisionBox->registerCollisionResponse(collisionFunc);
@@ -65,7 +66,7 @@ void Crystal::render()
     HActor::render();
 }
 
-void Crystal::update(float deltaTime)
+void Crystal::update(const float deltaTime)
 {
     HActor::update(deltaTime);
     if(tickable)

@@ -9,9 +9,11 @@ class MovementComponent :public HComponent
 {
 public:
     MovementComponent() = delete;
+    MovementComponent(const MovementComponent&) = delete;
+    MovementComponent& operator=(const MovementComponent&) = delete;
     MovementComponent(HActor* owner);
     virtual ~MovementComponent() = default;
-    virtual void update(float deltaTime);
+    virtual void update(const float deltaTime);
     void setSpeed(float speed);
     void setAcceleration(const std::pair<float, float>& accel);
 

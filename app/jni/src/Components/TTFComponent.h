@@ -9,11 +9,13 @@ class TTFComponent :public HPrimitiveComponent
 {
 public:
     TTFComponent() = delete;
+    TTFComponent(const TTFComponent&) = delete;
+    TTFComponent& operator=(const TTFComponent&) = delete;
     TTFComponent(int x, int y, int fontSize, __uint8_t r, __uint8_t g, __uint8_t b, std::string fontPath , std::string text,
                  HActor* owner);
     virtual ~TTFComponent();
     virtual void render() override;
-    virtual void update(float deltaTime) override;
+    virtual void update(const float deltaTime) override;
     void changeText(std::string text);
     void changeColor( __uint8_t r, __uint8_t g, __uint8_t b);
 

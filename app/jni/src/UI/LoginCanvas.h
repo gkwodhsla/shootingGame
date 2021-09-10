@@ -19,7 +19,7 @@ public:
     void canvasRender() override;
     void render() override;
     bool handleEvent(const SDL_Event& e) override;
-    void update(float deltaTime) override;
+    void update(const float deltaTime) override;
 
 private:
     void initEditBox();

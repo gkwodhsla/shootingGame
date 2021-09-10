@@ -45,7 +45,7 @@ bool LoginCanvas::handleEvent(const SDL_Event &e)
     return Canvas::handleEvent(e);
 }
 
-void LoginCanvas::update(float deltaTime)
+void LoginCanvas::update(const float deltaTime)
 {
     Canvas::update(deltaTime);
     if(isCheckingSignIn)

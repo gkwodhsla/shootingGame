@@ -10,10 +10,12 @@ class CollisionBoxComponent :public HSceneComponent
 {
 public:
     CollisionBoxComponent() = delete;
+    CollisionBoxComponent(const CollisionBoxComponent&) = delete;
+    CollisionBoxComponent& operator=(const CollisionBoxComponent&) = delete;
     CollisionBoxComponent(int x, int y, int w, int h, HActor* owner);
     virtual ~CollisionBoxComponent();
     virtual void render() override;
-    void update(float deltaTime) override;
+    void update(const float deltaTime) override;
     void setDrawDebugBox(bool canDraw);
     bool checkCollision(CollisionBoxComponent& otherRect);
 public:
