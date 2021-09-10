@@ -19,6 +19,9 @@ class CashShopCanvas :public Canvas
 {
 public:
     CashShopCanvas(int canvasW, int canvasH, int canvasWorldX, int canvasWorldY);
+    CashShopCanvas() = delete;
+    CashShopCanvas(const CashShopCanvas&) = delete;
+    CashShopCanvas& operator=(const CashShopCanvas&) = delete;
     virtual ~CashShopCanvas();
     virtual void canvasRender();
     virtual void render();

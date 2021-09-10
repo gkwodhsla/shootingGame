@@ -23,8 +23,6 @@
 
 using namespace GlobalFunction;
 
-std::random_device rd;
-std::default_random_engine dre(rd());
 std::uniform_int_distribution<int> enemyShape(0, 3);
 
 MainLevel::MainLevel()

@@ -15,6 +15,9 @@ class LoginCanvas :public Canvas
 {
 public:
     LoginCanvas(int canvasW, int canvasH, int canvasWorldX, int canvasWorldY);
+    LoginCanvas() = delete;
+    LoginCanvas(const LoginCanvas&) = delete;
+    LoginCanvas& operator=(const LoginCanvas&) = delete;
     virtual ~LoginCanvas();
     void canvasRender() override;
     void render() override;

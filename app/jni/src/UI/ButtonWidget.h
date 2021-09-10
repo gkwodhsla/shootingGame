@@ -10,6 +10,8 @@ class ButtonWidget:public Widget
 {
 public:
     ButtonWidget() = delete;
+    ButtonWidget(const ButtonWidget&) = delete;
+    ButtonWidget& operator=(const ButtonWidget&) = delete;
     ButtonWidget(const std::string& downImgPath, const std::string& upImgPath,
                  const std::string& downSoundPath, const std::string& upSoundPath, Canvas* owner);
     virtual ~ButtonWidget();

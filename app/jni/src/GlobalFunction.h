@@ -2,10 +2,15 @@
 #include <type_traits>
 #include <typeinfo>
 #include <android/log.h>
+#include <random>
 
 class HLevelBase;
 class HPlayerController;
 class HPawn;
+
+extern std::random_device rd;
+extern std::default_random_engine dre;
+extern std::uniform_real_distribution<float> randomRot;
 
 namespace GlobalFunction
 {

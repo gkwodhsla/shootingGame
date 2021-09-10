@@ -28,9 +28,10 @@ void CircleStrategy::attackAction(const std::pair<float, float> &spawnPos, const
 {
     int bulletCnt = 30;
 
+    float randomRotation = randomRot(dre);
     for(int i = 0; i < bulletCnt; ++i)
     {
         AttackStrategy::spawnBulletFromPool(spawnPos, speed, bossCirclePattern[i], bulletColor);
-        bossCirclePattern[i].rotateVector(5.0f);
+        bossCirclePattern[i].rotateVector(randomRotation);
     }
 }

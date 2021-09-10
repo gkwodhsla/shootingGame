@@ -28,11 +28,14 @@ FlowerStrategy::FlowerStrategy()
 void FlowerStrategy::attackAction(const std::pair<float, float>&spawnPos, const float speed, const BULLET_COLOR bulletColor)
 {
     int bulletCnt = 40;
+
+    float randomRotation = randomRot(dre);
+
     for(int i = 0; i < bulletCnt; ++i)
     {
         spawnBulletFromPool({bossFlowerPatternStartPos[i].x + spawnPos.first,
                              bossFlowerPatternStartPos[i].y + spawnPos.second}, 900.0f,
                             bossFlowerPattern[i], bulletColor);
-        bossFlowerPattern[i].rotateVector(5.0f);
+        bossFlowerPattern[i].rotateVector(randomRotation);
     }
 }

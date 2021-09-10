@@ -25,9 +25,12 @@
 
 using namespace GlobalFunction;
 
-std::uniform_int_distribution<int> randomRotation(0, 360);
+std::uniform_int_distribution<int> bossNext(0, 2);
 
 const float EnemyAirplane::normalBulletSpeed = 700.0f;
+const float EnemyAirplane::circleBulletSpeed = 1200.0f;
+const float EnemyAirplane::starBulletSpeed = 500.0f;
+const float EnemyAirplane::flowerBulletSpeed = 1000.0f;
 bool EnemyAirplane::isInitStaticData = false;
 
 AttackStrategy* EnemyAirplane::circlePattern = nullptr;
@@ -388,7 +391,30 @@ void EnemyAirplane::spawnBullet(float deltaTime)
         auto size = airplaneImg->getScale();
 
         std::pair<int, int> spawnPos{ worldLoc.first + size.first / 2, worldLoc.second + size.second };
-        curAttackStrategy->attackAction(spawnPos, normalBulletSpeed, bulletColor);
+
+        if(shipShape == ENEMY_SHIP_SHAPE::BOSS1 || shipShape == ENEMY_SHIP_SHAPE::BOSS2)
+        {
+            int nextBossAttack = bossNext(dre);
+            if(nextBossAttack == 0)
+            {
+                setBulletPattern(ENEMY_BULLET_PATTERN::BOSS_CIRCLE);
+                curAttackStrategy->attackAction(spawnPos, circleBulletSpeed, bulletColor);
+            }
+            else if(nextBossAttack == 1)
+            {
+                setBulletPattern(ENEMY_BULLET_PATTERN::BOSS_STAR);
+                curAttackStrategy->attackAction(spawnPos, starBulletSpeed, bulletColor);
+            }
+            else
+            {
+                setBulletPattern(ENEMY_BULLET_PATTERN::BOSS_FLOWER);
+                curAttackStrategy->attackAction(spawnPos, flowerBulletSpeed, bulletColor);
+            }
+        }
+        else
+        {
+            curAttackStrategy->attackAction(spawnPos, normalBulletSpeed, bulletColor);
+        }
     }
 }
 

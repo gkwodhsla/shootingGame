@@ -9,6 +9,9 @@ class InGameCanvas :public Canvas
 {
 public:
     InGameCanvas(int canvasW, int canvasH, int canvasWorldX, int canvasWorldY);
+    InGameCanvas() = delete;
+    InGameCanvas(const InGameCanvas&) = delete;
+    InGameCanvas& operator=(const InGameCanvas&) = delete;
     virtual ~InGameCanvas();
     virtual void canvasRender() override;
     virtual void render() override;

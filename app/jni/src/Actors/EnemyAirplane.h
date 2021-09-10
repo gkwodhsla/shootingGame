@@ -84,6 +84,9 @@ private:
     static AttackStrategy* targetingPattern;
 
     static const float normalBulletSpeed;
+    static const float circleBulletSpeed;
+    static const float starBulletSpeed;
+    static const float flowerBulletSpeed;
     static bool isInitStaticData;
 };
 

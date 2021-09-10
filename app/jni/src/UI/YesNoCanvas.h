@@ -9,6 +9,9 @@ class ButtonWidget;
 class YesNoCanvas: public Canvas
 {
 public:
+    YesNoCanvas() = delete;
+    YesNoCanvas(const YesNoCanvas&) = delete;
+    YesNoCanvas& operator=(const YesNoCanvas&) = delete;
     YesNoCanvas(int canvasW, int canvasH, int canvasWorldX, int canvasWorldY);
     virtual ~YesNoCanvas();
     virtual void canvasRender() override;

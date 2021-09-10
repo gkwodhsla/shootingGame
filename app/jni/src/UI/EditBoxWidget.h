@@ -10,6 +10,9 @@ class EditBoxWidget: public Widget
 public:
     EditBoxWidget(const std::string& boxImagePath, const std::string& caretImagePath, const std::string& hintMessage,
                   int fontSize, __uint8_t r, __uint8_t g, __uint8_t b, Canvas* owner);
+    EditBoxWidget() = delete;
+    EditBoxWidget(const EditBoxWidget&) = delete;
+    EditBoxWidget& operator=(const EditBoxWidget&) = delete;
     virtual ~EditBoxWidget();
     void render() override;
     void update(const float deltaTime) override;

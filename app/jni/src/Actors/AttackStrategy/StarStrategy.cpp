@@ -29,10 +29,12 @@ StarStrategy::StarStrategy()
 void StarStrategy::attackAction(const std::pair<float, float>&spawnPos, const float speed, const BULLET_COLOR bulletColor)
 {
     int bulletCnt = 49;
+
+    float randomRotation = randomRot(dre);
     for(int i = 0; i < bulletCnt; ++i)
     {
         spawnBulletFromPool({bossStarPatternStartPos[i].x + spawnPos.first,bossStarPatternStartPos[i].y + spawnPos.second },
                             500.0f, bossStarPattern[i], bulletColor);
-        bossStarPattern[i].rotateVector(5.0f);
+        bossStarPattern[i].rotateVector(randomRotation);
     }
 }

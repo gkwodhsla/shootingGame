@@ -23,7 +23,5 @@ public:
         bullet->init(spawnPos, bulletColor);
         bullet->setActorDirectionalVector(dirVec);
         bullet->changeBulletSpeed(speed);
-
     }
 };
-

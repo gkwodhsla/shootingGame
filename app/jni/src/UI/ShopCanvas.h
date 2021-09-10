@@ -18,6 +18,9 @@ class ShopCanvas : public Canvas
 {
 public:
     ShopCanvas(int canvasW, int canvasH, int canvasWorldX, int canvasWorldY);
+    ShopCanvas() = delete;
+    ShopCanvas(const ShopCanvas&) = delete;
+    ShopCanvas& operator=(const ShopCanvas&) = delete;
     virtual ~ShopCanvas();
     virtual void canvasRender();
     virtual void render();

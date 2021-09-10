@@ -3,7 +3,21 @@ make: Nothing to be done for 'SDL2_image'.
 make: Nothing to be done for 'SDL2_mixer'.
 make: Nothing to be done for 'SDL2_ttf'.
 make: Nothing to be done for 'hidapi'.
-[x86] Compile++      : main <= SplineComponent.cpp
+[x86] Compile++      : main <= Framework.cpp
+[x86] Compile++      : main <= AirplaneController.cpp
+[x86] Compile++      : main <= TitleController.cpp
+[x86] Compile++      : main <= GlobalFunction.cpp
+[x86] Compile++      : main <= CollisionBoxComponent.cpp
+[x86] Compile++      : main <= CircleStrategy.cpp
+[x86] Compile++      : main <= Fire3Strategy.cpp
+[x86] Compile++      : main <= Fire5Strategy.cpp
+[x86] Compile++      : main <= Fire7Strategy.cpp
+[x86] Compile++      : main <= FlowerStrategy.cpp
+[x86] Compile++      : main <= StarStrategy.cpp
+[x86] Compile++      : main <= TargetingStrategy.cpp
+[x86] Compile++      : main <= HActor.cpp
+[x86] Compile++      : main <= Bullet.cpp
+[x86] Compile++      : main <= Airplane.cpp
 [x86] Compile++      : main <= EnemyAirplane.cpp
 [x86] Compile++      : main <= Spawner.cpp
 [x86] Compile++      : main <= StageManager.cpp

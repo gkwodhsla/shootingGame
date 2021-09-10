@@ -7,6 +7,9 @@ class Canvas;
 class Widget
 {
 public:
+    Widget() = delete;
+    Widget(const Widget&) = delete;
+    Widget& operator=(const Widget&) = delete;
     Widget(Canvas* owner);
     virtual ~Widget() = 0;
     void setLocalPosition(int x, int y);

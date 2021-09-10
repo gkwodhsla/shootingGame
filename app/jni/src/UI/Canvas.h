@@ -18,6 +18,8 @@ class Canvas: public HObject
 {
 public:
     Canvas() = delete;
+    Canvas(const Canvas&) = delete;
+    Canvas& operator=(const Canvas&) = delete;
     Canvas(int canvasW, int canvasH, int canvasWorldX, int canvasWorldY);
     virtual ~Canvas();
     void addToViewport();
