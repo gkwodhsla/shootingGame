@@ -30,11 +30,13 @@ class EnemyAirplane :public AirplaneParent
 {
 public:
     EnemyAirplane() = delete;
-    EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp);
+    EnemyAirplane(const EnemyAirplane&) = delete;
+    EnemyAirplane& operator=(const EnemyAirplane&) = delete;
+    EnemyAirplane(const BULLET_COLOR color, const ENEMY_SHIP_SHAPE shape, int hp);
     virtual ~EnemyAirplane();
     virtual void render() override;
     virtual void update(float deltaTime) override;
-    virtual void handleEvent(SDL_Event& e) override;
+    virtual void handleEvent(const SDL_Event& e) override;
     void resetEnemyAirplaneToInitialState();
 
 public:
@@ -42,11 +44,8 @@ public:
     void setPath(SplineComponent* path);
     void setCanDamaged(bool canDamaged);
     bool getCanDamaged();
-    void setBulletPattern(ENEMY_BULLET_PATTERN pattern);
+    void setBulletPattern(const ENEMY_BULLET_PATTERN pattern);
     void setMaxHP(int maxHP);
-    void setIsDie(bool isDie);
-    bool getIsDie();
-    void setFireRate(float rate);
 
 private:
     void spawnBullet(float deltaTime);

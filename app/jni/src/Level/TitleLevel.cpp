@@ -11,7 +11,7 @@ TitleLevel::~TitleLevel()
 
 }
 
-void TitleLevel::handleEvent(SDL_Event &e)
+void TitleLevel::handleEvent(const SDL_Event &e)
 {
     HLevelBase::handleEvent(e);
 

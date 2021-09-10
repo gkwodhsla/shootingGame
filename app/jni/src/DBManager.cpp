@@ -4,6 +4,8 @@
 #include <android/log.h>
 #include <firebase/variant.h>
 
+DBManager* DBManager::instance = nullptr;
+
 DBManager::DBManager()
 {
     database = firebase::database::Database::GetInstance(Framework::app);
@@ -70,7 +72,17 @@ firebase::database::DatabaseReference DBManager::getDBRef()
     return dbRef;
 }
 
-DBData DBManager::getDataReadFromDB()
+const DBData& DBManager::getDataReadFromDB()
 {
     return readData;
+}
+
+DBManager* DBManager::getInstance()
+{
+    if(!instance)
+    {
+        instance = new DBManager();
+    }
+
+    return instance;
 }

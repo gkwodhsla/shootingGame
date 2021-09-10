@@ -40,7 +40,7 @@ void LoginCanvas::render()
     }
 }
 
-bool LoginCanvas::handleEvent(SDL_Event &e)
+bool LoginCanvas::handleEvent(const SDL_Event &e)
 {
     return Canvas::handleEvent(e);
 }

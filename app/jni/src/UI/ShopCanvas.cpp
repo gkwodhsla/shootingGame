@@ -39,7 +39,7 @@ void ShopCanvas::render()
     }
 }
 
-bool ShopCanvas::handleEvent(SDL_Event &e)
+bool ShopCanvas::handleEvent(const SDL_Event &e)
 {
     return Canvas::handleEvent(e);
 }
@@ -396,8 +396,8 @@ void ShopCanvas::initWidgets()
                     moneyText->changeText(std::to_string(curCrystal));
                     ++curMissile;
                     missileText->changeText(std::to_string(curMissile) + "/" + std::to_string(maxMissile));
-                    int curMissileNum = airplane->getMissileCnt();
-                    airplane->setMissileCnt(curMissileNum + 1);
+                    int curMissileNum = airplane->getThunderCnt();
+                    airplane->setThunderCnt(curMissileNum + 1);
                     buySuccess = true;
                 }
                 break;

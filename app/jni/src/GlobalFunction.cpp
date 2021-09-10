@@ -4,7 +4,7 @@
 #include "HPlayerController.h"
 #include "Actors/HPawn.h"
 
-HLevelBase * GlobalFunction::GetLevel()
+HLevelBase* GlobalFunction::GetLevel()
 {
     return Framework::curLevel;
 }

@@ -15,6 +15,8 @@ class HLevelBase: public HObject
 {
 public:
     HLevelBase() = default;
+    HLevelBase(const HLevelBase&) = delete;
+    HLevelBase& operator=(const HLevelBase&) = delete;
     virtual ~HLevelBase()
     {
         for(auto&actor : actors)
@@ -39,7 +41,7 @@ public:
     }
 
 public:
-    virtual void handleEvent(SDL_Event& e)
+    virtual void handleEvent(const SDL_Event& e)
     {
         if(playerController)
         {

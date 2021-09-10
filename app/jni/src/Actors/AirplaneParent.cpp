@@ -45,7 +45,7 @@ void AirplaneParent::update(float deltaTime)
     HPawn::update(deltaTime);
 }
 
-void AirplaneParent::handleEvent(SDL_Event& e)
+void AirplaneParent::handleEvent(const SDL_Event& e)
 {
 
 }

@@ -85,7 +85,7 @@ void Canvas::render()
     }
 }
 
-bool Canvas::handleEvent(SDL_Event &e)
+bool Canvas::handleEvent(const SDL_Event &e)
 {
     bool isEventOccure = false;
     if(visibility)

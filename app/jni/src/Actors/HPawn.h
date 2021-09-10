@@ -10,12 +10,14 @@ class HPawn :public HActor
 {
 public:
     HPawn();
+    HPawn(const HPawn&) = delete;
+    HPawn& operator=(const HPawn&) = delete;
     virtual ~HPawn();
     void setCanRecvInputEvent(bool canInput);
     HPlayerController* getController();
     virtual void render() override;
     virtual void update(float deltaTime) override;
-    virtual void handleEvent(SDL_Event& e) = 0;
+    virtual void handleEvent(const SDL_Event& e) = 0;
 protected:
     MovementComponent* movementComp = nullptr;
     HPlayerController* controller = nullptr;

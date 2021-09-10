@@ -75,7 +75,7 @@ void YesNoCanvas::render()
     }
 }
 
-bool YesNoCanvas::handleEvent(SDL_Event& e)
+bool YesNoCanvas::handleEvent(const SDL_Event& e)
 {
     return Canvas::handleEvent(e);
 }

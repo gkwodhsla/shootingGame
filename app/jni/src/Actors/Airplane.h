@@ -18,10 +18,12 @@ class Airplane :public AirplaneParent
 {
 public:
     Airplane();
+    Airplane(const Airplane&) = delete;
+    Airplane& operator=(const Airplane&) = delete;
     virtual ~Airplane();
     virtual void render() override;
     virtual void update(float deltaTime) override;
-    virtual void handleEvent(SDL_Event& e) override;
+    virtual void handleEvent(const SDL_Event& e) override;
 
 public:
     CollisionBoxComponent* getCollisionBoxComp();
@@ -29,8 +31,8 @@ public:
     void setPlayerAttackPower(int attackPower);
     int getPlayerBulletCnt();
     void setPlayerBulletCnt(int bulletCnt);
-    int getMissileCnt();
-    void setMissileCnt(int missileCnt);
+    int getThunderCnt();
+    void setThunderCnt(int missileCnt);
     int getShieldCnt();
     void setShieldCnt(int shieldCnt);
     PLAYER_AIRPLANE_SHAPE getPlayerAirplaneShape();
@@ -39,18 +41,11 @@ public:
     void enableThunder();
     void playerInitWhenStageBegin();
     void playCoinSound();
-    void setIsDie(bool isDie);
-    bool getIsDie();
-    void setFireRate(float rate);
 
 private:
     void spawnPlayerBullet(std::pair<float, float>& spawnPos);
-
-protected:
     void turnOnShield();
     void turnOffShield();
-
-private:
     void shieldAnimation(float deltaTime);
 
 private:
@@ -63,7 +58,7 @@ private:
     ImageComponent* shieldImage = nullptr;
     int attackPower = 25;
     int bulletCnt = 1;
-    int missileCnt = 0;
+    int thunderCnt = 0;
     int shieldCnt = 0;
     int befTouchX = 0;
     int befTouchY = 0;

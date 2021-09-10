@@ -16,12 +16,14 @@ class HPlayerController: public HObject
 {
 public:
     HPlayerController(HPawn* controlledPawn);
+    HPlayerController(const HPlayerController&) = delete;
+    HPlayerController& operator=(const HPlayerController&) = delete;
     virtual ~HPlayerController();
     void possess(HPawn* pawn);
     void unpossess();
     void changeInputMode(const INPUT_MODE inputMode);
     INPUT_MODE getInputMode();
-    void handleEvent(SDL_Event& e);
+    void handleEvent(const SDL_Event& e);
     HPawn* getControlledPawn();
 
 protected:

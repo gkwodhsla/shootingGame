@@ -12,7 +12,7 @@ public:
     virtual ~InGameCanvas();
     virtual void canvasRender() override;
     virtual void render() override;
-    virtual bool handleEvent(SDL_Event& e) override;
+    virtual bool handleEvent(const SDL_Event& e) override;
     virtual void update(float deltaTime) override;
     void initWidgets();
 

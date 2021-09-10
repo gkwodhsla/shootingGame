@@ -43,7 +43,7 @@ MainLevel::~MainLevel()
     crystalPool = nullptr;
 }
 
-void MainLevel::handleEvent(SDL_Event& e)
+void MainLevel::handleEvent(const SDL_Event& e)
 {
     HLevelBase::handleEvent(e);
 }
@@ -181,7 +181,7 @@ void MainLevel::afterStageClear()
     {
         curCanvas->incMaxStage();
     }
-    curCanvas->setMissileCnt(playerAirplane->getMissileCnt());
+    curCanvas->setMissileCnt(playerAirplane->getThunderCnt());
     curCanvas->setShieldCnt(playerAirplane->getShieldCnt());
     curCanvas->updateShopState();
     curCanvas->addToViewport();
@@ -224,7 +224,7 @@ void MainLevel::writeGameDataToDB()
     writeData.attackUpgrade = shopCanvas->getAttackUpgrade();
     writeData.bulletUpgrade = shopCanvas->getBulletUpgrade();
     writeData.curAirplaneUpgrade = shopCanvas->getAirplaneUpgrade();
-    writeData.thunderNum = playerAirplane->getMissileCnt();
+    writeData.thunderNum = playerAirplane->getThunderCnt();
     writeData.shieldNum = playerAirplane->getShieldCnt();
     writeData.money = shopCanvas->getCrystal();
     writeData.maxStage = shopCanvas->getMaxStage();
@@ -249,7 +249,7 @@ void MainLevel::initDataUsingDataReadFromDB()
     shopCanvas->setMaxStage(data.maxStage);
     playerAirplane->setPlayerAttackPower(data.curAttack);
     playerAirplane->setPlayerBulletCnt(data.curBullet);
-    playerAirplane->setMissileCnt(data.thunderNum);
+    playerAirplane->setThunderCnt(data.thunderNum);
     playerAirplane->setShieldCnt(data.shieldNum);
 
     if(data.curAirplaneUpgrade == 1)

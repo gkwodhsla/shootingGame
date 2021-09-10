@@ -42,7 +42,7 @@ void CashShopCanvas::render()
     }
 }
 
-bool CashShopCanvas::handleEvent(SDL_Event &e)
+bool CashShopCanvas::handleEvent(const SDL_Event &e)
 {
     return Canvas::handleEvent(e);
 }

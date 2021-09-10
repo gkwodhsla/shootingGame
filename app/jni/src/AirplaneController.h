@@ -6,6 +6,8 @@ class AirplaneController: public HPlayerController
 {
 public:
     AirplaneController(HPawn* controlledPawn);
+    AirplaneController(const AirplaneController&) = delete;
+    AirplaneController& operator=(const AirplaneController&) = delete;
     virtual ~AirplaneController();
     void createCanvases();
     void changeShop();

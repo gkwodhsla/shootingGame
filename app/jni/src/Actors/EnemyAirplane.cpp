@@ -39,7 +39,7 @@ AttackStrategy* EnemyAirplane::starPattern = nullptr;
 AttackStrategy* EnemyAirplane::targetingPattern = nullptr;
 
 
-EnemyAirplane::EnemyAirplane(BULLET_COLOR color, ENEMY_SHIP_SHAPE shape, int hp) :bulletColor(color), shipShape(shape), curHp(hp), maxHP(hp)
+EnemyAirplane::EnemyAirplane(const BULLET_COLOR color, const ENEMY_SHIP_SHAPE shape, int hp) :bulletColor(color), shipShape(shape), curHp(hp), maxHP(hp)
 {
     if (!isInitStaticData)
     {
@@ -240,7 +240,6 @@ void EnemyAirplane::update(float deltaTime)
         isArrived = true;
     }
 
-
     if (!(-0.5f < degreeGap && degreeGap < 0.5f))
     {
         float curRootRot = rootComponent->getComponentLocalRotation();
@@ -266,7 +265,7 @@ void EnemyAirplane::update(float deltaTime)
     hitAnimation(deltaTime);
 }
 
-void EnemyAirplane::handleEvent(SDL_Event& e)
+void EnemyAirplane::handleEvent(const SDL_Event& e)
 {
     //적 비행기는 어떠한 이벤트도 받지 않는다.
 }
@@ -342,7 +341,7 @@ bool EnemyAirplane::getCanDamaged()
     return canDamaged;
 }
 
-void EnemyAirplane::setBulletPattern(ENEMY_BULLET_PATTERN pattern)
+void EnemyAirplane::setBulletPattern(const ENEMY_BULLET_PATTERN pattern)
 {
     switch (pattern)
     {
@@ -378,20 +377,6 @@ void EnemyAirplane::setMaxHP(int maxHP)
     this->curHp = maxHP;
 }
 
-void EnemyAirplane::setIsDie(bool isDie)
-{
-    AirplaneParent::setIsDie(isDie);
-}
-
-bool EnemyAirplane::getIsDie()
-{
-    return AirplaneParent::getIsDie();
-}
-
-void EnemyAirplane::setFireRate(float rate)
-{
-    AirplaneParent::setFireRate(rate);
-}
 
 void EnemyAirplane::spawnBullet(float deltaTime)
 {

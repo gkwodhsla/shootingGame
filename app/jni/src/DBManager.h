@@ -17,18 +17,23 @@ struct DBData
     int curBullet = 0;
 };
 
-class DBManager
+class DBManager final
 {
 public:
-    DBManager();
+    DBManager(const DBManager& other) = delete;
+    DBManager& operator=(const DBManager& other) = delete;
     virtual ~DBManager();
     void writeToDB(const DBData& data);
     void readFromDB(const firebase::database::DataSnapshot* snapshot);
     void createDBForNewUser();
 
+private:
+    DBManager();
+
 public:
     firebase::database::DatabaseReference getDBRef();
-    DBData getDataReadFromDB();
+    const DBData& getDataReadFromDB();
+    static DBManager* getInstance();
 
 private:
     const std::string attackUpgradeKey = "attackUpgrade";
@@ -43,4 +48,5 @@ private:
     DBData readData;
     firebase::database::Database* database = nullptr;
     firebase::database::DatabaseReference dbRef;
+    static DBManager* instance;
 };

@@ -37,7 +37,7 @@ void InGameCanvas::render()
     }
 }
 
-bool InGameCanvas::handleEvent(SDL_Event &e)
+bool InGameCanvas::handleEvent(const SDL_Event &e)
 {
     return Canvas::handleEvent(e);
 }
@@ -45,7 +45,7 @@ bool InGameCanvas::handleEvent(SDL_Event &e)
 void InGameCanvas::update(float deltaTime)
 {
     Canvas::update(deltaTime);
-    thunderCountText->changeText(std::to_string(player->getMissileCnt()));
+    thunderCountText->changeText(std::to_string(player->getThunderCnt()));
     shieldCountText->changeText(std::to_string(player->getShieldCnt()));
 }
 
@@ -84,7 +84,7 @@ void InGameCanvas::initWidgets()
     shieldCountText->setLocalPosition(50 + 65, RTHeight - 350);
     addWidgetToBuffer(shieldCountText);
 
-    thunderCountText = new TextWidget(std::to_string(player->getMissileCnt()), 40, 255, 255, 255, this);
+    thunderCountText = new TextWidget(std::to_string(player->getThunderCnt()), 40, 255, 255, 255, this);
     thunderCountText->setLocalPosition(50 + 65, RTHeight - 50);
     addWidgetToBuffer(thunderCountText);
 

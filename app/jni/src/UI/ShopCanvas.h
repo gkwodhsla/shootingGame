@@ -21,7 +21,7 @@ public:
     virtual ~ShopCanvas();
     virtual void canvasRender();
     virtual void render();
-    virtual bool handleEvent(SDL_Event& e);
+    virtual bool handleEvent(const SDL_Event& e);
     virtual void update(float deltaTime);
 
 public:

@@ -12,6 +12,8 @@ class HActor: public HObject
 {
 public:
     HActor();
+    HActor(const HActor&) = delete;
+    HActor&operator=(const HActor&) = delete;
     virtual ~HActor() = 0;
 
 public:
@@ -43,7 +45,6 @@ protected:
     bool visibility = true;
     bool tickable = true;
     bool isSetLifeTime = false;
-    float destRotation = 0.0f;
 
 protected:
     std::function<void()> destroyAction;

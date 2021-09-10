@@ -26,6 +26,7 @@ firebase::App* Framework::app = nullptr;
 firebase::auth::Auth* Framework::auth = nullptr;
 std::string Framework::UID = "";
 DBManager* Framework::dbManager = nullptr;
+Framework* Framework::instance = nullptr;
 
 Framework::Framework()
 {
@@ -105,24 +106,25 @@ Framework::Framework()
 
     initFirebase();
 
-    //curLevel = new MainLevel();
     curLevel = new TitleLevel();
     curLevel->enter();
 
     fpsText = new TTFComponent(0,0,70,255,0,0,"font/EvilEmpire.ttf","Hello World!",nullptr);
 
-    dbManager = new DBManager();
+    dbManager = DBManager::getInstance();
 }
 
 Framework::~Framework()
 {
     SDL_DestroyRenderer(renderer);
     renderer = nullptr;
+
     SDL_DestroyWindow(window);
     window = nullptr;
 
     delete screenRect;
     screenRect = nullptr;
+
     delete curLevel;
     curLevel = nullptr;
 
@@ -139,8 +141,11 @@ Framework::~Framework()
     renderTarget = nullptr;
     for(auto& canvas:worldUI)
     {
-        delete canvas;
-        canvas = nullptr;
+        if(canvas)
+        {
+            delete canvas;
+            canvas = nullptr;
+        }
     }
     TTF_Quit();
     IMG_Quit();
@@ -271,7 +276,15 @@ void Framework::initFirebase()
 
 void Framework::createRenderTarget()
 {
-    //렌더타겟의 크기는 1080x1704로 고정. 폰의 렌더러의 크기에 따라 조정되게끔 해준다.
     renderTarget = SDL_CreateTexture(Framework::renderer, SDL_PIXELFORMAT_RGBA8888,SDL_TEXTUREACCESS_TARGET
                                      , Framework::RTWidth, Framework::RTHeight);
+}
+
+Framework* Framework::getInstance()
+{
+    if(!instance)
+    {
+        instance = new Framework();
+    }
+    return instance;
 }

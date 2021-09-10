@@ -27,7 +27,7 @@ public:
     void addEditBoxToBuffer(EditBoxWidget* newWidget);
     virtual void canvasRender();
     virtual void render();
-    virtual bool handleEvent(SDL_Event& e) = 0;
+    virtual bool handleEvent(const SDL_Event& e) = 0;
     virtual void update(float deltaTime);
     void changeWindowAlphaValue(__uint8_t alpha);
     float getCanvasXRatio()const;

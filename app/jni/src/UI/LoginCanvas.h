@@ -18,7 +18,7 @@ public:
     virtual ~LoginCanvas();
     void canvasRender() override;
     void render() override;
-    bool handleEvent(SDL_Event& e) override;
+    bool handleEvent(const SDL_Event& e) override;
     void update(float deltaTime) override;
 
 private:

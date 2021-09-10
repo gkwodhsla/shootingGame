@@ -13,11 +13,15 @@ class Canvas;
 class SpritesheetComponent;
 class DBManager;
 
-class Framework
+class Framework final
 {
 public:
-    Framework();
     virtual ~Framework();
+    Framework(const Framework& other) = delete;
+    Framework& operator=(const Framework& other) = delete;
+
+private:
+    Framework();
 
 public:
     void handleEvent();
@@ -27,6 +31,7 @@ public:
     void changeRenderTargetSize(int width, int height);
     static void changeLevel(HLevelBase* newLevel);
     static void eraseCanvas(Canvas* canvas);
+    static Framework* getInstance();
 
 private:
     void createRenderTarget();
@@ -51,5 +56,6 @@ public:
     static firebase::auth::Auth* auth;
     static std::string UID;
     static DBManager* dbManager;
+    static Framework* instance;
 };
 

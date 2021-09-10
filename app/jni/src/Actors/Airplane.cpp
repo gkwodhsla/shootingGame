@@ -160,7 +160,7 @@ void Airplane::update(float deltaTime)
     }
 }
 
-void Airplane::handleEvent(SDL_Event &e)
+void Airplane::handleEvent(const SDL_Event &e)
 {
     if(canReceiveInputFromPlayer) //플레이어 입력을 받을 수 있을때만 동작하게 한다.
     {
@@ -232,14 +232,14 @@ void Airplane::setPlayerBulletCnt(int bulletCnt)
     this->bulletCnt = bulletCnt;
 }
 
-int Airplane::getMissileCnt()
+int Airplane::getThunderCnt()
 {
-    return missileCnt;
+    return thunderCnt;
 }
 
-void Airplane::setMissileCnt(int missileCnt)
+void Airplane::setThunderCnt(int thunderCnt)
 {
-    this->missileCnt = missileCnt;
+    this->thunderCnt = thunderCnt;
 }
 
 int Airplane::getShieldCnt()
@@ -330,13 +330,13 @@ void Airplane::shieldAnimation(float deltaTime)
 
 void Airplane::enableThunder()
 {
-    if(missileCnt > 0 && !isDie)
+    if(thunderCnt > 0 && !isDie)
     {
         thunderAttack1->play();
         thunderAttack2->play();
         thunderAttack3->play();
 
-        --missileCnt;
+        --thunderCnt;
     }
 }
 
@@ -354,19 +354,4 @@ void Airplane::playerInitWhenStageBegin()
 void Airplane::playCoinSound()
 {
     coinAudio->play();
-}
-
-void Airplane::setIsDie(bool isDie)
-{
-    AirplaneParent::setIsDie(isDie);
-}
-
-bool Airplane::getIsDie()
-{
-    return AirplaneParent::getIsDie();
-}
-
-void Airplane::setFireRate(float rate)
-{
-    AirplaneParent::setFireRate(rate);
 }
