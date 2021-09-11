@@ -13,12 +13,12 @@
 using namespace GlobalFunction;
 
 Crystal::Crystal() {
-    crystalImg = new ImageComponent("image/UIImage/crystal.png", {0, 0}, this);
+    crystalImg = createComponent<ImageComponent>("image/UIImage/crystal.png", std::make_pair(0,0), this);
     crystalImg->setScale({70, 70});
     crystalImg->attachTo(rootComponent);
 
     auto crystalImgSize = crystalImg->getScale();
-    collisionBox = new CollisionBoxComponent(0, 0, crystalImgSize.first, crystalImgSize.second,
+    collisionBox = createComponent<CollisionBoxComponent>(0, 0, crystalImgSize.first, crystalImgSize.second,
                                              this);
     collisionBox->attachTo(rootComponent);
     auto collisionFunc = [=](HActor* other)
@@ -43,7 +43,7 @@ Crystal::Crystal() {
     collisionBox->registerCollisionResponse(collisionFunc);
     collisionBox->setDrawDebugBox(true);
 
-    crystalMovement = new MovementComponent(this);
+    crystalMovement = createComponent<MovementComponent>(this);
     crystalMovement->setSpeed(500.0f);
 
     dirVec = Vector2D({0.0f, 1.0f});
@@ -51,14 +51,7 @@ Crystal::Crystal() {
 
 Crystal::~Crystal()
 {
-    delete crystalImg;
-    crystalImg = nullptr;
 
-    delete collisionBox;
-    collisionBox = nullptr;
-
-    delete crystalMovement;
-    crystalMovement = nullptr;
 }
 
 void Crystal::render()

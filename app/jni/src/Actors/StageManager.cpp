@@ -9,13 +9,12 @@ using namespace GlobalFunction;
 
 StageManager::StageManager()
 {
-    spawner = new Spawner();
+    spawner = GetLevel()->spawnActor<Spawner>();
 }
 
 StageManager::~StageManager()
 {
-    delete spawner;
-    spawner = nullptr;
+
 }
 
 void StageManager::render()

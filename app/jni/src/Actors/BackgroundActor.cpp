@@ -14,12 +14,12 @@ BackgroundActor::BackgroundActor()
     rootComponent->setComponentLocalRotation(0);
     rootComponent->setOwner(this);
 
-    backgroundImage = new ImageComponent("image/background/2.png", std::make_pair(0, 0), this);
+    backgroundImage = createComponent<ImageComponent>("image/background/2.png", std::make_pair(0, 0), this);
     backgroundImage->attachTo(rootComponent);
     backgroundImage->setClipDraw(true);
 
-    battleMusic = new AmbientMusicComponent("sound/battleAmbient.mp3", 255, this);
-    shopMusic = new AmbientMusicComponent("sound/shopAmbient.mp3", 255, this);
+    battleMusic = createComponent<AmbientMusicComponent>("sound/battleAmbient.mp3", 255, this);
+    shopMusic = createComponent<AmbientMusicComponent>("sound/shopAmbient.mp3", 255, this);
 
     auto bgImgSize = backgroundImage->getImageSize();
     backgroundImage->setScale(std::make_pair(Framework::RTWidth, Framework::RTHeight));
@@ -39,17 +39,8 @@ BackgroundActor::BackgroundActor()
 
 BackgroundActor::~BackgroundActor()
 {
-    delete backgroundImage;
-    backgroundImage = nullptr;
-
     delete camera;
     camera = nullptr;
-
-    delete shopMusic;
-    shopMusic = nullptr;
-
-    delete battleMusic;
-    battleMusic = nullptr;
 }
 
 void BackgroundActor::render()

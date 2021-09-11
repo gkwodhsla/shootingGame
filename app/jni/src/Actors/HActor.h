@@ -2,9 +2,12 @@
 
 #include <utility>
 #include <functional>
+#include <vector>
 #include "../Vector2D.h"
 #include "../HObject.h"
+#include "../GlobalFunction.h"
 
+class HComponent;
 class HSceneComponent;
 class SDL_Renderer;
 
@@ -46,6 +49,17 @@ protected:
     bool tickable = true;
     bool isSetLifeTime = false;
 
+    template<typename T, typename ...Types>
+    T* createComponent(Types ...args)
+    {
+        T* newItem = GlobalFunction::createNewObject<T>(args...);
+        actorComponents.emplace_back(newItem);
+        return newItem;
+    }
+
 protected:
     std::function<void()> destroyAction;
+
+private:
+    std::vector<HComponent*> actorComponents;
 };

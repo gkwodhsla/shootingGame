@@ -4,13 +4,12 @@
 
 HPawn::HPawn()
 {
-    movementComp = new MovementComponent(this);
+    movementComp = createComponent<MovementComponent>(this);
 }
 
 HPawn::~HPawn()
 {
-    delete movementComp;
-    movementComp = nullptr;
+
 }
 
 void HPawn::setCanRecvInputEvent(bool canInput)

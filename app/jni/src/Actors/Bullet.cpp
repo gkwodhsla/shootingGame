@@ -25,17 +25,17 @@ Bullet::Bullet()
     rootComponent->setComponentLocalLocation({0.0f, 0.0f});
     rootComponent->setComponentLocalRotation(0.0f);
 
-    bulletImg = new ImageComponent(this);
+    bulletImg = createComponent<ImageComponent>(this);
     bulletImg->attachTo(rootComponent);
 
-    bulletMovement = new MovementComponent(this);
+    bulletMovement = createComponent<MovementComponent>(this);
     bulletMovement->setSpeed(900.0f);
     bulletMovement->setAcceleration(std::make_pair(dirVec.x * 1000.0f, dirVec.y * 1000.0f));
 
     this->dirVec = Vector2D(0.0f, 0.0f);
 
     auto imgSize = bulletImg->getScale();
-    collisionBox = new CollisionBoxComponent(0, 0, imgSize.first, imgSize.second, this);
+    collisionBox = createComponent<CollisionBoxComponent>(0, 0, imgSize.first, imgSize.second, this);
     collisionBox->setDrawDebugBox(true);
 
     collisionBox->attachTo(rootComponent);
@@ -79,18 +79,18 @@ Bullet::Bullet(const std::pair<float, float> &spawnPosition, BULLET_COLOR bullet
     {
         path = "image/bullet/e4.png";
     }
-    bulletImg = new ImageComponent(path, std::make_pair(0, 0), this);
+    bulletImg = createComponent<ImageComponent>(path, std::make_pair(0, 0), this);
 
     bulletImg->attachTo(rootComponent);
 
-    bulletMovement = new MovementComponent(this);
+    bulletMovement = createComponent<MovementComponent>(this);
     this->dirVec = dirVec;
 
     bulletMovement->setSpeed(900.0f);
     bulletMovement->setAcceleration(std::make_pair(dirVec.x * 1000.0f, dirVec.y * 1000.0f));
 
     auto imgSize = bulletImg->getScale();
-    collisionBox = new CollisionBoxComponent(0, 0, imgSize.first, imgSize.second, this);
+    collisionBox = createComponent<CollisionBoxComponent>(0, 0, imgSize.first, imgSize.second, this);
     collisionBox->setDrawDebugBox(true);
 
     collisionBox->attachTo(rootComponent);
@@ -110,44 +110,7 @@ Bullet::Bullet(const std::pair<float, float> &spawnPosition, BULLET_COLOR bullet
 
 Bullet::~Bullet()
 {
-    delete bulletImg;
-    bulletImg = nullptr;
 
-    delete bulletMovement;
-    bulletMovement = nullptr;
-
-    delete collisionBox;
-    collisionBox = nullptr;
-
-    if(greenBulletImg)
-    {
-        delete greenBulletImg;
-        greenBulletImg = nullptr;
-    }
-
-    if(redBulletImg)
-    {
-        delete redBulletImg;
-        redBulletImg = nullptr;
-    }
-
-    if(purpleBulletImg)
-    {
-        delete purpleBulletImg;
-        purpleBulletImg = nullptr;
-    }
-
-    if(blueBulletImg)
-    {
-        delete blueBulletImg;
-        blueBulletImg = nullptr;
-    }
-
-    if(skyBulletImg)
-    {
-        delete skyBulletImg;
-        skyBulletImg = nullptr;
-    }
 }
 
 void Bullet::render()
@@ -234,22 +197,22 @@ void Bullet::initStaticData()
 {
     if(Bullet::greenBulletImg == nullptr)
     {
-        Bullet::greenBulletImg = new ImageComponent("image/bullet/1.png",{0,0},nullptr);
+        Bullet::greenBulletImg = createComponent<ImageComponent>("image/bullet/1.png",std::make_pair(0,0),nullptr);
     }
     if(Bullet::redBulletImg == nullptr)
     {
-        Bullet::redBulletImg = new ImageComponent("image/bullet/e2.png",{0,0},nullptr);
+        Bullet::redBulletImg = createComponent<ImageComponent>("image/bullet/e2.png",std::make_pair(0,0),nullptr);
     }
     if(Bullet::purpleBulletImg == nullptr)
     {
-        Bullet::purpleBulletImg = new ImageComponent("image/bullet/e1.png",{0,0},nullptr);
+        Bullet::purpleBulletImg = createComponent<ImageComponent>("image/bullet/e1.png",std::make_pair(0,0),nullptr);
     }
     if(Bullet::blueBulletImg == nullptr)
     {
-        Bullet::blueBulletImg = new ImageComponent("image/bullet/e3.png",{0,0},nullptr);
+        Bullet::blueBulletImg = createComponent<ImageComponent>("image/bullet/e3.png",std::make_pair(0,0),nullptr);
     }
     if(Bullet::skyBulletImg == nullptr)
     {
-        Bullet::skyBulletImg = new ImageComponent("image/bullet/e4.png",{0,0},nullptr);
+        Bullet::skyBulletImg = createComponent<ImageComponent>("image/bullet/e4.png",std::make_pair(0,0),nullptr);
     }
 }

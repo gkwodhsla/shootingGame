@@ -52,22 +52,22 @@ EnemyAirplane::EnemyAirplane(const BULLET_COLOR color, const ENEMY_SHIP_SHAPE sh
     switch (shape)
     {
         case ENEMY_SHIP_SHAPE::SHIP1:
-            airplaneImg = new ImageComponent("image/enemy/ship1.png", std::make_pair(0, 0), this);
+            airplaneImg = createComponent<ImageComponent>("image/enemy/ship1.png", std::make_pair(0, 0), this);
             break;
         case ENEMY_SHIP_SHAPE::SHIP2:
-            airplaneImg = new ImageComponent("image/enemy/ship2.png", std::make_pair(0, 0), this);
+            airplaneImg = createComponent<ImageComponent>("image/enemy/ship2.png", std::make_pair(0, 0), this);
             break;
         case ENEMY_SHIP_SHAPE::SHIP3:
-            airplaneImg = new ImageComponent("image/enemy/ship3.png", std::make_pair(0, 0), this);
+            airplaneImg = createComponent<ImageComponent>("image/enemy/ship3.png", std::make_pair(0, 0), this);
             break;
         case ENEMY_SHIP_SHAPE::SHIP4:
-            airplaneImg = new ImageComponent("image/enemy/ship4.png", std::make_pair(0, 0), this);
+            airplaneImg = createComponent<ImageComponent>("image/enemy/ship4.png", std::make_pair(0, 0), this);
             break;
         case ENEMY_SHIP_SHAPE::BOSS1:
-            airplaneImg = new ImageComponent("image/enemy/boss1.png", std::make_pair(0, 0), this);
+            airplaneImg = createComponent<ImageComponent>("image/enemy/boss1.png", std::make_pair(0, 0), this);
             break;
         case ENEMY_SHIP_SHAPE::BOSS2:
-            airplaneImg = new ImageComponent("image/enemy/boss2.png", std::make_pair(0, 0), this);
+            airplaneImg = createComponent<ImageComponent>("image/enemy/boss2.png", std::make_pair(0, 0), this);
             break;
     }
     airplaneImg->attachTo(rootComponent);
@@ -84,7 +84,7 @@ EnemyAirplane::EnemyAirplane(const BULLET_COLOR color, const ENEMY_SHIP_SHAPE sh
     rootComponent->setComponentLocalRotation(0);
     befPos = std::make_pair(-999, -999);
 
-    hpBar = new ImageComponent("image/misc/hpBar.png", std::make_pair(0, 0), this);
+    hpBar = createComponent<ImageComponent>("image/misc/hpBar.png", std::make_pair(0, 0), this);
     hpBar->attachTo(airplaneImg);
     hpBar->setAffectRotationFromParent(false);
 
@@ -126,9 +126,6 @@ EnemyAirplane::EnemyAirplane(const BULLET_COLOR color, const ENEMY_SHIP_SHAPE sh
 
 EnemyAirplane::~EnemyAirplane()
 {
-    delete hpBar;
-    hpBar = nullptr;
-
     if(circlePattern)
     {
         delete circlePattern;

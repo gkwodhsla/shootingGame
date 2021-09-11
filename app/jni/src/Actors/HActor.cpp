@@ -21,6 +21,14 @@ HActor::~HActor()
 {
     delete rootComponent;
     rootComponent = nullptr;
+    for(auto& component : actorComponents)
+    {
+        if(component)
+        {
+            delete component;
+            component = nullptr;
+        }
+    }
 }
 
 void HActor::moveTo(const std::pair<int, int> &loc)

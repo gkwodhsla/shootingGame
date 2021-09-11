@@ -23,12 +23,12 @@ Airplane::Airplane()
     rootComponent->setComponentLocalRotation(0);
     rootComponent->setOwner(this);
 
-    airplaneImg = new ImageComponent("image/player/1.png", std::make_pair(0, 0), this);
+    airplaneImg = createComponent<ImageComponent>("image/player/1.png", std::make_pair(0, 0), this);
     airplaneImg->attachTo(rootComponent);
     airplaneImg->setScale({100, 115});
 
     auto airPlaneImgSize = airplaneImg->getScale();
-    boosterSprite = new SpritesheetComponent("image/spritesheet/rocketFlame2.png",
+    boosterSprite = createComponent<SpritesheetComponent>("image/spritesheet/rocketFlame2.png",
                                              std::make_pair(airPlaneImgSize.first/2 - 13, airPlaneImgSize.second - 30),
                                              this, 2, 1, 2);
     boosterSprite->setDrawCntPerSec(8);
@@ -38,7 +38,7 @@ Airplane::Airplane()
     boosterSprite->setImageFlip(SDL_FLIP_VERTICAL);
     boosterSprite->play();
 
-    shieldImage = new ImageComponent("image/misc/shield.png",{-50, -50},this);
+    shieldImage = createComponent<ImageComponent>("image/misc/shield.png",std::make_pair(-50, -50),this);
     shieldImage->setScale({200, 200});
     shieldImage->attachTo(rootComponent);
     turnOffShield();
@@ -51,7 +51,7 @@ Airplane::Airplane()
             mainLevel->killAllEnemyAirplane();
         }
     };
-    thunderAttack1 = new SpritesheetComponent("image/spritesheet/thunder.png",{0, 0},
+    thunderAttack1 = createComponent<SpritesheetComponent>("image/spritesheet/thunder.png",std::make_pair(0, 0),
                                              this,16,16,1);
     thunderAttack1->attachTo(rootComponent, false);
     thunderAttack1->setLooping(false);
@@ -60,7 +60,7 @@ Airplane::Airplane()
     thunderAttack1->setComponentLocalLocation({-150.0f,0.0f});
     thunderAttack1->addEventAtNFrame(10, thunderEvent);
 
-    thunderAttack2 = new SpritesheetComponent("image/spritesheet/thunder.png",{0, 0},
+    thunderAttack2 = createComponent<SpritesheetComponent>("image/spritesheet/thunder.png",std::make_pair(0, 0),
                                               this,16,16,1);
     thunderAttack2->attachTo(rootComponent, false);
     thunderAttack2->setLooping(false);
@@ -69,7 +69,7 @@ Airplane::Airplane()
     thunderAttack2->setComponentLocalLocation({Framework::RTWidth/2 - 300.0f,0.0f});
     thunderAttack2->addEventAtNFrame(10, thunderEvent);
 
-    thunderAttack3 = new SpritesheetComponent("image/spritesheet/thunder.png",{0, 0},
+    thunderAttack3 = createComponent<SpritesheetComponent>("image/spritesheet/thunder.png",std::make_pair(0, 0),
                                               this,16,16,1);
     thunderAttack3->attachTo(rootComponent, false);
     thunderAttack3->setLooping(false);
@@ -78,8 +78,8 @@ Airplane::Airplane()
     thunderAttack3->setComponentLocalLocation({Framework::RTWidth - 450,0.0f});
     thunderAttack3->addEventAtNFrame(10, thunderEvent);
 
-    coinAudio = new AudioComponent("sound/coin.wav", 30, this);
-    shieldAudio = new AudioComponent("sound/shield.wav", 180, this);
+    coinAudio = createComponent<AudioComponent>("sound/coin.wav", 30, this);
+    shieldAudio = createComponent<AudioComponent>("sound/shield.wav", 180, this);
 
     auto collisionResponse = [this](HActor* other) mutable
     {
@@ -106,26 +106,7 @@ Airplane::Airplane()
 
 Airplane::~Airplane()
 {
-    delete coinAudio;
-    coinAudio = nullptr;
 
-    delete shieldAudio;
-    shieldAudio = nullptr;
-
-    delete boosterSprite;
-    boosterSprite = nullptr;
-
-    delete thunderAttack1;
-    thunderAttack1 = nullptr;
-
-    delete thunderAttack2;
-    thunderAttack2 = nullptr;
-
-    delete thunderAttack3;
-    thunderAttack3 = nullptr;
-
-    delete shieldImage;
-    shieldImage = nullptr;
 }
 
 void Airplane::render()

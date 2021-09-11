@@ -49,7 +49,6 @@ ImageComponent::~ImageComponent()
     SDL_DestroyTexture(img);
     img = nullptr;
     delete imgRect;
-    delete imgRect;
     imgRect = nullptr;
     delete clipRect;
     clipRect = nullptr;

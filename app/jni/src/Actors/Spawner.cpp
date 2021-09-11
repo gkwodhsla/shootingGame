@@ -4,6 +4,7 @@
 #include "../Actors/EnemyAirplane.h"
 #include <android/log.h>
 #include "../GlobalFunction.h"
+#include <initializer_list>
 
 using namespace GlobalFunction;
 
@@ -30,14 +31,13 @@ Spawner::Spawner()
         }
     }
 
-    bossPath = new SplineComponent({{Framework::RTWidth/2 - 250.0f, -1000},
-                                    {Framework::RTWidth/2 - 250.0f, 100}}, 1.0f, this);
+    bossPath = createComponent<SplineComponent>(std::initializer_list<std::pair<int, int>>{std::make_pair(Framework::RTWidth/2 - 250.0f, -1000),
+                                    std::make_pair(Framework::RTWidth/2 - 250.0f, 100)}, 1.0f, this);
 }
 
 Spawner::~Spawner()
 {
-    delete bossPath;
-    bossPath = nullptr;
+
 }
 
 void Spawner::render()

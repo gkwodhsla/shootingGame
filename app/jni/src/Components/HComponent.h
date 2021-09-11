@@ -2,8 +2,9 @@
 
 #include <string>
 #include "../Actors/HActor.h"
+#include "../HObject.h"
 
-class HComponent
+class HComponent: public HObject
 {
 public:
     HComponent() = default;
