@@ -94,6 +94,7 @@ void StageManager::stageClear()
     isBossTime = false;
     isBossKilled = false;
     isNormalWaveEnd = false;
+    spawner->stopSpawn();
 }
 
 void StageManager::setStage(int stage)

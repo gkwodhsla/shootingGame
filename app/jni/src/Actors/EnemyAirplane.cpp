@@ -306,8 +306,11 @@ void EnemyAirplane::getDamage(int damage)
 void EnemyAirplane::resetEnemyAirplaneToInitialState()
 {
     t = 0.0f;
-    this->path->setUsable(true);
-    this->path = nullptr;
+    if(this->path)
+    {
+        this->path->setUsable(true);
+        this->path = nullptr;
+    }
     curHp = maxHP;
     float barSize = float(hpBarRowSize) / float(maxHP);
     airplaneImg->setVisibility(true);
@@ -315,7 +318,6 @@ void EnemyAirplane::resetEnemyAirplaneToInitialState()
     hpBar->setScale(std::make_pair(barSize * float(curHp), hpBarColSize));
     tickable = false;
     visibility = false;
-    //dirVec = std::make_pair(0.0f, 1.0f);
     dirVec.x = 0.0f;
     dirVec.y = 1.0f;
     realDirVec.x = 0.0f;

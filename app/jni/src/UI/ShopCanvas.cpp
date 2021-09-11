@@ -62,6 +62,10 @@ void ShopCanvas::setIsPlayButtonClicked(bool isClicked)
 void ShopCanvas::incMaxStage()
 {
     ++maxStage;
+    ++curStage;
+    std::string temp = "Stage: ";
+    temp += std::to_string(curStage);
+    stageText->changeText(temp);
 }
 
 int ShopCanvas::getCurStage()

@@ -158,6 +158,13 @@ void Spawner::startSpawn(int enemyCnt, int maxHP, float fireRate)
     this->fireRate = fireRate;
 }
 
+void Spawner::stopSpawn()
+{
+    isSpawning = false;
+    spawnCoolTime = maxSpawnCoolTime;
+    maxSpawnedCnt = 0;
+}
+
 void Spawner::spawnBoss(int whichBoss, int maxHP, float fireRate)
 {
     isBossTime = true;

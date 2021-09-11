@@ -170,6 +170,8 @@ void MainLevel::afterStageClear()
 {
     bgActor->stopBattleMusic();
 
+    stageManager->stageClear();
+
     playerController->changeInputMode(INPUT_MODE::UI_ONLY);
     auto* PC = Cast<AirplaneController>(playerController);
 
@@ -187,13 +189,10 @@ void MainLevel::afterStageClear()
     playerAirplane->setVisibility(false);
     playerAirplane->setActorTickable(false);
     playerAirplane->getRootComponent()->setComponentLocalLocation(std::make_pair(Framework::rendererWidth / 2,
-                                                                                 Framework::rendererHeight - 300));
+                                                                                 Framework::rendererHeight - 500));
     for(auto& enemy:enemyAirplanes)
     {
-        if(enemy->getVisibility())
-        {
-            enemy->resetEnemyAirplaneToInitialState();
-        }
+        enemy->resetEnemyAirplaneToInitialState();
     }
     if(boss1->getVisibility())
     {
@@ -204,6 +203,15 @@ void MainLevel::afterStageClear()
         boss2->resetEnemyAirplaneToInitialState();
     }
     PC->inGameCanvas->removeFromViewport();
+
+    for(auto&actor : actors)
+    {
+        auto obj = Cast<Bullet>(actor);
+        if(obj && obj->getVisibility())
+        {
+            bulletPool->returnToPool(obj);
+        }
+    }
 
     isClear = false;
 

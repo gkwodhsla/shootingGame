@@ -180,4 +180,6 @@ void Bullet::init(const std::pair<float, float> &spawnPosition, BULLET_COLOR bul
     auto imgSize = bulletImg->getScale();
 
     collisionBox->setWidthAndHeight(imgSize.first, imgSize.second);
+
+    setLifeTime(3.0f);
 }
