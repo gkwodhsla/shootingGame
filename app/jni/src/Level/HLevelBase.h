@@ -102,12 +102,12 @@ public:
     template<typename T, typename ...Types>
     T* spawnActor(Types ...args)
     {
-        T* newItem = new T(args...);
+        T* newItem = GlobalFunction::createNewObject<T>(args...);
         addNewActorToLevel(newItem);
-        newItem->setID(GlobalFunction::GetClassTypeUniqueID<T>());
         return newItem;
     }
     //액터를 생성하고 액터 배열에 집어넣어 업데이트와 렌더링이 수행되게 해준다.
+
 
     bool destroyActor(HActor* actor)
     {

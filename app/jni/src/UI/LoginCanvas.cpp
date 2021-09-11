@@ -81,11 +81,6 @@ void LoginCanvas::update(const float deltaTime)
                 Framework::UID = user->uid();
                 readDBResult = Framework::dbManager->getDBRef().Child("users").Child(Framework::UID).GetValue();
                 isCheckingReadDataFromDB = true;
-                /*auto PC = GlobalFunction::Cast<TitleController>(GlobalFunction::GetPlayerController());
-                if(PC)
-                {
-                    PC->goToMainLevel();
-                }*/
             }
             else
             {

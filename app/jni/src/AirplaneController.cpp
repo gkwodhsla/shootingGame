@@ -12,7 +12,7 @@ using namespace GlobalFunction;
 AirplaneController::AirplaneController(HPawn* controlledPawn):
 HPlayerController(controlledPawn)
 {
-    setID(GlobalFunction::GetClassTypeUniqueID<AirplaneController>());
+
 }
 
 AirplaneController::~AirplaneController()

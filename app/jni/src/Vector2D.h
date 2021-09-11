@@ -1,7 +1,7 @@
 #pragma once
 
 
-class Vector2D
+class Vector2D final
 {
 public:
     Vector2D() = default;

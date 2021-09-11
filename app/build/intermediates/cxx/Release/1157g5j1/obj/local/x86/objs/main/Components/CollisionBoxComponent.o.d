@@ -157,11 +157,11 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\comtus\Development\android\shootingGame\app\jni\src\HObject.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\Canvas.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\Widget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\..\HObject.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\TextWidget.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\ImageWidget.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\ButtonWidget.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\EditBoxWidget.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\..\HObject.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\..\Framework.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\..\GlobalFunction.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\Framework.h \
@@ -484,6 +484,8 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\Widget.h:
 
+D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\..\HObject.h:
+
 D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\TextWidget.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\ImageWidget.h:
@@ -491,8 +493,6 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI
 D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\ButtonWidget.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\EditBoxWidget.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\..\HObject.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Level\..\UI\..\Framework.h:
 

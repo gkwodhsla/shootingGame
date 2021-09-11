@@ -112,11 +112,11 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\comtus\Development\android\shootingGame\app\jni\src\HObject.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\Canvas.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\Widget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\..\HObject.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\TextWidget.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\ImageWidget.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\ButtonWidget.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\EditBoxWidget.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\..\HObject.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\..\Framework.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\TTFComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Components\HPrimitiveComponent.h \
@@ -401,6 +401,8 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\Widget.h:
 
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\..\HObject.h:
+
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\TextWidget.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\ImageWidget.h:
@@ -408,8 +410,6 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\ButtonWidget.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\EditBoxWidget.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\..\HObject.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\..\Framework.h:
 

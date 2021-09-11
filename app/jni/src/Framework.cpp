@@ -106,7 +106,7 @@ Framework::Framework()
 
     initFirebase();
 
-    curLevel = new TitleLevel();
+    curLevel = GlobalFunction::createNewObject<TitleLevel>();
     curLevel->enter();
 
     fpsText = new TTFComponent(0,0,70,255,0,0,"font/EvilEmpire.ttf","Hello World!",nullptr);

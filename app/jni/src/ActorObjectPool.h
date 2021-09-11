@@ -8,7 +8,7 @@
 #include "Level/HLevelBase.h"
 
 template<typename T>
-class ActorObjectPool
+class ActorObjectPool final
 {
 public:
     ActorObjectPool(size_t chunkSize)

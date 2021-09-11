@@ -29,7 +29,6 @@ MainLevel::MainLevel()
 {
     actors.reserve(300);
     collisionBoxes.reserve(500);
-    setID(GlobalFunction::GetClassTypeUniqueID<MainLevel>());
 }
 
 MainLevel::~MainLevel()
@@ -89,7 +88,7 @@ void MainLevel::enter()
     playerAirplane->setVisibility(false);
     playerAirplane->setActorTickable(false);
 
-    playerController = new AirplaneController(playerAirplane);
+    playerController = createNewObject<AirplaneController>(playerAirplane);
     playerController->possess(playerAirplane);
     playerController->changeInputMode(INPUT_MODE::UI_ONLY);
     auto PC = Cast<AirplaneController>(playerController);

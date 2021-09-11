@@ -7,7 +7,6 @@ Canvas::Canvas(int canvasW, int canvasH, int canvasWorldX, int canvasWorldY):
 w(canvasW), h(canvasH), canvasWorldPosX(canvasWorldX), canvasWorldPosY(canvasWorldY)
 {
     createEmptyWindow();
-    //Framework::worldUI.push_back(this);
     canvasXRatio = float(RTWidth) / float(canvasW);
     canvasYRatio = float(RTHeight) / float(canvasH);
     canvasInterpolate = (float(RTWidth)/float(RTHeight))*(float(canvasH)/float(canvasW));

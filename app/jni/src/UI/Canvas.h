@@ -38,8 +38,7 @@ public:
     template<typename T, typename ...Types>
     static T* makeCanvas(Types ...args)
     {
-        T* newItem = new T(args...);
-        newItem->setID(GlobalFunction::GetClassTypeUniqueID<T>());
+        T* newItem = GlobalFunction::createNewObject<T>(args...);
         Framework::worldUI.push_back(newItem);
         return newItem;
     }
@@ -48,7 +47,7 @@ protected:
     template<typename T, typename ...Types>
     T* makeWidget(Types ...args)
     {
-        T* newItem = new T(args...);
+        T* newItem = GlobalFunction::createNewObject<T>(args...);
 
         addWidgetToBuffer(newItem);
 

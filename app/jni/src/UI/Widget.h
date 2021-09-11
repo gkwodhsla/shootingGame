@@ -1,10 +1,11 @@
 #pragma once
+#include "../HObject.h"
 #include <utility>
 #include <vector>
 
 class Canvas;
 
-class Widget
+class Widget:public HObject
 {
 public:
     Widget() = delete;

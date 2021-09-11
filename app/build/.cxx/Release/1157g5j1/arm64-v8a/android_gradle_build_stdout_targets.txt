@@ -3,13 +3,53 @@ make: Nothing to be done for 'SDL2_image'.
 make: Nothing to be done for 'SDL2_mixer'.
 make: Nothing to be done for 'SDL2_ttf'.
 make: Nothing to be done for 'hidapi'.
+[arm64-v8a] Compile++      : main <= main.cpp
+[arm64-v8a] Compile++      : main <= Framework.cpp
+[arm64-v8a] Compile++      : main <= HPlayerController.cpp
+[arm64-v8a] Compile++      : main <= AirplaneController.cpp
+[arm64-v8a] Compile++      : main <= TitleController.cpp
+[arm64-v8a] Compile++      : main <= Vector2D.cpp
+[arm64-v8a] Compile++      : main <= GlobalFunction.cpp
+[arm64-v8a] Compile++      : main <= DBManager.cpp
+[arm64-v8a] Compile++      : main <= HSceneComponent.cpp
+[arm64-v8a] Compile++      : main <= HPrimitiveComponent.cpp
+[arm64-v8a] Compile++      : main <= ImageComponent.cpp
+[arm64-v8a] Compile++      : main <= TTFComponent.cpp
+[arm64-v8a] Compile++      : main <= MovementComponent.cpp
+[arm64-v8a] Compile++      : main <= SpritesheetComponent.cpp
+[arm64-v8a] Compile++      : main <= CollisionBoxComponent.cpp
+[arm64-v8a] Compile++      : main <= SplineComponent.cpp
+[arm64-v8a] Compile++      : main <= AudioComponent.cpp
+[arm64-v8a] Compile++      : main <= AmbientMusicComponent.cpp
+[arm64-v8a] Compile++      : main <= CircleStrategy.cpp
+[arm64-v8a] Compile++      : main <= Fire3Strategy.cpp
+[arm64-v8a] Compile++      : main <= Fire5Strategy.cpp
+[arm64-v8a] Compile++      : main <= Fire7Strategy.cpp
+[arm64-v8a] Compile++      : main <= FlowerStrategy.cpp
+[arm64-v8a] Compile++      : main <= StarStrategy.cpp
+[arm64-v8a] Compile++      : main <= TargetingStrategy.cpp
+[arm64-v8a] Compile++      : main <= HActor.cpp
+[arm64-v8a] Compile++      : main <= BackgroundActor.cpp
+[arm64-v8a] Compile++      : main <= Bullet.cpp
+[arm64-v8a] Compile++      : main <= HPawn.cpp
+[arm64-v8a] Compile++      : main <= AirplaneParent.cpp
 [arm64-v8a] Compile++      : main <= Airplane.cpp
 [arm64-v8a] Compile++      : main <= EnemyAirplane.cpp
 [arm64-v8a] Compile++      : main <= Spawner.cpp
 [arm64-v8a] Compile++      : main <= StageManager.cpp
 [arm64-v8a] Compile++      : main <= Crystal.cpp
 [arm64-v8a] Compile++      : main <= MainLevel.cpp
+[arm64-v8a] Compile++      : main <= TitleLevel.cpp
+[arm64-v8a] Compile++      : main <= Canvas.cpp
 [arm64-v8a] Compile++      : main <= ShopCanvas.cpp
+[arm64-v8a] Compile++      : main <= CashShopCanvas.cpp
 [arm64-v8a] Compile++      : main <= YesNoCanvas.cpp
+[arm64-v8a] Compile++      : main <= InGameCanvas.cpp
+[arm64-v8a] Compile++      : main <= LoginCanvas.cpp
+[arm64-v8a] Compile++      : main <= Widget.cpp
+[arm64-v8a] Compile++      : main <= TextWidget.cpp
+[arm64-v8a] Compile++      : main <= ButtonWidget.cpp
+[arm64-v8a] Compile++      : main <= ImageWidget.cpp
+[arm64-v8a] Compile++      : main <= EditBoxWidget.cpp
 [arm64-v8a] SharedLibrary  : libmain.so
 make: Nothing to be done for 'mpg123'.

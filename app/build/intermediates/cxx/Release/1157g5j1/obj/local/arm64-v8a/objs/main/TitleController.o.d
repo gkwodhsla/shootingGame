@@ -103,11 +103,11 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cctype \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wctype.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\Widget.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\HObject.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\TextWidget.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\ImageWidget.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\ButtonWidget.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\EditBoxWidget.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\HObject.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Framework.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\TTFComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Components\HPrimitiveComponent.h \
@@ -388,6 +388,8 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wct
 
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\Widget.h:
 
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\HObject.h:
+
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\TextWidget.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\ImageWidget.h:
@@ -395,8 +397,6 @@ D:\comtus\Development\android\shootingGame\app\jni\src\UI\ImageWidget.h:
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\ButtonWidget.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\EditBoxWidget.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\HObject.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Framework.h:
 

@@ -3,7 +3,7 @@
 
 TitleLevel::TitleLevel()
 {
-    setID(GlobalFunction::GetClassTypeUniqueID<TitleLevel>());
+
 }
 
 TitleLevel::~TitleLevel()
@@ -29,7 +29,7 @@ void TitleLevel::render()
 
 void TitleLevel::enter()
 {
-    playerController = new TitleController(nullptr);
+    playerController = GlobalFunction::createNewObject<TitleController>(nullptr);
 }
 
 void TitleLevel::exit()

@@ -1,27 +1,45 @@
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Framework.cpp:3:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Level/HLevelBase.h:9:
-D:/comtus/Development/android/shootingGame/app/jni/src/Level/../UI/Canvas.h:55:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Level/../UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         if constexpr(std::is_base_of<ButtonWidget, T>::value)
            ^
-D:/comtus/Development/android/shootingGame/app/jni/src/Level/../UI/Canvas.h:59:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Level/../UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+        else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
+                ^
+2 warnings generated.
+In file included from D:/comtus/Development/android/shootingGame/app/jni/src/AirplaneController.cpp:2:
+In file included from D:/comtus/Development/android/shootingGame/app/jni/src/UI/ShopCanvas.h:2:
+D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+        if constexpr(std::is_base_of<ButtonWidget, T>::value)
+           ^
+D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
                 ^
 2 warnings generated.
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/TitleController.cpp:2:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/UI/LoginCanvas.h:3:
-D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.h:55:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         if constexpr(std::is_base_of<ButtonWidget, T>::value)
            ^
-D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.h:59:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+        else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
+                ^
+2 warnings generated.
+In file included from D:/comtus/Development/android/shootingGame/app/jni/src/GlobalFunction.cpp:3:
+In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Level/HLevelBase.h:9:
+D:/comtus/Development/android/shootingGame/app/jni/src/Level/../UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+        if constexpr(std::is_base_of<ButtonWidget, T>::value)
+           ^
+D:/comtus/Development/android/shootingGame/app/jni/src/Level/../UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
                 ^
 2 warnings generated.
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Components/CollisionBoxComponent.cpp:5:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Components/../Level/HLevelBase.h:9:
-D:/comtus/Development/android/shootingGame/app/jni/src/Components/../Level/../UI/Canvas.h:55:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Components/../Level/../UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         if constexpr(std::is_base_of<ButtonWidget, T>::value)
            ^
-D:/comtus/Development/android/shootingGame/app/jni/src/Components/../Level/../UI/Canvas.h:59:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Components/../Level/../UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
                 ^
 2 warnings generated.
@@ -30,10 +48,10 @@ In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Act
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/AttackStrategy.h:3:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/MainLevel.h:3:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/HLevelBase.h:9:
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:55:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         if constexpr(std::is_base_of<ButtonWidget, T>::value)
            ^
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:59:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
                 ^
 2 warnings generated.
@@ -42,10 +60,10 @@ In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Act
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/AttackStrategy.h:3:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/MainLevel.h:3:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/HLevelBase.h:9:
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:55:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         if constexpr(std::is_base_of<ButtonWidget, T>::value)
            ^
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:59:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
                 ^
 2 warnings generated.
@@ -54,10 +72,10 @@ In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Act
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/AttackStrategy.h:3:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/MainLevel.h:3:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/HLevelBase.h:9:
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:55:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         if constexpr(std::is_base_of<ButtonWidget, T>::value)
            ^
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:59:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
                 ^
 2 warnings generated.
@@ -66,10 +84,10 @@ In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Act
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/AttackStrategy.h:3:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/MainLevel.h:3:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/HLevelBase.h:9:
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:55:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         if constexpr(std::is_base_of<ButtonWidget, T>::value)
            ^
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:59:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
                 ^
 2 warnings generated.
@@ -78,10 +96,10 @@ In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Act
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/AttackStrategy.h:3:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/MainLevel.h:3:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/HLevelBase.h:9:
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:55:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         if constexpr(std::is_base_of<ButtonWidget, T>::value)
            ^
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:59:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
                 ^
 2 warnings generated.
@@ -90,10 +108,10 @@ In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Act
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/AttackStrategy.h:3:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/MainLevel.h:3:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/HLevelBase.h:9:
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:55:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         if constexpr(std::is_base_of<ButtonWidget, T>::value)
            ^
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:59:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
                 ^
 2 warnings generated.
@@ -102,29 +120,38 @@ In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Act
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/AttackStrategy.h:3:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/MainLevel.h:3:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/HLevelBase.h:9:
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:55:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         if constexpr(std::is_base_of<ButtonWidget, T>::value)
            ^
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:59:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+        else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
+                ^
+2 warnings generated.
+In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/HActor.cpp:3:
+In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../Level/HLevelBase.h:9:
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../Level/../UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+        if constexpr(std::is_base_of<ButtonWidget, T>::value)
+           ^
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../Level/../UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
                 ^
 2 warnings generated.
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/Bullet.cpp:7:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../Level/HLevelBase.h:9:
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../Level/../UI/Canvas.h:55:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../Level/../UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         if constexpr(std::is_base_of<ButtonWidget, T>::value)
            ^
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../Level/../UI/Canvas.h:59:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../Level/../UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
                 ^
 2 warnings generated.
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/Airplane.cpp:11:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../ActorObjectPool.h:8:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Level/HLevelBase.h:9:
-D:/comtus/Development/android/shootingGame/app/jni/src/Level/../UI/Canvas.h:55:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Level/../UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         if constexpr(std::is_base_of<ButtonWidget, T>::value)
            ^
-D:/comtus/Development/android/shootingGame/app/jni/src/Level/../UI/Canvas.h:59:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Level/../UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
                 ^
 2 warnings generated.
@@ -133,68 +160,121 @@ In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Act
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/AttackStrategy.h:3:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/MainLevel.h:3:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/HLevelBase.h:9:
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:55:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         if constexpr(std::is_base_of<ButtonWidget, T>::value)
            ^
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:59:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/AttackStrategy/../../Level/../UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
                 ^
 2 warnings generated.
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/Spawner.cpp:3:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../Level/MainLevel.h:3:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../Level/HLevelBase.h:9:
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../Level/../UI/Canvas.h:55:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../Level/../UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         if constexpr(std::is_base_of<ButtonWidget, T>::value)
            ^
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../Level/../UI/Canvas.h:59:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../Level/../UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
                 ^
 2 warnings generated.
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/StageManager.cpp:5:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../Level/MainLevel.h:3:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../Level/HLevelBase.h:9:
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../Level/../UI/Canvas.h:55:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../Level/../UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         if constexpr(std::is_base_of<ButtonWidget, T>::value)
            ^
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../Level/../UI/Canvas.h:59:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../Level/../UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
                 ^
 2 warnings generated.
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/Crystal.cpp:7:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../Level/MainLevel.h:3:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../Level/HLevelBase.h:9:
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../Level/../UI/Canvas.h:55:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../Level/../UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         if constexpr(std::is_base_of<ButtonWidget, T>::value)
            ^
-D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../Level/../UI/Canvas.h:59:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Actors/../Level/../UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
                 ^
 2 warnings generated.
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Level/MainLevel.cpp:1:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Level/MainLevel.h:3:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Level/HLevelBase.h:9:
-D:/comtus/Development/android/shootingGame/app/jni/src/Level/../UI/Canvas.h:55:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Level/../UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         if constexpr(std::is_base_of<ButtonWidget, T>::value)
            ^
-D:/comtus/Development/android/shootingGame/app/jni/src/Level/../UI/Canvas.h:59:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/Level/../UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+        else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
+                ^
+2 warnings generated.
+In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Level/TitleLevel.cpp:1:
+In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Level/TitleLevel.h:3:
+In file included from D:/comtus/Development/android/shootingGame/app/jni/src/Level/HLevelBase.h:9:
+D:/comtus/Development/android/shootingGame/app/jni/src/Level/../UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+        if constexpr(std::is_base_of<ButtonWidget, T>::value)
+           ^
+D:/comtus/Development/android/shootingGame/app/jni/src/Level/../UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+        else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
+                ^
+2 warnings generated.
+In file included from D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.cpp:1:
+D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+        if constexpr(std::is_base_of<ButtonWidget, T>::value)
+           ^
+D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
                 ^
 2 warnings generated.
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/UI/ShopCanvas.cpp:1:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/UI/ShopCanvas.h:2:
-D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.h:55:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         if constexpr(std::is_base_of<ButtonWidget, T>::value)
            ^
-D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.h:59:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+        else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
+                ^
+2 warnings generated.
+In file included from D:/comtus/Development/android/shootingGame/app/jni/src/UI/CashShopCanvas.cpp:1:
+In file included from D:/comtus/Development/android/shootingGame/app/jni/src/UI/CashShopCanvas.h:1:
+D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+        if constexpr(std::is_base_of<ButtonWidget, T>::value)
+           ^
+D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
                 ^
 2 warnings generated.
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/UI/YesNoCanvas.cpp:1:
 In file included from D:/comtus/Development/android/shootingGame/app/jni/src/UI/YesNoCanvas.h:3:
-D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.h:55:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         if constexpr(std::is_base_of<ButtonWidget, T>::value)
            ^
-D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.h:59:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+        else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
+                ^
+2 warnings generated.
+In file included from D:/comtus/Development/android/shootingGame/app/jni/src/UI/InGameCanvas.cpp:1:
+In file included from D:/comtus/Development/android/shootingGame/app/jni/src/UI/InGameCanvas.h:2:
+D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+        if constexpr(std::is_base_of<ButtonWidget, T>::value)
+           ^
+D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+        else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
+                ^
+2 warnings generated.
+In file included from D:/comtus/Development/android/shootingGame/app/jni/src/UI/LoginCanvas.cpp:1:
+In file included from D:/comtus/Development/android/shootingGame/app/jni/src/UI/LoginCanvas.h:3:
+D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+        if constexpr(std::is_base_of<ButtonWidget, T>::value)
+           ^
+D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+        else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
+                ^
+2 warnings generated.
+In file included from D:/comtus/Development/android/shootingGame/app/jni/src/UI/Widget.cpp:2:
+D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.h:54:12: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
+        if constexpr(std::is_base_of<ButtonWidget, T>::value)
+           ^
+D:/comtus/Development/android/shootingGame/app/jni/src/UI/Canvas.h:58:17: warning: constexpr if is a C++17 extension [-Wc++17-extensions]
         else if constexpr(std::is_base_of<EditBoxWidget, T>::value)
                 ^
 2 warnings generated.
