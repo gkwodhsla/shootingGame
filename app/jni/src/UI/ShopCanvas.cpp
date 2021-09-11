@@ -168,7 +168,7 @@ void ShopCanvas::initWidgets()
 {
     bgImage = makeWidget<ImageWidget>("image/UIImage/window.png", this);
     bgImage->setLocalPosition(0, 0);
-    bgImage->setScale(RTWidth, RTHeight, true);
+    bgImage->setScale(RTWidth, RTHeight);
 
     shopTitleImage = makeWidget<ImageWidget>("image/UIImage/Header.png", this);
     shopTitleImage->setLocalPosition(RTWidth / 2 - 150, 40);

@@ -14,7 +14,7 @@ public:
     Widget(Canvas* owner);
     virtual ~Widget() = 0;
     void setLocalPosition(int x, int y);
-    void setScale(int scaleX, int scaleY, bool isDrawRenderTargetSize = false);
+    void setScale(int scaleX, int scaleY);
     std::pair<int, int> getScale();
     std::pair<int, int> getLocalPosition();
     virtual void render();

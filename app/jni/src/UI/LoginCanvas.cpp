@@ -9,7 +9,7 @@ LoginCanvas::LoginCanvas(int canvasW, int canvasH, int canvasWorldX, int canvasW
 Canvas(canvasW, canvasH, canvasWorldX, canvasWorldY)
 {
     backgroundImg = makeWidget<ImageWidget>("image/background/login.png", this);
-    backgroundImg->setScale(RTWidth, RTHeight, true);
+    backgroundImg->setScale(RTWidth, RTHeight);
     backgroundImg->setLocalPosition(0, 0);
 
     gameNameText = makeWidget<TextWidget>("Shooting Game", 120, 255, 255, 255, this);
@@ -19,11 +19,11 @@ Canvas(canvasW, canvasH, canvasWorldX, canvasWorldY)
     initButton();
 
     whiteBG = makeWidget<ImageWidget>("image/misc/whiteBG.png", this);
-    whiteBG->setScale(RTWidth, RTHeight, true);
+    whiteBG->setScale(RTWidth, RTHeight);
     whiteBG->setLocalPosition(0, 0);
 
     logoImg = makeWidget<ImageWidget>("image/misc/logo.png", this);
-    logoImg->setScale(RTWidth, RTHeight, true);
+    logoImg->setScale(RTWidth, RTHeight);
     logoImg->setLocalPosition(0, 0);
 }
 

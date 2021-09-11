@@ -20,7 +20,7 @@ YesNoCanvas::~YesNoCanvas()
 void YesNoCanvas::initCanvas()
 {
     window = makeWidget<ImageWidget>("image/UIImage/smallWindow.png", this);
-    window->setScale(RTWidth, RTHeight, true);
+    window->setScale(RTWidth, RTHeight);
     window->setLocalPosition(0, 0);
 
     yesButton = makeWidget<ButtonWidget>("image/UIImage/downButton.png","image/UIImage/upButton.png",

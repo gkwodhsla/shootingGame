@@ -86,7 +86,7 @@ void CashShopCanvas::initWindowImageWidgets()
 {
     bgImg = makeWidget<ImageWidget>("image/UIImage/window.png", this);
     bgImg->setLocalPosition(0, 0);
-    bgImg->setScale(RTWidth, RTHeight, true);
+    bgImg->setScale(RTWidth, RTHeight);
 
     shopTitleImage = makeWidget<ImageWidget>("image/UIImage/Header.png", this);
     shopTitleImage->setLocalPosition(RTWidth / 2 - 150, 40);
