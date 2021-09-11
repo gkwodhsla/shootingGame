@@ -40,11 +40,15 @@ private:
     TextWidget* resetText = nullptr;
     TextWidget* loginText = nullptr;
     TextWidget* signInResultText = nullptr;
+    ImageWidget* whiteBG = nullptr;
+    ImageWidget* logoImg = nullptr;
     bool isCheckingSignIn = false;
     bool isCheckingSignUp = false;
     bool isCheckingEmailSend = false;
     bool isCheckingReadDataFromDB = false;
     bool isShowSignInText = false;
+    bool isLogoFinish = false;
+    float logoShowTime = 0.0f;
     float msgShowTime = 2.0f;
     const float maxMsgShowTime = 2.0f;
     firebase::Future<firebase::auth::User*> result;

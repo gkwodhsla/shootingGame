@@ -17,6 +17,14 @@ Canvas(canvasW, canvasH, canvasWorldX, canvasWorldY)
 
     initEditBox();
     initButton();
+
+    whiteBG = makeWidget<ImageWidget>("image/misc/whiteBG.png", this);
+    whiteBG->setScale(RTWidth, RTHeight, true);
+    whiteBG->setLocalPosition(0, 0);
+
+    logoImg = makeWidget<ImageWidget>("image/misc/logo.png", this);
+    logoImg->setScale(RTWidth, RTHeight, true);
+    logoImg->setLocalPosition(0, 0);
 }
 
 LoginCanvas::~LoginCanvas()
@@ -42,108 +50,126 @@ void LoginCanvas::render()
 
 bool LoginCanvas::handleEvent(const SDL_Event &e)
 {
-    return Canvas::handleEvent(e);
+    if(isLogoFinish)
+    {
+        return Canvas::handleEvent(e);
+    }
+    return false;
 }
 
 void LoginCanvas::update(const float deltaTime)
 {
-    Canvas::update(deltaTime);
-    if(isCheckingSignIn)
+    if(visibility)
     {
-        if (result.status() == firebase::kFutureStatusComplete)
+        Canvas::update(deltaTime);
+        if(isCheckingSignIn)
         {
-            if (result.error() == firebase::auth::kAuthErrorNone) // 새로운 유저가 생성되면 유저가 생성됐다고 알려주고 DB에 하나 만들어준다.
+            if (result.status() == firebase::kFutureStatusComplete)
             {
-                firebase::auth::User* user = *result.result();
-                Framework::UID = user->uid();
-                signInResultText->changeText("Sign in success");
-                Framework::dbManager->createDBForNewUser();
-            }
-            else
-            {
-                signInResultText->changeText(result.error_message());
-            }
-            isShowSignInText = true;
-            msgShowTime = maxMsgShowTime;
-            signInResultText->setVisibility(true);
-            signInResultText->setLocalPosition((RTWidth - signInResultText->getScale().first) / 2,RTHeight - 300);
-            isCheckingSignIn = false;
-        }
-    }
-    else if(isCheckingSignUp)
-    {
-        if (result.status() == firebase::kFutureStatusComplete)
-        {
-            if (result.error() == firebase::auth::kAuthErrorNone)
-            {
-                firebase::auth::User* user = *result.result();
-                signInResultText->changeText("Log In Success");
-                Framework::UID = user->uid();
-                readDBResult = Framework::dbManager->getDBRef().Child("users").Child(Framework::UID).GetValue();
-                isCheckingReadDataFromDB = true;
-            }
-            else
-            {
-                signInResultText->changeText(result.error_message());
-            }
-            isShowSignInText = true;
-            msgShowTime = maxMsgShowTime;
-            signInResultText->setVisibility(true);
-            signInResultText->setLocalPosition((RTWidth - signInResultText->getScale().first) / 2,RTHeight - 300);
-            isCheckingSignUp = false;
-        }
-    }
-    else if(isCheckingEmailSend)
-    {
-        if (result2.status() == firebase::kFutureStatusComplete)
-        {
-            if (result2.error() == firebase::auth::kAuthErrorNone)
-            {
-                signInResultText->changeText("Email send success");
-            }
-            else
-            {
-                signInResultText->changeText(result2.error_message());
-            }
-            isShowSignInText = true;
-            msgShowTime = maxMsgShowTime;
-            signInResultText->setVisibility(true);
-            signInResultText->setLocalPosition((RTWidth - signInResultText->getScale().first) / 2,RTHeight - 300);
-            isCheckingEmailSend = false;
-        }
-    }
-    else if(isCheckingReadDataFromDB)
-    {
-        if (readDBResult.status() != firebase::kFutureStatusPending)
-        {
-            if (readDBResult.status() != firebase::kFutureStatusComplete)
-            {
-                //LogMessage("ERROR: GetValue() returned an invalid result.");
-                // Handle the error...
-            }
-            else if (readDBResult.error() != firebase::database::kErrorNone)
-            {
-
-            }
-            else
-            {
-                auto PC = GlobalFunction::Cast<TitleController>(GlobalFunction::GetPlayerController());
-                if(PC)
+                if (result.error() == firebase::auth::kAuthErrorNone) // 새로운 유저가 생성되면 유저가 생성됐다고 알려주고 DB에 하나 만들어준다.
                 {
-                    Framework::dbManager->readFromDB(readDBResult.result());
-                    PC->goToMainLevel();
-                    isCheckingReadDataFromDB = false;
+                    firebase::auth::User* user = *result.result();
+                    Framework::UID = user->uid();
+                    signInResultText->changeText("Sign in success");
+                    Framework::dbManager->createDBForNewUser();
+                }
+                else
+                {
+                    signInResultText->changeText(result.error_message());
+                }
+                isShowSignInText = true;
+                msgShowTime = maxMsgShowTime;
+                signInResultText->setVisibility(true);
+                signInResultText->setLocalPosition((RTWidth - signInResultText->getScale().first) / 2,RTHeight - 300);
+                isCheckingSignIn = false;
+            }
+        }
+        else if(isCheckingSignUp)
+        {
+            if (result.status() == firebase::kFutureStatusComplete)
+            {
+                if (result.error() == firebase::auth::kAuthErrorNone)
+                {
+                    firebase::auth::User* user = *result.result();
+                    signInResultText->changeText("Log In Success");
+                    Framework::UID = user->uid();
+                    readDBResult = Framework::dbManager->getDBRef().Child("users").Child(Framework::UID).GetValue();
+                    isCheckingReadDataFromDB = true;
+                }
+                else
+                {
+                    signInResultText->changeText(result.error_message());
+                }
+                isShowSignInText = true;
+                msgShowTime = maxMsgShowTime;
+                signInResultText->setVisibility(true);
+                signInResultText->setLocalPosition((RTWidth - signInResultText->getScale().first) / 2,RTHeight - 300);
+                isCheckingSignUp = false;
+            }
+        }
+        else if(isCheckingEmailSend)
+        {
+            if (result2.status() == firebase::kFutureStatusComplete)
+            {
+                if (result2.error() == firebase::auth::kAuthErrorNone)
+                {
+                    signInResultText->changeText("Email send success");
+                }
+                else
+                {
+                    signInResultText->changeText(result2.error_message());
+                }
+                isShowSignInText = true;
+                msgShowTime = maxMsgShowTime;
+                signInResultText->setVisibility(true);
+                signInResultText->setLocalPosition((RTWidth - signInResultText->getScale().first) / 2,RTHeight - 300);
+                isCheckingEmailSend = false;
+            }
+        }
+        else if(isCheckingReadDataFromDB)
+        {
+            if (readDBResult.status() != firebase::kFutureStatusPending)
+            {
+                if (readDBResult.status() != firebase::kFutureStatusComplete)
+                {
+                    //LogMessage("ERROR: GetValue() returned an invalid result.");
+                    // Handle the error...
+                }
+                else if (readDBResult.error() != firebase::database::kErrorNone)
+                {
+
+                }
+                else
+                {
+                    auto PC = GlobalFunction::Cast<TitleController>(GlobalFunction::GetPlayerController());
+                    if(PC)
+                    {
+                        Framework::dbManager->readFromDB(readDBResult.result());
+                        PC->goToMainLevel();
+                        isCheckingReadDataFromDB = false;
+                    }
                 }
             }
         }
-    }
-    if(isShowSignInText)
-    {
-        msgShowTime -= deltaTime;
-        if(msgShowTime <= 0.0f)
+        if(isShowSignInText)
         {
-            isShowSignInText = false;
-            signInResultText->setVisibility(false);
+            msgShowTime -= deltaTime;
+            if(msgShowTime <= 0.0f)
+            {
+                isShowSignInText = false;
+                signInResultText->setVisibility(false);
+            }
+        }
+        logoShowTime += deltaTime;
+        if(logoShowTime<=1.0f)
+        {
+            logoImg->setAlpha(255.0f * logoShowTime);
+        }
+        if(logoShowTime >= 3.0f)
+        {
+            isLogoFinish = true;
+            logoImg->setVisibility(false);
+            whiteBG->setVisibility(false);
         }
     }
 }

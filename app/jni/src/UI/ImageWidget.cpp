@@ -17,6 +17,11 @@ void ImageWidget::changeImage(const std::string &imagePath)
     img->changeImage(imagePath);
 }
 
+void ImageWidget::setAlpha(__uint8_t alpha)
+{
+    img->setAlpha(alpha);
+}
+
 void ImageWidget::render()
 {
     Widget::render();

@@ -13,6 +13,7 @@ public:
     ImageWidget(const std::string& imagePath, Canvas* owner);
     virtual ~ImageWidget();
     void changeImage(const std::string& imagePath);
+    void setAlpha(__uint8_t alpha);
     virtual void render() override;
     virtual void update(const float deltaTime) override;
 private:
