@@ -49,6 +49,7 @@ ImageComponent::~ImageComponent()
     SDL_DestroyTexture(img);
     img = nullptr;
     delete imgRect;
+    delete imgRect;
     imgRect = nullptr;
     delete clipRect;
     clipRect = nullptr;
@@ -122,6 +123,17 @@ void ImageComponent::changeImage(const std::string &path)
     SDL_SetTextureAlphaMod(img, alphaValue);
 }
 
+void ImageComponent::referencingOtherImgCompsImg(const ImageComponent& other)
+{
+    this->img = other.img;
+    imgRect->w = other.imgRect->w;
+    imgRect->h = other.imgRect->h;
+    imgRect->x = other.localLocation.first;
+    imgRect->y = other.localLocation.second;
+    scale.first = other.scale.first;
+    scale.second = other.scale.second;
+}
+
 void ImageComponent::setClipDraw(bool isClipDraw)
 {
     isEnableClipDraw = isClipDraw;
@@ -134,7 +146,6 @@ void ImageComponent::setClipRect(int x, int y, int w, int h)
     clipRect->w = w;
     clipRect->h = h;
 }
-
 
 void ImageComponent::loadImage(const std::string& path)
 {

@@ -139,10 +139,6 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth\types.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\util.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\..\GlobalFunction.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Framework.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\GlobalFunction.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\HObject.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Actors\Bullet.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\random \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cmath \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\numeric \
@@ -168,6 +164,10 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cstdarg \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__bsd_locale_fallbacks.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bitset \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Framework.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\GlobalFunction.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\HObject.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Actors\Bullet.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Actors\Bullet.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\GlobalFunction.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Vector2D.h \
@@ -455,14 +455,6 @@ D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\UI\..\GlobalFunction.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Framework.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\GlobalFunction.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\HObject.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Actors\Bullet.h:
-
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\random:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cmath:
@@ -512,6 +504,14 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cst
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__bsd_locale_fallbacks.h:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bitset:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Framework.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\GlobalFunction.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\HObject.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Level\..\Actors\Bullet.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\AttackStrategy\..\..\Actors\Bullet.h:
 

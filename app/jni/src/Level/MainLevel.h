@@ -36,15 +36,16 @@ public:
 private:
     void afterStageClear();
     void initDataUsingDataReadFromDB();
+
 public:
     ActorObjectPool<Bullet>* bulletPool;
     ActorObjectPool<Crystal>* crystalPool;
+    std::vector<EnemyAirplane*> enemyAirplanes;
 
 private:
     BackgroundActor* bgActor = nullptr;
     StageManager* stageManager = nullptr;
     Airplane* playerAirplane = nullptr;
-    std::vector<EnemyAirplane*> enemyAirplanes;
     EnemyAirplane* boss1 = nullptr;
     EnemyAirplane* boss2 = nullptr;
     const int playerBulletSize = 100;

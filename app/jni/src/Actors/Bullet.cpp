@@ -14,6 +14,12 @@
 
 using namespace GlobalFunction;
 
+ImageComponent* Bullet::greenBulletImg = nullptr;
+ImageComponent* Bullet::redBulletImg = nullptr;
+ImageComponent* Bullet::purpleBulletImg = nullptr;
+ImageComponent* Bullet::blueBulletImg = nullptr;
+ImageComponent* Bullet::skyBulletImg = nullptr;
+
 Bullet::Bullet()
 {
     rootComponent->setComponentLocalLocation({0.0f, 0.0f});
@@ -43,6 +49,7 @@ Bullet::Bullet()
         setLifeTime(3.0f);
     };
     registerFuncWhenActorLifeTimeZero(customDestroyAction);
+    initStaticData();
 }
 
 Bullet::Bullet(const std::pair<float, float> &spawnPosition, BULLET_COLOR bulletColor,
@@ -97,6 +104,8 @@ Bullet::Bullet(const std::pair<float, float> &spawnPosition, BULLET_COLOR bullet
         setLifeTime(3.0f);
     };
     registerFuncWhenActorLifeTimeZero(customDestroyAction);
+
+    initStaticData();
 }
 
 Bullet::~Bullet()
@@ -109,6 +118,36 @@ Bullet::~Bullet()
 
     delete collisionBox;
     collisionBox = nullptr;
+
+    if(greenBulletImg)
+    {
+        delete greenBulletImg;
+        greenBulletImg = nullptr;
+    }
+
+    if(redBulletImg)
+    {
+        delete redBulletImg;
+        redBulletImg = nullptr;
+    }
+
+    if(purpleBulletImg)
+    {
+        delete purpleBulletImg;
+        purpleBulletImg = nullptr;
+    }
+
+    if(blueBulletImg)
+    {
+        delete blueBulletImg;
+        blueBulletImg = nullptr;
+    }
+
+    if(skyBulletImg)
+    {
+        delete skyBulletImg;
+        skyBulletImg = nullptr;
+    }
 }
 
 void Bullet::render()
@@ -153,33 +192,64 @@ void Bullet::init(const std::pair<float, float> &spawnPosition, BULLET_COLOR bul
 
     std::string path;
     isPlayerBullet = false;
+    ImageComponent* refImg = nullptr;
     if(bulletColor == BULLET_COLOR::GREEN)
     {
+        refImg = Bullet::greenBulletImg;
         path = "image/bullet/1.png";
         isPlayerBullet = true;
     }
     else if(bulletColor == BULLET_COLOR::RED)
     {
+        refImg = Bullet::redBulletImg;
         path = "image/bullet/e2.png";
     }
     else if(bulletColor == BULLET_COLOR::PURPLE)
     {
+        refImg = Bullet::purpleBulletImg;
         path = "image/bullet/e1.png";
     }
     else if(bulletColor == BULLET_COLOR::BLUE)
     {
+        refImg = Bullet::blueBulletImg;
         path = "image/bullet/e3.png";
     }
     else if(bulletColor == BULLET_COLOR::SKY)
     {
+        refImg = Bullet::skyBulletImg;
         path = "image/bullet/e4.png";
     }
 
-    bulletImg->changeImage(path);
+    //bulletImg->changeImage(path);
+    bulletImg->referencingOtherImgCompsImg(*refImg);
 
     auto imgSize = bulletImg->getScale();
 
     collisionBox->setWidthAndHeight(imgSize.first, imgSize.second);
 
     setLifeTime(3.0f);
+}
+
+void Bullet::initStaticData()
+{
+    if(Bullet::greenBulletImg == nullptr)
+    {
+        Bullet::greenBulletImg = new ImageComponent("image/bullet/1.png",{0,0},nullptr);
+    }
+    if(Bullet::redBulletImg == nullptr)
+    {
+        Bullet::redBulletImg = new ImageComponent("image/bullet/e2.png",{0,0},nullptr);
+    }
+    if(Bullet::purpleBulletImg == nullptr)
+    {
+        Bullet::purpleBulletImg = new ImageComponent("image/bullet/e1.png",{0,0},nullptr);
+    }
+    if(Bullet::blueBulletImg == nullptr)
+    {
+        Bullet::blueBulletImg = new ImageComponent("image/bullet/e3.png",{0,0},nullptr);
+    }
+    if(Bullet::skyBulletImg == nullptr)
+    {
+        Bullet::skyBulletImg = new ImageComponent("image/bullet/e4.png",{0,0},nullptr);
+    }
 }

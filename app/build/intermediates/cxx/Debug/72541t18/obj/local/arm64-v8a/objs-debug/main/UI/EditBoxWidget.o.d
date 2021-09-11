@@ -53,6 +53,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Components\HComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Components\..\Actors\HActor.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Components\..\Actors\..\Vector2D.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Components\..\Actors\..\HObject.h \
   D:\comtus\Development\android\shootingGame\app\jni\SDL_ttf\SDL_ttf.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_main.h \
@@ -215,6 +216,8 @@ D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Components\HCompone
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Components\..\Actors\HActor.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Components\..\Actors\..\Vector2D.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\UI\..\Components\..\Actors\..\HObject.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\SDL_ttf\SDL_ttf.h:
 

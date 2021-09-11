@@ -28,6 +28,7 @@ public:
     virtual void render() override;
     virtual void update(const float deltaTime) override;
     void changeImage(const std::string& path);
+    void referencingOtherImgCompsImg(const ImageComponent& other);
 
 public:
     void setClipDraw(bool isClipDraw);

@@ -28,10 +28,20 @@ public:
     void resetBulletToInitialState();
     void changeBulletSpeed(float speed);
     bool getIsPlayerBullet();
-    void init(const std::pair<float, float> &spawnPosition, BULLET_COLOR bulletColor);
+    void init(const std::pair<float, float> &spawnPosition, BULLET_COLOR bulletColor);\
+
+private:
+    void initStaticData();
 
 public:
     CollisionBoxComponent* getCollisionComp();
+
+public:
+    static ImageComponent* greenBulletImg;
+    static ImageComponent* redBulletImg;
+    static ImageComponent* purpleBulletImg;
+    static ImageComponent* blueBulletImg;
+    static ImageComponent* skyBulletImg;
 
 private:
     ImageComponent* bulletImg;
