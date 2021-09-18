@@ -64,6 +64,7 @@ protected:
         actorComponents.emplace_back(newItem);
         return newItem;
     }
+    //이 함수를 통해 컴포넌트를 생성한다.
 
 protected:
     std::function<void()> destroyAction;

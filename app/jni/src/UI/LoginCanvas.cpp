@@ -130,16 +130,8 @@ void LoginCanvas::update(const float deltaTime)
         {
             if (readDBResult.status() != firebase::kFutureStatusPending)
             {
-                if (readDBResult.status() != firebase::kFutureStatusComplete)
-                {
-                    //LogMessage("ERROR: GetValue() returned an invalid result.");
-                    // Handle the error...
-                }
-                else if (readDBResult.error() != firebase::database::kErrorNone)
-                {
-
-                }
-                else
+                if (readDBResult.status() == firebase::kFutureStatusComplete &&
+                    readDBResult.error() == firebase::database::kErrorNone)
                 {
                     auto PC = GlobalFunction::Cast<TitleController>(GlobalFunction::GetPlayerController());
                     if(PC)

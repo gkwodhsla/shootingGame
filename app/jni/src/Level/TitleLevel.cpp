@@ -14,7 +14,6 @@ TitleLevel::~TitleLevel()
 void TitleLevel::handleEvent(const SDL_Event &e)
 {
     HLevelBase::handleEvent(e);
-
 }
 
 void TitleLevel::update(const float deltaTime)

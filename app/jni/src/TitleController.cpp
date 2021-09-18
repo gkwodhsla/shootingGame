@@ -7,7 +7,7 @@ TitleController::TitleController(HPawn* controlledPawn):
 HPlayerController(controlledPawn)
 {
     changeInputMode(INPUT_MODE::UI_ONLY);
-    loginCanvas = Canvas::makeCanvas<LoginCanvas>(Framework::rendererWidth, Framework::rendererHeight, 0, 0);
+    loginCanvas = GlobalFunction::makeCanvas<LoginCanvas>(Framework::rendererWidth, Framework::rendererHeight, 0, 0);
     loginCanvas->addToViewport();
 }
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "HComponent.h"
 #include <vector>
-
+//카디날 스플라인
 class HActor;
 
 class SplineComponent :public HComponent

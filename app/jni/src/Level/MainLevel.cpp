@@ -83,7 +83,10 @@ void MainLevel::render()
 void MainLevel::enter()
 {
     bgActor = spawnActor<BackgroundActor>();
+    bgActor->stopBattleMusic();
+
     stageManager = spawnActor<StageManager>();
+
     playerAirplane = spawnActor<Airplane>();
     playerAirplane->setVisibility(false);
     playerAirplane->setActorTickable(false);
@@ -124,7 +127,7 @@ void MainLevel::enter()
         auto newEnemy = spawnActor<EnemyAirplane>(enemyBulletColor, whichShape, 100);
         newEnemy->setVisibility(false);
         newEnemy->setActorTickable(false);
-        enemyAirplanes.push_back(newEnemy);
+        enemyAirplanes.emplace_back(newEnemy);
     }
 
     boss1 = spawnActor<EnemyAirplane>(BULLET_COLOR::RED, ENEMY_SHIP_SHAPE::BOSS1, 100);
@@ -140,8 +143,6 @@ void MainLevel::enter()
     crystalPool = new ActorObjectPool<Crystal>(50);
 
     initDataUsingDataReadFromDB();
-
-    bgActor->stopBattleMusic();
 }
 
 void MainLevel::exit()

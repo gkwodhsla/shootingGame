@@ -10,7 +10,7 @@
 #include "../Framework.h"
 #include "../GlobalFunction.h"
 #include "../HObject.h"
-
+//액터가 배치되는 게임 월드이다.
 class HLevelBase: public HObject
 {
 public:
@@ -188,6 +188,8 @@ private:
             }
         }
     }
+    //레벨에 렌더링되고 있는 액터들을 대상으로 충돌검사를 수행한다.
+
     void clearGarbageFromBuffer(float deltaTime)
     {
         curEraseBufferTime -= deltaTime;
@@ -202,6 +204,8 @@ private:
             curEraseBufferTime = maxEraseBufferTime;
         }
     }
+    //할당해제 되어 액터 배열에서 null인 요소들을 제거한다.
+    //할당해제 되어 콜리전 박스 배열에서 null인 요소들을 제거한다.
 
 protected:
     std::vector<HActor*> actors;
@@ -211,6 +215,4 @@ protected:
     float curCollisionCheckTime = 0.02f;
     float maxEraseBufferTime = 10.0f;
     float curEraseBufferTime = 10.0f;
-    //추후 이곳에 player controller가 들어가야 한다. (handle event를 위해서)
-    //게임모드를 추가할 수도 있고, 아니면 게임모드의 요소를 그냥 멤버로 넣을 수도 있다. (고민좀)
 };

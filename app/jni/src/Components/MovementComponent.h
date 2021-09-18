@@ -2,7 +2,9 @@
 
 #include "HComponent.h"
 #include <utility>
-
+//시간에 따른 이동을 구현한 컴포넌트이다.
+//이 컴포넌트를 소유하고 있는 액터의 방향벡터를 이용해
+//매 업데이트마다 위치를 갱신시켜준다.
 class HActor;
 
 class MovementComponent :public HComponent

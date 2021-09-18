@@ -1,5 +1,4 @@
 #pragma once
-#include "Components/TTFComponent.h"
 #include "firebase/app.h"
 #include "firebase/auth.h"
 #include "firebase/auth/credential.h"
@@ -8,6 +7,7 @@
 class SDL_Window;
 class SDL_Renderer;
 class SDL_Rect;
+class SDL_Texture;
 class HLevelBase;
 class Canvas;
 class SpritesheetComponent;
@@ -41,7 +41,6 @@ private:
     SDL_Window* window = nullptr;
     SDL_Texture* renderTarget = nullptr;
     float accTime = 0.0f;
-    //TTFComponent* fpsText;
 
 public:
     static SDL_Renderer* renderer;

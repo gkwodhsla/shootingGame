@@ -69,14 +69,11 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\database\mutable_data.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\log.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Components\TTFComponent.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Components\HPrimitiveComponent.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Components\HSceneComponent.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Components\HComponent.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\HActor.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\..\Vector2D.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\..\HObject.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\..\GlobalFunction.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth\user.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth\credential.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth\types.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\GlobalFunction.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\random \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cmath \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\math.h \
@@ -102,66 +99,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\locale \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cstdarg \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__bsd_locale_fallbacks.h \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bitset \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\HObject.h \
-  D:\comtus\Development\android\shootingGame\app\jni\SDL_ttf\SDL_ttf.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_main.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_stdinc.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_config.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_platform.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\begin_code.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\close_code.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_config_android.h \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\inttypes.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_assert.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_atomic.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_audio.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_error.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_endian.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_mutex.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_thread.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_rwops.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_clipboard.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_cpuinfo.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_events.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_video.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_pixels.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_rect.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_surface.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_blendmode.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_keyboard.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_keycode.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_scancode.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_mouse.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_joystick.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_gamecontroller.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_sensor.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_quit.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_gesture.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_touch.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_filesystem.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_haptic.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_hints.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_loadso.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_log.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_messagebox.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_metal.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_power.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_render.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_shape.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_system.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_timer.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_version.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_locale.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_misc.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\begin_code.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\close_code.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth\user.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth\credential.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth\types.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\GlobalFunction.h
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bitset
 
 D:\comtus\Development\android\shootingGame\app\jni\src\DBManager.h:
 
@@ -301,21 +239,15 @@ D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Framework.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Components\TTFComponent.h:
+D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Components\HPrimitiveComponent.h:
+D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth\user.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Components\HSceneComponent.h:
+D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth\credential.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Components\HComponent.h:
+D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth\types.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\HActor.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\..\Vector2D.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\..\HObject.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\Actors\..\GlobalFunction.h:
+D:\comtus\Development\android\shootingGame\app\jni\src\GlobalFunction.h:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\random:
 
@@ -368,121 +300,3 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cst
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__bsd_locale_fallbacks.h:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bitset:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Components\..\HObject.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\SDL_ttf\SDL_ttf.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_main.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_stdinc.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_config.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_platform.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\begin_code.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\close_code.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_config_android.h:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\inttypes.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_assert.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_atomic.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_audio.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_error.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_endian.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_mutex.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_thread.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_rwops.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_clipboard.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_cpuinfo.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_events.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_video.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_pixels.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_rect.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_surface.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_blendmode.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_keyboard.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_keycode.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_scancode.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_mouse.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_joystick.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_gamecontroller.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_sensor.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_quit.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_gesture.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_touch.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_filesystem.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_haptic.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_hints.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_loadso.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_log.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_messagebox.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_metal.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_power.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_render.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_shape.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_system.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_timer.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_version.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_locale.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL_misc.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\begin_code.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\close_code.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth\user.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth\credential.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\..\..\..\..\firebase_cpp_sdk_8.4.0\firebase_cpp_sdk\include\firebase\auth\types.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\GlobalFunction.h:

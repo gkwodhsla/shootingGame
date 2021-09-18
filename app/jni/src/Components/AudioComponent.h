@@ -1,7 +1,7 @@
 #pragma once
 
 #include "HComponent.h"
-
+//효과음에 사용되는 컴포넌트로 .wav 파일을 사용한다.
 class Mix_Chunk;
 
 class AudioComponent : public HComponent

@@ -2,7 +2,7 @@
 #include "HComponent.h"
 #include <utility>
 #include <vector>
-
+//렌더링되는 Primitive 컴포넌트이다.
 class HActor;
 
 class HSceneComponent :public HComponent

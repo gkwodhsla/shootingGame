@@ -99,23 +99,16 @@ void StageManager::stageClear()
 void StageManager::setStage(int stage)
 {
     curStage = stage;
-    spawnPerWave = 2 + 2 * (stage / 10); //10스테이지 마다 웨이브에 2마리의 적이 추가된다.
-    if(spawnPerWave >= 12)
-    {
-        spawnPerWave = 12;
-    }
+    spawnPerWave = std::min(12, 2 + 2 * (stage / 10)); //10스테이지 마다 웨이브에 2마리의 적이 추가된다.
+
     maxWave = 2 + stage / 10; //웨이브는 10스테이지마다 1씩 추가된다.
     if(maxWave >= 6)
     {
         maxWave = 6;
     }
-    enemyMaxHP = 50 + 20 * (stage / 5);
-    bossMaxHP = 300 + stage * 60;
-    enemyFireRate = 3.0f - 0.02f * stage;
-    if(enemyFireRate <= 0.5f)
-        enemyFireRate = 0.5f;
+    enemyMaxHP = 50 + 22 * (stage / 5);
+    bossMaxHP = 350 + stage * 80;
+    enemyFireRate = std::max(1.0f, 3.0f - 0.02f * stage);
 
-    bossFireRate = 3.0f - 0.03f * stage;
-    if(bossFireRate <= 1.0f)
-        bossFireRate = 1.0f;
+    bossFireRate = std::max(1.5f, 3.0f - 0.03f * stage);
 }

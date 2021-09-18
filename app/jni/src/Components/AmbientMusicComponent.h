@@ -1,7 +1,7 @@
 #pragma once
 #include "HComponent.h"
 #include <SDL_mixer.h>
-
+//배경음에 사용되는 컴포넌트로 mp3 파일을 사용한다.
 class AmbientMusicComponent : public HComponent
 {
 public:

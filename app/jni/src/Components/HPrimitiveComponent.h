@@ -2,7 +2,7 @@
 
 #include "HSceneComponent.h"
 
-
+//렌더링은 안되지만 transform 정보를 가지는 컴포넌트이다.
 class HPrimitiveComponent: public HSceneComponent
 {
 public:

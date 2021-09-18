@@ -101,8 +101,8 @@ Airplane::Airplane()
         }
     };
     collisionBox->registerCollisionResponse(collisionResponse);
-    collisionBox->setWidthAndHeight(airPlaneImgSize.first - 40, airPlaneImgSize.second - 10);
-    collisionBox->setComponentLocalLocation({20.0f, 5.0f});
+    collisionBox->setWidthAndHeight(airPlaneImgSize.first - 50, airPlaneImgSize.second - 20);
+    collisionBox->setComponentLocalLocation({25.0f, 10.0f});
 }
 
 Airplane::~Airplane()

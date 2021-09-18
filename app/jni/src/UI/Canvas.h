@@ -13,7 +13,9 @@
 #include "../HObject.h"
 #include "../Framework.h"
 #include "../GlobalFunction.h"
-
+//캔버스는 위젯을 담는 컨테이너이다.
+//입력받은 사이즈만큼의 렌더타겟을 만들어주고 위젯은 이 렌더타겟에
+//그려지고 최종 결과가 화면에 렌더링된다.
 class Canvas: public HObject
 {
 public:
@@ -35,13 +37,6 @@ public:
     float getCanvasXRatio()const;
     float getCanvasYRatio()const;
     float getCanvasInterpValue()const;
-    template<typename T, typename ...Types>
-    static T* makeCanvas(Types ...args)
-    {
-        T* newItem = GlobalFunction::createNewObject<T>(args...);
-        Framework::worldUI.push_back(newItem);
-        return newItem;
-    }
 
 protected:
     template<typename T, typename ...Types>
