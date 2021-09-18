@@ -12,7 +12,8 @@
 
 using namespace GlobalFunction;
 
-Crystal::Crystal() {
+Crystal::Crystal()
+{
     crystalImg = createComponent<ImageComponent>("image/UIImage/crystal.png", std::make_pair(0,0), this);
     crystalImg->setScale({70, 70});
     crystalImg->attachTo(rootComponent);
@@ -41,7 +42,7 @@ Crystal::Crystal() {
         }
     };
     collisionBox->registerCollisionResponse(collisionFunc);
-    collisionBox->setDrawDebugBox(true);
+    //collisionBox->setDrawDebugBox(true);
 
     crystalMovement = createComponent<MovementComponent>(this);
     crystalMovement->setSpeed(500.0f);

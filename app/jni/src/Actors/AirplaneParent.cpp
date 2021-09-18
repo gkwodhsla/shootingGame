@@ -14,7 +14,7 @@ AirplaneParent::AirplaneParent()
     explosionSprite->setDrawCntPerSec(40);
 
     collisionBox = createComponent<CollisionBoxComponent>(0, 0, 100, 100, this);
-    collisionBox->setDrawDebugBox(true);
+    //collisionBox->setDrawDebugBox(true);
     collisionBox->attachTo(rootComponent);
 
     explosionAudio = createComponent<AudioComponent>("sound/explosion.wav", 180, this);

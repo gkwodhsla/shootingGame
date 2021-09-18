@@ -15,6 +15,7 @@ public:
 
     float innerProduct(const Vector2D& rhs);
     float outerProduct(const Vector2D& rhs);
+    //유사외적이다. z값을 반환한다.
     void rotateVector(float degree);
 
     Vector2D& operator=(const Vector2D& rhs);

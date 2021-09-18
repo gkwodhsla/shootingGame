@@ -41,7 +41,7 @@ private:
     SDL_Window* window = nullptr;
     SDL_Texture* renderTarget = nullptr;
     float accTime = 0.0f;
-    TTFComponent* fpsText;
+    //TTFComponent* fpsText;
 
 public:
     static SDL_Renderer* renderer;

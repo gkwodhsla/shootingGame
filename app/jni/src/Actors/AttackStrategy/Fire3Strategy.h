@@ -2,7 +2,7 @@
 
 #include "AttackStrategy.h"
 
-class Fire3Strategy: public AttackStrategy
+class Fire3Strategy final : public AttackStrategy
 {
 public:
     Fire3Strategy();

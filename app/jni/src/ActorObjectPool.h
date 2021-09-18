@@ -35,9 +35,10 @@ public:
             }
         }
     }
-
     ActorObjectPool(const ActorObjectPool<T>& src) = delete;
     ActorObjectPool<T>& operator=(const ActorObjectPool<T>&rhs) = delete;
+
+    virtual ~ActorObjectPool(){}
 
     T* acquireObject()
     {

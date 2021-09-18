@@ -96,10 +96,9 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\HActor.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Vector2D.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\HObject.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\ImageComponent.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HPrimitiveComponent.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HSceneComponent.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\GlobalFunction.h \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\random \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\numeric \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\string \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\string_view \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__string \
@@ -108,7 +107,34 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cwctype \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cctype \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wctype.h \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\istream \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\ostream \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\ios \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__locale \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\mutex \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__mutex_base \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\chrono \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\ctime \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\ratio \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\system_error \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__errc \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cerrno \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\errno.h \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__threading_support \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\locale.h \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\support\android\locale_bionic.h \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\support\xlocale\__posix_l_fallback.h \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\streambuf \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\locale \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cstdarg \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__bsd_locale_fallbacks.h \
+  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bitset \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\ImageComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HPrimitiveComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HSceneComponent.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HComponent.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\..\Actors\HActor.h \
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\..\HObject.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\SpritesheetComponent.h \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\map \
   D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__tree \
@@ -149,38 +175,13 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Release\1
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\EditBoxWidget.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\..\Framework.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\..\GlobalFunction.h \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\random \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\numeric \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\istream \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\ostream \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\ios \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__locale \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\mutex \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__mutex_base \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\chrono \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\ctime \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\ratio \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\system_error \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__errc \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cerrno \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\errno.h \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__threading_support \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\locale.h \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\support\android\locale_bionic.h \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\support\xlocale\__posix_l_fallback.h \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\streambuf \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\locale \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cstdarg \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__bsd_locale_fallbacks.h \
-  D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bitset \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Framework.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\GlobalFunction.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\HObject.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Framework.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\MainLevel.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Bullet.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Actors\Bullet.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\GlobalFunction.h
+  D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Actors\Bullet.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\..\SDL\include\SDL.h:
 
@@ -374,13 +375,11 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Vector2D.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\HObject.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\ImageComponent.h:
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\GlobalFunction.h:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HPrimitiveComponent.h:
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\random:
 
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HSceneComponent.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HComponent.h:
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\numeric:
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\string:
 
@@ -398,7 +397,61 @@ D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cct
 
 D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\wctype.h:
 
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\istream:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\ostream:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\ios:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__locale:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\mutex:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__mutex_base:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\chrono:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\ctime:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\ratio:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\system_error:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__errc:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cerrno:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\errno.h:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__threading_support:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\locale.h:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\support\android\locale_bionic.h:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\support\xlocale\__posix_l_fallback.h:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\streambuf:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\locale:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cstdarg:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__bsd_locale_fallbacks.h:
+
+D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bitset:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\ImageComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HPrimitiveComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HSceneComponent.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\HComponent.h:
+
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\..\Actors\HActor.h:
+
+D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\..\HObject.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Components\SpritesheetComponent.h:
 
@@ -480,54 +533,6 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\..\Framework.
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\UI\..\GlobalFunction.h:
 
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\random:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\numeric:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\istream:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\ostream:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\ios:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__locale:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\mutex:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__mutex_base:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\chrono:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\ctime:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\ratio:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\system_error:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__errc:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cerrno:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\errno.h:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__threading_support:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\locale.h:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\support\android\locale_bionic.h:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\support\xlocale\__posix_l_fallback.h:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\streambuf:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\locale:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\cstdarg:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\__bsd_locale_fallbacks.h:
-
-D:\AndroidSDK\ndk\21.4.7075529\build\\..\sources\cxx-stl\llvm-libc++\include\bitset:
-
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Framework.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\GlobalFunction.h:
@@ -541,5 +546,3 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Level\MainLevel
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\Bullet.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\Actors\Bullet.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Actors\..\GlobalFunction.h:

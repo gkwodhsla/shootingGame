@@ -2,7 +2,7 @@
 
 #include "AttackStrategy.h"
 
-class CircleStrategy: public AttackStrategy
+class CircleStrategy final : public AttackStrategy
 {
 public:
     CircleStrategy();

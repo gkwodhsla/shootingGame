@@ -36,7 +36,7 @@ Bullet::Bullet()
 
     auto imgSize = bulletImg->getScale();
     collisionBox = createComponent<CollisionBoxComponent>(0, 0, imgSize.first, imgSize.second, this);
-    collisionBox->setDrawDebugBox(true);
+    //collisionBox->setDrawDebugBox(true);
 
     collisionBox->attachTo(rootComponent);
 
@@ -153,37 +153,30 @@ void Bullet::init(const std::pair<float, float> &spawnPosition, BULLET_COLOR bul
 {
     rootComponent->setComponentLocalLocation(spawnPosition);
 
-    std::string path;
     isPlayerBullet = false;
     ImageComponent* refImg = nullptr;
     if(bulletColor == BULLET_COLOR::GREEN)
     {
         refImg = Bullet::greenBulletImg;
-        path = "image/bullet/1.png";
         isPlayerBullet = true;
     }
     else if(bulletColor == BULLET_COLOR::RED)
     {
         refImg = Bullet::redBulletImg;
-        path = "image/bullet/e2.png";
     }
     else if(bulletColor == BULLET_COLOR::PURPLE)
     {
         refImg = Bullet::purpleBulletImg;
-        path = "image/bullet/e1.png";
     }
     else if(bulletColor == BULLET_COLOR::BLUE)
     {
         refImg = Bullet::blueBulletImg;
-        path = "image/bullet/e3.png";
     }
     else if(bulletColor == BULLET_COLOR::SKY)
     {
         refImg = Bullet::skyBulletImg;
-        path = "image/bullet/e4.png";
     }
 
-    //bulletImg->changeImage(path);
     bulletImg->referencingOtherImgCompsImg(*refImg);
 
     auto imgSize = bulletImg->getScale();

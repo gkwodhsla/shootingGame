@@ -110,7 +110,7 @@ void StageManager::setStage(int stage)
         maxWave = 6;
     }
     enemyMaxHP = 50 + 20 * (stage / 5);
-    bossMaxHP = 300 + stage * 50;
+    bossMaxHP = 300 + stage * 60;
     enemyFireRate = 3.0f - 0.02f * stage;
     if(enemyFireRate <= 0.5f)
         enemyFireRate = 0.5f;

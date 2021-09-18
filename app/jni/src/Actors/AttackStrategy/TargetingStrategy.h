@@ -1,7 +1,7 @@
 #pragma once
 #include "AttackStrategy.h"
 
-class TargetingStrategy: public AttackStrategy
+class TargetingStrategy final: public AttackStrategy
 {
 public:
     TargetingStrategy() = default;

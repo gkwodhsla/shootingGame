@@ -58,8 +58,6 @@ void Spawner::update(const float deltaTime)
         spawnCoolTime -= deltaTime;
         if(spawnCoolTime <= 0.0f)
         {
-            --maxSpawnedCnt;
-
             MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
             auto enemies = mainLevel->enemyAirplanes;
             for(int i = 0; i < enemies.size(); ++i)
@@ -82,6 +80,7 @@ void Spawner::update(const float deltaTime)
                     enemies[i]->setCanDamaged(true);
                     enemies[i]->setMaxHP(maxHP);
                     enemies[i]->setFireRate(fireRate);
+                    enemies[i]->setIsDie(false);
 
                     int enemyPatternNum = enemyPattern(dre);
                     if(enemyPatternNum == 0)
@@ -100,6 +99,7 @@ void Spawner::update(const float deltaTime)
                     {
                         enemies[i]->setBulletPattern(ENEMY_BULLET_PATTERN::TARGETED);
                     }
+                    --maxSpawnedCnt;
                     break;
                 }
             }
@@ -152,7 +152,7 @@ void Spawner::update(const float deltaTime)
 void Spawner::startSpawn(int enemyCnt, int maxHP, float fireRate)
 {
     isSpawning = true;
-    spawnCoolTime = 0.0f;
+    spawnCoolTime = 2.0f;
     maxSpawnedCnt = enemyCnt;
     this->maxHP = maxHP;
     this->fireRate = fireRate;

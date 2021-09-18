@@ -168,8 +168,7 @@ D:\comtus\Development\android\shootingGame\app\build\intermediates\cxx\Debug\725
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\GlobalFunction.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\HObject.h \
   D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\TitleController.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h \
-  D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\BackgroundActor.h
+  D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h
 
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\TitleLevel.h:
 
@@ -508,5 +507,3 @@ D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\HObject.h:
 D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\TitleController.h:
 
 D:\comtus\Development\android\shootingGame\app\jni\src\HPlayerController.h:
-
-D:\comtus\Development\android\shootingGame\app\jni\src\Level\..\Actors\BackgroundActor.h:

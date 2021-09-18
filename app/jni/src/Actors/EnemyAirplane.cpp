@@ -166,12 +166,12 @@ EnemyAirplane::~EnemyAirplane()
 void EnemyAirplane::render()
 {
     AirplaneParent::render();
-    auto loc = rootComponent->getComponentLocalLocation();
-    SDL_RenderDrawLine(Framework::renderer,
-                       loc.first + 100, loc.second + 100, loc.first + 100 + dirVec.x * 300.0f, 100 + loc.second + dirVec.y * 300.0f);
-    SDL_SetRenderDrawColor(Framework::renderer, 0xFF, 0, 0, 0xFF);
-    SDL_RenderDrawLine(Framework::renderer,
-                       loc.first + 100, loc.second + 100, loc.first + 100 + realDirVec.x * 300.0f, 100 + loc.second + realDirVec.y * 300.0f);
+    //auto loc = rootComponent->getComponentLocalLocation();
+    //SDL_RenderDrawLine(Framework::renderer,
+    //                   loc.first + 100, loc.second + 100, loc.first + 100 + dirVec.x * 300.0f, 100 + loc.second + dirVec.y * 300.0f);
+    //SDL_SetRenderDrawColor(Framework::renderer, 0xFF, 0, 0, 0xFF);
+    //SDL_RenderDrawLine(Framework::renderer,
+    //                   loc.first + 100, loc.second + 100, loc.first + 100 + realDirVec.x * 300.0f, 100 + loc.second + realDirVec.y * 300.0f);
 }
 
 void EnemyAirplane::update(const float deltaTime)
@@ -273,7 +273,7 @@ void EnemyAirplane::handleEvent(const SDL_Event& e)
 void EnemyAirplane::getDamage(int damage)
 {
     curHp -= damage;
-    if (curHp <= 0)
+    if (curHp <= 0 && !isDie)
     {
         explosionAudio->play();
         curHp = 0;

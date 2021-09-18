@@ -109,9 +109,10 @@ Framework::Framework()
     curLevel = GlobalFunction::createNewObject<TitleLevel>();
     curLevel->enter();
 
-    fpsText = new TTFComponent(0,0,70,255,0,0,"font/EvilEmpire.ttf","Hello World!",nullptr);
+    //fpsText = new TTFComponent(0,0,70,255,0,0,"font/EvilEmpire.ttf","Hello World!",nullptr);
 
     dbManager = DBManager::getInstance();
+
 }
 
 Framework::~Framework()
@@ -128,8 +129,8 @@ Framework::~Framework()
     delete curLevel;
     curLevel = nullptr;
 
-    delete fpsText;
-    fpsText = nullptr;
+    //delete fpsText;
+    //fpsText = nullptr;
 
     delete app;
     app = nullptr;
@@ -190,7 +191,7 @@ void Framework::render()
     SDL_RenderCopyEx(Framework::renderer, renderTarget, NULL, NULL,
                      0.0f, NULL, SDL_FLIP_NONE);
 
-    fpsText->render();
+    //fpsText->render();
     for(auto&canvas:worldUI)
     {
         canvas->render();
@@ -215,7 +216,7 @@ void Framework::startGame()
         deltaTime = sec.count();
         std::string fpsStr = "FPS: ";
         fpsStr += std::to_string(int(1/deltaTime));
-        fpsText->changeText(fpsStr);
+        //fpsText->changeText(fpsStr);
     }
 }
 
