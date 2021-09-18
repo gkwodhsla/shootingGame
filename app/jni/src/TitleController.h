@@ -8,6 +8,7 @@ class TitleController: public HPlayerController
 {
 public:
     TitleController(HPawn* controlledPawn);
+    TitleController() = delete;
     TitleController(const TitleController&) = delete;
     TitleController& operator=(const TitleController&) = delete;
     virtual ~TitleController();

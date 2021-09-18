@@ -34,8 +34,8 @@ void TTFComponent::render()
     HPrimitiveComponent::render();
 
     SDL_Rect dstRect;
-    dstRect.x = int(worldLocation.first);//imgRect->x;
-    dstRect.y = int(worldLocation.second);//imgRect->y;
+    dstRect.x = int(worldLocation.first);
+    dstRect.y = int(worldLocation.second);
     dstRect.w = scale.first;
     dstRect.h = scale.second;
 

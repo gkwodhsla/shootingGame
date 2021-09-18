@@ -2,6 +2,9 @@
 #include "../Components/ImageComponent.h"
 #include "../Components/AudioComponent.h"
 
+const float ButtonWidget::maxHoldCoolTime = 0.05f;
+
+
 ButtonWidget::ButtonWidget(const std::string& downImgPath, const std::string& upImgPath,
                            const std::string& downSoundPath, const std::string& upSoundPath, Canvas* owner):Widget(owner)
 {
@@ -72,7 +75,7 @@ void ButtonWidget::update(const float deltaTime)
                     if(holdCoolTime <= 0.0f)
                     {
                         buttonHoldEvent();
-                        maxHoldCoolTime = holdCoolTime;
+                        holdCoolTime = maxHoldCoolTime;
                     }
                 }
             }

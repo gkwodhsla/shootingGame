@@ -16,6 +16,7 @@ class HPlayerController: public HObject
 {
 public:
     HPlayerController(HPawn* controlledPawn);
+    HPlayerController() = delete;
     HPlayerController(const HPlayerController&) = delete;
     HPlayerController& operator=(const HPlayerController&) = delete;
     virtual ~HPlayerController();
@@ -24,6 +25,7 @@ public:
     void changeInputMode(const INPUT_MODE inputMode);
     INPUT_MODE getInputMode();
     void handleEvent(const SDL_Event& e);
+    //컨트롤러는 자기가 조종중인 Pawn에게만 이벤트를 넘긴다.
     HPawn* getControlledPawn();
 
 protected:

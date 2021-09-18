@@ -101,7 +101,8 @@ Airplane::Airplane()
         }
     };
     collisionBox->registerCollisionResponse(collisionResponse);
-    collisionBox->setWidthAndHeight(airPlaneImgSize.first, airPlaneImgSize.first);
+    collisionBox->setWidthAndHeight(airPlaneImgSize.first - 40, airPlaneImgSize.second - 10);
+    collisionBox->setComponentLocalLocation({20.0f, 5.0f});
 }
 
 Airplane::~Airplane()
@@ -124,7 +125,8 @@ void Airplane::update(const float deltaTime)
         {
             auto imageSize = airplaneImg->getScale();
             auto loc = rootComponent->getComponentLocalLocation();
-            loc.first += float(imageSize.first) / 2 - float((bulletCnt - 1) * 20);
+            loc.first += float(imageSize.first) / 2 - float((bulletCnt / 2) * Bullet::playerBulletWidth)
+                    - Bullet::playerBulletWidth / 2;
             spawnPlayerBullet(loc);
             curFireTime = fireRate;
         }
@@ -295,7 +297,7 @@ void Airplane::spawnPlayerBullet(std::pair<float, float>& spawnPos)
             bullet->init(spawnPos, BULLET_COLOR::GREEN);
             bullet->setActorDirectionalVector({0.0f, -1.0f});
             bullet->changeBulletSpeed(1200.0f);
-            spawnPos.first += 20.0f;
+            spawnPos.first += 15.0f;
         }
     }
 }

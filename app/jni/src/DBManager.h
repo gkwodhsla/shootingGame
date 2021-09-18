@@ -16,6 +16,7 @@ struct DBData
     int curAttack = 0;
     int curBullet = 0;
 };
+//파이어베이스 실시간 데이터베이스에서 데이터를 읽거나 쓸 때 이 구조체를 사용한다.
 
 class DBManager final
 {
@@ -33,6 +34,8 @@ private:
 public:
     firebase::database::DatabaseReference getDBRef();
     const DBData& getDataReadFromDB();
+
+public:
     static DBManager* getInstance();
 
 private:
@@ -48,5 +51,7 @@ private:
     DBData readData;
     firebase::database::Database* database = nullptr;
     firebase::database::DatabaseReference dbRef;
+
+private:
     static DBManager* instance;
 };

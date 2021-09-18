@@ -4,8 +4,12 @@
 #include <type_traits>
 #include <android/log.h>
 #include <functional>
+#include <exception>
 #include "Framework.h"
 #include "Level/HLevelBase.h"
+
+//액터타입을 담는 오브젝트 풀이다.
+//액터 이외의 타입이 입력되면 에러를 던진다.
 
 template<typename T>
 class ActorObjectPool final
@@ -19,6 +23,7 @@ public:
             __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
                                 "object pool type must be actor");
             exit(1);
+            //throw("object pool type must be actor");
         }
         else
         {

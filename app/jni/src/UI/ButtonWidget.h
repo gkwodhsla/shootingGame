@@ -36,7 +36,7 @@ private:
     bool isDown = false;
     float downTime = 0.0f;
     float holdCoolTime = 0.1f;
-    float maxHoldCoolTime = 0.1f;
+    static const float maxHoldCoolTime;
     __uint8_t buttonVolume = 128;
 };
 

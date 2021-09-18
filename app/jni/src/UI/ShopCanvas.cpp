@@ -88,7 +88,7 @@ void ShopCanvas::updateShopState()
     attackPowerText->changeText(std::to_string(curAttackPower) + "/" + std::to_string(maxAttackPower));
     bulletText->changeText(std::to_string(curBullet) + "/" + std::to_string(maxBullet));
     airplaneText->changeText(std::to_string(curAirplane) + "/" + std::to_string(maxAirplane));
-    missileText->changeText(std::to_string(curMissile) + "/" + std::to_string(maxMissile));
+    thunderText->changeText(std::to_string(curThunder) + "/" + std::to_string(maxThunder));
     shieldText->changeText(std::to_string(curShield) + "/" + std::to_string(maxShield));
     moneyText->changeText(std::to_string(curCrystal));
 }
@@ -99,9 +99,9 @@ void ShopCanvas::setShieldCnt(int cnt)
     updateShopState();
 }
 
-void ShopCanvas::setMissileCnt(int cnt)
+void ShopCanvas::setThunderCnt(int cnt)
 {
-    curMissile = cnt;
+    curThunder = cnt;
     updateShopState();
 }
 
@@ -245,7 +245,6 @@ void ShopCanvas::initWidgets()
         this->explanationText4->changeText("Cost: " + std::to_string(airplaneUpgradeFee));
         whichItemButton = WHICH_ITEM_BUTTON::AIRPLANE;
     };
-    //
 
     airplaneText = makeWidget<TextWidget>(std::to_string(curAirplane) + "/" + std::to_string(maxAirplane),
                                   50, 255, 255, 255, this);
@@ -255,26 +254,26 @@ void ShopCanvas::initWidgets()
                                  (airplaneUpgradeButton->getScale().first - airplaneText->getScale().first) / 2,
                                    airplaneUpgradeButton->getLocalPosition().second+airplaneUpgradeButton->getScale().second);
 
-    missileButton = makeWidget<ButtonWidget>("image/UIImage/missileDownButton.png", "image/UIImage/missileUpButton.png",
+    thunderButton = makeWidget<ButtonWidget>("image/UIImage/missileDownButton.png", "image/UIImage/missileUpButton.png",
                                      "", "sound/click.wav", this);
-    missileButton->setScale(180, 180);
-    missileButton->setLocalPosition(80 + 180, 500);
-    missileButton->buttonUpEvent = [this]()mutable
+    thunderButton->setScale(180, 180);
+    thunderButton->setLocalPosition(80 + 180, 500);
+    thunderButton->buttonUpEvent = [this]()mutable
     {
         this->explanationText1->changeText("Get this special skill");
         this->explanationText2->changeText("your enemy will be fatally wounded");
         this->explanationText3->changeText(" ");
-        this->explanationText4->changeText("Cost: " + std::to_string(missileFee));
-        whichItemButton = WHICH_ITEM_BUTTON::MISSILE;
+        this->explanationText4->changeText("Cost: " + std::to_string(thunderFee));
+        whichItemButton = WHICH_ITEM_BUTTON::THUNDER;
     };
 
-    missileText = makeWidget<TextWidget>(std::to_string(curMissile) + "/" + std::to_string(maxMissile),
+    thunderText = makeWidget<TextWidget>(std::to_string(curThunder) + "/" + std::to_string(maxThunder),
                                      50, 255, 255, 255, this);
-    missileText->setScale(missileText->getScale().first,
-                          missileText->getScale().second);
-    missileText->setLocalPosition(missileButton->getLocalPosition().first +
-                                   (missileButton->getScale().first - missileText->getScale().first) / 2,
-                                  missileButton->getLocalPosition().second+missileButton->getScale().second);
+    thunderText->setScale(thunderText->getScale().first,
+                          thunderText->getScale().second);
+    thunderText->setLocalPosition(thunderButton->getLocalPosition().first +
+                                   (thunderButton->getScale().first - thunderText->getScale().first) / 2,
+                                  thunderButton->getLocalPosition().second+thunderButton->getScale().second);
 
     shieldButton = makeWidget<ButtonWidget>("image/UIImage/shieldDownButton.png", "image/UIImage/shieldUpButton.png",
                                     "", "sound/click.wav", this);
@@ -370,7 +369,6 @@ void ShopCanvas::initWidgets()
                     Airplane* airplane = Cast<Airplane>(GetPlayerPawn());
                     curCrystal -= airplaneUpgradeFee;
                     moneyText->changeText(std::to_string(curCrystal));
-                    airplaneUpgradeFee += 5000;
                     ++curAirplane;
                     airplaneText->changeText(std::to_string(curAirplane) + "/" + std::to_string(maxAirplane));
                     explanationText4->changeText("Cost: " + std::to_string(airplaneUpgradeFee));
@@ -390,16 +388,16 @@ void ShopCanvas::initWidgets()
                     buySuccess = true;
                 }
                 break;
-            case WHICH_ITEM_BUTTON::MISSILE:
-                if(curCrystal >= missileFee && curMissile < maxMissile)
+            case WHICH_ITEM_BUTTON::THUNDER:
+                if(curCrystal >= thunderFee && curThunder < maxThunder)
                 {
                     MainLevel *mainLevel = Cast<MainLevel>(Framework::curLevel);
                     HPlayerController *PC = GetPlayerController();
                     Airplane* airplane = Cast<Airplane>(GetPlayerPawn());
-                    curCrystal -= missileFee;
+                    curCrystal -= thunderFee;
                     moneyText->changeText(std::to_string(curCrystal));
-                    ++curMissile;
-                    missileText->changeText(std::to_string(curMissile) + "/" + std::to_string(maxMissile));
+                    ++curThunder;
+                    thunderText->changeText(std::to_string(curThunder) + "/" + std::to_string(maxThunder));
                     int curMissileNum = airplane->getThunderCnt();
                     airplane->setThunderCnt(curMissileNum + 1);
                     buySuccess = true;

@@ -17,6 +17,7 @@ public:
     void play();
     void stop();
     void addEventAtNFrame(int n, const std::function<void()>& func);
+    //N번 프레임에 호출할 함수를 등록할 수 있다.
 public:
     void setLooping(bool isLooping);
     const bool getLooping();

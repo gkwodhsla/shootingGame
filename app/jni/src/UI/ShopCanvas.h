@@ -10,7 +10,7 @@ enum class WHICH_ITEM_BUTTON
     ATTACK,
     BULLET,
     AIRPLANE,
-    MISSILE,
+    THUNDER,
     SHIELD
 };
 
@@ -36,7 +36,7 @@ public:
     void setMaxStage(int stage);
     void updateShopState();
     void setShieldCnt(int cnt);
-    void setMissileCnt(int cnt);
+    void setThunderCnt(int cnt);
     void addCrystal(int howMany);
     int getCrystal();
     void setCrystal(int crystal);
@@ -63,8 +63,8 @@ private:
     TextWidget* bulletText = nullptr;
     ButtonWidget* airplaneUpgradeButton = nullptr;
     TextWidget* airplaneText = nullptr;
-    ButtonWidget* missileButton = nullptr;
-    TextWidget* missileText = nullptr;
+    ButtonWidget* thunderButton = nullptr;
+    TextWidget* thunderText = nullptr;
     ButtonWidget* shieldButton = nullptr;
     TextWidget* shieldText = nullptr;
     ImageWidget* explanationWindow = nullptr;
@@ -86,18 +86,18 @@ private:
     int curAttackPower = 1;
     int curBullet = 1;
     int curAirplane = 1;
-    int curMissile = 0;
+    int curThunder = 0;
     int curShield = 0;
     int attackUpgradeFee = 50;
     int bulletUpgradeFee = 50;
     int airplaneUpgradeFee = 3000;
-    int missileFee = 1000;
+    int thunderFee = 1000;
     int shieldFee = 1000;
     WHICH_ITEM_BUTTON whichItemButton;
     const int maxAttackPower = 7;
     const int maxBullet = 7;
     const int maxAirplane = 3;
-    const int maxMissile = 1;
+    const int maxThunder = 1;
     const int maxShield = 3;
     bool isPlayButtonClicked = false;
 };

@@ -12,6 +12,8 @@
 
 using namespace GlobalFunction;
 
+const float Crystal::destroyDistance = 2500.0f;
+
 Crystal::Crystal()
 {
     crystalImg = createComponent<ImageComponent>("image/UIImage/crystal.png", std::make_pair(0,0), this);
@@ -66,7 +68,7 @@ void Crystal::update(const float deltaTime)
     if(tickable)
     {
         crystalMovement->update(deltaTime);
-        if(rootComponent->getComponentWorldLocation().second > 2500.0f)
+        if(rootComponent->getComponentWorldLocation().second > destroyDistance)
         {
             auto mainLevel = Cast<MainLevel>(GetLevel());
             if(mainLevel)

@@ -65,7 +65,7 @@ void Spawner::update(const float deltaTime)
                 if(!enemies[i]->getVisibility())
                 {
                     int spawnIndex = 0;
-                    while(1) //적군이 어느정도 맵에 없어져야 스폰을 시도하기 때문에 무한루프에 빠질 염려는 없다.
+                    while(1)
                     {
                         spawnIndex = uid(dre);
                         if(pathMiddle[spawnIndex].getUsable())
@@ -103,7 +103,6 @@ void Spawner::update(const float deltaTime)
                     break;
                 }
             }
-            //레벨에서 에너미 버퍼를 가져와서 활성화 시킨다.
             spawnCoolTime = maxSpawnCoolTime;
             if(maxSpawnedCnt == 0)
             {

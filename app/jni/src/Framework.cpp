@@ -63,8 +63,7 @@ Framework::Framework()
     }
     else
     {
-        renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED|SDL_RENDERER_PRESENTVSYNC);
-        //추후 VSYNC를 위해 SDL_RENDERER_PRESENTVSYNC 옵션 추가 가능
+        renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED/*|SDL_RENDERER_PRESENTVSYNC*/);
         if(renderer == NULL)
         {
             __android_log_print(ANDROID_LOG_INFO, "SDL_Error",
@@ -177,7 +176,7 @@ void Framework::render()
 {
     SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
     SDL_RenderClear(renderer);
-    for(auto&canvas:worldUI)
+    for(auto& canvas:worldUI)
     {
         canvas->canvasRender();
     }
@@ -192,7 +191,7 @@ void Framework::render()
                      0.0f, NULL, SDL_FLIP_NONE);
 
     //fpsText->render();
-    for(auto&canvas:worldUI)
+    for(auto& canvas:worldUI)
     {
         canvas->render();
     }
@@ -202,6 +201,8 @@ void Framework::render()
 void Framework::startGame()
 {
     float deltaTime = 0.0f;
+    //std::string fpsStr = "FPS: ";
+
     while(1)
     {
         chrono::system_clock::time_point start = chrono::system_clock::now();
@@ -214,8 +215,8 @@ void Framework::startGame()
         chrono::duration<double> sec = chrono::system_clock::now() - start;
         accTime += sec.count();
         deltaTime = sec.count();
-        std::string fpsStr = "FPS: ";
-        fpsStr += std::to_string(int(1/deltaTime));
+
+        //fpsStr += std::to_string(int(1 / deltaTime));
         //fpsText->changeText(fpsStr);
     }
 }
@@ -240,7 +241,7 @@ void Framework::changeLevel(HLevelBase* newLevel)
 
 void Framework::eraseCanvas(Canvas* canvas)
 {
-    for(int i = 0;i < worldUI.size(); ++i)
+    for(int i = 0; i < worldUI.size(); ++i)
     {
         if(worldUI[i] == canvas)
         {

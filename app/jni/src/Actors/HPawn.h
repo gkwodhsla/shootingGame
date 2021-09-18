@@ -5,7 +5,7 @@
 
 class MovementComponent;
 class HPlayerController;
-
+//폰은 플레이어의 입력을 받을 수 있는 특수한 액터이다.
 class HPawn :public HActor
 {
 public:

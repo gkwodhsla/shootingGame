@@ -19,4 +19,5 @@ private:
     ImageComponent* crystalImg = nullptr;
     CollisionBoxComponent* collisionBox = nullptr;
     MovementComponent* crystalMovement = nullptr;
+    static const float destroyDistance;
 };

@@ -19,6 +19,7 @@ ImageComponent* Bullet::redBulletImg = nullptr;
 ImageComponent* Bullet::purpleBulletImg = nullptr;
 ImageComponent* Bullet::blueBulletImg = nullptr;
 ImageComponent* Bullet::skyBulletImg = nullptr;
+int Bullet::playerBulletWidth = 0;
 
 Bullet::Bullet()
 {
@@ -191,6 +192,7 @@ void Bullet::initStaticData()
     if(Bullet::greenBulletImg == nullptr)
     {
         Bullet::greenBulletImg = createComponent<ImageComponent>("image/bullet/1.png",std::make_pair(0,0),nullptr);
+        playerBulletWidth = Bullet::greenBulletImg->getImageSize().first;
     }
     if(Bullet::redBulletImg == nullptr)
     {

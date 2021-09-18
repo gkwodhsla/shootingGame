@@ -180,7 +180,7 @@ void MainLevel::afterStageClear()
     {
         curCanvas->incMaxStage();
     }
-    curCanvas->setMissileCnt(playerAirplane->getThunderCnt());
+    curCanvas->setThunderCnt(playerAirplane->getThunderCnt());
     curCanvas->setShieldCnt(playerAirplane->getShieldCnt());
     curCanvas->updateShopState();
     curCanvas->addToViewport();
@@ -205,10 +205,16 @@ void MainLevel::afterStageClear()
 
     for(auto&actor : actors)
     {
-        auto obj = Cast<Bullet>(actor);
-        if(obj && obj->getVisibility())
+        auto bullet = Cast<Bullet>(actor);
+        if(bullet && bullet->getVisibility())
         {
-            bulletPool->returnToPool(obj);
+            bulletPool->returnToPool(bullet);
+        }
+
+        auto crystal = Cast<Crystal>(actor);
+        if(crystal && crystal->getVisibility())
+        {
+            crystalPool->returnToPool(crystal);
         }
     }
 
@@ -248,7 +254,7 @@ void MainLevel::initDataUsingDataReadFromDB()
     shopCanvas->setAttackUpgrade(data.attackUpgrade);
     shopCanvas->setBulletUpgrade(data.bulletUpgrade);
     shopCanvas->setAirplaneUpgrade(data.curAirplaneUpgrade);
-    shopCanvas->setMissileCnt(data.thunderNum);
+    shopCanvas->setThunderCnt(data.thunderNum);
     shopCanvas->setShieldCnt(data.shieldNum);
     shopCanvas->setCrystal(data.money);
     shopCanvas->setMaxStage(data.maxStage);

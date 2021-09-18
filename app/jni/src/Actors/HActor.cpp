@@ -56,12 +56,6 @@ HSceneComponent* HActor::getRootComponent()
     return rootComponent;
 }
 
-
-void HActor::setRootComponent(HSceneComponent *component)
-{
-    rootComponent = component;
-}
-
 Vector2D HActor::getActorDirectionalVector()
 {
     return dirVec;

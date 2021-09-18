@@ -11,6 +11,15 @@ class HComponent;
 class HSceneComponent;
 class SDL_Renderer;
 
+//액터는 월드에 배치되는 오브젝트이다.
+//액터는 반드시 하나의 루트 컴포넌트를 가지고, 이 컴포넌트에
+//다른 컴포넌트를 붙이는 방식으로 확장한다.
+//액터는 트랜스폼 정보를 루트컴포넌트에 의존하며
+//자식 컴포넌트의 트랜스폼은 부모 컴포넌트에 의존한다.
+//또한 액터는 lifeTime을 가질 수 있고 별도 세팅을 하지 않는다면
+//명시적으로 파괴하거나 레벨을 떠날 때 까지 존재한다.
+//lifeTime이 0초가 됐을 때 default Action은 액터의 파괴이고,
+//다양한 커스텀 함수를 등록할 수 있다.
 class HActor: public HObject
 {
 public:
@@ -29,7 +38,6 @@ public:
     void setVisibility(const bool isVisible);
     bool getVisibility();
     HSceneComponent* getRootComponent();
-    void setRootComponent(HSceneComponent* component);
     Vector2D getActorDirectionalVector();
     void setActorDirectionalVector(const Vector2D& newDir);
     std::pair<int, int> getActorWorldLocation();

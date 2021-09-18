@@ -66,7 +66,7 @@ void Vector2D::rotateVector(float degree)
     y = newY;
 }
 
-Vector2D &Vector2D::operator=(const Vector2D &rhs)
+Vector2D& Vector2D::operator=(const Vector2D &rhs)
 {
     if(this == &rhs)
     {

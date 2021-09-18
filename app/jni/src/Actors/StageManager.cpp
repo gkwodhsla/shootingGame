@@ -27,7 +27,7 @@ void StageManager::update(const float deltaTime)
     HActor::update(deltaTime);
     if(isWaveBegin)
     {
-        if(isEnemySpawning) //waveBegin으로 인해 isEnemySpawning이 true가 되면 스포너에게 적을 spawPerWave만큼 스폰하라고 알려준다.
+        if(isEnemySpawning) //waveBegin으로 인해 isEnemySpawning이 true가 되면 spawner 에게 적을 spawnPerWave만큼 스폰하라고 알려준다.
         {
             spawner->startSpawn(spawnPerWave, enemyMaxHP, enemyFireRate);
             curEnemyAirplaneNum = spawnPerWave;

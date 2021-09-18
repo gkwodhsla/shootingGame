@@ -177,7 +177,7 @@ void EnemyAirplane::render()
 void EnemyAirplane::update(const float deltaTime)
 {
     AirplaneParent::update(deltaTime);
-    if (isDie && explosionSprite->getIsPlayEnd())
+    if (isDie && explosionSprite->getIsPlayEnd())// 만약 비행기가 죽었고, 폭발 애니메이션이 끝났다면 초기상태로 돌려준다.
     {
         resetEnemyAirplaneToInitialState();
     }
@@ -193,26 +193,11 @@ void EnemyAirplane::update(const float deltaTime)
         {
             float newDirVecX = float(loc.first - befPos.first);
             float newDirVecY = float(loc.second - befPos.second);
-            auto befDirVec = realDirVec;
+
             dirVec.x = newDirVecX;
             dirVec.y = newDirVecY;
             dirVec.normalize();
-
-            float befDotCur = befDirVec.innerProduct(dirVec);
-            float befCrossCur = befDirVec.outerProduct(dirVec);
-
-            float curRot = rootComponent->getComponentLocalRotation();
-            float degree = acos(befDotCur) * 180.0f / 3.14f;
-            degree = fmin(degree, 360.0f - degree);
-            float rotDir = befCrossCur;// asin(befCrossCur);
-            if (!isnan(curRot) && !isnan(degree))
-            {
-                if (rotDir >= 0)
-                    degreeGap = +degree;//-degree;
-                else if (rotDir < 0.0f)
-                    degreeGap = -degree;
-            }
-
+            calcGapBetRealVecAndTargetedVec();
 
             befPos = rootComponent->getComponentLocalLocation();
         }
@@ -222,25 +207,12 @@ void EnemyAirplane::update(const float deltaTime)
     {
         dirVec.x = 0.0f;
         dirVec.y = 1.0f;
-        auto befDirVec = realDirVec;
-        float befDotCur = befDirVec.innerProduct(dirVec);
-        float befCrossCur = befDirVec.outerProduct(dirVec);
+        calcGapBetRealVecAndTargetedVec();
 
-        float curRot = rootComponent->getComponentLocalRotation();
-        float degree = acos(befDotCur) * 180.0f / 3.14f;
-        degree = fmin(degree, 360.0f - degree);
-        float rotDir = asin(befCrossCur);
-        if (!isnan(curRot) && !isnan(degree))
-        {
-            if (rotDir >= 0)
-                degreeGap = +degree;//-degree;
-            else if (rotDir < 0.0f)
-                degreeGap = -degree;
-        }
         isArrived = true;
     }
 
-    if (!(-0.5f < degreeGap && degreeGap < 0.5f))
+    if (!(-0.5f < degreeGap && degreeGap < 0.5f))// 실제 방향벡터를 목표 방향벡터로 회전시킨다. (부드러운 회전)
     {
         float curRootRot = rootComponent->getComponentLocalRotation();
         float interpValue = deltaTime * rotateRate;
@@ -444,5 +416,25 @@ void EnemyAirplane::hitAnimation(float deltaTime)
             airplaneImg->setImageColor(255, 255, 255);
             animAccTime = 0.0f;
         }
+    }
+}
+
+void EnemyAirplane::calcGapBetRealVecAndTargetedVec()
+{
+    auto befDirVec = realDirVec;
+
+    float befDotCur = befDirVec.innerProduct(dirVec);
+    float befCrossCur = befDirVec.outerProduct(dirVec);
+
+    float curRot = rootComponent->getComponentLocalRotation();
+    float degree = acos(befDotCur) * 180.0f / 3.14f;
+    degree = fmin(degree, 360.0f - degree);
+    float rotDir = befCrossCur;
+    if (!isnan(curRot) && !isnan(degree))
+    {
+        if (rotDir >= 0)
+            degreeGap = +degree;
+        else if (rotDir < 0.0f)
+            degreeGap = -degree;
     }
 }

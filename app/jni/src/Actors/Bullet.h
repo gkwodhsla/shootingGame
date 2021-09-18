@@ -29,6 +29,7 @@ public:
     void changeBulletSpeed(float speed);
     bool getIsPlayerBullet();
     void init(const std::pair<float, float> &spawnPosition, BULLET_COLOR bulletColor);
+    //오브젝트 풀에서 객체를 꺼내면 이 함수를 호출해서 초기화한다.
 
 private:
     void initStaticData();
@@ -42,6 +43,8 @@ public:
     static ImageComponent* purpleBulletImg;
     static ImageComponent* blueBulletImg;
     static ImageComponent* skyBulletImg;
+    //총알 이미지를 모두 로드하지 않고 static으로 번갈아 쓴다.
+    static int playerBulletWidth;
 
 private:
     ImageComponent* bulletImg;

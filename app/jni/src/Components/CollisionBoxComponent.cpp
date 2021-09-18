@@ -15,7 +15,8 @@ CollisionBoxComponent::CollisionBoxComponent(int x, int y, int w, int h, HActor 
     this->w = w;
     this->h = h;
     this->setComponentLocalRotation(0.0f);
-    Framework::curLevel->addNewCollisionBoxToLevel(this);
+    GetLevel()->addNewCollisionBoxToLevel(this);
+    //충돌체크를 위해 레벨의 콜리전 박스 배열에 추가한다.
 }
 
 CollisionBoxComponent::~CollisionBoxComponent()

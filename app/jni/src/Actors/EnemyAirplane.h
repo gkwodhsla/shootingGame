@@ -50,6 +50,9 @@ public:
 private:
     void spawnBullet(float deltaTime);
     void hitAnimation(float deltaTime);
+    void calcGapBetRealVecAndTargetedVec();
+
+private:
     static void initStaticData();
 
 private:
