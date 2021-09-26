@@ -48,6 +48,8 @@ public:
     void setIsSetLifeTime(const bool isSetLifeTime);
     void registerFuncWhenActorLifeTimeZero(std::function<void()> func);
     bool getIsSetLifeTime();
+    void setPendingKill(bool newPendingKill);
+    bool getPendingKill();
 
 protected:
     HSceneComponent* rootComponent;
@@ -56,6 +58,7 @@ protected:
     bool visibility = true;
     bool tickable = true;
     bool isSetLifeTime = false;
+    bool isPendingKill = false;
 
     template<typename T, typename ...Types>
     T* createComponent(Types ...args)

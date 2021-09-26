@@ -229,18 +229,6 @@ void Framework::changeLevel(HLevelBase* newLevel)
     newLevel->enter();
 }
 
-void Framework::eraseCanvas(Canvas* canvas)
-{
-    for(int i = 0; i < worldUI.size(); ++i)
-    {
-        if(worldUI[i] == canvas)
-        {
-            worldUI.erase((worldUI.begin() + i));
-            break;
-        }
-    }
-}
-
 void Framework::initFirebase()
 {
     JNIEnv* env = (JNIEnv*)SDL_AndroidGetJNIEnv();

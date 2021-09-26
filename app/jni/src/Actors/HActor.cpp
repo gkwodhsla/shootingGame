@@ -134,3 +134,12 @@ bool HActor::getIsSetLifeTime()
     return this->isSetLifeTime;
 }
 
+void HActor::setPendingKill(bool newPendingKill)
+{
+    isPendingKill = newPendingKill;
+}
+
+bool HActor::getPendingKill()
+{
+    return isPendingKill;
+}

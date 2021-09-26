@@ -30,7 +30,6 @@ public:
     void startGame();
     void changeRenderTargetSize(int width, int height);
     static void changeLevel(HLevelBase* newLevel);
-    static void eraseCanvas(Canvas* canvas);
     static Framework* getInstance();
 
 private:

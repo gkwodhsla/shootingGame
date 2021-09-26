@@ -69,7 +69,7 @@ public:
     }
     virtual void update(const float deltaTime)
     {
-        clearGarbageFromBuffer(deltaTime);
+        eraseMakredActor(deltaTime);
 
         for(auto&actor : actors)
         {
@@ -116,14 +116,17 @@ public:
         {
             if(actor == actors[i])
             {
-                delete actors[i];
-                actors[i] = nullptr;
+                actor->setVisibility(false);
+                actor->setActorTickable(false);
+                actor->setPendingKill(true);
+                actor = nullptr;
                 isDestroyed = true;
                 break;
             }
         }
         return isDestroyed;
     }
+    //마킹만 해두고 실제 제거 작업은 뒤로 미룬다.
 
     bool destroyBox(CollisionBoxComponent* box)
     {
@@ -190,11 +193,19 @@ private:
     }
     //레벨에 렌더링되고 있는 액터들을 대상으로 충돌검사를 수행한다.
 
-    void clearGarbageFromBuffer(float deltaTime)
+    void eraseMakredActor(float deltaTime)
     {
         curEraseBufferTime -= deltaTime;
         if (curEraseBufferTime <= 0.0f)
         {
+            for(auto&actor: actors)
+            {
+                if(actor->getPendingKill())
+                {
+                    delete actor;
+                    actor = nullptr;
+                }
+            }
             auto actorIter = std::remove(std::begin(actors), std::end(actors),nullptr);
             actors.erase(actorIter, std::end(actors));
 

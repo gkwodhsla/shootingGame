@@ -189,7 +189,7 @@ void EnemyAirplane::update(const float deltaTime)
         //loc가 지금 위치, befPos가 이전 위치
 
         ++cnt;
-        if (cnt % 10 == 0) // 자주 업데이트 하면 비행기가 흔들흔들거림
+        if (cnt % 10 == 0) // 회전을 자주 업데이트 하면 비행기가 흔들흔들거림
         {
             float newDirVecX = float(loc.first - befPos.first);
             float newDirVecY = float(loc.second - befPos.second);
@@ -229,7 +229,7 @@ void EnemyAirplane::update(const float deltaTime)
             rootComponent->setComponentLocalRotation(curRootRot - interpValue);
         }
     }
-    if (isArrived)
+    if (!isDie && isArrived)
     {
         spawnBullet(deltaTime);
     }

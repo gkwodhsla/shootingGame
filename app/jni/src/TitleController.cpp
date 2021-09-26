@@ -13,7 +13,7 @@ HPlayerController(controlledPawn)
 
 TitleController::~TitleController()
 {
-    Framework::eraseCanvas(loginCanvas);
+    loginCanvas->removeFromViewport();
 }
 
 void TitleController::goToMainLevel()
